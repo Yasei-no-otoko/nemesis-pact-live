@@ -17,7 +17,7 @@ The sanctuary is a circle that erases hostile bullets. It does not block lasers 
 
 ## Live architecture
 
-Microphone → **GPT-Live-1** over the official Live API/WebRTC → client delegation → **gpt-4.1-mini** via Vercel AI Gateway Responses → canonical validation → explicit Sign → deterministic combat.
+Microphone → **GPT-Live-1** over the official Live API/WebRTC → client delegation → **GPT-5.6 Luna (gpt-5.6-luna)** via Vercel AI Gateway Responses → canonical validation → explicit Sign → deterministic combat.
 
 Voice and text share the same proposal, validation, signature and battle code. Speech never signs. Request versions, proposal digests and a durable atomic signature ledger reject stale/duplicate applications. Reconnect starts a fresh bounded voice session; it does not silently restore or sign a proposal.
 

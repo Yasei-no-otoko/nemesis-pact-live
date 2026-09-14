@@ -3,8 +3,9 @@ Windows Edge at an emulated iPhone-size viewport; not physical phone/voice proof
 """
 from pathlib import Path
 from playwright.sync_api import sync_playwright
-import json,time
-ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'docs/validation-current/iphone-recording/production-fix';OUT.mkdir(parents=True,exist_ok=True)
+import json,time,os
+ROOT=Path(__file__).resolve().parents[1];OUT=Path(os.environ.get('NEMESIS_MODEL_OUT',ROOT/'docs/validation-current/luna/production'));OUT.mkdir(parents=True,exist_ok=True)
+EXPECTED_MODEL=os.environ.get('NEMESIS_EXPECTED_MODEL','gpt-5.6-luna')
 URL='https://nemesis-pact-live.vercel.app'
 def state(p):return json.loads(p.evaluate('()=>render_game_to_text()'))
 with sync_playwright() as pw:
@@ -15,7 +16,7 @@ with sync_playwright() as pw:
   if '/api/' not in r.url:return
   entry={'path':r.url.split(URL)[-1],'status':r.status}
   try:
-   body=r.json();entry.update({k:body[k] for k in ['provider','model','modelFormat','modelIssue','spec','latencyMs','accountedMicrodollars','signed','revision','error'] if k in body})
+    body=r.json();entry.update({k:body[k] for k in ['provider','model','modelFormat','modelIssue','spec','latencyMs','accountedMicrodollars','signed','revision','error'] if k in body})
   except Exception:pass
   calls.append(entry)
  p.on('response',response)
@@ -38,7 +39,7 @@ with sync_playwright() as pw:
   p.click('#cv-sign');p.wait_for_function('()=>JSON.parse(render_game_to_text()).revision===2');after=state(p)
   assert after['spec']==amended['proposal']['spec'] and after['player']['hp']==before['player']['hp'] and before['seconds']<=after['seconds']<before['seconds']+.5
   assert [e['hp'] for e in after['enemies'] if e['type']=='boss']==[e['hp'] for e in before['enemies'] if e['type']=='boss']
-  proposals=[v for v in calls if v['path']=='/api/covenant'];assert len(proposals)==3 and all(v.get('provider')=='openai' and v.get('modelFormat')=='living_covenant_rules_v3' and v.get('modelIssue') is None for v in proposals)
+  proposals=[v for v in calls if v['path']=='/api/covenant'];assert len(proposals)==3 and all(v.get('provider')=='openai' and v.get('model')==EXPECTED_MODEL and v.get('modelFormat')=='living_covenant_rules_v3' and v.get('modelIssue') is None for v in proposals)
   assert not errors;p.screenshot(path=str(OUT/'03-amended-combat.png'));report.update(passed=True,renderer=after['renderer'],before=before,after=after,realModelCalls=3)
  except Exception as error:
   report.update(passed=False,error=str(error));p.screenshot(path=str(OUT/'failure.png'))

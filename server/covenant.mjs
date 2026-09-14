@@ -8,7 +8,10 @@ export const INSTRUCTIONS=`You are THE NOTARY, the fictional rival in NEMESIS PA
 Return exactly the JSON schema. version=1; choose ruleSet from its allowed enum, then title <=48 characters, line <=240 and rationale <=360. Each ruleSet explicitly encodes zone, speed, reflection and price; only funded combinations are offered. Do not return separate clause fields. Use a short English title without cutting words, and a one-sentence rationale. The line is brief in-character flavor, not a mechanical explanation; the canonical contract explains the actual rules. Reinforcements are additional HOSTILE turrets, never allies or extra defense. Weaker gun reduces the PLAYER's damage, not the enemy's. The dialogue may contain partial voice transcripts and later corrections. The latest explicit correction overrides earlier terms; preserve the other unchanged requested clauses. Do not add reflection or slower bullets unless requested; a location-only correction should keep the other clauses unchanged.
 Mechanics: zone none/left/center/right: a stationary circle in the lower arena erases hostile bullets, not lasers or enemy bodies. A zone costs 2 benefit points. speed slow means hostile bullets -28% and costs 1; normal costs 0. reflection charged means reflected damage x1.8 and costs 1; normal costs 0. At least 1 and at most 3 benefit points total. Exactly one price: weaker_gun means gun damage -35% and pays 2; reinforcements means 2 turrets every 9 seconds, at most 4 adds and pays 3; fragile means incoming damage x2 and pays 3; haste means boss attack countdowns 25% faster and pays 2. Benefit points must not exceed payment. No other mechanics exist. No healing, invincibility, score gifts, victory commands or generated code. Rationale must explain mismatched or infeasible requests and tradeoffs. Lines are characterization, never hidden clauses. Reference actual aggregate counters only. Memory is only prior honored and broken counts, never invent past events. An amendment replaces the prior contract and consumes the only amendment. Proposing does not change the battle. Do not provide links or personal data. Match requested location especially carefully. If user wants all benefits for free, make an affordable counteroffer.`;
 // Model and prices are server selected. Values must be reverified before enabling.
-export const TEXT_MODELS={'gpt-4.1-mini':{input:0.4,output:1.6}};
+export const TEXT_MODELS={
+ 'gpt-4.1-mini':{input:0.4,output:1.6},
+ 'gpt-5.6-luna':{input:0.2,inputCacheWrite:0.25,output:1.2,reasoning:'none',serviceTier:'default'}
+};
 export const TEXT_RESERVATION=10000; // $0.01; input <=8192 bytes, output <=700 tokens.
 export function createHandler(){return handle;}
 export async function handle(request,{env=process.env,fetcher=fetch,now=Date.now,...overrides}={}) {
@@ -26,13 +29,14 @@ export async function handle(request,{env=process.env,fetcher=fetch,now=Date.now
   reservation=await quota.reserve({reservationId:randomUUID(),sid:session.sid,ip:session.ip,estimatedMicrodollars:TEXT_RESERVATION,kind:'text'});
   if(!reservation.ok)throw problem('BUDGET_OR_CONCURRENCY_LIMIT',429);
  }catch(error){return failure(error);}
+ const modelConfig=TEXT_MODELS[env.OPENAI_MODEL];
  const abort=new AbortController(),timer=setTimeout(()=>abort.abort(),12000);
  let spec,provider='local-rules',model=null,usage=null,modelIssue=null,stage='transport',reason='Upstream unavailable or invalid; LOCAL RULES. No rules applied.';
  try {
   const marked=await quota.markStarted({reservationId:reservation.reservationId});
   if(!marked.ok)throw problem('RESERVATION_UNAVAILABLE',503);
   const gateway=env.TEXT_PROVIDER==='vercel';
-  const response=await fetcher(gateway?'https://ai-gateway.vercel.sh/v1/responses':'https://api.openai.com/v1/responses',{method:'POST',headers:{Authorization:'Bearer '+(gateway?env.AI_GATEWAY_API_KEY:env.OPENAI_API_KEY),'Content-Type':'application/json'},signal:abort.signal,body:JSON.stringify({model:(gateway?'openai/':'')+env.OPENAI_MODEL,store:false,max_output_tokens:700,instructions:INSTRUCTIONS,input:[{role:'user',content:JSON.stringify({...clean,latestExplicitZone:explicitCorrectionZone(clean.prompt)})}],text:{format:{type:'json_schema',name:MODEL_FORMAT,strict:true,schema:modelSchema(clean)}}})});
+  const response=await fetcher(gateway?'https://ai-gateway.vercel.sh/v1/responses':'https://api.openai.com/v1/responses',{method:'POST',headers:{Authorization:'Bearer '+(gateway?env.AI_GATEWAY_API_KEY:env.OPENAI_API_KEY),'Content-Type':'application/json'},signal:abort.signal,body:JSON.stringify({model:(gateway?'openai/':'')+env.OPENAI_MODEL,store:false,max_output_tokens:700,...(modelConfig.reasoning?{reasoning:{effort:modelConfig.reasoning}}:{}),...(modelConfig.serviceTier?{service_tier:modelConfig.serviceTier}:{}),instructions:INSTRUCTIONS,input:[{role:'user',content:JSON.stringify({...clean,latestExplicitZone:explicitCorrectionZone(clean.prompt)})}],text:{format:{type:'json_schema',name:MODEL_FORMAT,strict:true,schema:modelSchema(clean)}}})});
   stage='upstream-response';
   if(!response.ok)throw problem('UPSTREAM_HTTP_'+response.status,502);
   const result=await response.json();usage=result.usage;
@@ -45,7 +49,13 @@ export async function handle(request,{env=process.env,fetcher=fetch,now=Date.now
   spec={...validated,rationale:`Validated rule budget: ${budget.benefit} advantage points / ${budget.payment} payment points. ${V.describe(validated).note} Only the displayed clauses apply after Sign.`};provider='openai';model=env.OPENAI_MODEL;reason='Validated OpenAI counteroffer; explicit signature required.';
  }catch{modelIssue=stage;}finally{clearTimeout(timer);}
  let cost=TEXT_RESERVATION;
- if(Number.isSafeInteger(usage?.input_tokens)&&Number.isSafeInteger(usage?.output_tokens)&&usage.input_tokens>=0&&usage.output_tokens>=0) {const prices=TEXT_MODELS[env.OPENAI_MODEL];cost=Math.ceil(usage.input_tokens*prices.input+usage.output_tokens*prices.output);}
+ if(Number.isSafeInteger(usage?.input_tokens)&&Number.isSafeInteger(usage?.output_tokens)&&usage.input_tokens>=0&&usage.output_tokens>=0) {
+  const prices=TEXT_MODELS[env.OPENAI_MODEL],reportedWrites=usage.input_tokens_details?.cache_write_tokens;
+  // Keep cached reads at the uncached price; account for write premiums. Missing
+  // cache detail assumes all input was written, rather than undercounting spend.
+  const written=Number.isSafeInteger(reportedWrites)&&reportedWrites>=0&&reportedWrites<=usage.input_tokens?reportedWrites:usage.input_tokens;
+  cost=Math.ceil(usage.input_tokens*prices.input+written*Math.max(0,(prices.inputCacheWrite||prices.input)-prices.input)+usage.output_tokens*prices.output);
+ }
  try {
   // Missing usage retains the entire reservation, including aborted requests.
   const settled=await quota.settle({reservationId:reservation.reservationId,actualMicrodollars:cost});
