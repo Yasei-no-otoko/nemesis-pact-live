@@ -27,12 +27,12 @@ Before clearing an unknown-termination kill, independently confirm every affecte
 
 ## Rollback
 
-Current production source: `05e2d2405559bd595da89cd068dd4b0589694be1`, READY deployment `dpl_6oUWRqM5JCHUL9Eq7TS4czuBuc6p`.
+Current production source: `3ff6fb06fd212cc50614a4b6dd67e52d5325bce6`, READY deployment `dpl_9VterKz8JkDeyjVGpdJrVqcm3e48`.
 
-The prior READY deployment is `dpl_3RWHtoCVi8K7D8d2c9X7fU8X1LFu` (source `3ce691a`, before idle voice authorization/local correction fixes). With the existing authenticated Vercel CLI and this project selected:
+The prior READY deployment is `dpl_6oUWRqM5JCHUL9Eq7TS4czuBuc6p` (source `05e2d24`, before the voice response-body deadline fix). With the existing authenticated Vercel CLI and this project selected:
 
 ```sh
-vercel rollback dpl_3RWHtoCVi8K7D8d2c9X7fU8X1LFu --yes
+vercel rollback dpl_6oUWRqM5JCHUL9Eq7TS4czuBuc6p --yes
 vercel rollback status nemesis-pact-live
 ```
 

@@ -64,7 +64,7 @@ Remaining: production deploy/text Sign/combat, GPT-Live speech/delegation/interr
 - Required pending: real human interruption/right correction, mid-fight voice amendment, human video file and English subtitles/public URL; source-publication choice. Physical phone/Safari/GPU FPS and exact grant metadata remain unverified. Public/judging pool activation instructions are in OPERATIONS.md; current deployment still uses verification.
 
 
-## 2026-09-14 17:32 JST — current regression and hardware evidence
+## 2026-09-14 17:30:39 JST — current regression and hardware evidence
 
 - Fixed expired app authorization at new voice start; stop/sign/cancel keep the original owner. LOCAL RULES now follows the last named direction and recognizes Japanese “結界はなし”. These source changes are awaiting the next deployment at this entry.
 - Node 22.23.2: 197/197 unit tests, 33 syntax files, offline build 359615 bytes. Current covenant simulation completed all 12 scenarios. Server smoke passed nine checks after correcting an obsolete assertion about the intentionally local legacy route; initial failure is retained. Historical baseline reports were preserved byte for byte.
@@ -73,16 +73,24 @@ Remaining: production deploy/text Sign/combat, GPT-Live speech/delegation/interr
 - Shared budget at 08:28:36 UTC unchanged: direct OpenAI $0.300000 / $10, Gateway $0.006210 / $20 conservative accounting; active 0, kill null. Verification pools still selected. Human retry tab remains idle; no demo WebM found in Downloads. Human correction/parley and video/publication gates remain open.
 
 
-## 2026-09-14 17:36 JST — deployment verified
+## 2026-09-14 17:35:15 JST — deployment verified
 
 - Source `05e2d2405559bd595da89cd068dd4b0589694be1` pushed to origin `ship/living-covenant`; production READY `dpl_6oUWRqM5JCHUL9Eq7TS4czuBuc6p`, https://nemesis-pact-live-d769y9yxg-wildmans-projects.vercel.app. Production alias https://nemesis-pact-live.vercel.app returned HTTP 200 without login. Hosted 359665 bytes SHA256 `7c770d38afc467dd5659738e17d7ea33335f3e3d35d7d5f1cd849d420c9c58f6` exactly matches the source build. Hosted meta CSP permits same-origin connections/media; standalone meta CSP forbids them. Microphone is self-only. A valid legacy request returned explicit LOCAL RULES with no model call.
 - Post-deploy automated Edge test passed the Japanese local correction and no-sanctuary amendment through normal input/Sign/R controls. Unsigned proposal left the fight unchanged; signed revision 2 preserved hull and combat time and incremented exactly one amendment. Zero API requests/page errors. Evidence in validation-current/production-local. This is fallback regression, not live-voice proof.
 - Refreshed the idle human retry tab to this release and prepared First Contact under existing consent approval. No microphone/recording was started by automation. Still awaiting actual interruption/correction, mid-fight voice amendment and saved human footage; private repository publication approval also pending. No public video URL yet.
 
 
-## 2026-09-14 17:43 JST — voice response-body timeout fixed
+## 2026-09-14 17:41:58 JST — voice response-body timeout fixed
 
 - Completion review found the voice-start deadline ended when HTTP headers arrived, before JSON body receipt. A stalled body could leave startup and its acquired audio stream active. Kept the 15-second deadline through body parsing with Promise.race, and hang up a session that arrives after the request was superseded/timed out. This does not assume browser cancellation stopped provider work; the server watchdog remains authoritative.
 - Node 22.23.2: 198 tests passed, zero failed/skipped, 20566ms including a real 15-second stalled-body test. Syntax 33 files; offline build 360066 bytes.
 - Actual native Edge audio MediaStream and RTCPeerConnection in a loopback browser fixture: after 15042ms track was ended, peer closed, request abort signalled, and late session was sent to the stop route. LOCAL RULES fallback signed and entered combat; zero page errors. The audio source was silent synthetic media and all API responses were fixtures, not human microphone or real-model proof.
 - No new human interaction or saved WebM/MP4 was found at turn start. Required interruption/correction, mid-fight voice, final subtitled video and source access choice remain pending; these are not made complete by the new failure regression.
+
+
+## 2026-09-14T08:45:00.237Z — voice deadline release verified
+
+- Source `3ff6fb06fd212cc50614a4b6dd67e52d5325bce6` is READY production `dpl_9VterKz8JkDeyjVGpdJrVqcm3e48`, https://nemesis-pact-live-c8hgz1tgz-wildmans-projects.vercel.app. Anonymous HTTPS returned 200; hosted 360116 bytes SHA256 `4a6dfd2775bcdedd9e3d591b78d5940e2bbbc11a7250b575c9d870583f19f85c` exactly matches the build. Header/meta/offline policies and local-only legacy response remain verified.
+- Ledger at 2026-09-14T08:43:01.312Z: direct OpenAI $0.300000/$10, Gateway $0.006210/$20; active 0, no kill. No real-model calls were added by this turn. Invoice/infra/grant metadata limitations remain.
+- Added requirement-by-requirement COMPLETION-AUDIT.md. Required human Live correction/amendment, actual 60-second subtitled footage/viewing URL and source-access choice remain incomplete. Prior turn was progress (deployment); this turn is progress (stalled-body fix and native cleanup evidence), not proof that the human gates were met.
+- Corrected this agent's three recent narrative timestamps to the corresponding observed artifact/command times; no source, Git dates or historical baseline evidence was altered.
