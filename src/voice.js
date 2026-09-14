@@ -1,6 +1,28 @@
 /* Official GPT-Live WebRTC transport. No simulation authority. */
 (function(root,factory){if(typeof module==='object'&&module.exports)module.exports=factory();else root.PactVoice=factory();})(globalThis,function(){'use strict';
  const STATES=['idle','starting','listening','speaking','stopping','stopped','error'];
+ function isProposalWithdrawal(input){
+  if(typeof input!=='string')return false;
+  const text=input.normalize('NFKC').replace(/\s+/gu,' ').trim();if(!text)return false;
+  // A question or a Japanese hypothetical is not an instruction to withdraw.
+  if(/[?\uFF1F]\s*$/u.test(text))return false;
+  const english=text.match(/\b(?:withdraw|cancel)\b(?:\s+(?:that|it|this|the\s+(?:proposal|offer|counteroffer|deal|terms)|(?:my|the|current|last|previous)(?:\s+(?:current|last|previous))?\s+(?:proposal|offer|counteroffer|deal|terms)))?\s*(?:,?\s*(?:please|now|thanks))?\s*[.!]*$/i);
+  if(english){
+   const before=text.slice(0,english.index).trim().replace(/[\s,;:]+$/u,'');
+   // Keep clause edits and cancellation discussed in the abstract in the
+   // proposal path. "can you" remains a direct request; modal/negative
+   // framing does not.
+   if(/(?:^|\s)(?:don't|do not|never|not|cannot|can't|won't|will not|wouldn't|shouldn't|plan(?:ned|ning)?\s+to|going\s+to|want\s+to|need\s+to|have\s+to|could\s+you|would\s+you)\s*$/i.test(before))return false;
+   if(/\b(?:if|whether|suppose|hypothetical(?:ly)?|discuss(?:ed|ing)?|talk(?:ed|ing)?\s+about|consider(?:ed|ing)?)\b/i.test(before))return false;
+   return true;
+  }
+  const clauses=text.split(/[.!;:,\u3001\u3002\uFF01\uFF1F\uFF1B\n]+/u).map(s=>s.trim()).filter(Boolean),last=clauses.at(-1)||'';
+  if(/(?:\u3082\u3057|\u4eee\u306b|\u4e07\u4e00|\u304b\u3069\u3046\u304b|\u306b\u3064\u3044\u3066|\u8b70\u8ad6|\u691c\u8a0e|\u8003\u3048(?:\u308b|\u3066)|\u3064\u3082\u308a|\u4e88\u5b9a|\u305f\u3044|\u307b\u3057\u3044)/u.test(last))return false;
+  const target='(?:(?:(?:\\u524d|\\u76f4\\u524d|\\u4ee5\\u524d)(?:\\u306e)?|\\u73fe\\u5728\\u306e|\\u3053\\u306e|\\u305d\\u306e)?(?:\\u63d0\\u6848|\\u30aa\\u30d5\\u30a1\\u30fc|\\u5951\\u7d04|\\u6761\\u4ef6|\\u53d6\\u5f15))';
+  const action='(?:\\u64a4\\u56de(?:\\u3057\\u3066|\\u3059\\u308b|\\u3057\\u307e\\u3059|\\u3057\\u3066\\u304f\\u3060\\u3055\\u3044)?|\\u53d6\\u308a\\u6d88(?:\\u3057\\u3066|\\u3059|\\u3057\\u307e\\u3059|\\u3057\\u3066\\u304f\\u3060\\u3055\\u3044)?|\\u30ad\\u30e3\\u30f3\\u30bb\\u30eb(?:\\u3057\\u3066|\\u3059\\u308b|\\u3057\\u307e\\u3059|\\u3057\\u3066\\u304f\\u3060\\u3055\\u3044)?)';
+  if(new RegExp('^(?:'+target+'(?:\\u3092|\\u306f)?\\s*)?'+action+'(?:\\u304f\\u3060\\u3055\\u3044|\\u4e0b\\u3055\\u3044|\\u304a\\u9858\\u3044\\u3057\\u307e\\u3059|\\u306d|\\u3088)?$','u').test(last))return true;
+  return false;
+ }
  function serviceMessage(code,status){
   const messages={VOICE_QUOTA_voice_duration:'Both voice negotiations for this fight are used. Continue with text, or start a new First Contact.',VOICE_QUOTA_session_limit:'This browser session has used its request allowance. Continue with LOCAL RULES until the session expires.',VOICE_QUOTA_budget:'The voice budget is currently exhausted. LOCAL RULES remains playable.',VOICE_QUOTA_concurrent:'All voice slots are busy. Try again shortly, or use text.',VOICE_QUOTA_session_busy:'Another voice connection is still active. Stop it before trying again.',VOICE_QUOTA_ip_limit:'Too many requests. Wait one minute, or use LOCAL RULES.',VOICE_QUOTA_kill:'Voice is temporarily paused. Use text or LOCAL RULES.',SESSION_EXPIRED:'Your session expired. Reconnect OpenAI, or use LOCAL RULES.',VOICE_NOT_ENABLED:'Voice is unavailable. Text and LOCAL RULES remain available.'};
   return messages[code]||(status===429?'Voice is temporarily rate limited. Try again later, or use LOCAL RULES.':status===401||status===403?'OpenAI authorization is no longer valid. Reconnect, or use LOCAL RULES.':'The voice service could not connect. Retry, use text, or choose LOCAL RULES.');
@@ -119,5 +141,5 @@
   unmute(){this.stream?.getAudioTracks().forEach(t=>{t.enabled=true;});}
   setVolume(value){if(this.audio)this.audio.volume=Math.max(0,Math.min(1,Number(value)||0));}
  }
- return {PactVoice,canonical,STATES};
+ return {PactVoice,canonical,STATES,isProposalWithdrawal};
 });

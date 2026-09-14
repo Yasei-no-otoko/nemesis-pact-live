@@ -474,7 +474,9 @@
         voiceText=(voiceText+voiceBackchannels+delta).slice(-400);voiceBackchannels='';voiceLastInput=performance.now();$('cv-caption-player').textContent=voiceText;$('cv-prompt').value=voiceText;invalidateCovenant('Heard updated terms. Waiting for the Notary’s counteroffer.',false,true);},
       onSessionClosed:event=>{if(voiceWorld?.voiceEvidence)voiceWorld.voiceEvidence.sessionClosed++;},
       onDelegation:async()=>{if(world?.voiceEvidence)world.voiceEvidence.delegationRequests++;if(cvSigning||screen!=='covenant-screen')return null;const target=world;for(let n=0;n<10&&performance.now()-voiceLastInput<250;n++)await new Promise(resolve=>setTimeout(resolve,100));if(world!==target||!voiceText.trim())return null;
-        if(/(?:withdraw|cancel (?:that|the|my)|\u64a4\u56de|\u53d6\u308a\u6d88)/i.test(voiceText.slice(-90))){voiceText='';voiceBackchannels='';$('cv-prompt').value='';invalidateCovenant('Proposal withdrawn. State new terms when ready.');return null;}
+        // Revoking one clause is a new offer. Only an explicit whole-proposal
+        // cancellation withdraws it; retain speech for any delayed continuation.
+        if(window.PactVoice.isProposalWithdrawal(voiceText)){voiceBackchannels='';$('cv-prompt').value='';invalidateCovenant('Proposal withdrawn. State terms to replace it, or continue with text.');return null;}
         return proposeCovenant({delegated:true});}
     });
     $('cv-voice-start').onclick=async()=>{if(screen!=='covenant-screen'||cvSigning||!$('cv-consent').checked)return;sound.unlock();voiceMuted=false;$('cv-voice-mute').textContent='Mute';voiceText='';voiceCaption='';voiceWorld=world;await voice.start({runId:cvRunId,revision:world.revision});};

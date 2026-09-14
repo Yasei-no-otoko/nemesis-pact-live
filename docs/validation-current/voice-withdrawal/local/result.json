@@ -1,0 +1,140 @@
+{
+  "checkedAt": "2026-09-14T15:43:27Z",
+  "url": "http://127.0.0.1:8080/",
+  "browser": "153.0.4234.32",
+  "input": "synthetic transcript callbacks; actual UI and local canonical proposal/sign path",
+  "realApi": false,
+  "humanMicrophone": false,
+  "controlledTime": false,
+  "passed": true,
+  "before": {
+    "screen": "covenant-screen",
+    "coordinates": "origin top-left; x right; y down",
+    "renderer": "WEBGPU / COMPUTE",
+    "arena": {
+      "width": 1280,
+      "height": 800
+    },
+    "phase": "parley",
+    "seconds": 8.23,
+    "player": {
+      "x": 640,
+      "y": 560,
+      "hp": 10,
+      "energy": 54
+    },
+    "enemies": [
+      {
+        "type": "boss",
+        "x": 591,
+        "y": 212,
+        "hp": 2868
+      }
+    ],
+    "hostileBullets": 28,
+    "revision": 1,
+    "spec": {
+      "version": 1,
+      "title": "Right-side Covenant",
+      "zone": "right",
+      "speed": "normal",
+      "reflection": "normal",
+      "price": "reinforcements",
+      "line": "Every promise needs a price. Read the binding clauses below. Sign only what you intend to keep.",
+      "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+    },
+    "proposal": null,
+    "effects": {
+      "shielded": 2,
+      "reflectedDamage": 0,
+      "gunDamage": 732,
+      "amendments": 0
+    },
+    "voice": "idle",
+    "liveVoice": {
+      "model": "gpt-live-1",
+      "connectionStarted": 0,
+      "sessionClosed": 0,
+      "delegationRequests": 0,
+      "proposalsReturned": 0,
+      "openaiProposals": 0,
+      "signedContracts": 0,
+      "lastState": "idle",
+      "status": "not-used"
+    }
+  },
+  "clauseRemovalProposal": {
+    "spec": {
+      "version": 1,
+      "title": "Center-side Covenant",
+      "zone": "center",
+      "speed": "slow",
+      "reflection": "normal",
+      "price": "reinforcements",
+      "line": "I counted 0 reflected shots. Read the binding clauses below. Sign only what you intend to keep.",
+      "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+    },
+    "provider": "local-rules",
+    "model": null
+  },
+  "after": {
+    "screen": "game",
+    "coordinates": "origin top-left; x right; y down",
+    "renderer": "WEBGPU / COMPUTE",
+    "arena": {
+      "width": 1280,
+      "height": 800
+    },
+    "phase": "combat",
+    "seconds": 8.25,
+    "player": {
+      "x": 640,
+      "y": 560,
+      "hp": 10,
+      "energy": 54
+    },
+    "enemies": [
+      {
+        "type": "boss",
+        "x": 590,
+        "y": 212,
+        "hp": 2868
+      }
+    ],
+    "hostileBullets": 28,
+    "revision": 2,
+    "spec": {
+      "version": 1,
+      "title": "Borrowed Time",
+      "zone": "none",
+      "speed": "slow",
+      "reflection": "normal",
+      "price": "weaker_gun",
+      "line": "I counted 0 reflected shots. Read the binding clauses below. Sign only what you intend to keep.",
+      "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+    },
+    "proposal": null,
+    "effects": {
+      "shielded": 2,
+      "reflectedDamage": 0,
+      "gunDamage": 732,
+      "amendments": 1
+    },
+    "voice": "idle",
+    "liveVoice": {
+      "model": "gpt-live-1",
+      "connectionStarted": 0,
+      "sessionClosed": 0,
+      "delegationRequests": 4,
+      "proposalsReturned": 3,
+      "openaiProposals": 0,
+      "signedContracts": 0,
+      "lastState": "idle",
+      "status": "not-used"
+    }
+  },
+  "explicitCancellationPassed": true,
+  "partialContinuationPreserved": true,
+  "pageErrors": [],
+  "apiRequests": []
+}
