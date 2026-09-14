@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-09-14T16:15:50.8133637Z",
+  "passed": true,
+  "fields": [
+    {
+      "Field": "Project description",
+      "Words": 80
+    },
+    {
+      "Field": "Meaningful use of OpenAI tools",
+      "Words": 152
+    },
+    {
+      "Field": "Originality",
+      "Words": 57
+    },
+    {
+      "Field": "Playability and utility",
+      "Words": 87
+    },
+    {
+      "Field": "Execution and craft",
+      "Words": 126
+    },
+    {
+      "Field": "Sources and licenses",
+      "Words": 70
+    }
+  ],
+  "wordLimitPerField": 200
+}

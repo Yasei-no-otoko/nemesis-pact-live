@@ -1,10 +1,10 @@
 {
-  "checkedAt": "2026-09-14T15:10:36.546Z",
+  "checkedAt": "2026-09-14T16:09:39.011Z",
   "production": "https://nemesis-pact-live.vercel.app",
   "httpStatus": 200,
-  "hostedBytes": 373886,
-  "productionSha256": "9585bd5d9abbc1525c042a5a4a6cde047faae56536c1c456b42eb391e5410b80",
-  "localSha256": "9585bd5d9abbc1525c042a5a4a6cde047faae56536c1c456b42eb391e5410b80",
+  "hostedBytes": 377285,
+  "productionSha256": "3c440bf87d1e188e9416a8f225725b2906c198b0473b14abec496acb5092b4de",
+  "localSha256": "3c440bf87d1e188e9416a8f225725b2906c198b0473b14abec496acb5092b4de",
   "exactBuildMatch": true,
   "headers": {
     "permissions-policy": "camera=(), microphone=(self), geolocation=()",
@@ -20,9 +20,5 @@
     "status": 200,
     "provider": "local-rules"
   },
-  "realModelCalls": 0,
-  "sourceCommit": "31381f98f12194bd97d4d02cea194d1bb563b859",
-  "deploymentId": "dpl_8xZnyqCVV3Dw7jRoXEAxdHaVf5gP",
-  "uiEvidence": "../notary-height/production/result.json",
-  "backendScope": "unchanged from Luna release; this CSS-only verification made zero model calls"
+  "realModelCalls": 0
 }

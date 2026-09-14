@@ -1,22 +1,15 @@
-# Shipping plan
+# Implementation plan — current handoff
 
-GOAL.md is the execution contract and completion checklist. Preserve the framework-free Node 22 build and six-sector campaign.
+Updated 2026-09-14T16:03:51.376030+00:00. Production source `c7f1f6d972c9f64047e3626c9f37f82d8f4ba47d`, deployment `dpl_xk61akZJbnzGP83dt11iUbnb8MpT`. Exact build hashes, rollback and budgets are in RELEASE-CANDIDATE.json; evidence chronology is in WORKLOG.md.
 
-1. Record input SHA256, compare upstream, preserve baseline and run current tests.
-2. Establish a dedicated Vercel project and secure application session / durable atomic budget gate. Pass real text inference through the canonical validator, explicit signature and deterministic combat.
-3. Integrate the verified official GPT-Live-1 protocol into that same proposal path. Keep voice interruptions separate from request cancellation. Enforce session duration upstream.
-4. Verify stale responses, corrections, withdrawal, duplicate events, concurrency, quota outages, reconnect/cleanup and non-resetting amendments.
-5. Improve readability, first-contact flow, mobile interaction and voice audio ducking; run browser regressions.
-6. Verify production and real mic behavior, capture actual 60-second footage, publish through an authorized destination and finalize six English submission fields.
+1. Correct v0.5.0 ZIP import and baseline preservation: complete within recorded evidence.
+2. Real OpenAI contract → validated proposal → explicit Sign → production combat: verified; current model GPT-5.6 Luna via Gateway.
+3. Actual GPT-Live-1 WebRTC, interruption, correction and mid-fight amendment: production verified with clearly labeled automated synthetic input; earlier human footage and user reports are separate.
+4. Stale generation, duplicate events/signatures, Redis quotas, voice termination and LOCAL RULES failure behavior: tested within recorded fixtures. Latest clause-withdrawal and missing-delegation failures are fixed; 219 unit tests pass on Node22.
+5. Compact desktop/scrollable and taller Notary captions, mobile emulation and baseline campaign: recorded checks pass. Additional physical phone browser/FPS coverage is unverified.
+6. Submission: existing local English-captioned videos are preserved. New human Luna recording proves corrected right Sign and combat, but its amendment failed on the prior build. Obtain a successful full-sequence 60s recording, publish to an approved destination and verify playback URL. Source/judge access decision remains outstanding; form/legal submission remains with the user.
 
-No blanket completion claims: distinguish recorded, user-reported and automated evidence. The production game is deployed at https://nemesis-pact-live.vercel.app with real GPT-Live-1 and Gateway GPT-5.6 Luna. Human desktop footage proves spoken mid-fight amendment; iPhone 16 Pro Max footage proves interruption but uses LOCAL RULES after correction. The resulting model bugs are fixed; automated production correction/Sign/amendment passes, and the user separately confirms the corrected OPENAI voice sequence succeeds in Windows Vivaldi. Current unit suite: 209/209, 34 syntax files.
+Direct OpenAI conservative usage $1.850000/$10; Gateway $0.028541/$20 as of 2026-09-14T16:11:13.833Z. Public pools are approved; verification/judging reserves and Redis history must remain. These are not invoices; Vercel grant balance/expiry and infrastructure bill are unverified. No paid plan, purchase or automatic charging is authorized.
 
-Current source `31381f98f12194bd97d4d02cea194d1bb563b859`, deployment `dpl_8xZnyqCVV3Dw7jRoXEAxdHaVf5gP`; public pools retained. The PC contract UI is compact with persistent actions and consent/details dialogs. Existing exact-60s main video and an honestly annotated 50.467s phone supplement are locally finished and playback-verified.
 
-Remaining delivery: one 60-second real recording containing the entire interruption/correction/sign/combat/amendment sequence (existing main omits interruption); approved public video destination and verified viewing URL; source publication or judging-access choice. Browser/version, physical latest-UI/FPS, Android/macOS Safari and exact Gateway grant metadata/infrastructure invoice remain explicitly unverified. Do not infer that public hosting is authorized from an unanswered question. Application form/legal consent remains with the user.
-
-Both providers now use already-approved public pools. Direct OpenAI cap $10 (verification $3/public $5/judging $2); Gateway cap $20 (verification $1/public $14/judging $5). At 14:45:32 UTC conservative ledgers were $0.800000 and $0.015306 respectively, active 0/kill null. These are not invoices or a guarantee that all Vercel spending remains under $30. Preserve Redis records and judging reserves. See RELEASE-CANDIDATE.json and WORKLOG.md for exact hashes, rollback and evidence.
-
-Luna production verification: three real contracts (left, corrected right, mid-fight reflection amendment), two explicit signatures, two actual bullets erased, preserved HP/boss/time. Voice remains GPT-Live-1; earlier human recordings use gpt-4.1-mini. Model changes and measured prices/latency are in MODEL-LUNA.md and validation-current/luna/.
-
-Current combined voice/model evidence: `validation-current/live-luna/result.json`; actual GPT-Live-1 → Luna correction and spoken amendment both signed in production, synthetic input/automated Edge, no new human recording. Ledger 2026-09-14T15:21:30.999Z: OpenAI $1.100000/$10, Gateway $0.021083/$20, active 0/kill null. Prior 209-test result retained; evidence/scripts/docs only, no production-code changes.
+Latest full-sequence result: `validation-current/voice-withdrawal/full-sequence/result.json`, current source c7f1f6d972c9f64047e3626c9f37f82d8f4ba47d. Real GPT-Live-1/Luna, synthetic input and automated Edge, both Sign revisions and teardown passed. Latest budgets: OpenAI $1.850000/$10, Gateway $0.028541/$20, 2026-09-14T16:11:13.833Z. The 219-test result precedes the final prompt-only adjustment; build/syntax and full real-model flow verify the current prompt. No fresh human recording or public video URL.

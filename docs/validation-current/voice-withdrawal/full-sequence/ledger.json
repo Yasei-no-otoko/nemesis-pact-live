@@ -1,0 +1,38 @@
+{
+  "checkedAt": "2026-09-14T16:11:13.833Z",
+  "scope": "Read-only durable records; no session IDs or credentials; conservative accounting, not invoice",
+  "records": [
+    {
+      "state": "stopped",
+      "reason": "application",
+      "revision": 0,
+      "elapsedMs": 22271,
+      "startedAt": "2026-09-14T16:09:47.930Z",
+      "stoppedAt": "2026-09-14T16:10:10.201Z"
+    },
+    {
+      "state": "stopped",
+      "reason": "application",
+      "revision": 1,
+      "elapsedMs": 13713,
+      "startedAt": "2026-09-14T16:10:19.016Z",
+      "stoppedAt": "2026-09-14T16:10:32.729Z"
+    }
+  ],
+  "totals": {
+    "openai": {
+      "global": 1850000,
+      "kind:voice": 1850000,
+      "pool:verification": 800000,
+      "pool:public": 1050000
+    },
+    "gateway": {
+      "kind:text": 28541,
+      "pool:public": 12975,
+      "pool:verification": 15566,
+      "global": 28541
+    },
+    "kill": null,
+    "active": 0
+  }
+}
