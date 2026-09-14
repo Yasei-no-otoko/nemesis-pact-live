@@ -2509,7 +2509,7 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
    this.document?.removeEventListener?.('visibilitychange',this._hidden);globalThis.removeEventListener?.('pagehide',this._pagehide);
   }
   async _hangup(id){
-   if(!id)return true;const ac=new AbortController(),timer=setTimeout(()=>ac.abort(),4000);
+   if(!id)return true;const ac=new AbortController(),timer=setTimeout(()=>ac.abort(),12000);
    try{const r=await this._http('/api/voice/stop',{sessionId:id},ac.signal);return !!r?.ok&&(await r.json()).stopped===true;}catch{return false;}finally{clearTimeout(timer);}
   }
   async start({runId,revision}={}){
@@ -2556,10 +2556,14 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
   }
   stop(reason='user'){
    if(this.stopPromise)return this.stopPromise;if(this.closed&&!this.pc&&!this.stream&&!this.sessionId&&this.state!=='starting')return Promise.resolve();
-   const id=this.sessionId;this.closed=true;this.delegationGeneration++;clearTimeout(this.timer);clearTimeout(this.delegationTimer);this.stream?.getTracks().forEach(t=>t.stop());this._send({type:'session.close'});this._state('stopping',reason);
+   const id=this.sessionId;this.closed=true;this.delegationGeneration++;clearTimeout(this.timer);clearTimeout(this.delegationTimer);this.stream?.getTracks().forEach(t=>t.stop());this._state('stopping',reason);
    this.stopPromise=(async()=>{
+    // REST hangup is the server-authoritative close. Do not race it with a
+    // client close before the server can confirm termination and settle quota.
+    const confirmed=await this._hangup(id);
+    if(!confirmed)this._send({type:'session.close'});
     if(this.dc?.readyState==='open'&&!this.finalized)await new Promise(resolve=>setTimeout(resolve,600));
-    const confirmed=await this._hangup(id);this._cleanup();this._state('stopped',confirmed?reason:'upstream-stop-unconfirmed');this.stopPromise=null;
+    this._cleanup();this._state('stopped',confirmed?reason:'upstream-stop-unconfirmed');this.stopPromise=null;
    })();return this.stopPromise;
   }
   supersede(reviseDelegation=false){this.delegationGeneration++;clearTimeout(this.delegationTimer);if(reviseDelegation)this._queueDelegation();}

@@ -1,12 +1,12 @@
 {
-  "checkedAt": "2026-09-14T13:13:12.707053+00:00",
+  "checkedAt": "2026-09-14T13:21:07.888843+00:00",
   "node": "22.23.2",
-  "tests": 200,
-  "passed": 200,
+  "tests": 202,
+  "passed": 202,
   "failed": 0,
   "skipped": 0,
-  "durationMs": 20601.6749,
+  "durationMs": 20509.3682,
   "syntaxFiles": 33,
-  "hostedBytes": 361568,
-  "offlineBytes": 361518
+  "hostedBytes": 361744,
+  "offlineBytes": 361694
 }

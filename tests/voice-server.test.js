@@ -146,3 +146,16 @@ test('reconnect receives a new reservation even when the run id is reused', asyn
   assert.equal(two.status, 200, await two.clone().text());
   assert.equal(new Set(reservations).size, 2);
 });
+
+test('already removed provider session settles only an exact absence error with its creation credential',async()=>{
+ for(const scenario of ['same-key','different-key','generic-404','other-code']){
+  const d=deps(),sessionId='live_gone_123';
+  const fetcher=async url=>url.endsWith('/hangup')?new Response(JSON.stringify(scenario==='generic-404'?{}:{error:{type:'invalid_request_error',code:scenario==='other-code'?'not_found':'session_id_not_found'}}),{status:404}):new Response(JSON.stringify({session:{id:sessionId},transport:{sdp:'v=0\r\nanswer'}}));
+  const options={env,fetcher,store:d.store,quota:d.quota,sleep:inertSleep,defer:()=>{}};
+  assert.equal((await start(request(valid),options)).status,200);
+  const response=await stop(stopRequest(sessionId),{...options,env:scenario==='different-key'?{...env,OPENAI_API_KEY:'changed-credential'}:env});
+  const body=await response.json();assert.equal(body.stopped,scenario==='same-key',scenario);
+  assert.equal(d.calls.some(c=>c[0]==='unknown'),scenario!=='same-key');
+  if(scenario==='same-key')assert.equal(d.calls.find(c=>c[0]==='settle')[1].actualMicrodollars,50000);
+ }
+});

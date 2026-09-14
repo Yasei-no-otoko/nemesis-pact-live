@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-09-14T13:20:02.135Z",
+  "sameCreationCredentialVerified": true,
+  "providerObservation": "404 invalid_request_error/session_id_not_found for the exact server-owned provider session",
+  "inference": "Provider no longer has this known active session under its creation credential; final usage is still unknown",
+  "stopped": true,
+  "conservativeReservationRetainedMicrodollars": 50000,
+  "totalsUnchanged": true,
+  "active": 0,
+  "kill": "1",
+  "gateClearPendingNewDeployment": true
+}

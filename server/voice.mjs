@@ -1,4 +1,4 @@
-import {randomUUID} from 'node:crypto';
+import {randomUUID,createHash} from 'node:crypto';
 import {setTimeout as delay} from 'node:timers/promises';
 import {authorize,services,enabled} from './context.mjs';
 import {json,readJson,id,problem,failure} from './http.mjs';
@@ -11,17 +11,28 @@ const voiceKey=sessionId=>`nemesis:voice:${id(sessionId)}`;
 async function save(store,sessionId,record){await store.command(['SET',voiceKey(sessionId),JSON.stringify(record),'EX',86400]);}
 async function load(store,sessionId){const raw=await store.get(voiceKey(sessionId));return raw?JSON.parse(raw):null;}
 const deadline=ms=>{const ac=new AbortController(),timer=setTimeout(()=>ac.abort(),ms);return{signal:ac.signal,done:()=>clearTimeout(timer)};};
-async function hangup(sessionId,env,fetcher){
- const timeout=deadline(3000);
- try{return (await fetcher(`https://api.openai.com/v1/live/sessions/${encodeURIComponent(sessionId)}/hangup`,{method:'POST',headers:{Authorization:`Bearer ${env.OPENAI_API_KEY}`},signal:timeout.signal})).ok;}
+const credentialFingerprint=env=>createHash('sha256').update(env.OPENAI_API_KEY||'').digest('hex');
+async function hangup(sessionId,env,fetcher,record){
+ const timeout=deadline(8000);
+ try{
+  const response=await fetcher(`https://api.openai.com/v1/live/sessions/${encodeURIComponent(sessionId)}/hangup`,{method:'POST',headers:{Authorization:`Bearer ${env.OPENAI_API_KEY}`},signal:timeout.signal});
+  if(response.ok)return true;
+  // A client close can remove this known session before REST hangup arrives.
+  // Accept only the provider's exact absent-session code under the credential
+  // that created it. Generic 404, changed keys and usage claims do not qualify.
+  if(response.status===404&&record?.credentialFingerprint===credentialFingerprint(env)){
+   const body=await response.json();return body?.error?.type==='invalid_request_error'&&body.error.code==='session_id_not_found';
+  }
+  return false;
+ }
  catch{return false;}finally{timeout.done();}
 }
 export async function stopOwnedSession({sessionId,sid,store,quota,env=process.env,fetcher=fetch,reason='application'}){
  const rec=await load(store,sessionId);
  if(!rec||rec.sid!==sid)throw problem('VOICE_NOT_OWNER',403);
  if(rec.state==='stopped')return{stopped:true,uncertain:false};
- const confirmed=await hangup(sessionId,env,fetcher);
- if(!confirmed){await quota.retainUnknown({reservationId:rec.reservationId});await save(store,sessionId,{...rec,state:'unknown',reason});return{stopped:false,uncertain:true};}
+ const confirmed=await hangup(sessionId,env,fetcher,rec);
+ if(!confirmed){const retained=await quota.retainUnknown({reservationId:rec.reservationId});if(retained.reason==='settled')return{stopped:true,uncertain:false};await save(store,sessionId,{...rec,state:'unknown',reason});return{stopped:false,uncertain:true};}
  // Hangup confirms termination; HTTP does not establish final usage. Keep the
  // conservative reservation. Browser seconds can never authorize a refund.
  const settled=await quota.settle({reservationId:rec.reservationId,actualMicrodollars:RESERVE_MICRODOLLARS,terminationConfirmed:true});
@@ -64,7 +75,7 @@ export async function start(request,{env=process.env,fetcher=fetch,defer,sleep=d
   }finally{timeout.done();}
   providerId=id(result?.session?.id);const answer=result?.transport?.sdp;
   if(typeof answer!=='string'||!answer.startsWith('v=0'))throw problem('VOICE_PROVIDER_RESPONSE',502);
-  record={sid:session.sid,reservationId,runId:data.runId,revision:data.revision,state:'started',startedAt,expiresAt:startedAt+MAX_DURATION_MS};
+  record={sid:session.sid,reservationId,runId:data.runId,revision:data.revision,credentialFingerprint:credentialFingerprint(env),state:'started',startedAt,expiresAt:startedAt+MAX_DURATION_MS};
   await save(store,providerId,record);
   defer(watchdog({sessionId:providerId,sid:session.sid,reservationId,store,quota,env,fetcher},record.expiresAt-now(),sleep));
   return json({sessionId:providerId,sdp:answer,maxDurationMs:Math.max(1000,record.expiresAt-now()),model:VOICE_MODEL});

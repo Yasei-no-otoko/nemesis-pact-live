@@ -1,0 +1,40 @@
+{
+  "checkedAt": "2026-09-14T13:14:58Z",
+  "url": "https://nemesis-pact-live.vercel.app",
+  "browser": "153.0.4234.32",
+  "os": "Windows 11",
+  "operation": "automated native Edge",
+  "input": "silent AudioContext MediaStream; no human microphone or speech",
+  "realApi": true,
+  "humanNegotiationProof": false,
+  "maximumPaidSessions": 3,
+  "maximumConservativeUsd": 0.15,
+  "passed": false,
+  "error": "",
+  "tracks": [
+    "ended"
+  ],
+  "peers": [
+    "closed"
+  ],
+  "sessionStartedEvents": 1,
+  "renderer": "WEBGPU / COMPUTE",
+  "api": [
+    {
+      "path": "/api/session",
+      "status": 200
+    },
+    {
+      "path": "/api/voice/start",
+      "status": 200,
+      "model": "gpt-live-1"
+    },
+    {
+      "path": "/api/voice/stop",
+      "status": 200,
+      "stopped": false,
+      "uncertain": true
+    }
+  ],
+  "pageErrors": []
+}

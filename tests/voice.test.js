@@ -21,6 +21,15 @@ test('voice quota errors explain the per-fight limit without exposing arbitrary 
  }
 });
 
+test('normal stop uses server hangup before transport cleanup without racing a client close',async()=>{
+ const e=fixture();let resolveStop;const original=e.request;
+ e.request=(url,...args)=>url.endsWith('/stop')?new Promise(resolve=>{resolveStop=()=>resolve({ok:true,json:async()=>({stopped:true})});}):original(url,...args);
+ const v=voice(e);active.push(v);await v.start();const dc=v.dc,pc=v.pc;
+ const pending=v.stop('signed');assert.equal(e.track.stopped,true);assert.equal(pc.connectionState,'connected');
+ assert.equal(dc.sent.some(e=>e.type==='session.close'),false);resolveStop();await pending;
+ assert.equal(pc.connectionState,'closed');assert.equal(v.state,'stopped');
+});
+
 test('a correction can update an existing client delegation without a new provider event',async()=>{
  const e=fixture();let count=0;
  const v=voice(e,{onDelegation:async()=>{count++;return{spec:{version:1,title:'Revised pact',zone:count===1?'left':'right',speed:'slow',reflection:'normal',price:'reinforcements'},provider:'openai'};}});active.push(v);
