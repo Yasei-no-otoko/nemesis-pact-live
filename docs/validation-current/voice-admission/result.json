@@ -1,0 +1,36 @@
+{
+  "mode": "fixture-only",
+  "realApiCalls": 0,
+  "command": "Node 22.23.2 --test tests/*.test.js (197 passed, including the two admission matrix tests)",
+  "node": "22.23.2",
+  "tests": 2,
+  "passed": 2,
+  "matrix": {
+    "authFailures": [
+      "missing Origin",
+      "missing cookie",
+      "wrong Origin",
+      "missing CSRF",
+      "wrong CSRF",
+      "expired cookie",
+      "tampered cookie",
+      "unknown request field"
+    ],
+    "authFailureReserveCalls": 0,
+    "authFailureUpstreamCalls": 0,
+    "quotaDenial": {
+      "status": 429,
+      "reserveCalls": 1,
+      "markStartedCalls": 0,
+      "upstreamCalls": 0
+    },
+    "quotaStoreError": {
+      "status": 503,
+      "reserveCalls": 1,
+      "markStartedCalls": 0,
+      "upstreamCalls": 0
+    }
+  },
+  "checkedAt": "2026-09-14T08:30:39.167Z",
+  "responseChecks": "No fixture credential value returned"
+}

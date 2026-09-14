@@ -101,3 +101,15 @@ test('timeout covers a stalled body and ignores its late completion', async () =
   await new Promise(resolve => setImmediate(resolve));
   assert.equal(session.sessionId, null);
 });
+
+
+test('voice restart after expiry refreshes authorization while stop preserves the original owner', async () => {
+  const calls=[];
+  const s=new PactSession({fetch:async(path,options)=>{calls.push({path,csrf:options.headers['X-Nemesis-CSRF']});return new Response(JSON.stringify(path==='/api/session'?{sessionId:'fresh',csrf:'fresh-csrf',expiresAt:Date.now()+60000,voiceEnabled:true}:{stopped:true}));}});
+  s.sessionId='old';s.csrf='old-csrf';s.expiresAt=Date.now()-1;
+  await s.request('/api/voice/stop',{sessionId:'old-provider'});
+  assert.deepEqual(calls,[{path:'/api/voice/stop',csrf:'old-csrf'}]);
+  await s.request('/api/voice/start',{runId:'same-run'});
+  assert.equal(calls[1].path,'/api/session');assert.equal(calls[2].csrf,'fresh-csrf');
+  assert.equal(s.sessionId,'fresh');
+});

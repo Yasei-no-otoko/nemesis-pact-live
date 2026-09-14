@@ -4,7 +4,7 @@
   "checks": [
     "Hosted bytes, same-origin opt-in and media policy",
     "Secrets / source / unknown paths are not served",
-    "Legacy intelligence endpoint cannot bypass authenticated covenant session",
+    "Legacy endpoint returns only its deterministic mock in AI_MODE=mock",
     "GET rejected",
     "Non-JSON rejected",
     "Oversize body rejected",

@@ -1,0 +1,19 @@
+{
+  "checkedAt": "2026-09-14T08:30:39.170Z",
+  "node": "v22.23.2",
+  "results": [
+    {
+      "script": "tests/covenant-simulate.js",
+      "exitCode": 0,
+      "modelCalls": 0
+    },
+    {
+      "script": "tests/server-smoke.mjs",
+      "initialExitCode": 1,
+      "exitCode": 0,
+      "modelCalls": 0,
+      "explanation": "Outdated smoke assertion expected 400/503 from a valid request in AI_MODE=mock. Current legacy implementation correctly returns deterministic mock data. Asserted HTTP 200, mock provider and allowed contractId; rerun passed all nine checks."
+    }
+  ],
+  "historicalReportsPreserved": true
+}

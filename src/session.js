@@ -54,7 +54,9 @@
     }
     snapshot() { return { sessionId: this.sessionId, csrf: this.csrf, expiresAt: this.expiresAt, contractEnabled: this.contractEnabled, voiceEnabled: this.voiceEnabled }; }
     async request(path, body, options = {}) {
-      if (!this.csrf) await this.ensure();
+      // Refresh expired authorization before starting a new billable voice call.
+      // Stop/sign/cancel retain their original owner; they must not silently mint a new identity.
+      if (!this.csrf || (path === '/api/voice/start' && this.expiresAt <= Date.now() + 5000)) await this.ensure();
       if (typeof this.fetcher !== 'function') throw Error('Session service unavailable');
       const headers = { ...(options.headers || {}), 'Content-Type': 'application/json', 'X-Nemesis-CSRF': this.csrf };
       return this.fetcher(path, { ...options, method: options.method || 'POST', headers, credentials: 'same-origin', body: body === undefined ? undefined : JSON.stringify(body) });

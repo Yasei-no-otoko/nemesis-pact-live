@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-09-14T08:30:39.185Z",
+  "node": "22.23.2",
+  "unit": {
+    "tests": 197,
+    "passed": 197,
+    "failed": 0,
+    "skipped": 0,
+    "durationMs": 5623.6467
+  },
+  "syntax": {
+    "files": 33,
+    "passed": true
+  },
+  "build": {
+    "standaloneBytes": 359615,
+    "hostedBytes": 359665
+  },
+  "modelCalls": 0
+}

@@ -1,0 +1,27 @@
+{
+  "checkedAt": "2026-09-14T08:21:24.965Z",
+  "passed": true,
+  "store": "actual Upstash Redis",
+  "quota": "actual reserve/settle Lua in isolated namespace",
+  "model": "fixture only",
+  "realModelCalls": 0,
+  "fixtureCalls": 3,
+  "productionKeysMutated": false,
+  "parallelSignStatuses": [
+    200,
+    409,
+    409,
+    409,
+    409,
+    409,
+    409,
+    409
+  ],
+  "checks": [
+    "wrong digest and different authenticated owner rejected",
+    "eight parallel Sign requests: exactly one applies canonical revision 1",
+    "cancel invalidates unsigned proposal before signature",
+    "model response arriving after cancel cannot publish stale proposal"
+  ],
+  "isolatedKeyCount": 13
+}

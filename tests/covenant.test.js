@@ -26,3 +26,12 @@ test('memory is bounded and only completed honored fights increment honor; breac
 test('export includes source/revisions/effects, no prompt, access token or invented voice integration',()=>{const w=sign();const r=w.report();assert.equal(r.liveVoice.status,'not-used');assert.equal(r.liveVoice.connectionStarted,0);assert.equal(r.receipts[0].provider,'local-rules');assert.equal(r.receipts[0].revision,1);assert.equal(r.receipts[0].model,null);assert.equal('prompt'in r,false);assert.equal('token'in r,false);assert.equal(r.version,'0.5.0');r.receipts[0].spec.title='external mutation';assert.notEqual(w.spec.title,r.receipts[0].spec.title);});
 test('identical seed, signatures and inputs produce identical gameplay counters',()=>{function run(){const w=sign('Sanctuary left. Slow fire. Reinforcements.');w.autoParley=false;for(let i=0;i<2400&&w.phase==='combat';i++){w.step(1/120,{shoot:true,autoAim:true,mx:Math.sin(i/200)*.2,parry:i%115===0,dash:i%290===0});w.takeEvents();}return {...w.report(),receipts:w.receipts.map(r=>({...r,latencyMs:null}))};}assert.deepEqual(run(),run());});
 test('baseline center-sanctuary hook remains identical to the old collision condition',()=>{const w=new C.World('CORE');w.mods=C.modifiers('sanctuary');for(let i=0;i<1000;i++){const b={px:i%800,py:(i*17)%900,x:(i*31)%1280,y:(i*41)%800};assert.equal(w.protectBullet(b),C.segmentHit(b.px,b.py,b.x,b.y,640,400,76));}});
+
+
+test('local keyword fallback follows latest direction and explicit Japanese no-sanctuary terms',()=>{
+ const w=new V.Run('LOCAL-CORRECTIONS');
+ assert.equal(V.localProposal(w.request('Left, no, right sanctuary. Slow fire; reinforcements.')).zone,'right');
+ assert.equal(V.localProposal(w.request('右、いや左を安全に。増援は許可。')).zone,'left');
+ const none=V.localProposal(w.request('結界はなし。弾を遅く、反射を強く。通常射撃を弱くしていい'));
+ assert.equal(none.zone,'none');assert.equal(none.speed,'slow');assert.equal(none.reflection,'charged');assert.equal(none.price,'weaker_gun');
+});
