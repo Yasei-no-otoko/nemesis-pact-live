@@ -3,12 +3,22 @@ const http=require('node:http'),fs=require('node:fs'),path=require('node:path'),
 const root=path.resolve(__dirname,'../public'),port=Number(process.env.PORT||8080),lan=process.argv.includes('--lan'),host=lan?'0.0.0.0':'127.0.0.1';
 if(!Number.isInteger(port)||port<1||port>65535)throw Error('PORT must be from 1 to 65535');
 const api=import('../server/intelligence.mjs'),covenantApi=import('../server/covenant.mjs');
+const sessionApi=import('../server/session.mjs'),controlsApi=import('../server/controls.mjs'),voiceApi=import('../server/voice.mjs');
 const server=http.createServer(async(req,res)=>{
  try{const u=new URL(req.url,'http://localhost:'+port);
-  if(u.pathname==='/api/intelligence'||u.pathname==='/api/covenant'){
+  if(u.pathname.startsWith('/api/')){
    const body=['GET','HEAD'].includes(req.method)?undefined:Readable.toWeb(req);
    const request=new Request(u,{method:req.method,headers:req.headers,body,...(body?{duplex:'half'}:{})});
-   const response=await(await(u.pathname==='/api/covenant'?covenantApi:api)).handle(request);res.writeHead(response.status,Object.fromEntries(response.headers));res.end(Buffer.from(await response.arrayBuffer()));return;
+   let response;
+   if(u.pathname==='/api/intelligence')response=await(await api).handle(request);
+   else if(u.pathname==='/api/covenant')response=await(await covenantApi).handle(request);
+   else if(u.pathname==='/api/session')response=await(await sessionApi).handle(request);
+   else if(u.pathname==='/api/covenant/sign')response=await(await controlsApi).handle(request,'sign');
+   else if(u.pathname==='/api/covenant/cancel')response=await(await controlsApi).handle(request,'cancel');
+   else if(u.pathname==='/api/voice/start')response=await(await voiceApi).start(request,{defer:p=>p});
+   else if(u.pathname==='/api/voice/stop')response=await(await voiceApi).stop(request);
+   else {res.writeHead(404);res.end('Not found');return;}
+   res.writeHead(response.status,Object.fromEntries(response.headers));res.end(Buffer.from(await response.arrayBuffer()));return;
   }
   if(!['GET','HEAD'].includes(req.method)){res.writeHead(405);res.end('Method not allowed');return;}
   const part=decodeURIComponent(u.pathname);const file=path.resolve(root,'.'+part+(part.endsWith('/')?'index.html':''));

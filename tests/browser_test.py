@@ -4,15 +4,15 @@ Run: python3 tests/browser_test.py [--browser /usr/bin/chromium]
 from pathlib import Path
 import argparse, json, subprocess
 from playwright.sync_api import sync_playwright
+from browser_env import launch_kwargs, evidence_dir
 ROOT = Path(__file__).resolve().parents[1]
 p = argparse.ArgumentParser()
-p.add_argument('--browser', default='/usr/bin/chromium')
+p.add_argument('--browser', default=None)
 args = p.parse_args()
-shots = ROOT / 'docs' / 'screenshots'
-shots.mkdir(parents=True, exist_ok=True)
-html = (ROOT/'dist'/'NEMESIS-PACT.html').read_text()
+shots = evidence_dir('browser/legacy')
+html = (ROOT/'dist'/'NEMESIS-PACT.html').read_text(encoding='utf-8')
 with sync_playwright() as pw:
-    browser = pw.chromium.launch(executable_path=args.browser, headless=True, args=['--no-sandbox', '--disable-dev-shm-usage'])
+    browser = pw.chromium.launch(**launch_kwargs(args.browser, headless=True), args=['--no-sandbox', '--disable-dev-shm-usage'])
     context = browser.new_context(viewport={'width':1440,'height':900}, device_scale_factor=1, offline=True)
     page = context.new_page()
     errors, network = [], []
@@ -100,7 +100,7 @@ with sync_playwright() as pw:
     assert page.locator('#result').is_visible()
     with page.expect_download() as download:
         page.click('#export')
-    data = json.loads(Path(download.value.path()).read_text())
+    data = json.loads(Path(download.value.path()).read_text(encoding='utf-8'))
     assert data['seed']=='BROWSER-QA' and data['outcome']=='won'
     page.click('#retry')
     assert page.locator('#choices').is_visible()
@@ -123,4 +123,3 @@ with sync_playwright() as pw:
     (ROOT/'docs'/'browser-results.json').write_text(json.dumps(result,ensure_ascii=False,indent=2))
     print(json.dumps(result,ensure_ascii=False,indent=2))
     browser.close()
-

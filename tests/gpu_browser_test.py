@@ -5,12 +5,13 @@ This does not test file-URL/HTTPS delivery, real phones or WebGPU execution.
 from pathlib import Path
 import json
 from playwright.sync_api import sync_playwright
+from browser_env import launch_kwargs, evidence_dir
 ROOT=Path(__file__).resolve().parents[1]
-SHOTS=ROOT/'docs'/'recovery-screenshots'; SHOTS.mkdir(parents=True,exist_ok=True)
-html=(ROOT/'dist'/'NEMESIS-PACT.html').read_text()
+SHOTS=evidence_dir('browser/gpu')
+html=(ROOT/'dist'/'NEMESIS-PACT.html').read_text(encoding='utf-8')
 results=[]
 with sync_playwright() as pw:
-    browser=pw.chromium.launch(executable_path='/usr/bin/chromium',headless=True,args=['--no-sandbox','--disable-dev-shm-usage','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader'])
+    browser=pw.chromium.launch(**launch_kwargs(headless=True),args=['--no-sandbox','--disable-dev-shm-usage','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader'])
     for name,width,height,mobile in [('desktop',1280,800,False),('portrait',390,844,True),('small',320,568,True)]:
         context=browser.new_context(viewport={'width':width,'height':height},has_touch=mobile,is_mobile=mobile,device_scale_factor=1,offline=True)
         page=context.new_page(); errors=[]; network=[]

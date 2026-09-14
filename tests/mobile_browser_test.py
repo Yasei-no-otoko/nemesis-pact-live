@@ -5,10 +5,11 @@ Use --browser /path/to/chromium to override the locally installed executable.
 from pathlib import Path
 import argparse,json,subprocess
 from playwright.sync_api import sync_playwright
+from browser_env import launch_kwargs, evidence_dir
 ROOT=Path(__file__).resolve().parents[1]
-parser=argparse.ArgumentParser();parser.add_argument('--browser',default='/usr/bin/chromium');args=parser.parse_args()
-HTML=(ROOT/'dist/NEMESIS-PACT.html').read_text()
-OUT=ROOT/'docs'/'screenshots'/'portrait';OUT.mkdir(parents=True,exist_ok=True)
+parser=argparse.ArgumentParser();parser.add_argument('--browser',default=None);args=parser.parse_args()
+HTML=(ROOT/'dist/NEMESIS-PACT.html').read_text(encoding='utf-8')
+OUT=evidence_dir('browser/mobile')
 checks=[];sizes=[];errors=[];network=[]
 
 def assert_bounds(page,selector,minsize=44):
@@ -33,7 +34,7 @@ def build_page(browser,w,h,safe=False):
     return ctx,page
 
 with sync_playwright() as pw:
-    browser=pw.chromium.launch(executable_path=args.browser,headless=True,args=['--no-sandbox','--disable-dev-shm-usage'])
+    browser=pw.chromium.launch(**launch_kwargs(args.browser, headless=True),args=['--no-sandbox','--disable-dev-shm-usage'])
     for w,h,safe in [(320,568,False),(375,667,False),(390,844,False),(393,852,True),(430,932,True),(360,800,False)]:
         print('viewport',w,h,safe,flush=True);ctx,page=build_page(browser,w,h,safe)
         assert page.evaluate('__PACT_TEST__.mobile')

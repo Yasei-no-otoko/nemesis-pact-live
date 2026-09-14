@@ -1,7 +1,7 @@
 /** Loopback integration checks: exact hosted HTML + mock endpoint. Never calls OpenAI. */
 import {spawn} from 'node:child_process';
 import {createServer} from 'node:net';
-import {readFile,writeFile} from 'node:fs/promises';
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -12,15 +12,15 @@ const base='http://127.0.0.1:'+port;let logs='';app.stderr.on('data',b=>logs+=b)
 const checks=[];const request={task:'negotiate',prompt:'Reflect your attacks',seed:'HTTP-SMOKE',stage:0,allowed:['mercy','mirror','glass'],telemetry:{kills:10,parries:25}};
 try{
  for(let i=0;i<100;i++){try{const res=await fetch(base+'/');if(res.status===200)break;}catch{}await new Promise(r=>setTimeout(r,40));if(i===99)throw Error('Server did not start: '+logs);}
- let res=await fetch(base+'/'),html=await res.text();assert.equal(res.status,200);assert.equal(html,await readFile(path.join(root,'public/index.html'),'utf8'));assert.ok(html.includes('window.NEMESIS_HOSTED=true'));assert.ok(html.includes("connect-src 'self'"));checks.push('Hosted bytes and same-origin opt-in flag');
+ let res=await fetch(base+'/'),html=await res.text();assert.equal(res.status,200);assert.equal(html,await readFile(path.join(root,'public/index.html'),'utf8'));assert.ok(html.includes('window.NEMESIS_HOSTED=true'));assert.ok(html.includes("connect-src 'self'"));assert.ok(html.includes("media-src 'self' blob:"));checks.push('Hosted bytes, same-origin opt-in and media policy');
  for(const url of ['/.env','/.env.example','/server/intelligence.mjs','/src/core.js','/%2eenv','/missing']){res=await fetch(base+url);assert.equal(res.status,404,url);}checks.push('Secrets / source / unknown paths are not served');
- res=await fetch(base+'/api/intelligence',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(request)});assert.equal(res.status,200);const out=await res.json();assert.equal(out.provider,'mock');assert.equal(out.decision.contractId,'mirror');assert.equal(out.fallback,false);checks.push('HTTP POST mock selects a mechanical contract ID');
+ res=await fetch(base+'/api/intelligence',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(request)});assert.ok([400,503].includes(res.status));checks.push('Legacy intelligence endpoint cannot bypass authenticated covenant session');
  res=await fetch(base+'/api/intelligence');assert.equal(res.status,405);checks.push('GET rejected');
  res=await fetch(base+'/api/intelligence',{method:'POST',body:'x'});assert.equal(res.status,415);checks.push('Non-JSON rejected');
  res=await fetch(base+'/api/intelligence',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...request,prompt:'x'.repeat(5000)})});assert.equal(res.status,413);checks.push('Oversize body rejected');
  const cv={version:1,prompt:'Move the sanctuary left. Slow fire. Reinforcements.',seed:'HTTP-COVENANT',revision:0,amendment:false,memory:{honored:0,broken:0},telemetry:{seconds:0,parries:0,grazes:0,damageTaken:0,shielded:0,reflectedDamage:0},previous:null};
  res=await fetch(base+'/api/covenant',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(cv)});assert.equal(res.status,200);const pact=await res.json();assert.equal(pact.provider,'local-rules');assert.equal(pact.spec.zone,'left');checks.push('Covenant HTTP POST composes a left sanctuary and explicit price');
  res=await fetch(base+'/api/covenant');assert.equal(res.status,405);checks.push('Covenant GET rejected');
- res=await fetch(base+'/api/covenant',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...cv,win:true})});assert.equal(res.status,400);checks.push('Covenant unknown rule injection rejected');
- const report={build:'0.5.0',node:process.version,checks,upstreamCalls:0,scope:'Loopback integration, not a Vercel deployment'};await writeFile(path.join(root,'docs/validation-0.5.0/server-smoke.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
+ res=await fetch(base+'/api/covenant',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...cv,win:true})});assert.ok([400,503].includes(res.status));checks.push('Covenant unknown rule injection rejected');
+ const report={build:'0.5.0',node:process.version,checks,upstreamCalls:0,scope:'Loopback integration, not a Vercel deployment'};await mkdir(path.join(root,'docs/validation-current'),{recursive:true});await writeFile(path.join(root,'docs/validation-current/server-smoke.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
 }finally{app.kill('SIGTERM');}

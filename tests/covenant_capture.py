@@ -1,12 +1,13 @@
 """Capture actual legal-input playthroughs. The pilot observes full state (not human input)."""
 from pathlib import Path
 from playwright.sync_api import sync_playwright
+from browser_env import launch_kwargs, evidence_dir
 import json,hashlib
-R=Path(__file__).resolve().parents[1];O=R/'docs/validation-0.5.0';H=(R/'dist/NEMESIS-PACT.html').read_text()
-s=(R/'tests/simulate.js').read_text();pilot=s[s.index('function pilot(w)'):s.index('function play(')]
+R=Path(__file__).resolve().parents[1];O=evidence_dir('browser/covenant-capture');H=(R/'dist/NEMESIS-PACT.html').read_text(encoding='utf-8')
+s=(R/'tests/simulate.js').read_text(encoding='utf-8');pilot=s[s.index('function pilot(w)'):s.index('function play(')]
 reports=[]
 with sync_playwright() as pw:
- b=pw.chromium.launch(executable_path='/usr/bin/chromium',headless=False,args=['--no-sandbox','--disable-dev-shm-usage','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader'])
+ b=pw.chromium.launch(**launch_kwargs(headless=False),args=['--no-sandbox','--disable-dev-shm-usage','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader'])
  for name,width,height,mobile in [('desktop',1280,800,False),('portrait',390,844,True)]:
   c=b.new_context(viewport={'width':width,'height':height},is_mobile=mobile,has_touch=mobile,offline=True)
   p=c.new_page();errs=[];p.on('pageerror',lambda e:errs.append(str(e)))

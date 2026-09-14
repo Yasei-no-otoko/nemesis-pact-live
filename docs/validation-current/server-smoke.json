@@ -1,0 +1,17 @@
+{
+  "build": "0.5.0",
+  "node": "v22.23.2",
+  "checks": [
+    "Hosted bytes, same-origin opt-in and media policy",
+    "Secrets / source / unknown paths are not served",
+    "Legacy intelligence endpoint cannot bypass authenticated covenant session",
+    "GET rejected",
+    "Non-JSON rejected",
+    "Oversize body rejected",
+    "Covenant HTTP POST composes a left sanctuary and explicit price",
+    "Covenant GET rejected",
+    "Covenant unknown rule injection rejected"
+  ],
+  "upstreamCalls": 0,
+  "scope": "Loopback integration, not a Vercel deployment"
+}

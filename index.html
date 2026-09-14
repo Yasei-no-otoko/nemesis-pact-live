@@ -48,7 +48,7 @@
         <h1>NEMESIS<br><span>PACT<span class="title-cross">✳</span></span></h1>
         <p class="tagline">The enemy listens.<br>The battlefield changes.</p>
         <p class="title-desc">Name your terms. Sign a living covenant.<br>Return their fire. Renegotiate. Or break your word.</p>
-        <div class="mobile-only mobile-pitch"><span>01</span> MOVE.<span>02</span> PARRY.<span>03</span> MAKE A PACT.</div><div class="title-actions"><button id="first-contact" class="primary">Meet your nemesis <span>↗</span></button><button id="start" class="secondary">Full campaign</button></div><p class="first-contact-note">START HERE / FIRST CONTACT · AUTO AIM & FIRE · ONE BOSS</p>
+        <div class="mobile-only mobile-pitch"><span>01</span> MOVE.<span>02</span> PARRY.<span>03</span> MAKE A PACT.</div><div class="title-actions"><button id="first-contact" class="primary">Negotiate the rules. Fight your deal. <span>↗</span></button><button id="start" class="secondary">Full campaign</button></div><p class="first-contact-note">START HERE / FIRST CONTACT · AUTO AIM & FIRE · ONE BOSS</p>
         <div class="title-links"><button id="train" class="text-button">Training</button><button id="help" class="text-button">How to play ↗</button><button id="archive-open" class="text-button">Archive</button><button id="settings" class="text-button">Settings ↗</button><button id="daily" class="text-button">Daily seed ↗</button></div>
       </div>
       <div class="hero-caption"><span class="micro">YOUR ENEMY. YOUR RULES.</span><div><span class="tiny-line"></span> 01 / THE NOTARY</div></div>
@@ -83,7 +83,7 @@
  <div class="ai-main"><label for="ai-prompt">Your request (280 characters max)</label><textarea id="ai-prompt" maxlength="280" placeholder="Slow your bullets. I will face more of them."></textarea><div id="ai-suggestions" class="ai-suggestions"></div>
  <div class="ai-output" id="ai-output"><blockquote id="ai-line">The channel is open.</blockquote><p id="ai-rationale">This default provider uses authored, keyword-based replies. It is not a language model.</p><p id="ai-benefit" class="mechanical"></p><p id="ai-price" class="mechanical cost"></p></div>
  <p class="ai-status" id="ai-status" role="status" aria-live="polite"></p><div class="ai-buttons"><button id="ai-request" class="secondary">Propose terms</button><button id="ai-apply" class="primary" disabled>Accept & launch</button></div>
- <div class="ai-transport"><label for="ai-mode">Provider</label><select id="ai-mode"><option value="mock">Local mock (offline)</option><option value="server">Server pilot (opt-in)</option></select><input type="password" id="pilot-token" autocomplete="off" placeholder="Private pilot token (not API key)" aria-label="Private pilot access token"></div>
+ <div class="ai-transport"><label for="ai-mode">Provider</label><select id="ai-mode"><option value="mock">LOCAL RULES (offline)</option><option value="server">OPENAI (opt-in)</option></select><input type="password" id="pilot-token" autocomplete="off" placeholder="Legacy compatibility field" aria-label="Legacy pilot access token" hidden></div>
  <label class="ai-consent"><input id="ai-consent" type="checkbox"><span>For server mode: send this text, seed, sector and six aggregate play counters to this site's server. A live server may send them to OpenAI. No audio or screenshots are sent.</span></label>
  </div></div></div></section>
  <section id="archive" class="screen command-screen" hidden aria-label="World archive"><div class="command-wrap"><div class="command-top"><span class="eyebrow">ARCHIVE / SIX FORBIDDEN SKIES</span><button id="archive-close">Main menu</button></div><div class="command-heading"><div><h2>A world worth returning to.</h2><p>Sector discoveries are stored on this device. No account, online ranking or cloud save is simulated.</p></div></div><div id="archive-grid" class="archive-grid"></div></div></section>
@@ -100,7 +100,8 @@
     <div id="cv-proposal" class="cv-proposal" aria-live="polite"><div class="cv-proposal-header"><span id="cv-provider" class="provider-pill">LOCAL RULES / NO AI CALLS</span><span id="cv-revision">UNSIGNED</span></div><p id="cv-line">The pen is yours. Make a proposal.</p><h3 id="cv-contract-title">No binding terms yet.</h3><div id="cv-clauses"><p>Proposing is free. Nothing changes until you sign.</p></div><p id="cv-rationale"></p><canvas id="cv-preview" width="900" height="160" aria-label="Illustrative before and after contract preview"></canvas><p id="cv-preview-label" class="cv-caption">ILLUSTRATIVE RULE PREVIEW / NOT A RECORDING OR AI VIDEO</p></div>
     <p id="cv-status" class="cv-status" role="status">Default provider: authored keyword rules, not a language model.</p>
     <div class="cv-actions"><button id="cv-propose" class="secondary">Get counteroffer <span>→</span></button><button id="cv-sign" class="primary" disabled>Sign & enter combat <span>↗</span></button></div>
-    <details class="cv-connection"><summary>OpenAI pilot connection / privacy</summary><div class="cv-connection-fields"><label>Provider<select id="cv-mode"><option value="local">Local rules — offline rehearsal</option><option value="server">OpenAI via private server</option></select></label><label>Pilot access code<input id="cv-token" type="password" autocomplete="off" placeholder="Not an OpenAI API key"></label></div><label class="cv-consent"><input id="cv-consent" type="checkbox"><span>Send my text, contract, seed, aggregate play counters and local honor/breach counts to this server and, when configured, OpenAI. No microphone, screen recording or personal account is used.</span></label><p>GPT-Live-1 voice is not connected in this build. Server mode requires the hosted version and a configured text-model gateway. Codes are held in memory only.</p></details>
+    <details class="cv-connection"><summary>OpenAI connection / privacy</summary><div class="cv-connection-fields"><label>Provider<select id="cv-mode"><option value="local">LOCAL RULES — offline</option><option value="server">OPENAI — consent required</option></select></label><input id="cv-token" type="hidden"></div><label class="cv-consent"><input id="cv-consent" type="checkbox"><span>With consent, send text, contract, seed and aggregate play counters to this site's server and, when configured, OpenAI. Microphone audio is sent only after you press Start voice. AI generated voice is disclosed before connection. No screen recording or personal account is used.</span></label><p id="cv-session-status">Session not started. LOCAL RULES remains available offline.</p></details>
+    <section class="cv-voice" aria-label="Voice negotiation"><div class="cv-voice-heading"><span class="section-cap">VOICE NEGOTIATION</span><span id="cv-voice-state" role="status">Voice unavailable until a session is ready.</span></div><p class="cv-voice-disclosure">AI generated voice. Your microphone is sent to GPT-Live-1 only after Start voice, and is stopped when you stop, sign, cancel, or leave.</p><div class="cv-voice-controls"><button id="cv-voice-start" class="secondary" disabled>Start voice</button><button id="cv-voice-stop" class="secondary" disabled>Stop voice</button><button id="cv-voice-mute" class="secondary" disabled>Mute</button><label>Volume <input id="cv-voice-volume" type="range" min="0" max="100" value="80" disabled></label></div><div class="cv-captions" aria-live="polite"><p><b>YOU</b> <span id="cv-caption-player">—</span></p><p><b>THE NOTARY</b> <span id="cv-caption-notary">—</span></p></div></section>
    </div>
   </div>
  </div>
@@ -166,6 +167,7 @@
 <noscript>Enable JavaScript to play. This game makes no external network requests.</noscript>
 <script src="src/core.js"></script>
 <script src="src/expansion.js"></script>
+<script src="src/session.js"></script>
 <script src="src/intelligence.js"></script>
 <script src="src/covenant.js"></script>
 <script src="src/score.js"></script>
@@ -174,6 +176,7 @@
 <script src="src/meshes3d.js"></script>
 <script src="src/scenery040.js"></script>
 <script src="src/renderer3d.js"></script>
+<script src="src/voice.js"></script>
 <script src="src/game.js"></script>
 </body>
 </html>

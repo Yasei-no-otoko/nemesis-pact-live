@@ -1,0 +1,37 @@
+{
+  "checkedAt": "2026-09-14T07:04:07.122Z",
+  "model": "openai/gpt-4.1-mini",
+  "endpoint": "https://ai-gateway.vercel.sh/v1/responses",
+  "reservedMicrodollars": 10000,
+  "httpStatus": 200,
+  "providerErrorCode": null,
+  "responseStatus": "completed",
+  "spec": {
+    "version": 1,
+    "title": "Balanced Aid to Secure the Right",
+    "zone": "right",
+    "speed": "slow",
+    "reflection": "normal",
+    "price": "reinforcements",
+    "line": "A sanctuary relocated to the right, guarded by loyal turrets.",
+    "rationale": "Moving the sanctuary to the right and reducing bullet speed to slow costs 3 benefit points (2 for zone, 1 for slow). Reinforcements pay 3 points, matching the benefit total. Reflection is omitted to maintain balance as total benefit must not exceed price points."
+  },
+  "usage": {
+    "input_tokens": 590,
+    "output_tokens": 107,
+    "total_tokens": 697,
+    "input_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0
+    },
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  },
+  "latencyMs": 2892,
+  "accountedMicrodollars": 408,
+  "settlement": {
+    "ok": true,
+    "reason": "settled"
+  }
+}

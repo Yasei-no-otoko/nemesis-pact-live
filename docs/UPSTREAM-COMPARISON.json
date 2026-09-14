@@ -1,0 +1,214 @@
+{
+  "checkedAt": "2026-09-14T06:21:02.433Z",
+  "upstream": "Yasei-no-otoko/openai-100-hour-game-builder-challenge",
+  "commit": "c252e3611412734db7ce2e12187c1e677e143ab9",
+  "version": "0.4.1",
+  "comparison": "text LF normalized; original ZIP separately byte-verified",
+  "upstreamFileCount": 112,
+  "differences": [
+    {
+      "path": ".env.example",
+      "status": "different",
+      "documentedV050Change": true,
+      "matchesDocumentedBaseline": true
+    },
+    {
+      "path": ".gitignore",
+      "status": "different",
+      "documentedV050Change": false,
+      "matchesDocumentedBaseline": false
+    },
+    {
+      "path": "CHANGELOG.md",
+      "status": "different",
+      "documentedV050Change": true,
+      "matchesDocumentedBaseline": true
+    },
+    {
+      "path": "README.md",
+      "status": "different",
+      "documentedV050Change": true,
+      "matchesDocumentedBaseline": true
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "status": "different",
+      "documentedV050Change": true,
+      "matchesDocumentedBaseline": true
+    },
+    {
+      "path": "dist/NEMESIS-PACT.html",
+      "status": "different",
+      "documentedV050Change": true,
+      "matchesDocumentedBaseline": true
+    },
+    {
+      "path": "docs/AI-PROTOTYPE.md",
+      "status": "different",
+      "documentedV050Change": true,
+      "matchesDocumentedBaseline": true
+    },
+    {
+      "path": "docs/AUDIO.md",
+      "status": "different",
+      "documentedV050Change": true,
+      "matchesDocumentedBaseline": true
+    },
+    {
+      "path": "docs/DELIVERY.md",
+      "status": "different",
+      "documentedV050Change": true,
+      "matchesDocumentedBaseline": true
+    },
+    {
+      "path": "docs/DEPLOYMENT.md",
+      "status": "different",
+      "documentedV050Change": true,
+      "matchesDocumentedBaseline": true
+    },
+    {
+      "path": "docs/PROVENANCE.md",
+      "status": "different",
+      "documentedV050Change": true,
+      "matchesDocumentedBaseline": true
+    },
+    {
+      "path": "docs/VALIDATION.md",
+      "status": "different",
+      "documentedV050Change": true,
+      "matchesDocumentedBaseline": true
+    },
+    {
+      "path": "docs/checksums.json",
+      "status": "different",
+      "documentedV050Change": false,
+      "matchesDocumentedBaseline": false
+    },
+    {
+      "path": "docs/portrait-simulation-results.json",
+      "status": "different",
+      "documentedV050Change": false,
+      "matchesDocumentedBaseline": false
+    },
+    {
+      "path": "docs/simulation-results.json",
+      "status": "different",
+      "documentedV050Change": false,
+      "matchesDocumentedBaseline": false
+    },
+    {
+      "path": "index.html",
+      "status": "different",
+      "documentedV050Change": true,
+      "matchesDocumentedBaseline": true
+    },
+    {
+      "path": "package.json",
+      "status": "different",
+      "documentedV050Change": true,
+      "matchesDocumentedBaseline": true
+    },
+    {
+      "path": "public/index.html",
+      "status": "different",
+      "documentedV050Change": true,
+      "matchesDocumentedBaseline": true
+    },
+    {
+      "path": "shaders/mesh.frag",
+      "status": "different",
+      "documentedV050Change": true,
+      "matchesDocumentedBaseline": true
+    },
+    {
+      "path": "shaders/mesh.wgsl",
+      "status": "different",
+      "documentedV050Change": true,
+      "matchesDocumentedBaseline": true
+    },
+    {
+      "path": "src/core.js",
+      "status": "different",
+      "documentedV050Change": true,
+      "matchesDocumentedBaseline": true
+    },
+    {
+      "path": "src/game.js",
+      "status": "different",
+      "documentedV050Change": true,
+      "matchesDocumentedBaseline": true
+    },
+    {
+      "path": "src/meshes3d.js",
+      "status": "different",
+      "documentedV050Change": true,
+      "matchesDocumentedBaseline": true
+    },
+    {
+      "path": "src/renderer3d.js",
+      "status": "different",
+      "documentedV050Change": true,
+      "matchesDocumentedBaseline": true
+    },
+    {
+      "path": "src/scenery040.js",
+      "status": "different",
+      "documentedV050Change": true,
+      "matchesDocumentedBaseline": true
+    },
+    {
+      "path": "src/score.js",
+      "status": "different",
+      "documentedV050Change": true,
+      "matchesDocumentedBaseline": true
+    },
+    {
+      "path": "tests/audio_browser_test.py",
+      "status": "different",
+      "documentedV050Change": true,
+      "matchesDocumentedBaseline": true
+    },
+    {
+      "path": "tests/english.test.js",
+      "status": "different",
+      "documentedV050Change": true,
+      "matchesDocumentedBaseline": true
+    },
+    {
+      "path": "tests/expansion-simulate.js",
+      "status": "different",
+      "documentedV050Change": true,
+      "matchesDocumentedBaseline": true
+    },
+    {
+      "path": "tests/expansion_browser_test.py",
+      "status": "different",
+      "documentedV050Change": true,
+      "matchesDocumentedBaseline": true
+    },
+    {
+      "path": "tests/server-smoke.mjs",
+      "status": "different",
+      "documentedV050Change": true,
+      "matchesDocumentedBaseline": true
+    },
+    {
+      "path": "tests/visibility.test.js",
+      "status": "different",
+      "documentedV050Change": true,
+      "matchesDocumentedBaseline": true
+    },
+    {
+      "path": "tools/serve.js",
+      "status": "different",
+      "documentedV050Change": true,
+      "matchesDocumentedBaseline": true
+    },
+    {
+      "path": "vercel.json",
+      "status": "different",
+      "documentedV050Change": true,
+      "matchesDocumentedBaseline": true
+    }
+  ]
+}

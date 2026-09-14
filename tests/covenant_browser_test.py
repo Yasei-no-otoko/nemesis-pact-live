@@ -3,13 +3,14 @@ Controlled simulation advances use legal inputs; not an end-user performance stu
 """
 from pathlib import Path
 from playwright.sync_api import sync_playwright
+from browser_env import launch_kwargs, evidence_dir
 import hashlib, json
 R=Path(__file__).resolve().parents[1]
-OUT=R/'docs/validation-0.5.0'; OUT.mkdir(parents=True,exist_ok=True)
-HTML=(R/'dist/NEMESIS-PACT.html').read_text()
+OUT=evidence_dir('browser/covenant')
+HTML=(R/'dist/NEMESIS-PACT.html').read_text(encoding='utf-8')
 results=[]
 with sync_playwright() as pw:
-    b=pw.chromium.launch(executable_path='/usr/bin/chromium',headless=False,args=['--no-sandbox','--disable-dev-shm-usage','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader'])
+    b=pw.chromium.launch(**launch_kwargs(headless=False),args=['--no-sandbox','--disable-dev-shm-usage','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader'])
     for name,w,h,mobile in [('desktop',1280,800,False),('portrait',390,844,True),('small',320,568,True)]:
         c=b.new_context(viewport={'width':w,'height':h},has_touch=mobile,is_mobile=mobile,device_scale_factor=1,offline=True)
         p=c.new_page();p.set_default_timeout(6000); errors=[]; network=[]; checks=[]

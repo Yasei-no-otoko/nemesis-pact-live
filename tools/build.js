@@ -7,7 +7,7 @@ html=html.replace(/<script src="(src\/[^"<>]+)"><\/script>/g,(_,name)=>'<script>
 fs.mkdirSync(path.join(root,'dist'),{recursive:true});
 fs.writeFileSync(path.join(root,'dist','NEMESIS-PACT.html'),html);
 fs.mkdirSync(path.join(root,'public'),{recursive:true});
-const hosted=html.replace("connect-src 'none'","connect-src 'self'").replace('<head>','<head><script>window.NEMESIS_HOSTED=true;</script>');
+const hosted=html.replace("connect-src 'none'","connect-src 'self'").replace("media-src 'none'","media-src 'self' blob:").replace('<head>','<head><script>window.NEMESIS_HOSTED=true;</script>');
 fs.writeFileSync(path.join(root,'public','index.html'),hosted);
 console.log('Built dist/NEMESIS-PACT.html ('+Buffer.byteLength(html)+' bytes, no external assets)');
 const shaders=require('../src/renderer3d.js');

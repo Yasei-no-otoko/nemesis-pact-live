@@ -9,3 +9,8 @@ __pycache__/
 public/
 playwright-report/
 test-results/
+.work/
+.artifacts/
+
+.vercel
+.env*

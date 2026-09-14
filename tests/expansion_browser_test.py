@@ -2,9 +2,10 @@
 from pathlib import Path
 import json, hashlib
 from playwright.sync_api import sync_playwright
+from browser_env import launch_kwargs, evidence_dir
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'docs'/'validation-0.5.0'/'legacy-browser';OUT.mkdir(parents=True,exist_ok=True)
-HTML=(ROOT/'dist/NEMESIS-PACT.html').read_text()
+OUT=evidence_dir('browser/expansion')
+HTML=(ROOT/'dist/NEMESIS-PACT.html').read_text(encoding='utf-8')
 results=[]
 def wait_js(page,expr):
     for _ in range(100):
@@ -13,7 +14,7 @@ def wait_js(page,expr):
     raise AssertionError({'expr':expr,'status':page.inner_text('#ai-status'),'provider':page.inner_text('#ai-provider')})
 
 with sync_playwright() as pw:
-    browser=pw.chromium.launch(executable_path='/usr/bin/chromium',headless=False,args=['--no-sandbox','--disable-dev-shm-usage','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader'])
+    browser=pw.chromium.launch(**launch_kwargs(headless=False),args=['--no-sandbox','--disable-dev-shm-usage','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader'])
     for name,width,height,mobile in [('desktop',1280,800,False),('portrait',390,844,True),('small',320,568,True)]:
         print('BEGIN',name,flush=True)
         context=browser.new_context(viewport={'width':width,'height':height},has_touch=mobile,is_mobile=mobile,device_scale_factor=1,offline=True)

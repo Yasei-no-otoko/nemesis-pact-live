@@ -5,13 +5,13 @@ The existing mobile/desktop tests separately cover legal-input playthroughs.
 from pathlib import Path
 import argparse, json, re
 from playwright.sync_api import sync_playwright, Error
+from browser_env import launch_kwargs, evidence_dir
 ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser()
-parser.add_argument('--browser', default='/usr/bin/chromium')
+parser.add_argument('--browser', default=None)
 args = parser.parse_args()
-HTML = (ROOT / 'dist/NEMESIS-PACT.html').read_text()
-OUT = ROOT / 'docs/screenshots/english'
-OUT.mkdir(parents=True, exist_ok=True)
+HTML = (ROOT / 'dist/NEMESIS-PACT.html').read_text(encoding='utf-8')
+OUT = evidence_dir('browser/english')
 errors, network, cases = [], [], []
 # Range rectangles catch clipped text even when its parent hides overflow.
 # Vertical page scrolling is intentional; card/button clipping is not.
@@ -56,7 +56,7 @@ def fixture_upgrades(page, offset):
     }''',offset)
 
 with sync_playwright() as pw:
-    browser=pw.chromium.launch(executable_path=args.browser,headless=True,args=['--no-sandbox','--disable-dev-shm-usage'])
+    browser=pw.chromium.launch(**launch_kwargs(args.browser, headless=True),args=['--no-sandbox','--disable-dev-shm-usage'])
     for w,h,touch,safe in [(320,568,True,False),(375,667,True,False),(390,844,True,False),(393,852,True,True),(430,932,True,True),(360,800,True,False),(844,390,True,False),(1440,900,False,False),(960,600,False,False)]:
         case={'viewport':f'{w}x{h}','touch':touch,'safe_area_simulated':safe,'screens':[]}
         print('English text layout',case['viewport'],flush=True)

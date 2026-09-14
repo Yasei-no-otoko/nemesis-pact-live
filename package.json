@@ -7,7 +7,7 @@
     "start": "node tools/serve.js",
     "build": "node tools/build.js",
     "test": "node --test tests/*.test.js",
-    "check": "node --check src/core.js && node --check src/game.js && node --check src/audio.js && node --check src/touch.js && node --check src/meshes3d.js && node --check src/renderer3d.js && node --check src/expansion.js && node --check src/intelligence.js && node --check src/scenery040.js && node --check api/intelligence.mjs && node --check server/intelligence.mjs && node --check tools/serve.js && node --check tools/build.js && node --check src/score.js && node --check src/covenant.js && node --check server/covenant.mjs && node --check api/covenant.mjs",
+    "check": "node tests/check-syntax.mjs",
     "test:browser": "python3 tests/expansion_browser_test.py",
     "test:simulation": "node tests/simulate.js",
     "test:mobile": "python3 tests/expansion_browser_test.py",
@@ -26,5 +26,8 @@
   },
   "engines": {
     "node": "22.x"
+  },
+  "dependencies": {
+    "@vercel/functions": "3.9.7"
   }
 }

@@ -5,11 +5,12 @@ from pathlib import Path
 import base64, hashlib, json, math, os, wave
 import numpy as np
 from playwright.sync_api import sync_playwright
+from browser_env import launch_kwargs, evidence_dir
 
 ROOT=Path(__file__).resolve().parents[1]
-OUT=ROOT/'docs'/'validation-0.5.0';OUT.mkdir(exist_ok=True)
+OUT=evidence_dir('browser/audio')
 WAV=Path(os.environ.get('NEMESIS_AUDIO_WAV_DIR',str(OUT/'audio-wav')));WAV.mkdir(parents=True,exist_ok=True)
-HTML=(ROOT/'dist/NEMESIS-PACT.html').read_text()
+HTML=(ROOT/'dist/NEMESIS-PACT.html').read_text(encoding='utf-8')
 results={'build':'0.5.0','htmlSha256':hashlib.sha256(HTML.encode()).hexdigest(),'rendered':[],'ui':[],'checks':[]}
 
 def check(label,ok):
@@ -17,14 +18,14 @@ def check(label,ok):
     results['checks'].append(label)
 
 with sync_playwright() as pw:
-    browser=pw.chromium.launch(executable_path='/usr/bin/chromium',headless=False,args=['--no-sandbox','--disable-dev-shm-usage','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader'])
+    browser=pw.chromium.launch(**launch_kwargs(headless=False),args=['--no-sandbox','--disable-dev-shm-usage','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader'])
     results['browser']=browser.version
     ctx=browser.new_context(offline=True)
     page=ctx.new_page();errors=[];network=[]
     page.on('pageerror',lambda e:errors.append(str(e)))
     page.on('request',lambda r:network.append(r.url) if r.url.startswith(('http:','https:','ws:','wss:')) else None)
     page.set_content('<html><head></head><body>Offline audio validation</body></html>')
-    page.add_script_tag(content=(ROOT/'src/score.js').read_text());page.add_script_tag(content=(ROOT/'src/audio.js').read_text())
+    page.add_script_tag(content=(ROOT/'src/score.js').read_text(encoding='utf-8'));page.add_script_tag(content=(ROOT/'src/audio.js').read_text(encoding='utf-8'))
     tracks=page.evaluate('PactScore.TRACKS')
     for tr in tracks:
         result=page.evaluate('''async id=>{
