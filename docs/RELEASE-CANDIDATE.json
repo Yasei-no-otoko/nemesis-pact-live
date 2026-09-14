@@ -1,6 +1,6 @@
 {
-  "recordedAt": "2026-09-14T08:45:00.227Z",
-  "status": "production deployed; human interruption/demo gates open",
+  "recordedAt": "2026-09-14T08:47:15.452Z",
+  "status": "incomplete; blocked awaiting human microphone/video evidence and access choice",
   "production": "https://nemesis-pact-live.vercel.app",
   "repository": "https://github.com/Yasei-no-otoko/nemesis-pact-live",
   "repositoryVisibility": "private; user approval to publish pending",
