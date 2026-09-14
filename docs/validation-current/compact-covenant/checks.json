@@ -1,13 +1,14 @@
 {
-  "checkedAt": "2026-09-14T14:03:14.784508+00:00",
+  "checkedAt": "2026-09-14T14:08:37.253170+00:00",
   "node": "22.23.2",
   "unitTests": 202,
   "passed": 202,
   "failed": 0,
   "syntaxFiles": 33,
   "realModelCalls": 0,
-  "durationMs": 20610.6606,
-  "hostedBytes": 372754,
-  "hostedSha256": "6813e007d0618b16307f12135d5e7041f6bfa5caf187cc3ae17d39b9637a1625",
-  "offlineBytes": 372704
+  "durationMs": 20708.4573,
+  "hostedBytes": 373023,
+  "hostedSha256": "14738518d08c2cdf9e3b3ca3208f84fcee4a948eddfb611f840d0136d76653b2",
+  "offlineBytes": 372973,
+  "sourceCommit": "25100e96d6254df41287de75ac929dc7662182e1"
 }

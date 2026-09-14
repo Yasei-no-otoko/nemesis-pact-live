@@ -27,15 +27,15 @@ Before clearing an unknown-termination kill, independently confirm every affecte
 
 ## Rollback
 
-Current production source: `1c80393d5eb5aabbdffe0241fea6eb6929768f70`, READY deployment `dpl_FxPfwZhZCfVw5GVAsruErx2CjGUx`.
+Current production source: `25100e96d6254df41287de75ac929dc7662182e1`, READY deployment `dpl_5ShtYfKcwLRLrxAKpTPob1dWRzXU`.
 
-The previous source `3ff6fb0`, deployment `dpl_9VterKz8JkDeyjVGpdJrVqcm3e48`, can restore the earlier UI but reintroduces the per-app-session voice exhaustion and close race. Prefer deploying current code with paid routes disabled if an emergency rollback is needed. With the existing authenticated Vercel CLI and this project selected:
+To revert only this compact contract UI release, restore the prior source `1c80393d5eb5aabbdffe0241fea6eb6929768f70`, deployment `dpl_FxPfwZhZCfVw5GVAsruErx2CjGUx`. That deployment retains the voice replay recovery and bounded budget implementation. With the authenticated Vercel CLI and this project selected:
 
 ```sh
-vercel rollback dpl_9VterKz8JkDeyjVGpdJrVqcm3e48 --yes
+vercel rollback dpl_FxPfwZhZCfVw5GVAsruErx2CjGUx --yes
 vercel rollback status nemesis-pact-live
 ```
 
-Then verify the production alias, API gate and ledger. Rollback restores that deployment's code/environment, not prior Redis contents; do not wipe durable money or signature records. For UI-only diagnosis use the offline HTML or LOCAL RULES. Never promote a pre-quota build to restore paid service.
+Then verify the production alias, API gate and ledger. Rollback restores code/environment, not prior Redis contents; do not wipe durable money or signature records. This release did not change quotas, keys or billing settings. Never promote a pre-quota build to restore paid service.
 
 Secrets remain only in Git-ignored local environment files and sensitive server environment variables. Current exact-value scan found no configured secret in tracked files; that limited check is not a comprehensive security audit. Do not print keys, Redis tokens, cookies, full transcripts or raw provider payloads in operational logs.

@@ -1,13 +1,13 @@
 {
-  "recordedAt": "2026-09-14T13:26:50.226888+00:00",
-  "status": "incomplete; voice replay fixed and actual human parley footage reviewed; interruption and public video/source access pending",
+  "recordedAt": "2026-09-14T14:10:29.613726+00:00",
+  "status": "incomplete overall; compact desktop covenant deployed; human interruption and public video/source access pending",
   "production": "https://nemesis-pact-live.vercel.app",
   "repository": "https://github.com/Yasei-no-otoko/nemesis-pact-live",
   "repositoryVisibility": "private; user approval to publish pending",
   "branch": "ship/living-covenant",
-  "sourceCommit": "1c80393d5eb5aabbdffe0241fea6eb6929768f70",
-  "deploymentId": "dpl_FxPfwZhZCfVw5GVAsruErx2CjGUx",
-  "deploymentUrl": "https://nemesis-pact-live-o7m1vyagj-wildmans-projects.vercel.app",
+  "sourceCommit": "25100e96d6254df41287de75ac929dc7662182e1",
+  "deploymentId": "dpl_5ShtYfKcwLRLrxAKpTPob1dWRzXU",
+  "deploymentUrl": "https://nemesis-pact-live-g868fi2r1-wildmans-projects.vercel.app",
   "models": {
     "voice": "gpt-live-1",
     "contract": "openai/gpt-4.1-mini",
@@ -15,10 +15,10 @@
     "voiceBilledBy": "OpenAI direct"
   },
   "build": {
-    "hostedSha256": "f8cb75f37b9cd95459f769f15d2c2e73c61b183b4344029771b03f5b1fc88ec2",
-    "offlineSha256": "720390af7b08ad8a7482a400044475cc82e2c4813e75f993cff7e208f0b61db8",
-    "hostedBytes": 361744,
-    "offlineBytes": 361694
+    "hostedSha256": "14738518d08c2cdf9e3b3ca3208f84fcee4a948eddfb611f840d0136d76653b2",
+    "offlineSha256": "57590eb315181b74a3778c0e15375de1e41bbf28b28fe50fb86a854f810d4e57",
+    "hostedBytes": 373023,
+    "offlineBytes": 372973
   },
   "nodeEngines": "22.x",
   "projectNodeSetting": "22.x",
@@ -32,9 +32,9 @@
     "source visibility or judging access choice"
   ],
   "budgetStatus": {
-    "lastLedgerCheck": "2026-09-14T13:23:48.512Z",
-    "directOpenaiConservativeUsd": 0.6,
-    "gatewayConservativeUsd": 0.00753,
+    "lastLedgerCheck": "2026-09-14T14:08:58.814Z",
+    "directOpenaiConservativeUsd": 0.65,
+    "gatewayConservativeUsd": 0.008379,
     "directOpenaiCapUsd": 10,
     "gatewayCapUsd": 20,
     "vercelGrantReportedUsd": 30,
@@ -48,5 +48,18 @@
     "seconds": 60,
     "public": false,
     "bytes": 7016686
+  },
+  "rollback": {
+    "sourceCommit": "1c80393d5eb5aabbdffe0241fea6eb6929768f70",
+    "deploymentId": "dpl_FxPfwZhZCfVw5GVAsruErx2CjGUx",
+    "reason": "prior UI with voice replay recovery intact; Redis records are preserved"
+  },
+  "compactUiValidation": {
+    "passed": true,
+    "desktopViewports": 5,
+    "mobileEmulations": 2,
+    "evidence": "validation-current/compact-covenant/production/result.json",
+    "sourceCommit": "25100e96d6254df41287de75ac929dc7662182e1",
+    "realModelCalls": 0
   }
 }

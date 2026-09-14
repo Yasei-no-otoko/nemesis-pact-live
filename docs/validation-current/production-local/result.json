@@ -1,7 +1,7 @@
 {
-  "checkedAt": "2026-09-14T13:57:36Z",
+  "checkedAt": "2026-09-14T14:08:58Z",
   "browser": "153.0.4234.32",
-  "url": "http://127.0.0.1:8080/",
+  "url": "https://nemesis-pact-live.vercel.app",
   "automated": true,
   "mode": "LOCAL RULES",
   "realModelCalls": 0,
@@ -22,7 +22,7 @@
       "x": 640,
       "y": 560,
       "hp": 10,
-      "energy": 54
+      "energy": 52
     },
     "enemies": [
       {
@@ -78,7 +78,7 @@
       "x": 640,
       "y": 560,
       "hp": 10,
-      "energy": 54
+      "energy": 52
     },
     "enemies": [
       {

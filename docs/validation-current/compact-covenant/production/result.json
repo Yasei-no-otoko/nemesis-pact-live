@@ -1,6 +1,6 @@
 {
-  "checkedAt": "2026-09-14T14:06:26Z",
-  "url": "http://127.0.0.1:8080/",
+  "checkedAt": "2026-09-14T14:08:58Z",
+  "url": "https://nemesis-pact-live.vercel.app",
   "browser": "153.0.4234.32",
   "realModelCalls": 0,
   "input": "automated native browser; LOCAL RULES; synthetic long captions only for geometry stress",
@@ -728,5 +728,9 @@
       "renderer": "WEBGPU / COMPUTE"
     }
   ],
-  "passed": true
+  "passed": true,
+  "sourceCommit": "25100e96d6254df41287de75ac929dc7662182e1",
+  "deploymentId": "dpl_5ShtYfKcwLRLrxAKpTPob1dWRzXU",
+  "maximumJapaneseTitleCharacters": 48,
+  "maximumJapaneseReplyCharacters": 240
 }
