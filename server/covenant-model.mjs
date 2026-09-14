@@ -14,6 +14,18 @@ const keys=['version','ruleSet','title','line','rationale'];
 // the model and visible review; a mere mention of a direction is not authority.
 export function explicitCorrectionZone(prompt=''){
   const markers=[...prompt.matchAll(/やっぱり|やはり|いや[、,\s]*|(?:左|右|中央)(?:側)?(?:ではなく|じゃなく)|\b(?:actually|instead|rather|i mean|correction)\b/gi)];
+  // A complete clause revoking the sanctuary is a location correction to none.
+  // Restrict only direct commands, not mentions, negation or hypothetical edits.
+  const clauses=[...prompt.matchAll(/[^。.!?;、,\n]+/gu)];
+  for(let n=clauses.length-1;n>=0;n--){
+    const clause=clauses[n],text=clause[0].trim().replace(/^(?:やっぱり|やはり|actually|instead)\s*/iu,'').split(/その代わり|\band (?:instead )?/iu)[0].trim();
+    const removal=/^(?:結界|安全(?:地帯)?|保護)(?:は|を)?(?:撤回(?:して(?:ください)?|する|します)?|なし(?:にして(?:ください)?)?|不要)$/u.test(text)||/^(?:please\s+)?(?:(?:remove|withdraw|revoke|cancel)\s+(?:the\s+)?(?:sanctuary|safe zone|circle)|no\s+(?:sanctuary|safe zone|circle))(?:\s+please)?$/iu.test(text);
+    if(!removal||/[?？]/u.test(prompt[clause.index+clause[0].length]||''))continue;
+    const replacement=clause[0].search(/その代わり|\band (?:instead )?/iu);
+    const later=(replacement<0?'':clause[0].slice(replacement))+prompt.slice(clause.index+clause[0].length);
+    if(/左|右|中央|\b(?:left|right|center|centre|keep|restore)\b|やめ|戻|残|撤回しない/iu.test(later))break;
+    return 'none';
+  }
   if(!markers.length)return null;
   const last=markers[markers.length-1],tail=prompt.slice(last.index+last[0].length).replace(/^[、,\s:]+/u,'').split(/[。.!?;、,\n]/u)[0];
   if(/\b(?:not|never|no|don['’]?t|without)\b|しない|ではない|じゃない|いらない|不要|やめ/u.test(tail.toLowerCase()))return null;

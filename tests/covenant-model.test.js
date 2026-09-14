@@ -26,6 +26,21 @@ test('clear English corrections are constrained while negated or ambiguous locat
  assert.equal(explicitCorrectionZone('Actually, my right arrow is broken.'),null);
  assert.equal(explicitCorrectionZone('\u3084\u3063\u3071\u308a\u53f3\u306b\u3057\u306a\u3044\u3067'),null);
 });
+test('explicit sanctuary withdrawal constrains the model to none and rejects a retained old zone',()=>{
+ for(const prompt of ['安全は撤回。その代わり敵の弾を遅く','安全は撤回その代わり敵の弾を遅く','結界を撤回して。弾を遅くして','結界なし。反射を強く','Withdraw the sanctuary and slow fire','No sanctuary. Slow fire.']){
+  const request={prompt};assert.equal(explicitCorrectionZone(prompt),'none',prompt);
+  assert.ok(modelSchema(request).properties.ruleSet.enum.every(id=>id.startsWith('zone=none,')),prompt);
+  const retained=ruleSetId({zone:'right',speed:'slow',reflection:'normal',price:'reinforcements'});
+  assert.throws(()=>decodeModelContract({...prose,ruleSet:retained},request),/ignored/);
+  const removed=ruleSetId({zone:'none',speed:'slow',reflection:'normal',price:'weaker_gun'});
+  assert.equal(decodeModelContract({...prose,ruleSet:removed},request).zone,'none');
+ }
+});
+test('sanctuary removal constraints do not override negation, hypotheticals or later restoration',()=>{
+ for(const prompt of ['安全は撤回しないで','もし安全を撤回するなら','Do not remove the sanctuary','Remove the sanctuary?','結界なし。その後は右側を安全にして','Withdraw the sanctuary and keep the right side safe','結界なし。結界を残して'])assert.equal(explicitCorrectionZone(prompt),null,prompt);
+ assert.equal(explicitCorrectionZone('結界なし。やっぱり右にして'),'right');
+ assert.equal(explicitCorrectionZone('やっぱり右にして。安全は撤回。その代わり敵の弾を遅く'),'none');
+});
 test('the reproduced right sanctuary plus charged reflection with weaker gun is rejected before canonical proposal creation',()=>{
  const bad=ruleSetId({zone:'right',speed:'normal',reflection:'charged',price:'weaker_gun'});
  assert.ok(!modelSchema().properties.ruleSet.enum.includes(bad));assert.throws(()=>decodeModelContract({...prose,ruleSet:bad}),/Unsupported/);
