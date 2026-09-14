@@ -37,7 +37,7 @@
   constructor(o={}){
    this.request=o.request;this.media=o.mediaDevices||globalThis.navigator?.mediaDevices;this.PC=o.RTCPeerConnection||globalThis.RTCPeerConnection;this.document=o.document||globalThis.document;this.audio=o.audio||null;
    this.onState=o.onState||(()=>{});this.onCaption=o.onCaption||(()=>{});this.onInput=o.onInput||(()=>{});this.onDelegation=o.onDelegation;this.onSessionClosed=o.onSessionClosed||(()=>{});this.onMedia=o.onMedia||(()=>{});
-   this.state='idle';this.transportGeneration=0;this.delegationGeneration=0;this.events=new Set();this.delegations=new Set();this.closed=true;this.finalized=false;this.stopPromise=null;
+   this.state='idle';this.transportGeneration=0;this.delegationGeneration=0;this.events=new Set();this.delegations=new Set();this.closed=true;this.finalized=false;this.stopPromise=null;this.delegationWork=null;this.fallbackDelegationDelayMs=o.fallbackDelegationDelayMs??2750;
    this._hidden=()=>{if(this.document?.visibilityState==='hidden')this.stop('background');};this._pagehide=()=>this.stop('pagehide');
   }
   _state(state,detail=''){this.state=state;this.onState({state,detail,sessionId:this.sessionId});}
@@ -53,27 +53,32 @@
     this._state('listening');this.onCaption({speaker:'user',delta:e.delta,start_ms:e.start_ms,end_ms:e.end_ms,eventId:e.event_id});this.onInput({delta:e.delta,start_ms:e.start_ms,end_ms:e.end_ms,eventId:e.event_id});return;
    }
    if(e.type==='session.output_transcript.delta'&&typeof e.delta==='string'){this.onCaption({speaker:'assistant',delta:e.delta,start_ms:e.start_ms,end_ms:e.end_ms,eventId:e.event_id});this._state('speaking');return;}
-   if(e.type==='session.delegation.created'){const id=e.delegation?.id;if(typeof id!=='string'||this.delegations.has(id)||this.delegations.size>=8)return;this.delegations.add(id);this.latestDelegation={id,event:e};this._queueDelegation();return;}
+   if(e.type==='session.delegation.created'){const id=e.delegation?.id;if(typeof id!=='string'||this.delegations.has(id)||this.delegations.size>=8)return;this.delegations.add(id);const work=this.delegationWork;this.latestDelegation={id,event:e};if(work?.generation===this.delegationGeneration)return;this._queueDelegation();return;}
    if(e.type==='error'){this._state('error','provider-error');this.stop('provider-error');}
   }
-  async _delegate(id,event){
-   if(!this.onDelegation)return;const transport=this.transportGeneration,generation=this.delegationGeneration;
+  async _delegate(id,event,generation=this.delegationGeneration,source='provider'){
+   if(!this.onDelegation)return;const transport=this.transportGeneration,work=this.delegationWork;
    try{
     const result=await this.onDelegation({delegationId:id,event,generation});
     if(this.closed||transport!==this.transportGeneration||generation!==this.delegationGeneration)return;
     const spec=canonical(result?.spec||result?.proposal||result);
     const content=spec?JSON.stringify({status:'unsigned',provider:result.provider||'local-rules',covenant:spec,instruction:'Only these displayed clauses are available. Ask the player to review and click Sign.'}):'No new covenant is available. Ask for new terms. Do not claim acceptance.';
-    this._send({type:'session.commentary.append',event_id:'covenant_'+id,delegation_id:id,content});
-   }catch{if(!this.closed&&transport===this.transportGeneration)this._state('listening','proposal-unavailable-use-text');}
+    this._send({type:'session.commentary.append',event_id:`covenant_${transport}_${generation}`,delegation_id:id??null,content});
+    if(work?.generation===generation){work.pending=false;work.committed=true;work.source=source;}
+   }catch{if(!this.closed&&transport===this.transportGeneration&&generation===this.delegationGeneration)this._state('listening','proposal-unavailable-use-text');}
   }
   _queueDelegation(){
    clearTimeout(this.delegationTimer);
-   if(this.closed||!this.latestDelegation||(this.delegationAttempts||0)>=8)return;
-   this.delegationTimer=setTimeout(()=>{this.delegationTimer=null;if(this.closed)return;this.delegationAttempts=(this.delegationAttempts||0)+1;this._delegate(this.latestDelegation.id,this.latestDelegation.event);},this.delegationDelayMs??1500);
+   const generation=this.delegationGeneration,latest=this.latestDelegation;
+   if(this.closed||(this.delegationAttempts||0)>=8)return;
+   const current=this.delegationWork;
+   if(current?.generation===generation&&(current.pending||current.committed))return;
+   const source=latest?'provider':'fallback',delay=latest?(this.delegationDelayMs??1500):this.fallbackDelegationDelayMs;
+   this.delegationTimer=setTimeout(()=>{this.delegationTimer=null;if(this.closed||generation!==this.delegationGeneration)return;this.delegationAttempts=(this.delegationAttempts||0)+1;const work={generation,source,pending:true,committed:false};this.delegationWork=work;this._delegate(latest?.id??null,latest?.event??null,generation,source);},delay);
   }
   _install(){this.document?.addEventListener?.('visibilitychange',this._hidden);globalThis.addEventListener?.('pagehide',this._pagehide);}
   _cleanup(){
-   clearTimeout(this.timer);clearTimeout(this.delegationTimer);this.timer=null;this.latestDelegation=null;this.closed=true;this.transportGeneration++;this.delegationGeneration++;
+   clearTimeout(this.timer);clearTimeout(this.delegationTimer);this.timer=null;this.latestDelegation=null;this.delegationWork=null;this.closed=true;this.transportGeneration++;this.delegationGeneration++;
    this.stream?.getTracks().forEach(t=>t.stop());try{this.dc?.close();}catch{}try{this.pc?.close();}catch{}
    if(this.audio){this.audio.pause?.();this.audio.srcObject=null;}this.stream=null;this.pc=null;this.dc=null;this.sessionId=null;
    this.document?.removeEventListener?.('visibilitychange',this._hidden);globalThis.removeEventListener?.('pagehide',this._pagehide);
@@ -85,7 +90,7 @@
   async start({runId,revision}={}){
    if(this.stopPromise||['starting','listening','speaking','stopping'].includes(this.state))return false;
    if(!this.request||!this.media?.getUserMedia||!this.PC){this._state('error','voice-not-supported-use-text');return false;}
-   const generation=++this.transportGeneration;this.delegationGeneration++;this.closed=false;this.started=false;this.finalized=false;this.finalUsage=null;this.latestDelegation=null;this.delegationAttempts=0;this.events.clear();this.delegations.clear();this._install();this._state('starting');let stream,pc,createdId;
+   const generation=++this.transportGeneration;this.delegationGeneration++;this.closed=false;this.started=false;this.finalized=false;this.finalUsage=null;this.latestDelegation=null;this.delegationWork=null;this.delegationAttempts=0;this.events.clear();this.delegations.clear();this._install();this._state('starting');let stream,pc,createdId;
    try{
     stream=await this.media.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true},video:false});
     if(generation!==this.transportGeneration||this.closed){stream.getTracks().forEach(t=>t.stop());return false;}

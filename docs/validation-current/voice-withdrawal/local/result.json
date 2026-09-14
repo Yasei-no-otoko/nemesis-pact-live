@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-14T15:43:27Z",
+  "checkedAt": "2026-09-14T15:53:35Z",
   "url": "http://127.0.0.1:8080/",
   "browser": "153.0.4234.32",
   "input": "synthetic transcript callbacks; actual UI and local canonical proposal/sign path",
@@ -31,7 +31,7 @@
         "hp": 2868
       }
     ],
-    "hostileBullets": 28,
+    "hostileBullets": 26,
     "revision": 1,
     "spec": {
       "version": 1,
@@ -101,7 +101,7 @@
         "hp": 2868
       }
     ],
-    "hostileBullets": 28,
+    "hostileBullets": 26,
     "revision": 2,
     "spec": {
       "version": 1,

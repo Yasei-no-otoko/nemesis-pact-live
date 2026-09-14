@@ -40,6 +40,28 @@ test('a correction can update an existing client delegation without a new provid
  await v.stop();v.supersede(true);await wait(10);assert.equal(count,2);
 });
 
+test('supersede creates one session-wide fallback when no provider delegation arrives',async()=>{
+ const e=fixture(),calls=[];const v=voice(e,{onDelegation:async input=>{calls.push(input);return{spec:{version:1,title:'Fallback pact',zone:'right',speed:'slow',reflection:'normal',price:'reinforcements'},provider:'openai'};}});active.push(v);
+ assert.ok(v.fallbackDelegationDelayMs>=2500&&v.fallbackDelegationDelayMs<=3000);v.fallbackDelegationDelayMs=0;await v.start();v.dc.emit({type:'session.started',event_id:'fallback-start'});v.supersede(true);await wait(10);
+ assert.equal(calls.length,1);assert.equal(calls[0].delegationId,null);assert.equal(calls[0].event,null);const reply=v.dc.sent.find(x=>x.type==='session.commentary.append');assert.equal(reply.delegation_id,null);assert.match(reply.event_id,/^covenant_\d+_-?\d+$/);
+});
+
+test('a late real provider delegation does not duplicate a committed fallback',async()=>{
+ const e=fixture();let calls=0;const v=voice(e,{onDelegation:async()=>{calls++;return{spec:{version:1,title:'Fallback pact',zone:'right',speed:'normal',reflection:'normal',price:'fragile'},provider:'openai'};}});active.push(v);v.fallbackDelegationDelayMs=0;await v.start();v.dc.emit({type:'session.started',event_id:'late-start'});v.supersede(true);await wait(10);v.dc.emit({type:'session.delegation.created',event_id:'late-real-event',delegation:{id:'real-after-fallback'}});await wait(10);assert.equal(calls,1);assert.equal(v.dc.sent.filter(x=>x.type==='session.commentary.append').length,1);assert.equal(v.dc.sent[0].delegation_id,null);
+});
+
+test('a real provider delegation during fallback keeps the one null commentary',async()=>{
+ const e=fixture(),resolvers=[],inputs=[];const v=voice(e,{onDelegation:input=>{inputs.push(input);return new Promise(resolve=>resolvers.push(resolve));}});active.push(v);v.fallbackDelegationDelayMs=0;await v.start();v.dc.emit({type:'session.started',event_id:'pending-real-start'});v.supersede(true);await wait(10);assert.equal(resolvers.length,1);v.dc.emit({type:'session.delegation.created',event_id:'pending-real-event',delegation:{id:'real-during-fallback'}});resolvers[0]({spec:{version:1,title:'Fallback',zone:'right',speed:'normal',reflection:'normal',price:'fragile'},provider:'openai'});await wait(10);assert.equal(inputs.length,1);assert.equal(inputs[0].delegationId,null);const replies=v.dc.sent.filter(x=>x.type==='session.commentary.append');assert.equal(replies.length,1);assert.equal(replies[0].delegation_id,null);v.supersede(true);await wait(10);assert.equal(inputs.length,2);assert.equal(inputs[1].delegationId,'real-during-fallback');
+});
+
+test('a correction during a pending fallback invalidates the old generation',async()=>{
+ const e=fixture(),resolvers=[],generations=[];const v=voice(e,{onDelegation:input=>{generations.push(input.generation);return new Promise(resolve=>resolvers.push(resolve));}});active.push(v);v.fallbackDelegationDelayMs=0;await v.start();v.dc.emit({type:'session.started',event_id:'pending-start'});v.supersede(true);await wait(10);assert.equal(resolvers.length,1);v.supersede(true);resolvers[0]({spec:{version:1,title:'Old',zone:'right',speed:'normal',reflection:'normal',price:'fragile'},provider:'openai'});await wait(10);assert.equal(resolvers.length,2);assert.notEqual(generations[0],generations[1]);resolvers[1]({spec:{version:1,title:'Corrected',zone:'left',speed:'slow',reflection:'normal',price:'reinforcements'},provider:'openai'});await wait(10);const replies=v.dc.sent.filter(x=>x.type==='session.commentary.append');assert.equal(replies.length,1);assert.equal(JSON.parse(replies[0].content).covenant.title,'Corrected');
+});
+
+test('stop before fallback prevents the delayed callback and commentary',async()=>{
+ const e=fixture();let calls=0;const v=voice(e,{onDelegation:async()=>{calls++;return{version:1,title:'Late',zone:'right',speed:'normal',reflection:'normal',price:'fragile'};}});v.fallbackDelegationDelayMs=20;await v.start();v.dc.emit({type:'session.started',event_id:'stop-before-fallback'});v.supersede(true);await v.stop('before-fallback');await wait(30);assert.equal(calls,0);assert.equal(v.dc?.sent?.filter?.(x=>x.type==='session.commentary.append').length??0,0);
+});
+
 
 test('provider lifecycle evidence counts actual start and close once, including close during application stop',async()=>{
  const e=fixture(),states=[],closed=[];const v=voice(e,{onState:s=>states.push(s),onSessionClosed:e=>closed.push(e)});active.push(v);

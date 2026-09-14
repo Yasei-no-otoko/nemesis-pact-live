@@ -1,0 +1,550 @@
+{
+  "checkedAt": "2026-09-14T15:45:32Z",
+  "url": "https://nemesis-pact-live.vercel.app",
+  "browser": "153.0.4234.32",
+  "input": "Microsoft Haruka Desktop TTS of the recorded phrase; no new human microphone",
+  "utterance": "安全は撤回。その代わり敵の弾を遅く。",
+  "realApi": true,
+  "controlledTime": false,
+  "humanMicrophone": false,
+  "fixtureSha256": "879825be8cf17df15fb3a90fb2713037cc3aa9c67f57d38a91be7551f4c8c55a",
+  "connectionMs": 2922,
+  "fixture": {
+    "at": 18538.399999976158,
+    "durationSeconds": 4.628333333333333
+  },
+  "passed": false,
+  "error": "Page.wait_for_function: Timeout 30000ms exceeded.",
+  "failureState": {
+    "screen": "covenant-screen",
+    "coordinates": "origin top-left; x right; y down",
+    "renderer": "WEBGPU / COMPUTE",
+    "arena": {
+      "width": 1280,
+      "height": 800
+    },
+    "phase": "parley",
+    "seconds": 8.23,
+    "player": {
+      "x": 640,
+      "y": 560,
+      "hp": 9,
+      "energy": 52
+    },
+    "enemies": [
+      {
+        "type": "boss",
+        "x": 591,
+        "y": 212,
+        "hp": 2868
+      }
+    ],
+    "hostileBullets": 19,
+    "revision": 1,
+    "spec": {
+      "version": 1,
+      "title": "Right-Side Truce",
+      "zone": "right",
+      "speed": "normal",
+      "reflection": "normal",
+      "price": "reinforcements",
+      "line": "The right side is yours to risk; I will stock the arena against you.",
+      "rationale": "Validated rule budget: 2 advantage points / 3 payment points. Sanctuary stops bullets, not lasers or enemy bodies. Only the displayed clauses apply after Sign."
+    },
+    "proposal": null,
+    "effects": {
+      "shielded": 3,
+      "reflectedDamage": 0,
+      "gunDamage": 732,
+      "amendments": 0
+    },
+    "voice": "speaking",
+    "liveVoice": {
+      "model": "gpt-live-1",
+      "connectionStarted": 1,
+      "sessionClosed": 0,
+      "delegationRequests": 0,
+      "proposalsReturned": 0,
+      "openaiProposals": 0,
+      "signedContracts": 0,
+      "lastState": "speaking",
+      "status": "connected"
+    }
+  },
+  "heard": "安全は撤回その代わり敵の弾を遅く",
+  "tracks": [
+    "ended"
+  ],
+  "peers": [
+    "closed"
+  ],
+  "events": [
+    {
+      "type": "session.started",
+      "at": 18474.19999998808,
+      "delta": null,
+      "start_ms": null,
+      "end_ms": null,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 20004.899999976158,
+      "delta": "安全",
+      "start_ms": 800,
+      "end_ms": 1000,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 20164.69999998808,
+      "delta": "は",
+      "start_ms": 1000,
+      "end_ms": 1200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 20455.099999964237,
+      "delta": "撤",
+      "start_ms": 1200,
+      "end_ms": 1400,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 20655,
+      "delta": "回",
+      "start_ms": 1400,
+      "end_ms": 1600,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 20657.30000001192,
+      "delta": "了解",
+      "start_ms": 1400,
+      "end_ms": 1600,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 20847.5,
+      "delta": "、",
+      "start_ms": 1600,
+      "end_ms": 1800,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 21048.80000001192,
+      "delta": "では",
+      "start_ms": 1800,
+      "end_ms": 2000,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 21455.80000001192,
+      "delta": "防",
+      "start_ms": 2200,
+      "end_ms": 2400,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 21662.899999976158,
+      "delta": "御",
+      "start_ms": 2400,
+      "end_ms": 2600,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 21844.899999976158,
+      "delta": "その",
+      "start_ms": 2600,
+      "end_ms": 2800,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 21872,
+      "delta": "の",
+      "start_ms": 2600,
+      "end_ms": 2800,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 22072.599999964237,
+      "delta": "代わ",
+      "start_ms": 2800,
+      "end_ms": 3000,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 22076.099999964237,
+      "delta": "保",
+      "start_ms": 2800,
+      "end_ms": 3000,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 22261.599999964237,
+      "delta": "り",
+      "start_ms": 3000,
+      "end_ms": 3200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 22263.899999976158,
+      "delta": "護は",
+      "start_ms": 3000,
+      "end_ms": 3200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 22437,
+      "delta": "敵",
+      "start_ms": 3200,
+      "end_ms": 3400,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 22438.099999964237,
+      "delta": "無し",
+      "start_ms": 3200,
+      "end_ms": 3400,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 22653.099999964237,
+      "delta": "の",
+      "start_ms": 3400,
+      "end_ms": 3600,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 22866.80000001192,
+      "delta": "弾",
+      "start_ms": 3600,
+      "end_ms": 3800,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 22871.69999998808,
+      "delta": "。",
+      "start_ms": 3600,
+      "end_ms": 3800,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 23028,
+      "delta": "を",
+      "start_ms": 3800,
+      "end_ms": 4000,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 23030.599999964237,
+      "delta": "代",
+      "start_ms": 3800,
+      "end_ms": 4000,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 23258.19999998808,
+      "delta": "遅",
+      "start_ms": 4000,
+      "end_ms": 4200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 23474.19999998808,
+      "delta": "く",
+      "start_ms": 4200,
+      "end_ms": 4400,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 23476.399999976158,
+      "delta": "わり",
+      "start_ms": 4200,
+      "end_ms": 4400,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 23711.80000001192,
+      "delta": "に",
+      "start_ms": 4400,
+      "end_ms": 4600,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 23892.599999964237,
+      "delta": "敵",
+      "start_ms": 4600,
+      "end_ms": 4800,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 24103.69999998808,
+      "delta": "の",
+      "start_ms": 4800,
+      "end_ms": 5000,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 24318.30000001192,
+      "delta": "弾",
+      "start_ms": 5000,
+      "end_ms": 5200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 24484.399999976158,
+      "delta": "を",
+      "start_ms": 5200,
+      "end_ms": 5400,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 24691.19999998808,
+      "delta": "遅",
+      "start_ms": 5400,
+      "end_ms": 5600,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 24899.899999976158,
+      "delta": "くする",
+      "start_ms": 5600,
+      "end_ms": 5800,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 25305.399999976158,
+      "delta": "案を",
+      "start_ms": 6000,
+      "end_ms": 6200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 25509.399999976158,
+      "delta": "組",
+      "start_ms": 6200,
+      "end_ms": 6400,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 25687.5,
+      "delta": "みます",
+      "start_ms": 6400,
+      "end_ms": 6600,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 26084.80000001192,
+      "delta": "。",
+      "start_ms": 6800,
+      "end_ms": 7000,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 26685,
+      "delta": "対",
+      "start_ms": 7400,
+      "end_ms": 7600,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.usage.updated",
+      "at": 32562.5,
+      "delta": null,
+      "start_ms": null,
+      "end_ms": null,
+      "usage": {
+        "seconds": 15
+      },
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.usage.updated",
+      "at": 47562.80000001192,
+      "delta": null,
+      "start_ms": null,
+      "end_ms": null,
+      "usage": {
+        "seconds": 15
+      },
+      "reason": null,
+      "errorCode": null
+    }
+  ],
+  "api": [
+    {
+      "path": "/api/session",
+      "status": 200
+    },
+    {
+      "path": "/api/covenant",
+      "status": 200,
+      "model": "gpt-5.6-luna",
+      "provider": "openai",
+      "modelIssue": null,
+      "modelFormat": "living_covenant_rules_v3",
+      "spec": {
+        "version": 1,
+        "title": "Right-Side Truce",
+        "zone": "right",
+        "speed": "normal",
+        "reflection": "normal",
+        "price": "reinforcements",
+        "line": "The right side is yours to risk; I will stock the arena against you.",
+        "rationale": "Validated rule budget: 2 advantage points / 3 payment points. Sanctuary stops bullets, not lasers or enemy bodies. Only the displayed clauses apply after Sign."
+      },
+      "latencyMs": 2267,
+      "accountedMicrodollars": 400
+    },
+    {
+      "path": "/api/covenant/sign",
+      "status": 200,
+      "model": "gpt-5.6-luna",
+      "provider": "openai",
+      "spec": {
+        "line": "The right side is yours to risk; I will stock the arena against you.",
+        "price": "reinforcements",
+        "rationale": "Validated rule budget: 2 advantage points / 3 payment points. Sanctuary stops bullets, not lasers or enemy bodies. Only the displayed clauses apply after Sign.",
+        "reflection": "normal",
+        "speed": "normal",
+        "title": "Right-Side Truce",
+        "version": 1,
+        "zone": "right"
+      },
+      "signed": true,
+      "revision": 1,
+      "latencyMs": 2267
+    },
+    {
+      "path": "/api/voice/start",
+      "status": 200,
+      "model": "gpt-live-1"
+    },
+    {
+      "path": "/api/voice/stop",
+      "status": 200,
+      "stopped": true,
+      "uncertain": false,
+      "accountedMicrodollars": 50000
+    }
+  ],
+  "pageErrors": [],
+  "realModelCalls": 1,
+  "accountedMicrodollars": {
+    "openai": 50000,
+    "gateway": 400
+  }
+}

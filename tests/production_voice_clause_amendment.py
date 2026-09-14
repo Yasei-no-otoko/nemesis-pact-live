@@ -13,6 +13,7 @@ URL='https://nemesis-pact-live.vercel.app'
 # Reuse only the literal native-media fixture, never execute another paid test.
 module=ast.parse((ROOT/'tests/production_voice_luna.py').read_text(encoding='utf8'))
 SCRIPT=next(ast.literal_eval(n.value) for n in module.body if isinstance(n,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='SCRIPT' for t in n.targets))
+SCRIPT=SCRIPT.replace('probe.sent.push({type:e.type,at:performance.now()})','probe.sent.push({type:e.type,at:performance.now(),sessionWide:e.delegation_id===null})')
 fixture=ROOT/'.work/voice-clause-withdrawal.wav'
 def state(p):return json.loads(p.evaluate('render_game_to_text()'))
 with sync_playwright() as pw:
@@ -45,6 +46,7 @@ with sync_playwright() as pw:
   offered=state(p);report['heard']=p.inner_text('#cv-caption-player');assert '撤回' in report['heard']
   assert p.input_value('#cv-prompt')==report['heard'] and 'Proposal withdrawn' not in p.inner_text('#cv-status')
   assert offered['revision']==1 and offered['seconds']==before['seconds'] and offered['player']['hp']==before['player']['hp'] and offered['enemies']==before['enemies']
+  p.wait_for_function('()=>probe.sent.some(e=>e.type==="session.commentary.append")')
   p.screenshot(path=str(OUT/'01-clause-amendment-openai.png'));p.click('#cv-sign');p.wait_for_function('()=>JSON.parse(render_game_to_text()).revision===2');after=state(p)
   assert after['spec']==offered['proposal']['spec'] and after['player']['hp']==before['player']['hp'] and before['seconds']<=after['seconds']<before['seconds']+.5
   assert [e['hp'] for e in after['enemies'] if e['type']=='boss']==[e['hp'] for e in before['enemies'] if e['type']=='boss']
@@ -57,7 +59,7 @@ with sync_playwright() as pw:
   try:
    if p.locator('#cv-voice-stop').is_enabled():p.click('#cv-voice-stop')
    p.wait_for_function('()=>probe.tracks.every(t=>t.readyState==="ended") && probe.peers.every(p=>p.connectionState==="closed")',timeout=16000)
-   report['tracks']=p.evaluate('probe.tracks.map(t=>t.readyState)');report['peers']=p.evaluate('probe.peers.map(p=>p.connectionState)');report['events']=p.evaluate('probe.events')
+   report['tracks']=p.evaluate('probe.tracks.map(t=>t.readyState)');report['peers']=p.evaluate('probe.peers.map(p=>p.connectionState)');report['events']=p.evaluate('probe.events');report['sent']=p.evaluate('probe.sent')
    p.evaluate('Promise.all(probe.contexts.map(c=>c.close()))')
   except Exception as e:report['cleanupError']=str(e);report['passed']=False
   starts=[x for x in calls if x['path']=='/api/voice/start'];stops=[x for x in calls if x['path']=='/api/voice/stop'];proposals=[x for x in calls if x['path']=='/api/covenant'];signs=[x for x in calls if x['path']=='/api/covenant/sign']
