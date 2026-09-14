@@ -1,0 +1,216 @@
+{
+  "checkedAt": "2026-09-14T15:10:36Z",
+  "url": "https://nemesis-pact-live.vercel.app",
+  "realModelCalls": 0,
+  "scope": "Windows Edge automation with synthetic caption events; mobile is emulation, no microphone/API.",
+  "cases": [
+    {
+      "viewport": [
+        1280,
+        800
+      ],
+      "touchEmulation": false,
+      "passed": true,
+      "empty": {
+        "height": 139,
+        "visibleLines": 8.273809523809524,
+        "physicalHeight": 138.9375,
+        "scrollHeight": 139,
+        "outerScroll": 0,
+        "bottomGap": 12,
+        "buttons": [
+          {
+            "id": "cv-propose",
+            "top": 736,
+            "bottom": 784
+          },
+          {
+            "id": "cv-sign",
+            "top": 736,
+            "bottom": 784
+          }
+        ]
+      },
+      "long": {
+        "height": 139,
+        "visibleLines": 8.273809523809524,
+        "physicalHeight": 138.9375,
+        "scrollHeight": 437,
+        "outerScroll": 0,
+        "bottomGap": 12,
+        "buttons": [
+          {
+            "id": "cv-propose",
+            "top": 736,
+            "bottom": 784
+          },
+          {
+            "id": "cv-sign",
+            "top": 736,
+            "bottom": 784
+          }
+        ]
+      },
+      "captionCharacters": 1034,
+      "scrollAndHistoryPassed": true,
+      "pageErrors": []
+    },
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "touchEmulation": false,
+      "passed": true,
+      "empty": {
+        "height": 139,
+        "visibleLines": 8.273809523809524,
+        "physicalHeight": 187.56561279296875,
+        "scrollHeight": 139,
+        "outerScroll": 0,
+        "bottomGap": 16.20001220703125,
+        "buttons": [
+          {
+            "id": "cv-propose",
+            "top": 993.6000366210938,
+            "bottom": 1058.4000244140625
+          },
+          {
+            "id": "cv-sign",
+            "top": 993.6000366210938,
+            "bottom": 1058.4000244140625
+          }
+        ]
+      },
+      "long": {
+        "height": 139,
+        "visibleLines": 8.273809523809524,
+        "physicalHeight": 187.56561279296875,
+        "scrollHeight": 437,
+        "outerScroll": 0,
+        "bottomGap": 16.20001220703125,
+        "buttons": [
+          {
+            "id": "cv-propose",
+            "top": 993.6000366210938,
+            "bottom": 1058.4000244140625
+          },
+          {
+            "id": "cv-sign",
+            "top": 993.6000366210938,
+            "bottom": 1058.4000244140625
+          }
+        ]
+      },
+      "captionCharacters": 1034,
+      "scrollAndHistoryPassed": true,
+      "pageErrors": []
+    },
+    {
+      "viewport": [
+        960,
+        600
+      ],
+      "touchEmulation": false,
+      "passed": true,
+      "empty": {
+        "height": 139,
+        "visibleLines": 8.273809523809524,
+        "physicalHeight": 104.203125,
+        "scrollHeight": 139,
+        "outerScroll": 0,
+        "bottomGap": 9,
+        "buttons": [
+          {
+            "id": "cv-propose",
+            "top": 552,
+            "bottom": 588
+          },
+          {
+            "id": "cv-sign",
+            "top": 552,
+            "bottom": 588
+          }
+        ]
+      },
+      "long": {
+        "height": 139,
+        "visibleLines": 8.273809523809524,
+        "physicalHeight": 104.203125,
+        "scrollHeight": 437,
+        "outerScroll": 0,
+        "bottomGap": 9,
+        "buttons": [
+          {
+            "id": "cv-propose",
+            "top": 552,
+            "bottom": 588
+          },
+          {
+            "id": "cv-sign",
+            "top": 552,
+            "bottom": 588
+          }
+        ]
+      },
+      "captionCharacters": 1034,
+      "scrollAndHistoryPassed": true,
+      "pageErrors": []
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "touchEmulation": true,
+      "passed": true,
+      "empty": {
+        "height": 17,
+        "visibleLines": 1.0119047619047619,
+        "physicalHeight": 17,
+        "scrollHeight": 17,
+        "outerScroll": 669,
+        "bottomGap": 16,
+        "buttons": [
+          {
+            "id": "cv-propose",
+            "top": 869.046875,
+            "bottom": 923.046875
+          },
+          {
+            "id": "cv-sign",
+            "top": 1449.234375,
+            "bottom": 1497.234375
+          }
+        ]
+      },
+      "long": {
+        "height": 34,
+        "visibleLines": 2.0238095238095237,
+        "physicalHeight": 33.59375,
+        "scrollHeight": 873,
+        "outerScroll": 686,
+        "bottomGap": 16,
+        "buttons": [
+          {
+            "id": "cv-propose",
+            "top": 885.640625,
+            "bottom": 939.640625
+          },
+          {
+            "id": "cv-sign",
+            "top": 1465.828125,
+            "bottom": 1513.828125
+          }
+        ]
+      },
+      "captionCharacters": 1034,
+      "scrollAndHistoryPassed": true,
+      "pageErrors": []
+    }
+  ],
+  "browser": "153.0.4234.32",
+  "passed": true,
+  "sourceCommit": "31381f98f12194bd97d4d02cea194d1bb563b859",
+  "deploymentId": "dpl_8xZnyqCVV3Dw7jRoXEAxdHaVf5gP"
+}

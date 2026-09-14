@@ -11,7 +11,7 @@ GOAL.md is the execution contract and completion checklist. Preserve the framewo
 
 No blanket completion claims: distinguish recorded, user-reported and automated evidence. The production game is deployed at https://nemesis-pact-live.vercel.app with real GPT-Live-1 and Gateway GPT-5.6 Luna. Human desktop footage proves spoken mid-fight amendment; iPhone 16 Pro Max footage proves interruption but uses LOCAL RULES after correction. The resulting model bugs are fixed; automated production correction/Sign/amendment passes, and the user separately confirms the corrected OPENAI voice sequence succeeds in Windows Vivaldi. Current unit suite: 209/209, 34 syntax files.
 
-Current source `fad1fc1e338bc7a4c750742859c21889e5b009f1`, deployment `dpl_9GkMZF6NWQMbowgTY5rQ9NYAECiv`; public pools retained. The PC contract UI is compact with persistent actions and consent/details dialogs. Existing exact-60s main video and an honestly annotated 50.467s phone supplement are locally finished and playback-verified.
+Current source `31381f98f12194bd97d4d02cea194d1bb563b859`, deployment `dpl_8xZnyqCVV3Dw7jRoXEAxdHaVf5gP`; public pools retained. The PC contract UI is compact with persistent actions and consent/details dialogs. Existing exact-60s main video and an honestly annotated 50.467s phone supplement are locally finished and playback-verified.
 
 Remaining delivery: approved public human-video destination and verified viewing URL; source publication or judging-access choice. Browser/version, physical latest-UI/FPS, Android/macOS Safari and exact Gateway grant metadata/infrastructure invoice remain explicitly unverified. Do not infer that public hosting is authorized from an unanswered question. Application form/legal consent remains with the user.
 

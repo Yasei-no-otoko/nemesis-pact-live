@@ -27,16 +27,16 @@ Before clearing an unknown-termination kill, independently confirm every affecte
 
 ## Rollback
 
-Current production source: `fad1fc1e338bc7a4c750742859c21889e5b009f1`, READY deployment `dpl_9GkMZF6NWQMbowgTY5rQ9NYAECiv`. Model output format `living_covenant_rules_v3`; the browser public contract format is unchanged.
+Current production source: `31381f98f12194bd97d4d02cea194d1bb563b859`, READY deployment `dpl_8xZnyqCVV3Dw7jRoXEAxdHaVf5gP`. Model output format `living_covenant_rules_v3`; the browser public contract format is unchanged.
 
-To restore the prior gpt-4.1-mini contract model, roll back to source `a85e4935be70d58dfbaadc359a9062e5d7e672df`, deployment `dpl_7G9GHUJMkeesY33BAeb8oCyYTvAz`. It retains scrollable Notary captions, the v3 validated contract format, public budget pools and voice replay recovery. With the authenticated Vercel CLI and this project selected:
+To restore the previous shorter scrollable Notary caption, roll back to source `fad1fc1e338bc7a4c750742859c21889e5b009f1`, deployment `dpl_9GkMZF6NWQMbowgTY5rQ9NYAECiv`. It retains GPT-5.6 Luna, corrected cache accounting, public pools and voice controls. With the authenticated Vercel CLI and this project selected:
 
 ```sh
-vercel rollback dpl_7G9GHUJMkeesY33BAeb8oCyYTvAz --yes
+vercel rollback dpl_9GkMZF6NWQMbowgTY5rQ9NYAECiv --yes
 vercel rollback status nemesis-pact-live
 ```
 
-Then verify the production alias, API gate and ledger. Rollback restores code/environment, not prior Redis contents; do not wipe durable money or signature records. This release sets OPENAI_MODEL=gpt-5.6-luna and accounts for its cache-write premium; budget pools, caps, keys and payment settings are unchanged. A rollback restores the older deployment environment; keep the project OPENAI_MODEL setting aligned before any subsequent redeploy. Never promote a pre-quota build to restore paid service.
+Then verify the production alias, API gate and ledger. Rollback restores code/environment, not prior Redis contents; do not wipe durable money or signature records. This release only expands the desktop caption layout; models, budgets, keys and payment settings are unchanged. Both current and rollback deployments use GPT-5.6 Luna. Never promote a pre-quota build to restore paid service.
 
 Secrets remain only in Git-ignored local environment files and sensitive server environment variables. Current exact-value scan found no configured secret in tracked files; that limited check is not a comprehensive security audit. Do not print keys, Redis tokens, cookies, full transcripts or raw provider payloads in operational logs.
 

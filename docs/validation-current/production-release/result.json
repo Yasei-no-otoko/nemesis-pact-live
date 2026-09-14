@@ -1,10 +1,10 @@
 {
-  "checkedAt": "2026-09-14T15:03:13.250Z",
+  "checkedAt": "2026-09-14T15:10:36.546Z",
   "production": "https://nemesis-pact-live.vercel.app",
   "httpStatus": 200,
-  "hostedBytes": 373377,
-  "productionSha256": "bee4b3d9a0482e9430202a776fa2c9a972e53c9f8b8ebb81755bc967d76a7a62",
-  "localSha256": "bee4b3d9a0482e9430202a776fa2c9a972e53c9f8b8ebb81755bc967d76a7a62",
+  "hostedBytes": 373886,
+  "productionSha256": "9585bd5d9abbc1525c042a5a4a6cde047faae56536c1c456b42eb391e5410b80",
+  "localSha256": "9585bd5d9abbc1525c042a5a4a6cde047faae56536c1c456b42eb391e5410b80",
   "exactBuildMatch": true,
   "headers": {
     "permissions-policy": "camera=(), microphone=(self), geolocation=()",
@@ -21,8 +21,8 @@
     "provider": "local-rules"
   },
   "realModelCalls": 0,
-  "sourceCommit": "fad1fc1e338bc7a4c750742859c21889e5b009f1",
-  "deploymentId": "dpl_9GkMZF6NWQMbowgTY5rQ9NYAECiv",
-  "backendEvidence": "../luna/production/result.json",
-  "backendScope": "Three actual gpt-5.6-luna proposals and two explicit signatures; no new voice session created by browser regression."
+  "sourceCommit": "31381f98f12194bd97d4d02cea194d1bb563b859",
+  "deploymentId": "dpl_8xZnyqCVV3Dw7jRoXEAxdHaVf5gP",
+  "uiEvidence": "../notary-height/production/result.json",
+  "backendScope": "unchanged from Luna release; this CSS-only verification made zero model calls"
 }

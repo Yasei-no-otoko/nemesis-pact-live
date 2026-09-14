@@ -1,13 +1,13 @@
 {
-  "recordedAt": "2026-09-14T15:06:05.010269+00:00",
+  "recordedAt": "2026-09-14T15:11:22.561679+00:00",
   "status": "incomplete submission packaging; Luna contract model deployed and production signing/combat verified; public video/source access pending",
   "production": "https://nemesis-pact-live.vercel.app",
   "repository": "https://github.com/Yasei-no-otoko/nemesis-pact-live",
   "repositoryVisibility": "private; user approval to publish pending",
   "branch": "ship/living-covenant",
-  "sourceCommit": "fad1fc1e338bc7a4c750742859c21889e5b009f1",
-  "deploymentId": "dpl_9GkMZF6NWQMbowgTY5rQ9NYAECiv",
-  "deploymentUrl": "https://nemesis-pact-live-jj908jwtk-wildmans-projects.vercel.app",
+  "sourceCommit": "31381f98f12194bd97d4d02cea194d1bb563b859",
+  "deploymentId": "dpl_8xZnyqCVV3Dw7jRoXEAxdHaVf5gP",
+  "deploymentUrl": "https://nemesis-pact-live-c5psx9wee-wildmans-projects.vercel.app",
   "models": {
     "voice": "gpt-live-1",
     "contract": "openai/gpt-5.6-luna",
@@ -17,10 +17,10 @@
     "contractServiceTier": "default"
   },
   "build": {
-    "hostedSha256": "bee4b3d9a0482e9430202a776fa2c9a972e53c9f8b8ebb81755bc967d76a7a62",
-    "offlineSha256": "5291aedf8cc20602afdeaa22bc9bf23d0d5519f483511fcec65e288541c83175",
-    "hostedBytes": 373377,
-    "offlineBytes": 373327
+    "hostedSha256": "9585bd5d9abbc1525c042a5a4a6cde047faae56536c1c456b42eb391e5410b80",
+    "offlineSha256": "0356d782cbcea6877ebe2d4f766f6d0783ce9dadf0348115525e0140ac896061",
+    "hostedBytes": 373886,
+    "offlineBytes": 373836
   },
   "nodeEngines": "22.x",
   "projectNodeSetting": "22.x",
@@ -35,7 +35,7 @@
     "Android/macOS Safari physical testing"
   ],
   "budgetStatus": {
-    "lastLedgerCheck": "2026-09-14T15:03:40.406Z",
+    "lastLedgerCheck": "2026-09-14T15:10:37.763Z",
     "directOpenaiConservativeUsd": 0.85,
     "gatewayConservativeUsd": 0.018286,
     "directOpenaiCapUsd": 10,
@@ -53,9 +53,9 @@
     "bytes": 7016686
   },
   "rollback": {
-    "sourceCommit": "a85e4935be70d58dfbaadc359a9062e5d7e672df",
-    "deploymentId": "dpl_7G9GHUJMkeesY33BAeb8oCyYTvAz",
-    "reason": "prior gpt-4.1-mini contract model with same scrollable captions, v3 schema, public pools and voice controls. Preserve Redis."
+    "sourceCommit": "fad1fc1e338bc7a4c750742859c21889e5b009f1",
+    "deploymentId": "dpl_9GkMZF6NWQMbowgTY5rQ9NYAECiv",
+    "reason": "previous shorter scrollable caption, retains GPT-5.6 Luna and approved public pools; preserve Redis"
   },
   "compactUiValidation": {
     "passed": true,
@@ -122,5 +122,14 @@
     "productionModelCalls": 3,
     "localModelCalls": 2,
     "humanMicrophone": false
+  },
+  "notaryHeightValidation": {
+    "evidence": "validation-current/notary-height/production/result.json",
+    "passed": true,
+    "defaultLogicalHeight": 139,
+    "approxVisibleLines": 8.3,
+    "desktopCases": 3,
+    "mobileEmulationCases": 1,
+    "realModelCalls": 0
   }
 }
