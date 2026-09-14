@@ -31,7 +31,7 @@ with sync_playwright() as pw:
     evidence={'url':URL,'utc':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'browser':browser.version,'viewport':[1280,800],'automated':True,'physicalPhone':False,'renderer':'software WebGL2 / ANGLE SwiftShader','controlledTime':False,'homeStatus':home.status,'startupMs':round((time.monotonic()-start)*1000),'headers':{k:v for k,v in home.headers.items() if k in ['permissions-policy','x-content-type-options','referrer-policy']},'checks':[]}
     try:
         page.screenshot(path=str(OUT/'01-title.png'))
-        page.click('#first-contact'); page.check('#cv-consent')
+        page.click('#first-contact'); page.click('#cv-open-connection');page.check('#cv-consent');page.click('#cv-connection-done')
         page.wait_for_function('()=>!document.querySelector("#cv-voice-start").disabled')
         before=state(page)
         page.fill('#cv-prompt','Move the sanctuary to the left. Slow your bullets. I accept reinforcements.')

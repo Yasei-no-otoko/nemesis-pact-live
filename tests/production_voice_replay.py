@@ -47,7 +47,7 @@ with sync_playwright() as pw:
         assert all(t=='ended' for t in page.evaluate('replay.tracks.map(t=>t.readyState)'))
         assert sum(c['path']=='/api/voice/stop' and c.get('stopped') is True for c in calls)==expected
     try:
-        page.goto(URL,wait_until='networkidle');page.click('#first-contact');page.check('#cv-consent')
+        page.goto(URL,wait_until='networkidle');page.click('#first-contact');page.click('#cv-open-connection');page.check('#cv-consent');page.click('#cv-connection-done')
         page.wait_for_function('()=>!document.querySelector("#cv-voice-start").disabled')
         original_cookies=context.cookies(URL)
         start_stop(1);start_stop(2)
@@ -59,7 +59,7 @@ with sync_playwright() as pw:
         assert all(t=='ended' for t in page.evaluate('replay.tracks.map(t=>t.readyState)'))
         page.screenshot(path=str(OUT/'per-fight-limit.png'))
         page.get_by_role('button',name='Main menu',exact=True).click()
-        page.click('#first-contact');page.check('#cv-consent')
+        page.click('#first-contact');page.click('#cv-open-connection');page.check('#cv-consent');page.click('#cv-connection-done')
         start_stop(3)
         assert context.cookies(URL)==original_cookies, 'App authentication was reset'
         starts=[c for c in calls if c['path']=='/api/voice/start']

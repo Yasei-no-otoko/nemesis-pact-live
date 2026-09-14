@@ -1,0 +1,732 @@
+{
+  "checkedAt": "2026-09-14T14:01:53Z",
+  "url": "http://127.0.0.1:8080/",
+  "browser": "153.0.4234.32",
+  "realModelCalls": 0,
+  "input": "automated native browser; LOCAL RULES; synthetic long captions only for geometry stress",
+  "physicalPhone": false,
+  "results": [
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "touchEmulation": false,
+      "passed": true,
+      "geometry": {
+        "scrollHeight": 800,
+        "clientHeight": 800,
+        "scrollTop": 0,
+        "controls": {
+          "cv-open-connection": {
+            "top": 34.15078353881836,
+            "bottom": 82.75078582763672,
+            "left": 1422.417236328125,
+            "right": 1646.643798828125
+          },
+          "cv-close": {
+            "top": 34.15078353881836,
+            "bottom": 82.75078582763672,
+            "left": 1660.143798828125,
+            "right": 1780.800048828125
+          },
+          "cv-voice-start": {
+            "top": 467.18438720703125,
+            "bottom": 515.7843627929688,
+            "left": 159.4499969482422,
+            "right": 271.98516845703125
+          },
+          "cv-prompt": {
+            "top": 653.484375,
+            "bottom": 753.3843994140625,
+            "left": 139.1999969482422,
+            "right": 943.7999725341797
+          },
+          "cv-propose": {
+            "top": 993.6000366210938,
+            "bottom": 1058.4000244140625,
+            "left": 139.1999969482422,
+            "right": 943.7999725341797
+          },
+          "cv-sign": {
+            "top": 993.6000366210938,
+            "bottom": 1058.4000244140625,
+            "left": 976.2000122070312,
+            "right": 1780.800048828125
+          },
+          "cv-contract-title": {
+            "top": 328.8515625,
+            "bottom": 366.1031188964844,
+            "left": 1004.5499877929688,
+            "right": 1752.4500732421875
+          },
+          "cv-clauses": {
+            "top": 382.3031311035156,
+            "bottom": 484.90313720703125,
+            "left": 1004.5499877929688,
+            "right": 1752.4500732421875
+          },
+          "cv-rule-note": {
+            "top": 501.1031188964844,
+            "bottom": 525.4031372070312,
+            "left": 1004.5499877929688,
+            "right": 1752.4500732421875
+          },
+          "cv-preview": {
+            "top": 673.5234375,
+            "bottom": 824.7234497070312,
+            "left": 1004.5499877929688,
+            "right": 1752.4500732421875
+          },
+          "cv-status": {
+            "top": 935.5499877929688,
+            "bottom": 980.1000366210938,
+            "left": 976.2000122070312,
+            "right": 1780.800048828125
+          }
+        },
+        "panels": {
+          ".covenant-wrap": {
+            "height": 800,
+            "scroll": 800
+          },
+          ".cv-editor": {
+            "height": 688,
+            "scroll": 688
+          },
+          ".cv-review": {
+            "height": 688,
+            "scroll": 688
+          },
+          ".cv-proposal": {
+            "height": 546,
+            "scroll": 546
+          }
+        }
+      },
+      "modalEscapePreservedProposal": true,
+      "modalFocusTrapped": true,
+      "signedRevision": 1,
+      "renderer": "WEBGPU / COMPUTE"
+    },
+    {
+      "viewport": [
+        1366,
+        768
+      ],
+      "touchEmulation": false,
+      "passed": true,
+      "geometry": {
+        "scrollHeight": 800,
+        "clientHeight": 800,
+        "scrollTop": 0,
+        "controls": {
+          "cv-open-connection": {
+            "top": 24.28499984741211,
+            "bottom": 58.84499740600586,
+            "left": 1011.82373046875,
+            "right": 1171.273681640625
+          },
+          "cv-close": {
+            "top": 24.28499984741211,
+            "bottom": 58.84499740600586,
+            "left": 1180.873779296875,
+            "right": 1266.6737060546875
+          },
+          "cv-voice-start": {
+            "top": 332.2200012207031,
+            "bottom": 366.7799987792969,
+            "left": 113.7137451171875,
+            "right": 193.73873901367188
+          },
+          "cv-prompt": {
+            "top": 464.6999816894531,
+            "bottom": 535.739990234375,
+            "left": 99.31375122070312,
+            "right": 671.4737854003906
+          },
+          "cv-propose": {
+            "top": 706.5599975585938,
+            "bottom": 752.6399536132812,
+            "left": 99.31375122070312,
+            "right": 671.4737854003906
+          },
+          "cv-sign": {
+            "top": 706.5599975585938,
+            "bottom": 752.6399536132812,
+            "left": 694.5137329101562,
+            "right": 1266.6737060546875
+          },
+          "cv-contract-title": {
+            "top": 233.84999084472656,
+            "bottom": 260.3399963378906,
+            "left": 714.6737060546875,
+            "right": 1246.513671875
+          },
+          "cv-clauses": {
+            "top": 271.8599853515625,
+            "bottom": 344.82000732421875,
+            "left": 714.6737060546875,
+            "right": 1246.513671875
+          },
+          "cv-rule-note": {
+            "top": 356.3399963378906,
+            "bottom": 373.6199951171875,
+            "left": 714.6737060546875,
+            "right": 1246.513671875
+          },
+          "cv-preview": {
+            "top": 478.9499816894531,
+            "bottom": 586.469970703125,
+            "left": 714.6737060546875,
+            "right": 1246.513671875
+          },
+          "cv-status": {
+            "top": 665.2799682617188,
+            "bottom": 696.9599609375,
+            "left": 694.5137329101562,
+            "right": 1266.6737060546875
+          }
+        },
+        "panels": {
+          ".covenant-wrap": {
+            "height": 800,
+            "scroll": 800
+          },
+          ".cv-editor": {
+            "height": 688,
+            "scroll": 688
+          },
+          ".cv-review": {
+            "height": 688,
+            "scroll": 688
+          },
+          ".cv-proposal": {
+            "height": 546,
+            "scroll": 546
+          }
+        }
+      },
+      "modalEscapePreservedProposal": true,
+      "modalFocusTrapped": true,
+      "signedRevision": 1,
+      "renderer": "WEBGPU / COMPUTE"
+    },
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "touchEmulation": false,
+      "passed": true,
+      "geometry": {
+        "scrollHeight": 800,
+        "clientHeight": 800,
+        "scrollTop": 0,
+        "controls": {
+          "cv-open-connection": {
+            "top": 22.767187118530273,
+            "bottom": 55.16718864440918,
+            "left": 948.278076171875,
+            "right": 1097.762451171875
+          },
+          "cv-close": {
+            "top": 22.767187118530273,
+            "bottom": 55.16718864440918,
+            "left": 1106.762451171875,
+            "right": 1187.199951171875
+          },
+          "cv-voice-start": {
+            "top": 311.45623779296875,
+            "bottom": 343.8562316894531,
+            "left": 106.30000305175781,
+            "right": 181.32342529296875
+          },
+          "cv-prompt": {
+            "top": 435.65625,
+            "bottom": 502.2562255859375,
+            "left": 92.80000305175781,
+            "right": 629.2000274658203
+          },
+          "cv-propose": {
+            "top": 662.3999633789062,
+            "bottom": 705.5999755859375,
+            "left": 92.80000305175781,
+            "right": 629.2000274658203
+          },
+          "cv-sign": {
+            "top": 662.3999633789062,
+            "bottom": 705.5999755859375,
+            "left": 650.7999877929688,
+            "right": 1187.199951171875
+          },
+          "cv-contract-title": {
+            "top": 219.234375,
+            "bottom": 244.06874084472656,
+            "left": 669.7000122070312,
+            "right": 1168.2999267578125
+          },
+          "cv-clauses": {
+            "top": 254.86874389648438,
+            "bottom": 323.26873779296875,
+            "left": 669.7000122070312,
+            "right": 1168.2999267578125
+          },
+          "cv-rule-note": {
+            "top": 334.0687561035156,
+            "bottom": 350.26873779296875,
+            "left": 669.7000122070312,
+            "right": 1168.2999267578125
+          },
+          "cv-preview": {
+            "top": 449.015625,
+            "bottom": 549.8156127929688,
+            "left": 669.7000122070312,
+            "right": 1168.2999267578125
+          },
+          "cv-status": {
+            "top": 623.7000122070312,
+            "bottom": 653.3999633789062,
+            "left": 650.7999877929688,
+            "right": 1187.199951171875
+          }
+        },
+        "panels": {
+          ".covenant-wrap": {
+            "height": 800,
+            "scroll": 800
+          },
+          ".cv-editor": {
+            "height": 688,
+            "scroll": 688
+          },
+          ".cv-review": {
+            "height": 688,
+            "scroll": 688
+          },
+          ".cv-proposal": {
+            "height": 546,
+            "scroll": 546
+          }
+        }
+      },
+      "modalEscapePreservedProposal": true,
+      "modalFocusTrapped": true,
+      "signedRevision": 1,
+      "renderer": "WEBGPU / COMPUTE"
+    },
+    {
+      "viewport": [
+        1024,
+        768
+      ],
+      "touchEmulation": false,
+      "passed": true,
+      "geometry": {
+        "scrollHeight": 800,
+        "clientHeight": 800,
+        "scrollTop": 0,
+        "controls": {
+          "cv-open-connection": {
+            "top": 84.23750305175781,
+            "bottom": 113.03750610351562,
+            "left": 786.0250244140625,
+            "right": 918.9000244140625
+          },
+          "cv-close": {
+            "top": 84.23750305175781,
+            "bottom": 113.03750610351562,
+            "left": 926.9000244140625,
+            "right": 998.4000244140625
+          },
+          "cv-voice-start": {
+            "top": 340.8500061035156,
+            "bottom": 369.6499938964844,
+            "left": 37.60000228881836,
+            "right": 104.28750228881836
+          },
+          "cv-prompt": {
+            "top": 451.25,
+            "bottom": 510.45001220703125,
+            "left": 25.600000381469727,
+            "right": 502.3999881744385
+          },
+          "cv-propose": {
+            "top": 652.7999877929688,
+            "bottom": 691.2000122070312,
+            "left": 25.600000381469727,
+            "right": 502.3999881744385
+          },
+          "cv-sign": {
+            "top": 652.7999877929688,
+            "bottom": 691.2000122070312,
+            "left": 521.6000366210938,
+            "right": 998.4000244140625
+          },
+          "cv-contract-title": {
+            "top": 258.875,
+            "bottom": 280.95001220703125,
+            "left": 538.4000244140625,
+            "right": 981.6000366210938
+          },
+          "cv-clauses": {
+            "top": 290.54998779296875,
+            "bottom": 351.3500061035156,
+            "left": 538.4000244140625,
+            "right": 981.6000366210938
+          },
+          "cv-rule-note": {
+            "top": 360.95001220703125,
+            "bottom": 375.3500061035156,
+            "left": 538.4000244140625,
+            "right": 981.6000366210938
+          },
+          "cv-preview": {
+            "top": 463.125,
+            "bottom": 552.7249755859375,
+            "left": 538.4000244140625,
+            "right": 981.6000366210938
+          },
+          "cv-status": {
+            "top": 618.4000244140625,
+            "bottom": 644.7999877929688,
+            "left": 521.6000366210938,
+            "right": 998.4000244140625
+          }
+        },
+        "panels": {
+          ".covenant-wrap": {
+            "height": 800,
+            "scroll": 800
+          },
+          ".cv-editor": {
+            "height": 688,
+            "scroll": 688
+          },
+          ".cv-review": {
+            "height": 688,
+            "scroll": 688
+          },
+          ".cv-proposal": {
+            "height": 546,
+            "scroll": 546
+          }
+        }
+      },
+      "modalEscapePreservedProposal": true,
+      "modalFocusTrapped": true,
+      "signedRevision": 1,
+      "renderer": "WEBGPU / COMPUTE"
+    },
+    {
+      "viewport": [
+        960,
+        600
+      ],
+      "touchEmulation": false,
+      "passed": true,
+      "geometry": {
+        "scrollHeight": 800,
+        "clientHeight": 800,
+        "scrollTop": 0,
+        "controls": {
+          "cv-open-connection": {
+            "top": 18.97265625,
+            "bottom": 45.97265625,
+            "left": 736.8984375,
+            "right": 861.46875
+          },
+          "cv-close": {
+            "top": 18.97265625,
+            "bottom": 45.97265625,
+            "left": 868.96875,
+            "right": 936
+          },
+          "cv-voice-start": {
+            "top": 259.546875,
+            "bottom": 286.546875,
+            "left": 35.25,
+            "right": 97.76953125
+          },
+          "cv-prompt": {
+            "top": 363.046875,
+            "bottom": 418.546875,
+            "left": 24,
+            "right": 471
+          },
+          "cv-propose": {
+            "top": 552,
+            "bottom": 588,
+            "left": 24,
+            "right": 471
+          },
+          "cv-sign": {
+            "top": 552,
+            "bottom": 588,
+            "left": 489,
+            "right": 936
+          },
+          "cv-contract-title": {
+            "top": 182.6953125,
+            "bottom": 203.390625,
+            "left": 504.75,
+            "right": 920.25
+          },
+          "cv-clauses": {
+            "top": 212.390625,
+            "bottom": 269.390625,
+            "left": 504.75,
+            "right": 920.25
+          },
+          "cv-rule-note": {
+            "top": 278.390625,
+            "bottom": 291.890625,
+            "left": 504.75,
+            "right": 920.25
+          },
+          "cv-preview": {
+            "top": 374.1796875,
+            "bottom": 458.1796875,
+            "left": 504.75,
+            "right": 920.25
+          },
+          "cv-status": {
+            "top": 519.75,
+            "bottom": 544.5,
+            "left": 489,
+            "right": 936
+          }
+        },
+        "panels": {
+          ".covenant-wrap": {
+            "height": 800,
+            "scroll": 800
+          },
+          ".cv-editor": {
+            "height": 688,
+            "scroll": 688
+          },
+          ".cv-review": {
+            "height": 688,
+            "scroll": 688
+          },
+          ".cv-proposal": {
+            "height": 546,
+            "scroll": 546
+          }
+        }
+      },
+      "modalEscapePreservedProposal": true,
+      "modalFocusTrapped": true,
+      "signedRevision": 1,
+      "renderer": "WEBGPU / COMPUTE"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "touchEmulation": true,
+      "passed": true,
+      "geometry": {
+        "scrollHeight": 1685,
+        "clientHeight": 844,
+        "scrollTop": 474,
+        "controls": {
+          "cv-open-connection": {
+            "top": -396.21875,
+            "bottom": -352.21875,
+            "left": 16,
+            "right": 191
+          },
+          "cv-close": {
+            "top": -396.21875,
+            "bottom": -352.21875,
+            "left": 199,
+            "right": 374
+          },
+          "cv-voice-start": {
+            "top": -26.953125,
+            "bottom": 17.046875,
+            "left": 31,
+            "right": 191.5
+          },
+          "cv-prompt": {
+            "top": 229.046875,
+            "bottom": 323.046875,
+            "left": 16,
+            "right": 374
+          },
+          "cv-propose": {
+            "top": 395.046875,
+            "bottom": 449.046875,
+            "left": 16,
+            "right": 374
+          },
+          "cv-sign": {
+            "top": 1147.234375,
+            "bottom": 1195.234375,
+            "left": 16,
+            "right": 374
+          },
+          "cv-contract-title": {
+            "top": 641.046875,
+            "bottom": 668.640625,
+            "left": 33,
+            "right": 357
+          },
+          "cv-clauses": {
+            "top": 680.640625,
+            "bottom": 840.640625,
+            "left": 33,
+            "right": 357
+          },
+          "cv-rule-note": {
+            "top": 852.640625,
+            "bottom": 870.640625,
+            "left": 33,
+            "right": 357
+          },
+          "cv-preview": {
+            "top": 888.640625,
+            "bottom": 1000.640625,
+            "left": 33,
+            "right": 357
+          },
+          "cv-status": {
+            "top": 1104.234375,
+            "bottom": 1137.234375,
+            "left": 16,
+            "right": 374
+          }
+        },
+        "panels": {
+          ".covenant-wrap": {
+            "height": 1685,
+            "scroll": 1685
+          },
+          ".cv-editor": {
+            "height": 786,
+            "scroll": 786
+          },
+          ".cv-review": {
+            "height": 712,
+            "scroll": 712
+          },
+          ".cv-proposal": {
+            "height": 570,
+            "scroll": 570
+          }
+        }
+      },
+      "modalEscapePreservedProposal": true,
+      "modalFocusTrapped": true,
+      "signedRevision": 1,
+      "renderer": "WEBGPU / COMPUTE"
+    },
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "touchEmulation": true,
+      "passed": true,
+      "geometry": {
+        "scrollHeight": 1788,
+        "clientHeight": 568,
+        "scrollTop": 642,
+        "controls": {
+          "cv-open-connection": {
+            "top": -564.21875,
+            "bottom": -520.21875,
+            "left": 16,
+            "right": 156
+          },
+          "cv-close": {
+            "top": -564.21875,
+            "bottom": -520.21875,
+            "left": 164,
+            "right": 304
+          },
+          "cv-voice-start": {
+            "top": -179.5625,
+            "bottom": -135.5625,
+            "left": 31,
+            "right": 156.5
+          },
+          "cv-prompt": {
+            "top": 91.4375,
+            "bottom": 185.4375,
+            "left": 16,
+            "right": 304
+          },
+          "cv-propose": {
+            "top": 257.4375,
+            "bottom": 311.4375,
+            "left": 16,
+            "right": 304
+          },
+          "cv-sign": {
+            "top": 1081.625,
+            "bottom": 1129.625,
+            "left": 16,
+            "right": 304
+          },
+          "cv-contract-title": {
+            "top": 536.4375,
+            "bottom": 564.03125,
+            "left": 33,
+            "right": 287
+          },
+          "cv-clauses": {
+            "top": 576.03125,
+            "bottom": 757.03125,
+            "left": 33,
+            "right": 287
+          },
+          "cv-rule-note": {
+            "top": 769.03125,
+            "bottom": 805.03125,
+            "left": 33,
+            "right": 287
+          },
+          "cv-preview": {
+            "top": 823.03125,
+            "bottom": 935.03125,
+            "left": 33,
+            "right": 287
+          },
+          "cv-status": {
+            "top": 1038.625,
+            "bottom": 1071.625,
+            "left": 16,
+            "right": 304
+          }
+        },
+        "panels": {
+          ".covenant-wrap": {
+            "height": 1788,
+            "scroll": 1788
+          },
+          ".cv-editor": {
+            "height": 817,
+            "scroll": 817
+          },
+          ".cv-review": {
+            "height": 784,
+            "scroll": 784
+          },
+          ".cv-proposal": {
+            "height": 642,
+            "scroll": 642
+          }
+        }
+      },
+      "modalEscapePreservedProposal": true,
+      "modalFocusTrapped": true,
+      "signedRevision": 1,
+      "renderer": "WEBGPU / COMPUTE"
+    }
+  ],
+  "passed": true
+}

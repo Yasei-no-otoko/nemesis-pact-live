@@ -18,3 +18,95 @@ body.mobile-ui[data-covenant=true] #pact-hud small{max-height:23px;overflow:hidd
 @media(max-width:600px){body.mobile-ui .cv-actions{position:static;padding:10px 0 0;background:none}body.mobile-ui .covenant-main{padding-bottom:12px}body.mobile-ui .title-actions{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}body.mobile-ui .title-actions .primary{font-size:11px;line-height:1.2;letter-spacing:-.2px;padding-left:9px;padding-right:9px}body.mobile-ui .title-actions .secondary{font-size:12px;padding-left:8px;padding-right:8px}}
 /* The capture controls exist only on the explicit demo page. */
 .demo-record{position:fixed;left:14px;bottom:12px;z-index:1000;background:#142d38;color:#ddfff3;border:1px solid #93dcca;padding:9px 13px;border-radius:6px;font:12px Arial,sans-serif}.demo-record:disabled{opacity:.6}#demo-record-help{position:fixed;left:14px;bottom:54px;max-width:260px;z-index:1000;color:#c1d7da;background:#07121df0;padding:5px 8px;font:10px/1.4 Arial,sans-serif;pointer-events:none}
+
+/* Desktop covenant desk: input and binding terms share the fixed game viewport. */
+body:not(.mobile-ui) #covenant-screen{overflow:hidden}
+#covenant-screen .covenant-wrap{max-width:none;height:100%;padding:16px 32px;display:flex;flex-direction:column;gap:14px}
+#covenant-screen .command-top{margin:0;padding-bottom:10px;flex-shrink:0;gap:16px}
+#cv-title{font:600 28px/1.2 Arial,sans-serif;letter-spacing:-.7px;margin:5px 0 0}
+.cv-top-actions{display:flex;gap:10px;align-items:center}
+.command-top #cv-open-connection{color:#b6f4e1;border-color:#77c8b76b;background:#163136}
+#covenant-screen .covenant-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;flex:1;min-height:0}
+#covenant-screen .cv-editor{display:flex;flex-direction:column;gap:8px;min-height:0}
+#covenant-screen .notary-card{display:flex;align-items:center;gap:18px;padding:10px 16px;width:100%;flex-shrink:0;min-height:96px}
+#covenant-screen .notary-identity{min-width:0}
+#covenant-screen .notary-avatar{width:66px;height:70px;min-width:66px;margin:0}
+#covenant-screen .notary-avatar:before{width:50px;height:50px}
+#covenant-screen .notary-avatar:after{width:66px;height:66px}
+#covenant-screen .notary-avatar i{width:38px;height:38px}
+#covenant-screen .notary-avatar i:last-child{width:23px;height:23px}
+#covenant-screen .notary-avatar b{font-size:25px}
+#covenant-screen .notary-card h2{font:600 22px/1.1 Arial,sans-serif;letter-spacing:.4px;margin:4px 0}
+#covenant-screen .notary-quote{font:italic 12px/1.4 Georgia,serif;margin:0}
+#covenant-screen #cv-memory{font:9px/1.4 monospace;padding:0;margin:5px 0 0;border:0}
+#cv-intro-copy{font:12px/1.5 Arial,sans-serif;color:#acbec8;margin:0;min-height:36px}
+#covenant-screen .cv-voice{margin:0;padding:12px 14px}
+#covenant-screen .cv-voice-heading{gap:8px;margin-bottom:6px}
+#cv-voice-state{display:block;overflow-wrap:anywhere;font:10px/1.4 monospace;color:#b3d5cc;min-height:14px}
+#covenant-screen .cv-voice-disclosure{font-size:11px;line-height:1.4;margin:7px 0}
+#covenant-screen .cv-voice-controls{gap:7px}
+#covenant-screen .cv-voice-controls button{min-height:36px;font-size:12px;padding:7px 10px}
+#covenant-screen .cv-voice-controls input{width:78px}
+#covenant-screen .cv-captions{margin-top:8px;padding-top:7px;font:12px/1.4 Arial,sans-serif}
+#covenant-screen .cv-captions p{display:grid;grid-template-columns:80px minmax(0,1fr);gap:6px;margin:2px 0;min-height:17px}
+#covenant-screen .cv-captions span{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;overflow-wrap:anywhere}
+#covenant-screen .cv-editor>label{margin:2px 0 0;font-size:10px}
+#covenant-screen .cv-editor textarea{font-size:14px;line-height:1.45;resize:none;min-height:74px;height:74px;padding:9px 12px;flex-shrink:0}
+#covenant-screen .cv-examples{margin:0;gap:6px;flex-wrap:nowrap}
+#covenant-screen .cv-examples button{flex:1;font-size:11px;min-height:34px;padding:6px 8px}
+.cv-propose-actions{margin-top:auto;padding-top:4px}
+.cv-propose-actions button{width:100%;display:flex;align-items:center;justify-content:space-between;min-height:48px;padding:12px 18px;font-size:14px}
+.cv-review{display:flex;flex-direction:column;gap:10px;min-width:0;min-height:0}
+.cv-review-cap{font-size:10px;color:#dec79c}
+#covenant-screen .cv-proposal{flex:1;min-height:0;display:flex;flex-direction:column;gap:12px;padding:18px 20px;background:linear-gradient(145deg,#192c34,#0e1d26)}
+#covenant-screen .cv-proposal-header{gap:12px;align-items:center}
+#covenant-screen .provider-pill{font-size:10px;max-width:78%}
+#covenant-screen #cv-revision{white-space:nowrap;font-size:10px}
+#covenant-screen #cv-line{font-size:14px;line-height:1.5;margin:0}
+#covenant-screen #cv-contract-title{font-size:23px;line-height:1.2;margin:0;letter-spacing:-.3px;overflow-wrap:anywhere}
+#covenant-screen #cv-clauses{font:14px/1.5 Arial,sans-serif;gap:14px}
+#covenant-screen #cv-clauses small{font-size:10px;line-height:1.4;margin-bottom:8px}
+#covenant-screen #cv-clauses p{margin-bottom:6px}
+#cv-rule-note{font:12px/1.5 Arial,sans-serif;color:#a9bfc6;overflow-wrap:anywhere}
+#covenant-screen #cv-preview{height:112px;min-height:112px;object-fit:contain;padding-top:6px;margin:auto 0 0}
+#covenant-screen #cv-preview-label{font-size:9px;line-height:1.4;margin:-8px 0 0}
+.cv-link{border:0;background:transparent;padding:4px 0;color:#afebd8;font:11px/1.5 Arial,sans-serif;text-align:left;min-height:24px}
+.cv-link:hover{text-decoration:underline}
+#covenant-screen .cv-status{font:11px/1.5 monospace;margin:0;min-height:33px;overflow-wrap:anywhere}
+#covenant-screen .cv-actions{position:static;padding:0;background:none}
+#covenant-screen .cv-actions button{min-height:48px;font-size:15px;padding:12px 18px}
+.cv-dialog{position:fixed;inset:0;margin:auto;width:min(560px,calc(100vw - 32px));max-height:calc(100dvh - 32px);padding:24px;border:1px solid #689d9b;border-radius:12px;background:#0c1b25;color:#edf4f1;box-shadow:0 28px 100px #0009;overflow:auto;font:14px/1.6 Arial,sans-serif}
+.cv-dialog::backdrop{background:#030a12d9;backdrop-filter:blur(6px)}
+.cv-dialog-heading{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.cv-dialog-heading .section-cap{color:#b2dace;font-size:11px}
+.cv-dialog-heading button{font:24px Arial,sans-serif;background:#17303b;border:1px solid #88aeaa40;border-radius:6px;width:38px;height:38px}
+.cv-dialog h2{font:600 27px/1.25 Arial,sans-serif;letter-spacing:-.7px;margin:10px 0 12px}
+.cv-dialog .cv-connection-fields{grid-template-columns:1fr;margin:16px 0}
+.cv-dialog .cv-connection-fields label{font:13px/1.5 Arial,sans-serif;color:#c2d7da}
+.cv-dialog select{display:block;width:100%;height:44px;margin-top:6px;padding:9px;color:#ecf9f4;background:#102734;border:1px solid #8faeaa70;border-radius:4px}
+.cv-dialog .cv-consent{font:13px/1.6 Arial,sans-serif;color:#d0e0e0}
+.cv-dialog .cv-consent input{margin-top:2px}
+.cv-dialog-note,#cv-session-status{font:12px/1.6 Arial,sans-serif;color:#a9c3c9;margin:14px 0}
+#cv-session-status{color:#b9e4c8;min-height:20px}
+.cv-dialog-actions{display:flex;gap:12px;margin-top:18px}
+.cv-dialog-actions button{flex:1;padding:12px 16px;min-height:44px;font-size:13px;justify-content:center}
+#cv-detail-content{white-space:pre-wrap;overflow-wrap:anywhere;color:#c8dcd9;margin:18px 0 24px}
+#cv-detail-done{width:100%;min-height:44px;font-size:14px;padding:12px 18px}
+.cv-dialog :focus-visible,#covenant-screen :focus-visible{outline:2px solid #abffdf;outline-offset:3px}
+body.mobile-ui #covenant-screen .covenant-wrap{height:auto;min-height:100%;padding:16px;gap:16px}
+body.mobile-ui #covenant-screen .command-top{align-items:flex-start;flex-wrap:wrap;gap:12px}
+body.mobile-ui .cv-top-actions{width:100%;gap:8px}
+body.mobile-ui .cv-top-actions button{flex:1;font-size:11px;padding:8px}
+body.mobile-ui #cv-title{font-size:26px}
+body.mobile-ui #covenant-screen .covenant-grid{display:flex;gap:22px}
+body.mobile-ui #covenant-screen .cv-editor{gap:12px}
+body.mobile-ui #covenant-screen .notary-card{gap:14px;padding:12px}
+body.mobile-ui #covenant-screen .cv-editor textarea{font-size:16px;height:94px}
+body.mobile-ui #covenant-screen .cv-voice-controls button{min-height:44px}
+body.mobile-ui #covenant-screen .cv-voice-controls input{width:auto}
+body.mobile-ui #covenant-screen .cv-examples{flex-wrap:wrap}
+body.mobile-ui #covenant-screen .cv-examples button{min-height:44px}
+body.mobile-ui #covenant-screen .cv-proposal{flex:auto;padding:16px}
+body.mobile-ui #covenant-screen #cv-clauses{grid-template-columns:1fr}
+body.mobile-ui #covenant-screen #cv-preview{margin-top:6px}
+@media(max-width:600px){.cv-dialog{padding:18px}.cv-dialog h2{font-size:24px}.cv-dialog .cv-consent{font-size:12px}}

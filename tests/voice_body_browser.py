@@ -37,7 +37,7 @@ with sync_playwright() as pw:
     errors=[];page.on('pageerror',lambda error:errors.append(str(error)))
     report={'checkedAt':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'browser':browser.version,'base':BASE,'mode':'fixture response only; native silent audio MediaStream and RTCPeerConnection','realMicrophone':False,'realModelCalls':0,'controlledTime':False}
     try:
-        page.goto(BASE,wait_until='networkidle');page.click('#first-contact');page.check('#cv-consent')
+        page.goto(BASE,wait_until='networkidle');page.click('#first-contact');page.click('#cv-open-connection');page.check('#cv-consent');page.click('#cv-connection-done')
         page.wait_for_function('()=>!document.querySelector("#cv-voice-start").disabled');page.click('#cv-voice-start')
         page.wait_for_function('()=>voiceBodyFixture.bodyEntered>0')
         page.wait_for_function('()=>document.querySelector("#cv-voice-state").textContent.includes("ERROR")',timeout=22000)

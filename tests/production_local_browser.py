@@ -1,7 +1,7 @@
 """Production LOCAL RULES regression through ordinary controls, no API or time mocks."""
 from pathlib import Path
 from playwright.sync_api import sync_playwright
-import json, time
+import json, time, os
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'docs/validation-current/production-local'
@@ -16,11 +16,13 @@ with sync_playwright() as pw:
     errors, api = [], []
     page.on('pageerror', lambda e: errors.append(str(e)))
     page.on('request', lambda r: api.append(r.url) if '/api/' in r.url else None)
-    report = {'checkedAt': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), 'browser': browser.version, 'url': 'https://nemesis-pact-live.vercel.app', 'automated': True, 'mode': 'LOCAL RULES', 'realModelCalls': 0, 'controlledTime': False, 'physicalPhone': False}
+    report = {'checkedAt': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()), 'browser': browser.version, 'url': os.environ.get('NEMESIS_TEST_URL','https://nemesis-pact-live.vercel.app'), 'automated': True, 'mode': 'LOCAL RULES', 'realModelCalls': 0, 'controlledTime': False, 'physicalPhone': False}
     try:
         page.goto(report['url'], wait_until='networkidle')
         page.click('#first-contact')
+        page.click('#cv-open-connection')
         page.select_option('#cv-mode', 'local')
+        page.click('#cv-connection-done')
         page.fill('#cv-prompt', '左、いや右を安全に。弾を遅くして、増援は許可。')
         page.click('#cv-propose')
         page.wait_for_function('()=>!document.querySelector("#cv-sign").disabled')

@@ -10,7 +10,7 @@ SESSION={"sessionId":"mock-session","csrf":"mock-csrf","expiresAt":4102444800000
 CV={"provider":"openai","model":"fixture","spec":{"version":1,"title":"Left-side Covenant","zone":"left","speed":"slow","reflection":"normal","price":"reinforcements","line":"Fixture counteroffer.","rationale":"MOCK fixture."},"requestId":"fixture-request","intentVersion":1}
 
 def open_covenant(page):
-    page.goto(BASE); page.click('#first-contact'); page.check('#cv-consent'); page.select_option('#cv-mode','server')
+    page.goto(BASE); page.click('#first-contact'); page.click('#cv-open-connection');page.check('#cv-consent');page.select_option('#cv-mode','server');page.click('#cv-connection-done')
 
 def run_case(browser,name,session_mode='ok',covenant_mode='ok',deny_mic=False,openai_fixture=False):
     context=browser.new_context(viewport={"width":390,"height":844})

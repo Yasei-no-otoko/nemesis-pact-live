@@ -30,7 +30,7 @@ with sync_playwright() as pw:
     report={'url':URL,'browser':browser.version,'input':'Synthetic silent MediaStream; no human microphone','realApi':True,'humanLiveVerified':False,'utc':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime())}
     try:
         page.goto(URL, wait_until='networkidle')
-        page.click('#first-contact'); page.check('#cv-consent')
+        page.click('#first-contact'); page.click('#cv-open-connection');page.check('#cv-consent');page.click('#cv-connection-done')
         page.wait_for_function('()=>!document.querySelector("#cv-voice-start").disabled')
         # Disable only browser stop/timer. The server watchdog remains untouched.
         page.evaluate('''()=>{const P=PactVoice.PactVoice.prototype;const old=P.stop;P.stop=function(reason){window.probe.stopCalls.push({reason,at:performance.now()});return Promise.resolve(false);};window.probe.oldStop=old;}''')

@@ -391,6 +391,98 @@ body.mobile-ui[data-covenant=true] #pact-hud small{max-height:23px;overflow:hidd
 /* The capture controls exist only on the explicit demo page. */
 .demo-record{position:fixed;left:14px;bottom:12px;z-index:1000;background:#142d38;color:#ddfff3;border:1px solid #93dcca;padding:9px 13px;border-radius:6px;font:12px Arial,sans-serif}.demo-record:disabled{opacity:.6}#demo-record-help{position:fixed;left:14px;bottom:54px;max-width:260px;z-index:1000;color:#c1d7da;background:#07121df0;padding:5px 8px;font:10px/1.4 Arial,sans-serif;pointer-events:none}
 
+/* Desktop covenant desk: input and binding terms share the fixed game viewport. */
+body:not(.mobile-ui) #covenant-screen{overflow:hidden}
+#covenant-screen .covenant-wrap{max-width:none;height:100%;padding:16px 32px;display:flex;flex-direction:column;gap:14px}
+#covenant-screen .command-top{margin:0;padding-bottom:10px;flex-shrink:0;gap:16px}
+#cv-title{font:600 28px/1.2 Arial,sans-serif;letter-spacing:-.7px;margin:5px 0 0}
+.cv-top-actions{display:flex;gap:10px;align-items:center}
+.command-top #cv-open-connection{color:#b6f4e1;border-color:#77c8b76b;background:#163136}
+#covenant-screen .covenant-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;flex:1;min-height:0}
+#covenant-screen .cv-editor{display:flex;flex-direction:column;gap:8px;min-height:0}
+#covenant-screen .notary-card{display:flex;align-items:center;gap:18px;padding:10px 16px;width:100%;flex-shrink:0;min-height:96px}
+#covenant-screen .notary-identity{min-width:0}
+#covenant-screen .notary-avatar{width:66px;height:70px;min-width:66px;margin:0}
+#covenant-screen .notary-avatar:before{width:50px;height:50px}
+#covenant-screen .notary-avatar:after{width:66px;height:66px}
+#covenant-screen .notary-avatar i{width:38px;height:38px}
+#covenant-screen .notary-avatar i:last-child{width:23px;height:23px}
+#covenant-screen .notary-avatar b{font-size:25px}
+#covenant-screen .notary-card h2{font:600 22px/1.1 Arial,sans-serif;letter-spacing:.4px;margin:4px 0}
+#covenant-screen .notary-quote{font:italic 12px/1.4 Georgia,serif;margin:0}
+#covenant-screen #cv-memory{font:9px/1.4 monospace;padding:0;margin:5px 0 0;border:0}
+#cv-intro-copy{font:12px/1.5 Arial,sans-serif;color:#acbec8;margin:0;min-height:36px}
+#covenant-screen .cv-voice{margin:0;padding:12px 14px}
+#covenant-screen .cv-voice-heading{gap:8px;margin-bottom:6px}
+#cv-voice-state{display:block;overflow-wrap:anywhere;font:10px/1.4 monospace;color:#b3d5cc;min-height:14px}
+#covenant-screen .cv-voice-disclosure{font-size:11px;line-height:1.4;margin:7px 0}
+#covenant-screen .cv-voice-controls{gap:7px}
+#covenant-screen .cv-voice-controls button{min-height:36px;font-size:12px;padding:7px 10px}
+#covenant-screen .cv-voice-controls input{width:78px}
+#covenant-screen .cv-captions{margin-top:8px;padding-top:7px;font:12px/1.4 Arial,sans-serif}
+#covenant-screen .cv-captions p{display:grid;grid-template-columns:80px minmax(0,1fr);gap:6px;margin:2px 0;min-height:17px}
+#covenant-screen .cv-captions span{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;overflow-wrap:anywhere}
+#covenant-screen .cv-editor>label{margin:2px 0 0;font-size:10px}
+#covenant-screen .cv-editor textarea{font-size:14px;line-height:1.45;resize:none;min-height:74px;height:74px;padding:9px 12px;flex-shrink:0}
+#covenant-screen .cv-examples{margin:0;gap:6px;flex-wrap:nowrap}
+#covenant-screen .cv-examples button{flex:1;font-size:11px;min-height:34px;padding:6px 8px}
+.cv-propose-actions{margin-top:auto;padding-top:4px}
+.cv-propose-actions button{width:100%;display:flex;align-items:center;justify-content:space-between;min-height:48px;padding:12px 18px;font-size:14px}
+.cv-review{display:flex;flex-direction:column;gap:10px;min-width:0;min-height:0}
+.cv-review-cap{font-size:10px;color:#dec79c}
+#covenant-screen .cv-proposal{flex:1;min-height:0;display:flex;flex-direction:column;gap:12px;padding:18px 20px;background:linear-gradient(145deg,#192c34,#0e1d26)}
+#covenant-screen .cv-proposal-header{gap:12px;align-items:center}
+#covenant-screen .provider-pill{font-size:10px;max-width:78%}
+#covenant-screen #cv-revision{white-space:nowrap;font-size:10px}
+#covenant-screen #cv-line{font-size:14px;line-height:1.5;margin:0}
+#covenant-screen #cv-contract-title{font-size:23px;line-height:1.2;margin:0;letter-spacing:-.3px;overflow-wrap:anywhere}
+#covenant-screen #cv-clauses{font:14px/1.5 Arial,sans-serif;gap:14px}
+#covenant-screen #cv-clauses small{font-size:10px;line-height:1.4;margin-bottom:8px}
+#covenant-screen #cv-clauses p{margin-bottom:6px}
+#cv-rule-note{font:12px/1.5 Arial,sans-serif;color:#a9bfc6;overflow-wrap:anywhere}
+#covenant-screen #cv-preview{height:112px;min-height:112px;object-fit:contain;padding-top:6px;margin:auto 0 0}
+#covenant-screen #cv-preview-label{font-size:9px;line-height:1.4;margin:-8px 0 0}
+.cv-link{border:0;background:transparent;padding:4px 0;color:#afebd8;font:11px/1.5 Arial,sans-serif;text-align:left;min-height:24px}
+.cv-link:hover{text-decoration:underline}
+#covenant-screen .cv-status{font:11px/1.5 monospace;margin:0;min-height:33px;overflow-wrap:anywhere}
+#covenant-screen .cv-actions{position:static;padding:0;background:none}
+#covenant-screen .cv-actions button{min-height:48px;font-size:15px;padding:12px 18px}
+.cv-dialog{position:fixed;inset:0;margin:auto;width:min(560px,calc(100vw - 32px));max-height:calc(100dvh - 32px);padding:24px;border:1px solid #689d9b;border-radius:12px;background:#0c1b25;color:#edf4f1;box-shadow:0 28px 100px #0009;overflow:auto;font:14px/1.6 Arial,sans-serif}
+.cv-dialog::backdrop{background:#030a12d9;backdrop-filter:blur(6px)}
+.cv-dialog-heading{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.cv-dialog-heading .section-cap{color:#b2dace;font-size:11px}
+.cv-dialog-heading button{font:24px Arial,sans-serif;background:#17303b;border:1px solid #88aeaa40;border-radius:6px;width:38px;height:38px}
+.cv-dialog h2{font:600 27px/1.25 Arial,sans-serif;letter-spacing:-.7px;margin:10px 0 12px}
+.cv-dialog .cv-connection-fields{grid-template-columns:1fr;margin:16px 0}
+.cv-dialog .cv-connection-fields label{font:13px/1.5 Arial,sans-serif;color:#c2d7da}
+.cv-dialog select{display:block;width:100%;height:44px;margin-top:6px;padding:9px;color:#ecf9f4;background:#102734;border:1px solid #8faeaa70;border-radius:4px}
+.cv-dialog .cv-consent{font:13px/1.6 Arial,sans-serif;color:#d0e0e0}
+.cv-dialog .cv-consent input{margin-top:2px}
+.cv-dialog-note,#cv-session-status{font:12px/1.6 Arial,sans-serif;color:#a9c3c9;margin:14px 0}
+#cv-session-status{color:#b9e4c8;min-height:20px}
+.cv-dialog-actions{display:flex;gap:12px;margin-top:18px}
+.cv-dialog-actions button{flex:1;padding:12px 16px;min-height:44px;font-size:13px;justify-content:center}
+#cv-detail-content{white-space:pre-wrap;overflow-wrap:anywhere;color:#c8dcd9;margin:18px 0 24px}
+#cv-detail-done{width:100%;min-height:44px;font-size:14px;padding:12px 18px}
+.cv-dialog :focus-visible,#covenant-screen :focus-visible{outline:2px solid #abffdf;outline-offset:3px}
+body.mobile-ui #covenant-screen .covenant-wrap{height:auto;min-height:100%;padding:16px;gap:16px}
+body.mobile-ui #covenant-screen .command-top{align-items:flex-start;flex-wrap:wrap;gap:12px}
+body.mobile-ui .cv-top-actions{width:100%;gap:8px}
+body.mobile-ui .cv-top-actions button{flex:1;font-size:11px;padding:8px}
+body.mobile-ui #cv-title{font-size:26px}
+body.mobile-ui #covenant-screen .covenant-grid{display:flex;gap:22px}
+body.mobile-ui #covenant-screen .cv-editor{gap:12px}
+body.mobile-ui #covenant-screen .notary-card{gap:14px;padding:12px}
+body.mobile-ui #covenant-screen .cv-editor textarea{font-size:16px;height:94px}
+body.mobile-ui #covenant-screen .cv-voice-controls button{min-height:44px}
+body.mobile-ui #covenant-screen .cv-voice-controls input{width:auto}
+body.mobile-ui #covenant-screen .cv-examples{flex-wrap:wrap}
+body.mobile-ui #covenant-screen .cv-examples button{min-height:44px}
+body.mobile-ui #covenant-screen .cv-proposal{flex:auto;padding:16px}
+body.mobile-ui #covenant-screen #cv-clauses{grid-template-columns:1fr}
+body.mobile-ui #covenant-screen #cv-preview{margin-top:6px}
+@media(max-width:600px){.cv-dialog{padding:18px}.cv-dialog h2{font-size:24px}.cv-dialog .cv-consent{font-size:12px}}
+
 </style>
 </head>
 <body>
@@ -467,18 +559,21 @@ body.mobile-ui[data-covenant=true] #pact-hud small{max-height:23px;overflow:hidd
 
 <section id="covenant-screen" class="screen command-screen" hidden aria-label="Living Covenant negotiation">
  <div class="covenant-wrap">
-  <div class="command-top"><span class="eyebrow" id="cv-heading">FIRST CONTACT / LIVING COVENANT</span><button id="cv-close">Main menu</button></div>
+  <header class="command-top"><div><span class="eyebrow" id="cv-heading">FIRST CONTACT / LIVING COVENANT</span><h2 id="cv-title">Name your terms.</h2></div><div class="cv-top-actions"><button id="cv-open-connection" aria-haspopup="dialog">OpenAI / Consent</button><button id="cv-close">Main menu</button></div></header>
   <div class="covenant-grid">
-   <aside class="notary-card"><span class="section-cap">COUNTERPARTY 001</span><div class="notary-avatar" aria-hidden="true"><i></i><b>◈</b><i></i></div><h2>THE<br>NOTARY<span>.</span></h2><p class="notary-quote" id="cv-enemy">“I do not need to defeat you.<br>I need you to break your word.”</p><p id="cv-memory">No signatures on record.</p><div class="notary-process"><span>01 / WRITE YOUR TERMS</span><span>02 / REVIEW THE COUNTEROFFER</span><span>03 / SIGN. THEN PROVE IT.</span></div><p class="cv-fairness">Battle pauses during parley. The enemy may counteroffer. Only the displayed clauses change the game.</p></aside>
-   <div class="covenant-main">
-    <div class="cv-intro"><h2 id="cv-title">Change the rules.<br>Not just the dialogue.</h2><p id="cv-intro-copy">Ask for a safe place, slower fire, or stronger reflections. Every advantage has a price.</p></div>
-    <section class="cv-voice" aria-label="Voice negotiation"><div class="cv-voice-heading"><span class="section-cap">VOICE NEGOTIATION</span><span id="cv-voice-state" role="status">Voice unavailable until a session is ready.</span></div><p class="cv-voice-disclosure">AI generated voice. Microphone audio is sent to GPT-Live-1 only after Start voice. Stop voice, sign, cancel, or leaving ends it.</p><div class="cv-voice-controls"><button id="cv-voice-start" class="secondary" disabled>Start voice</button><button id="cv-voice-stop" class="secondary" disabled>Stop voice</button><button id="cv-voice-mute" class="secondary" disabled>Mute</button><label>Volume <input id="cv-voice-volume" type="range" min="0" max="100" value="80" disabled></label></div><div class="cv-captions" aria-live="polite"><p><b>YOU</b> <span id="cv-caption-player">—</span></p><p><b>THE NOTARY</b> <span id="cv-caption-notary">—</span></p></div></section>
-    <label class="section-cap" for="cv-prompt">YOUR TERMS / ENGLISH OR JAPANESE · 400 CHARACTERS</label><textarea id="cv-prompt" maxlength="400" rows="2" spellcheck="false">Move the sanctuary to the left. Slow your bullets. I accept reinforcements.</textarea>
-    <div class="cv-examples"><button data-cv-example="Move the sanctuary to the left. Slow your bullets. I accept reinforcements.">Left sanctuary + slower fire</button><button data-cv-example="Amplify my reflected bullets and slow your fire. My gun can be weaker.">Build around parries</button><button data-cv-example="Give me a sanctuary on the right and stronger reflections. Double the damage I take.">Right sanctuary + high stakes</button></div>
-    <div id="cv-proposal" class="cv-proposal" aria-live="polite"><div class="cv-proposal-header"><span id="cv-provider" class="provider-pill">LOCAL RULES / NO AI CALLS</span><span id="cv-revision">UNSIGNED</span></div><p id="cv-line">The pen is yours. Make a proposal.</p><h3 id="cv-contract-title">No binding terms yet.</h3><div id="cv-clauses"><p>Proposing is free. Nothing changes until you sign.</p></div><p id="cv-rationale"></p><canvas id="cv-preview" width="900" height="160" aria-label="Illustrative before and after contract preview"></canvas><p id="cv-preview-label" class="cv-caption">ILLUSTRATIVE RULE PREVIEW / NOT A RECORDING OR AI VIDEO</p></div>
-    <p id="cv-status" class="cv-status" role="status">Default provider: authored keyword rules, not a language model.</p>
-    <div class="cv-actions"><button id="cv-propose" class="secondary">Get counteroffer <span>→</span></button><button id="cv-sign" class="primary" disabled>Sign & enter combat <span>↗</span></button></div>
-    <details class="cv-connection"><summary>OpenAI connection / privacy</summary><div class="cv-connection-fields"><label>Provider<select id="cv-mode"><option value="local">LOCAL RULES — offline</option><option value="server">OPENAI — consent required</option></select></label><input id="cv-token" type="hidden"></div><label class="cv-consent"><input id="cv-consent" type="checkbox"><span>With consent, text, contract, seed, and aggregate counters go to this site and configured OpenAI. Microphone starts only after Start voice. AI voice is disclosed before connection. No screen or account data is sent.</span></label><p id="cv-session-status">Session not started. LOCAL RULES remains available offline.</p></details>
+   <div class="covenant-main cv-editor">
+    <aside class="notary-card"><div class="notary-avatar" aria-hidden="true"><i></i><b>◈</b><i></i></div><div class="notary-identity"><span class="section-cap">YOUR COUNTERPARTY</span><h2>THE NOTARY<span>.</span></h2><p class="notary-quote" id="cv-enemy">“I do not need to defeat you. I need you to break your word.”</p><p id="cv-memory">No signatures on record.</p></div></aside>
+    <p id="cv-intro-copy">Ask for a safe place, slower fire, or stronger reflections. Every advantage has a price.</p>
+    <section class="cv-voice" aria-label="Voice negotiation"><div class="cv-voice-heading"><span class="section-cap">01 / NEGOTIATE</span><button id="cv-transcript" class="cv-link" aria-haspopup="dialog">Transcript ↗</button></div><span id="cv-voice-state" role="status">Enable OpenAI above to use voice.</span><p class="cv-voice-disclosure">AI voice · Mic starts only with Start voice. Sign or leave to stop.</p><div class="cv-voice-controls"><button id="cv-voice-start" class="secondary" disabled>Start voice</button><button id="cv-voice-stop" class="secondary" disabled>Stop voice</button><button id="cv-voice-mute" class="secondary" disabled>Mute</button><label>Volume <input id="cv-voice-volume" type="range" min="0" max="100" value="80" disabled></label></div><div class="cv-captions" aria-live="polite"><p><b>YOU</b><span id="cv-caption-player">—</span></p><p><b>THE NOTARY</b><span id="cv-caption-notary">—</span></p></div></section>
+    <label class="section-cap" for="cv-prompt">OR TYPE YOUR TERMS / ENGLISH · JAPANESE</label><textarea id="cv-prompt" maxlength="400" rows="3" spellcheck="false">Move the sanctuary to the left. Slow your bullets. I accept reinforcements.</textarea>
+    <div class="cv-examples"><button data-cv-example="Move the sanctuary to the left. Slow your bullets. I accept reinforcements.">Left + slower fire</button><button data-cv-example="Amplify my reflected bullets and slow your fire. My gun can be weaker.">Stronger reflections</button><button data-cv-example="Give me a sanctuary on the right and stronger reflections. Double the damage I take.">Right + high stakes</button></div>
+    <div class="cv-propose-actions"><button id="cv-propose" class="secondary">Get counteroffer <span>→</span></button></div>
+   </div>
+   <div class="cv-review">
+    <span class="section-cap cv-review-cap">02 / REVIEW THE DEAL</span>
+    <div id="cv-proposal" class="cv-proposal" aria-live="polite"><div class="cv-proposal-header"><span id="cv-provider" class="provider-pill">LOCAL RULES / NO AI CALLS</span><span id="cv-revision">UNSIGNED</span></div><p id="cv-line">The pen is yours. Make a proposal.</p><h3 id="cv-contract-title">No binding terms yet.</h3><div id="cv-clauses"><p>Nothing changes until you sign.</p></div><p id="cv-rule-note">Review the benefits and their price before signing.</p><p id="cv-rationale" hidden></p><canvas id="cv-preview" width="900" height="160" aria-label="Illustrative before and after contract preview"></canvas><p id="cv-preview-label" class="cv-caption">ILLUSTRATIVE PREVIEW · NOT ACTUAL COMBAT</p><button id="cv-review-details" class="cv-link" aria-haspopup="dialog">Full terms & changes ↗</button></div>
+    <p id="cv-status" class="cv-status" role="status">Choose your terms. Nothing changes until you sign.</p>
+    <div class="cv-actions"><button id="cv-sign" class="primary" disabled>Sign & enter combat <span>↗</span></button></div>
    </div>
   </div>
  </div>
@@ -540,6 +635,18 @@ body.mobile-ui[data-covenant=true] #pact-hud small{max-height:23px;overflow:hidd
     <div id="fatal" class="screen backdrop" hidden><div class="panel"><h2>Unable to start</h2><p id="fatal-message"></p><p>Reload the page. Your browser must support Canvas 2D.</p></div></div>
   </div>
 </main>
+
+<dialog id="cv-connection-dialog" class="cv-dialog" aria-labelledby="cv-connection-title" aria-describedby="cv-connection-copy">
+ <div class="cv-dialog-heading"><span class="section-cap">CONNECTION / PRIVACY</span><button id="cv-connection-close" aria-label="Close OpenAI settings">×</button></div>
+ <h2 id="cv-connection-title">Choose how to negotiate.</h2><p id="cv-connection-copy">Use OpenAI for live voice and generated contracts, or play offline with LOCAL RULES.</p>
+ <div class="cv-connection-fields"><label>Provider<select id="cv-mode"><option value="local">LOCAL RULES — offline</option><option value="server">OPENAI — consent required</option></select></label><input id="cv-token" type="hidden"></div>
+ <label class="cv-consent"><input id="cv-consent" type="checkbox"><span>I agree to send my text, contract, seed and aggregate game counters to this site and OpenAI. Microphone audio goes to GPT-Live-1 only after I click Start voice. AI voice is disclosed; no screen or account data is sent.</span></label>
+ <p class="cv-dialog-note">Sign, cancel, leaving the game or a timeout ends the microphone session. You can withdraw consent here. LOCAL RULES works without a microphone or external requests.</p>
+ <p id="cv-session-status" role="status">LOCAL RULES remains available offline.</p>
+ <div class="cv-dialog-actions"><button id="cv-use-local" class="secondary">Use LOCAL RULES</button><button id="cv-connection-done" class="primary">Done ↗</button></div>
+</dialog>
+<dialog id="cv-detail-dialog" class="cv-dialog" aria-labelledby="cv-detail-title"><div class="cv-dialog-heading"><span class="section-cap">LIVING COVENANT</span><button id="cv-detail-close" aria-label="Close details">×</button></div><h2 id="cv-detail-title">Full terms & changes</h2><p id="cv-detail-content"></p><button id="cv-detail-done" class="primary">Back to the deal ↗</button></dialog>
+
 
 <noscript>Enable JavaScript to play. This game makes no external network requests.</noscript>
 <script>
@@ -2646,7 +2753,7 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
   function clearInput(){keys.clear();pressed.clear();mouse.down=false;touch?.clear();}
   function show(name){
     if(name!=='settings-screen')sound.stopPreview();
-    screen=name;document.body.dataset.screen=name;document.body.dataset.covenant=String(world?.mode==='first-contact');if(name!=='covenant-screen'){cvClient.cancel();cvRequestId++;voice?.stop('screen-exit');}if(name==='pause')$('pause-parley').hidden=world?.mode!=='first-contact';document.body.dataset.training=String(!!world?.training);clearInput();for(const id of screens)$(id).hidden=id!==name;
+    screen=name;document.body.dataset.screen=name;document.body.dataset.covenant=String(world?.mode==='first-contact');if(name!=='covenant-screen'){cvClient.cancel();cvRequestId++;voice?.stop('screen-exit');for(const id of ['cv-connection-dialog','cv-detail-dialog'])if($(id).open)$(id).close();}if(name==='pause')$('pause-parley').hidden=world?.mode!=='first-contact';document.body.dataset.training=String(!!world?.training);clearInput();for(const id of screens)$(id).hidden=id!==name;
     $('touch-controls').hidden=!(mobile&&name==='game');if($(name))$(name).scrollTop=0;
     if(name==='pause'){$('pause-reason').textContent='The battlefield is paused.';$('pause-breach').disabled=!world?.pact||world.broken||world.training;}
     $('hud').hidden=!world||['menu','loadout','hangar','route','archive','ai-screen','covenant-screen'].includes(name)||(mobile&&name!=='game');$('tutorial-hud').hidden=!(world?.training&&name==='game');
@@ -2976,7 +3083,7 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
     const edge=i=>!!pad.buttons[i]?.pressed&&!oldPad[i],held=i=>!!pad.buttons[i]?.pressed;
     if(screen==='game'){if(edge(9))togglePause();}
     else if(screen==='pause'&&edge(9))show('game');
-    else{const buttons=Array.from($(screen)?.querySelectorAll('button:not([disabled]):not([hidden])')||[]);let idx=buttons.indexOf(document.activeElement);const nav=held(13)||held(15)?1:held(12)||held(14)?-1:0;const axis=pad.axes[1]>.6?1:pad.axes[1]<-.6?-1:0;const move=nav||axis;
+    else{const surface=[$('cv-connection-dialog'),$('cv-detail-dialog')].find(dialog=>dialog.open)||$(screen);const buttons=Array.from(surface?.querySelectorAll('button:not([disabled]):not([hidden])')||[]);let idx=buttons.indexOf(document.activeElement);const nav=held(13)||held(15)?1:held(12)||held(14)?-1:0;const axis=pad.axes[1]>.6?1:pad.axes[1]<-.6?-1:0;const move=nav||axis;
       if(move&&move!==oldAxes[0]&&buttons.length){idx=(idx+move+buttons.length)%buttons.length;buttons[idx].focus();}oldAxes[0]=move;if(edge(0))(document.activeElement?.tagName==='BUTTON'?document.activeElement:buttons[0])?.click();}
     const ax=Math.abs(pad.axes[0]||0)>.18?pad.axes[0]:0,ay=Math.abs(pad.axes[1]||0)>.18?pad.axes[1]:0,rx=pad.axes[2]||0,ry=pad.axes[3]||0,aim=Math.hypot(rx,ry)>.25;
     const input={mx:ax,my:ay,shoot:aim||held(7),dash:edge(0),parry:edge(4),nova:edge(3),breach:edge(1),autoAim:held(7)&&!aim};
@@ -3014,15 +3121,15 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
     sound.unlock();$('boss-hud').hidden=true;refreshView();const arena=mobile?{layout:'portrait',height:720*view.field.height/view.field.width}:{};
     let memory;try{memory=V.memory(storage.read('nemesis.covenant.memory.v1',{honored:0,broken:0}));}catch{memory={honored:0,broken:0};}
     world=new V.Run(typeof seed==='string'?seed:randomSeed(),'standard',arena,memory);cvRunId=crypto.randomUUID?crypto.randomUUID():Array.from(crypto.getRandomValues(new Uint8Array(16)),b=>b.toString(16).padStart(2,'0')).join('');cvSigning=false;W=world.width;H=world.height;refreshView();effects=[];particles=[];trails=[];shake=flash=freeze=0;resultSaved=false;lastWorldPhase='';
-    $('cv-prompt').value='Move the sanctuary to the left. Slow your bullets. I accept reinforcements.';$('cv-mode').value=window.NEMESIS_HOSTED?'server':'local';$('cv-token').value='';$('cv-consent').checked=false;document.querySelector('.cv-connection').open=!!window.NEMESIS_HOSTED;openCovenant();updateHUD();
+    $('cv-prompt').value='Move the sanctuary to the left. Slow your bullets. I accept reinforcements.';$('cv-mode').value=window.NEMESIS_HOSTED?'server':'local';$('cv-token').value='';$('cv-consent').checked=false;openCovenant();updateHUD();
   }
   function invalidateCovenant(message='Terms changed. Get a new counteroffer before signing.',keepDelegation=false,reviseDelegation=false){
     if(cvSigning)return;cvClient.cancel();cvRequestId++;if(!keepDelegation)voice?.supersede(reviseDelegation);cvProposal=null;
     if(cvSession.csrf&&cvRunId){const ac=new AbortController(),timer=setTimeout(()=>ac.abort(),2000);cvSession.request('/api/covenant/cancel',{runId:cvRunId,intentVersion:cvRequestId},{signal:ac.signal,keepalive:true}).catch(()=>{}).finally(()=>clearTimeout(timer));}
-    $('cv-sign').disabled=true;$('cv-propose').disabled=false;$('cv-status').textContent=message;$('cv-revision').textContent='UNSIGNED';$('cv-provider').textContent=$('cv-mode').value==='server'?'OPENAI SELECTED / AWAITING PROPOSAL':'LOCAL RULES / NO AI CALLS';$('cv-contract-title').textContent='No binding counteroffer.';$('cv-clauses').textContent='Propose your terms to see the binding rules.';$('cv-line').textContent='The pen is yours.';$('cv-rationale').textContent='';renderCovenantPreview(clock);
+    $('cv-sign').disabled=true;$('cv-propose').disabled=false;$('cv-status').textContent=message;$('cv-revision').textContent='UNSIGNED';$('cv-provider').textContent=$('cv-mode').value==='server'?'OPENAI SELECTED / AWAITING PROPOSAL':'LOCAL RULES / NO AI CALLS';$('cv-contract-title').textContent='No binding counteroffer.';$('cv-clauses').textContent='Propose your terms to see the binding rules.';$('cv-line').textContent='The pen is yours.';$('cv-rationale').textContent='';$('cv-rule-note').textContent='Only a signed contract changes the fight.';renderCovenantPreview(clock);
   }
   function openCovenant(){if(world?.mode!=='first-contact'||!['covenant','parley'].includes(world.phase))return;cvWorld=world;cvRevision=world.revision;show('covenant-screen');invalidateCovenant();
-    const amended=world.phase==='parley';$('cv-heading').textContent=amended?'MID-FIGHT PARLEY / BATTLE PAUSED':'FIRST CONTACT / LIVING COVENANT';$('cv-title').innerHTML=amended?'You changed.<br>Change the deal.':'Change the rules.<br>Not just the dialogue.';$('cv-close').textContent=amended?'Keep current pact & resume':'Main menu';$('cv-sign').textContent=amended?'Sign amendment & resume ↗':'Sign & enter combat ↗';$('cv-memory').textContent=`LOCAL MEMORY / ${world.memory.honored} honored · ${world.memory.broken} broken${amended?'\nTHIS FIGHT / '+world.parries+' reflections · '+world.covenantStats.shielded+' bullets erased':''}`;
+    const amended=world.phase==='parley';$('cv-heading').textContent=amended?'MID-FIGHT PARLEY / BATTLE PAUSED':'FIRST CONTACT / LIVING COVENANT';$('cv-title').textContent=amended?'Change the deal.':'Name your terms.';$('cv-close').textContent=amended?'Keep pact & resume':'Main menu';$('cv-sign').textContent=amended?'Sign amendment & resume ↗':'Sign & enter combat ↗';$('cv-memory').textContent=`${world.memory.honored} honored · ${world.memory.broken} broken${amended?' · '+world.parries+' reflections · '+world.covenantStats.shielded+' bullets erased':''}`;
     $('cv-intro-copy').textContent=amended?'One amendment is available. Compare the new rules. Health, boss damage and elapsed time are preserved.':'Ask for a safe place, slower fire, or stronger reflections. Every advantage has a price.';
     $('cv-enemy').textContent=amended?`“I counted ${world.parries} returned shots. Is that still the fight you want?”`:world.memory.broken?'“A broken signature is still on my ledger.”':'“I do not need to defeat you. I need you to break your word.”';
     if(amended)$('cv-prompt').value='Amplify my reflected bullets and slow your fire. My gun can be weaker.';
@@ -3037,7 +3144,7 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
     try{const reply=await cvClient.propose(request,{mode:$('cv-mode').value,consent:$('cv-consent').checked,session:cvSession,runId:cvRunId,intentVersion:id});if(id!==cvRequestId||world!==target||world.revision!==revision||screen!=='covenant-screen')return null;
       cvProposal=reply;if(options.delegated){reply.voiceOrigin=true;if(world?.voiceEvidence){world.voiceEvidence.proposalsReturned++;if(reply.provider==='openai')world.voiceEvidence.openaiProposals++;}} cvRevision=revision;const desc=V.describe(reply.spec),old=world.spec?V.describe(world.spec):null;$('cv-provider').textContent=reply.provider==='openai'?'CONTRACT: OPENAI / '+reply.model:'CONTRACT: LOCAL RULES / NO AI INFERENCE';$('cv-revision').textContent='REV '+String(revision+1).padStart(2,'0')+' / UNSIGNED';$('cv-line').textContent='“'+reply.spec.line+'”';$('cv-contract-title').textContent=desc.title;
       $('cv-clauses').innerHTML=`<div class="cv-benefit"><small>YOUR ADVANTAGE</small>${desc.benefits.map(x=>'<p>+ '+escapeHTML(x)+'</p>').join('')}</div><div class="cv-cost"><small>YOUR PRICE</small><p>− ${escapeHTML(desc.price)}</p></div>`;
-      $('cv-rationale').textContent=desc.note+' '+reply.spec.rationale+(old?' Replaces: '+old.benefits.join('; ')+' / '+old.price+'.':'');$('cv-status').textContent=`${reply.reason} ${reply.latencyMs} ms · ${V.budget(reply.spec).benefit}/${V.budget(reply.spec).payment} rule budget · NOT YET APPLIED.`;$('cv-sign').disabled=false;renderCovenantPreview(clock);return reply;
+      $('cv-rule-note').textContent=desc.note;$('cv-rationale').textContent=desc.note+' '+reply.spec.rationale+(old?' Replaces: '+old.benefits.join('; ')+' / '+old.price+'.':'');$('cv-status').textContent=`${reply.reason} ${reply.latencyMs} ms · ${V.budget(reply.spec).benefit}/${V.budget(reply.spec).payment} rule budget · NOT YET APPLIED.`;$('cv-sign').disabled=false;renderCovenantPreview(clock);return reply;
     }catch(e){if(id===cvRequestId)$('cv-status').textContent=String(e.message).slice(0,200)+' No rules changed.';}finally{if(id===cvRequestId)$('cv-propose').disabled=false;}
   }
   async function signCovenant(){
@@ -3051,11 +3158,12 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
     }catch(e){cvProposal=null;$('cv-status').textContent=String(e.message).slice(0,160)+' No rules applied.';$('cv-sign').disabled=true;}
     finally{cvSigning=false;setSigningUI(false);}
   }
-  function setSigningUI(pending){for(const id of ['cv-prompt','cv-mode','cv-consent','cv-propose'])$(id).disabled=pending;for(const button of document.querySelectorAll('[data-cv-example]'))button.disabled=pending;$('cv-sign').disabled=pending||!cvProposal;}
+  function setSigningUI(pending){for(const id of ['cv-prompt','cv-mode','cv-consent','cv-propose','cv-open-connection'])$(id).disabled=pending;for(const button of document.querySelectorAll('[data-cv-example]'))button.disabled=pending;$('cv-sign').disabled=pending||!cvProposal;}
   async function refreshConnection(){
     const online=window.NEMESIS_HOSTED&&$('cv-mode').value==='server'&&$('cv-consent').checked;
     $('cv-voice-start').disabled=true;
-    if(!online){voice?.stop('consent-or-mode');$('cv-session-status').textContent='LOCAL RULES available without microphone or external requests.';return;}
+    $('cv-open-connection').textContent=online?'OpenAI / Settings':window.NEMESIS_HOSTED?'Enable OpenAI / Consent':'LOCAL RULES / Settings';
+    if(!online){voice?.stop('consent-or-mode');$('cv-voice-state').textContent='VOICE: OFF / Enable OpenAI above to use voice.';$('cv-session-status').textContent='LOCAL RULES available without microphone or external requests.';return;}
     $('cv-session-status').textContent='Checking the bounded OpenAI session…';
     try{const s=await cvSession.ensure();if(screen!=='covenant-screen'||!$('cv-consent').checked||$('cv-mode').value!=='server')return;$('cv-session-status').textContent=s.contractEnabled?'OpenAI text ready. Review every proposal before Sign.':'LOCAL RULES: OpenAI contract service unavailable.';$('cv-voice-start').disabled=!s.voiceEnabled||voiceActive;if(!voiceActive)$('cv-voice-state').textContent=s.voiceEnabled?'VOICE: READY / microphone off':'VOICE: UNAVAILABLE / use text';}
     catch{$('cv-session-status').textContent='LOCAL RULES: OpenAI unavailable or budget closed. Select LOCAL RULES to continue.';}
@@ -3101,6 +3209,16 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
   window.addEventListener('pointerup',ev=>{if(ev.pointerType!=='touch')mouse.down=false;});window.addEventListener('pointercancel',ev=>{if(ev.pointerType!=='touch')clearInput();});
   canvas.addEventListener('contextmenu',e=>e.preventDefault());
   window.addEventListener('keydown',e=>{
+    const modal=[$('cv-connection-dialog'),$('cv-detail-dialog')].find(dialog=>dialog.open);
+    if(modal){
+      if(e.code==='Tab'){
+        const controls=Array.from(modal.querySelectorAll('button,input,textarea,select,[tabindex]')).filter(el=>!el.disabled&&el.tabIndex>=0&&el.getClientRects().length);
+        const first=controls[0],last=controls[controls.length-1];
+        if(first&&e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
+        else if(last&&!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
+      }
+      return;
+    }
     const input=e.target instanceof HTMLInputElement||e.target instanceof HTMLTextAreaElement||e.target instanceof HTMLSelectElement;
     if(e.code==='Escape'&&!e.repeat){e.preventDefault();if(screen==='game'||screen==='pause')togglePause();else if(screen==='help-screen'||screen==='settings-screen')show(previousScreen);else if(screen==='confirm-screen')show('pause');else if(screen==='loadout')hangarScreen();else if(screen==='hangar'||screen==='archive')home();else if(screen==='ai-screen')closeAI();else if(screen==='covenant-screen')closeCovenant();return;}
     if(input)return;
@@ -3123,6 +3241,12 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
   if(typeof ResizeObserver!=='undefined'){new ResizeObserver(()=>{const r=$('stage').getBoundingClientRect();if(Math.abs(r.width-view.width)>.5||Math.abs(r.height-view.height)>.5)resize();}).observe($('stage'));}
   $('first-contact').onclick=()=>startFirstContact();$('cv-close').onclick=closeCovenant;$('cv-propose').onclick=proposeCovenant;$('cv-sign').onclick=signCovenant;$('cv-parley').onclick=openParley;$('pause-parley').onclick=openParley;
   setupVoice();$('cv-prompt').oninput=()=>invalidateCovenant();for(const id of ['cv-mode','cv-consent'])$(id).onchange=()=>{invalidateCovenant();refreshConnection();};
+  $('cv-open-connection').onclick=()=>{if(!cvSigning)$('cv-connection-dialog').showModal();};
+  for(const id of ['cv-connection-close','cv-connection-done'])$(id).onclick=()=>$('cv-connection-dialog').close();
+  $('cv-use-local').onclick=()=>{$('cv-mode').value='local';$('cv-consent').checked=false;invalidateCovenant();refreshConnection();$('cv-connection-dialog').close();};
+  function covenantDetails(transcript){$('cv-detail-title').textContent=transcript?'Voice transcript':'Full terms & changes';$('cv-detail-content').textContent=transcript?'YOU\n'+$('cv-caption-player').textContent+'\n\nTHE NOTARY\n'+$('cv-caption-notary').textContent:($('cv-rationale').textContent||'Ask for a counteroffer. Only the displayed clauses can be signed; voice and preview animations never change combat by themselves.');$('cv-detail-dialog').showModal();}
+  $('cv-review-details').onclick=()=>covenantDetails(false);$('cv-transcript').onclick=()=>covenantDetails(true);
+  for(const id of ['cv-detail-close','cv-detail-done'])$(id).onclick=()=>$('cv-detail-dialog').close();
   for(const el of document.querySelectorAll('[data-cv-example]'))el.onclick=()=>{$('cv-prompt').value=el.dataset.cvExample;invalidateCovenant();};
   $('start').onclick=()=>{sound.unlock();hangarScreen();};$('launch').onclick=()=>start();$('train').onclick=()=>start(true);$('training-exit').onclick=home;
   $('daily').onclick=()=>{const d=new Date(),date=[d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');$('seed').value='DAILY-'+date;show('loadout');};

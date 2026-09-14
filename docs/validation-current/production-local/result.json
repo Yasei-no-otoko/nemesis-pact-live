@@ -1,7 +1,7 @@
 {
-  "checkedAt": "2026-09-14T08:33:20Z",
+  "checkedAt": "2026-09-14T13:57:36Z",
   "browser": "153.0.4234.32",
-  "url": "https://nemesis-pact-live.vercel.app",
+  "url": "http://127.0.0.1:8080/",
   "automated": true,
   "mode": "LOCAL RULES",
   "realModelCalls": 0,
@@ -22,7 +22,7 @@
       "x": 640,
       "y": 560,
       "hp": 10,
-      "energy": 52
+      "energy": 54
     },
     "enemies": [
       {
@@ -32,7 +32,7 @@
         "hp": 2880
       }
     ],
-    "hostileBullets": 30,
+    "hostileBullets": 32,
     "revision": 1,
     "spec": {
       "version": 1,
@@ -46,7 +46,7 @@
     },
     "proposal": null,
     "effects": {
-      "shielded": 1,
+      "shielded": 2,
       "reflectedDamage": 0,
       "gunDamage": 720,
       "amendments": 0
@@ -78,7 +78,7 @@
       "x": 640,
       "y": 560,
       "hp": 10,
-      "energy": 52
+      "energy": 54
     },
     "enemies": [
       {
@@ -88,7 +88,7 @@
         "hp": 2880
       }
     ],
-    "hostileBullets": 30,
+    "hostileBullets": 32,
     "revision": 2,
     "spec": {
       "version": 1,
@@ -102,7 +102,7 @@
     },
     "proposal": null,
     "effects": {
-      "shielded": 1,
+      "shielded": 2,
       "reflectedDamage": 0,
       "gunDamage": 720,
       "amendments": 1

@@ -41,7 +41,7 @@ with sync_playwright() as pw:
     })()''')
     report={'url':URL,'browser':b.version,'input':'Synthetic Windows System.Speech TTS through a Web Audio MediaStream; no human microphone','realApi':True,'humanLiveVerified':False,'utc':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime())}
     try:
-        p.goto(URL,wait_until='networkidle');p.evaluate('''()=>{const proto=PactVoice.PactVoice.prototype,old=proto._delegate;proto._delegate=function(id,event){probe.sent.push({type:'probe.delegate.enter',at:performance.now(),id});return old.call(this,id,event);};}''');p.click('#first-contact');p.check('#cv-consent')
+        p.goto(URL,wait_until='networkidle');p.evaluate('''()=>{const proto=PactVoice.PactVoice.prototype,old=proto._delegate;proto._delegate=function(id,event){probe.sent.push({type:'probe.delegate.enter',at:performance.now(),id});return old.call(this,id,event);};}''');p.click('#first-contact');p.click('#cv-open-connection');p.check('#cv-consent');p.click('#cv-connection-done')
         p.wait_for_function('()=>!document.querySelector("#cv-voice-start").disabled')
         start=time.monotonic();p.click('#cv-voice-start')
         p.wait_for_function('()=>probe.events.some(e=>e.type==="session.started")')
