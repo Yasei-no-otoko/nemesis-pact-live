@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-09-14T08:40:24Z",
+  "browser": "153.0.4234.32",
+  "base": "http://127.0.0.1:8080/",
+  "mode": "fixture response only; native silent audio MediaStream and RTCPeerConnection",
+  "realMicrophone": false,
+  "realModelCalls": 0,
+  "controlledTime": false,
+  "passed": true,
+  "cleanup": {
+    "elapsedMs": 15042.399999976158,
+    "aborted": true,
+    "tracks": [
+      "ended"
+    ],
+    "peers": [
+      "closed"
+    ],
+    "voice": "VOICE: ERROR / voice-unavailable-use-text"
+  },
+  "lateSessionHangup": true,
+  "localFallbackSigned": true,
+  "calls": [
+    "/api/session",
+    "/api/voice/start",
+    "/api/voice/stop",
+    "/api/covenant/cancel",
+    "/api/covenant"
+  ],
+  "pageErrors": []
+}

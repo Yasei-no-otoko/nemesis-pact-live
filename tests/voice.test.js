@@ -33,3 +33,25 @@ test('provider lifecycle evidence counts actual start and close once, including 
  const stopping=v.stop('sign');dc.emit({type:'session.closed',event_id:'close-a',reason:'client_close'});dc.emit({type:'session.closed',event_id:'close-b'});
  await stopping;assert.equal(closed.length,1);assert.equal(closed[0].reason,'client_close');
 });
+
+test('voice startup deadline covers a stalled body and hangs up its late session without reviving the microphone', {timeout:22000}, async()=>{
+ const e=fixture();let releaseBody,enteredBody,aborted=false;
+ const bodyEntered=new Promise(resolve=>enteredBody=resolve);
+ e.request=async(url,body,options)=>{
+  e.calls.push({url,body});
+  if(url.endsWith('/start')){
+   options.signal.addEventListener('abort',()=>{aborted=true;});
+   return {ok:true,status:200,json:()=>{enteredBody();return new Promise(resolve=>releaseBody=resolve);}};
+  }
+  return {ok:true,json:async()=>({stopped:true})};
+ };
+ const v=voice(e);active.push(v);const started=Date.now(),pending=v.start({runId:'stalled-body',revision:0});
+ await bodyEntered;assert.equal(await pending,false);const elapsed=Date.now()-started;
+ assert.ok(elapsed>=14500&&elapsed<21000);assert.equal(aborted,true);assert.equal(v.state,'error');
+ assert.equal(e.track.stopped,true);assert.equal(v.pc,null);assert.equal(v.stream,null);assert.equal(v.sessionId,null);
+ assert.deepEqual(e.document.listeners,{});
+ releaseBody({sessionId:'late_body_session',sdp:'v=0\r\nanswer',maxDurationMs:45000});
+ await new Promise(resolve=>setImmediate(resolve));
+ assert.ok(e.calls.some(c=>c.url==='/api/voice/stop'&&c.body.sessionId==='late_body_session'));
+ assert.equal(v.state,'error');assert.equal(v.sessionId,null);assert.equal(e.track.stopped,true);
+});

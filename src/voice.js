@@ -74,10 +74,17 @@
      const timer=setTimeout(()=>finish(Error('ice-timeout')),10000);pc.addEventListener('icegatheringstatechange',check);check();
     });
     if(generation!==this.transportGeneration||this.closed)throw Error('cancelled');
-    const ac=new AbortController(),timer=setTimeout(()=>ac.abort(),15000);let r;
-    try{r=await this._http('/api/voice/start',{runId,revision,sdp:pc.localDescription.sdp},ac.signal);}finally{clearTimeout(timer);}
-    if(!r?.ok)throw Error('voice-service-'+(r?.status||'unavailable'));
-    const data=await r.json();createdId=data.sessionId;
+    const ac=new AbortController();let timer,data;
+    // Keep the deadline through the response body, including transports that ignore abort.
+    const response=(async()=>{
+     const r=await this._http('/api/voice/start',{runId,revision,sdp:pc.localDescription.sdp},ac.signal);
+     if(!r?.ok)throw Error('voice-service-'+(r?.status||'unavailable'));
+     const value=await r.json();
+     if(generation!==this.transportGeneration||this.closed){if(typeof value?.sessionId==='string')await this._hangup(value.sessionId);return null;}
+     return value;
+    })();
+    try{data=await Promise.race([response,new Promise((_,reject)=>{timer=setTimeout(()=>{ac.abort();reject(Error('voice-start-timeout'));},15000);})]);}finally{clearTimeout(timer);}
+    if(!data)return false;createdId=data.sessionId;
     if(typeof createdId!=='string'||typeof data.sdp!=='string')throw Error('invalid-session');
     if(generation!==this.transportGeneration||this.closed){await this._hangup(createdId);return false;}
     this.sessionId=createdId;await pc.setRemoteDescription({type:'answer',sdp:data.sdp});
