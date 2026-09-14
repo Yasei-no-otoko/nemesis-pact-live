@@ -11,3 +11,5 @@ The public [59-second1080p60 human iPhone demo](https://www.circle-hydrangea.net
 Conservative app ledger: direct OpenAI$2.250000/$10; Vercel AI Gateway$0.032718/$20;active0,killnull. Reported Vercel grant$30 exact balance/expiry/infrastructure invoices remain unknown; no total-cost guarantee. Built-in imagegen cost is not exposed. No plan, cap, purchase or auto-charge change.
 
 Rollback application: `vercel rollback dpl_D8wY2pL3CSWN7tzg3R9qzKTXf91o --yes`; preserve Redis and public video. Extra physical-device coverage/provider invoices remain unverified. Contest form submission/legal attestations were not performed.
+
+[Versioned v0.9.9 Release and source ZIP](https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/tag/v0.9.9) are public and anonymously verified. Release tag f8122b9; application source66e6641. Final evidence tag milestone-19-v099-verified.

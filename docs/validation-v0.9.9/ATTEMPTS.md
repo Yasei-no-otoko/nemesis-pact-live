@@ -11,3 +11,5 @@ Old covenant browser first failed at a obsolete not-integrated liveVoice string,
 Native rendering samples separately use ordinary time and real GPU backends. Canvas2D fallback deliberately disables GPU availability on an offline page; it is an actual fallback rendering/control check, not a physical unsupported device.
 
 Concept generation: proposed direct-key CLI was rejected by automatic approval review before execution, with no detailed reason. A built-in imagegen request succeeded; the exact underlying model and tool cost are not exposed. Direct OpenAI/Gateway ledger was unchanged before release validation. Art brief is adjacent to the concept; no direct-API image call/report is claimed.
+
+Public release helper first violated the viewer CSP by using a string wait predicate. Fixed the helper to a function; production CSP was unchanged. Source download/hash and viewer playback-start passed. One GitHub shell Failed to fetch error is retained separately from the error-free viewer.

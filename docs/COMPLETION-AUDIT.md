@@ -24,3 +24,8 @@ Final conservative shared ledger at 2026-09-14T18:06:28.604Z: direct OpenAI $2.1
 Unverified, explicitly allowed limits: exact grant-specific balance/expiry and provider invoices/infrastructure costs; physical Android/macOS and sustained phone game FPS. Source capture averaged34.499fps;60fps export duplicates source frames without inventing motion. Form submission and legal attestations were not requested or performed. Historical failures and prior local media remain preserved under their original evidence labels.
 
 Rollback app only: `vercel rollback dpl_Hia1kgaAmhWXDe6L13pLRU8QxTjk --yes`, preserve Redis/current budgets. This restores the previous manual recorder with Live/Luna mechanics; it does not withdraw the public release or repository.
+
+
+## Subsequent v0.9.9 goal
+
+User-requested imagegen-driven craft improvements shipped on verifiedv0.5.0 lineage. App66e6641/READYdpl_CsUJ386UFWLPKg4UN7r1jvCpcuoB,tagv0.9.9,production Live/Luna regression and public sourceZIP hash all passed. See V0.9.9-VALIDATION.md. Final read-only evidence audit found no material discrepancy. Original human movie remains pre-craft; no form/legal action or new device/microphone claim. This new quality goal is complete with disclosed provider-accounting/coverage limits.

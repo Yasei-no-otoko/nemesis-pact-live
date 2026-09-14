@@ -41,17 +41,15 @@
       "offlineBytes": 382254
     }
   },
-  "recordedAt": "2026-09-14T19:02:02.963635+00:00",
+  "recordedAt": "2026-09-14T19:08:28.477803+00:00",
   "version": "0.9.9",
-  "status": "v0.9.9 production/live regression passed; final release artifacts in progress",
+  "status": "v0.9.9 craft goal achieved: production/live regression, source release and public links verified",
   "priorReleaseEvidence": "validation-v0.9.9/baseline/release-candidate.json",
   "releaseTag": "v0.9.9",
   "sourceTag": "milestone-18-orbital-covenant",
   "releaseUrl": "https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/tag/v0.9.9",
   "validation": "V0.9.9-VALIDATION.md",
-  "requiredDeliveryGates": [
-    "publish and verify versioned source/release assets"
-  ],
+  "requiredDeliveryGates": [],
   "unverifiedItems": [
     "exact Vercel Gateway grant balance and expiry",
     "Vercel infrastructure invoice/charges; usage endpoint returned404",
@@ -82,7 +80,8 @@
     "polishMatrix": 5,
     "offlineCovenantAssertions": 18,
     "campaignSimulationCases": 12,
-    "evidence": "validation-v0.9.9/"
+    "evidence": "validation-v0.9.9/",
+    "productionLayoutCases": 7
   },
   "liveLunaValidation": {
     "passed": true,
@@ -157,5 +156,36 @@
     "framesPresentedOrDropped": 3540,
     "droppedDuringNative1xPlayback": 6,
     "scope": "previous human media, unchanged; see priorReleaseEvidence"
+  },
+  "sourceReviewPackage": {
+    "file": "NEMESIS-PACT-v0.9.9-source.zip",
+    "bytes": 2538988,
+    "sha256": "23dd34f5f3ab5601e30520ff2c8ea5b011261929138ea290e095327af6c2e4e8",
+    "files": 136,
+    "archiveCommit": "f8122b98aff31eeba0826420c182592361a0140c",
+    "applicationSourceCommit": "66e66415dd3a6ac83f89168ea83cdb2b1ac1effd",
+    "scope": "selected versioned code, tests, docs, offline HTML and concept; no git history, private env or raw recordings",
+    "public": true,
+    "url": "https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/download/v0.9.9/NEMESIS-PACT-v0.9.9-source.zip",
+    "anonymousDownloadHashMatched": true
+  },
+  "finalEvidenceTag": "milestone-19-v099-verified",
+  "publicReleaseValidation": {
+    "passed": true,
+    "evidence": "validation-v0.9.9/public-release/result.json",
+    "sourceHashMatched": true,
+    "pagesCommit": "cd03818",
+    "viewerPointsToVersion099": true,
+    "unchangedVideoPlaybackStart": true,
+    "githubShellPageErrors": [
+      "Failed to fetch"
+    ],
+    "viewerPageErrors": []
+  },
+  "completion": {
+    "v099CraftGoalPassed": true,
+    "priorGoal10Evidence": "validation-v0.9.9/baseline/release-candidate.json",
+    "formSubmissionPerformed": false,
+    "newHumanRecording": false
   }
 }

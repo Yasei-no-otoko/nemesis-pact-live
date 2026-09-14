@@ -13,3 +13,6 @@ Production source `cd333643ba038bfe97b49ac3f641c563520d7f61`, branch `ship/livin
 Final conservative shared ledger at 2026-09-14T18:06:28.604Z: direct OpenAI $2.150000/$10; Vercel AI Gateway $0.031421/$20, active0, kill null. This includes$0.10 total postprocess transcription reservations and is not a provider invoice. Vercel grant is user-reported$30; exact key-specific balance/expiry and infrastructure charges remain unverified. No purchase, paid-plan change or auto-charge. GitHub hosts the55MB video; it is not served from Vercel.
 
 GOAL section10 deliverables pass within recorded evidence scopes. Optional device/performance coverage and exact provider invoice/grant data remain explicitly unverified. No further paid calls are needed to establish the requested release. Form/legal attestations were not performed.
+
+
+2026-09-15 JST: subsequent user-requestedv0.9.9 craft goal completed. Imagegen concept→three actual game loops→229 tests→real Live/Luna production regression→public release/sourceZIP. Application66e6641,versiontagf8122b9,final milestone-19-v099-verified; current records in V0.9.9-VALIDATION.md / RELEASE-CANDIDATE.json. Prior task history below/above is preserved.
