@@ -468,7 +468,8 @@
       onState:state=>{if(voiceWorld?.voiceEvidence){voiceWorld.voiceEvidence.lastState=state.state;if(state.detail==='session-started')voiceWorld.voiceEvidence.connectionStarted++;}const active=['starting','listening','speaking','stopping'].includes(state.state);if(active!==voiceActive){voiceActive=active;sound.settings(opts.volume,opts.music,muted,opts.musicVolume*(active?.18:1),opts.sfxVolume,opts.adaptiveMusic);}
         $('cv-voice-state').textContent='VOICE: '+(voiceWorld?.voiceEvidence?.connectionStarted?'GPT-LIVE-1 / ':'')+state.state.toUpperCase()+(state.detail?' / '+state.detail:'');$('cv-voice-start').disabled=active||!cvSession.voiceEnabled||!$('cv-consent').checked||$('cv-mode').value!=='server';for(const id of ['cv-voice-stop','cv-voice-mute','cv-voice-volume'])$(id).disabled=!active;
         if(state.state==='error')$('cv-status').textContent=state.detail||'Voice unavailable. Use text, or choose LOCAL RULES.';},
-      onCaption:event=>{if(event.speaker==='assistant'){voiceCaption=(voiceCaption+event.delta).slice(-300);$('cv-caption-notary').textContent=voiceCaption;}},
+      // Keep this bounded voice session's transcript available in the scrollable caption.
+      onCaption:event=>{if(event.speaker==='assistant'){voiceCaption+=event.delta;$('cv-caption-notary').textContent=voiceCaption;}},
       onInput:event=>{if(!event.delta||cvSigning)return;const delta=event.delta;if(/^\s*(yes|ok(?:ay)?|uh[ -]?huh|mm|\u3046\u3093|\u306f\u3044)[.!?、。\s]*$/i.test(delta)){voiceBackchannels+=delta;return;}
         voiceText=(voiceText+voiceBackchannels+delta).slice(-400);voiceBackchannels='';voiceLastInput=performance.now();$('cv-caption-player').textContent=voiceText;$('cv-prompt').value=voiceText;invalidateCovenant('Heard updated terms. Waiting for the Notary’s counteroffer.',false,true);},
       onSessionClosed:event=>{if(voiceWorld?.voiceEvidence)voiceWorld.voiceEvidence.sessionClosed++;},
