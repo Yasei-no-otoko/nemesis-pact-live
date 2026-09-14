@@ -1,0 +1,17 @@
+{
+  "build": "0.5.0",
+  "node": "v22.16.0",
+  "checks": [
+    "Hosted bytes and same-origin opt-in flag",
+    "Secrets / source / unknown paths are not served",
+    "HTTP POST mock selects a mechanical contract ID",
+    "GET rejected",
+    "Non-JSON rejected",
+    "Oversize body rejected",
+    "Covenant HTTP POST composes a left sanctuary and explicit price",
+    "Covenant GET rejected",
+    "Covenant unknown rule injection rejected"
+  ],
+  "upstreamCalls": 0,
+  "scope": "Loopback integration, not a Vercel deployment"
+}

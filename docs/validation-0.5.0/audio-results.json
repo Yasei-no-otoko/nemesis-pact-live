@@ -1,0 +1,464 @@
+{
+  "build": "0.5.0",
+  "htmlSha256": "761cd6340eef02fedec94cbeb84fd8d528b8781238d14f85c0f7dc9285c6ba76",
+  "rendered": [
+    {
+      "peak": 0.052231915295124054,
+      "rms": 0.008942073158691577,
+      "invalid": 0,
+      "stereo": 0.003640116556461106,
+      "sampleRate": 24000,
+      "frames": 207600,
+      "id": "title",
+      "name": "Before the First Signature",
+      "bpm": 76,
+      "sha256": "de18aa2c6303da503e5be70b677280821ec15cd5dd6f3300729d576e26f6f6a2",
+      "clippedSamples": 0
+    },
+    {
+      "peak": 0.13608601689338684,
+      "rms": 0.011866956911989926,
+      "invalid": 0,
+      "stereo": 0.0031923808905312853,
+      "sampleRate": 24000,
+      "frames": 207600,
+      "id": "hangar",
+      "name": "Ready the Wings",
+      "bpm": 96,
+      "sha256": "fa7197058213c493652e85d9077b5f3e5f9bc4b758faf131079b17c3765e11fb",
+      "clippedSamples": 0
+    },
+    {
+      "peak": 0.054858725517988205,
+      "rms": 0.009196274533844454,
+      "invalid": 0,
+      "stereo": 0.0036433171784968025,
+      "sampleRate": 24000,
+      "frames": 207600,
+      "id": "interlude",
+      "name": "Terms in the Quiet",
+      "bpm": 84,
+      "sha256": "764d65622c543e954a228b4a75fd70284ea549d1ed6afed27c46568b9faf7d50",
+      "clippedSamples": 0
+    },
+    {
+      "peak": 0.13645039498806,
+      "rms": 0.013859820202643407,
+      "invalid": 0,
+      "stereo": 0.003238867441137831,
+      "sampleRate": 24000,
+      "frames": 207600,
+      "id": "verdigris",
+      "name": "Verdigris Oath",
+      "bpm": 112,
+      "sha256": "5f9947400287de3ef11956c4df94c21a6fb281f119f06ed33223aa292c326688",
+      "clippedSamples": 0
+    },
+    {
+      "peak": 0.1945905089378357,
+      "rms": 0.020344665955637633,
+      "invalid": 0,
+      "stereo": 0.003824413352030354,
+      "sampleRate": 24000,
+      "frames": 207600,
+      "id": "verdigris-boss",
+      "name": "Final Clause",
+      "bpm": 132,
+      "sha256": "4d8bde4037648240d2a4516aa7ea0c41adb6ec0f729c806924ca3ef5d8856de6",
+      "clippedSamples": 0
+    },
+    {
+      "peak": 0.14840516448020935,
+      "rms": 0.015103967024237126,
+      "invalid": 0,
+      "stereo": 0.0033790109792601244,
+      "sampleRate": 24000,
+      "frames": 207600,
+      "id": "foundry",
+      "name": "Foundry Pulse",
+      "bpm": 126,
+      "sha256": "4e9d6ad042684fe0f8607756bd398a3aad8dee7adf60cb7464fb4b480f285497",
+      "clippedSamples": 0
+    },
+    {
+      "peak": 0.16987790167331696,
+      "rms": 0.022015918477860233,
+      "invalid": 0,
+      "stereo": 0.004276725535618197,
+      "sampleRate": 24000,
+      "frames": 207600,
+      "id": "foundry-boss",
+      "name": "Dissonant Engine",
+      "bpm": 146,
+      "sha256": "c970b69e9f479226f404d926d443bfabbff529610fa4a44a36a53ffe3f4130e2",
+      "clippedSamples": 0
+    },
+    {
+      "peak": 0.15302225947380066,
+      "rms": 0.011254435055854647,
+      "invalid": 0,
+      "stereo": 0.003204449372634012,
+      "sampleRate": 24000,
+      "frames": 207600,
+      "id": "crown",
+      "name": "Crown of Dawn",
+      "bpm": 104,
+      "sha256": "4a3050e69a402455a40563303e2c01ccf12dfe6a3858ee899030ef22298dfbe3",
+      "clippedSamples": 0
+    },
+    {
+      "peak": 0.1853644698858261,
+      "rms": 0.01918744026639052,
+      "invalid": 0,
+      "stereo": 0.003937581202626049,
+      "sampleRate": 24000,
+      "frames": 207600,
+      "id": "crown-boss",
+      "name": "Crownfall",
+      "bpm": 128,
+      "sha256": "66712af4d3b8645ce28217eb331577e06f9998686596f9748794192ace497fd9",
+      "clippedSamples": 0
+    },
+    {
+      "peak": 0.12275885790586472,
+      "rms": 0.013078410180682613,
+      "invalid": 0,
+      "stereo": 0.0033659263060622406,
+      "sampleRate": 24000,
+      "frames": 207600,
+      "id": "tidal",
+      "name": "Tidal Memory",
+      "bpm": 96,
+      "sha256": "f1b4034f811e98fe103a02810e372a6649a06143465380076b7a7ecb265dc8ef",
+      "clippedSamples": 0
+    },
+    {
+      "peak": 0.15839500725269318,
+      "rms": 0.014703939569182554,
+      "invalid": 0,
+      "stereo": 0.003707622432923243,
+      "sampleRate": 24000,
+      "frames": 207600,
+      "id": "tidal-boss",
+      "name": "Undertow",
+      "bpm": 120,
+      "sha256": "f9c557f19826d38e5d356129f83885d9d2c0a774e3256004e733314ba8dcd49c",
+      "clippedSamples": 0
+    },
+    {
+      "peak": 0.13688524067401886,
+      "rms": 0.014758801690372872,
+      "invalid": 0,
+      "stereo": 0.0033362207900045973,
+      "sampleRate": 24000,
+      "frames": 207600,
+      "id": "roseglass",
+      "name": "Roseglass Run",
+      "bpm": 138,
+      "sha256": "46533f29e29f8304f20a932cc21dd17de5a8311821044d64ba0e212839ff8c2e",
+      "clippedSamples": 0
+    },
+    {
+      "peak": 0.14749789237976074,
+      "rms": 0.018482592863682215,
+      "invalid": 0,
+      "stereo": 0.003794911196352985,
+      "sampleRate": 24000,
+      "frames": 207600,
+      "id": "roseglass-boss",
+      "name": "Threadbreaker",
+      "bpm": 158,
+      "sha256": "342fa1a54815f849d5b963884237f91d7258b8076d74d9c3d748e440816944c3",
+      "clippedSamples": 0
+    },
+    {
+      "peak": 0.13629046082496643,
+      "rms": 0.013715323362802654,
+      "invalid": 0,
+      "stereo": 0.003195007286914173,
+      "sampleRate": 24000,
+      "frames": 207600,
+      "id": "horizon",
+      "name": "Unwritten Horizon",
+      "bpm": 118,
+      "sha256": "08ac9f9d68c2ce9aefdac5b95e93ca4eb9a652f7a65cfbf5b5c01d5c99026c6f",
+      "clippedSamples": 0
+    },
+    {
+      "peak": 0.1677170842885971,
+      "rms": 0.020731448589081884,
+      "invalid": 0,
+      "stereo": 0.004139762411093717,
+      "sampleRate": 24000,
+      "frames": 207600,
+      "id": "horizon-boss",
+      "name": "The Last Signature",
+      "bpm": 148,
+      "sha256": "aaf62b82448d7e32c9f7f1c956575667962a55d2f14466b7305161ebe63f41c2",
+      "clippedSamples": 0
+    },
+    {
+      "peak": 0.1170828565955162,
+      "rms": 0.010473184459750472,
+      "invalid": 0,
+      "stereo": 0.002803723358648028,
+      "sampleRate": 24000,
+      "frames": 207600,
+      "id": "victory",
+      "name": "A Sky Unbound",
+      "bpm": 102,
+      "sha256": "109e489f2a1488b188e394075114756cecf1b032f839bc356f1ecbfc248de7d7",
+      "clippedSamples": 0
+    },
+    {
+      "peak": 0.055616460740566254,
+      "rms": 0.009040771776309088,
+      "invalid": 0,
+      "stereo": 0.003502108691701284,
+      "sampleRate": 24000,
+      "frames": 207600,
+      "id": "defeat",
+      "name": "Ink in the Rain",
+      "bpm": 64,
+      "sha256": "b7b927643632c1ebb9e7dc24a01f677683453bf4e32378754a13df50fb64fb80",
+      "clippedSamples": 0
+    }
+  ],
+  "ui": [
+    {
+      "viewport": [
+        1280,
+        800
+      ],
+      "label": "desktop",
+      "cues": [
+        [
+          "verdigris",
+          "verdigris-boss"
+        ],
+        [
+          "foundry",
+          "foundry-boss"
+        ],
+        [
+          "crown",
+          "crown-boss"
+        ],
+        [
+          "tidal",
+          "tidal-boss"
+        ],
+        [
+          "roseglass",
+          "roseglass-boss"
+        ],
+        [
+          "horizon",
+          "horizon-boss"
+        ]
+      ],
+      "finalStatus": {
+        "cue": "defeat",
+        "name": "Ink in the Rain",
+        "bpm": 64,
+        "bar": 1,
+        "section": "A",
+        "preview": true,
+        "playing": true,
+        "voices": 5,
+        "retiring": 0,
+        "scheduledNotes": 165,
+        "skippedTicks": 0,
+        "errors": []
+      }
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "label": "portrait",
+      "cues": [
+        [
+          "verdigris",
+          "verdigris-boss"
+        ],
+        [
+          "foundry",
+          "foundry-boss"
+        ],
+        [
+          "crown",
+          "crown-boss"
+        ],
+        [
+          "tidal",
+          "tidal-boss"
+        ],
+        [
+          "roseglass",
+          "roseglass-boss"
+        ],
+        [
+          "horizon",
+          "horizon-boss"
+        ]
+      ],
+      "finalStatus": {
+        "cue": "defeat",
+        "name": "Ink in the Rain",
+        "bpm": 64,
+        "bar": 1,
+        "section": "A",
+        "preview": true,
+        "playing": true,
+        "voices": 5,
+        "retiring": 0,
+        "scheduledNotes": 105,
+        "skippedTicks": 0,
+        "errors": []
+      }
+    },
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "label": "small",
+      "cues": [
+        [
+          "verdigris",
+          "verdigris-boss"
+        ],
+        [
+          "foundry",
+          "foundry-boss"
+        ],
+        [
+          "crown",
+          "crown-boss"
+        ],
+        [
+          "tidal",
+          "tidal-boss"
+        ],
+        [
+          "roseglass",
+          "roseglass-boss"
+        ],
+        [
+          "horizon",
+          "horizon-boss"
+        ]
+      ],
+      "finalStatus": {
+        "cue": "defeat",
+        "name": "Ink in the Rain",
+        "bpm": 64,
+        "bar": 1,
+        "section": "A",
+        "preview": true,
+        "playing": true,
+        "voices": 5,
+        "retiring": 0,
+        "scheduledNotes": 105,
+        "skippedTicks": 0,
+        "errors": []
+      }
+    }
+  ],
+  "checks": [
+    "non-silent finite stereo render: title",
+    "peak headroom / no clipped samples: title",
+    "non-silent finite stereo render: hangar",
+    "peak headroom / no clipped samples: hangar",
+    "non-silent finite stereo render: interlude",
+    "peak headroom / no clipped samples: interlude",
+    "non-silent finite stereo render: verdigris",
+    "peak headroom / no clipped samples: verdigris",
+    "non-silent finite stereo render: verdigris-boss",
+    "peak headroom / no clipped samples: verdigris-boss",
+    "non-silent finite stereo render: foundry",
+    "peak headroom / no clipped samples: foundry",
+    "non-silent finite stereo render: foundry-boss",
+    "peak headroom / no clipped samples: foundry-boss",
+    "non-silent finite stereo render: crown",
+    "peak headroom / no clipped samples: crown",
+    "non-silent finite stereo render: crown-boss",
+    "peak headroom / no clipped samples: crown-boss",
+    "non-silent finite stereo render: tidal",
+    "peak headroom / no clipped samples: tidal",
+    "non-silent finite stereo render: tidal-boss",
+    "peak headroom / no clipped samples: tidal-boss",
+    "non-silent finite stereo render: roseglass",
+    "peak headroom / no clipped samples: roseglass",
+    "non-silent finite stereo render: roseglass-boss",
+    "peak headroom / no clipped samples: roseglass-boss",
+    "non-silent finite stereo render: horizon",
+    "peak headroom / no clipped samples: horizon",
+    "non-silent finite stereo render: horizon-boss",
+    "peak headroom / no clipped samples: horizon-boss",
+    "non-silent finite stereo render: victory",
+    "peak headroom / no clipped samples: victory",
+    "non-silent finite stereo render: defeat",
+    "peak headroom / no clipped samples: defeat",
+    "17 distinct PCM outputs",
+    "desktop soundtrack dropdown includes 17 cues",
+    "desktop selected audio actually scheduled",
+    "desktop settings no horizontal overflow",
+    "desktop preview changes cue",
+    "desktop stopped preview does not continue sequencing",
+    "desktop independent mix inputs wired",
+    "desktop training uses first sector cue",
+    "desktop sector 1 routes to own boss arrangement",
+    "desktop sector 2 routes to own boss arrangement",
+    "desktop sector 3 routes to own boss arrangement",
+    "desktop sector 4 routes to own boss arrangement",
+    "desktop sector 5 routes to own boss arrangement",
+    "desktop sector 6 routes to own boss arrangement",
+    "desktop pause holds music transport",
+    "desktop resume reactivates transport",
+    "desktop rapid previews bounded",
+    "desktop audio lifecycle teardown",
+    "portrait soundtrack dropdown includes 17 cues",
+    "portrait selected audio actually scheduled",
+    "portrait settings no horizontal overflow",
+    "portrait preview changes cue",
+    "portrait stopped preview does not continue sequencing",
+    "portrait independent mix inputs wired",
+    "portrait training uses first sector cue",
+    "portrait sector 1 routes to own boss arrangement",
+    "portrait sector 2 routes to own boss arrangement",
+    "portrait sector 3 routes to own boss arrangement",
+    "portrait sector 4 routes to own boss arrangement",
+    "portrait sector 5 routes to own boss arrangement",
+    "portrait sector 6 routes to own boss arrangement",
+    "portrait pause holds music transport",
+    "portrait resume reactivates transport",
+    "portrait rapid previews bounded",
+    "portrait audio lifecycle teardown",
+    "small soundtrack dropdown includes 17 cues",
+    "small selected audio actually scheduled",
+    "small settings no horizontal overflow",
+    "small preview changes cue",
+    "small stopped preview does not continue sequencing",
+    "small independent mix inputs wired",
+    "small training uses first sector cue",
+    "small sector 1 routes to own boss arrangement",
+    "small sector 2 routes to own boss arrangement",
+    "small sector 3 routes to own boss arrangement",
+    "small sector 4 routes to own boss arrangement",
+    "small sector 5 routes to own boss arrangement",
+    "small sector 6 routes to own boss arrangement",
+    "small pause holds music transport",
+    "small resume reactivates transport",
+    "small rapid previews bounded",
+    "small audio lifecycle teardown",
+    "no uncaught browser errors",
+    "no external requests for audio or game"
+  ],
+  "browser": "144.0.7559.96",
+  "errors": [],
+  "externalRequests": [],
+  "scope": "Chromium software render + actual Web Audio and OfflineAudioContext; no physical listening-device or Safari verification"
+}

@@ -1,0 +1,1796 @@
+{
+  "build": "0.5.0",
+  "method": "Fixed 120 Hz, full-state heuristic pilot; legal movement/shoot/parry/dash/Nova/breach and offered signatures only. No hull/boss HP/timer/progression edits. Not human difficulty evidence. Local rules; no AI inference.",
+  "runs": [
+    {
+      "version": "0.5.0",
+      "layout": "desktop",
+      "arena": {
+        "width": 1280,
+        "height": 800
+      },
+      "seed": "COVENANT-VALIDATION",
+      "difficulty": "standard",
+      "outcome": "won",
+      "score": 9368,
+      "seconds": 34.46,
+      "kills": 3,
+      "bosses": 1,
+      "parries": 9,
+      "grazes": 2,
+      "damageTaken": 0,
+      "breaches": 0,
+      "contracts": [
+        {
+          "stage": 0,
+          "id": "covenant",
+          "title": "Left-side Covenant",
+          "kept": true,
+          "revision": 1,
+          "superseded": true
+        },
+        {
+          "stage": 0,
+          "id": "covenant",
+          "title": "Return to Sender",
+          "kept": true,
+          "revision": 2
+        }
+      ],
+      "upgrades": {
+        "rail": 1,
+        "parry": 1
+      },
+      "timeline": [
+        {
+          "t": 0,
+          "type": "boss",
+          "stage": 0
+        },
+        {
+          "t": 0,
+          "type": "wave",
+          "stage": 0,
+          "wave": 2
+        },
+        {
+          "t": 34.46,
+          "type": "victory",
+          "ending": "honored"
+        }
+      ],
+      "mode": "first-contact",
+      "airframe": "vanguard",
+      "sectorCount": 1,
+      "credits": 34,
+      "relics": [],
+      "routes": [],
+      "director": "balanced",
+      "encounters": 1,
+      "chronicle": [],
+      "contractLanguage": "living-covenant-v1",
+      "assists": "automatic aim/fire in First Contact UI",
+      "rules": {
+        "version": 1,
+        "title": "Return to Sender",
+        "zone": "none",
+        "speed": "slow",
+        "reflection": "charged",
+        "price": "weaker_gun",
+        "line": "I counted 6 reflected shots. Read the binding clauses below. Sign only what you intend to keep.",
+        "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+      },
+      "covenantStats": {
+        "shielded": 2,
+        "reflectedDamage": 641.1999999999999,
+        "gunDamage": 2842.800000000021,
+        "amendments": 1
+      },
+      "receipts": [
+        {
+          "revision": 1,
+          "at": 0,
+          "provider": "local-rules",
+          "model": null,
+          "latencyMs": null,
+          "spec": {
+            "version": 1,
+            "title": "Left-side Covenant",
+            "zone": "left",
+            "speed": "slow",
+            "reflection": "normal",
+            "price": "reinforcements",
+            "line": "Every promise needs a price. Read the binding clauses below. Sign only what you intend to keep.",
+            "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+          },
+          "snapshot": {
+            "seconds": 0,
+            "parries": 0,
+            "grazes": 0,
+            "damageTaken": 0,
+            "shielded": 0,
+            "reflectedDamage": 0
+          }
+        },
+        {
+          "revision": 2,
+          "at": 18.01,
+          "provider": "local-rules",
+          "model": null,
+          "latencyMs": null,
+          "spec": {
+            "version": 1,
+            "title": "Return to Sender",
+            "zone": "none",
+            "speed": "slow",
+            "reflection": "charged",
+            "price": "weaker_gun",
+            "line": "I counted 6 reflected shots. Read the binding clauses below. Sign only what you intend to keep.",
+            "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+          },
+          "snapshot": {
+            "seconds": 18.008333333332953,
+            "parries": 6,
+            "grazes": 1,
+            "damageTaken": 0,
+            "shielded": 2,
+            "reflectedDamage": 328
+          }
+        }
+      ],
+      "memoryBefore": {
+        "honored": 0,
+        "broken": 0
+      },
+      "memoryAfter": {
+        "honored": 1,
+        "broken": 0
+      },
+      "liveVoice": "not-integrated",
+      "initialPrompt": "Move the sanctuary left. Slow bullets. I accept reinforcements.",
+      "remainingHull": 10,
+      "frames": 4135
+    },
+    {
+      "version": "0.5.0",
+      "layout": "desktop",
+      "arena": {
+        "width": 1280,
+        "height": 800
+      },
+      "seed": "COVENANT-VALIDATION",
+      "difficulty": "standard",
+      "outcome": "won",
+      "score": 9040,
+      "seconds": 38.07,
+      "kills": 1,
+      "bosses": 1,
+      "parries": 9,
+      "grazes": 2,
+      "damageTaken": 0,
+      "breaches": 0,
+      "contracts": [
+        {
+          "stage": 0,
+          "id": "covenant",
+          "title": "Return to Sender",
+          "kept": true,
+          "revision": 1,
+          "superseded": true
+        },
+        {
+          "stage": 0,
+          "id": "covenant",
+          "title": "Return to Sender",
+          "kept": true,
+          "revision": 2
+        }
+      ],
+      "upgrades": {
+        "rail": 1,
+        "parry": 1
+      },
+      "timeline": [
+        {
+          "t": 0,
+          "type": "boss",
+          "stage": 0
+        },
+        {
+          "t": 0,
+          "type": "wave",
+          "stage": 0,
+          "wave": 2
+        },
+        {
+          "t": 38.07,
+          "type": "victory",
+          "ending": "honored"
+        }
+      ],
+      "mode": "first-contact",
+      "airframe": "vanguard",
+      "sectorCount": 1,
+      "credits": 30,
+      "relics": [],
+      "routes": [],
+      "director": "balanced",
+      "encounters": 1,
+      "chronicle": [],
+      "contractLanguage": "living-covenant-v1",
+      "assists": "automatic aim/fire in First Contact UI",
+      "rules": {
+        "version": 1,
+        "title": "Return to Sender",
+        "zone": "none",
+        "speed": "slow",
+        "reflection": "charged",
+        "price": "weaker_gun",
+        "line": "I counted 5 reflected shots. Read the binding clauses below. Sign only what you intend to keep.",
+        "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+      },
+      "covenantStats": {
+        "shielded": 0,
+        "reflectedDamage": 901.7999999999794,
+        "gunDamage": 2488.200000000002,
+        "amendments": 1
+      },
+      "receipts": [
+        {
+          "revision": 1,
+          "at": 0,
+          "provider": "local-rules",
+          "model": null,
+          "latencyMs": null,
+          "spec": {
+            "version": 1,
+            "title": "Return to Sender",
+            "zone": "none",
+            "speed": "slow",
+            "reflection": "charged",
+            "price": "weaker_gun",
+            "line": "Every promise needs a price. Read the binding clauses below. Sign only what you intend to keep.",
+            "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+          },
+          "snapshot": {
+            "seconds": 0,
+            "parries": 0,
+            "grazes": 0,
+            "damageTaken": 0,
+            "shielded": 0,
+            "reflectedDamage": 0
+          }
+        },
+        {
+          "revision": 2,
+          "at": 18.01,
+          "provider": "local-rules",
+          "model": null,
+          "latencyMs": null,
+          "spec": {
+            "version": 1,
+            "title": "Return to Sender",
+            "zone": "none",
+            "speed": "slow",
+            "reflection": "charged",
+            "price": "weaker_gun",
+            "line": "I counted 5 reflected shots. Read the binding clauses below. Sign only what you intend to keep.",
+            "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+          },
+          "snapshot": {
+            "seconds": 18.008333333332953,
+            "parries": 5,
+            "grazes": 2,
+            "damageTaken": 0,
+            "shielded": 0,
+            "reflectedDamage": 522
+          }
+        }
+      ],
+      "memoryBefore": {
+        "honored": 0,
+        "broken": 0
+      },
+      "memoryAfter": {
+        "honored": 1,
+        "broken": 0
+      },
+      "liveVoice": "not-integrated",
+      "initialPrompt": "Amplify reflections and slow fire. Weaker gun.",
+      "remainingHull": 10,
+      "frames": 4569
+    },
+    {
+      "version": "0.5.0",
+      "layout": "desktop",
+      "arena": {
+        "width": 1280,
+        "height": 800
+      },
+      "seed": "COVENANT-VALIDATION",
+      "difficulty": "standard",
+      "outcome": "won",
+      "score": 9000,
+      "seconds": 34.56,
+      "kills": 1,
+      "bosses": 1,
+      "parries": 7,
+      "grazes": 1,
+      "damageTaken": 2,
+      "breaches": 0,
+      "contracts": [
+        {
+          "stage": 0,
+          "id": "covenant",
+          "title": "Right-side Covenant",
+          "kept": true,
+          "revision": 1,
+          "superseded": true
+        },
+        {
+          "stage": 0,
+          "id": "covenant",
+          "title": "Return to Sender",
+          "kept": true,
+          "revision": 2
+        }
+      ],
+      "upgrades": {
+        "rail": 1,
+        "parry": 1
+      },
+      "timeline": [
+        {
+          "t": 0,
+          "type": "boss",
+          "stage": 0
+        },
+        {
+          "t": 0,
+          "type": "wave",
+          "stage": 0,
+          "wave": 2
+        },
+        {
+          "t": 34.56,
+          "type": "victory",
+          "ending": "honored"
+        }
+      ],
+      "mode": "first-contact",
+      "airframe": "vanguard",
+      "sectorCount": 1,
+      "credits": 30,
+      "relics": [],
+      "routes": [],
+      "director": "balanced",
+      "encounters": 1,
+      "chronicle": [],
+      "contractLanguage": "living-covenant-v1",
+      "assists": "automatic aim/fire in First Contact UI",
+      "rules": {
+        "version": 1,
+        "title": "Return to Sender",
+        "zone": "none",
+        "speed": "slow",
+        "reflection": "charged",
+        "price": "weaker_gun",
+        "line": "I counted 5 reflected shots. Read the binding clauses below. Sign only what you intend to keep.",
+        "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+      },
+      "covenantStats": {
+        "shielded": 10,
+        "reflectedDamage": 498.79999999999995,
+        "gunDamage": 2891.200000000022,
+        "amendments": 1
+      },
+      "receipts": [
+        {
+          "revision": 1,
+          "at": 0,
+          "provider": "local-rules",
+          "model": null,
+          "latencyMs": null,
+          "spec": {
+            "version": 1,
+            "title": "Right-side Covenant",
+            "zone": "right",
+            "speed": "normal",
+            "reflection": "normal",
+            "price": "fragile",
+            "line": "Every promise needs a price. Read the binding clauses below. Sign only what you intend to keep.",
+            "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+          },
+          "snapshot": {
+            "seconds": 0,
+            "parries": 0,
+            "grazes": 0,
+            "damageTaken": 0,
+            "shielded": 0,
+            "reflectedDamage": 0
+          }
+        },
+        {
+          "revision": 2,
+          "at": 18.01,
+          "provider": "local-rules",
+          "model": null,
+          "latencyMs": null,
+          "spec": {
+            "version": 1,
+            "title": "Return to Sender",
+            "zone": "none",
+            "speed": "slow",
+            "reflection": "charged",
+            "price": "weaker_gun",
+            "line": "I counted 5 reflected shots. Read the binding clauses below. Sign only what you intend to keep.",
+            "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+          },
+          "snapshot": {
+            "seconds": 18.008333333332953,
+            "parries": 5,
+            "grazes": 1,
+            "damageTaken": 2,
+            "shielded": 10,
+            "reflectedDamage": 290
+          }
+        }
+      ],
+      "memoryBefore": {
+        "honored": 0,
+        "broken": 0
+      },
+      "memoryAfter": {
+        "honored": 1,
+        "broken": 0
+      },
+      "liveVoice": "not-integrated",
+      "initialPrompt": "Put sanctuary on the right. I accept fragile hull.",
+      "remainingHull": 8,
+      "frames": 4147
+    },
+    {
+      "version": "0.5.0",
+      "layout": "desktop",
+      "arena": {
+        "width": 1280,
+        "height": 800
+      },
+      "seed": "COVENANT-VALIDATION",
+      "difficulty": "veteran",
+      "outcome": "won",
+      "score": 9516,
+      "seconds": 45.46,
+      "kills": 3,
+      "bosses": 1,
+      "parries": 10,
+      "grazes": 1,
+      "damageTaken": 0,
+      "breaches": 0,
+      "contracts": [
+        {
+          "stage": 0,
+          "id": "covenant",
+          "title": "Left-side Covenant",
+          "kept": true,
+          "revision": 1,
+          "superseded": true
+        },
+        {
+          "stage": 0,
+          "id": "covenant",
+          "title": "Return to Sender",
+          "kept": true,
+          "revision": 2
+        }
+      ],
+      "upgrades": {
+        "rail": 1,
+        "parry": 1
+      },
+      "timeline": [
+        {
+          "t": 0,
+          "type": "boss",
+          "stage": 0
+        },
+        {
+          "t": 0,
+          "type": "wave",
+          "stage": 0,
+          "wave": 2
+        },
+        {
+          "t": 45.46,
+          "type": "victory",
+          "ending": "honored"
+        }
+      ],
+      "mode": "first-contact",
+      "airframe": "vanguard",
+      "sectorCount": 1,
+      "credits": 34,
+      "relics": [],
+      "routes": [],
+      "director": "balanced",
+      "encounters": 1,
+      "chronicle": [],
+      "contractLanguage": "living-covenant-v1",
+      "assists": "automatic aim/fire in First Contact UI",
+      "rules": {
+        "version": 1,
+        "title": "Return to Sender",
+        "zone": "none",
+        "speed": "slow",
+        "reflection": "charged",
+        "price": "weaker_gun",
+        "line": "I counted 2 reflected shots. Read the binding clauses below. Sign only what you intend to keep.",
+        "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+      },
+      "covenantStats": {
+        "shielded": 3,
+        "reflectedDamage": 879.1999999999999,
+        "gunDamage": 3555.800000000025,
+        "amendments": 1
+      },
+      "receipts": [
+        {
+          "revision": 1,
+          "at": 0,
+          "provider": "local-rules",
+          "model": null,
+          "latencyMs": null,
+          "spec": {
+            "version": 1,
+            "title": "Left-side Covenant",
+            "zone": "left",
+            "speed": "slow",
+            "reflection": "normal",
+            "price": "reinforcements",
+            "line": "Every promise needs a price. Read the binding clauses below. Sign only what you intend to keep.",
+            "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+          },
+          "snapshot": {
+            "seconds": 0,
+            "parries": 0,
+            "grazes": 0,
+            "damageTaken": 0,
+            "shielded": 0,
+            "reflectedDamage": 0
+          }
+        },
+        {
+          "revision": 2,
+          "at": 18.01,
+          "provider": "local-rules",
+          "model": null,
+          "latencyMs": null,
+          "spec": {
+            "version": 1,
+            "title": "Return to Sender",
+            "zone": "none",
+            "speed": "slow",
+            "reflection": "charged",
+            "price": "weaker_gun",
+            "line": "I counted 2 reflected shots. Read the binding clauses below. Sign only what you intend to keep.",
+            "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+          },
+          "snapshot": {
+            "seconds": 18.008333333332953,
+            "parries": 2,
+            "grazes": 0,
+            "damageTaken": 0,
+            "shielded": 3,
+            "reflectedDamage": 116
+          }
+        }
+      ],
+      "memoryBefore": {
+        "honored": 0,
+        "broken": 0
+      },
+      "memoryAfter": {
+        "honored": 1,
+        "broken": 0
+      },
+      "liveVoice": "not-integrated",
+      "initialPrompt": "Move the sanctuary left. Slow bullets. I accept reinforcements.",
+      "remainingHull": 7,
+      "frames": 5455
+    },
+    {
+      "version": "0.5.0",
+      "layout": "desktop",
+      "arena": {
+        "width": 1280,
+        "height": 800
+      },
+      "seed": "COVENANT-VALIDATION",
+      "difficulty": "veteran",
+      "outcome": "won",
+      "score": 9412,
+      "seconds": 47.51,
+      "kills": 1,
+      "bosses": 1,
+      "parries": 12,
+      "grazes": 1,
+      "damageTaken": 0,
+      "breaches": 0,
+      "contracts": [
+        {
+          "stage": 0,
+          "id": "covenant",
+          "title": "Return to Sender",
+          "kept": true,
+          "revision": 1,
+          "superseded": true
+        },
+        {
+          "stage": 0,
+          "id": "covenant",
+          "title": "Return to Sender",
+          "kept": true,
+          "revision": 2
+        }
+      ],
+      "upgrades": {
+        "rail": 1,
+        "parry": 1
+      },
+      "timeline": [
+        {
+          "t": 0,
+          "type": "boss",
+          "stage": 0
+        },
+        {
+          "t": 0,
+          "type": "wave",
+          "stage": 0,
+          "wave": 2
+        },
+        {
+          "t": 47.51,
+          "type": "victory",
+          "ending": "honored"
+        }
+      ],
+      "mode": "first-contact",
+      "airframe": "vanguard",
+      "sectorCount": 1,
+      "credits": 30,
+      "relics": [],
+      "routes": [],
+      "director": "balanced",
+      "encounters": 1,
+      "chronicle": [],
+      "contractLanguage": "living-covenant-v1",
+      "assists": "automatic aim/fire in First Contact UI",
+      "rules": {
+        "version": 1,
+        "title": "Return to Sender",
+        "zone": "none",
+        "speed": "slow",
+        "reflection": "charged",
+        "price": "weaker_gun",
+        "line": "I counted 3 reflected shots. Read the binding clauses below. Sign only what you intend to keep.",
+        "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+      },
+      "covenantStats": {
+        "shielded": 0,
+        "reflectedDamage": 1185.5999999999601,
+        "gunDamage": 3104.4000000000165,
+        "amendments": 1
+      },
+      "receipts": [
+        {
+          "revision": 1,
+          "at": 0,
+          "provider": "local-rules",
+          "model": null,
+          "latencyMs": null,
+          "spec": {
+            "version": 1,
+            "title": "Return to Sender",
+            "zone": "none",
+            "speed": "slow",
+            "reflection": "charged",
+            "price": "weaker_gun",
+            "line": "Every promise needs a price. Read the binding clauses below. Sign only what you intend to keep.",
+            "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+          },
+          "snapshot": {
+            "seconds": 0,
+            "parries": 0,
+            "grazes": 0,
+            "damageTaken": 0,
+            "shielded": 0,
+            "reflectedDamage": 0
+          }
+        },
+        {
+          "revision": 2,
+          "at": 18.01,
+          "provider": "local-rules",
+          "model": null,
+          "latencyMs": null,
+          "spec": {
+            "version": 1,
+            "title": "Return to Sender",
+            "zone": "none",
+            "speed": "slow",
+            "reflection": "charged",
+            "price": "weaker_gun",
+            "line": "I counted 3 reflected shots. Read the binding clauses below. Sign only what you intend to keep.",
+            "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+          },
+          "snapshot": {
+            "seconds": 18.008333333332953,
+            "parries": 3,
+            "grazes": 0,
+            "damageTaken": 0,
+            "shielded": 0,
+            "reflectedDamage": 313.20000000000005
+          }
+        }
+      ],
+      "memoryBefore": {
+        "honored": 0,
+        "broken": 0
+      },
+      "memoryAfter": {
+        "honored": 1,
+        "broken": 0
+      },
+      "liveVoice": "not-integrated",
+      "initialPrompt": "Amplify reflections and slow fire. Weaker gun.",
+      "remainingHull": 7,
+      "frames": 5701
+    },
+    {
+      "version": "0.5.0",
+      "layout": "desktop",
+      "arena": {
+        "width": 1280,
+        "height": 800
+      },
+      "seed": "COVENANT-VALIDATION",
+      "difficulty": "veteran",
+      "outcome": "won",
+      "score": 9280,
+      "seconds": 42.72,
+      "kills": 1,
+      "bosses": 1,
+      "parries": 10,
+      "grazes": 0,
+      "damageTaken": 0,
+      "breaches": 0,
+      "contracts": [
+        {
+          "stage": 0,
+          "id": "covenant",
+          "title": "Right-side Covenant",
+          "kept": true,
+          "revision": 1,
+          "superseded": true
+        },
+        {
+          "stage": 0,
+          "id": "covenant",
+          "title": "Return to Sender",
+          "kept": true,
+          "revision": 2
+        }
+      ],
+      "upgrades": {
+        "rail": 1,
+        "parry": 1
+      },
+      "timeline": [
+        {
+          "t": 0,
+          "type": "boss",
+          "stage": 0
+        },
+        {
+          "t": 0,
+          "type": "wave",
+          "stage": 0,
+          "wave": 2
+        },
+        {
+          "t": 42.72,
+          "type": "victory",
+          "ending": "honored"
+        }
+      ],
+      "mode": "first-contact",
+      "airframe": "vanguard",
+      "sectorCount": 1,
+      "credits": 30,
+      "relics": [],
+      "routes": [],
+      "director": "balanced",
+      "encounters": 1,
+      "chronicle": [],
+      "contractLanguage": "living-covenant-v1",
+      "assists": "automatic aim/fire in First Contact UI",
+      "rules": {
+        "version": 1,
+        "title": "Return to Sender",
+        "zone": "none",
+        "speed": "slow",
+        "reflection": "charged",
+        "price": "weaker_gun",
+        "line": "I counted 3 reflected shots. Read the binding clauses below. Sign only what you intend to keep.",
+        "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+      },
+      "covenantStats": {
+        "shielded": 5,
+        "reflectedDamage": 820.1999999999973,
+        "gunDamage": 3469.800000000032,
+        "amendments": 1
+      },
+      "receipts": [
+        {
+          "revision": 1,
+          "at": 0,
+          "provider": "local-rules",
+          "model": null,
+          "latencyMs": null,
+          "spec": {
+            "version": 1,
+            "title": "Right-side Covenant",
+            "zone": "right",
+            "speed": "normal",
+            "reflection": "normal",
+            "price": "fragile",
+            "line": "Every promise needs a price. Read the binding clauses below. Sign only what you intend to keep.",
+            "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+          },
+          "snapshot": {
+            "seconds": 0,
+            "parries": 0,
+            "grazes": 0,
+            "damageTaken": 0,
+            "shielded": 0,
+            "reflectedDamage": 0
+          }
+        },
+        {
+          "revision": 2,
+          "at": 18.01,
+          "provider": "local-rules",
+          "model": null,
+          "latencyMs": null,
+          "spec": {
+            "version": 1,
+            "title": "Return to Sender",
+            "zone": "none",
+            "speed": "slow",
+            "reflection": "charged",
+            "price": "weaker_gun",
+            "line": "I counted 3 reflected shots. Read the binding clauses below. Sign only what you intend to keep.",
+            "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+          },
+          "snapshot": {
+            "seconds": 18.008333333332953,
+            "parries": 3,
+            "grazes": 0,
+            "damageTaken": 0,
+            "shielded": 5,
+            "reflectedDamage": 174
+          }
+        }
+      ],
+      "memoryBefore": {
+        "honored": 0,
+        "broken": 0
+      },
+      "memoryAfter": {
+        "honored": 1,
+        "broken": 0
+      },
+      "liveVoice": "not-integrated",
+      "initialPrompt": "Put sanctuary on the right. I accept fragile hull.",
+      "remainingHull": 7,
+      "frames": 5126
+    },
+    {
+      "version": "0.5.0",
+      "layout": "portrait",
+      "arena": {
+        "width": 720,
+        "height": 1250
+      },
+      "seed": "COVENANT-VALIDATION",
+      "difficulty": "standard",
+      "outcome": "won",
+      "score": 9144,
+      "seconds": 39.69,
+      "kills": 3,
+      "bosses": 1,
+      "parries": 6,
+      "grazes": 0,
+      "damageTaken": 0,
+      "breaches": 0,
+      "contracts": [
+        {
+          "stage": 0,
+          "id": "covenant",
+          "title": "Left-side Covenant",
+          "kept": true,
+          "revision": 1,
+          "superseded": true
+        },
+        {
+          "stage": 0,
+          "id": "covenant",
+          "title": "Return to Sender",
+          "kept": true,
+          "revision": 2
+        }
+      ],
+      "upgrades": {
+        "rail": 1,
+        "parry": 1
+      },
+      "timeline": [
+        {
+          "t": 0,
+          "type": "boss",
+          "stage": 0
+        },
+        {
+          "t": 0,
+          "type": "wave",
+          "stage": 0,
+          "wave": 2
+        },
+        {
+          "t": 39.69,
+          "type": "victory",
+          "ending": "honored"
+        }
+      ],
+      "mode": "first-contact",
+      "airframe": "vanguard",
+      "sectorCount": 1,
+      "credits": 34,
+      "relics": [],
+      "routes": [],
+      "director": "balanced",
+      "encounters": 1,
+      "chronicle": [],
+      "contractLanguage": "living-covenant-v1",
+      "assists": "automatic aim/fire in First Contact UI",
+      "rules": {
+        "version": 1,
+        "title": "Return to Sender",
+        "zone": "none",
+        "speed": "slow",
+        "reflection": "charged",
+        "price": "weaker_gun",
+        "line": "I counted 4 reflected shots. Read the binding clauses below. Sign only what you intend to keep.",
+        "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+      },
+      "covenantStats": {
+        "shielded": 2,
+        "reflectedDamage": 440.79999999999995,
+        "gunDamage": 3065.2000000000276,
+        "amendments": 1
+      },
+      "receipts": [
+        {
+          "revision": 1,
+          "at": 0,
+          "provider": "local-rules",
+          "model": null,
+          "latencyMs": null,
+          "spec": {
+            "version": 1,
+            "title": "Left-side Covenant",
+            "zone": "left",
+            "speed": "slow",
+            "reflection": "normal",
+            "price": "reinforcements",
+            "line": "Every promise needs a price. Read the binding clauses below. Sign only what you intend to keep.",
+            "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+          },
+          "snapshot": {
+            "seconds": 0,
+            "parries": 0,
+            "grazes": 0,
+            "damageTaken": 0,
+            "shielded": 0,
+            "reflectedDamage": 0
+          }
+        },
+        {
+          "revision": 2,
+          "at": 18.01,
+          "provider": "local-rules",
+          "model": null,
+          "latencyMs": null,
+          "spec": {
+            "version": 1,
+            "title": "Return to Sender",
+            "zone": "none",
+            "speed": "slow",
+            "reflection": "charged",
+            "price": "weaker_gun",
+            "line": "I counted 4 reflected shots. Read the binding clauses below. Sign only what you intend to keep.",
+            "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+          },
+          "snapshot": {
+            "seconds": 18.008333333332953,
+            "parries": 4,
+            "grazes": 0,
+            "damageTaken": 0,
+            "shielded": 2,
+            "reflectedDamage": 174
+          }
+        }
+      ],
+      "memoryBefore": {
+        "honored": 0,
+        "broken": 0
+      },
+      "memoryAfter": {
+        "honored": 1,
+        "broken": 0
+      },
+      "liveVoice": "not-integrated",
+      "initialPrompt": "Move the sanctuary left. Slow bullets. I accept reinforcements.",
+      "remainingHull": 10,
+      "frames": 4763
+    },
+    {
+      "version": "0.5.0",
+      "layout": "portrait",
+      "arena": {
+        "width": 720,
+        "height": 1250
+      },
+      "seed": "COVENANT-VALIDATION",
+      "difficulty": "standard",
+      "outcome": "won",
+      "score": 9060,
+      "seconds": 40.58,
+      "kills": 1,
+      "bosses": 1,
+      "parries": 7,
+      "grazes": 0,
+      "damageTaken": 0,
+      "breaches": 0,
+      "contracts": [
+        {
+          "stage": 0,
+          "id": "covenant",
+          "title": "Return to Sender",
+          "kept": true,
+          "revision": 1,
+          "superseded": true
+        },
+        {
+          "stage": 0,
+          "id": "covenant",
+          "title": "Return to Sender",
+          "kept": true,
+          "revision": 2
+        }
+      ],
+      "upgrades": {
+        "rail": 1,
+        "parry": 1
+      },
+      "timeline": [
+        {
+          "t": 0,
+          "type": "boss",
+          "stage": 0
+        },
+        {
+          "t": 0,
+          "type": "wave",
+          "stage": 0,
+          "wave": 2
+        },
+        {
+          "t": 40.58,
+          "type": "victory",
+          "ending": "honored"
+        }
+      ],
+      "mode": "first-contact",
+      "airframe": "vanguard",
+      "sectorCount": 1,
+      "credits": 30,
+      "relics": [],
+      "routes": [],
+      "director": "balanced",
+      "encounters": 1,
+      "chronicle": [],
+      "contractLanguage": "living-covenant-v1",
+      "assists": "automatic aim/fire in First Contact UI",
+      "rules": {
+        "version": 1,
+        "title": "Return to Sender",
+        "zone": "none",
+        "speed": "slow",
+        "reflection": "charged",
+        "price": "weaker_gun",
+        "line": "I counted 2 reflected shots. Read the binding clauses below. Sign only what you intend to keep.",
+        "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+      },
+      "covenantStats": {
+        "shielded": 0,
+        "reflectedDamage": 730.8,
+        "gunDamage": 2659.1999999999803,
+        "amendments": 1
+      },
+      "receipts": [
+        {
+          "revision": 1,
+          "at": 0,
+          "provider": "local-rules",
+          "model": null,
+          "latencyMs": null,
+          "spec": {
+            "version": 1,
+            "title": "Return to Sender",
+            "zone": "none",
+            "speed": "slow",
+            "reflection": "charged",
+            "price": "weaker_gun",
+            "line": "Every promise needs a price. Read the binding clauses below. Sign only what you intend to keep.",
+            "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+          },
+          "snapshot": {
+            "seconds": 0,
+            "parries": 0,
+            "grazes": 0,
+            "damageTaken": 0,
+            "shielded": 0,
+            "reflectedDamage": 0
+          }
+        },
+        {
+          "revision": 2,
+          "at": 18.01,
+          "provider": "local-rules",
+          "model": null,
+          "latencyMs": null,
+          "spec": {
+            "version": 1,
+            "title": "Return to Sender",
+            "zone": "none",
+            "speed": "slow",
+            "reflection": "charged",
+            "price": "weaker_gun",
+            "line": "I counted 2 reflected shots. Read the binding clauses below. Sign only what you intend to keep.",
+            "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+          },
+          "snapshot": {
+            "seconds": 18.008333333332953,
+            "parries": 2,
+            "grazes": 0,
+            "damageTaken": 0,
+            "shielded": 0,
+            "reflectedDamage": 208.8
+          }
+        }
+      ],
+      "memoryBefore": {
+        "honored": 0,
+        "broken": 0
+      },
+      "memoryAfter": {
+        "honored": 1,
+        "broken": 0
+      },
+      "liveVoice": "not-integrated",
+      "initialPrompt": "Amplify reflections and slow fire. Weaker gun.",
+      "remainingHull": 10,
+      "frames": 4870
+    },
+    {
+      "version": "0.5.0",
+      "layout": "portrait",
+      "arena": {
+        "width": 720,
+        "height": 1250
+      },
+      "seed": "COVENANT-VALIDATION",
+      "difficulty": "standard",
+      "outcome": "won",
+      "score": 8952,
+      "seconds": 35.92,
+      "kills": 1,
+      "bosses": 1,
+      "parries": 7,
+      "grazes": 0,
+      "damageTaken": 0,
+      "breaches": 0,
+      "contracts": [
+        {
+          "stage": 0,
+          "id": "covenant",
+          "title": "Right-side Covenant",
+          "kept": true,
+          "revision": 1,
+          "superseded": true
+        },
+        {
+          "stage": 0,
+          "id": "covenant",
+          "title": "Return to Sender",
+          "kept": true,
+          "revision": 2
+        }
+      ],
+      "upgrades": {
+        "rail": 1,
+        "parry": 1
+      },
+      "timeline": [
+        {
+          "t": 0,
+          "type": "boss",
+          "stage": 0
+        },
+        {
+          "t": 0,
+          "type": "wave",
+          "stage": 0,
+          "wave": 2
+        },
+        {
+          "t": 35.92,
+          "type": "victory",
+          "ending": "honored"
+        }
+      ],
+      "mode": "first-contact",
+      "airframe": "vanguard",
+      "sectorCount": 1,
+      "credits": 30,
+      "relics": [],
+      "routes": [],
+      "director": "balanced",
+      "encounters": 1,
+      "chronicle": [],
+      "contractLanguage": "living-covenant-v1",
+      "assists": "automatic aim/fire in First Contact UI",
+      "rules": {
+        "version": 1,
+        "title": "Return to Sender",
+        "zone": "none",
+        "speed": "slow",
+        "reflection": "charged",
+        "price": "weaker_gun",
+        "line": "I counted 3 reflected shots. Read the binding clauses below. Sign only what you intend to keep.",
+        "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+      },
+      "covenantStats": {
+        "shielded": 2,
+        "reflectedDamage": 451.19999999999993,
+        "gunDamage": 2974.80000000002,
+        "amendments": 1
+      },
+      "receipts": [
+        {
+          "revision": 1,
+          "at": 0,
+          "provider": "local-rules",
+          "model": null,
+          "latencyMs": null,
+          "spec": {
+            "version": 1,
+            "title": "Right-side Covenant",
+            "zone": "right",
+            "speed": "normal",
+            "reflection": "normal",
+            "price": "fragile",
+            "line": "Every promise needs a price. Read the binding clauses below. Sign only what you intend to keep.",
+            "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+          },
+          "snapshot": {
+            "seconds": 0,
+            "parries": 0,
+            "grazes": 0,
+            "damageTaken": 0,
+            "shielded": 0,
+            "reflectedDamage": 0
+          }
+        },
+        {
+          "revision": 2,
+          "at": 18.01,
+          "provider": "local-rules",
+          "model": null,
+          "latencyMs": null,
+          "spec": {
+            "version": 1,
+            "title": "Return to Sender",
+            "zone": "none",
+            "speed": "slow",
+            "reflection": "charged",
+            "price": "weaker_gun",
+            "line": "I counted 3 reflected shots. Read the binding clauses below. Sign only what you intend to keep.",
+            "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+          },
+          "snapshot": {
+            "seconds": 18.008333333332953,
+            "parries": 3,
+            "grazes": 0,
+            "damageTaken": 0,
+            "shielded": 2,
+            "reflectedDamage": 174
+          }
+        }
+      ],
+      "memoryBefore": {
+        "honored": 0,
+        "broken": 0
+      },
+      "memoryAfter": {
+        "honored": 1,
+        "broken": 0
+      },
+      "liveVoice": "not-integrated",
+      "initialPrompt": "Put sanctuary on the right. I accept fragile hull.",
+      "remainingHull": 10,
+      "frames": 4310
+    },
+    {
+      "version": "0.5.0",
+      "layout": "portrait",
+      "arena": {
+        "width": 720,
+        "height": 1250
+      },
+      "seed": "COVENANT-VALIDATION",
+      "difficulty": "veteran",
+      "outcome": "won",
+      "score": 9396,
+      "seconds": 46.84,
+      "kills": 3,
+      "bosses": 1,
+      "parries": 10,
+      "grazes": 1,
+      "damageTaken": 0,
+      "breaches": 0,
+      "contracts": [
+        {
+          "stage": 0,
+          "id": "covenant",
+          "title": "Left-side Covenant",
+          "kept": true,
+          "revision": 1,
+          "superseded": true
+        },
+        {
+          "stage": 0,
+          "id": "covenant",
+          "title": "Return to Sender",
+          "kept": true,
+          "revision": 2
+        }
+      ],
+      "upgrades": {
+        "rail": 1,
+        "parry": 1
+      },
+      "timeline": [
+        {
+          "t": 0,
+          "type": "boss",
+          "stage": 0
+        },
+        {
+          "t": 0,
+          "type": "wave",
+          "stage": 0,
+          "wave": 2
+        },
+        {
+          "t": 46.84,
+          "type": "victory",
+          "ending": "honored"
+        }
+      ],
+      "mode": "first-contact",
+      "airframe": "vanguard",
+      "sectorCount": 1,
+      "credits": 34,
+      "relics": [],
+      "routes": [],
+      "director": "balanced",
+      "encounters": 1,
+      "chronicle": [],
+      "contractLanguage": "living-covenant-v1",
+      "assists": "automatic aim/fire in First Contact UI",
+      "rules": {
+        "version": 1,
+        "title": "Return to Sender",
+        "zone": "none",
+        "speed": "slow",
+        "reflection": "charged",
+        "price": "weaker_gun",
+        "line": "I counted 3 reflected shots. Read the binding clauses below. Sign only what you intend to keep.",
+        "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+      },
+      "covenantStats": {
+        "shielded": 3,
+        "reflectedDamage": 904.7999999999998,
+        "gunDamage": 3530.2000000000216,
+        "amendments": 1
+      },
+      "receipts": [
+        {
+          "revision": 1,
+          "at": 0,
+          "provider": "local-rules",
+          "model": null,
+          "latencyMs": null,
+          "spec": {
+            "version": 1,
+            "title": "Left-side Covenant",
+            "zone": "left",
+            "speed": "slow",
+            "reflection": "normal",
+            "price": "reinforcements",
+            "line": "Every promise needs a price. Read the binding clauses below. Sign only what you intend to keep.",
+            "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+          },
+          "snapshot": {
+            "seconds": 0,
+            "parries": 0,
+            "grazes": 0,
+            "damageTaken": 0,
+            "shielded": 0,
+            "reflectedDamage": 0
+          }
+        },
+        {
+          "revision": 2,
+          "at": 18.01,
+          "provider": "local-rules",
+          "model": null,
+          "latencyMs": null,
+          "spec": {
+            "version": 1,
+            "title": "Return to Sender",
+            "zone": "none",
+            "speed": "slow",
+            "reflection": "charged",
+            "price": "weaker_gun",
+            "line": "I counted 3 reflected shots. Read the binding clauses below. Sign only what you intend to keep.",
+            "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+          },
+          "snapshot": {
+            "seconds": 18.008333333332953,
+            "parries": 3,
+            "grazes": 0,
+            "damageTaken": 0,
+            "shielded": 3,
+            "reflectedDamage": 174
+          }
+        }
+      ],
+      "memoryBefore": {
+        "honored": 0,
+        "broken": 0
+      },
+      "memoryAfter": {
+        "honored": 1,
+        "broken": 0
+      },
+      "liveVoice": "not-integrated",
+      "initialPrompt": "Move the sanctuary left. Slow bullets. I accept reinforcements.",
+      "remainingHull": 7,
+      "frames": 5621
+    },
+    {
+      "version": "0.5.0",
+      "layout": "portrait",
+      "arena": {
+        "width": 720,
+        "height": 1250
+      },
+      "seed": "COVENANT-VALIDATION",
+      "difficulty": "veteran",
+      "outcome": "won",
+      "score": 9156,
+      "seconds": 52.28,
+      "kills": 1,
+      "bosses": 1,
+      "parries": 9,
+      "grazes": 0,
+      "damageTaken": 0,
+      "breaches": 0,
+      "contracts": [
+        {
+          "stage": 0,
+          "id": "covenant",
+          "title": "Return to Sender",
+          "kept": true,
+          "revision": 1,
+          "superseded": true
+        },
+        {
+          "stage": 0,
+          "id": "covenant",
+          "title": "Return to Sender",
+          "kept": true,
+          "revision": 2
+        }
+      ],
+      "upgrades": {
+        "rail": 1,
+        "parry": 1
+      },
+      "timeline": [
+        {
+          "t": 0,
+          "type": "boss",
+          "stage": 0
+        },
+        {
+          "t": 0,
+          "type": "wave",
+          "stage": 0,
+          "wave": 2
+        },
+        {
+          "t": 52.28,
+          "type": "victory",
+          "ending": "honored"
+        }
+      ],
+      "mode": "first-contact",
+      "airframe": "vanguard",
+      "sectorCount": 1,
+      "credits": 30,
+      "relics": [],
+      "routes": [],
+      "director": "balanced",
+      "encounters": 1,
+      "chronicle": [],
+      "contractLanguage": "living-covenant-v1",
+      "assists": "automatic aim/fire in First Contact UI",
+      "rules": {
+        "version": 1,
+        "title": "Return to Sender",
+        "zone": "none",
+        "speed": "slow",
+        "reflection": "charged",
+        "price": "weaker_gun",
+        "line": "I counted 2 reflected shots. Read the binding clauses below. Sign only what you intend to keep.",
+        "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+      },
+      "covenantStats": {
+        "shielded": 0,
+        "reflectedDamage": 857.999999999957,
+        "gunDamage": 3432.000000000024,
+        "amendments": 1
+      },
+      "receipts": [
+        {
+          "revision": 1,
+          "at": 0,
+          "provider": "local-rules",
+          "model": null,
+          "latencyMs": null,
+          "spec": {
+            "version": 1,
+            "title": "Return to Sender",
+            "zone": "none",
+            "speed": "slow",
+            "reflection": "charged",
+            "price": "weaker_gun",
+            "line": "Every promise needs a price. Read the binding clauses below. Sign only what you intend to keep.",
+            "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+          },
+          "snapshot": {
+            "seconds": 0,
+            "parries": 0,
+            "grazes": 0,
+            "damageTaken": 0,
+            "shielded": 0,
+            "reflectedDamage": 0
+          }
+        },
+        {
+          "revision": 2,
+          "at": 18.01,
+          "provider": "local-rules",
+          "model": null,
+          "latencyMs": null,
+          "spec": {
+            "version": 1,
+            "title": "Return to Sender",
+            "zone": "none",
+            "speed": "slow",
+            "reflection": "charged",
+            "price": "weaker_gun",
+            "line": "I counted 2 reflected shots. Read the binding clauses below. Sign only what you intend to keep.",
+            "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+          },
+          "snapshot": {
+            "seconds": 18.008333333332953,
+            "parries": 2,
+            "grazes": 0,
+            "damageTaken": 0,
+            "shielded": 0,
+            "reflectedDamage": 208.8
+          }
+        }
+      ],
+      "memoryBefore": {
+        "honored": 0,
+        "broken": 0
+      },
+      "memoryAfter": {
+        "honored": 1,
+        "broken": 0
+      },
+      "liveVoice": "not-integrated",
+      "initialPrompt": "Amplify reflections and slow fire. Weaker gun.",
+      "remainingHull": 7,
+      "frames": 6274
+    },
+    {
+      "version": "0.5.0",
+      "layout": "portrait",
+      "arena": {
+        "width": 720,
+        "height": 1250
+      },
+      "seed": "COVENANT-VALIDATION",
+      "difficulty": "veteran",
+      "outcome": "won",
+      "score": 8988,
+      "seconds": 46.04,
+      "kills": 1,
+      "bosses": 1,
+      "parries": 7,
+      "grazes": 0,
+      "damageTaken": 0,
+      "breaches": 0,
+      "contracts": [
+        {
+          "stage": 0,
+          "id": "covenant",
+          "title": "Right-side Covenant",
+          "kept": true,
+          "revision": 1,
+          "superseded": true
+        },
+        {
+          "stage": 0,
+          "id": "covenant",
+          "title": "Return to Sender",
+          "kept": true,
+          "revision": 2
+        }
+      ],
+      "upgrades": {
+        "rail": 1,
+        "parry": 1
+      },
+      "timeline": [
+        {
+          "t": 0,
+          "type": "boss",
+          "stage": 0
+        },
+        {
+          "t": 0,
+          "type": "wave",
+          "stage": 0,
+          "wave": 2
+        },
+        {
+          "t": 46.04,
+          "type": "victory",
+          "ending": "honored"
+        }
+      ],
+      "mode": "first-contact",
+      "airframe": "vanguard",
+      "sectorCount": 1,
+      "credits": 30,
+      "relics": [],
+      "routes": [],
+      "director": "balanced",
+      "encounters": 1,
+      "chronicle": [],
+      "contractLanguage": "living-covenant-v1",
+      "assists": "automatic aim/fire in First Contact UI",
+      "rules": {
+        "version": 1,
+        "title": "Return to Sender",
+        "zone": "none",
+        "speed": "slow",
+        "reflection": "charged",
+        "price": "weaker_gun",
+        "line": "I counted 2 reflected shots. Read the binding clauses below. Sign only what you intend to keep.",
+        "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+      },
+      "covenantStats": {
+        "shielded": 1,
+        "reflectedDamage": 638,
+        "gunDamage": 3652.0000000000296,
+        "amendments": 1
+      },
+      "receipts": [
+        {
+          "revision": 1,
+          "at": 0,
+          "provider": "local-rules",
+          "model": null,
+          "latencyMs": null,
+          "spec": {
+            "version": 1,
+            "title": "Right-side Covenant",
+            "zone": "right",
+            "speed": "normal",
+            "reflection": "normal",
+            "price": "fragile",
+            "line": "Every promise needs a price. Read the binding clauses below. Sign only what you intend to keep.",
+            "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+          },
+          "snapshot": {
+            "seconds": 0,
+            "parries": 0,
+            "grazes": 0,
+            "damageTaken": 0,
+            "shielded": 0,
+            "reflectedDamage": 0
+          }
+        },
+        {
+          "revision": 2,
+          "at": 18.01,
+          "provider": "local-rules",
+          "model": null,
+          "latencyMs": null,
+          "spec": {
+            "version": 1,
+            "title": "Return to Sender",
+            "zone": "none",
+            "speed": "slow",
+            "reflection": "charged",
+            "price": "weaker_gun",
+            "line": "I counted 2 reflected shots. Read the binding clauses below. Sign only what you intend to keep.",
+            "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+          },
+          "snapshot": {
+            "seconds": 18.008333333332953,
+            "parries": 2,
+            "grazes": 0,
+            "damageTaken": 0,
+            "shielded": 1,
+            "reflectedDamage": 58
+          }
+        }
+      ],
+      "memoryBefore": {
+        "honored": 0,
+        "broken": 0
+      },
+      "memoryAfter": {
+        "honored": 1,
+        "broken": 0
+      },
+      "liveVoice": "not-integrated",
+      "initialPrompt": "Put sanctuary on the right. I accept fragile hull.",
+      "remainingHull": 7,
+      "frames": 5525
+    }
+  ],
+  "won": 12,
+  "total": 12
+}

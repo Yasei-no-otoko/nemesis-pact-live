@@ -1,0 +1,57 @@
+{
+  "build": "0.5.0",
+  "completedAtUTC": "2026-09-13T13:40:23.229464+00:00",
+  "offlineHtmlSha256": "761cd6340eef02fedec94cbeb84fd8d528b8781238d14f85c0f7dc9285c6ba76",
+  "offlineHtmlBytes": 323999,
+  "node": "v22.16.0",
+  "chromium": "144.0.7559.96",
+  "unitTests": {
+    "pass": 164,
+    "fail": 0,
+    "baselinePass": 124,
+    "newTests": 40
+  },
+  "covenantBrowserViewports": [
+    [
+      1280,
+      800
+    ],
+    [
+      390,
+      844
+    ],
+    [
+      320,
+      568
+    ]
+  ],
+  "covenantBrowserCheckGroups": 18,
+  "legacySectorBrowserFixtures": 18,
+  "actualBrowserLegalInputVictoryAndRetryLayouts": 2,
+  "httpChecks": 9,
+  "audioChecks": 88,
+  "synthesizedCuesRendered": 17,
+  "covenantSimulations": {
+    "won": 12,
+    "total": 12,
+    "secondsMin": 34.46,
+    "secondsMax": 52.28
+  },
+  "campaignSimulations": {
+    "won": 12,
+    "total": 12
+  },
+  "renderer": "WebGL2 through ANGLE / SwiftShader software",
+  "liveOpenAIInferenceCalls": 0,
+  "gptLiveIntegrated": false,
+  "deployment": false,
+  "publicOneMinuteVideoUrl": null,
+  "submitted": false,
+  "limitations": [
+    "Actual upstream responses were injected fixtures, not model calls.",
+    "Heuristic pilots observe full state; not human difficulty or input-latency evidence.",
+    "Browser viewports are emulation, not physical phone verification.",
+    "Native WebGPU, Safari and physical-GPU FPS unverified.",
+    "No configured live account access, GPT-Live transport, production hosting or contest submission."
+  ]
+}

@@ -1,0 +1,941 @@
+{
+  "baselineZip": "NEMESIS-PACT-3D-EN-v0.4.1-source.zip",
+  "baselineZipSha256": "d98a066ff4d495094a953f27bdab669317443fb3d10d8d6f0f9b8e7ed56710a2",
+  "current": "0.5.0",
+  "generatedAtUTC": "2026-09-13T13:40:23.229464+00:00",
+  "note": "Content differences, not a reconstructed Git history. Self-referential checksum manifests excluded.",
+  "changedOrAdded": [
+    {
+      "path": ".env.example",
+      "status": "modified",
+      "category": "source-or-document",
+      "baselineSha256": "b02a292271459aea400c09db6749c4224658b81fe1475423f50c093ddf283ca6",
+      "sha256": "1ac9da2d4c5fcdd26320771d576b1a6f8acf9c7eea5f62a7cbd9af69475c52ec"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "status": "modified",
+      "category": "source-or-document",
+      "baselineSha256": "07524e351d67838149490e4f2894274d754c4f80b090ab290047d57e14960888",
+      "sha256": "bce3d315952f8a7ec893fda4b06531b5716df3a21e3b00ef4e3e33b28a8ac6b6"
+    },
+    {
+      "path": "README-JA.md",
+      "status": "added",
+      "category": "source-or-document",
+      "baselineSha256": null,
+      "sha256": "cad96dae0f8c9023d292cbea3d4b2b8d47f67e530b5e9d9ec91945d98ced4c65"
+    },
+    {
+      "path": "README.md",
+      "status": "modified",
+      "category": "source-or-document",
+      "baselineSha256": "08dc4f8a353bd23d23a6b5e7b19e4e24013f44db6d401d7825444aa2266cd7c3",
+      "sha256": "0caa4a768a25e55ec31acabb1136bf3fa2ad7a26008184056cf6a6b35cc495d0"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "status": "modified",
+      "category": "source-or-document",
+      "baselineSha256": "e641bbaf3268093b683c18df2f929abc955679c24db71fe5430aa3ff8f44564c",
+      "sha256": "cecf32a44fb835d691f5c4e713b64ef8409ee389e02958f92c9b4cee7e8fa6fc"
+    },
+    {
+      "path": "api/covenant.mjs",
+      "status": "added",
+      "category": "source-or-document",
+      "baselineSha256": null,
+      "sha256": "8dc3ea8d4fae14d966cd587b5e96f36183f49e11c7fd580f7437bd923e356edc"
+    },
+    {
+      "path": "dist/NEMESIS-PACT.html",
+      "status": "modified",
+      "category": "source-or-document",
+      "baselineSha256": "e60964e54716cf41ba001d86765860b8deebc9196a6c441ff1a6507d583af320",
+      "sha256": "761cd6340eef02fedec94cbeb84fd8d528b8781238d14f85c0f7dc9285c6ba76"
+    },
+    {
+      "path": "docs/AI-PROTOTYPE.md",
+      "status": "modified",
+      "category": "source-or-document",
+      "baselineSha256": "46887130ad0bb7377cb01fa5c018ea0fe7ff2f5ffec33adda5d67bf6005bd462",
+      "sha256": "9b3c86ece2bcb69443fec0b47988fe7fe0b92cba73708cc7ed2248630c6df6a6"
+    },
+    {
+      "path": "docs/AUDIO.md",
+      "status": "modified",
+      "category": "source-or-document",
+      "baselineSha256": "6f5d485f4ba2fb95e94a48bca49b3d9c4396ae519a720273c63ff515df0fceda",
+      "sha256": "534fd294f6cbeaf835383b0a6a4c4c3077a78f296a3a967f261a3f10611e92ba"
+    },
+    {
+      "path": "docs/DELIVERY.md",
+      "status": "modified",
+      "category": "source-or-document",
+      "baselineSha256": "464aee96ec3f1653d0880785870d600ba6dea6b655ba791f31436d1e7f15484c",
+      "sha256": "e466519389e4dd2f9b7fdde55f1c39ca797a31e4608fdeb53badb8eb6f8251d7"
+    },
+    {
+      "path": "docs/DEPLOYMENT.md",
+      "status": "modified",
+      "category": "source-or-document",
+      "baselineSha256": "74dd58eee0ac15e299a825c679ba2a535f6bdb25c86cb11039aba0023fc7fb61",
+      "sha256": "497a1c212414f6d160186efc3ce04cd5c5e7fc72b7d8eb4d931791c396e5ddb4"
+    },
+    {
+      "path": "docs/GPT-LIVE-1-ASSESSMENT-JA.md",
+      "status": "added",
+      "category": "source-or-document",
+      "baselineSha256": null,
+      "sha256": "28074ff1b7c0dc32d4001c4685387df3557a90137fe422b22fdeed9c0880bfe7"
+    },
+    {
+      "path": "docs/LIVING-COVENANT.md",
+      "status": "added",
+      "category": "source-or-document",
+      "baselineSha256": null,
+      "sha256": "198aea170ab457f54fe8ec57079afb4cdbc7539bfee31991267e2b1eceae378d"
+    },
+    {
+      "path": "docs/PROVENANCE.md",
+      "status": "modified",
+      "category": "source-or-document",
+      "baselineSha256": "a63ce10f1342a3f3892f84d678e72e525ffa3b0324ecff689a3230bd14878889",
+      "sha256": "c393f757cdee16c1d03635cb918cc59daebe64fc060d7980d2f6e98270fe46fd"
+    },
+    {
+      "path": "docs/VALIDATION-0.5.0.md",
+      "status": "added",
+      "category": "source-or-document",
+      "baselineSha256": null,
+      "sha256": "9d7cddc5731780f881f56d670ab2815910194910c1908fabba28bd70a639d374"
+    },
+    {
+      "path": "docs/VALIDATION.md",
+      "status": "modified",
+      "category": "source-or-document",
+      "baselineSha256": "1f13a94d9c3379b20f6bf5588e13bc97b97f600f6c8dca32d37d9166dc089485",
+      "sha256": "2dd47ed4ef495fd96b45f6edc751c878cc0069b6ca127eb038368d76c6458741"
+    },
+    {
+      "path": "docs/baseline-0.4.1-docs/CHANGELOG.md",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "07524e351d67838149490e4f2894274d754c4f80b090ab290047d57e14960888"
+    },
+    {
+      "path": "docs/baseline-0.4.1-docs/DELIVERY.md",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "464aee96ec3f1653d0880785870d600ba6dea6b655ba791f31436d1e7f15484c"
+    },
+    {
+      "path": "docs/baseline-0.4.1-docs/PROVENANCE.md",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "a63ce10f1342a3f3892f84d678e72e525ffa3b0324ecff689a3230bd14878889"
+    },
+    {
+      "path": "docs/baseline-0.4.1-docs/README.md",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "08dc4f8a353bd23d23a6b5e7b19e4e24013f44db6d401d7825444aa2266cd7c3"
+    },
+    {
+      "path": "docs/baseline-0.4.1-docs/VALIDATION.md",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "1f13a94d9c3379b20f6bf5588e13bc97b97f600f6c8dca32d37d9166dc089485"
+    },
+    {
+      "path": "docs/baseline-0.4.1-docs/baseline-tests.log",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "205c96b13745bed6e995e6ccd9e78b9763a379c2c37fb76b5a02d3dbc5c3aee0"
+    },
+    {
+      "path": "docs/baseline-0.4.1-docs/checksums.json",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "7c991d77bdacd873a9717c5da4b9a55bf5658801442f5eaa29d594077591195d"
+    },
+    {
+      "path": "docs/validation-0.5.0/SUMMARY.json",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "fb83f9645891c4fe61eb70056cfddb99bd12e4eae5bb8cc23a68014f1abc7efe"
+    },
+    {
+      "path": "docs/validation-0.5.0/audio-render-results.json",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "ad257479003afd7fec273123906de846e5389e0545ba1670e2cf02cca166d090"
+    },
+    {
+      "path": "docs/validation-0.5.0/audio-results.json",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "3cb3cef0a205e09c0667123978f21a1944cd3d5146d0565860da937c7e7d73d0"
+    },
+    {
+      "path": "docs/validation-0.5.0/audio-wav/crown-boss.wav",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "736fb4f9db3992c71241e02393a33e8dd967dc1e983183de5a8bc4ed94f471b1"
+    },
+    {
+      "path": "docs/validation-0.5.0/audio-wav/crown.wav",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "280c8ba68c022fbfdff7f9373885836eb972f667129a5fae722ddc428bf25da4"
+    },
+    {
+      "path": "docs/validation-0.5.0/audio-wav/defeat.wav",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "7a970b0399bb9a9433e14ffa0b38abc23f77b2c016c41724fb65a4c12f2ef63f"
+    },
+    {
+      "path": "docs/validation-0.5.0/audio-wav/foundry-boss.wav",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "f7befc4b22ac357650190c79e3e358684fa24ae7076acc8976d01b82ce937878"
+    },
+    {
+      "path": "docs/validation-0.5.0/audio-wav/foundry.wav",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "0ae000c52c9fa0b37397618d7dd9d24313ffc21aa9cb63efd2ea8c9dbde4f408"
+    },
+    {
+      "path": "docs/validation-0.5.0/audio-wav/hangar.wav",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "62160fdb5dbc80043b9a2c72d813a3481f5c71e283f04fb60bc24878439973d4"
+    },
+    {
+      "path": "docs/validation-0.5.0/audio-wav/horizon-boss.wav",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "f27ee5ccd3ac8dbfc9beef7ece28aca79e1e2fb0a2060f1c42416056a28fc8d0"
+    },
+    {
+      "path": "docs/validation-0.5.0/audio-wav/horizon.wav",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "14a043dad8b6f781a0a0ccd04ce2c737ad1346dbef19d79de0bd6751a5787f9a"
+    },
+    {
+      "path": "docs/validation-0.5.0/audio-wav/interlude.wav",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "15be66fd8256c32b13ea434e6bf6b3c8adbe862aeaaf141dd38ae644b9d6465e"
+    },
+    {
+      "path": "docs/validation-0.5.0/audio-wav/roseglass-boss.wav",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "fc7614a4ca695dcdeaa75641cd1bd525c7c1697b460d19b0ac0fbfacfdace4d0"
+    },
+    {
+      "path": "docs/validation-0.5.0/audio-wav/roseglass.wav",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "b35a1be2d0d0d96de558ea7f0b4e6a8247f2ff69d7bb82c05f90c99264e637ed"
+    },
+    {
+      "path": "docs/validation-0.5.0/audio-wav/tidal-boss.wav",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "5342f945a81a7edd485ece6b8c085f13ae5aa58f69e23d6dc2c50f6d7d1b707a"
+    },
+    {
+      "path": "docs/validation-0.5.0/audio-wav/tidal.wav",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "627194b996fa0bebb1701f5d30d5f5f4211b282d4bd45c1de4ebe261a6067b08"
+    },
+    {
+      "path": "docs/validation-0.5.0/audio-wav/title.wav",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "33ea0265cf50f5c221395b525ef82c13e58979ab035e321c24ac29ede10a6ab8"
+    },
+    {
+      "path": "docs/validation-0.5.0/audio-wav/verdigris-boss.wav",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "593b86abf7a196d7951fd166d966a86d2144dc703ff37d2047333d854713b4ed"
+    },
+    {
+      "path": "docs/validation-0.5.0/audio-wav/verdigris.wav",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "81cfb22284fcd828d5cb645b386ee70b1586fcb057b8e2a49aa1b3c6b8ffee79"
+    },
+    {
+      "path": "docs/validation-0.5.0/audio-wav/victory.wav",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "573fe972b381608a50a8592c0811c8496c5905421ab8b0eded6ecfeec00f0988"
+    },
+    {
+      "path": "docs/validation-0.5.0/audio.log",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "75c41641e6109e039e047b6b22bf2b4dd2bd870c7fce7c8731dcf93af2aa59ff"
+    },
+    {
+      "path": "docs/validation-0.5.0/campaign-simulation.log",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "e55318179c714ba44aa23037323e4c347c6345761c8b2e626287b8c39760e9e3"
+    },
+    {
+      "path": "docs/validation-0.5.0/campaign-simulations.json",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "35e8f142a35e4d76fa4750ee74c61992881b76f1af1a71bc31638c315dc1b05d"
+    },
+    {
+      "path": "docs/validation-0.5.0/covenant-browser-results.json",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "94f6446550e694b829defe7426099dc75be74c0290f8f7ab3097fd6d4e9816b5"
+    },
+    {
+      "path": "docs/validation-0.5.0/covenant-browser.log",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "8232eb35f150ab97385cd3b580bf28df088708f51f4f09ea7ae1080f3bad1328"
+    },
+    {
+      "path": "docs/validation-0.5.0/covenant-capture.log",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "97ba267903d190a2e32cfc1d0d8c6e974b701fd6e74d0ac0f8b208c5664e4d17"
+    },
+    {
+      "path": "docs/validation-0.5.0/covenant-playthrough-browser.json",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "ad28e674fd29427d95942a34f9e10cc5d841f4310384747564f1b7c899762e9d"
+    },
+    {
+      "path": "docs/validation-0.5.0/covenant-simulation.log",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "8e59f979c6ebb2c1772fbdfafa0f1c844e49839f4dd643b2139d1b270ef91b74"
+    },
+    {
+      "path": "docs/validation-0.5.0/covenant-simulations.json",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "b151fd8f36bc29cc7e76b9791ccde505a4e455975eebb8172f78f61bd22822c0"
+    },
+    {
+      "path": "docs/validation-0.5.0/desktop-01-title.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "7bc29241aa0cc16f4a2e2eedbfd16b41e52064a1015e80e2548bf369ca58fd96"
+    },
+    {
+      "path": "docs/validation-0.5.0/desktop-02-contract.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "b25d63b3cdf681ebd6ab0a3efeeb8d3e58962a3eb033898dc85876fb0da341dc"
+    },
+    {
+      "path": "docs/validation-0.5.0/desktop-03-combat.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "f46b14e3a7a57e628b09b742c3a00c36a5b63200ef287e461fb9cedb93e7e886"
+    },
+    {
+      "path": "docs/validation-0.5.0/desktop-04-amendment.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "be113377adf93912805df674ae916d30389495061847cff0e13162beca899703"
+    },
+    {
+      "path": "docs/validation-0.5.0/desktop-05-amended-combat.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "532dfb282f0d086886093b92ccc942ae11f3f2e862efaeae0cf243a00082fefd"
+    },
+    {
+      "path": "docs/validation-0.5.0/desktop-first-contact-amended-play.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "82105dd4f7daad682f4437460b507d6f817641c0732e166fd4f85e2c0fa52863"
+    },
+    {
+      "path": "docs/validation-0.5.0/desktop-first-contact-contract.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "b53e181a7320ad3caf378da93bf1c50d260692f3153085abb681e4e96cbf94b2"
+    },
+    {
+      "path": "docs/validation-0.5.0/desktop-first-contact-parley.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "7cefc362f9fb0b2bdb60d8cc2273d5d5160650b6fcc7e8248a26716a96c0da97"
+    },
+    {
+      "path": "docs/validation-0.5.0/desktop-first-contact-result.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "141a22ff44e4ab3fd4ea00a4e88dd0b22781477f82b40f4e03a5d84ea19f461e"
+    },
+    {
+      "path": "docs/validation-0.5.0/desktop-soundtrack.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "3807e32dc8c6c38a6b0554ed783c206147e4dd3e67d62fa470dcba34a7b64f33"
+    },
+    {
+      "path": "docs/validation-0.5.0/legacy-browser/browser-results.json",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "467d16848fac4c6623cc3ca860f868a315d0887d2aa72bef887d2349284a95e0"
+    },
+    {
+      "path": "docs/validation-0.5.0/legacy-browser/desktop-01-title.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "7bc29241aa0cc16f4a2e2eedbfd16b41e52064a1015e80e2548bf369ca58fd96"
+    },
+    {
+      "path": "docs/validation-0.5.0/legacy-browser/desktop-02-hangar.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "9a2165eac0b63959e9ff416097b15290686ec65df086e167fdd3982f1f65afda"
+    },
+    {
+      "path": "docs/validation-0.5.0/legacy-browser/desktop-03-route.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "ebcf47342e1ef96151bea215f335953981cccb9436271e7f8d9833c63d937dd8"
+    },
+    {
+      "path": "docs/validation-0.5.0/legacy-browser/desktop-04-negotiation.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "26f9419073a72908abe67aa14ffb12c0ce7e2b2d1fb8716c5509bea3d67b0299"
+    },
+    {
+      "path": "docs/validation-0.5.0/legacy-browser/desktop-sector-1.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "2daaa732233ce1588874cf55e27fe46718f7635984a277efe06a1b33ac082c3e"
+    },
+    {
+      "path": "docs/validation-0.5.0/legacy-browser/desktop-sector-2.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "5e78f607e077b6f245b1c10319153dec4caed88a436f1a15d2b0276c48cead09"
+    },
+    {
+      "path": "docs/validation-0.5.0/legacy-browser/desktop-sector-3.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "6848d0964f9bbcd47828e9be08ca1f2b580d08d74e55af7ce3b356788e52f3dd"
+    },
+    {
+      "path": "docs/validation-0.5.0/legacy-browser/desktop-sector-4.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "617f05c515b18a224d8dcbbaeaa13d291ea8306f8492a5d4059f2d90d2b5edf0"
+    },
+    {
+      "path": "docs/validation-0.5.0/legacy-browser/desktop-sector-5.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "34aab36305096651c7c2fe81b7d0af9e4cb7400debe7e7008482b7a13c28d1ad"
+    },
+    {
+      "path": "docs/validation-0.5.0/legacy-browser/desktop-sector-6.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "a1608b89f1853f4503f9416a576a6f093dfe21c1b9f57a4c152a129bbf286df0"
+    },
+    {
+      "path": "docs/validation-0.5.0/legacy-browser/portrait-01-title.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "e0fd881782a68fb789ba218359923750ccc9f86f1f50bc867aca55aee17b89e9"
+    },
+    {
+      "path": "docs/validation-0.5.0/legacy-browser/portrait-02-hangar.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "aa2f4fff8cec19fedb46d6c6725244d3afcb97e443f8b4340e89cee6bb8f787f"
+    },
+    {
+      "path": "docs/validation-0.5.0/legacy-browser/portrait-03-route.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "a173d556cfbbf479b58ae4c260a10ea8f01b200a1970e60da83585e94c5a411c"
+    },
+    {
+      "path": "docs/validation-0.5.0/legacy-browser/portrait-04-negotiation.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "cf84dd89dc49b7f717c9678359b96ebc6307ff1683eb407f51f179b67a3078a8"
+    },
+    {
+      "path": "docs/validation-0.5.0/legacy-browser/portrait-sector-1.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "dfe98f9bbdb32bc030ed353a47c4071ac5bf750019a47c026fd9dca04de6848a"
+    },
+    {
+      "path": "docs/validation-0.5.0/legacy-browser/portrait-sector-2.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "e8b7f9cecd99e5c108fc7bebac15e93187fc890a9fdcc67e19fe508cc463a1d3"
+    },
+    {
+      "path": "docs/validation-0.5.0/legacy-browser/portrait-sector-3.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "3b062dde2c2a8c45bf89b49250ffda0c58b07b497c05bffc97fdf0553fe212f3"
+    },
+    {
+      "path": "docs/validation-0.5.0/legacy-browser/portrait-sector-4.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "aed48c2b97680531ef0969efa31b3427f5f0ca63874170845d0f176e44cf7c27"
+    },
+    {
+      "path": "docs/validation-0.5.0/legacy-browser/portrait-sector-5.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "7d2f77a433e87ac49ec25fb7ca396db802cd4e80893adc2bed089b44e351f289"
+    },
+    {
+      "path": "docs/validation-0.5.0/legacy-browser/portrait-sector-6.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "61d23e76a84f1791046c08459159178be2a0e1cfdab1ef5064384f58d620c864"
+    },
+    {
+      "path": "docs/validation-0.5.0/legacy-browser.log",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "7efea68fe404c100e0ed00914faf30dbc6a2f2a672452ef2e71fe17327601410"
+    },
+    {
+      "path": "docs/validation-0.5.0/portrait-01-title.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "e0fd881782a68fb789ba218359923750ccc9f86f1f50bc867aca55aee17b89e9"
+    },
+    {
+      "path": "docs/validation-0.5.0/portrait-02-contract.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "5fe4e72cfa49e1b610102607e3e48fdd70377cc258b889ea453a0a8fb17335c2"
+    },
+    {
+      "path": "docs/validation-0.5.0/portrait-03-combat.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "2df65f202b2a14025b75d020373b35a4e170aa0cee1f132d473c701920a7d025"
+    },
+    {
+      "path": "docs/validation-0.5.0/portrait-04-amendment.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "8afc44847a7b020bf0bdd2050ef2de3f72c78266ecf7e0d46ace89cc41448346"
+    },
+    {
+      "path": "docs/validation-0.5.0/portrait-05-amended-combat.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "8801d0973a6b42fb8d5389969383a7b0fef719ce26b583319eb54a866ccb34ae"
+    },
+    {
+      "path": "docs/validation-0.5.0/portrait-first-contact-amended-play.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "335eff9864ad4f7ee8e054b0a4fc97ecf6afb6b66a68cf5c7891f88c48b9b547"
+    },
+    {
+      "path": "docs/validation-0.5.0/portrait-first-contact-contract.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "6fd973cde75722ac64e1f46805d093f94d6f23787bcde056aea9d05002111153"
+    },
+    {
+      "path": "docs/validation-0.5.0/portrait-first-contact-parley.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "c4e0f8bf9bc94e2e38350206d10e2c9ca4a6f4ea1e4f54bf40836442564a433e"
+    },
+    {
+      "path": "docs/validation-0.5.0/portrait-first-contact-result.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "17b9829df328bc69dd362a81f0c727be295d7d50cddb99e658729382636d3bb6"
+    },
+    {
+      "path": "docs/validation-0.5.0/portrait-soundtrack.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "3361245230d832c277b574bb547e86d78bcf80f504dd0ef2d8849f8f8dc31d8a"
+    },
+    {
+      "path": "docs/validation-0.5.0/server-smoke.json",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "80254c282afa5875708e318dc95e78e3246168d05b9bd5f1c7caa60e6affb839"
+    },
+    {
+      "path": "docs/validation-0.5.0/server-smoke.txt",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "2c9d412b87a2169da7d85e71004b4ddb8a41cdf5a03f254235add943c0649d22"
+    },
+    {
+      "path": "docs/validation-0.5.0/small-01-title.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "6fe843d2fd2eb429865e99d5802f5d33babf7ff7ab0b1d85e5b84275069aca3c"
+    },
+    {
+      "path": "docs/validation-0.5.0/small-02-contract.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "391e7da73f21d10454495b93b6e2d9f471232228dea6c060e42ac4dc4293b536"
+    },
+    {
+      "path": "docs/validation-0.5.0/small-03-combat.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "b1abf8312404fa54d1d5ddfd12c98283233471b6d412a696ac79146ce68a7b16"
+    },
+    {
+      "path": "docs/validation-0.5.0/small-04-amendment.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "f085c54b7da98faf3217103ebdb088d4cf4fa11966f6d92a573e509c639da6ac"
+    },
+    {
+      "path": "docs/validation-0.5.0/small-05-amended-combat.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "a37fd1963c64483ebb469bf205a0be55a4dc20ed3fecde6ada738a97af3769f0"
+    },
+    {
+      "path": "docs/validation-0.5.0/small-soundtrack.png",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "3925e82cec2e87d102de93a8ef96f3e2f456f7f1028f882dac57d45cefda2e65"
+    },
+    {
+      "path": "docs/validation-0.5.0/syntax-checks.txt",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "919d9cc69228f7588f8d215a4c0963ec21f7d978ca08763239139a3ce78fbcbe"
+    },
+    {
+      "path": "docs/validation-0.5.0/unit-tests.txt",
+      "status": "added",
+      "category": "evidence",
+      "baselineSha256": null,
+      "sha256": "2864c4755344ee2a519aea6e8bb50df1c914001071ad08ae96e59e9fe942f303"
+    },
+    {
+      "path": "index.html",
+      "status": "modified",
+      "category": "source-or-document",
+      "baselineSha256": "33aaa05dbb045f99a35ebc169d85bcad88a26dcc33bedc161d6f678cc9a4b448",
+      "sha256": "1cd55e20239e8752475bf1c0c42c374503f09c25c3fad80820fb5abef16e6585"
+    },
+    {
+      "path": "package.json",
+      "status": "modified",
+      "category": "source-or-document",
+      "baselineSha256": "19763250536175d69b3fed1f0ea7705d44161c97b9fb0efd5f072d86255bf7e3",
+      "sha256": "318fc1b144943b45f365fe4310acc69a176eb8aae2fce42803e05551364cf398"
+    },
+    {
+      "path": "public/index.html",
+      "status": "modified",
+      "category": "source-or-document",
+      "baselineSha256": "ab0109ed234678f7df1f481301a60814b59ec9bb37fca2854296dd2832acff13",
+      "sha256": "575937ac00b063eeb452fca1ea07c73158d8d4d73b751efb9e6708dabdd42c77"
+    },
+    {
+      "path": "server/covenant.mjs",
+      "status": "added",
+      "category": "source-or-document",
+      "baselineSha256": null,
+      "sha256": "b05ea91171d18e4697b3783768c441e708c41e2cea3e54db30af3f81aa0c79dc"
+    },
+    {
+      "path": "shaders/mesh.frag",
+      "status": "modified",
+      "category": "source-or-document",
+      "baselineSha256": "4cba15774eeba629e22a46bfa26a847af3b3a162014a11ade0f59c0d85bf7e54",
+      "sha256": "0e37b97ef65bd3c343a44ef28cf849b04db3c01063b6fdae3f196aca85af3f5c"
+    },
+    {
+      "path": "shaders/mesh.wgsl",
+      "status": "modified",
+      "category": "source-or-document",
+      "baselineSha256": "4f3fbbc4b76d6687496781031d75ecc2b17cc6a73b722aceaaf905a0c110d995",
+      "sha256": "fbda2a1177ef4e8f6f26c15a6ca032c52dff0bd5e792ff3c5d0afb60404fc32e"
+    },
+    {
+      "path": "src/core.js",
+      "status": "modified",
+      "category": "source-or-document",
+      "baselineSha256": "a14a83d7287eeea4a65202d018fbf8930bea2b7aafe592a31094169c1b23e4af",
+      "sha256": "03fd13cf268ad1ecf202348f3072c82fae8ee23c0c0b156b39161e65ff500866"
+    },
+    {
+      "path": "src/covenant.css",
+      "status": "added",
+      "category": "source-or-document",
+      "baselineSha256": null,
+      "sha256": "cb975448a27fda3b314b0c0130924af2157e08456bad32b2d1f1a88f623e855e"
+    },
+    {
+      "path": "src/covenant.js",
+      "status": "added",
+      "category": "source-or-document",
+      "baselineSha256": null,
+      "sha256": "2092accaec789ae82218559aecbccaad288c0db906d9f099ab5390245adcb2e4"
+    },
+    {
+      "path": "src/game.js",
+      "status": "modified",
+      "category": "source-or-document",
+      "baselineSha256": "8ee8425ab4afd89397a971de9d094a8e970ae24c710801d5ad6a50fca22e30da",
+      "sha256": "0aae77c400c0a74baba541832d7791a3c0ee2860d753827f5646e2ecad863d62"
+    },
+    {
+      "path": "src/meshes3d.js",
+      "status": "modified",
+      "category": "source-or-document",
+      "baselineSha256": "64cbc27a05540b5e6fbfc12b41881bceb2daaaba7f2407f415760606206b338f",
+      "sha256": "f1e812155642084a17433532f0ac67a80b735a61b1a89eebe5a561c2ccb5a460"
+    },
+    {
+      "path": "src/renderer3d.js",
+      "status": "modified",
+      "category": "source-or-document",
+      "baselineSha256": "e8a10bf178a02bdede708ae4688076999fa00522f1c470034064054ccb8f996d",
+      "sha256": "0764be6460521b698ff098308a19d924ab8a94d72126d6e8189e0ad6a406b1a9"
+    },
+    {
+      "path": "src/scenery040.js",
+      "status": "modified",
+      "category": "source-or-document",
+      "baselineSha256": "b83b392ebe4d5d37d86ff68a5ec33b21618cb9a4d8ec07f74dc807c9fe4c0ce1",
+      "sha256": "ea900fc3f605e5bbe43efac91d9de32d89e4513d9a2c211fbba18bcd7aed2c3f"
+    },
+    {
+      "path": "src/score.js",
+      "status": "modified",
+      "category": "source-or-document",
+      "baselineSha256": "51409b721d6a26dfd3ab67f419b2635433e073e82690346c4658cbb409170563",
+      "sha256": "129bdd51009989496620d13b54c53ddef29c58ce19dfd3f2f949a4884d1313d6"
+    },
+    {
+      "path": "tests/audio_browser_test.py",
+      "status": "modified",
+      "category": "source-or-document",
+      "baselineSha256": "5021cbc2705fd1d0a4080c81c09a1c3c034cba7726db9f2c018c10fc561d1134",
+      "sha256": "688818a0d41f7ccb92545d7ee861948e0b7586ea4879de9f94b855932e842a10"
+    },
+    {
+      "path": "tests/covenant-client.test.js",
+      "status": "added",
+      "category": "source-or-document",
+      "baselineSha256": null,
+      "sha256": "77accbe54a921501a7a4441532cc144044b27685b6613255dac57d0a403f9aa6"
+    },
+    {
+      "path": "tests/covenant-server.test.js",
+      "status": "added",
+      "category": "source-or-document",
+      "baselineSha256": null,
+      "sha256": "6d8b1db32ae998d2d46b04f421d1531c8b546622b32cf345b24a2529e680d703"
+    },
+    {
+      "path": "tests/covenant-simulate.js",
+      "status": "added",
+      "category": "source-or-document",
+      "baselineSha256": null,
+      "sha256": "551b73053867e90bd5fc2c0f42017832b833c9e94a2214a8aa392e24e3a7dc35"
+    },
+    {
+      "path": "tests/covenant.test.js",
+      "status": "added",
+      "category": "source-or-document",
+      "baselineSha256": null,
+      "sha256": "5b62c830e54dc2d733b242eac865edb39e81796ae527850fe459e4d4aaeaf883"
+    },
+    {
+      "path": "tests/covenant_browser_test.py",
+      "status": "added",
+      "category": "source-or-document",
+      "baselineSha256": null,
+      "sha256": "d7e533a4b871907267f629cbe1d97d1cee1a5acb46ecda6710680cb1d7b9f403"
+    },
+    {
+      "path": "tests/covenant_capture.py",
+      "status": "added",
+      "category": "source-or-document",
+      "baselineSha256": null,
+      "sha256": "4c3d2819f79d014ac254198aa590b441c546486313015c25cee4d99d1181b03d"
+    },
+    {
+      "path": "tests/covenant_smoke.py",
+      "status": "added",
+      "category": "source-or-document",
+      "baselineSha256": null,
+      "sha256": "c3922d54723f18f6600ef825d8fc8ca0a528d8e4635ef81043fbef3fefb5ef9c"
+    },
+    {
+      "path": "tests/english.test.js",
+      "status": "modified",
+      "category": "source-or-document",
+      "baselineSha256": "3bfcc9245b15663d8880da641c34b8e6c52c52c0f8db6bf191cc1af25cc04f4a",
+      "sha256": "fd57a43e7d8744b8ee67a6d8ed8a1ca3f18d59608fc0678b5a598cab365acdc4"
+    },
+    {
+      "path": "tests/expansion-simulate.js",
+      "status": "modified",
+      "category": "source-or-document",
+      "baselineSha256": "eca79b2868ef1c62ad8223124f1d530f42f0f91b16b04d680837ac78c6147681",
+      "sha256": "7896ac6b6798e74a07e47e3840103130094a5d376644e479c0129e018e44788f"
+    },
+    {
+      "path": "tests/expansion_browser_test.py",
+      "status": "modified",
+      "category": "source-or-document",
+      "baselineSha256": "f3a8ff2a5cfc309691c8acc07de354ce22001130e95ab9e5c674bc90bc7c1c18",
+      "sha256": "70ef9432f0512da150407628bc9e5915b9303e61a6bcaf9e0974cbc256afb6bb"
+    },
+    {
+      "path": "tests/server-smoke.mjs",
+      "status": "modified",
+      "category": "source-or-document",
+      "baselineSha256": "b1203ee7558cbc279eae443b56707917f988a186be778d86370116dc51137d54",
+      "sha256": "2c2c70ed9769a220acffcd3385c30ffb5d31e15e88fa10285907eb92263fd1b6"
+    },
+    {
+      "path": "tests/visibility.test.js",
+      "status": "modified",
+      "category": "source-or-document",
+      "baselineSha256": "978b9ebd574962a186fb871fa9b6da12ac56fc822d6e4255207cfe1d8f601090",
+      "sha256": "983da80b092097f230baf6e266a6dba2bae2b340531eb8bed11348e24de076d9"
+    },
+    {
+      "path": "tools/serve.js",
+      "status": "modified",
+      "category": "source-or-document",
+      "baselineSha256": "a872f3fc399a3036b803f07bab5a098a3d3f348540bfad1d943abfd90877fb9c",
+      "sha256": "b6b8deba8eabc52710f14071ed283b7340ae9802d01a843ea2e73d82d8e3f508"
+    },
+    {
+      "path": "vercel.json",
+      "status": "modified",
+      "category": "source-or-document",
+      "baselineSha256": "92a1edb40bacfb824ce1d51aa2020c24d46738005aaa92a4a67ddc11e01a22ff",
+      "sha256": "35ba701592411f7f4eb4b4420a261b729913e892b1beeb680c6674c74aec01f1"
+    }
+  ],
+  "removed": []
+}
