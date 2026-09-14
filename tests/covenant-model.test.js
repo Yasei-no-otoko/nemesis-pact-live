@@ -1,6 +1,6 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),V=require('../src/covenant.js');
-const {modelSchema,decodeModelContract,ruleSetId}=require('../server/covenant-model.mjs');
+const {modelSchema,decodeModelContract,ruleSetId,explicitCorrectionZone}=require('../server/covenant-model.mjs');
 const prose={version:1,title:'A fair covenant',line:'Review the binding terms.',rationale:'Only displayed clauses apply.'};
 test('every affordable rule combination is offered and no unfunded combination can be generated',()=>{
  const offered=new Set(modelSchema().properties.ruleSet.enum);let valid=0;
@@ -10,6 +10,21 @@ test('every affordable rule combination is offered and no unfunded combination c
   if(V.budget(clauses).valid){valid++;const spec=decodeModelContract({...prose,ruleSet:id});assert.deepEqual(V.compile(spec),V.compile({...prose,...clauses}));}
  }
  assert.equal(offered.size,valid);assert.equal(valid,36);
+});
+test('the recorded Japanese correction constrains generation and rejects a late left response',()=>{
+ const request={prompt:'\u5de6\u3092\u5b89\u5168\u306b\u3057\u3066\u3084\u3063\u3071\u308a\u53f3\u306b\u3057\u3066'};
+ assert.equal(explicitCorrectionZone(request.prompt),'right');
+ const offered=modelSchema(request).properties.ruleSet.enum;assert.equal(offered.length,8);assert.ok(offered.every(id=>id.startsWith('zone=right,')));
+ const left=ruleSetId({zone:'left',speed:'normal',reflection:'normal',price:'weaker_gun'});
+ assert.throws(()=>decodeModelContract({...prose,ruleSet:left},request),/ignored/);
+});
+test('clear English corrections are constrained while negated or ambiguous location mentions are not',()=>{
+ assert.equal(explicitCorrectionZone('Left. Actually, make the right side safe.'),'right');
+ assert.equal(explicitCorrectionZone('Right. I mean left.'),'left');
+ assert.equal(explicitCorrectionZone("Actually, don't put it on the right."),null);
+ assert.equal(explicitCorrectionZone('Actually, keep left and avoid right.'),null);
+ assert.equal(explicitCorrectionZone('Actually, my right arrow is broken.'),null);
+ assert.equal(explicitCorrectionZone('\u3084\u3063\u3071\u308a\u53f3\u306b\u3057\u306a\u3044\u3067'),null);
 });
 test('the reproduced right sanctuary plus charged reflection with weaker gun is rejected before canonical proposal creation',()=>{
  const bad=ruleSetId({zone:'right',speed:'normal',reflection:'charged',price:'weaker_gun'});
