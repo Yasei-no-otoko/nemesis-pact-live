@@ -10,7 +10,7 @@
  class PactVoice{
   constructor(o={}){
    this.request=o.request;this.media=o.mediaDevices||globalThis.navigator?.mediaDevices;this.PC=o.RTCPeerConnection||globalThis.RTCPeerConnection;this.document=o.document||globalThis.document;this.audio=o.audio||null;
-   this.onState=o.onState||(()=>{});this.onCaption=o.onCaption||(()=>{});this.onInput=o.onInput||(()=>{});this.onDelegation=o.onDelegation;
+   this.onState=o.onState||(()=>{});this.onCaption=o.onCaption||(()=>{});this.onInput=o.onInput||(()=>{});this.onDelegation=o.onDelegation;this.onMedia=o.onMedia||(()=>{});
    this.state='idle';this.transportGeneration=0;this.delegationGeneration=0;this.events=new Set();this.delegations=new Set();this.closed=true;this.finalized=false;this.stopPromise=null;
    this._hidden=()=>{if(this.document?.visibilityState==='hidden')this.stop('background');};this._pagehide=()=>this.stop('pagehide');
   }
@@ -63,8 +63,8 @@
    try{
     stream=await this.media.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true},video:false});
     if(generation!==this.transportGeneration||this.closed){stream.getTracks().forEach(t=>t.stop());return false;}
-    this.stream=stream;pc=new this.PC();this.pc=pc;for(const track of stream.getTracks())pc.addTrack(track,stream);
-    pc.addEventListener('track',e=>{if(generation!==this.transportGeneration||this.closed||!this.audio)return;const remote=e.streams?.[0]||(e.track&&new MediaStream([e.track]));if(!remote)return;this.audio.srcObject=remote;this.audio.play?.().catch(()=>this._state(this.state,'audio-output-blocked-use-captions'));});
+    this.stream=stream;this.onMedia(stream,'input');pc=new this.PC();this.pc=pc;for(const track of stream.getTracks())pc.addTrack(track,stream);
+    pc.addEventListener('track',e=>{if(generation!==this.transportGeneration||this.closed||!this.audio)return;const remote=e.streams?.[0]||(e.track&&new MediaStream([e.track]));if(!remote)return;this.onMedia(remote,'output');this.audio.srcObject=remote;this.audio.play?.().catch(()=>this._state(this.state,'audio-output-blocked-use-captions'));});
     pc.addEventListener('connectionstatechange',()=>{if(generation===this.transportGeneration&&!this.closed&&['failed','closed','disconnected'].includes(pc.connectionState))this.stop('connection-lost');});
     const dc=pc.createDataChannel('oai-events');this.dc=dc;dc.addEventListener('message',e=>this._event(e.data,generation));dc.addEventListener('close',()=>{if(generation===this.transportGeneration&&!this.closed)this.stop('connection-lost');});
     await pc.setLocalDescription(await pc.createOffer());

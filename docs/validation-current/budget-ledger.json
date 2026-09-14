@@ -1,0 +1,42 @@
+{
+  "checkedAt": "2026-09-14T07:41:13.218Z",
+  "unit": "microdollars; conservative reservation accounting, not invoice",
+  "records": [
+    {
+      "test": "watchdog",
+      "state": "stopped",
+      "reason": "server-duration-limit",
+      "elapsedMs": 45162,
+      "startedAt": 1789371544527,
+      "stoppedAt": 1789371589689
+    },
+    {
+      "test": "synthetic",
+      "state": "stopped",
+      "reason": "application",
+      "elapsedMs": 31302,
+      "startedAt": 1789371492323,
+      "stoppedAt": 1789371523625
+    }
+  ],
+  "totals": {
+    "openai": [
+      "global",
+      "250000",
+      "pool:verification",
+      "250000",
+      "kind:voice",
+      "250000"
+    ],
+    "gateway": [
+      "global",
+      "5363",
+      "kind:text",
+      "5363",
+      "pool:verification",
+      "5363"
+    ],
+    "kill": null,
+    "active": 0
+  }
+}

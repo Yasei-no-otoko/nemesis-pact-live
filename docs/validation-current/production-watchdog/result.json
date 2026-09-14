@@ -1,0 +1,93 @@
+{
+  "url": "https://nemesis-pact-live.vercel.app",
+  "browser": "153.0.4234.32",
+  "input": "Synthetic silent MediaStream; no human microphone",
+  "realApi": true,
+  "humanLiveVerified": false,
+  "utc": "2026-09-14T07:38:56Z",
+  "sessionStartedMs": 3188,
+  "watchdogObserved": false,
+  "failure": "Page.wait_for_function: Timeout 60000ms exceeded.",
+  "events": [
+    {
+      "type": "session.started",
+      "at": 8138.700000047684,
+      "usage": null,
+      "reason": null
+    },
+    {
+      "type": "session.usage.updated",
+      "at": 22279.100000023842,
+      "usage": {
+        "seconds": 15
+      },
+      "reason": null
+    },
+    {
+      "type": "session.usage.updated",
+      "at": 37273.90000003576,
+      "usage": {
+        "seconds": 15
+      },
+      "reason": null
+    },
+    {
+      "type": "track.ended",
+      "at": 68789.40000003576
+    }
+  ],
+  "stopCalls": [
+    {
+      "reason": "duration-limit",
+      "at": 52079.5
+    },
+    {
+      "reason": "connection-lost",
+      "at": 52178
+    },
+    {
+      "reason": "connection-lost",
+      "at": 58739.60000002384
+    }
+  ],
+  "tracks": [
+    {
+      "kind": "audio",
+      "state": "ended"
+    },
+    {
+      "kind": "audio",
+      "state": "ended"
+    }
+  ],
+  "api": [
+    {
+      "path": "/api/session",
+      "status": 200
+    },
+    {
+      "path": "/api/voice/start",
+      "status": 200,
+      "model": "gpt-live-1"
+    },
+    {
+      "path": "/api/voice/stop",
+      "status": 200,
+      "stopped": true,
+      "uncertain": false
+    }
+  ],
+  "providerSessionIdsStoredOnly": 1,
+  "pageErrors": [],
+  "finalEventObserved": false,
+  "serverWatchdogConfirmed": true,
+  "serverWatchdogEvidence": {
+    "source": "../budget-ledger.json",
+    "state": "stopped",
+    "reason": "server-duration-limit",
+    "elapsedMs": 45162,
+    "startedAt": 1789371544527,
+    "stoppedAt": 1789371589689
+  },
+  "interpretation": "Redis ledger confirms server watchdog hangup at 45.162s. Browser did not observe session.closed before its 60s wait; later client cleanup stop was separate."
+}
