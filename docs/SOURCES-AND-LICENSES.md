@@ -14,3 +14,10 @@ The exact input ZIP SHA256 is `57055F84BC841940BCFC37D580C046656D1A5AE859466CDFB
 
 
 Public delivery was explicitly authorized by the user for the existing repository. The final physical iPhone demo is hosted on GitHub Release, with a GitHub Pages viewer at https://www.circle-hydrangea.net/nemesis-pact-live/. The reviewed source ZIP includes no Git history or operational secrets; the separate public repository includes its existing development history. No new license has been assigned.
+
+
+## v0.9.9 concept and craft pass — 2026-09-15 JST
+
+One built-in OpenAI imagegen concept board was generated from the project's existing mechanics and an authored art brief, at the user's request. The board and brief are in output/imagegen. Its underlying model/cost is not reported by that tool. The proposed direct-key CLI was rejected before execution; no direct image API call is claimed.
+
+The generated bitmap is development art direction, excluded from Vercel/runtime by .vercelignore. CSS, thin-ring meshes, geometric Notary and Canvas2D fallback translate its visual language into the game. The concept's fictional clauses are not added to the contract schema. No imported font, 3D asset, sampled music or runtime dependency was added. No new license is assigned to project-specific code or the generated concept. Existing human video remains unchanged and correctly labeled as earlier-build footage.

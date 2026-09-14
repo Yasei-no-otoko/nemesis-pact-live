@@ -1,3 +1,5 @@
+> Current v0.9.9: [production, live API and craft validation](V0.9.9-VALIDATION.md). The material below records earlier release milestones.
+
 # Current validation — 2026-09-15
 
 This file separates current evidence from v0.5.0 baseline reports. Required GOAL section10 delivery gates are now closed within the recorded scopes; optional coverage and provider invoice/grant unknowns are disclosed.

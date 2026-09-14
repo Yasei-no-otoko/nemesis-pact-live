@@ -1,46 +1,46 @@
 {
-  "checkedAt": "2026-09-14T18:52:53.573Z",
+  "checkedAt": "2026-09-14T18:59:30.449Z",
   "unit": "microdollars; conservative reservation accounting, not invoice",
   "records": [
     {
-      "test": "watchdog",
-      "state": "stopped",
-      "reason": "server-duration-limit",
-      "elapsedMs": 45162,
-      "startedAt": 1789371544527,
-      "stoppedAt": 1789371589689
-    },
-    {
-      "test": "synthetic",
+      "test": "v0.9.9 synthetic live regression",
       "state": "stopped",
       "reason": "application",
-      "elapsedMs": 31302,
-      "startedAt": 1789371492323,
-      "stoppedAt": 1789371523625
+      "elapsedMs": 20063,
+      "startedAt": 1789412262542,
+      "stoppedAt": 1789412282605
+    },
+    {
+      "test": "v0.9.9 synthetic live regression",
+      "state": "stopped",
+      "reason": "application",
+      "elapsedMs": 14183,
+      "startedAt": 1789412291416,
+      "stoppedAt": 1789412305599
     }
   ],
   "totals": {
     "openai": [
       "global",
-      "2150000",
+      "2250000",
       "kind:text",
       "100000",
       "kind:voice",
-      "2050000",
+      "2150000",
       "pool:public",
-      "1250000",
+      "1350000",
       "pool:verification",
       "900000"
     ],
     "gateway": [
-      "pool:verification",
-      "15566",
       "global",
-      "31421",
+      "32718",
       "kind:text",
-      "31421",
+      "32718",
       "pool:public",
-      "15855"
+      "17152",
+      "pool:verification",
+      "15566"
     ],
     "kill": null,
     "active": 0
