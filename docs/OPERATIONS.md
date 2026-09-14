@@ -1,6 +1,6 @@
 # NEMESIS PACT operations
 
-Production: https://nemesis-pact-live.vercel.app. Scope: only project `prj_fB5yGJiIy6kdLg29FpHreHmCwMkc` in `wildmans-projects`. Do not change or stop other projects. The team remains Hobby. Node version is now explicitly 22.x in both the project settings and package engines; the settings change applies to the next deployment.
+Production: https://nemesis-pact-live.vercel.app. Scope: only project `prj_fB5yGJiIy6kdLg29FpHreHmCwMkc` in `wildmans-projects`. Do not change or stop other projects. The team remains Hobby. Node version is now explicitly 22.x in both the project settings and package engines; the current production deployment was built after that settings change.
 
 ## Current budget controls
 
@@ -27,12 +27,12 @@ Before clearing an unknown-termination kill, independently confirm every affecte
 
 ## Rollback
 
-Current production source: `3ce691a1e2b168e82556ef4c37edd1c3aec835d6`, READY deployment `dpl_3RWHtoCVi8K7D8d2c9X7fU8X1LFu`.
+Current production source: `05e2d2405559bd595da89cd068dd4b0589694be1`, READY deployment `dpl_6oUWRqM5JCHUL9Eq7TS4czuBuc6p`.
 
-The prior READY recorder/evidence deployment is `dpl_G3jkPr35YkXNGseeWV3JRBmktJUs` (source `a7fee49`, older 10/IP/hour issuance limit). With the existing authenticated Vercel CLI and this project selected:
+The prior READY deployment is `dpl_3RWHtoCVi8K7D8d2c9X7fU8X1LFu` (source `3ce691a`, before idle voice authorization/local correction fixes). With the existing authenticated Vercel CLI and this project selected:
 
 ```sh
-vercel rollback dpl_G3jkPr35YkXNGseeWV3JRBmktJUs --yes
+vercel rollback dpl_3RWHtoCVi8K7D8d2c9X7fU8X1LFu --yes
 vercel rollback status nemesis-pact-live
 ```
 

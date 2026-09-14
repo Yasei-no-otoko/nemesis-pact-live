@@ -1,10 +1,10 @@
 {
-  "checkedAt": "2026-09-14T08:12:24.327Z",
+  "checkedAt": "2026-09-14T08:32:15.568Z",
   "production": "https://nemesis-pact-live.vercel.app",
   "httpStatus": 200,
-  "hostedBytes": 359229,
-  "productionSha256": "254f970c13ecb49b01d676bee2b24d57a5cc3e7df8a3cd095f1ca42a5f89126c",
-  "localSha256": "254f970c13ecb49b01d676bee2b24d57a5cc3e7df8a3cd095f1ca42a5f89126c",
+  "hostedBytes": 359665,
+  "productionSha256": "7c770d38afc467dd5659738e17d7ea33335f3e3d35d7d5f1cd849d420c9c58f6",
+  "localSha256": "7c770d38afc467dd5659738e17d7ea33335f3e3d35d7d5f1cd849d420c9c58f6",
   "exactBuildMatch": true,
   "headers": {
     "permissions-policy": "camera=(), microphone=(self), geolocation=()",
@@ -12,11 +12,13 @@
     "x-content-type-options": "nosniff",
     "referrer-policy": "no-referrer"
   },
+  "hostedMetaCsp": "default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; media-src 'self' blob:; font-src 'none'; base-uri 'none'; form-action 'none'",
+  "offlineMetaCsp": "default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; media-src 'none'; font-src 'none'; base-uri 'none'; form-action 'none'",
   "recorderTimersBound": true,
+  "voiceStartRefresh": true,
   "legacyApi": {
-    "status": 400,
-    "error": "Invalid request"
+    "status": 200,
+    "provider": "local-rules"
   },
-  "realModelCalls": 0,
-  "cspMeta": "default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; media-src 'self' blob:; font-src 'none'; base-uri 'none'; form-action 'none'"
+  "realModelCalls": 0
 }

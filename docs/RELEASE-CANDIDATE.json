@@ -1,13 +1,13 @@
 {
-  "recordedAt": "2026-09-14T08:10:00Z",
+  "recordedAt": "2026-09-14T08:35:15.575Z",
   "status": "production deployed; human interruption/demo gates open",
   "production": "https://nemesis-pact-live.vercel.app",
   "repository": "https://github.com/Yasei-no-otoko/nemesis-pact-live",
   "repositoryVisibility": "private; user approval to publish pending",
   "branch": "ship/living-covenant",
-  "sourceCommit": "3ce691a1e2b168e82556ef4c37edd1c3aec835d6",
-  "deploymentId": "dpl_3RWHtoCVi8K7D8d2c9X7fU8X1LFu",
-  "deploymentUrl": "https://nemesis-pact-live-35v64dlq1-wildmans-projects.vercel.app",
+  "sourceCommit": "05e2d2405559bd595da89cd068dd4b0589694be1",
+  "deploymentId": "dpl_6oUWRqM5JCHUL9Eq7TS4czuBuc6p",
+  "deploymentUrl": "https://nemesis-pact-live-d769y9yxg-wildmans-projects.vercel.app",
   "models": {
     "voice": "gpt-live-1",
     "contract": "openai/gpt-4.1-mini",
@@ -15,24 +15,25 @@
     "voiceBilledBy": "OpenAI direct"
   },
   "build": {
-    "hostedSha256": "254f970c13ecb49b01d676bee2b24d57a5cc3e7df8a3cd095f1ca42a5f89126c",
-    "offlineSha256": "10dc4f5b6947df0e920fcb2295c475b6a07253855058d3ae58e8a539dd64db3a",
-    "hostedBytes": 359229,
-    "offlineBytes": 359179
+    "hostedSha256": "7c770d38afc467dd5659738e17d7ea33335f3e3d35d7d5f1cd849d420c9c58f6",
+    "offlineSha256": "128a3d330bce8e1e14d2ac03eca42d9421d8ad195bb44d3d8de0e159df603958",
+    "hostedBytes": 359665,
+    "offlineBytes": 359615
   },
   "nodeEngines": "22.x",
-  "projectNodeSetting": "22.x updated after this deployment",
+  "projectNodeSetting": "22.x",
   "videoUrl": null,
   "openGates": [
     "human interruption and left-to-right correction",
     "human mid-fight voice amendment",
     "60-second human demo with English subtitles and public URL",
-    "physical phones/Safari/hardware FPS",
+    "physical phones/Safari",
     "exact Gateway grant balance and expiry",
-    "Vercel infrastructure usage endpoint returned 404"
+    "Vercel infrastructure usage endpoint returned 404",
+    "source visibility or judging access choice"
   ],
   "budgetStatus": {
-    "lastLedgerCheck": "2026-09-14T07:52:33Z",
+    "lastLedgerCheck": "2026-09-14T08:28:36.422Z",
     "directOpenaiConservativeUsd": 0.3,
     "gatewayConservativeUsd": 0.00621,
     "directOpenaiCapUsd": 10,
