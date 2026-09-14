@@ -16,7 +16,7 @@ First Contact provides a direct first encounter with automatic aim and fire, rea
 
 # Execution and craft
 
-The implementation preserves the existing six-sector game and rendering architecture while adding a bounded proposal ledger, durable access controls, contract effects, voice lifecycle handling, and visual before/after state. The production deployment is `dpl_3yCSkWCzMXvEWjnEZhNCzr1SSZSb`. Tests cover 207 unit cases and a real API replay regression with confirmed termination. A 60-second human gameplay video with English captions is prepared locally; its public URL remains pending hosting approval. Post-fix human correction success is reported by the user. A separate phone clip preserves and labels the observed local fallback.
+The implementation preserves the existing six-sector game and rendering architecture while adding a bounded proposal ledger, durable access controls, contract effects, voice lifecycle handling, and visual before/after state. The production deployment is `dpl_7G9GHUJMkeesY33BAeb8oCyYTvAz`. Tests cover 207 unit cases and a real API replay regression with confirmed termination. A 60-second human gameplay video with English captions is prepared locally; its public URL remains pending hosting approval. Post-fix human correction success is reported by the user. A separate phone clip preserves and labels the observed local fallback.
 
 # Sources and licenses
 

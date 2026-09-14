@@ -27,15 +27,15 @@ Before clearing an unknown-termination kill, independently confirm every affecte
 
 ## Rollback
 
-Current production source: `e900edf95a03e4e5c60bd99208a8b2a9f6c3521e`, READY deployment `dpl_3yCSkWCzMXvEWjnEZhNCzr1SSZSb`. Model output format `living_covenant_rules_v3`; the browser public contract format is unchanged.
+Current production source: `a85e4935be70d58dfbaadc359a9062e5d7e672df`, READY deployment `dpl_7G9GHUJMkeesY33BAeb8oCyYTvAz`. Model output format `living_covenant_rules_v3`; the browser public contract format is unchanged.
 
-To revert this model-schema correction, restore the prior compact UI source `25100e96d6254df41287de75ac929dc7662182e1`, deployment `dpl_5ShtYfKcwLRLrxAKpTPob1dWRzXU`. That deployment retains voice replay recovery and bounded budgets but reintroduces the old contract-generation faults. Prefer disabling paid routes when those faults motivate rollback. With the authenticated Vercel CLI and this project selected:
+To revert the scrollable Notary caption, restore source `e900edf95a03e4e5c60bd99208a8b2a9f6c3521e`, deployment `dpl_3yCSkWCzMXvEWjnEZhNCzr1SSZSb`. It retains the corrected model generation, approved public budget pools, voice replay recovery and durable limits. With the authenticated Vercel CLI and this project selected:
 
 ```sh
-vercel rollback dpl_5ShtYfKcwLRLrxAKpTPob1dWRzXU --yes
+vercel rollback dpl_3yCSkWCzMXvEWjnEZhNCzr1SSZSb --yes
 vercel rollback status nemesis-pact-live
 ```
 
-Then verify the production alias, API gate and ledger. Rollback restores code/environment, not prior Redis contents; do not wipe durable money or signature records. This release changed only the approved budget-pool selectors from verification to public; total and pool caps, keys and payment settings are unchanged. The older rollback deployment selects verification again, so verify its selectors before offering public paid sessions. Never promote a pre-quota build to restore paid service.
+Then verify the production alias, API gate and ledger. Rollback restores code/environment, not prior Redis contents; do not wipe durable money or signature records. This release changes caption presentation and retention only; budget pools, caps, keys and payment settings are unchanged. Never promote a pre-quota build to restore paid service.
 
 Secrets remain only in Git-ignored local environment files and sensitive server environment variables. Current exact-value scan found no configured secret in tracked files; that limited check is not a comprehensive security audit. Do not print keys, Redis tokens, cookies, full transcripts or raw provider payloads in operational logs.

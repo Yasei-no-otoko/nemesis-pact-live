@@ -1,13 +1,13 @@
 {
-  "recordedAt": "2026-09-14T14:47:22.104068+00:00",
+  "recordedAt": "2026-09-14T14:54:42.217158+00:00",
   "status": "incomplete submission packaging; production game verified, post-fix human success reported in Windows Vivaldi; public video/source access pending",
   "production": "https://nemesis-pact-live.vercel.app",
   "repository": "https://github.com/Yasei-no-otoko/nemesis-pact-live",
   "repositoryVisibility": "private; user approval to publish pending",
   "branch": "ship/living-covenant",
-  "sourceCommit": "e900edf95a03e4e5c60bd99208a8b2a9f6c3521e",
-  "deploymentId": "dpl_3yCSkWCzMXvEWjnEZhNCzr1SSZSb",
-  "deploymentUrl": "https://nemesis-pact-live-22ow9axcq-wildmans-projects.vercel.app",
+  "sourceCommit": "a85e4935be70d58dfbaadc359a9062e5d7e672df",
+  "deploymentId": "dpl_7G9GHUJMkeesY33BAeb8oCyYTvAz",
+  "deploymentUrl": "https://nemesis-pact-live-6h5xjzx13-wildmans-projects.vercel.app",
   "models": {
     "voice": "gpt-live-1",
     "contract": "openai/gpt-4.1-mini",
@@ -15,10 +15,10 @@
     "voiceBilledBy": "OpenAI direct"
   },
   "build": {
-    "hostedSha256": "14738518d08c2cdf9e3b3ca3208f84fcee4a948eddfb611f840d0136d76653b2",
-    "offlineSha256": "57590eb315181b74a3778c0e15375de1e41bbf28b28fe50fb86a854f810d4e57",
-    "hostedBytes": 373023,
-    "offlineBytes": 372973
+    "hostedSha256": "bee4b3d9a0482e9430202a776fa2c9a972e53c9f8b8ebb81755bc967d76a7a62",
+    "offlineSha256": "5291aedf8cc20602afdeaa22bc9bf23d0d5519f483511fcec65e288541c83175",
+    "hostedBytes": 373377,
+    "offlineBytes": 373327
   },
   "nodeEngines": "22.x",
   "projectNodeSetting": "22.x",
@@ -33,7 +33,7 @@
     "Android/macOS Safari physical testing"
   ],
   "budgetStatus": {
-    "lastLedgerCheck": "2026-09-14T14:45:32.706Z",
+    "lastLedgerCheck": "2026-09-14T14:53:26.431Z",
     "directOpenaiConservativeUsd": 0.8,
     "gatewayConservativeUsd": 0.015306,
     "directOpenaiCapUsd": 10,
@@ -51,9 +51,9 @@
     "bytes": 7016686
   },
   "rollback": {
-    "sourceCommit": "25100e96d6254df41287de75ac929dc7662182e1",
-    "deploymentId": "dpl_5ShtYfKcwLRLrxAKpTPob1dWRzXU",
-    "reason": "prior compact UI and voice replay fix; reintroduces old model output behavior. Preserve Redis records; prefer disabling paid routes during model faults."
+    "sourceCommit": "e900edf95a03e4e5c60bd99208a8b2a9f6c3521e",
+    "deploymentId": "dpl_3yCSkWCzMXvEWjnEZhNCzr1SSZSb",
+    "reason": "prior caption presentation; retains corrected model generation, public pools, quotas and voice replay recovery; preserve Redis"
   },
   "compactUiValidation": {
     "passed": true,
@@ -104,5 +104,14 @@
     "gatewayRuntimePoolVerified": true,
     "directVoiceNewPublicSessionTested": false,
     "capsUnchanged": true
+  },
+  "notaryCaptionValidation": {
+    "evidence": "validation-current/notary-scroll/production/result.json",
+    "passed": true,
+    "realModelCalls": 0,
+    "captionCharacters": 1034,
+    "unchangedDimensions": true,
+    "localLayoutCases": 7,
+    "scope": "Edge automation with synthetic captions; mobile emulation, not a new physical phone test"
   }
 }

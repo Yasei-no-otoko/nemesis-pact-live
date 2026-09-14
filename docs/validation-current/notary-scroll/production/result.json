@@ -1,0 +1,105 @@
+{
+  "checkedAt": "2026-09-14T14:53:24Z",
+  "url": "https://nemesis-pact-live.vercel.app",
+  "realModelCalls": 0,
+  "scope": "Native Windows Edge automation; synthetic caption events through actual UI callback, no microphone/API. Mobile is emulated.",
+  "cases": [
+    {
+      "viewport": [
+        1280,
+        800
+      ],
+      "touchEmulation": false,
+      "passed": true,
+      "captionCharacters": 1034,
+      "old": {
+        "width": 480,
+        "height": 33.59375,
+        "panel": 212.984375
+      },
+      "current": {
+        "width": 480,
+        "height": 33.59375,
+        "panel": 212.984375,
+        "clientHeight": 34,
+        "scrollHeight": 437,
+        "overflow": "auto"
+      },
+      "wheelScrollTop": 180,
+      "keyboardEnd": {
+        "top": 403,
+        "max": 403
+      },
+      "historyRetained": true,
+      "newCaptionPreservesReadingPosition": true,
+      "fullTranscriptDialog": true,
+      "errors": []
+    },
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "touchEmulation": false,
+      "passed": true,
+      "captionCharacters": 1034,
+      "old": {
+        "width": 648,
+        "height": 45.3515625,
+        "panel": 287.5289001464844
+      },
+      "current": {
+        "width": 648,
+        "height": 45.3515625,
+        "panel": 287.5289001464844,
+        "clientHeight": 34,
+        "scrollHeight": 437,
+        "overflow": "auto"
+      },
+      "wheelScrollTop": 180,
+      "keyboardEnd": {
+        "top": 403,
+        "max": 403
+      },
+      "historyRetained": true,
+      "newCaptionPreservesReadingPosition": true,
+      "fullTranscriptDialog": true,
+      "errors": []
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "touchEmulation": true,
+      "passed": true,
+      "captionCharacters": 1034,
+      "old": {
+        "width": 242,
+        "height": 33.59375,
+        "panel": 341.984375
+      },
+      "current": {
+        "width": 242,
+        "height": 33.59375,
+        "panel": 341.984375,
+        "clientHeight": 34,
+        "scrollHeight": 873,
+        "overflow": "auto"
+      },
+      "wheelScrollTop": 180,
+      "keyboardEnd": {
+        "top": 839,
+        "max": 839
+      },
+      "historyRetained": true,
+      "newCaptionPreservesReadingPosition": true,
+      "fullTranscriptDialog": true,
+      "errors": []
+    }
+  ],
+  "browser": "153.0.4234.32",
+  "passed": true,
+  "sourceCommit": "a85e4935be70d58dfbaadc359a9062e5d7e672df",
+  "deploymentId": "dpl_7G9GHUJMkeesY33BAeb8oCyYTvAz"
+}

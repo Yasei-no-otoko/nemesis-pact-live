@@ -1,10 +1,10 @@
 {
-  "checkedAt": "2026-09-14T14:45:34.694Z",
+  "checkedAt": "2026-09-14T14:53:25.223Z",
   "production": "https://nemesis-pact-live.vercel.app",
   "httpStatus": 200,
-  "hostedBytes": 373023,
-  "productionSha256": "14738518d08c2cdf9e3b3ca3208f84fcee4a948eddfb611f840d0136d76653b2",
-  "localSha256": "14738518d08c2cdf9e3b3ca3208f84fcee4a948eddfb611f840d0136d76653b2",
+  "hostedBytes": 373377,
+  "productionSha256": "bee4b3d9a0482e9430202a776fa2c9a972e53c9f8b8ebb81755bc967d76a7a62",
+  "localSha256": "bee4b3d9a0482e9430202a776fa2c9a972e53c9f8b8ebb81755bc967d76a7a62",
   "exactBuildMatch": true,
   "headers": {
     "permissions-policy": "camera=(), microphone=(self), geolocation=()",
@@ -21,8 +21,8 @@
     "provider": "local-rules"
   },
   "realModelCalls": 0,
-  "sourceCommit": "e900edf95a03e4e5c60bd99208a8b2a9f6c3521e",
-  "deploymentId": "dpl_3yCSkWCzMXvEWjnEZhNCzr1SSZSb",
-  "backendProof": "../public-pool.json; actual response living_covenant_rules_v3 and public-pool ledger delta",
-  "sameSourceFullBrowserEvidence": "../iphone-recording/production-fix/result.json"
+  "sourceCommit": "a85e4935be70d58dfbaadc359a9062e5d7e672df",
+  "deploymentId": "dpl_7G9GHUJMkeesY33BAeb8oCyYTvAz",
+  "uiEvidence": "../notary-scroll/production/result.json",
+  "backendScope": "unchanged from v3/public-pool verified release; no new paid model call for this caption-only patch"
 }
