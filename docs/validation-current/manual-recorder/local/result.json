@@ -1,0 +1,48 @@
+{
+  "recordingState": "stopped",
+  "fileBytes": 8929621,
+  "recordingElapsedMs": 65003,
+  "wallSecondsIncludingRestart": 68.91,
+  "requestedSeconds": 65,
+  "manualStop": true,
+  "restartSaved": true,
+  "firstTracksClosed": true,
+  "allCaptureTracksClosed": true,
+  "gameOwnedMicrophoneNotStoppedByRecorder": true,
+  "apiRequests": [],
+  "realModelCalls": 0,
+  "syntheticCapture": true,
+  "syntheticAudio": true,
+  "humanMicrophone": false,
+  "browser": "Microsoft Edge 153.0.4234.32",
+  "os": "Windows",
+  "headless": true,
+  "viewport": {
+    "width": 1280,
+    "height": 800
+  },
+  "settings": {
+    "request": {
+      "video": {
+        "frameRate": 60,
+        "width": {
+          "max": 1920
+        },
+        "height": {
+          "max": 1080
+        }
+      },
+      "audio": true,
+      "preferCurrentTab": true,
+      "selfBrowserSurface": "include"
+    },
+    "actual": {
+      "frameRate": 60,
+      "height": 720,
+      "width": 1280
+    },
+    "mime": "video/webm;codecs=vp9,opus"
+  },
+  "errors": [],
+  "savedNotice": "Saved nemesis-pact-demo.webm. Recording and screen sharing ended. Edit your submission to 60 seconds in Resolve."
+}

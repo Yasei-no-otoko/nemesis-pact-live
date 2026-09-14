@@ -1,0 +1,12 @@
+{
+  "source": ".work/manual-recorder.webm",
+  "bytes": 8929621,
+  "sha256": "d1642067c9b245531b5b62ddc944002acbb95a4d2a4736489866b39a9d891c39",
+  "ffmpegExit": 0,
+  "decodedFrames": 3612,
+  "decodedDurationSeconds": 66.35,
+  "probe": "Input #0, matroska,webm, from '.work\\manual-recorder.webm':\n  Metadata:\n    encoder         : Chrome\n  Duration: N/A, start: 0.000000, bitrate: N/A\n  Stream #0:0(eng): Video: vp9 (Profile 0), yuv420p(pc, bt709/bt709/iec61966-2-1), 1280x720, SAR 1:1 DAR 16:9, 60 tbr, 1k tbn (default)\n      Metadata:\n        alpha_mode      : 1\n  Stream #0:1(eng): Audio: opus, 48000 Hz, stereo, fltp (default)\n",
+  "syntheticQa": true,
+  "actualHumanFootage": false,
+  "averageDecodedFps": 54.439
+}

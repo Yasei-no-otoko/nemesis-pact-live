@@ -1,0 +1,69 @@
+{
+  "exported": true,
+  "file": ".artifacts/submission/resolve/NEMESIS-PACT-59s-template.drp",
+  "version": "21.1.0.17",
+  "project": "NEMESIS PACT - Submission 20260915",
+  "projectId": "61f93e79-f0da-4a95-b3ea-ed44f06745a1",
+  "timeline": "Submission - 59s edit - awaiting capture",
+  "timelineId": "f11827ae-f922-4abb-b21f-d3ef4dc2ff86",
+  "fps": 60,
+  "resolution": [
+    "1920",
+    "1080"
+  ],
+  "useCustomSettings": "1",
+  "projectDefaultFps": 30,
+  "markers": {
+    "0": {
+      "color": "Blue",
+      "duration": 180,
+      "note": "Real production footage. Target section, not captured media.",
+      "name": "INTRO",
+      "customData": ""
+    },
+    "180": {
+      "color": "Blue",
+      "duration": 720,
+      "note": "Keep the correction and audible interruption at normal speed.",
+      "name": "INTERRUPT",
+      "customData": ""
+    },
+    "900": {
+      "color": "Blue",
+      "duration": 480,
+      "note": "Show OPENAI / gpt-5.6-luna clauses and explicit Sign.",
+      "name": "SIGN RIGHT",
+      "customData": ""
+    },
+    "1380": {
+      "color": "Blue",
+      "duration": 420,
+      "note": "Show right sanctuary and erased bullets.",
+      "name": "FIGHT THE DEAL",
+      "customData": ""
+    },
+    "1800": {
+      "color": "Blue",
+      "duration": 780,
+      "note": "Show R, voice, revised clauses and Sign 2.",
+      "name": "RENEGOTIATE",
+      "customData": ""
+    },
+    "2580": {
+      "color": "Blue",
+      "duration": 720,
+      "note": "Cut pauses; retain real late combat and victory.",
+      "name": "DEFEAT THE BOSS",
+      "customData": ""
+    },
+    "3300": {
+      "color": "Blue",
+      "duration": 240,
+      "note": "Actual result and production URL. Finish by 59s.",
+      "name": "RESULT + URL",
+      "customData": ""
+    }
+  },
+  "emptyTemplate": true,
+  "newHumanCapturePending": true
+}
