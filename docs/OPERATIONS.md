@@ -27,12 +27,12 @@ Before clearing an unknown-termination kill, independently confirm every affecte
 
 ## Rollback
 
-Current production source: `3ff6fb06fd212cc50614a4b6dd67e52d5325bce6`, READY deployment `dpl_9VterKz8JkDeyjVGpdJrVqcm3e48`.
+Current production source: `1c80393d5eb5aabbdffe0241fea6eb6929768f70`, READY deployment `dpl_FxPfwZhZCfVw5GVAsruErx2CjGUx`.
 
-The prior READY deployment is `dpl_6oUWRqM5JCHUL9Eq7TS4czuBuc6p` (source `05e2d24`, before the voice response-body deadline fix). With the existing authenticated Vercel CLI and this project selected:
+The previous source `3ff6fb0`, deployment `dpl_9VterKz8JkDeyjVGpdJrVqcm3e48`, can restore the earlier UI but reintroduces the per-app-session voice exhaustion and close race. Prefer deploying current code with paid routes disabled if an emergency rollback is needed. With the existing authenticated Vercel CLI and this project selected:
 
 ```sh
-vercel rollback dpl_6oUWRqM5JCHUL9Eq7TS4czuBuc6p --yes
+vercel rollback dpl_9VterKz8JkDeyjVGpdJrVqcm3e48 --yes
 vercel rollback status nemesis-pact-live
 ```
 

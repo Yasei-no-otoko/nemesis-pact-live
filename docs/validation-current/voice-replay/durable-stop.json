@@ -1,0 +1,26 @@
+{
+  "checkedAt": "2026-09-14T13:28:02.025Z",
+  "providerSessions": [
+    {
+      "state": "stopped",
+      "reason": "application",
+      "elapsedMs": 1694,
+      "credentialBound": true
+    },
+    {
+      "state": "stopped",
+      "reason": "application",
+      "elapsedMs": 1602,
+      "credentialBound": true
+    },
+    {
+      "state": "stopped",
+      "reason": "application",
+      "elapsedMs": 1335,
+      "credentialBound": true
+    }
+  ],
+  "active": 0,
+  "kill": null,
+  "conservativeMicrodollarsRetained": 150000
+}

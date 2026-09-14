@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-14T13:14:58Z",
+  "checkedAt": "2026-09-14T13:22:57Z",
   "url": "https://nemesis-pact-live.vercel.app",
   "browser": "153.0.4234.32",
   "os": "Windows 11",
@@ -9,15 +9,29 @@
   "humanNegotiationProof": false,
   "maximumPaidSessions": 3,
   "maximumConservativeUsd": 0.15,
-  "passed": false,
-  "error": "",
+  "passed": true,
+  "sameCookie": true,
+  "newPlayVoiceResumed": true,
+  "sameFightLimitRetained": true,
+  "limitMessage": "Both voice negotiations for this fight are used. Continue with text, or start a new First Contact.",
+  "sessionStartedMs": [
+    2766,
+    1641,
+    1500
+  ],
   "tracks": [
+    "ended",
+    "ended",
+    "ended",
     "ended"
   ],
   "peers": [
+    "closed",
+    "closed",
+    "closed",
     "closed"
   ],
-  "sessionStartedEvents": 1,
+  "sessionStartedEvents": 3,
   "renderer": "WEBGPU / COMPUTE",
   "api": [
     {
@@ -32,8 +46,35 @@
     {
       "path": "/api/voice/stop",
       "status": 200,
-      "stopped": false,
-      "uncertain": true
+      "stopped": true,
+      "uncertain": false
+    },
+    {
+      "path": "/api/voice/start",
+      "status": 200,
+      "model": "gpt-live-1"
+    },
+    {
+      "path": "/api/voice/stop",
+      "status": 200,
+      "stopped": true,
+      "uncertain": false
+    },
+    {
+      "path": "/api/voice/start",
+      "status": 429,
+      "error": "VOICE_QUOTA_voice_duration"
+    },
+    {
+      "path": "/api/voice/start",
+      "status": 200,
+      "model": "gpt-live-1"
+    },
+    {
+      "path": "/api/voice/stop",
+      "status": 200,
+      "stopped": true,
+      "uncertain": false
     }
   ],
   "pageErrors": []

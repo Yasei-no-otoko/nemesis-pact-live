@@ -1,10 +1,10 @@
 {
-  "checkedAt": "2026-09-14T13:14:53.838Z",
+  "checkedAt": "2026-09-14T13:22:53.693Z",
   "production": "https://nemesis-pact-live.vercel.app",
   "httpStatus": 200,
-  "hostedBytes": 361568,
-  "productionSha256": "b6fa879e78b7cd98c88407034255888153ebb7aeda6a4213595e01a731d83ec5",
-  "localSha256": "b6fa879e78b7cd98c88407034255888153ebb7aeda6a4213595e01a731d83ec5",
+  "hostedBytes": 361744,
+  "productionSha256": "f8cb75f37b9cd95459f769f15d2c2e73c61b183b4344029771b03f5b1fc88ec2",
+  "localSha256": "f8cb75f37b9cd95459f769f15d2c2e73c61b183b4344029771b03f5b1fc88ec2",
   "exactBuildMatch": true,
   "headers": {
     "permissions-policy": "camera=(), microphone=(self), geolocation=()",

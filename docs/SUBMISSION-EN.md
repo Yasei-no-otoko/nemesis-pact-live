@@ -4,7 +4,7 @@ NEMESIS PACT is a short browser bullet hell where negotiation is the core mechan
 
 # Meaningful use of OpenAI tools
 
-The runtime separates a text contract provider from the GPT-Live-1 voice frontend. Server code treats model prose and speech as untrusted input, validates a strict contract schema, and lets only an explicit Sign action apply rules. The deployed path uses native HTTPS requests to `gpt-4.1-mini` through Vercel AI Gateway for text and `gpt-live-1` for voice. The user reported a first voice-originated contract change and boss defeat; voice captions and a signed contract were independently observed. Full interruption and corrected right-side renegotiation remain unverified.
+The runtime separates a text contract provider from the GPT-Live-1 voice frontend. Server code treats model prose and speech as untrusted input, validates a strict contract schema, and lets only an explicit Sign action apply rules. The deployed path uses native HTTPS requests to `gpt-4.1-mini` through Vercel AI Gateway for text and `gpt-live-1` for voice. The user reported a first voice-originated contract change and boss defeat; voice captions and a signed contract were independently observed. Actual human production footage now shows an initial left-side contract and a spoken mid-fight request to move right, followed by a signed revision 2 and the right sanctuary in combat. Interruption during an enemy reply remains unverified.
 
 # Originality
 
@@ -16,7 +16,7 @@ First Contact provides a direct first encounter with automatic aim and fire, rea
 
 # Execution and craft
 
-The implementation preserves the existing six-sector game and rendering architecture while adding a bounded proposal ledger, durable access controls, contract effects, voice lifecycle handling, and visual before/after state. The production deployment is `dpl_9VterKz8JkDeyjVGpdJrVqcm3e48`. The current evidence supports deployed text and one real voice contract change; it does not claim a finished one-minute public video or a fully verified interruption sequence.
+The implementation preserves the existing six-sector game and rendering architecture while adding a bounded proposal ledger, durable access controls, contract effects, voice lifecycle handling, and visual before/after state. The production deployment is `dpl_FxPfwZhZCfVw5GVAsruErx2CjGUx`. Tests cover 202 unit cases and a real API replay regression with confirmed termination. A 60-second human gameplay video with English captions is prepared locally; its public URL and the final interruption sequence remain open.
 
 # Sources and licenses
 

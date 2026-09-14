@@ -1,0 +1,25 @@
+{
+  "checkedAt": "2026-09-14T13:22:27.229045+00:00",
+  "sourceSha256": "7e6bd1d0dec5d2876d5b3d644b5586d2074e0f1503faaf9394bb4ec33b68642e",
+  "outputFile": "NEMESIS-PACT-human-demo-60s-en.mp4",
+  "outputSha256": "af96d0f8307a065b45faa001dab792ed7f1244524aa505a211f7cf27edebf825",
+  "bytes": 7016662,
+  "seconds": 60,
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "source": "actual human Chrome production gameplay, recorded 2026-09-14 12:51-12:52 UTC",
+  "editing": "continuous source at original speed; scaled inside caption band; final fractional frame padded to 60 seconds; original mixed audio retained",
+  "captions": "English action captions and translations of visible Japanese speech captions, not a verbatim audio transcript",
+  "evidence": {
+    "initialLeftVoiceProposal": true,
+    "firstSignatureAndCombat": true,
+    "visibleBulletsErased": 3,
+    "visibleReflectedDamage": 58,
+    "midFightRightVoiceProposal": true,
+    "rightRevision2SignedAndApplied": true,
+    "interruptionDuringEnemyReply": false,
+    "bossDefeatInThisRecording": false
+  },
+  "publicationUrl": null
+}

@@ -1,13 +1,13 @@
 {
-  "recordedAt": "2026-09-14T08:47:15.452Z",
-  "status": "incomplete; blocked awaiting human microphone/video evidence and access choice",
+  "recordedAt": "2026-09-14T13:26:50.226888+00:00",
+  "status": "incomplete; voice replay fixed and actual human parley footage reviewed; interruption and public video/source access pending",
   "production": "https://nemesis-pact-live.vercel.app",
   "repository": "https://github.com/Yasei-no-otoko/nemesis-pact-live",
   "repositoryVisibility": "private; user approval to publish pending",
   "branch": "ship/living-covenant",
-  "sourceCommit": "3ff6fb06fd212cc50614a4b6dd67e52d5325bce6",
-  "deploymentId": "dpl_9VterKz8JkDeyjVGpdJrVqcm3e48",
-  "deploymentUrl": "https://nemesis-pact-live-c8hgz1tgz-wildmans-projects.vercel.app",
+  "sourceCommit": "1c80393d5eb5aabbdffe0241fea6eb6929768f70",
+  "deploymentId": "dpl_FxPfwZhZCfVw5GVAsruErx2CjGUx",
+  "deploymentUrl": "https://nemesis-pact-live-o7m1vyagj-wildmans-projects.vercel.app",
   "models": {
     "voice": "gpt-live-1",
     "contract": "openai/gpt-4.1-mini",
@@ -15,32 +15,37 @@
     "voiceBilledBy": "OpenAI direct"
   },
   "build": {
-    "hostedSha256": "4a6dfd2775bcdedd9e3d591b78d5940e2bbbc11a7250b575c9d870583f19f85c",
-    "offlineSha256": "75566512ca768727389ce9e13961a8a7da89907af9ee07ae4691ae454e45389a",
-    "hostedBytes": 360116,
-    "offlineBytes": 360066
+    "hostedSha256": "f8cb75f37b9cd95459f769f15d2c2e73c61b183b4344029771b03f5b1fc88ec2",
+    "offlineSha256": "720390af7b08ad8a7482a400044475cc82e2c4813e75f993cff7e208f0b61db8",
+    "hostedBytes": 361744,
+    "offlineBytes": 361694
   },
   "nodeEngines": "22.x",
   "projectNodeSetting": "22.x",
   "videoUrl": null,
   "openGates": [
-    "human interruption and left-to-right correction",
-    "human mid-fight voice amendment",
-    "60-second human demo with English subtitles and public URL",
+    "human interruption during enemy reply and same-turn correction",
+    "public video URL (actual 60-second English-captioned MP4 prepared locally)",
     "physical phones/Safari",
     "exact Gateway grant balance and expiry",
     "Vercel infrastructure usage endpoint returned 404",
     "source visibility or judging access choice"
   ],
   "budgetStatus": {
-    "lastLedgerCheck": "2026-09-14T08:43:01.312Z",
-    "directOpenaiConservativeUsd": 0.3,
-    "gatewayConservativeUsd": 0.00621,
+    "lastLedgerCheck": "2026-09-14T13:23:48.512Z",
+    "directOpenaiConservativeUsd": 0.6,
+    "gatewayConservativeUsd": 0.00753,
     "directOpenaiCapUsd": 10,
     "gatewayCapUsd": 20,
     "vercelGrantReportedUsd": 30,
     "vercelGrantExactBalanceAndExpiry": "unverified",
     "infrastructureUsage": "Vercel CLI usage returned Costs not found (404)",
     "activeBudgetPool": "verification"
+  },
+  "localVideo": {
+    "file": "NEMESIS-PACT-human-demo-60s-en.mp4",
+    "sha256": "af96d0f8307a065b45faa001dab792ed7f1244524aa505a211f7cf27edebf825",
+    "seconds": 60,
+    "public": false
   }
 }
