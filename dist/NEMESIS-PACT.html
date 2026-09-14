@@ -420,7 +420,7 @@ body.mobile-ui[data-covenant=true] #pact-hud small{max-height:23px;overflow:hidd
     <div id="toast" role="status"></div>
     <div id="tutorial-hud" hidden><small>FLIGHT SCHOOL / TRAINING</small><h3 id="tutorial-title"></h3><p id="tutorial-detail"></p><button id="training-exit" class="text-button">Exit training →</button></div>
     <section id="menu" class="screen title-screen" aria-label="Title screen">
-      <div class="title-top"><span><i class="status-dot"></i> WILDMAN / ORIGINAL GAME</span><span>LOCAL REHEARSAL + OPTIONAL OPENAI PILOT</span></div>
+      <div class="title-top"><span><i class="status-dot"></i> WILDMAN / ORIGINAL GAME</span><span>VOICE · TEXT · LOCAL RULES</span></div>
       <div class="title-content"><div class="eyebrow">B L A S T &nbsp; B U S T E R</div>
         <h1>NEMESIS<br><span>PACT<span class="title-cross">✳</span></span></h1>
         <p class="tagline">The enemy listens.<br>The battlefield changes.</p>
@@ -1262,9 +1262,9 @@ return {Run,SECTORS,BOSSES,AIRFRAMES,RELICS,ROUTES,ENEMIES,DIRECTORS};
       if (typeof this.fetcher !== 'function') throw Error('Session service unavailable');
       const generation = this.generation;
       const controller = new AbortController();
-      let rejectTimeout;
+      let rejectTimeout, expired = false;
       const timeoutPromise = new Promise((_, reject) => { rejectTimeout = reject; });
-      const timeout = setTimeout(() => { controller.abort(); const error = Error('Session service timeout'); error.name = 'AbortError'; rejectTimeout(error); }, this.timeoutMs);
+      const timeout = setTimeout(() => { expired = true; controller.abort(); const error = Error('Session service timeout'); error.name = 'AbortError'; rejectTimeout(error); }, this.timeoutMs);
       const fetchPromise = Promise.resolve().then(() => this.fetcher('/api/session', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -1272,10 +1272,10 @@ return {Run,SECTORS,BOSSES,AIRFRAMES,RELICS,ROUTES,ENEMIES,DIRECTORS};
         body: JSON.stringify({ consent: true }),
         signal: controller.signal
       }));
-      const promise = Promise.race([fetchPromise, timeoutPromise]).then(async response => {
+      const parsed = fetchPromise.then(async response => {
         if (!response?.ok) throw Error(`Session unavailable (${response?.status || 0})`);
         const value = await response.json();
-        if (generation !== this.generation) throw Error('Session invalidated');
+        if (expired || generation !== this.generation) throw Error('Session invalidated');
         if (!value || typeof value.sessionId !== 'string' || !value.sessionId ||
             typeof value.csrf !== 'string' || !value.csrf) throw Error('Invalid session response');
         this.sessionId = value.sessionId;
@@ -1284,7 +1284,8 @@ return {Run,SECTORS,BOSSES,AIRFRAMES,RELICS,ROUTES,ENEMIES,DIRECTORS};
         this.contractEnabled = value.contractEnabled === true;
         this.voiceEnabled = value.voiceEnabled === true;
         return this.snapshot();
-      }).catch(error => {
+      });
+      const promise = Promise.race([parsed, timeoutPromise]).catch(error => {
         if (error?.name === 'AbortError') throw Error('Session service timeout');
         throw error;
       }).finally(() => { clearTimeout(timeout); if (this.pending === promise) this.pending = null; });
@@ -1402,7 +1403,7 @@ return {CONTRACTS,DIRECTORS,TASKS,cleanRequest,schema,validateDecision,mock,tele
   }
  }
  class Run extends X.Run{
-  constructor(seed='FIRST-CONTACT',difficulty='standard',viewport={},history){super(seed,difficulty,false,viewport,{mode:'classic'});this.mode='first-contact';this.totalStages=1;this.phase='covenant';this.wave=2;this.credits=0;this.upgrades={rail:1,parry:1};this.p.hp=this.p.maxHp=difficulty==='veteran'?7:10;this.p.energy=50;this.spec=null;this.revision=0;this.amendments=1;this.autoParley=true;this.receipts=[];this.memory=memory(history);this.covenantStats={shielded:0,reflectedDamage:0,gunDamage:0,amendments:0};this.savedMemory=false;this.finishReason=null;}
+  constructor(seed='FIRST-CONTACT',difficulty='standard',viewport={},history){super(seed,difficulty,false,viewport,{mode:'classic'});this.mode='first-contact';this.totalStages=1;this.phase='covenant';this.wave=2;this.credits=0;this.upgrades={rail:1,parry:1};this.p.hp=this.p.maxHp=difficulty==='veteran'?7:10;this.p.energy=50;this.spec=null;this.revision=0;this.amendments=1;this.autoParley=true;this.receipts=[];this.memory=memory(history);this.covenantStats={shielded:0,reflectedDamage:0,gunDamage:0,amendments:0};this.voiceEvidence={model:'gpt-live-1',connectionStarted:0,sessionClosed:0,delegationRequests:0,proposalsReturned:0,openaiProposals:0,signedContracts:0,lastState:'idle'};this.savedMemory=false;this.finishReason=null;}
   bossInfo(){return {...X.BOSSES[0],hp:3600};}
   sign(){return false;}
   request(prompt){return cleanRequest({version:1,prompt,seed:this.seed,revision:this.revision,amendment:this.revision>0,memory:this.memory,telemetry:telemetry(this),previous:this.spec});}
@@ -1428,7 +1429,7 @@ return {CONTRACTS,DIRECTORS,TASKS,cleanRequest,schema,validateDecision,mock,tele
   step(dt,input={}){super.step(dt,input);if(this.phase==='combat'&&this.bossKills>0){this.completeEncounter();return;}if(this.phase==='combat'&&this.autoParley&&this.time>=18)this.requestParley();}
   completeEncounter(){this.enemies=[];this.bullets=[];this.lasers=[];this.phase='won';this.score+=this.broken?1000:3500;this.finishReason=this.broken?'unbound':'honored';this.emit('victory',{ending:this.finishReason});}
   memoryAfter(){return {honored:Math.min(10000,this.memory.honored+(this.phase==='won'&&!this.broken?1:0)),broken:Math.min(10000,this.memory.broken+(this.broken?1:0))};}
-  report(){return {...super.report(),version:'0.5.0',mode:this.mode,contractLanguage:'living-covenant-v1',assists:'automatic aim/fire in First Contact UI',rules:this.spec?{...this.spec}:null,covenantStats:{...this.covenantStats},receipts:this.receipts.map(r=>({...r,spec:{...r.spec},snapshot:{...r.snapshot}})),memoryBefore:{...this.memory},memoryAfter:this.memoryAfter(),liveVoice:'not-integrated'};}
+  report(){const voice={...this.voiceEvidence};return {...super.report(),version:'0.5.0',mode:this.mode,contractLanguage:'living-covenant-v1',assists:'automatic aim/fire in First Contact UI',rules:this.spec?{...this.spec}:null,covenantStats:{...this.covenantStats},receipts:this.receipts.map(r=>({...r,spec:{...r.spec},snapshot:{...r.snapshot}})),memoryBefore:{...this.memory},memoryAfter:this.memoryAfter(),liveVoice:{...voice,status:voice.signedContracts>0?'contract-signed':voice.connectionStarted>0?'connected':'not-used'}};}
  }
  return {ZONES,SPEEDS,REFLECTS,PRICES,validateSpec,cleanRequest,schema,compile,describe,budget,localProposal,memory,telemetry,Client,Run};
 });
@@ -2457,7 +2458,7 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
  class PactVoice{
   constructor(o={}){
    this.request=o.request;this.media=o.mediaDevices||globalThis.navigator?.mediaDevices;this.PC=o.RTCPeerConnection||globalThis.RTCPeerConnection;this.document=o.document||globalThis.document;this.audio=o.audio||null;
-   this.onState=o.onState||(()=>{});this.onCaption=o.onCaption||(()=>{});this.onInput=o.onInput||(()=>{});this.onDelegation=o.onDelegation;this.onMedia=o.onMedia||(()=>{});
+   this.onState=o.onState||(()=>{});this.onCaption=o.onCaption||(()=>{});this.onInput=o.onInput||(()=>{});this.onDelegation=o.onDelegation;this.onSessionClosed=o.onSessionClosed||(()=>{});this.onMedia=o.onMedia||(()=>{});
    this.state='idle';this.transportGeneration=0;this.delegationGeneration=0;this.events=new Set();this.delegations=new Set();this.closed=true;this.finalized=false;this.stopPromise=null;
    this._hidden=()=>{if(this.document?.visibilityState==='hidden')this.stop('background');};this._pagehide=()=>this.stop('pagehide');
   }
@@ -2467,9 +2468,9 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
   _event(raw,g=this.transportGeneration){
    if(g!==this.transportGeneration)return;let e;try{e=typeof raw==='string'?JSON.parse(raw):raw;}catch{return;}if(!e||typeof e.type!=='string')return;
    if(e.event_id){if(this.events.has(e.event_id))return;this.events.add(e.event_id);if(this.events.size>1000)this.events.delete(this.events.values().next().value);}
-   if(e.type==='session.closed'){this.finalized=true;this.finalUsage=Number.isFinite(e.usage?.seconds)?e.usage.seconds:null;this.stop('provider-'+(e.reason||'closed'));return;}
+   if(e.type==='session.closed'){if(this.finalized)return;this.finalized=true;this.finalUsage=Number.isFinite(e.usage?.seconds)?e.usage.seconds:null;this.onSessionClosed({reason:e.reason||'closed',usage:this.finalUsage,eventId:e.event_id});this.stop('provider-'+(e.reason||'closed'));return;}
    if(this.closed)return;
-   if(e.type==='session.started'){if(e.session?.id&&e.session.id!==this.sessionId){this.stop('session-mismatch');return;}this._state('listening');return;}
+   if(e.type==='session.started'){if(this.started)return;if(e.session?.id&&e.session.id!==this.sessionId){this.stop('session-mismatch');return;}this.started=true;this._state('listening','session-started');return;}
    if(e.type==='session.input_transcript.delta'&&typeof e.delta==='string'){
     this._state('listening');this.onCaption({speaker:'user',delta:e.delta,start_ms:e.start_ms,end_ms:e.end_ms,eventId:e.event_id});this.onInput({delta:e.delta,start_ms:e.start_ms,end_ms:e.end_ms,eventId:e.event_id});return;
    }
@@ -2506,7 +2507,7 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
   async start({runId,revision}={}){
    if(this.stopPromise||['starting','listening','speaking','stopping'].includes(this.state))return false;
    if(!this.request||!this.media?.getUserMedia||!this.PC){this._state('error','voice-not-supported-use-text');return false;}
-   const generation=++this.transportGeneration;this.delegationGeneration++;this.closed=false;this.finalized=false;this.finalUsage=null;this.latestDelegation=null;this.delegationAttempts=0;this.events.clear();this.delegations.clear();this._install();this._state('starting');let stream,pc,createdId;
+   const generation=++this.transportGeneration;this.delegationGeneration++;this.closed=false;this.started=false;this.finalized=false;this.finalUsage=null;this.latestDelegation=null;this.delegationAttempts=0;this.events.clear();this.delegations.clear();this._install();this._state('starting');let stream,pc,createdId;
    try{
     stream=await this.media.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true},video:false});
     if(generation!==this.transportGeneration||this.closed){stream.getTracks().forEach(t=>t.stop());return false;}
@@ -2560,7 +2561,7 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
 (function(root,factory){if(typeof module==='object'&&module.exports)module.exports=factory();else root.NemesisDemo=factory();})(globalThis,function(){'use strict';
  const MAX_MS=60000;
  class DemoRecorder{
-  constructor(o={}){this.document=o.document||globalThis.document;this.navigator=o.navigator||globalThis.navigator;this.MediaRecorder=o.MediaRecorder||globalThis.MediaRecorder;this.AudioContext=o.AudioContext||globalThis.AudioContext||globalThis.webkitAudioContext;this.MediaStream=o.MediaStream||globalThis.MediaStream;this.setTimeout=o.setTimeout||setTimeout;this.clearTimeout=o.clearTimeout||clearTimeout;this.setInterval=o.setInterval||setInterval;this.clearInterval=o.clearInterval||clearInterval;this.URL=o.URL||globalThis.URL;this.onState=o.onState||(()=>{});this.onDownload=o.onDownload||(()=>{});this.state='idle';this.button=null;this.help=null;this.display=null;this.recordStream=null;this.recorder=null;this.audioContext=null;this.destination=null;this.timer=null;this.countdown=null;this.generation=0;this.startedAt=0;this.remainingMs=0;this.voice={input:null,output:null};this._boundPagehide=()=>{this.generation++;this.stop('pagehide');};this._boundEnded=()=>this.stop('share-ended');}
+  constructor(o={}){this.document=o.document||globalThis.document;this.navigator=o.navigator||globalThis.navigator;this.MediaRecorder=o.MediaRecorder||globalThis.MediaRecorder;this.AudioContext=o.AudioContext||globalThis.AudioContext||globalThis.webkitAudioContext;this.MediaStream=o.MediaStream||globalThis.MediaStream;this.setTimeout=o.setTimeout||globalThis.setTimeout.bind(globalThis);this.clearTimeout=o.clearTimeout||globalThis.clearTimeout.bind(globalThis);this.setInterval=o.setInterval||globalThis.setInterval.bind(globalThis);this.clearInterval=o.clearInterval||globalThis.clearInterval.bind(globalThis);this.URL=o.URL||globalThis.URL;this.onState=o.onState||(()=>{});this.onDownload=o.onDownload||(()=>{});this.state='idle';this.button=null;this.help=null;this.display=null;this.recordStream=null;this.recorder=null;this.audioContext=null;this.destination=null;this.timer=null;this.countdown=null;this.generation=0;this.startedAt=0;this.remainingMs=0;this.voice={input:null,output:null};this._boundPagehide=()=>{this.generation++;this.stop('pagehide');};this._boundEnded=()=>this.stop('share-ended');}
   static enabled(search){return new URLSearchParams(search||globalThis.location?.search||'').get('demo')==='1';}
   attachVoice(stream,kind='input'){if(!stream?.getAudioTracks?.().length||!['input','output'].includes(kind))return false;this.voice[kind]=stream;if(this.state==='recording')this._connectVoice(kind);return true;}
   attach(){if(!this.document||!DemoRecorder.enabled())return false;if(this.button)return true;this.button=this.document.createElement('button');this.button.id='demo-record';this.button.type='button';this.button.className='demo-record';this.button.textContent='Record 60s demo';this.help=this.document.createElement('small');this.help.id='demo-record-help';this.help.textContent='Record this game tab and your voice locally. Nothing is uploaded.';this.button.addEventListener('click',()=>this.state==='recording'?this.stop('user'):this.start());this.document.body.append(this.button,this.help);this.document.defaultView?.addEventListener?.('pagehide',this._boundPagehide);return true;}
@@ -2569,7 +2570,7 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
   _connectVoice(kind){if(!this.audioContext||!this.destination||kind==='output'&&this.hasTabAudio)return;const stream=this.voice[kind];if(!stream?.getAudioTracks().some(t=>t.readyState!=='ended'))return;this.voiceSources??={};this.voiceSources[kind]?.disconnect?.();const source=this.audioContext.createMediaStreamSource(stream);source.connect(this.destination);this.voiceSources[kind]=source;}
   async start(){if(this.state==='starting'||this.state==='recording')return false;if(!this.navigator?.mediaDevices?.getDisplayMedia||!this.MediaRecorder)return this._state('error','capture-unavailable'),false;const gen=++this.generation;this._state('starting','local-only');let display;try{display=await this.navigator.mediaDevices.getDisplayMedia({video:{frameRate:30},audio:true,preferCurrentTab:true,selfBrowserSurface:'include'});if(gen!==this.generation){display.getTracks().forEach(t=>t.stop());return false;}this.display=display;display.getVideoTracks().forEach(t=>t.addEventListener?.('ended',this._boundEnded,{once:true}));const audioTrack=this._buildAudio(gen);await this.audioContext?.resume?.();const tracks=[...display.getVideoTracks()];if(audioTrack)tracks.push(audioTrack);this.recordStream=new this.MediaStream(tracks);const mime=['video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/webm'].find(x=>this.MediaRecorder.isTypeSupported?.(x))||'';this.recorder=new this.MediaRecorder(this.recordStream,mime?{mimeType:mime}:{});const rec=this.recorder,chunks=[];rec.addEventListener('dataavailable',e=>{if(e.data?.size)chunks.push(e.data);});rec.addEventListener('stop',()=>{if(this.recorder!==rec)return;const blob=new Blob(chunks,{type:rec.mimeType||'video/webm'}),url=this.URL?.createObjectURL?.(blob);if(url){const a=this.document?.createElement?.('a');if(a){a.href=url;a.download='nemesis-pact-demo.webm';a.click();}this.onDownload({blob,url});this.setTimeout(()=>this.URL?.revokeObjectURL?.(url),0);}this._release('saved');});this.startedAt=Date.now();this.remainingMs=MAX_MS;this._state('recording');rec.start(250);this.timer=this.setTimeout(()=>this.stop('duration-limit'),MAX_MS);this.countdown=this.setInterval(()=>{this.remainingMs=Math.max(0,MAX_MS-(Date.now()-this.startedAt));this._state('recording');},1000);return true;}catch(e){if(display&&gen===this.generation)display.getTracks().forEach(t=>t.stop());this._release('cancelled');this._state('error',e?.name==='NotAllowedError'?'share-cancelled':'capture-failed');return false;}}
   stop(reason='user'){if(this.state==='idle'||this.state==='stopped'||this.state==='stopping')return false;this.generation++;this.clearTimeout(this.timer);this.timer=null;this.clearInterval(this.countdown);this.countdown=null;this.remainingMs=Math.max(0,MAX_MS-(Date.now()-this.startedAt));const rec=this.recorder;if(rec?.state==='recording'){this._state('stopping',reason);rec.stop();}else this._release(reason);return true;}
-  _release(reason){this.clearTimeout(this.timer);this.timer=null;this.clearInterval(this.countdown);this.countdown=null;const tracks=new Set([...(this.display?.getTracks?.()||[]),...(this.recordStream?.getTracks?.()||[])]);tracks.forEach(t=>t.stop?.());this.display=null;this.recordStream=null;try{this.audioContext?.close?.();}catch{}this.audioContext=null;this.destination=null;this.sources=null;this.recorder=null;this._state(reason==='saved'?'stopped':'idle',reason);}
+  _release(reason){this.clearTimeout(this.timer);this.timer=null;this.clearInterval(this.countdown);this.countdown=null;const tracks=new Set([...(this.display?.getTracks?.()||[]),...(this.recordStream?.getTracks?.()||[])]);tracks.forEach(t=>t.stop?.());this.display=null;this.recordStream=null;try{this.audioContext?.close?.();}catch{}this.audioContext=null;this.destination=null;this.sources=null;this.recorder=null;this._state(reason==='saved'?'stopped':'idle',reason);if(this.help&&reason==='saved')this.help.textContent='Saved nemesis-pact-demo.webm to your downloads. Recording and screen sharing ended.';}
  }
  const singleton=new DemoRecorder();singleton.DemoRecorder=DemoRecorder;for(const k of ['attachVoice','attach','start','stop'])singleton[k]=singleton[k].bind(singleton);return singleton;
 });
@@ -2583,7 +2584,7 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
   if(!C||!ctx){$('fatal').hidden=false;$('fatal-message').textContent='Could not initialize the game engine or Canvas.';return;}
   const {TAU,clamp,CONTRACTS,UPGRADES}=C;
   const V=window.PactCovenant,cvClient=new V.Client(),cvSession=new window.PactSession();let cvProposal=null,cvWorld=null,cvRevision=0,cvRequestId=0,cvRunId='',cvSigning=false;
-  let voice=null,voiceText='',voiceCaption='',voiceLastInput=0,voiceMuted=false,voiceActive=false,voiceBackchannels='';
+  let voice=null,voiceWorld=null,voiceText='',voiceCaption='',voiceLastInput=0,voiceMuted=false,voiceActive=false,voiceBackchannels='';
   const X=window.PactExpansion,I=window.PactIntelligence,BOSSES=X.BOSSES,SECTORS=X.SECTORS.map(s=>s.name),aiClient=new I.Client();
   let campaignMode='expedition',airframe='vanguard',aiTask='negotiate',aiBack='choices',aiDecision=null,aiWorld=null,aiStage=0;
   let W=C.W,H=C.H;
@@ -3015,7 +3016,7 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
     try{request=target.request($('cv-prompt').value);}catch{$('cv-status').textContent='Write between 1 and 400 characters. No rules changed.';return;}
     invalidateCovenant('Preparing a counteroffer. The battle is not running.',options.delegated===true);const id=++cvRequestId;$('cv-propose').disabled=true;
     try{const reply=await cvClient.propose(request,{mode:$('cv-mode').value,consent:$('cv-consent').checked,session:cvSession,runId:cvRunId,intentVersion:id});if(id!==cvRequestId||world!==target||world.revision!==revision||screen!=='covenant-screen')return null;
-      cvProposal=reply;cvRevision=revision;const desc=V.describe(reply.spec),old=world.spec?V.describe(world.spec):null;$('cv-provider').textContent=reply.provider==='openai'?'OPENAI / '+reply.model:'LOCAL RULES / NO AI INFERENCE';$('cv-revision').textContent='REV '+String(revision+1).padStart(2,'0')+' / UNSIGNED';$('cv-line').textContent='“'+reply.spec.line+'”';$('cv-contract-title').textContent=desc.title;
+      cvProposal=reply;if(options.delegated){reply.voiceOrigin=true;if(world?.voiceEvidence){world.voiceEvidence.proposalsReturned++;if(reply.provider==='openai')world.voiceEvidence.openaiProposals++;}} cvRevision=revision;const desc=V.describe(reply.spec),old=world.spec?V.describe(world.spec):null;$('cv-provider').textContent=reply.provider==='openai'?'CONTRACT: OPENAI / '+reply.model:'CONTRACT: LOCAL RULES / NO AI INFERENCE';$('cv-revision').textContent='REV '+String(revision+1).padStart(2,'0')+' / UNSIGNED';$('cv-line').textContent='“'+reply.spec.line+'”';$('cv-contract-title').textContent=desc.title;
       $('cv-clauses').innerHTML=`<div class="cv-benefit"><small>YOUR ADVANTAGE</small>${desc.benefits.map(x=>'<p>+ '+escapeHTML(x)+'</p>').join('')}</div><div class="cv-cost"><small>YOUR PRICE</small><p>− ${escapeHTML(desc.price)}</p></div>`;
       $('cv-rationale').textContent=desc.note+' '+reply.spec.rationale+(old?' Replaces: '+old.benefits.join('; ')+' / '+old.price+'.':'');$('cv-status').textContent=`${reply.reason} ${reply.latencyMs} ms · ${V.budget(reply.spec).benefit}/${V.budget(reply.spec).payment} rule budget · NOT YET APPLIED.`;$('cv-sign').disabled=false;renderCovenantPreview(clock);return reply;
     }catch(e){if(id===cvRequestId)$('cv-status').textContent=String(e.message).slice(0,200)+' No rules changed.';}finally{if(id===cvRequestId)$('cv-propose').disabled=false;}
@@ -3026,7 +3027,7 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
     try{
       if(reply.proposalId){const ac=new AbortController(),timer=setTimeout(()=>ac.abort(),8000);let res;try{res=await cvSession.request('/api/covenant/sign',{runId:cvRunId,intentVersion:reply.intentVersion,revision,proposalId:reply.proposalId,digest:reply.digest},{signal:ac.signal});}finally{clearTimeout(timer);}if(!res.ok)throw Error('Signature not confirmed. Request a new counteroffer.');const signed=await res.json();if(signed.signed!==true||signed.digest!==reply.digest||signed.revision!==revision+1||JSON.stringify(V.validateSpec(signed.spec))!==JSON.stringify(reply.spec))throw Error('Signature does not match displayed clauses.');}
       if(screen!=='covenant-screen'||world!==target||cvRequestId!==requestId||cvProposal!==reply||target.revision!==revision)return;
-      if(!target.signCovenant(reply.spec,reply,revision))throw Error('Stale counteroffer. Propose again.');
+      if(!target.signCovenant(reply.spec,reply,revision))throw Error('Stale counteroffer. Propose again.');if(reply.provider==='openai'&&reply.voiceOrigin&&target.voiceEvidence?.connectionStarted>0)target.voiceEvidence.signedContracts++;
       cvProposal=null;show('game');lastWorldPhase='combat';consumeEvents();updateHUD();
     }catch(e){cvProposal=null;$('cv-status').textContent=String(e.message).slice(0,160)+' No rules applied.';$('cv-sign').disabled=true;}
     finally{cvSigning=false;setSigningUI(false);}
@@ -3043,17 +3044,18 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
   function setupVoice(){
     const output=new Audio();output.volume=.8;
     voice=new window.PactVoice.PactVoice({request:cvSession.request.bind(cvSession),audio:output,onMedia:(stream,kind)=>window.NemesisDemo?.attachVoice(stream,kind),
-      onState:state=>{const active=['starting','listening','speaking','stopping'].includes(state.state);if(active!==voiceActive){voiceActive=active;sound.settings(opts.volume,opts.music,muted,opts.musicVolume*(active?.18:1),opts.sfxVolume,opts.adaptiveMusic);}
-        $('cv-voice-state').textContent=state.state.toUpperCase()+(state.detail?' / '+state.detail:'');$('cv-voice-start').disabled=active||!cvSession.voiceEnabled||!$('cv-consent').checked||$('cv-mode').value!=='server';for(const id of ['cv-voice-stop','cv-voice-mute','cv-voice-volume'])$(id).disabled=!active;
+      onState:state=>{if(voiceWorld?.voiceEvidence){voiceWorld.voiceEvidence.lastState=state.state;if(state.detail==='session-started')voiceWorld.voiceEvidence.connectionStarted++;}const active=['starting','listening','speaking','stopping'].includes(state.state);if(active!==voiceActive){voiceActive=active;sound.settings(opts.volume,opts.music,muted,opts.musicVolume*(active?.18:1),opts.sfxVolume,opts.adaptiveMusic);}
+        $('cv-voice-state').textContent='VOICE: '+(voiceWorld?.voiceEvidence?.connectionStarted?'GPT-LIVE-1 / ':'')+state.state.toUpperCase()+(state.detail?' / '+state.detail:'');$('cv-voice-start').disabled=active||!cvSession.voiceEnabled||!$('cv-consent').checked||$('cv-mode').value!=='server';for(const id of ['cv-voice-stop','cv-voice-mute','cv-voice-volume'])$(id).disabled=!active;
         if(state.state==='error')$('cv-status').textContent='Voice unavailable. Use text, or choose LOCAL RULES. '+(state.detail||'');},
       onCaption:event=>{if(event.speaker==='assistant'){voiceCaption=(voiceCaption+event.delta).slice(-300);$('cv-caption-notary').textContent=voiceCaption;}},
       onInput:event=>{if(!event.delta||cvSigning)return;const delta=event.delta;if(/^\s*(yes|ok(?:ay)?|uh[ -]?huh|mm|\u3046\u3093|\u306f\u3044)[.!?、。\s]*$/i.test(delta)){voiceBackchannels+=delta;return;}
         voiceText=(voiceText+voiceBackchannels+delta).slice(-400);voiceBackchannels='';voiceLastInput=performance.now();$('cv-caption-player').textContent=voiceText;$('cv-prompt').value=voiceText;invalidateCovenant('Heard updated terms. Waiting for the Notary’s counteroffer.',false,true);},
-      onDelegation:async()=>{if(cvSigning||screen!=='covenant-screen')return null;const target=world;for(let n=0;n<10&&performance.now()-voiceLastInput<250;n++)await new Promise(resolve=>setTimeout(resolve,100));if(world!==target||!voiceText.trim())return null;
-        if(/(?:withdraw|cancel (?:that|the|my)|\u64a4\u56de|\u53d6\u308a\u6d88)/i.test(voiceText.slice(-90))){invalidateCovenant('Proposal withdrawn. State new terms when ready.');return null;}
+      onSessionClosed:event=>{if(voiceWorld?.voiceEvidence)voiceWorld.voiceEvidence.sessionClosed++;},
+      onDelegation:async()=>{if(world?.voiceEvidence)world.voiceEvidence.delegationRequests++;if(cvSigning||screen!=='covenant-screen')return null;const target=world;for(let n=0;n<10&&performance.now()-voiceLastInput<250;n++)await new Promise(resolve=>setTimeout(resolve,100));if(world!==target||!voiceText.trim())return null;
+        if(/(?:withdraw|cancel (?:that|the|my)|\u64a4\u56de|\u53d6\u308a\u6d88)/i.test(voiceText.slice(-90))){voiceText='';voiceBackchannels='';$('cv-prompt').value='';invalidateCovenant('Proposal withdrawn. State new terms when ready.');return null;}
         return proposeCovenant({delegated:true});}
     });
-    $('cv-voice-start').onclick=async()=>{if(screen!=='covenant-screen'||cvSigning||!$('cv-consent').checked)return;sound.unlock();voiceMuted=false;$('cv-voice-mute').textContent='Mute';voiceText='';voiceCaption='';await voice.start({runId:cvRunId,revision:world.revision});};
+    $('cv-voice-start').onclick=async()=>{if(screen!=='covenant-screen'||cvSigning||!$('cv-consent').checked)return;sound.unlock();voiceMuted=false;$('cv-voice-mute').textContent='Mute';voiceText='';voiceCaption='';voiceWorld=world;await voice.start({runId:cvRunId,revision:world.revision});};
     $('cv-voice-stop').onclick=()=>voice.stop('user');$('cv-voice-mute').onclick=()=>{voiceMuted=!voiceMuted;voice[voiceMuted?'mute':'unmute']();$('cv-voice-mute').textContent=voiceMuted?'Unmute':'Mute';};$('cv-voice-volume').oninput=()=>voice.setVolume(Number($('cv-voice-volume').value)/100);
   }
   function updateCovenantHUD(){const active=world?.mode==='first-contact';$('covenant-live').hidden=!active||screen!=='game';$('pause-parley').hidden=!active;if(!active)return;
@@ -3202,7 +3204,7 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
   $('ai-mode').onchange=invalidateProposal;$('ai-prompt').oninput=invalidateProposal;
 
   // Readable snapshot contains no credentials, transcripts or writable objects.
-  window.render_game_to_text=()=>JSON.stringify({screen,coordinates:'origin top-left; x right; y down',renderer:gpu.stats().backend,arena:{width:W,height:H},phase:world?.phase,seconds:world?Math.round(world.time*100)/100:0,player:world?{x:Math.round(world.p.x),y:Math.round(world.p.y),hp:world.p.hp,energy:world.p.energy}:null,enemies:world?.enemies.filter(e=>e.hp>0).slice(0,12).map(e=>({type:e.type,x:Math.round(e.x),y:Math.round(e.y),hp:e.hp})),hostileBullets:world?.bullets.filter(b=>b.hostile).length,revision:world?.revision,spec:world?.spec,proposal:cvProposal?{spec:cvProposal.spec,provider:cvProposal.provider,model:cvProposal.model}:null,effects:world?.covenantStats,voice:voice?.state});
+  window.render_game_to_text=()=>JSON.stringify({screen,coordinates:'origin top-left; x right; y down',renderer:gpu.stats().backend,arena:{width:W,height:H},phase:world?.phase,seconds:world?Math.round(world.time*100)/100:0,player:world?{x:Math.round(world.p.x),y:Math.round(world.p.y),hp:world.p.hp,energy:world.p.energy}:null,enemies:world?.enemies.filter(e=>e.hp>0).slice(0,12).map(e=>({type:e.type,x:Math.round(e.x),y:Math.round(e.y),hp:e.hp})),hostileBullets:world?.bullets.filter(b=>b.hostile).length,revision:world?.revision,spec:world?.spec,proposal:cvProposal?{spec:cvProposal.spec,provider:cvProposal.provider,model:cvProposal.model}:null,effects:world?.covenantStats,voice:voice?.state,liveVoice:world?.voiceEvidence?world.report().liveVoice:null});
   window.advanceTime=ms=>{const n=Math.min(1200,Math.max(0,Math.round(Number(ms)*.12)));for(let i=0;i<n&&screen==='game'&&world?.phase==='combat';i++)world.step(1/120,inputState(null));if(world){consumeEvents();updateHUD();if(world.phase==='parley')openCovenant();else if(['won','dead'].includes(world.phase))results();}render();};
   // Test access is opt-in; normal launches do not expose mutable simulation state.
   if(new URLSearchParams(location.search).has('test')||window.__PACT_TEST_MODE__===true)window.__PACT_TEST__={

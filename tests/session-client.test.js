@@ -88,3 +88,16 @@ test('default fetch is bound to its global owner', async () => {
     assert.equal(owner, globalThis);
   } finally { global.fetch = original; }
 });
+
+
+test('timeout covers a stalled body and ignores its late completion', async () => {
+  let releaseBody;
+  const session = new PactSession({ timeoutMs: 250, fetch: async () => ({
+    ok: true, json: () => new Promise(resolve => { releaseBody = resolve; })
+  }) });
+  await assert.rejects(session.ensure(), /Session service timeout/);
+  assert.equal(session.pending, null);
+  releaseBody({ sessionId: 'late', csrf: 'late', expiresAt: Date.now() + 60000 });
+  await new Promise(resolve => setImmediate(resolve));
+  assert.equal(session.sessionId, null);
+});

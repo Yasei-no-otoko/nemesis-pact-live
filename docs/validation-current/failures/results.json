@@ -1,0 +1,70 @@
+{
+  "mode": "MOCK ONLY",
+  "base": "http://127.0.0.1:8080/",
+  "browser": "Edge/Chromium via Playwright",
+  "realApiCalls": 0,
+  "results": [
+    {
+      "name": "mock-openai-sign",
+      "mock": true,
+      "requests": [
+        "http://127.0.0.1:8080/api/session",
+        "http://127.0.0.1:8080/api/covenant/cancel",
+        "http://127.0.0.1:8080/api/covenant/cancel",
+        "http://127.0.0.1:8080/api/covenant"
+      ],
+      "status": "Validated OpenAI response. 35 ms \u00b7 3/3 rule budget \u00b7 NOT YET APPLIED.",
+      "provider": "CONTRACT: OPENAI / fixture",
+      "signedAndEnteredCombat": true,
+      "mockOpenAIProposalSigned": true,
+      "textSignDidNotClaimVoice": true
+    },
+    {
+      "name": "session-disconnect",
+      "mock": true,
+      "requests": [
+        "http://127.0.0.1:8080/api/session",
+        "http://127.0.0.1:8080/api/session",
+        "http://127.0.0.1:8080/api/session"
+      ],
+      "status": "LOCAL RULES: Failed to fetch 22 ms \u00b7 3/3 rule budget \u00b7 NOT YET APPLIED.",
+      "provider": "CONTRACT: LOCAL RULES / NO AI INFERENCE",
+      "signedAndEnteredCombat": true
+    },
+    {
+      "name": "upstream-429",
+      "mock": true,
+      "requests": [
+        "http://127.0.0.1:8080/api/session",
+        "http://127.0.0.1:8080/api/covenant/cancel",
+        "http://127.0.0.1:8080/api/covenant/cancel",
+        "http://127.0.0.1:8080/api/covenant"
+      ],
+      "status": "LOCAL RULES: Budget or concurrency limit reached 14 ms \u00b7 3/3 rule budget \u00b7 NOT YET APPLIED.",
+      "provider": "CONTRACT: LOCAL RULES / NO AI INFERENCE",
+      "signedAndEnteredCombat": true
+    },
+    {
+      "name": "service-503",
+      "mock": true,
+      "requests": [
+        "http://127.0.0.1:8080/api/session",
+        "http://127.0.0.1:8080/api/covenant/cancel",
+        "http://127.0.0.1:8080/api/covenant/cancel",
+        "http://127.0.0.1:8080/api/covenant"
+      ],
+      "status": "LOCAL RULES: Server unavailable (503) 13 ms \u00b7 3/3 rule budget \u00b7 NOT YET APPLIED.",
+      "provider": "CONTRACT: LOCAL RULES / NO AI INFERENCE",
+      "signedAndEnteredCombat": true
+    },
+    {
+      "name": "microphone-denied",
+      "mock": true,
+      "requests": [
+        "http://127.0.0.1:8080/api/session",
+        "http://127.0.0.1:8080/api/covenant/cancel"
+      ],
+      "voiceState": "VOICE: ERROR / microphone-denied-use-text"
+    }
+  ]
+}

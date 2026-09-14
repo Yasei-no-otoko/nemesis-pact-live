@@ -4,17 +4,17 @@
   "input": "Synthetic Windows System.Speech TTS through a Web Audio MediaStream; no human microphone",
   "realApi": true,
   "humanLiveVerified": false,
-  "utc": "2026-09-14T07:31:09Z",
-  "connectionMs": 4172,
-  "interruptionAt": 14413.400000035763,
+  "utc": "2026-09-14T07:38:04Z",
+  "connectionMs": 4688,
+  "interruptionAt": 13299.700000047684,
   "success": false,
   "failure": "Page.wait_for_function: Timeout 23000ms exceeded.",
-  "status": "Heard updated terms. Waiting for the Notary\u2019s counteroffer.",
-  "voiceState": "LISTENING",
+  "status": "Validated OpenAI response. 1716 ms \u00b7 3/3 rule budget \u00b7 NOT YET APPLIED.",
+  "voiceState": "SPEAKING",
   "events": [
     {
       "type": "session.started",
-      "at": 9998.400000035763,
+      "at": 9838.600000023842,
       "delta": null,
       "delegation": null,
       "delegation_id": null,
@@ -24,8 +24,8 @@
     },
     {
       "type": "session.input_transcript.delta",
-      "at": 11657.300000011921,
-      "delta": "\u30d5",
+      "at": 11173.200000047684,
+      "delta": "Please",
       "delegation": null,
       "delegation_id": null,
       "usage": null,
@@ -34,8 +34,8 @@
     },
     {
       "type": "session.input_transcript.delta",
-      "at": 11932.199999988079,
-      "delta": "\u30ea\u30fc\u30ba",
+      "at": 11377.900000035763,
+      "delta": " put",
       "delegation": null,
       "delegation_id": null,
       "usage": null,
@@ -44,8 +44,8 @@
     },
     {
       "type": "session.input_transcript.delta",
-      "at": 12135.800000011921,
-      "delta": "\u30d7\u30c3\u30c8",
+      "at": 11529.100000023842,
+      "delta": " the",
       "delegation": null,
       "delegation_id": null,
       "usage": null,
@@ -54,8 +54,8 @@
     },
     {
       "type": "session.input_transcript.delta",
-      "at": 12301.600000023842,
-      "delta": "\u30b6",
+      "at": 12374.400000035763,
+      "delta": " sanctuary on",
       "delegation": null,
       "delegation_id": null,
       "usage": null,
@@ -64,8 +64,8 @@
     },
     {
       "type": "session.input_transcript.delta",
-      "at": 12475.300000011921,
-      "delta": "\u30b5",
+      "at": 12523.900000035763,
+      "delta": " the",
       "delegation": null,
       "delegation_id": null,
       "usage": null,
@@ -74,58 +74,8 @@
     },
     {
       "type": "session.input_transcript.delta",
-      "at": 12654.900000035763,
-      "delta": "\u30f3\u30af\u30c1",
-      "delegation": null,
-      "delegation_id": null,
-      "usage": null,
-      "reason": null,
-      "error": null
-    },
-    {
-      "type": "session.input_transcript.delta",
-      "at": 12870.900000035763,
-      "delta": "\u30e5\u30a2",
-      "delegation": null,
-      "delegation_id": null,
-      "usage": null,
-      "reason": null,
-      "error": null
-    },
-    {
-      "type": "session.input_transcript.delta",
-      "at": 13570.800000011921,
-      "delta": "\u30ea\u30aa\u30f3",
-      "delegation": null,
-      "delegation_id": null,
-      "usage": null,
-      "reason": null,
-      "error": null
-    },
-    {
-      "type": "session.input_transcript.delta",
-      "at": 13572.199999988079,
-      "delta": "\u30b6",
-      "delegation": null,
-      "delegation_id": null,
-      "usage": null,
-      "reason": null,
-      "error": null
-    },
-    {
-      "type": "session.input_transcript.delta",
-      "at": 13832.300000011921,
-      "delta": "\u30ec",
-      "delegation": null,
-      "delegation_id": null,
-      "usage": null,
-      "reason": null,
-      "error": null
-    },
-    {
-      "type": "session.input_transcript.delta",
-      "at": 13833.5,
-      "delta": "\u30d5\u30c8",
+      "at": 13057.5,
+      "delta": " left",
       "delegation": null,
       "delegation_id": null,
       "usage": null,
@@ -134,10 +84,10 @@
     },
     {
       "type": "session.delegation.created",
-      "at": 14043.800000011921,
+      "at": 13060,
       "delta": null,
       "delegation": {
-        "id": "item_ENvRsU6K7tnCGY5cmwWCF",
+        "id": "item_ENvYXN2DofN6D1Expvvvr",
         "type": "delegation",
         "target": "client"
       },
@@ -148,8 +98,8 @@
     },
     {
       "type": "session.output_transcript.delta",
-      "at": 14170,
-      "delta": " Considering.",
+      "at": 13280.300000011921,
+      "delta": "Alright,",
       "delegation": null,
       "delegation_id": null,
       "usage": null,
@@ -158,8 +108,68 @@
     },
     {
       "type": "session.output_transcript.delta",
-      "at": 16601.80000001192,
-      "delta": " The",
+      "at": 13490.5,
+      "delta": " I'm",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 13674.400000035763,
+      "delta": " taking",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 13887.900000035763,
+      "delta": " that",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 14066,
+      "delta": " request",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 14547.100000023842,
+      "delta": " under",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 14688,
+      "delta": " consideration.",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 17055.100000023842,
+      "delta": "The proposed",
       "delegation": null,
       "delegation_id": null,
       "usage": null,
@@ -168,7 +178,7 @@
     },
     {
       "type": "session.commentary.appended",
-      "at": 16604.100000023842,
+      "at": 17290.600000023842,
       "delta": null,
       "delegation": null,
       "delegation_id": null,
@@ -178,17 +188,7 @@
     },
     {
       "type": "session.output_transcript.delta",
-      "at": 16769.80000001192,
-      "delta": " proposed",
-      "delegation": null,
-      "delegation_id": null,
-      "usage": null,
-      "reason": null,
-      "error": null
-    },
-    {
-      "type": "session.output_transcript.delta",
-      "at": 17163.900000035763,
+      "at": 17451.900000035763,
       "delta": " covenant",
       "delegation": null,
       "delegation_id": null,
@@ -197,19 +197,9 @@
       "error": null
     },
     {
-      "type": "session.output_transcript.delta",
-      "at": 17590.19999998808,
-      "delta": " is",
-      "delegation": null,
-      "delegation_id": null,
-      "usage": null,
-      "reason": null,
-      "error": null
-    },
-    {
-      "type": "session.output_transcript.delta",
-      "at": 17753.19999998808,
-      "delta": " titled",
+      "type": "session.input_transcript.delta",
+      "at": 18209.400000035763,
+      "delta": " slow",
       "delegation": null,
       "delegation_id": null,
       "usage": null,
@@ -218,38 +208,8 @@
     },
     {
       "type": "session.input_transcript.delta",
-      "at": 18161.100000023842,
-      "delta": " Change the",
-      "delegation": null,
-      "delegation_id": null,
-      "usage": null,
-      "reason": null,
-      "error": null
-    },
-    {
-      "type": "session.output_transcript.delta",
-      "at": 18197.19999998808,
-      "delta": " \"Return",
-      "delegation": null,
-      "delegation_id": null,
-      "usage": null,
-      "reason": null,
-      "error": null
-    },
-    {
-      "type": "session.output_transcript.delta",
-      "at": 18601.600000023842,
-      "delta": " to",
-      "delegation": null,
-      "delegation_id": null,
-      "usage": null,
-      "reason": null,
-      "error": null
-    },
-    {
-      "type": "session.output_transcript.delta",
-      "at": 18755.400000035763,
-      "delta": " Sender.\"",
+      "at": 18380.600000023842,
+      "delta": " your",
       "delegation": null,
       "delegation_id": null,
       "usage": null,
@@ -258,87 +218,7 @@
     },
     {
       "type": "session.input_transcript.delta",
-      "at": 18968.400000035763,
-      "delta": " sanctuary to",
-      "delegation": null,
-      "delegation_id": null,
-      "usage": null,
-      "reason": null,
-      "error": null
-    },
-    {
-      "type": "session.input_transcript.delta",
-      "at": 19174.5,
-      "delta": " the",
-      "delegation": null,
-      "delegation_id": null,
-      "usage": null,
-      "reason": null,
-      "error": null
-    },
-    {
-      "type": "session.input_transcript.delta",
-      "at": 19578.5,
-      "delta": " right",
-      "delegation": null,
-      "delegation_id": null,
-      "usage": null,
-      "reason": null,
-      "error": null
-    },
-    {
-      "type": "session.output_transcript.delta",
-      "at": 19783.5,
-      "delta": " No",
-      "delegation": null,
-      "delegation_id": null,
-      "usage": null,
-      "reason": null,
-      "error": null
-    },
-    {
-      "type": "session.output_transcript.delta",
-      "at": 20172.80000001192,
-      "delta": " sanctuary",
-      "delegation": null,
-      "delegation_id": null,
-      "usage": null,
-      "reason": null,
-      "error": null
-    },
-    {
-      "type": "session.input_transcript.delta",
-      "at": 20767.5,
-      "delta": " Keep the",
-      "delegation": null,
-      "delegation_id": null,
-      "usage": null,
-      "reason": null,
-      "error": null
-    },
-    {
-      "type": "session.output_transcript.delta",
-      "at": 20801.80000001192,
-      "delta": " yet,",
-      "delegation": null,
-      "delegation_id": null,
-      "usage": null,
-      "reason": null,
-      "error": null
-    },
-    {
-      "type": "session.input_transcript.delta",
-      "at": 21158.19999998808,
-      "delta": " slower",
-      "delegation": null,
-      "delegation_id": null,
-      "usage": null,
-      "reason": null,
-      "error": null
-    },
-    {
-      "type": "session.input_transcript.delta",
-      "at": 21554.19999998808,
+      "at": 19085.400000035763,
       "delta": " bullets",
       "delegation": null,
       "delegation_id": null,
@@ -347,9 +227,43 @@
       "error": null
     },
     {
-      "type": "session.input_transcript.delta",
-      "at": 21763.30000001192,
-      "delta": " and",
+      "type": "session.delegation.created",
+      "at": 19087.600000023842,
+      "delta": null,
+      "delegation": {
+        "id": "item_ENvYdbwZdoC1KvUIcOkNt",
+        "type": "delegation",
+        "target": "client"
+      },
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 19288.80000001192,
+      "delta": "Okay,",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 19471.30000001192,
+      "delta": " reassessing",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 19655.600000023842,
+      "delta": ".",
       "delegation": null,
       "delegation_id": null,
       "usage": null,
@@ -358,7 +272,27 @@
     },
     {
       "type": "session.input_transcript.delta",
-      "at": 22751.5,
+      "at": 20059.400000035763,
+      "delta": " I",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 20400.700000047684,
+      "delta": " accept",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 21909.900000035763,
       "delta": " reinforcements",
       "delegation": null,
       "delegation_id": null,
@@ -367,9 +301,43 @@
       "error": null
     },
     {
-      "type": "session.input_transcript.delta",
-      "at": 23999,
-      "delta": " Please",
+      "type": "session.delegation.created",
+      "at": 21912.100000023842,
+      "delta": null,
+      "delegation": {
+        "id": "item_ENvYgWP95r9FSnopkU8zJ",
+        "type": "delegation",
+        "target": "client"
+      },
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 22100.700000047684,
+      "delta": "Okay,",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 22282.900000035763,
+      "delta": " considering",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 22874.100000023842,
+      "delta": " that.",
       "delegation": null,
       "delegation_id": null,
       "usage": null,
@@ -378,7 +346,7 @@
     },
     {
       "type": "session.usage.updated",
-      "at": 24141.80000001192,
+      "at": 23996.80000001192,
       "delta": null,
       "delegation": null,
       "delegation_id": null,
@@ -389,83 +357,27 @@
       "error": null
     },
     {
-      "type": "session.input_transcript.delta",
-      "at": 24165.19999998808,
-      "delta": " make",
+      "type": "error",
+      "at": 37951.5,
+      "delta": null,
       "delegation": null,
       "delegation_id": null,
       "usage": null,
       "reason": null,
-      "error": null
-    },
-    {
-      "type": "session.output_transcript.delta",
-      "at": 24166.400000035763,
-      "delta": " I'm considering",
-      "delegation": null,
-      "delegation_id": null,
-      "usage": null,
-      "reason": null,
-      "error": null
-    },
-    {
-      "type": "session.input_transcript.delta",
-      "at": 24345.69999998808,
-      "delta": " the",
-      "delegation": null,
-      "delegation_id": null,
-      "usage": null,
-      "reason": null,
-      "error": null
-    },
-    {
-      "type": "session.input_transcript.delta",
-      "at": 24787.30000001192,
-      "delta": " revised",
-      "delegation": null,
-      "delegation_id": null,
-      "usage": null,
-      "reason": null,
-      "error": null
-    },
-    {
-      "type": "session.output_transcript.delta",
-      "at": 24788.400000035763,
-      "delta": " that",
-      "delegation": null,
-      "delegation_id": null,
-      "usage": null,
-      "reason": null,
-      "error": null
-    },
-    {
-      "type": "session.output_transcript.delta",
-      "at": 24957.69999998808,
-      "delta": " revision.",
-      "delegation": null,
-      "delegation_id": null,
-      "usage": null,
-      "reason": null,
-      "error": null
-    },
-    {
-      "type": "session.input_transcript.delta",
-      "at": 25386.19999998808,
-      "delta": " contract",
-      "delegation": null,
-      "delegation_id": null,
-      "usage": null,
-      "reason": null,
-      "error": null
+      "error": {
+        "code": "context_injection_incomplete",
+        "param": null,
+        "message": "The session closed before the estimated context injection completed."
+      }
     },
     {
       "type": "session.closed",
-      "at": 39484.5,
+      "at": 38356.200000047684,
       "delta": null,
       "delegation": null,
       "delegation_id": null,
       "usage": {
-        "seconds": 17
+        "seconds": 15
       },
       "reason": "close_requested",
       "error": null
@@ -474,16 +386,30 @@
   "sent": [
     {
       "type": "probe.delegate.enter",
-      "at": 14043.800000011921,
-      "id": "item_ENvRsU6K7tnCGY5cmwWCF"
+      "at": 14570.600000023842,
+      "id": "item_ENvYXN2DofN6D1Expvvvr"
     },
     {
       "type": "session.commentary.append",
-      "at": 15918.100000023842
+      "at": 16505.5
+    },
+    {
+      "type": "probe.delegate.enter",
+      "at": 21901.30000001192,
+      "id": "item_ENvYdbwZdoC1KvUIcOkNt"
+    },
+    {
+      "type": "probe.delegate.enter",
+      "at": 23420.5,
+      "id": "item_ENvYgWP95r9FSnopkU8zJ"
+    },
+    {
+      "type": "session.commentary.append",
+      "at": 25138.100000023842
     },
     {
       "type": "session.close",
-      "at": 38720.80000001192
+      "at": 37815.5
     }
   ],
   "tracks": [
@@ -510,19 +436,38 @@
       "status": 200,
       "model": null,
       "provider": "local-rules",
-      "latencyMs": 1519,
+      "latencyMs": 1710,
       "billedBy": "vercel-ai-gateway",
       "spec": {
         "version": 1,
-        "title": "Return to Sender",
-        "zone": "none",
+        "title": "Left-side Covenant",
+        "zone": "left",
         "speed": "normal",
-        "reflection": "charged",
+        "reflection": "normal",
         "price": "weaker_gun",
         "line": "Every promise needs a price. Read the binding clauses below. Sign only what you intend to keep.",
         "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
       },
-      "accountedMicrodollars": 436
+      "accountedMicrodollars": 393
+    },
+    {
+      "path": "/api/covenant",
+      "status": 200,
+      "model": "gpt-4.1-mini",
+      "provider": "openai",
+      "latencyMs": 1521,
+      "billedBy": "vercel-ai-gateway",
+      "spec": {
+        "version": 1,
+        "title": "Protected Left Zone with Slow Speed and Reinforc",
+        "zone": "left",
+        "speed": "slow",
+        "reflection": "normal",
+        "price": "reinforcements",
+        "line": "I grant your left sanctuary, slowing bullets, plus reinforcements for aid.",
+        "rationale": "Validated rule budget: 3 advantage points / 3 payment points. Sanctuary stops bullets, not lasers or enemy bodies. Only the displayed clauses apply after Sign."
+      },
+      "accountedMicrodollars": 411
     },
     {
       "path": "/api/voice/stop",

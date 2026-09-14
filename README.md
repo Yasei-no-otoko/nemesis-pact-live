@@ -1,67 +1,50 @@
-# NEMESIS PACT — LIVING COVENANT
+# NEMESIS PACT — Living Covenant
 
-**v0.5.0 · playable code update to the supplied v0.4.1 · English UI / English or Japanese request text**
+Negotiate the rules. Fight your deal.
 
-Ask the enemy for a different fight. Inspect the binding clauses. Sign. Survive the rules you chose. At eighteen seconds, renegotiate once without resetting the damage already dealt.
+[Play on production HTTPS](https://nemesis-pact-live.vercel.app) · [Current validation](docs/VALIDATION-CURRENT.md) · [Japanese guide](README-JA.md)
 
-## Run it
+Built from the verified v0.5.0 source ZIP. The framework-free game and six-sector campaign are preserved. First Contact is a short boss encounter: ask for a sanctuary, slower bullets or stronger reflections, accept a cost, review the clauses, and click **Sign**. At 8 seconds press **R** to renegotiate once; at 18 seconds parley opens automatically. Health, boss damage and elapsed combat time survive the amendment.
 
-Open `dist/NEMESIS-PACT.html`, then **Meet your nemesis**. This is a self-contained local-rule rehearsal; no account, API key or network request is needed. It is **not live AI inference**.
+## Play
 
-To serve the same game with its optional backend, use Node.js 22:
+1. Choose **Negotiate the rules. Fight your deal.**
+2. Use **LOCAL RULES** immediately, or consent to OpenAI processing. Type English/Japanese or click **Start voice** and allow the microphone.
+3. Review the displayed advantages and price. An unsigned proposal changes nothing; only **Sign** applies it.
+4. Move with WASD/arrows, parry with E, dash with Space. Aim/fire are automatic in First Contact. F uses Nova, Q breaks the pact, R opens parley, Esc pauses. Touch controls are available.
+
+The sanctuary is a circle that erases hostile bullets. It does not block lasers or enemy bodies. Actual erased bullets and reflected damage appear in the HUD. Voice output is AI-generated. Captions, mute, volume and text entry remain available.
+
+## Live architecture
+
+Microphone → **GPT-Live-1** over the official Live API/WebRTC → client delegation → **gpt-4.1-mini** via Vercel AI Gateway Responses → canonical validation → explicit Sign → deterministic combat.
+
+Voice and text share the same proposal, validation, signature and battle code. Speech never signs. Request versions, proposal digests and a durable atomic signature ledger reject stale/duplicate applications. Reconnect starts a fresh bounded voice session; it does not silently restore or sign a proposal.
+
+The server uses short-lived signed HttpOnly sessions, exact Origin/CSRF checks, shared Upstash quotas, atomic cost reservations, concurrency limits and kill switches. Each voice session is limited to 45 seconds with a server hangup watchdog. Unknown termination blocks new admission and retains reserved cost. The legacy intelligence route cannot make billable calls. See [operations](docs/OPERATIONS.md).
+
+Direct OpenAI is separately capped at $10 ($3 verification, $5 public, $2 judging). Gateway is capped at $20 ($1 verification, $14 public, $5 judging). These are conservative application controls, not provider invoice guarantees. The user-reported Gateway grant is $30; its exact grant balance and expiry remain unverified. No paid plan or automatic purchase was enabled.
+
+## Run locally
+
+Use Node.js 22:
 
 ```sh
+npm ci
+npm run check
+npm test
 npm run build
 npm start
 ```
 
-Open the loopback URL printed by the server. No npm runtime dependency installation is needed. Do not serve the repository root with a generic file server after adding secrets. `tools/serve.js` serves only the built page and the two bounded API routes. Japanese instructions: **[README-JA.md](README-JA.md)**.
+The printed loopback URL serves the bundled game and bounded API routes. Defaults use local rules. Copy `.env.example` into a Git-ignored environment file only when configuring live server services. Keep all API and Redis keys server-side. Never serve the repository root with a generic file server after adding secrets.
 
-## What is new
+`dist/NEMESIS-PACT.html` is the standalone offline build: open it directly, without accounts or network access. It cannot perform live inference. The hosted page is generated from `index.html` and `src/`; do not edit generated HTML alone.
 
-| Area | v0.5.0 addition |
-|---|---|
-| Fast first play | First Contact: one boss, automatic aiming/firing, direct access from the title. Full six-sector campaign remains a separate button. |
-| Contract composition | A bounded rule language combines left/center/right bullet sanctuaries, slower enemy bullets and amplified reflections with one explicit cost. Exactly 36 legal mechanical combinations, not unlimited generated mechanics. |
-| Meaningful signature | A proposal is pure data. Only an explicit signature applies validated rules. Edited, stale and superseded proposals cannot silently change a fight. |
-| Mid-fight negotiation | Automatic pause at 18 seconds, or R after 8 seconds. One signed replacement; cancel is free. Preserve hull, boss HP, time and existing damage. |
-| Visible consequences | Show signed revision, actual bullets erased and actual reflected damage. Display boss telegraphs and sanctuary geometry. |
-| Enemy memory | Keep bounded local counts of honored and broken signatures; no invented long-term conversation history. |
-| Craft | New obsidian/brass First Contact arena, restrained ground lighting, clearer silhouettes, redesigned contract panel, before/after illustration, desktop and narrow-screen layouts. |
-| Optional model path | A server-only Responses API adapter with strict structured output, validation, timeout and explicit local fallback. No microphone, voice transport or GPT-Live connection is shipped. |
+## Evidence and remaining gates
 
-### Controls in First Contact
+Production real-model text → Sign → combat effects → signed amendment has passed in automated Edge on Windows. Real GPT-Live sessions have exchanged speech transcripts, delegations and canonical proposals; the user has confirmed first voice negotiation and boss defeat. Human interruption/correction and mid-fight voice amendment still require verification. Synthetic speech diagnostics are recorded separately, including a failed correction fixture. Actual phones, Safari and native GPU performance remain unverified.
 
-Move with WASD or arrows; E parries; Space dashes; F uses Nova; Q breaks the pact; R requests parley; Esc pauses. Aim and fire are automatic in this mode. Touch controls expose movement and action buttons separately. Magenta lasers require evasion/dashing: sanctuaries stop bullets, not lasers or bodies.
+The optional `?demo=1` recorder starts only on explicit click and browser screen-share selection. It records the chosen game tab and active game microphone locally, stops after 60 seconds, and downloads WebM. Nothing is uploaded automatically. A recorder timer defect in the first human attempt prevented saving; the fix passed a 60-second real MediaRecorder test with explicitly synthetic capture. The final human demo and public video URL are still pending.
 
-The default example trades **left sanctuary + enemy bullet speed −28%** for **two additional turrets every 9 seconds, capped at four adds**. A replacement can trade weaker gun damage for **slower bullets + reflected damage ×1.8**. Model prose does not authorize any rule absent from the displayed clauses.
-
-## AI status — read before presenting
-
-**Implemented:** deterministic rule compiler and game effects; local rehearsal; private-pilot server adapter; server tests with injected upstream fixtures; provider/revision receipts; browser interactions.
-
-**Not verified or completed:** a real OpenAI inference call with the user's key; production deployment; GPT-Live-1 session transport/voice; Safari/native WebGPU/physical-phone testing; human difficulty evaluation; published one-minute video; contest submission.
-
-Track 1 requires generative AI in the runtime core loop. A locally scripted rehearsal does **not** demonstrate that requirement. The included application fields keep this qualification. Capture an actual successful model request → validated proposal → signature → changed combat loop before claiming live AI functionality.
-
-## Private-pilot configuration
-
-Copy `.env.example` to `.env`. Set `AI_MODE=live`, a server-side API key, an accessible **Responses text model supporting strict JSON Schema**, the exact `ALLOWED_ORIGIN`, and a random 32-byte hex `PILOT_ACCESS_TOKEN`. Start with:
-
-```sh
-node --env-file=.env tools/serve.js
-```
-
-In the hosted contract screen, expand **OpenAI pilot connection / privacy**, select the server provider, enter the **pilot code (not your API key)** and consent to sending the listed data. Only an actual valid upstream result is labelled `OPENAI`. Timeouts/invalid output display `LOCAL RULES`. The standalone file intentionally rejects server use.
-
-The new gateway's 8/minute and `PILOT_MAX_CALLS` limits are **per process**, not durable user quotas or billing limits. The legacy intelligence route has separate limits. A private pilot is not production-ready authentication. Do not publish a shared unrestricted access code.
-
-## Verification and source layout
-
-`npm test` runs the current Node test suite. `npm run check` checks syntax. `npm run test:covenant` tests the new rules/gateway. `npm run test:covenant-browser` needs Python Playwright and Chromium; on Linux run it under `xvfb-run -a`. `npm run test:campaign` and `node tests/covenant-simulate.js` run legal-input, full-state heuristic simulations. `npm run test:server` tests loopback HTTP without calling OpenAI.
-
-Current evidence: [docs/VALIDATION-0.5.0.md](docs/VALIDATION-0.5.0.md). Browser frames use actual WebGL2 via software ANGLE/SwiftShader; they are not physical-GPU performance measurements. Baseline evidence remains explicitly versioned `validation-0.4.1`.
-
-`src/covenant.js` owns the validated rules and new encounter. `src/game.js` owns UI/signature boundaries. `server/covenant.mjs` owns the Responses adapter. `src/covenant.css` and the mode-scoped scenery/shader changes own the new presentation. `api/covenant.mjs` is the Vercel route wrapper.
-
-See [docs/LIVING-COVENANT.md](docs/LIVING-COVENANT.md), [docs/GPT-LIVE-1-ASSESSMENT-JA.md](docs/GPT-LIVE-1-ASSESSMENT-JA.md), [docs/PROVENANCE.md](docs/PROVENANCE.md), and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). No open-source license has been newly granted for project-specific code.
+[Source provenance](docs/PROVENANCE.md) · [Protocol evidence](docs/LIVE-PROTOCOL-EVIDENCE.md) · [Work log](docs/WORKLOG.md) · [Third-party notices](THIRD_PARTY_NOTICES.md). No new license is granted for project-specific code.

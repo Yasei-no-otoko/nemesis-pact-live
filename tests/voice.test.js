@@ -23,3 +23,13 @@ test('a correction can update an existing client delegation without a new provid
  const replies=v.dc.sent.filter(x=>x.type==='session.commentary.append');assert.equal(replies.length,2);assert.equal(replies[0].delegation_id,replies[1].delegation_id);assert.equal(JSON.parse(replies[1].content).covenant.zone,'right');
  await v.stop();v.supersede(true);await wait(10);assert.equal(count,2);
 });
+
+
+test('provider lifecycle evidence counts actual start and close once, including close during application stop',async()=>{
+ const e=fixture(),states=[],closed=[];const v=voice(e,{onState:s=>states.push(s),onSessionClosed:e=>closed.push(e)});active.push(v);
+ await v.start();const dc=v.dc;assert.equal(states.filter(s=>s.detail==='session-started').length,0);
+ dc.emit({type:'session.started',event_id:'start-a'});dc.emit({type:'session.started',event_id:'start-b'});
+ assert.equal(states.filter(s=>s.detail==='session-started').length,1);
+ const stopping=v.stop('sign');dc.emit({type:'session.closed',event_id:'close-a',reason:'client_close'});dc.emit({type:'session.closed',event_id:'close-b'});
+ await stopping;assert.equal(closed.length,1);assert.equal(closed[0].reason,'client_close');
+});

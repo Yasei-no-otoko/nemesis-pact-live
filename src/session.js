@@ -22,9 +22,9 @@
       if (typeof this.fetcher !== 'function') throw Error('Session service unavailable');
       const generation = this.generation;
       const controller = new AbortController();
-      let rejectTimeout;
+      let rejectTimeout, expired = false;
       const timeoutPromise = new Promise((_, reject) => { rejectTimeout = reject; });
-      const timeout = setTimeout(() => { controller.abort(); const error = Error('Session service timeout'); error.name = 'AbortError'; rejectTimeout(error); }, this.timeoutMs);
+      const timeout = setTimeout(() => { expired = true; controller.abort(); const error = Error('Session service timeout'); error.name = 'AbortError'; rejectTimeout(error); }, this.timeoutMs);
       const fetchPromise = Promise.resolve().then(() => this.fetcher('/api/session', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -32,10 +32,10 @@
         body: JSON.stringify({ consent: true }),
         signal: controller.signal
       }));
-      const promise = Promise.race([fetchPromise, timeoutPromise]).then(async response => {
+      const parsed = fetchPromise.then(async response => {
         if (!response?.ok) throw Error(`Session unavailable (${response?.status || 0})`);
         const value = await response.json();
-        if (generation !== this.generation) throw Error('Session invalidated');
+        if (expired || generation !== this.generation) throw Error('Session invalidated');
         if (!value || typeof value.sessionId !== 'string' || !value.sessionId ||
             typeof value.csrf !== 'string' || !value.csrf) throw Error('Invalid session response');
         this.sessionId = value.sessionId;
@@ -44,7 +44,8 @@
         this.contractEnabled = value.contractEnabled === true;
         this.voiceEnabled = value.voiceEnabled === true;
         return this.snapshot();
-      }).catch(error => {
+      });
+      const promise = Promise.race([parsed, timeoutPromise]).catch(error => {
         if (error?.name === 'AbortError') throw Error('Session service timeout');
         throw error;
       }).finally(() => { clearTimeout(timeout); if (this.pending === promise) this.pending = null; });

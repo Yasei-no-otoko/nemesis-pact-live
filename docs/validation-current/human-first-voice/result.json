@@ -1,0 +1,22 @@
+{
+  "date": "2026-09-14",
+  "production": "https://nemesis-pact-live.vercel.app/?demo=1",
+  "deployment": "dpl_6aSgTYqLumExothLnSQ4SrrF4wbZ",
+  "sourceCommit": "bbdb9063369f87566554fd36d7e8855ea38ba120",
+  "browser": "Chrome on user Windows computer; exact version not captured",
+  "input": "human microphone",
+  "userReport": "Changed contract by voice and defeated boss",
+  "userFollowup": "Only first voice negotiation tested",
+  "observedCaption": "左を安全にして",
+  "observedSignatureTitle": "Safe Left, Slow Bullets, Reinforcements Right",
+  "observedCounters": {
+    "reflections": 14,
+    "shielded": 3
+  },
+  "interruptionVerified": false,
+  "voiceAmendmentVerified": false,
+  "winExportCaptured": false,
+  "videoSaved": false,
+  "recorderFailure": "Native Window timer invoked with DemoRecorder receiver; Illegal invocation",
+  "nextStep": "Fixed recorder, then human interruption/correction/parley recording"
+}

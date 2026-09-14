@@ -10,7 +10,7 @@
  class PactVoice{
   constructor(o={}){
    this.request=o.request;this.media=o.mediaDevices||globalThis.navigator?.mediaDevices;this.PC=o.RTCPeerConnection||globalThis.RTCPeerConnection;this.document=o.document||globalThis.document;this.audio=o.audio||null;
-   this.onState=o.onState||(()=>{});this.onCaption=o.onCaption||(()=>{});this.onInput=o.onInput||(()=>{});this.onDelegation=o.onDelegation;this.onMedia=o.onMedia||(()=>{});
+   this.onState=o.onState||(()=>{});this.onCaption=o.onCaption||(()=>{});this.onInput=o.onInput||(()=>{});this.onDelegation=o.onDelegation;this.onSessionClosed=o.onSessionClosed||(()=>{});this.onMedia=o.onMedia||(()=>{});
    this.state='idle';this.transportGeneration=0;this.delegationGeneration=0;this.events=new Set();this.delegations=new Set();this.closed=true;this.finalized=false;this.stopPromise=null;
    this._hidden=()=>{if(this.document?.visibilityState==='hidden')this.stop('background');};this._pagehide=()=>this.stop('pagehide');
   }
@@ -20,9 +20,9 @@
   _event(raw,g=this.transportGeneration){
    if(g!==this.transportGeneration)return;let e;try{e=typeof raw==='string'?JSON.parse(raw):raw;}catch{return;}if(!e||typeof e.type!=='string')return;
    if(e.event_id){if(this.events.has(e.event_id))return;this.events.add(e.event_id);if(this.events.size>1000)this.events.delete(this.events.values().next().value);}
-   if(e.type==='session.closed'){this.finalized=true;this.finalUsage=Number.isFinite(e.usage?.seconds)?e.usage.seconds:null;this.stop('provider-'+(e.reason||'closed'));return;}
+   if(e.type==='session.closed'){if(this.finalized)return;this.finalized=true;this.finalUsage=Number.isFinite(e.usage?.seconds)?e.usage.seconds:null;this.onSessionClosed({reason:e.reason||'closed',usage:this.finalUsage,eventId:e.event_id});this.stop('provider-'+(e.reason||'closed'));return;}
    if(this.closed)return;
-   if(e.type==='session.started'){if(e.session?.id&&e.session.id!==this.sessionId){this.stop('session-mismatch');return;}this._state('listening');return;}
+   if(e.type==='session.started'){if(this.started)return;if(e.session?.id&&e.session.id!==this.sessionId){this.stop('session-mismatch');return;}this.started=true;this._state('listening','session-started');return;}
    if(e.type==='session.input_transcript.delta'&&typeof e.delta==='string'){
     this._state('listening');this.onCaption({speaker:'user',delta:e.delta,start_ms:e.start_ms,end_ms:e.end_ms,eventId:e.event_id});this.onInput({delta:e.delta,start_ms:e.start_ms,end_ms:e.end_ms,eventId:e.event_id});return;
    }
@@ -59,7 +59,7 @@
   async start({runId,revision}={}){
    if(this.stopPromise||['starting','listening','speaking','stopping'].includes(this.state))return false;
    if(!this.request||!this.media?.getUserMedia||!this.PC){this._state('error','voice-not-supported-use-text');return false;}
-   const generation=++this.transportGeneration;this.delegationGeneration++;this.closed=false;this.finalized=false;this.finalUsage=null;this.latestDelegation=null;this.delegationAttempts=0;this.events.clear();this.delegations.clear();this._install();this._state('starting');let stream,pc,createdId;
+   const generation=++this.transportGeneration;this.delegationGeneration++;this.closed=false;this.started=false;this.finalized=false;this.finalUsage=null;this.latestDelegation=null;this.delegationAttempts=0;this.events.clear();this.delegations.clear();this._install();this._state('starting');let stream,pc,createdId;
    try{
     stream=await this.media.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true},video:false});
     if(generation!==this.transportGeneration||this.closed){stream.getTracks().forEach(t=>t.stop());return false;}
