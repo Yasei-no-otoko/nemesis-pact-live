@@ -1,6 +1,7 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),{createHmac}=require('node:crypto'),V=require('../src/covenant.js');
 const {createSessionToken}=require('../server/access.mjs');
+const {ruleSetId}=require('../server/covenant-model.mjs');
 const secret='fixture-session-secret-012345678901234567890123';
 const env={AI_MODE:'live',OPENAI_API_KEY:'fixture-server-secret',OPENAI_MODEL:'gpt-4.1-mini',ALLOWED_ORIGIN:'https://fixture.example',APP_SESSION_SECRET:secret,OPENAI_TEXT_BUDGET_CAP_MICRODOLLARS:'1000000',OPENAI_VOICE_ENABLED:'false'};
 const run=()=>new V.Run('SERVER').request('Sanctuary on the left. Slow fire. Reinforcements.');
@@ -11,7 +12,7 @@ const api=()=>import('../server/covenant.mjs');
 const quota={reserve:async()=>({ok:true,reservationId:'res-1'}),markStarted:async()=>({ok:true}),settle:async()=>({ok:true}),retainUnknown:async()=>({ok:true})};
 const store={eval:async(_script,_keys,args)=>{const action=JSON.parse(args[0]);if(action.op==='finish')return [1,JSON.stringify({revision:action.revision,intent:action.intent,requestId:action.requestId})];return [1,JSON.stringify({revision:0,intent:action.intent,requestId:action.requestId})];}};
 const deps={store,quota};
-const upstream=(s=V.localProposal(run()))=>new Response(JSON.stringify({status:'completed',usage:{input_tokens:10,output_tokens:10},output:[{content:[{type:'output_text',text:JSON.stringify(s)}]}]}));
+const upstream=(s=V.localProposal(run()))=>new Response(JSON.stringify({status:'completed',usage:{input_tokens:10,output_tokens:10},output:[{content:[{type:'output_text',text:JSON.stringify({version:1,ruleSet:ruleSetId(s),title:s.title,line:s.line,rationale:s.rationale})}]}]}));
 
 test('mock mode is deterministic, non-billable, and never calls upstream',async()=>{const {handle}=await api();let calls=0;const out=await handle(new Request('https://fixture.example/api/covenant',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(run())}),{env:{AI_MODE:'mock'},fetcher:()=>{calls++;throw Error('NO NETWORK');}});const data=await out.json();assert.equal(out.status,200);assert.equal(data.provider,'local-rules');assert.equal(calls,0);assert.deepEqual(data.spec,V.localProposal(run()));});
 test('live mode requires signed session cookie, CSRF and exact origin before inference',async()=>{const {handle}=await api();let calls=0;const fetcher=async()=>{calls++;return upstream();};for(const [headers,status]of [[{origin:'https://attacker.invalid'},403],[{'x-nemesis-csrf':'wrong'},403],[{cookie:''},401]]){const out=await handle(req({request:run(),runId:'run-fixture',intentVersion:1,requestId:'req-fixture'},headers),{env,fetcher,...deps});assert.equal(out.status,status);}assert.equal(calls,0);});

@@ -1,0 +1,22 @@
+'use strict';
+const test=require('node:test'),assert=require('node:assert/strict'),V=require('../src/covenant.js');
+const {modelSchema,decodeModelContract,ruleSetId}=require('../server/covenant-model.mjs');
+const prose={version:1,title:'A fair covenant',line:'Review the binding terms.',rationale:'Only displayed clauses apply.'};
+test('every affordable rule combination is offered and no unfunded combination can be generated',()=>{
+ const offered=new Set(modelSchema().properties.ruleSet.enum);let valid=0;
+ for(const zone of V.ZONES)for(const speed of V.SPEEDS)for(const reflection of V.REFLECTS)for(const price of V.PRICES){
+  const clauses={zone,speed,reflection,price},id=ruleSetId(clauses);
+  assert.equal(offered.has(id),V.budget(clauses).valid);
+  if(V.budget(clauses).valid){valid++;const spec=decodeModelContract({...prose,ruleSet:id});assert.deepEqual(V.compile(spec),V.compile({...prose,...clauses}));}
+ }
+ assert.equal(offered.size,valid);assert.equal(valid,36);
+});
+test('the reproduced right sanctuary plus charged reflection with weaker gun is rejected before canonical proposal creation',()=>{
+ const bad=ruleSetId({zone:'right',speed:'normal',reflection:'charged',price:'weaker_gun'});
+ assert.ok(!modelSchema().properties.ruleSet.enum.includes(bad));assert.throws(()=>decodeModelContract({...prose,ruleSet:bad}),/Unsupported/);
+});
+test('model prose cannot inject extra clauses and canonical validation still bounds all fields',()=>{
+ const ruleSet=ruleSetId({zone:'right',speed:'normal',reflection:'normal',price:'weaker_gun'}),good={...prose,ruleSet};
+ assert.throws(()=>decodeModelContract({...good,reflection:'charged'}));assert.throws(()=>decodeModelContract({...good,title:'x'.repeat(49)}));assert.throws(()=>decodeModelContract({...good,version:2}));
+ assert.equal(decodeModelContract({...good,line:'You are invincible.'}).zone,'right');assert.equal(V.compile(decodeModelContract(good)).gun,.65);
+});
