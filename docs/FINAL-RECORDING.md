@@ -30,6 +30,19 @@ These are editable allocations, not required performance timings. Preserve the s
 
 After picture editing, create English captions from the recorded speech and visible clauses. Review text, cut boundaries, audio synchronization and the actual ending. Use a 59-second target (3540 frames at 60fps), leaving a one-second margin below the submission limit. Save the editable project and export H.264/AAC MP4 at 1080p/60fps, starting only the render job created for this edit. Verify Resolve reports Complete and that the output decodes, has audio, and lasts no more than 60 seconds.
 
-## Remaining delivery work
+## Received human recording and completed local edit
 
-The user will record again after the manual recorder is published. The new long human source and final edited MP4 are therefore pending. Existing historical videos remain preserved and accurately labeled with their actual models and observed fallback. Public video hosting and source/judge-access decisions remain pending; recording or editing does not itself publish human footage.
+The new 119.65-second `nemesis-pact-demo (3).webm` was received after deployment. Its seven chronological source ranges are 12–28, 35–44, 54–59, 59–70, 75–78, 85–89 and 104–115 seconds. The native timeline **SUBMISSION - human full sequence - 59s 60fps v1** contains 3540 frames at 60fps, with linked original audio and native Fusion TextPlus English captions. The complete play shows correction, both signatures, changed combat, renegotiation and actual boss defeat.
+
+Local output: `.artifacts/submission/NEMESIS-PACT-human-59s-60fps-en_V1-0001.mp4`. Resolve rendered H.264/AAC at 1920x1080, fixed 60fps; the 59.01-second container decodes all 3540 video frames and audio without error. The raw recording averages 58.688 delivered frames per second; conversion to CFR does not create missing source motion. The editable project is `.artifacts/submission/resolve/NEMESIS-PACT-human-59s-60fps-en.drp`; retain its full-length compatibility MP4 for media relinking. The current Resolve selection is this final human timeline. Captions also have a separate `NEMESIS-PACT-human-59s-60fps-en.srt` sidecar.
+
+Evidence and hashes: `validation-current/human-long/`. Public hosting and source/judge access remain pending. Recorded Notary audio also needs human confirmation: transcription detected only the player's speech, which is not sufficient to prove that enemy audio is missing. The local review copy retains original audio; no reply was synthesized or substituted. Recording/editing does not itself publish human footage. Earlier source videos and the synthetic QA are preserved separately.
+
+Runtime import note: on this Resolve21.1 host, `ImportMedia([absolute_path])` accepted the H.264/AAC compatibility MP4; the structured FilePath-list form returned an empty list for that same video, and direct WebM also returned an empty list. Actual AppendToTimeline duration matched `endFrame - startFrame` on the QA media; verify the real imported source ranges and item durations rather than assuming an inclusive end. The compatibility transcode retains the full source duration; shortening happens only in Resolve.
+
+
+## Verified editing/export path
+
+The synthetic recorder QA file was imported through a full-length H.264/AAC compatibility copy and cut in native Resolve from 66.35 seconds to 58 seconds. Its two video sections retain linked audio. The separate QA timeline rendered successfully using H.264 AMD / AAC: 1920x1080, constant 60fps, 3480 decoded video frames, 58.01-second container duration, non-silent stereo audio. The cut and ending were visually checked. This is plumbing verification using synthetic content, not the human submission.
+
+The saved editable project, including the empty human template and clearly named QA timeline, is exported as `.artifacts/submission/resolve/NEMESIS-PACT-60fps-edit-kit.drp`. This earlier QA export predates the human edit; the current selection is now the final human timeline. Media stays local; DRP exports reference their original media paths. Numeric/string VideoQuality overrides and ReplaceExistingFilesInPlace=false were rejected by this runtime; the QA used the current AMD quality setting and a verified new unique filename. Recheck the final human export's quality and filename in Resolve before rendering.

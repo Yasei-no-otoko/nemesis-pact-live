@@ -1,4 +1,4 @@
-# Current validation — 2026-09-14
+# Current validation — 2026-09-15
 
 This file separates current evidence from v0.5.0 baseline reports. Completion gates are still open.
 
@@ -6,8 +6,8 @@ This file separates current evidence from v0.5.0 baseline reports. Completion ga
 |---|---|---|
 | ZIP baseline | All 216 archive files identical on import; SHA256 recorded | `PROVENANCE.md`, `source-diff-manifest.json` |
 | Initial tests | 164 / 164; 17 syntax checks; Node 22.23.2 | `validation-current/baseline/` |
-| Current unit suite | 209 / 209; zero failed; 20562.3717 ms | Node 22.23.2, 2026-09-14; injected upstream/media fixtures are not live proof |
-| Current syntax/build | 34 files; standalone HTML 373836 bytes | Generated from source; hosted microphone policy checked independently |
+| Current unit suite | 223 / 223; zero failed; 23807.4173 ms | Node 22.23.2, 2026-09-14; injected upstream/media fixtures are not live proof |
+| Current syntax/build | 34 files; standalone HTML 379025 bytes; hosted 379075 bytes | Generated from source; hosted microphone policy checked independently |
 | Production text | Real gpt-4.1-mini through Vercel AI Gateway; valid contract, Sign, combat, right-side amendment | `validation-current/production-text/result.json`; 2427/1955 ms model latency; startup 1766 ms; automated Windows Edge 153.0.4234.32, software WebGL2, 1280x800 |
 | Combat continuity | HP, boss HP, elapsed time preserved on amendment; 3 bullets actually erased | Same production text report and screenshots; ordinary controls and real clock |
 | Production Live transport | Actual gpt-live-1 sessions, speech transcripts, delegation, Responses proposal and server hangup | `production-voice-synthetic/`; synthetic Windows TTS, not human microphone. Latest correction fixture failed because initial right-correction words were not in the received transcript. Failure retained. |
@@ -21,9 +21,15 @@ This file separates current evidence from v0.5.0 baseline reports. Completion ga
 | Current production local regression | Japanese left-to-right correction, explicit no-sanctuary/slow/charged-reflection amendment, Sign revision 2 and continuity passed | `production-local/result.json`; Edge 153, hardware WebGPU, ordinary controls/clock, zero API requests or page errors |
 | Current simulations / HTTP | Covenant 12/12 wins; server smoke 9 checks passed | `regression/`, `server-smoke.json`; deterministic pilot and local HTTP, zero model calls. Initial smoke assertion expected an error from intentionally local legacy route; corrected to assert the mock payload. Failure retained. |
 | Voice startup body timeout | 15,042ms real-clock fixture: native audio track ended, native peer closed, late session hangup requested, LOCAL RULES Sign entered combat | `voice-body-timeout/result.json`; Edge 153 loopback, silent synthetic MediaStream, mocked HTTP responses, no human mic/model call. Startup deadline now covers the whole JSON body, including abort-ignoring transports. |
-| Recorder | 60-second auto-stop, WebM saved, media decodes with audio; no browser errors | `demo-recorder/result.json`; synthetic canvas/audio fixture using real MediaRecorder. First human recording failed due native timer binding, fixed. This fixture is not the submission video. |
+| Current recorder | Manual stop after 65.003s locally, short production save/restart, tracks cleaned, game mic retained, zero errors/API calls | `manual-recorder/`; synthetic capture. Actual source FPS and final export FPS are distinct. |
 
-Direct OpenAI and Gateway budgets are separate. At 15:03:40 UTC the shared ledger held $0.850000 direct OpenAI and $0.018286 Gateway, with no active admission and no kill flag. These are conservative application accounting amounts, not provider invoices. Each stopped voice session retains $0.05 because hangup does not provide final billable usage. See `validation-current/budget-ledger.json`.
+Current production source is `896f0fe`; earlier provider, deployment and test rows below retain their original historical scope. The current human source `nemesis-pact-demo (3).webm` is119.65s and shows correction, OPENAI Luna signatures1/2, sanctuary effects, spoken amendment and boss victory. Native Resolve output is59s /1080p /60fps,3540frames, original linked audio, English captions; full decode and key frames pass. Raw source averages58.688fps. Recorded Notary reply audibility remains awaiting user confirmation. See `validation-current/human-long/`; public viewing URL and source/judge access are still pending.
+
+Direct OpenAI and Gateway budgets are separate. At 2026-09-14T16:59:49.531Z the shared ledger held $2.000000 direct OpenAI and $0.030114 Gateway, with no active admission and no kill flag. These are conservative application amounts, not provider invoices. The new recorded-audio transcription retained $0.05 under the approved verification/aggregate limits; public settings did not change. See `validation-current/budget-ledger.json`.
+
+## Historical verification chronology
+
+The remaining entries describe their stated earlier runs, including failures and now-superseded video gates. Use RELEASE-CANDIDATE.json and the current human-long evidence for present delivery state.
 
 The user supplied [Vercel's Codex manual setup documentation](https://vercel.com/docs/ai-gateway/coding-agents/openai-codex#manual-setup). It establishes Gateway-key setup, not the grant's balance or expiry. Gateway credit endpoint returned team balance 0 while inference with the supplied grant key succeeded. Exact grant expiry/balance remain unverified. Hobby team and no added paid plan/payment method were observed.
 

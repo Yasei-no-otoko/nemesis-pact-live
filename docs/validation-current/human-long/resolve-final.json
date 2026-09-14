@@ -1,0 +1,65 @@
+{
+  "project": "NEMESIS PACT - Submission 20260915",
+  "projectId": "61f93e79-f0da-4a95-b3ea-ed44f06745a1",
+  "timeline": "SUBMISSION - human full sequence - 59s 60fps v1",
+  "timelineId": "96670701-3795-4487-9a25-0a55aa60db71",
+  "renderJobId": "3dd7a7e7-d0ad-4a84-8b2e-f4931470ec21",
+  "saved": true,
+  "exported": true,
+  "fps": 60,
+  "startFrame": 0,
+  "endFrame": 3540,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "renderStatus": "Complete",
+  "renderMs": 181860,
+  "videoAndLinkedAudioRanges": [
+    [
+      0,
+      960
+    ],
+    [
+      960,
+      1500
+    ],
+    [
+      1500,
+      1800
+    ],
+    [
+      1800,
+      2460
+    ],
+    [
+      2460,
+      2640
+    ],
+    [
+      2640,
+      2880
+    ],
+    [
+      2880,
+      3540
+    ]
+  ],
+  "fusionComps": 7,
+  "projectExport": "NEMESIS-PACT-human-59s-60fps-en.drp",
+  "projectExportBytes": 111411,
+  "projectExportSha256": "bad0325ac62ad99ea472dbed64fbabade426cd69f3081648af3bcf5990f5265e",
+  "mediaBundled": false,
+  "sourceReviewSubtitles": "Native Japanese automatic subtitles are inaccurate diagnostics; only in SOURCE REVIEW, not the submission.",
+  "visualChecks": [
+    "player request",
+    "model identification",
+    "interruption",
+    "right OpenAI contract",
+    "spoken withdrawal",
+    "amendment clauses",
+    "Sign2",
+    "boss result"
+  ],
+  "checkedAt": "2026-09-14T17:11:31.889795+00:00"
+}

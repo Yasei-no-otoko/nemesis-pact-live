@@ -1,0 +1,7 @@
+{
+  "passed": false,
+  "scope": "local viewer playback QA; no model calls",
+  "reason": "Playwright wait_for_function used string evaluation rejected by the viewer's existing default-src none CSP",
+  "correction": "poll the native video element via locator.evaluate; keep viewer CSP unchanged",
+  "mediaDecodeFailure": false
+}

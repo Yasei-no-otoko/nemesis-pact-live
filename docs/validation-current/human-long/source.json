@@ -1,0 +1,10 @@
+{
+  "sourceName": "nemesis-pact-demo (3).webm",
+  "copiedTo": ".work\\human-long-20260915.webm",
+  "bytes": 68893544,
+  "sha256": "202ba7e6b58fc3eada64b3221851263fc569fc3c54a69c315fd8958bf8f73a59",
+  "ffmpegExit": 0,
+  "decodedFrames": 7022,
+  "decodedSeconds": 119.65,
+  "probe": "Input #0, matroska,webm, from '.work\\human-long-20260915.webm':\n  Metadata:\n    encoder         : Chrome\n  Duration: N/A, start: 0.000000, bitrate: N/A\n  Stream #0:0(eng): Video: vp9 (Profile 0), yuv420p(tv, bt709), 1920x1028, SAR 1:1 DAR 480:257, 60 fps, 60 tbr, 1k tbn (default)\n      Metadata:\n        alpha_mode      : 1\n  Stream #0:1(eng): Audio: opus, 48000 Hz, stereo, fltp (default)\n"
+}

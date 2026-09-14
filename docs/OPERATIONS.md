@@ -6,7 +6,7 @@ Production: https://nemesis-pact-live.vercel.app. Scope: only project `prj_fB5yG
 
 | Provider | Total | Verification | Public | Judging | Route |
 |---|---:|---:|---:|---:|---|
-| Direct OpenAI | $10 | $3 | $5 | $2 | GPT-Live-1 voice; one approved recorded-audio verification analysis |
+| Direct OpenAI | $10 | $3 | $5 | $2 | GPT-Live-1 voice; bounded recorded-audio verification analyses |
 | Vercel AI Gateway | $20 | $1 | $14 | $5 | GPT-5.6 Luna text only |
 
 These are separately approved application caps. Production now selects the **public** pool for both providers: `OPENAI_BUDGET_POOL=public` and `GATEWAY_BUDGET_POOL=public`. Both project-scoped selector updates and redeployment were confirmed; one live Gateway request settled exclusively against its public pool. Existing verification totals remain intact. No new direct-voice public session was created for this pool check. Before judging, an operator can select `judging`; the public pool cannot consume the reserved judging allocation. Never increase a cap or buy additional credit as an automatic fallback.
@@ -27,17 +27,20 @@ Before clearing an unknown-termination kill, independently confirm every affecte
 
 ## Rollback
 
-Current production source: `c7f1f6d972c9f64047e3626c9f37f82d8f4ba47d`, READY deployment `dpl_xk61akZJbnzGP83dt11iUbnb8MpT`. Model output format `living_covenant_rules_v3`; the browser public contract format is unchanged.
+Current production source: `896f0fe`, READY deployment `dpl_Hia1kgaAmhWXDe6L13pLRU8QxTjk`. This release changes only the local recorder: manual stop, elapsed time and1080p60 capture request. Voice remains GPT-Live-1, contracts GPT-5.6 Luna; model output format `living_covenant_rules_v3` is unchanged.
 
-To revert only the latest affordable-benefit prompt clarification, roll back to source `815d77faf465b3447e8a823f7d61777233f860ec`, deployment `dpl_5dUHac4Q9pFs6ooP7BD77aBnux1D`. It retains GPT-5.6 Luna, clause-withdrawal/schema corrections, delayed-delegation recovery, public pools and the taller scrollable caption; the exact Japanese amendment passed on that build. It may omit an affordable requested benefit, as recorded in the subsequent English-flow diagnostic. With the authenticated Vercel CLI and this project selected:
+To restore the previous verified build, including its forced60-second recorder:
 
 ```sh
-vercel rollback dpl_5dUHac4Q9pFs6ooP7BD77aBnux1D --yes
+vercel rollback dpl_xk61akZJbnzGP83dt11iUbnb8MpT --yes
 vercel rollback status nemesis-pact-live
 ```
 
-Then verify the production alias, API gate and ledger. Rollback restores code/environment, not prior Redis contents; do not wipe durable money or signature records. This release fixes voice amendment handling and clarifies affordable requested benefits; models, budgets, keys and payment settings are unchanged. Both current and rollback deployments use GPT-5.6 Luna. Never promote a pre-quota build to restore paid service.
+Rollback source `c7f1f6d972c9f64047e3626c9f37f82d8f4ba47d` retains the voice amendment fixes, Luna, public pools and taller captions. Verify the alias and ledger after rollback. Do not wipe Redis money, session or signature records. Browser recording duration has no authority to extend the45-second paid voice connection or90 reserved voice seconds per fight.
 
 Secrets remain only in Git-ignored local environment files and sensitive server environment variables. Current exact-value scan found no configured secret in tracked files; that limited check is not a comprehensive security audit. Do not print keys, Redis tokens, cookies, full transcripts or raw provider payloads in operational logs.
 
 Luna uses standard/default tier, reasoning none, a 700-token output cap and 12-second timeout. Catalog rates and conservative cache-write handling are documented in MODEL-LUNA.md. The $0.01 reservation is unchanged; missing usage retains that amount. Historical gpt-4.1-mini media and validation remain labeled with their actual model.
+
+
+Recorded-audio verification on2026-09-15 used one $0.05 atomic reservation in the approved $3 verification / $10 total direct OpenAI budget. The public direct-text cap remains0. A local-only $0.05 analysis allocation admitted one gpt-4o-transcribe-diarize call after the standard text cap rejected it; it is now fully retained/exhausted. No production environment, aggregate/pool cap or paid plan changed. Latest shared totals: OpenAI $2.000000, Gateway $0.030114, active0/killnull at2026-09-14T16:59:49.531Z; not invoices.

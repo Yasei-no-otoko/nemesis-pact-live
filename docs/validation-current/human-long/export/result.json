@@ -1,0 +1,20 @@
+{
+  "file": "NEMESIS-PACT-human-59s-60fps-en_V1-0001.mp4",
+  "bytes": 51896283,
+  "sha256": "4e7700d1897ee871321597b934486b63fefe116ff5cfbe2a6b6898a3423ec8bd",
+  "decodedFrames": 3540,
+  "decodedSeconds": 59.0,
+  "fps": 60,
+  "dimensions": [
+    1920,
+    1080
+  ],
+  "ffmpegExit": 0,
+  "probe": "Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '.artifacts\\submission\\NEMESIS-PACT-human-59s-60fps-en_V1-0001.mp4':\n  Metadata:\n    major_brand     : isom\n    minor_version   : 512\n    compatible_brands: isomiso2avc1mp41\n    creation_time   : 2026-09-14T16:58:34.000000Z\n    encoder         : Blackmagic Design DaVinci Resolve Studio\n  Duration: 00:00:59.01, start: 0.000000, bitrate: 7035 kb/s\n  Stream #0:0[0x1](und): Video: h264 (Main) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 6712 kb/s, 60 fps, 60 tbr, 15360 tbn (default)\n      Metadata:\n        creation_time   : 2026-09-14T16:58:34.000000Z\n        handler_name    : VideoHandler\n        vendor_id       : [0][0][0][0]\n        encoder         : H.264 AMD\n        timecode        : 00:00:00:00\n  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 320 kb/s (default)\n      Metadata:\n        creation_time   : 2026-09-14T16:58:34.000000Z\n        handler_name    : SoundHandler\n        vendor_id       : [0][0][0][0]\n  Stream #0:2[0x3](eng): Data: none (tmcd / 0x64636D74) (default)\n      Metadata:\n        creation_time   : 2026-09-14T16:58:34.000000Z\n        handler_name    : TimeCodeHandler\n        timecode        : 00:00:00:00\n",
+  "audioRmsDb": [
+    "-18.169002"
+  ],
+  "actualHumanGameplay": true,
+  "editor": "DaVinci Resolve Studio21.1.0.17",
+  "publicUrl": null
+}

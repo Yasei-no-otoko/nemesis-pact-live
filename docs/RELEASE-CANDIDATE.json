@@ -1,13 +1,13 @@
 {
-  "recordedAt": "2026-09-14T16:12:46.852359+00:00",
-  "status": "current production full Live/Luna interruption/sign/combat/amendment verified; full human video and public viewing URL remain incomplete",
+  "recordedAt": "2026-09-14T17:11:31.889795+00:00",
+  "status": "manual recording deployed; actual human 59s 1080p60 Resolve edit verified locally; recorded Notary audio review and public delivery pending",
   "production": "https://nemesis-pact-live.vercel.app",
   "repository": "https://github.com/Yasei-no-otoko/nemesis-pact-live",
   "repositoryVisibility": "private; user approval to publish pending",
   "branch": "ship/living-covenant",
-  "sourceCommit": "c7f1f6d972c9f64047e3626c9f37f82d8f4ba47d",
-  "deploymentId": "dpl_xk61akZJbnzGP83dt11iUbnb8MpT",
-  "deploymentUrl": "https://nemesis-pact-live-c434e2o0i-wildmans-projects.vercel.app",
+  "sourceCommit": "896f0fe9339d0aa45fedba2623378e17bc18a5ad",
+  "deploymentId": "dpl_Hia1kgaAmhWXDe6L13pLRU8QxTjk",
+  "deploymentUrl": "https://nemesis-pact-live-2b8gpe34t-wildmans-projects.vercel.app",
   "models": {
     "voice": "gpt-live-1",
     "contract": "openai/gpt-5.6-luna",
@@ -17,16 +17,16 @@
     "contractServiceTier": "default"
   },
   "build": {
-    "hostedSha256": "3c440bf87d1e188e9416a8f225725b2906c198b0473b14abec496acb5092b4de",
-    "offlineSha256": "e46a145d33b5cddda3f0768392d042119ac52e8e63449b6f5cf5faee961252bc",
-    "hostedBytes": 377285,
-    "offlineBytes": 377235
+    "hostedSha256": "a02d4e09f791f86abe2aa0374f316b1d5aa61c0becc3b728d4bbff2e1ac9f7ff",
+    "offlineSha256": "2a5a4e9fca1afb1e6f8afc312028e17a24d15bcdab46c4e9e1b16b688bfa8195",
+    "hostedBytes": 379075,
+    "offlineBytes": 379025
   },
   "nodeEngines": "22.x",
   "projectNodeSetting": "22.x",
   "videoUrl": null,
   "openGates": [
-    "single 60-second actual video covering interruption, corrected OPENAI Sign, combat and renegotiation",
+    "recorded Notary audio confirmation and final human video review",
     "approved public video destination and verified viewing URL",
     "source publication or judge-access choice",
     "exact Gateway grant balance and expiry",
@@ -34,9 +34,9 @@
     "additional physical-device/browser/FPS coverage remains explicitly limited"
   ],
   "budgetStatus": {
-    "lastLedgerCheck": "2026-09-14T16:11:13.833Z",
-    "directOpenaiConservativeUsd": 1.85,
-    "gatewayConservativeUsd": 0.028541,
+    "lastLedgerCheck": "2026-09-14T16:59:49.531Z",
+    "directOpenaiConservativeUsd": 2.0,
+    "gatewayConservativeUsd": 0.030114,
     "directOpenaiCapUsd": 10,
     "gatewayCapUsd": 20,
     "vercelGrantReportedUsd": 30,
@@ -45,16 +45,35 @@
     "activeBudgetPool": "public"
   },
   "localVideo": {
-    "file": "NEMESIS-PACT-human-demo-60s-en.mp4",
-    "sha256": "0b7f9c23247fe607377472fb769cc93a85433281547186431657fcaca20c4180",
-    "seconds": 60,
+    "file": "NEMESIS-PACT-human-59s-60fps-en_V1-0001.mp4",
+    "bytes": 51896283,
+    "sha256": "4e7700d1897ee871321597b934486b63fefe116ff5cfbe2a6b6898a3423ec8bd",
+    "decodedFrames": 3540,
+    "decodedSeconds": 59.0,
+    "fps": 60,
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "ffmpegExit": 0,
+    "probe": "Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '.artifacts\\submission\\NEMESIS-PACT-human-59s-60fps-en_V1-0001.mp4':\n  Metadata:\n    major_brand     : isom\n    minor_version   : 512\n    compatible_brands: isomiso2avc1mp41\n    creation_time   : 2026-09-14T16:58:34.000000Z\n    encoder         : Blackmagic Design DaVinci Resolve Studio\n  Duration: 00:00:59.01, start: 0.000000, bitrate: 7035 kb/s\n  Stream #0:0[0x1](und): Video: h264 (Main) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 6712 kb/s, 60 fps, 60 tbr, 15360 tbn (default)\n      Metadata:\n        creation_time   : 2026-09-14T16:58:34.000000Z\n        handler_name    : VideoHandler\n        vendor_id       : [0][0][0][0]\n        encoder         : H.264 AMD\n        timecode        : 00:00:00:00\n  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 320 kb/s (default)\n      Metadata:\n        creation_time   : 2026-09-14T16:58:34.000000Z\n        handler_name    : SoundHandler\n        vendor_id       : [0][0][0][0]\n  Stream #0:2[0x3](eng): Data: none (tmcd / 0x64636D74) (default)\n      Metadata:\n        creation_time   : 2026-09-14T16:58:34.000000Z\n        handler_name    : TimeCodeHandler\n        timecode        : 00:00:00:00\n",
+    "audioRmsDb": [
+      "-18.169002"
+    ],
+    "actualHumanGameplay": true,
+    "editor": "DaVinci Resolve Studio21.1.0.17",
+    "publicUrl": null,
     "public": false,
-    "bytes": 7016686
+    "seconds": 59,
+    "containerSeconds": 59.01,
+    "evidence": "validation-current/human-long/export/result.json",
+    "nativeProject": "NEMESIS-PACT-human-59s-60fps-en.drp",
+    "notaryRecordedAudioConfirmed": false
   },
   "rollback": {
-    "sourceCommit": "815d77faf465b3447e8a823f7d61777233f860ec",
-    "deploymentId": "dpl_5dUHac4Q9pFs6ooP7BD77aBnux1D",
-    "reason": "previous successful Japanese clause-withdrawal build; retains cancellation/schema/fallback fixes but reverts affordable-benefit prompt clarification; preserve Redis"
+    "sourceCommit": "c7f1f6d972c9f64047e3626c9f37f82d8f4ba47d",
+    "deploymentId": "dpl_xk61akZJbnzGP83dt11iUbnb8MpT",
+    "reason": "previous verified Live/Luna release; restores forced60s recorder; retains voice amendment fixes, model and budget controls; preserve Redis"
   },
   "compactUiValidation": {
     "passed": true,
@@ -92,12 +111,12 @@
     "scope": "Supplemental phone evidence; original order, speed and audio retained, English annotation band added. Not the required 60-second main video."
   },
   "currentTests": {
-    "passed": 219,
+    "passed": 223,
     "failed": 0,
-    "durationMs": 23810.7099,
+    "durationMs": 23807.4173,
     "syntaxFiles": 34,
     "node": "22.23.2",
-    "scope": "219 tests passed before final prompt-only clarification; syntax/build and full real-model flow verified after it"
+    "scope": "full suite after manual recorder and1080p60 capture change"
   },
   "publicPoolActivation": {
     "deploymentId": "dpl_3yCSkWCzMXvEWjnEZhNCzr1SSZSb",
@@ -134,7 +153,7 @@
     "realModelCalls": 0
   },
   "requiredDeliveryGates": [
-    "single 60-second actual video covering interruption, corrected OPENAI Sign, combat and renegotiation",
+    "recorded Notary audio confirmation and final human video review",
     "approved public video destination and verified viewing URL",
     "source publication or judge-access choice"
   ],
@@ -167,6 +186,50 @@
     "sourceCommit": "815d77faf465b3447e8a823f7d61777233f860ec"
   },
   "latestHumanRecording": {
+    "evidence": "validation-current/human-long/README.md",
+    "sourceFile": "nemesis-pact-demo (3).webm",
+    "sourceSha256": "202ba7e6b58fc3eada64b3221851263fc569fc3c54a69c315fd8958bf8f73a59",
+    "sourceSeconds": 119.65,
+    "voice": "gpt-live-1",
+    "contract": "gpt-5.6-luna",
+    "rightCorrectionAndSignVisible": true,
+    "amendmentSignVisible": true,
+    "bossDefeatVisible": true,
+    "recordedNotaryAudio": "user confirmation pending",
+    "browserVersion": null
+  },
+  "manualRecorderValidation": {
+    "sourceCommit": "896f0fe9339d0aa45fedba2623378e17bc18a5ad",
+    "captureDurationLimit": null,
+    "captureRequestedFps": 60,
+    "captureMaxDimensions": [
+      1920,
+      1080
+    ],
+    "submissionFps": 60,
+    "submissionTargetSeconds": 59,
+    "localEvidence": "validation-current/manual-recorder/local/result.json",
+    "productionEvidence": "validation-current/manual-recorder/production/result.json",
+    "resolveTemplate": "validation-current/manual-recorder/resolve-template.json",
+    "productionCaptureSeconds": 5.001,
+    "localCaptureSeconds": 65.003,
+    "localDecodedMediaSeconds": 66.35,
+    "localDecodedAverageFps": 54.439,
+    "humanMicrophone": false,
+    "realModelCalls": 0,
+    "resolveExportEvidence": "validation-current/manual-recorder/resolve-export.json",
+    "resolveQaOutputFps": 60,
+    "resolveQaOutputVideoSeconds": 58,
+    "newHumanSourcePending": false
+  },
+  "historicalLocalVideo": {
+    "file": "NEMESIS-PACT-human-demo-60s-en.mp4",
+    "sha256": "0b7f9c23247fe607377472fb769cc93a85433281547186431657fcaca20c4180",
+    "seconds": 60,
+    "public": false,
+    "bytes": 7016686
+  },
+  "historicalHumanRecording": {
     "evidence": "validation-current/human-luna/source.json",
     "sourceFile": "nemesis-pact-demo (2).webm",
     "voice": "gpt-live-1",
@@ -174,5 +237,17 @@
     "rightCorrectionAndSignVisible": true,
     "amendmentSignVisible": false,
     "scope": "pre-fix recording reveals clause-withdrawal bug; not a complete submission demo"
+  },
+  "humanSubmissionValidation": {
+    "evidence": "validation-current/human-long/export/result.json",
+    "editor": "DaVinci Resolve Studio 21.1.0.17",
+    "outputFps": 60,
+    "outputFrames": 3540,
+    "outputSeconds": 59,
+    "humanMicrophone": true,
+    "recordedEnemyAudioReviewPending": true,
+    "publicUrl": null,
+    "browserEvidence": "validation-current/human-long/export/browser.json",
+    "playbackEnded": true
   }
 }

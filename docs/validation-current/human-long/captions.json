@@ -1,0 +1,81 @@
+{
+  "fps": 60,
+  "timeBasis": "final timeline relative to0",
+  "cues": [
+    {
+      "start": 0,
+      "end": 2.8,
+      "text": "PLAYER: Make the left side safe."
+    },
+    {
+      "start": 2.8,
+      "end": 10.5,
+      "text": "NEMESIS PACT\nGPT-Live-1 voice | GPT-5.6 Luna contracts\nHuman gameplay, edited for length"
+    },
+    {
+      "start": 10.5,
+      "end": 16,
+      "text": "PLAYER: Actually, switch right.\nReinforcements are fine."
+    },
+    {
+      "start": 16,
+      "end": 22,
+      "text": "RIGHT sanctuary / reinforcements every 9 seconds.\nOnly Sign changes the fight."
+    },
+    {
+      "start": 22,
+      "end": 25,
+      "text": "SIGNED: The sanctuary now erases enemy bullets."
+    },
+    {
+      "start": 25,
+      "end": 27.8,
+      "text": "4 bullets erased. Parry to return fire."
+    },
+    {
+      "start": 27.8,
+      "end": 30,
+      "text": "R: Renegotiate while the fight is paused."
+    },
+    {
+      "start": 30,
+      "end": 31.3,
+      "text": "Mid-fight renegotiation"
+    },
+    {
+      "start": 31.3,
+      "end": 34.5,
+      "text": "PLAYER: Remove the sanctuary."
+    },
+    {
+      "start": 34.5,
+      "end": 37.5,
+      "text": "PLAYER: In return..."
+    },
+    {
+      "start": 37.5,
+      "end": 41,
+      "text": "PLAYER: Make the enemy bullets slower."
+    },
+    {
+      "start": 41,
+      "end": 44,
+      "text": "OPENAI counteroffer: bullets 28% slower.\nPrice: gun damage reduced by 35%."
+    },
+    {
+      "start": 44,
+      "end": 48,
+      "text": "SIGN AMENDMENT\nKeep health, boss damage and elapsed time."
+    },
+    {
+      "start": 48,
+      "end": 55.5,
+      "text": "Return fire. Finish the fight."
+    },
+    {
+      "start": 55.5,
+      "end": 59,
+      "text": "BOSS DEFEATED | 2/2 pacts kept\nnemesis-pact-live.vercel.app"
+    }
+  ]
+}

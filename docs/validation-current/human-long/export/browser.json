@@ -1,0 +1,26 @@
+{
+  "browser": "153.0.4234.32",
+  "os": "Windows",
+  "automation": "headless Edge; playback at4x; not a human audio review or source FPS measurement",
+  "initial": {
+    "currentTime": 2.124485,
+    "paused": false,
+    "readyState": 4,
+    "videoWidth": 1920,
+    "videoHeight": 1080,
+    "duration": 59.008,
+    "audioTracks": 102400
+  },
+  "final": {
+    "currentTime": 59.008,
+    "ended": true,
+    "error": null,
+    "quality": {
+      "total": 3540,
+      "dropped": 2660
+    }
+  },
+  "errors": [],
+  "externalRequests": [],
+  "publicUrl": null
+}

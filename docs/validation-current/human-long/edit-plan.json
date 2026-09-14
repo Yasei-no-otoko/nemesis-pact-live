@@ -1,0 +1,56 @@
+{
+  "source": "nemesis-pact-demo (3).webm",
+  "sourceSha256": "202ba7e6b58fc3eada64b3221851263fc569fc3c54a69c315fd8958bf8f73a59",
+  "sourceDecodedSeconds": 119.65,
+  "sourceDecodedFrames": 7022,
+  "sourceAverageDeliveredFps": 58.688,
+  "sourceNativeResolution": [
+    1920,
+    1028
+  ],
+  "sourceCfrIntermediate": ".artifacts/submission/resolve/NEMESIS-PACT-human-full-60fps.mp4",
+  "sourceRangesSecondsHalfOpen": [
+    [
+      12,
+      28
+    ],
+    [
+      35,
+      44
+    ],
+    [
+      54,
+      59
+    ],
+    [
+      59,
+      70
+    ],
+    [
+      75,
+      78
+    ],
+    [
+      85,
+      89
+    ],
+    [
+      104,
+      115
+    ]
+  ],
+  "timelineFps": 60,
+  "timelineFrames": 3540,
+  "timelineSeconds": 59,
+  "project": "NEMESIS PACT - Submission 20260915",
+  "projectId": "61f93e79-f0da-4a95-b3ea-ed44f06745a1",
+  "timeline": "SUBMISSION - human full sequence - 59s 60fps v1",
+  "timelineId": "96670701-3795-4487-9a25-0a55aa60db71",
+  "renderJobId": "3dd7a7e7-d0ad-4a84-8b2e-f4931470ec21",
+  "editor": "DaVinci Resolve Studio21.1.0.17 native MCP",
+  "edits": "chronological hard cuts, original linked audio at normal speed; no dialogue/audio synthesis",
+  "captions": "native Fusion TextPlus English player translations and editorial labels; not an imported SRT subtitle track",
+  "layout": "whole game resized to1728x925 on1920x1080 canvas with separate lower caption band",
+  "audioCaveat": "Diarized transcription recognized only player speech; user confirmation of recorded Notary audio is pending",
+  "public": false
+}
