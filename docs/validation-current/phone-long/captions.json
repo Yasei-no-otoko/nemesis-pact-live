@@ -1,0 +1,91 @@
+{
+  "fps": 60,
+  "timeBasis": "final timeline relative to0",
+  "cues": [
+    {
+      "start": 0.0,
+      "end": 3.8,
+      "text": "PLAYER\nMake the left side safe."
+    },
+    {
+      "start": 3.8,
+      "end": 7.8,
+      "text": "THE NOTARY\nOne moment, please."
+    },
+    {
+      "start": 7.8,
+      "end": 10.6,
+      "text": "PLAYER\nActually, right.\nReinforcements are allowed."
+    },
+    {
+      "start": 10.6,
+      "end": 14.4,
+      "text": "THE NOTARY\nRight. Understood.\nI'll revise the deal."
+    },
+    {
+      "start": 14.4,
+      "end": 19.8,
+      "text": "THE NOTARY\nThe price is enemy reinforcements.\nReview the terms and sign."
+    },
+    {
+      "start": 19.8,
+      "end": 24.5,
+      "text": "SIGN THE CONTRACT\nRIGHT sanctuary\nExtra turrets every 9 seconds"
+    },
+    {
+      "start": 24.5,
+      "end": 25.9,
+      "text": "SIGNED\nThe sanctuary is now real."
+    },
+    {
+      "start": 25.9,
+      "end": 29.9,
+      "text": "FIGHT YOUR DEAL\nBullets erased.\nReturn fire with a parry."
+    },
+    {
+      "start": 29.9,
+      "end": 32.18333333333333,
+      "text": "RENEGOTIATE MID-FIGHT\nPause the fight. Keep your progress."
+    },
+    {
+      "start": 32.18333333333333,
+      "end": 33.2,
+      "text": "PLAYER\nActually..."
+    },
+    {
+      "start": 33.2,
+      "end": 36.5,
+      "text": "PLAYER\nRemove the safe zone."
+    },
+    {
+      "start": 36.5,
+      "end": 40.5,
+      "text": "THE NOTARY\nUnderstood. No sanctuary."
+    },
+    {
+      "start": 40.5,
+      "end": 44.2,
+      "text": "THE NOTARY\nI'll propose a different advantage\non those terms."
+    },
+    {
+      "start": 44.2,
+      "end": 47.8,
+      "text": "THE NOTARY\nReview it. If you agree,\npress Sign."
+    },
+    {
+      "start": 47.8,
+      "end": 50.2,
+      "text": "SIGN THE AMENDMENT\nNo sanctuary. Reflections x1.8.\nReinforcements remain."
+    },
+    {
+      "start": 50.2,
+      "end": 56.2,
+      "text": "THE RULES HAVE CHANGED\nOne fight. Two signed contracts."
+    },
+    {
+      "start": 56.2,
+      "end": 59.0,
+      "text": "BOSS DEFEATED / 2 OF 2 PACTS KEPT\n4 bullets erased.\n635 damage returned."
+    }
+  ]
+}

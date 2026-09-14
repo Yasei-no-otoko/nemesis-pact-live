@@ -1692,6 +1692,12 @@ return {CONTRACTS,DIRECTORS,TASKS,cleanRequest,schema,validateDecision,mock,tele
       for(let i=0;i<noise.length;i++){seed^=seed<<13;seed^=seed>>>17;seed^=seed<<5;noise[i]=(seed>>>0)/2147483648-1;}
       this.settings(this.volume,this.music,this.muted,this.musicVolume,this.sfxVolume,this.adaptive);
     }
+    createRecordingTap(){
+      if(!this.ctx||this.disposed)return null;
+      const destination=this.ctx.createMediaStreamDestination();let released=false;
+      this.limiter.connect(destination);
+      return {stream:destination.stream,release:()=>{if(released)return;released=true;try{this.limiter.disconnect(destination);}catch{}try{destination.disconnect?.();}catch{}for(const track of destination.stream?.getTracks?.()||[])try{track.stop();}catch{}}};
+    }
     unlock(){
       if(this.disposed)return;
       try{
@@ -2720,30 +2726,33 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
 /* Explicit local demo recorder. Capture starts only after ?demo=1 and a click. */
 (function(root,factory){if(typeof module==='object'&&module.exports)module.exports=factory();else root.NemesisDemo=factory();})(globalThis,function(){'use strict';
  class DemoRecorder{
-  constructor(o={}){this.document=o.document||globalThis.document;this.navigator=o.navigator||globalThis.navigator;this.MediaRecorder=o.MediaRecorder||globalThis.MediaRecorder;this.AudioContext=o.AudioContext||globalThis.AudioContext||globalThis.webkitAudioContext;this.MediaStream=o.MediaStream||globalThis.MediaStream;this.setTimeout=o.setTimeout||globalThis.setTimeout.bind(globalThis);this.clearTimeout=o.clearTimeout||globalThis.clearTimeout.bind(globalThis);this.setInterval=o.setInterval||globalThis.setInterval.bind(globalThis);this.clearInterval=o.clearInterval||globalThis.clearInterval.bind(globalThis);this.URL=o.URL||globalThis.URL;this.onState=o.onState||(()=>{});this.onDownload=o.onDownload||(()=>{});this.state='idle';this.button=null;this.help=null;this.display=null;this.recordStream=null;this.recorder=null;this.audioContext=null;this.destination=null;this.countdown=null;this.generation=0;this.startedAt=0;this.elapsedMs=0;this.remainingMs=0;this.voice={input:null,output:null};this._boundPagehide=()=>{this.generation++;this.stop('pagehide');};this._boundEnded=()=>this.stop('share-ended');}
+  constructor(o={}){this.document=o.document||globalThis.document;this.navigator=o.navigator||globalThis.navigator;this.MediaRecorder=o.MediaRecorder||globalThis.MediaRecorder;this.AudioContext=o.AudioContext||globalThis.AudioContext||globalThis.webkitAudioContext;this.MediaStream=o.MediaStream||globalThis.MediaStream;this.setTimeout=o.setTimeout||globalThis.setTimeout.bind(globalThis);this.clearTimeout=o.clearTimeout||globalThis.clearTimeout.bind(globalThis);this.setInterval=o.setInterval||globalThis.setInterval.bind(globalThis);this.clearInterval=o.clearInterval||globalThis.clearInterval.bind(globalThis);this.URL=o.URL||globalThis.URL;this.onState=o.onState||(()=>{});this.onDownload=o.onDownload||(()=>{});this.state='idle';this.button=null;this.help=null;this.display=null;this.recordStream=null;this.recorder=null;this.audioContext=null;this.destination=null;this.countdown=null;this.generation=0;this.startedAt=0;this.elapsedMs=0;this.remainingMs=0;this.voice={input:null,output:null};this.gameAudioProvider=null;this._boundPagehide=()=>{this.generation++;this.stop('pagehide');};this._boundEnded=()=>this.stop('share-ended');}
   static enabled(search){return new URLSearchParams(search||globalThis.location?.search||'').get('demo')==='1';}
-  attachVoice(stream,kind='input'){if(!stream?.getAudioTracks?.().length||!['input','output'].includes(kind))return false;this.voice[kind]=stream;if(this.state==='recording')this._connectVoice(kind);return true;}
+  attachVoice(stream,kind='input',options={}){if(!stream?.getAudioTracks?.().length||!['input','output'].includes(kind))return false;this.voice[kind]=stream;if(kind==='output'&&options?.element){this.voiceOutputElement?.removeEventListener?.('volumechange',this._voiceVolumeChanged);this.voiceOutputElement=options.element;this._voiceVolumeChanged=()=>this.setVoiceOutputLevel(this.voiceOutputElement.muted?0:this.voiceOutputElement.volume);this.voiceOutputElement.addEventListener?.('volumechange',this._voiceVolumeChanged);this.voiceOutputBound=true;}if(this.audioContext&&(this.state==='starting'||this.state==='recording'))this._connectVoice(kind);return true;}
+  setVoiceOutputLevel(value){const level=Math.max(0,Math.min(1,Number(value)||0));this.voiceOutputLevel=level;if(this.voiceOutputGain)this.voiceOutputGain.gain.value=this.voiceOutputElement?.muted?0:level;}
+  registerGameAudio(provider){if(typeof provider!=='function')return false;this.gameAudioProvider=provider;if(this.state==='recording')this._connectGameAudio();return true;}
   attach(){if(!this.document||!DemoRecorder.enabled())return false;if(this.button)return true;this.button=this.document.createElement('button');this.button.id='demo-record';this.button.type='button';this.button.className='demo-record';this.button.textContent='Record demo';this.help=this.document.createElement('small');this.help.id='demo-record-help';this.help.textContent='Record until Stop & save. Game tab and active voice stay local; nothing is uploaded.';this.button.addEventListener('click',()=>this.state==='recording'?this.stop('user'):this.start());this.document.body.append(this.button,this.help);this.document.defaultView?.addEventListener?.('pagehide',this._boundPagehide);return true;}
   _formatElapsed(ms){const total=Math.floor(Math.max(0,ms)/1000),s=String(total%60).padStart(2,'0'),m=Math.floor(total/60);return `${m}:${s}`;}
   _state(s,d=''){this.state=s;this.onState({state:s,detail:d,elapsedMs:this.elapsedMs,remainingMs:this.remainingMs});if(this.button){this.button.disabled=s==='starting'||s==='stopping';this.button.textContent=s==='recording'?`Stop & save (${this._formatElapsed(this.elapsedMs)})`:s==='stopping'?'Saving…':'Record demo';}if(this.help&&s==='starting')this.help.textContent='Choose this game tab in the share dialog. Capture stays local; nothing is uploaded.';}
-  _buildAudio(gen){if(!this.AudioContext||!this.MediaStream)return null;this.audioContext=new this.AudioContext();this.destination=this.audioContext.createMediaStreamDestination();const connect=stream=>{if(!stream?.getAudioTracks?.().length)return;const src=this.audioContext.createMediaStreamSource(stream);src.connect(this.destination);(this.sources??=[]).push(src);};this.hasTabAudio=this.display.getAudioTracks().length>0;this.voiceSources={};connect(this.display);this._connectVoice('input');this._connectVoice('output');if(gen!==this.generation)throw Error('stale-capture');return this.destination.stream.getAudioTracks()[0]||null;}
-  _connectVoice(kind){if(!this.audioContext||!this.destination||kind==='output'&&this.hasTabAudio)return;const stream=this.voice[kind];if(!stream?.getAudioTracks().some(t=>t.readyState!=='ended'))return;this.voiceSources??={};this.voiceSources[kind]?.disconnect?.();const source=this.audioContext.createMediaStreamSource(stream);source.connect(this.destination);this.voiceSources[kind]=source;}
+  _buildAudio(gen){if(!this.AudioContext||!this.MediaStream)return null;this.audioContext=new this.AudioContext();this.destination=this.audioContext.createMediaStreamDestination();this.voiceSources={};this._connectVoice('input');this._connectVoice('output');this._connectGameAudio();if(gen!==this.generation)throw Error('stale-capture');return this.destination.stream.getAudioTracks()[0]||null;}
+  _connectGameAudio(){if(!this.audioContext||!this.destination||this.gameAudioRelease)return;let tap;try{tap=this.gameAudioProvider?.();}catch{return;}if(!tap?.stream?.getAudioTracks?.().length){try{tap?.release?.();}catch{}return;}try{const source=this.audioContext.createMediaStreamSource(tap.stream);source.connect(this.destination);this.gameAudioSource=source;this.gameAudioRelease=()=>{try{source.disconnect();}catch{}try{tap.release?.();}catch{}};}catch{try{tap.release?.();}catch{}}}
+  _connectVoice(kind){if(!this.audioContext||!this.destination)return;const stream=this.voice[kind];if(!stream?.getAudioTracks().some(t=>t.readyState!=='ended'))return;if(kind==='output'&&this.voiceOutputElement&&!this.voiceOutputBound){this._voiceVolumeChanged??=()=>this.setVoiceOutputLevel(this.voiceOutputElement.muted?0:this.voiceOutputElement.volume);this.voiceOutputElement.addEventListener?.('volumechange',this._voiceVolumeChanged);this.voiceOutputBound=true;}this.voiceSources??={};this.voiceSources[kind]?.disconnect?.();if(kind==='output')this.voiceOutputGain?.disconnect?.();const source=this.audioContext.createMediaStreamSource(stream);if(kind==='output'&&this.audioContext.createGain){const gain=this.voiceOutputGain=this.audioContext.createGain();const level=this.voiceOutputElement?(this.voiceOutputElement.muted?0:Number(this.voiceOutputElement.volume)):this.voiceOutputLevel??1;gain.gain.value=Math.max(0,Math.min(1,Number.isFinite(level)?level:1));source.connect(gain);gain.connect(this.destination);}else source.connect(this.destination);this.voiceSources[kind]=source;}
   async start(){
    if(['starting','recording','stopping'].includes(this.state))return false;
    if(!this.navigator?.mediaDevices?.getDisplayMedia||!this.MediaRecorder){this._state('error','capture-unavailable');return false;}
-   const gen=++this.generation,session={display:null,recordStream:null,recorder:null,audioContext:null,destination:null,countdown:null,cleaned:false,chunks:[]};
-   this._session=session;this.elapsedMs=0;this.startedAt=0;this._state('starting','local-only');
-   try{
-    const display=await this.navigator.mediaDevices.getDisplayMedia({video:{frameRate:60,width:{max:1920},height:{max:1080}},audio:true,preferCurrentTab:true,selfBrowserSurface:'include'});
-    if(session.cleaned||this._session!==session){display.getTracks().forEach(t=>t.stop());return false;}
-    session.display=this.display=display;
-    session.onEnded=()=>{if(this._session===session)this.stop('share-ended');};
-    display.getVideoTracks().forEach(t=>t.addEventListener?.('ended',session.onEnded,{once:true}));
-    let audioTrack;
-    try{audioTrack=this._buildAudio(gen);}finally{session.audioContext=this.audioContext;session.destination=this.destination;}
+    const gen=++this.generation,session={display:null,recordStream:null,recorder:null,audioContext:null,destination:null,countdown:null,cleaned:false,chunks:[]};
+    this._session=session;this.elapsedMs=0;this.startedAt=0;this._state('starting','local-only');
+    try{
+     // Create and resume the recorder mixer while the button gesture is active.
+     // The share permission prompt may otherwise consume that activation.
+     let resumeError;try{this._buildAudio(gen);}finally{session.audioContext=this.audioContext;session.destination=this.destination;}const resume=this.audioContext?.resume?.()?.catch?.(e=>{resumeError=e;});
+     const display=await this.navigator.mediaDevices.getDisplayMedia({video:{frameRate:60,width:{max:1920},height:{max:1080}},audio:false,preferCurrentTab:true,selfBrowserSurface:'include'});
+     if(session.cleaned||this._session!==session){display.getTracks().forEach(t=>{if(t.readyState!=='ended')t.stop();});return false;}
+     session.display=this.display=display;session.onEnded=()=>{if(this._session===session)this.stop('share-ended');};display.getVideoTracks().forEach(t=>t.addEventListener?.('ended',session.onEnded,{once:true}));if(resume)await resume;if(resumeError)throw resumeError;
+     if(session.cleaned||this._session!==session){display.getTracks().forEach(t=>{if(t.readyState!=='ended')t.stop();});return false;}
+     const audioTrack=this.destination?.stream?.getAudioTracks?.()[0]||null;
     session.recordStream=this.recordStream=new this.MediaStream([...display.getVideoTracks(),...(audioTrack?[audioTrack]:[])]);
-    await session.audioContext?.resume?.();
-    if(session.cleaned||this._session!==session)return false;
+     if(session.cleaned||this._session!==session)return false;
     const mime=['video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/webm'].find(x=>this.MediaRecorder.isTypeSupported?.(x))||'';
     const rec=new this.MediaRecorder(session.recordStream,{...(mime?{mimeType:mime}:{}),videoBitsPerSecond:12000000,audioBitsPerSecond:128000});
     session.recorder=this.recorder=rec;
@@ -2783,16 +2792,16 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
    if(!session||session.cleaned)return;session.cleaned=true;this.clearInterval(session.countdown);session.countdown=null;
    session.display?.getVideoTracks?.().forEach(t=>t.removeEventListener?.('ended',session.onEnded));
    const tracks=new Set([...(session.display?.getTracks?.()||[]),...(session.recordStream?.getTracks?.()||[]),...(session.destination?.stream?.getTracks?.()||[])]);
-   tracks.forEach(t=>t.stop?.());try{session.audioContext?.close?.()?.catch?.(()=>{});}catch{}
+    tracks.forEach(t=>t.stop?.());try{this.gameAudioRelease?.();}catch{}this.gameAudioRelease=null;this.gameAudioSource=null;try{this.voiceOutputGain?.disconnect?.();}catch{}this.voiceOutputGain=null;this.voiceOutputElement?.removeEventListener?.('volumechange',this._voiceVolumeChanged);this.voiceOutputBound=false;try{session.audioContext?.close?.()?.catch?.(()=>{});}catch{}
    session.chunks.length=0;
    if(this._session!==session)return;
-   this.countdown=null;this.display=null;this.recordStream=null;this.audioContext=null;this.destination=null;this.sources=null;this.voiceSources=null;this.recorder=null;this._session=null;
+    this.countdown=null;this.display=null;this.recordStream=null;this.audioContext=null;this.destination=null;this.sources=null;this.voiceSources=null;this.recorder=null;this._session=null;
    this._state(reason==='saved'?'stopped':reason==='save-failed'?'error':'idle',reason);
    if(this.help&&reason==='saved')this.help.textContent='Saved nemesis-pact-demo.webm. Recording and screen sharing ended. Edit your submission to 60 seconds in Resolve.';
   }
 
  }
- const singleton=new DemoRecorder();singleton.DemoRecorder=DemoRecorder;for(const k of ['attachVoice','attach','start','stop'])singleton[k]=singleton[k].bind(singleton);return singleton;
+  const singleton=new DemoRecorder();singleton.DemoRecorder=DemoRecorder;for(const k of ['attachVoice','registerGameAudio','attach','start','stop'])singleton[k]=singleton[k].bind(singleton);return singleton;
 });
 
 </script>
@@ -2812,6 +2821,7 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
   const gpu=new window.PactGPU.Renderer($('stage'),{onStatus:s=>{const el=$('renderer-status');if(el)el.textContent=s.build+' / '+s.backend;}});
   window.NEMESIS_RENDERER=gpu;
   const sound=new window.PactSound(),keys=new Set(),pressed=new Set();
+  window.NemesisDemo?.registerGameAudio?.(()=>{sound.unlock();return sound.createRecordingTap?.();});
   const mouse={x:W/2,y:240,down:false},screens=['menu','loadout','choices','pause','help-screen','settings-screen','result','confirm-screen','hangar','route','ai-screen','archive','covenant-screen'];
   let world=null,screen='menu',previousScreen='menu',difficulty='standard',pauseFrom='game',last=0,accum=0,clock=0,shake=0,flash=0,freeze=0;
   let effects=[],particles=[],trails=[],announceTime=0,toastTime=0,uiTimer=0,trainingStep=0,trainingMoved=0,lastWorldPhase='',muted=false,oldPad=[],oldAxes=[0,0];
@@ -3264,7 +3274,7 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
   }
   function setupVoice(){
     const output=new Audio();output.volume=.8;
-    voice=new window.PactVoice.PactVoice({request:cvSession.request.bind(cvSession),audio:output,onMedia:(stream,kind)=>window.NemesisDemo?.attachVoice(stream,kind),
+    voice=new window.PactVoice.PactVoice({request:cvSession.request.bind(cvSession),audio:output,onMedia:(stream,kind)=>window.NemesisDemo?.attachVoice(stream,kind,kind==='output'?{element:output}:{}),
       onState:state=>{if(voiceWorld?.voiceEvidence){voiceWorld.voiceEvidence.lastState=state.state;if(state.detail==='session-started')voiceWorld.voiceEvidence.connectionStarted++;}const active=['starting','listening','speaking','stopping'].includes(state.state);if(active!==voiceActive){voiceActive=active;sound.settings(opts.volume,opts.music,muted,opts.musicVolume*(active?.18:1),opts.sfxVolume,opts.adaptiveMusic);}
         $('cv-voice-state').textContent='VOICE: '+(voiceWorld?.voiceEvidence?.connectionStarted?'GPT-LIVE-1 / ':'')+state.state.toUpperCase()+(state.detail?' / '+state.detail:'');$('cv-voice-start').disabled=active||!cvSession.voiceEnabled||!$('cv-consent').checked||$('cv-mode').value!=='server';for(const id of ['cv-voice-stop','cv-voice-mute','cv-voice-volume'])$(id).disabled=!active;
         if(state.state==='error')$('cv-status').textContent=state.detail||'Voice unavailable. Use text, or choose LOCAL RULES.';},
@@ -3280,7 +3290,7 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
         return proposeCovenant({delegated:true});}
     });
     $('cv-voice-start').onclick=async()=>{if(screen!=='covenant-screen'||cvSigning||!$('cv-consent').checked)return;sound.unlock();voiceMuted=false;$('cv-voice-mute').textContent='Mute';voiceText='';voiceCaption='';voiceWorld=world;await voice.start({runId:cvRunId,revision:world.revision});};
-    $('cv-voice-stop').onclick=()=>voice.stop('user');$('cv-voice-mute').onclick=()=>{voiceMuted=!voiceMuted;voice[voiceMuted?'mute':'unmute']();$('cv-voice-mute').textContent=voiceMuted?'Unmute':'Mute';};$('cv-voice-volume').oninput=()=>voice.setVolume(Number($('cv-voice-volume').value)/100);
+    $('cv-voice-stop').onclick=()=>voice.stop('user');$('cv-voice-mute').onclick=()=>{voiceMuted=!voiceMuted;voice[voiceMuted?'mute':'unmute']();$('cv-voice-mute').textContent=voiceMuted?'Unmute':'Mute';};$('cv-voice-volume').oninput=()=>{const level=Number($('cv-voice-volume').value)/100;voice.setVolume(level);window.NemesisDemo?.setVoiceOutputLevel?.(level);};
   }
   function updateCovenantHUD(){const active=world?.mode==='first-contact';$('covenant-live').hidden=!active||screen!=='game';$('pause-parley').hidden=!active;if(!active)return;
     const spec=world.spec,receipt=world.receipts.at(-1),stats=world.covenantStats;$('sector-label').textContent='FIRST CONTACT / THE NOTARY';$('hud-ledger').textContent='';$('pact-name').textContent=world.broken?'UNBOUND':spec?.title||'UNSIGNED';$('pact-state').textContent=world.broken?'Shield & advantages removed. Attack rate +25%.':spec?(mobile?(spec.zone!=='none'?spec.zone.toUpperCase()+' SHIELD · ':'')+(spec.speed==='slow'?'SPEED −28% · ':'')+(spec.reflection==='charged'?'REFLECT ×1.8':''):V.describe(spec).benefits.join(' · ')):'No rules applied.';

@@ -1,0 +1,38 @@
+{
+  "status": {
+    "JobStatus": "Complete",
+    "CompletionPercentage": 100,
+    "TimeTakenToRenderInMs": 156805
+  },
+  "job": {
+    "JobId": "d9af1137-a86c-44cd-b64d-5eeb026113a9",
+    "RenderJobName": "Job 5",
+    "TimelineName": "SUBMISSION - iPhone full sequence - 59s 60fps v1",
+    "TargetDir": ".artifacts/submission",
+    "IsExportVideo": true,
+    "IsExportAudio": true,
+    "FormatWidth": 1920,
+    "FormatHeight": 1080,
+    "FrameRate": "60",
+    "PixelAspectRatio": 1,
+    "MarkIn": 0,
+    "MarkOut": 3539,
+    "AudioBitDepth": 16,
+    "AudioSampleRate": 48000,
+    "ExportAlpha": false,
+    "OutputFilename": "NEMESIS-PACT-iPhone-59s-60fps-en-final.mp4",
+    "RenderMode": "Single clip",
+    "PresetName": "Custom",
+    "VideoFormat": "MP4",
+    "VideoCodec": "H.264 AMD",
+    "AudioCodec": "aac",
+    "EncodingProfile": "Auto",
+    "MultiPassEncode": false,
+    "NetworkOptimization": true,
+    "ClipStartFrame": 1,
+    "TimelineStartTimecode": "00:00:00:00"
+  },
+  "save": true,
+  "export": true,
+  "editor": "DaVinci Resolve Studio 21.1.0.17"
+}

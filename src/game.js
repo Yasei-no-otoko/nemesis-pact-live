@@ -12,6 +12,7 @@
   const gpu=new window.PactGPU.Renderer($('stage'),{onStatus:s=>{const el=$('renderer-status');if(el)el.textContent=s.build+' / '+s.backend;}});
   window.NEMESIS_RENDERER=gpu;
   const sound=new window.PactSound(),keys=new Set(),pressed=new Set();
+  window.NemesisDemo?.registerGameAudio?.(()=>{sound.unlock();return sound.createRecordingTap?.();});
   const mouse={x:W/2,y:240,down:false},screens=['menu','loadout','choices','pause','help-screen','settings-screen','result','confirm-screen','hangar','route','ai-screen','archive','covenant-screen'];
   let world=null,screen='menu',previousScreen='menu',difficulty='standard',pauseFrom='game',last=0,accum=0,clock=0,shake=0,flash=0,freeze=0;
   let effects=[],particles=[],trails=[],announceTime=0,toastTime=0,uiTimer=0,trainingStep=0,trainingMoved=0,lastWorldPhase='',muted=false,oldPad=[],oldAxes=[0,0];
@@ -464,7 +465,7 @@
   }
   function setupVoice(){
     const output=new Audio();output.volume=.8;
-    voice=new window.PactVoice.PactVoice({request:cvSession.request.bind(cvSession),audio:output,onMedia:(stream,kind)=>window.NemesisDemo?.attachVoice(stream,kind),
+    voice=new window.PactVoice.PactVoice({request:cvSession.request.bind(cvSession),audio:output,onMedia:(stream,kind)=>window.NemesisDemo?.attachVoice(stream,kind,kind==='output'?{element:output}:{}),
       onState:state=>{if(voiceWorld?.voiceEvidence){voiceWorld.voiceEvidence.lastState=state.state;if(state.detail==='session-started')voiceWorld.voiceEvidence.connectionStarted++;}const active=['starting','listening','speaking','stopping'].includes(state.state);if(active!==voiceActive){voiceActive=active;sound.settings(opts.volume,opts.music,muted,opts.musicVolume*(active?.18:1),opts.sfxVolume,opts.adaptiveMusic);}
         $('cv-voice-state').textContent='VOICE: '+(voiceWorld?.voiceEvidence?.connectionStarted?'GPT-LIVE-1 / ':'')+state.state.toUpperCase()+(state.detail?' / '+state.detail:'');$('cv-voice-start').disabled=active||!cvSession.voiceEnabled||!$('cv-consent').checked||$('cv-mode').value!=='server';for(const id of ['cv-voice-stop','cv-voice-mute','cv-voice-volume'])$(id).disabled=!active;
         if(state.state==='error')$('cv-status').textContent=state.detail||'Voice unavailable. Use text, or choose LOCAL RULES.';},
@@ -480,7 +481,7 @@
         return proposeCovenant({delegated:true});}
     });
     $('cv-voice-start').onclick=async()=>{if(screen!=='covenant-screen'||cvSigning||!$('cv-consent').checked)return;sound.unlock();voiceMuted=false;$('cv-voice-mute').textContent='Mute';voiceText='';voiceCaption='';voiceWorld=world;await voice.start({runId:cvRunId,revision:world.revision});};
-    $('cv-voice-stop').onclick=()=>voice.stop('user');$('cv-voice-mute').onclick=()=>{voiceMuted=!voiceMuted;voice[voiceMuted?'mute':'unmute']();$('cv-voice-mute').textContent=voiceMuted?'Unmute':'Mute';};$('cv-voice-volume').oninput=()=>voice.setVolume(Number($('cv-voice-volume').value)/100);
+    $('cv-voice-stop').onclick=()=>voice.stop('user');$('cv-voice-mute').onclick=()=>{voiceMuted=!voiceMuted;voice[voiceMuted?'mute':'unmute']();$('cv-voice-mute').textContent=voiceMuted?'Unmute':'Mute';};$('cv-voice-volume').oninput=()=>{const level=Number($('cv-voice-volume').value)/100;voice.setVolume(level);window.NemesisDemo?.setVoiceOutputLevel?.(level);};
   }
   function updateCovenantHUD(){const active=world?.mode==='first-contact';$('covenant-live').hidden=!active||screen!=='game';$('pause-parley').hidden=!active;if(!active)return;
     const spec=world.spec,receipt=world.receipts.at(-1),stats=world.covenantStats;$('sector-label').textContent='FIRST CONTACT / THE NOTARY';$('hud-ledger').textContent='';$('pact-name').textContent=world.broken?'UNBOUND':spec?.title||'UNSIGNED';$('pact-state').textContent=world.broken?'Shield & advantages removed. Attack rate +25%.':spec?(mobile?(spec.zone!=='none'?spec.zone.toUpperCase()+' SHIELD · ':'')+(spec.speed==='slow'?'SPEED −28% · ':'')+(spec.reflection==='charged'?'REFLECT ×1.8':''):V.describe(spec).benefits.join(' · ')):'No rules applied.';

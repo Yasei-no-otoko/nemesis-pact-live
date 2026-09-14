@@ -1,0 +1,136 @@
+{
+  "requested": {
+    "video": {
+      "frameRate": 60,
+      "width": {
+        "max": 1920
+      },
+      "height": {
+        "max": 1080
+      }
+    },
+    "audio": false,
+    "preferCurrentTab": true,
+    "selfBrowserSurface": "include"
+  },
+  "tracks": {
+    "after": {
+      "mic": [
+        "live"
+      ],
+      "remote": [
+        "live"
+      ],
+      "game": "running",
+      "tap": [
+        "ended"
+      ],
+      "displays": [
+        {
+          "video": [
+            "ended"
+          ],
+          "audio": [
+            "ended"
+          ]
+        },
+        {
+          "video": [
+            "ended"
+          ],
+          "audio": [
+            "ended"
+          ]
+        }
+      ]
+    }
+  },
+  "sessions": [
+    {
+      "name": "first",
+      "volumeBefore": 0.8,
+      "volumeAfter": 0.23,
+      "loweredGain": 0.23000000417232513,
+      "mutedGain": 0,
+      "resumedGain": 0.23000000417232513
+    },
+    {
+      "name": "restart",
+      "currentVolume": 0.23,
+      "gainAtStart": 0.23000000417232513
+    }
+  ],
+  "media": [
+    {
+      "file": ".work\\recorder-audio\\session-1.webm",
+      "bytes": 65550,
+      "peaks": {
+        "440": 29655934.08,
+        "880": 69476210.3,
+        "1320": 35166005.18,
+        "1760": 11989.72
+      }
+    },
+    {
+      "file": ".work\\recorder-audio\\session-2.webm",
+      "bytes": 47132,
+      "peaks": {
+        "440": 46255134.54,
+        "880": 19549160.78,
+        "1320": 35032414.48,
+        "1760": 39043.15
+      }
+    }
+  ],
+  "browser": {
+    "version": "153.0.4234.32",
+    "automation": "synthetic",
+    "realAPI": false,
+    "externalRequests": [],
+    "pageErrors": []
+  },
+  "fftWindows": {
+    "initial": {
+      "440": 28355360.57,
+      "880": 27934646.66,
+      "1320": 14065488.28,
+      "1760": 2214.77
+    },
+    "lower": {
+      "440": 21216066.15,
+      "880": 5928178.54,
+      "1320": 10561731.26,
+      "1760": 1144.93
+    },
+    "mute": {
+      "440": 21212523.45,
+      "880": 2937.71,
+      "1320": 10567633.56,
+      "1760": 429.5
+    },
+    "restored": {
+      "440": 21280146.28,
+      "880": 5684334.97,
+      "1320": 10549703.96,
+      "1760": 2053.89
+    },
+    "restart": {
+      "440": 26804561.65,
+      "880": 7843042.9,
+      "1320": 13393363.75,
+      "1760": 18019.7
+    }
+  },
+  "checks": {
+    "display_audio_requested_false": true,
+    "new_display_each_start": true,
+    "decoy_1760_absent": true,
+    "required_tones_present": true,
+    "remote_volume_mute_path": true,
+    "restart_preserved_remote_volume": true,
+    "borrowed_live_capture_owned_ended": true,
+    "video_in_both_webm": true,
+    "no_external_requests": true,
+    "no_page_errors": true
+  }
+}

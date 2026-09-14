@@ -1,0 +1,8 @@
+{
+  "node": "22.23.2",
+  "fullSuite": {"tests":229,"passed":229,"failed":0,"exitCode":0,"durationMs":null},
+  "focusedDemoAudio": {"tests":30,"passed":30,"failed":0,"exitCode":0},
+  "syntax": {"files":34,"exitCode":0},
+  "build": {"offlineBytes":382254,"hostedBytes":382304,"exitCode":0},
+  "evidenceScope":"Executed by recorder_audio_audit subagent; returned counts and exit codes, full-suite duration not retained. Unit media/upstream fixtures are not actual model calls."
+}

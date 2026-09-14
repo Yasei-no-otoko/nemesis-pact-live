@@ -1,0 +1,80 @@
+{
+  "source": "nemesis-pact-demo-long.webm",
+  "sourceSha256": "49596b24b4e764bee2d48347bf0430f9f2168fdc84a278819fc18df5fbc831fe",
+  "fps": 60,
+  "seconds": 59,
+  "dimensions": [
+    1920,
+    1080
+  ],
+  "timelineId": "ddf8c408-5b47-462f-8fe0-013e77d0e689",
+  "cuts": [
+    {
+      "sourceStart": 8.0,
+      "sourceEnd": 22.4,
+      "timelineStart": 0.0,
+      "timelineEnd": 14.4,
+      "speed": 1,
+      "linkedOriginalAudio": true
+    },
+    {
+      "sourceStart": 27.0,
+      "sourceEnd": 38.5,
+      "timelineStart": 14.4,
+      "timelineEnd": 25.9,
+      "speed": 1,
+      "linkedOriginalAudio": true
+    },
+    {
+      "sourceStart": 45.0,
+      "sourceEnd": 49.0,
+      "timelineStart": 25.9,
+      "timelineEnd": 29.9,
+      "speed": 1,
+      "linkedOriginalAudio": true
+    },
+    {
+      "sourceStart": 55.5,
+      "sourceEnd": 58.8,
+      "timelineStart": 29.9,
+      "timelineEnd": 33.2,
+      "speed": 1,
+      "linkedOriginalAudio": true
+    },
+    {
+      "sourceStart": 62.0,
+      "sourceEnd": 65.3,
+      "timelineStart": 33.2,
+      "timelineEnd": 36.5,
+      "speed": 1,
+      "linkedOriginalAudio": true
+    },
+    {
+      "sourceStart": 67.2,
+      "sourceEnd": 78.5,
+      "timelineStart": 36.5,
+      "timelineEnd": 47.8,
+      "speed": 1,
+      "linkedOriginalAudio": true
+    },
+    {
+      "sourceStart": 82.0,
+      "sourceEnd": 84.4,
+      "timelineStart": 47.8,
+      "timelineEnd": 50.2,
+      "speed": 1,
+      "linkedOriginalAudio": true
+    },
+    {
+      "sourceStart": 91.3,
+      "sourceEnd": 100.1,
+      "timelineStart": 50.2,
+      "timelineEnd": 59.0,
+      "speed": 1,
+      "linkedOriginalAudio": true
+    }
+  ],
+  "sourceFrameRateNote": "Source is variable frame rate, average34.4992 delivered fps. Full-length CFR compatibility copy duplicates frames; no invented motion or responses. Capture rate is not measured game FPS.",
+  "captions": "Native Resolve Fusion TextPlus, paraphrased English from recorded speech and visible signed rules. SRT sidecar is separate.",
+  "compositionPersistenceFix": "The new Fusion graphs were visible to scripting but not serialized into the first DRP or rendered. A real changed input inside StartUndo/EndUndo(True) committed the graphs. An initial 1s QA render and one interrupted full export are not deliverables."
+}

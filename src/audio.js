@@ -37,6 +37,12 @@
       for(let i=0;i<noise.length;i++){seed^=seed<<13;seed^=seed>>>17;seed^=seed<<5;noise[i]=(seed>>>0)/2147483648-1;}
       this.settings(this.volume,this.music,this.muted,this.musicVolume,this.sfxVolume,this.adaptive);
     }
+    createRecordingTap(){
+      if(!this.ctx||this.disposed)return null;
+      const destination=this.ctx.createMediaStreamDestination();let released=false;
+      this.limiter.connect(destination);
+      return {stream:destination.stream,release:()=>{if(released)return;released=true;try{this.limiter.disconnect(destination);}catch{}try{destination.disconnect?.();}catch{}for(const track of destination.stream?.getTracks?.()||[])try{track.stop();}catch{}}};
+    }
     unlock(){
       if(this.disposed)return;
       try{

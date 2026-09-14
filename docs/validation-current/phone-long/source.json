@@ -1,0 +1,20 @@
+{
+  "sourceName": "nemesis-pact-demo-long.webm",
+  "preservedCopy": ".work\\phone-long-20260915.webm",
+  "bytes": 62244060,
+  "sha256": "49596b24b4e764bee2d48347bf0430f9f2168fdc84a278819fc18df5fbc831fe",
+  "ffmpegExit": 0,
+  "decodedFrames": 3471,
+  "decodedSeconds": 100.611,
+  "sourceAvgDeliveredFps": 34.49920982795122,
+  "probe": "Input #0, matroska,webm, from '.work\\phone-long-20260915.webm':\n  Metadata:\n    encoder         : WebKit\n  Duration: N/A, start: 0.000000, bitrate: N/A\n  Stream #0:0(eng): Video: vp9 (Profile 0), yuv420p(pc, bt709/unknown/unknown), 497x1080, SAR 1:1 DAR 497:1080, 1k tbr, 1k tbn (default)\n  Stream #0:1(eng): Audio: opus, 48000 Hz, stereo, fltp (default)\n",
+  "audioRmsDb": [
+    "-30.043200"
+  ],
+  "deviceBrowser": "Physical iPhone16ProMax explicitly confirmed by user; Safari observed in first-frame broadcast selector; browser version unconfirmed.",
+  "device": "iPhone 16 Pro Max",
+  "physicalDevice": true,
+  "deviceEvidence": "explicit user reply",
+  "browser": "Safari shown in source screen-broadcast selection",
+  "browserVersion": null
+}

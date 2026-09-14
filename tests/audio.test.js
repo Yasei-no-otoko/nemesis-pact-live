@@ -57,11 +57,14 @@ test('legacy sound-effect pitches and event cues are preserved exactly',()=>{
 
 class Param{constructor(value=0){this.value=value;this.calls=[];}setValueAtTime(v,t){this.value=v;this.calls.push(['set',v,t]);return this;}linearRampToValueAtTime(v,t){this.value=v;this.calls.push(['linear',v,t]);return this;}exponentialRampToValueAtTime(v,t){this.value=v;this.calls.push(['exp',v,t]);return this;}setTargetAtTime(v,t,k){this.value=v;this.calls.push(['target',v,t,k]);return this;}cancelScheduledValues(t){this.calls.push(['cancel',t]);return this;}}
 class Node{constructor(){for(const k of ['gain','frequency','detune','Q','pan','delayTime','threshold','knee','ratio','attack','release'])this[k]=new Param();}connect(){return this;}disconnect(){this.disconnected=true;}start(t){this.startAt=t;}stop(t){this.stopAt=t;}}
-class Context{constructor(){this.currentTime=0;this.state='running';this.sampleRate=24000;this.destination=new Node();this.sources=[];}
+class Context{constructor(){this.currentTime=0;this.state='running';this.sampleRate=24000;this.destination=new Node();this.sources=[];this.recordingDestinations=[];}
  createGain(){return new Node();}createDynamicsCompressor(){return new Node();}createDelay(){return new Node();}createStereoPanner(){return new Node();}createBiquadFilter(){return new Node();}
+ createMediaStreamDestination(){const node=new Node(),track={kind:'audio',readyState:'live',stop(){this.readyState='ended'}};node.stream={getAudioTracks:()=>[track],getTracks:()=>[track]};this.recordingDestinations.push(node);return node;}
  createBuffer(c,n){const data=new Float32Array(n);return{getChannelData:()=>data};}createOscillator(){const n=new Node();this.sources.push(n);return n;}createBufferSource(){return this.createOscillator();}
  advance(t){this.currentTime=t;for(const n of this.sources)if(n.stopAt<=t&&!n.ended){n.ended=true;n.onended?.();}}
  close(){this.state='closed';return Promise.resolve();}}
+
+test('recording tap mirrors limiter output and releases only its tap',()=>{const c=new Context(),s=new Sound({context:c,manual:true}),tap=s.createRecordingTap();assert.ok(tap?.stream?.getAudioTracks?.().length);const node=c.recordingDestinations[0],track=tap.stream.getAudioTracks()[0];assert.equal(node.disconnected,undefined);tap.release();assert.equal(node.disconnected,true);assert.equal(track.readyState,'ended');assert.equal(c.destination.disconnected,undefined);});
 
 test('transport changes once per cue and crossfades with bounded retiring decks',()=>{
  const c=new Context(),s=new Sound({context:c,manual:true});s.tick({screen:'menu'});const serial=s.current.token;

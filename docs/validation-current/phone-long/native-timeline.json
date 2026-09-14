@@ -1,0 +1,124 @@
+{
+  "projectName": "NEMESIS PACT - Submission 20260915",
+  "projectId": "61f93e79-f0da-4a95-b3ea-ed44f06745a1",
+  "timelineName": "SUBMISSION - iPhone full sequence - 59s 60fps v1",
+  "timelineId": "ddf8c408-5b47-462f-8fe0-013e77d0e689",
+  "fps": 60,
+  "width": "1920",
+  "height": "1080",
+  "start": 0,
+  "end": 3540,
+  "clips": [
+    {
+      "id": "26523a00-d77d-4a2c-a01c-c4304643ba78",
+      "start": 0,
+      "end": 864,
+      "duration": 864,
+      "leftOffset": 480,
+      "captionExpression": "iif(time < 228, \"PLAYER\\nMake the left side safe.\", iif(time < 468, \"THE NOTARY\\nOne moment, please.\", iif(time < 636, \"PLAYER\\nActually, right.\\nReinforcements are allowed.\", iif(time < 864, \"THE NOTARY\\nRight. Understood.\\nI'll revise the deal.\", \"\"))))"
+    },
+    {
+      "id": "23cb37a5-d3c2-4d01-adc9-1a54bfaf6e1e",
+      "start": 864,
+      "end": 1554,
+      "duration": 690,
+      "leftOffset": 1620,
+      "captionExpression": "iif(time < 324, \"THE NOTARY\\nThe price is enemy reinforcements.\\nReview the terms and sign.\", iif(time < 606, \"SIGN THE CONTRACT\\nRIGHT sanctuary\\nExtra turrets every 9 seconds\", iif(time < 690, \"SIGNED\\nThe sanctuary is now real.\", \"\")))"
+    },
+    {
+      "id": "1e9e8301-b2fe-48a1-aee1-bfb36fcf8f56",
+      "start": 1554,
+      "end": 1794,
+      "duration": 240,
+      "leftOffset": 2700,
+      "captionExpression": "iif(time < 240, \"FIGHT YOUR DEAL\\nBullets erased.\\nReturn fire with a parry.\", \"\")"
+    },
+    {
+      "id": "7f78580c-9806-4a9c-8624-60debb7cdb71",
+      "start": 1794,
+      "end": 1992,
+      "duration": 198,
+      "leftOffset": 3330,
+      "captionExpression": "iif(time < 137, \"RENEGOTIATE MID-FIGHT\\nPause the fight. Keep your progress.\", iif(time < 198, \"PLAYER\\nActually...\", \"\"))"
+    },
+    {
+      "id": "b4c87224-19ef-4891-8949-23d1fc2b4ff3",
+      "start": 1992,
+      "end": 2190,
+      "duration": 198,
+      "leftOffset": 3720,
+      "captionExpression": "iif(time < 198, \"PLAYER\\nRemove the safe zone.\", \"\")"
+    },
+    {
+      "id": "4477ba32-c54d-44eb-be0a-30de6f0cb6c3",
+      "start": 2190,
+      "end": 2868,
+      "duration": 678,
+      "leftOffset": 4032,
+      "captionExpression": "iif(time < 240, \"THE NOTARY\\nUnderstood. No sanctuary.\", iif(time < 462, \"THE NOTARY\\nI'll propose a different advantage\\non those terms.\", iif(time < 678, \"THE NOTARY\\nReview it. If you agree,\\npress Sign.\", \"\")))"
+    },
+    {
+      "id": "d3278903-5311-4cc9-9c8b-88527100735e",
+      "start": 2868,
+      "end": 3012,
+      "duration": 144,
+      "leftOffset": 4920,
+      "captionExpression": "iif(time < 144, \"SIGN THE AMENDMENT\\nNo sanctuary. Reflections x1.8.\\nReinforcements remain.\", \"\")"
+    },
+    {
+      "id": "184fbd75-354a-4d33-ae23-85bb212cecb8",
+      "start": 3012,
+      "end": 3540,
+      "duration": 528,
+      "leftOffset": 5478,
+      "captionExpression": "iif(time < 360, \"THE RULES HAVE CHANGED\\nOne fight. Two signed contracts.\", iif(time < 528, \"BOSS DEFEATED / 2 OF 2 PACTS KEPT\\n4 bullets erased.\\n635 damage returned.\", \"\"))"
+    }
+  ],
+  "audio": [
+    {
+      "start": 0,
+      "end": 864,
+      "leftOffset": 480
+    },
+    {
+      "start": 864,
+      "end": 1554,
+      "leftOffset": 1620
+    },
+    {
+      "start": 1554,
+      "end": 1794,
+      "leftOffset": 2700
+    },
+    {
+      "start": 1794,
+      "end": 1992,
+      "leftOffset": 3330
+    },
+    {
+      "start": 1992,
+      "end": 2190,
+      "leftOffset": 3720
+    },
+    {
+      "start": 2190,
+      "end": 2868,
+      "leftOffset": 4032
+    },
+    {
+      "start": 2868,
+      "end": 3012,
+      "leftOffset": 4920
+    },
+    {
+      "start": 3012,
+      "end": 3540,
+      "leftOffset": 5478
+    }
+  ],
+  "renderStatus": {
+    "JobStatus": "Rendering",
+    "CompletionPercentage": 19,
+    "EstimatedTimeRemainingInMs": 100000
+  }
+}
