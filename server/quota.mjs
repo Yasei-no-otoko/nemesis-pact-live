@@ -51,7 +51,7 @@ return {1,r.state}`;
 
 const SESSION_LUA=`
 if redis.call('GET',KEYS[1])=='1' then return {0,'kill'} end
-if tonumber(redis.call('GET',KEYS[2]) or '0')>=100 or tonumber(redis.call('GET',KEYS[3]) or '0')>=10 then return {0,'issue_limit'} end
+if tonumber(redis.call('GET',KEYS[2]) or '0')>=100 or tonumber(redis.call('GET',KEYS[3]) or '0')>=20 then return {0,'issue_limit'} end
 if redis.call('INCR',KEYS[2])==1 then redis.call('EXPIRE',KEYS[2],3600) end
 if redis.call('INCR',KEYS[3])==1 then redis.call('EXPIRE',KEYS[3],3600) end
 return {1,'issued'}`;

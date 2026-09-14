@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-09-14T08:04:55.006Z",
+  "store": "actual Upstash Redis",
+  "isolatedTestNamespace": true,
+  "parallelRequests": 24,
+  "accepted": 20,
+  "denied": 4,
+  "global100LimitAlsoEnforced": true,
+  "realModelCalls": 0,
+  "existingProductionCountersReset": false
+}

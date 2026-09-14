@@ -49,3 +49,8 @@ Remaining: production deploy/text Sign/combat, GPT-Live speech/delegation/interr
 - Session timeout now covers a stalled JSON body and ignores late completion. Runtime voice receipts now distinguish actual session-started/delegation/proposal/voice signature events from text-only inference. Removed stale `not-integrated` report and pilot setup instructions.
 - Current unit suite: 193 passed / 0 failed; 33 syntax files; Node 22.23.2; build 359179 bytes. Preparing deployment from the next commit. Last deployed source before this update: `bbdb9063369f87566554fd36d7e8855ea38ba120`, deployment `dpl_6aSgTYqLumExothLnSQ4SrrF4wbZ`.
 - Shared budget at 07:52:33 UTC: direct OpenAI $0.300000 / $10, Gateway $0.006210 / $20 conservative accounting; active 0, no kill. Still verification pools. User's supplied Gateway documentation establishes setup only; exact key grant balance/expiry remains unknown.
+
+## 2026-09-14 17:05 JST — shared-network admission adjustment
+
+- Recorder/evidence fix is deployed from `a7fee49`, READY `dpl_G3jkPr35YkXNGseeWV3JRBmktJUs`. Fresh production session returned actual HTTP 429 / SESSION_QUOTA. Durable read showed 10 session issues on this shared test/user IP, TTL 1378 seconds. The completed human session had expired; existing valid cookies are already reused.
+- Raised per-IP session issuance from 10/hour to 20/hour to accommodate testing and shared-network play. Global 100/hour, money caps, 3 active calls, per-minute limits, per-session call/voice limits and kill gates remain. No production counters were erased or refunded. Actual isolated Upstash Lua test: 24 parallel requests, exactly 20 admitted, 4 denied; global 100 cap also enforced; zero model calls.
