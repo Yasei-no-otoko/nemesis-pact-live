@@ -1,0 +1,95 @@
+{
+  "checkedAt": "2026-09-14T15:23:05.155204+00:00",
+  "production": "https://nemesis-pact-live.vercel.app",
+  "productionSourceCommit": "31381f98f12194bd97d4d02cea194d1bb563b859",
+  "deploymentId": "dpl_8xZnyqCVV3Dw7jRoXEAxdHaVf5gP",
+  "verificationCheckoutCommit": "b549f5be85f8ac5b512accb71dde3596a49375bc",
+  "scope": "Actual production GPT-Live-1 and GPT-5.6 Luna; automated Windows Edge with synthetic input, not human microphone or demo footage",
+  "passed": true,
+  "voiceModel": "gpt-live-1",
+  "contractModel": "gpt-5.6-luna",
+  "gatewayId": "openai/gpt-5.6-luna",
+  "input": "Windows Microsoft Zira Desktop TTS through Web Audio MediaStream",
+  "browser": "153.0.4234.32",
+  "viewport": [
+    1280,
+    800
+  ],
+  "renderer": "WEBGPU / COMPUTE",
+  "humanMicrophone": false,
+  "controlledTime": false,
+  "finalAttempt": "attempt-3/result.json",
+  "attempts": [
+    {
+      "number": 1,
+      "passed": false,
+      "reason": "Valid initial Luna proposal, but no further output transcript after commentary append before 20s wait deadline; stopped without Sign."
+    },
+    {
+      "number": 2,
+      "passed": false,
+      "reason": "Right correction and Sign succeeded. Second proposal had all requested benefits and a valid reinforcements counteroffer; fixture overrequired optional weaker_gun and stopped before Sign 2."
+    },
+    {
+      "number": 3,
+      "passed": true,
+      "reason": "Requested benefits retained; test reviews either explicitly permitted price. Actual final proposal used preferred weaker_gun; both signatures and continuity passed."
+    }
+  ],
+  "finalCounts": {
+    "liveStarts": 2,
+    "proposals": 3,
+    "signs": 2,
+    "confirmedStops": 2
+  },
+  "finalConnectionMs": [
+    2672,
+    1641
+  ],
+  "finalConnectionMeanMs": 2156.5,
+  "finalConnectionMaxMs": 2672,
+  "finalContractLatencyMs": [
+    1880,
+    1998,
+    3846
+  ],
+  "finalContractMeanMs": 2574.6666666666665,
+  "finalContractMaxMs": 3846,
+  "remoteAudioRmsAtInterruption": 0.08525138152610315,
+  "rightBulletsErased": 2,
+  "hpContinuity": [
+    10,
+    10
+  ],
+  "bossHpContinuity": [
+    [
+      2832
+    ],
+    [
+      2832
+    ]
+  ],
+  "secondsContinuity": [
+    8.6,
+    8.62
+  ],
+  "signedRevisions": [
+    1,
+    2
+  ],
+  "allAttemptsCostMicrodollars": {
+    "openai": 250000,
+    "gateway": 2408
+  },
+  "allAttemptsLiveSessions": 5,
+  "allAttemptsModelProposals": 6,
+  "allFiveDurableSessionsStopped": true,
+  "budgetLedger": "ledger.json",
+  "pageErrors": [],
+  "limitations": [
+    "Synthetic audio and automated controls, not fresh human Luna microphone evidence.",
+    "Interruption starts during actual remote output; some leading correction filler was not transcribed. The full requested right-side terms did arrive.",
+    "Few samples; no p95 or general success-rate claim. No new provider invoice or grant balance/expiry proof.",
+    "This browser test produced screenshots and event evidence, not the required 60-second video."
+  ]
+}

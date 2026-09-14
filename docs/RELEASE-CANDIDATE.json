@@ -1,6 +1,6 @@
 {
-  "recordedAt": "2026-09-14T15:11:22.561679+00:00",
-  "status": "incomplete submission packaging; Luna contract model deployed and production signing/combat verified; public video/source access pending",
+  "recordedAt": "2026-09-14T15:23:05.155204+00:00",
+  "status": "incomplete submission video/access; current GPT-Live-1 to Luna production correction/sign/amendment verified with synthetic audio",
   "production": "https://nemesis-pact-live.vercel.app",
   "repository": "https://github.com/Yasei-no-otoko/nemesis-pact-live",
   "repositoryVisibility": "private; user approval to publish pending",
@@ -26,18 +26,17 @@
   "projectNodeSetting": "22.x",
   "videoUrl": null,
   "openGates": [
-    "browser name/version",
-    "physical phone proof of latest compact UI and measured phone game FPS",
-    "public video URL approval",
+    "single 60-second actual video covering interruption, corrected OPENAI Sign, combat and renegotiation",
+    "approved public video destination and verified viewing URL",
     "source publication or judge-access choice",
     "exact Gateway grant balance and expiry",
     "Vercel infrastructure usage endpoint returned 404",
-    "Android/macOS Safari physical testing"
+    "additional physical-device/browser/FPS coverage remains explicitly limited"
   ],
   "budgetStatus": {
-    "lastLedgerCheck": "2026-09-14T15:10:37.763Z",
-    "directOpenaiConservativeUsd": 0.85,
-    "gatewayConservativeUsd": 0.018286,
+    "lastLedgerCheck": "2026-09-14T15:23:06.538Z",
+    "directOpenaiConservativeUsd": 1.15,
+    "gatewayConservativeUsd": 0.021367,
     "directOpenaiCapUsd": 10,
     "gatewayCapUsd": 20,
     "vercelGrantReportedUsd": 30,
@@ -104,8 +103,9 @@
     "evidence": "validation-current/public-pool.json",
     "bothEnvironmentUpdatesConfirmed": true,
     "gatewayRuntimePoolVerified": true,
-    "directVoiceNewPublicSessionTested": false,
-    "capsUnchanged": true
+    "directVoiceNewPublicSessionTested": true,
+    "capsUnchanged": true,
+    "directVoiceEvidence": "validation-current/live-luna/ledger.json"
   },
   "notaryCaptionValidation": {
     "evidence": "validation-current/notary-scroll/production/result.json",
@@ -131,5 +131,22 @@
     "desktopCases": 3,
     "mobileEmulationCases": 1,
     "realModelCalls": 0
+  },
+  "requiredDeliveryGates": [
+    "single 60-second actual video covering interruption, corrected OPENAI Sign, combat and renegotiation",
+    "approved public video destination and verified viewing URL",
+    "source publication or judge-access choice"
+  ],
+  "liveLunaValidation": {
+    "evidence": "validation-current/live-luna/result.json",
+    "passed": true,
+    "humanMicrophone": false,
+    "finalLiveSessions": 2,
+    "finalModelProposals": 3,
+    "signedRevisions": [
+      1,
+      2
+    ],
+    "allFiveDurableSessionsStopped": true
   }
 }

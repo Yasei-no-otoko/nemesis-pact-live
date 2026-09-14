@@ -1,0 +1,77 @@
+{
+  "checkedAt": "2026-09-14T15:21:30.999Z",
+  "scope": "Read-only durable records; no session IDs, credentials or transcripts; conservative accounting, not invoice",
+  "attempts": [
+    {
+      "attempt": 1,
+      "records": [
+        {
+          "state": "stopped",
+          "reason": "application",
+          "revision": 0,
+          "elapsedMs": 31389,
+          "startedAt": "2026-09-14T15:16:19.437Z",
+          "stoppedAt": "2026-09-14T15:16:50.826Z"
+        }
+      ]
+    },
+    {
+      "attempt": 2,
+      "records": [
+        {
+          "state": "stopped",
+          "reason": "application",
+          "revision": 0,
+          "elapsedMs": 19700,
+          "startedAt": "2026-09-14T15:18:00.292Z",
+          "stoppedAt": "2026-09-14T15:18:19.992Z"
+        },
+        {
+          "state": "stopped",
+          "reason": "application",
+          "revision": 1,
+          "elapsedMs": 13764,
+          "startedAt": "2026-09-14T15:18:29.407Z",
+          "stoppedAt": "2026-09-14T15:18:43.171Z"
+        }
+      ]
+    },
+    {
+      "attempt": 3,
+      "records": [
+        {
+          "state": "stopped",
+          "reason": "application",
+          "revision": 0,
+          "elapsedMs": 18718,
+          "startedAt": "2026-09-14T15:20:14.573Z",
+          "stoppedAt": "2026-09-14T15:20:33.291Z"
+        },
+        {
+          "state": "stopped",
+          "reason": "application",
+          "revision": 1,
+          "elapsedMs": 15316,
+          "startedAt": "2026-09-14T15:20:42.199Z",
+          "stoppedAt": "2026-09-14T15:20:57.515Z"
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "openai": {
+      "global": 1100000,
+      "kind:voice": 1100000,
+      "pool:verification": 800000,
+      "pool:public": 300000
+    },
+    "gateway": {
+      "pool:verification": 15566,
+      "pool:public": 5517,
+      "global": 21083,
+      "kind:text": 21083
+    },
+    "kill": null,
+    "active": 0
+  }
+}

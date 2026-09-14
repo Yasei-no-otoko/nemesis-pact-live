@@ -1,0 +1,13 @@
+# Current production Live/Luna integration
+
+`result.json` summarizes the final passing attempt plus retained failures. Deployed source is `31381f98f12194bd97d4d02cea194d1bb563b859`; the raw attempts' `sourceCommit` field records the checkout HEAD (`b549f5b`, documentation changes after that deployment). The aggregate distinguishes those two identifiers. No production application code changed during these checks.
+
+Input is locally synthesized Microsoft Zira Desktop speech through a native Web Audio MediaStream, explicitly not a human microphone. GPT-Live-1, WebRTC, delegation, GPT-5.6 Luna, Redis admission, proposal validation, explicit signatures and combat use the actual production services. No response or game clock is mocked. Tests require `NEMESIS_ALLOW_LIVE_LUNA=1`; each run admits at most two bounded voice sessions and sixteen proposals. Generate the three ignored WAV fixtures with `tests/generate_voice_luna_fixtures.ps1`.
+
+- Attempt 1: initial Live→Luna contract arrived, then the test timed out waiting for a further reply after returning the proposal. No Sign. The session stopped. No later reply or successful interruption is claimed.
+- Attempt 2: real output audio overlap, right correction, Luna Sign revision 1 and two actual bullets erased. Voice amendment returned none/slow/charged with a permitted reinforcements counteroffer. The fixture expected optional weaker-gun permission to be mandatory, so it stopped before Sign 2. Both sessions stopped.
+- Attempt 3: the test accepts either of the player's permitted payment choices and records which one was offered. The actual final response used the preferred weaker gun. Three Luna responses, both explicit signatures, right bullet erasure and amended combat continuity pass. Audio RMS was 0.085 at correction start; complete right-side terms arrived, although some introductory filler was not transcribed. All tracks ended and peers closed, with no page errors.
+
+`ledger.json` reads actual durable records and proves all five test sessions stopped. They retain $0.25 of conservative direct OpenAI charges; the six model proposals total $0.002408 in Gateway accounting. Shared totals also include other traffic and are not invoices. No budget cap, pool, key, payment or plan setting changed.
+
+The final screenshots were visually inspected. This evidence closes the combined current-model integration gap; it does not replace the required 60-second recorded demonstration or constitute fresh human Luna microphone evidence. Original first-attempt `failure.png` is retained both at this directory root and under `attempt-1/`.
