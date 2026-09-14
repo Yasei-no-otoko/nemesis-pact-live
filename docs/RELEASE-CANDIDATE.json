@@ -44,8 +44,9 @@
   },
   "localVideo": {
     "file": "NEMESIS-PACT-human-demo-60s-en.mp4",
-    "sha256": "af96d0f8307a065b45faa001dab792ed7f1244524aa505a211f7cf27edebf825",
+    "sha256": "0b7f9c23247fe607377472fb769cc93a85433281547186431657fcaca20c4180",
     "seconds": 60,
-    "public": false
+    "public": false,
+    "bytes": 7016686
   }
 }
