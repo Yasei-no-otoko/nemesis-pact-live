@@ -4,7 +4,7 @@ The GOAL.md scope remains intact. This is an incomplete release candidate, not a
 
 | GOAL completion requirement | Current evidence | Decision |
 |---|---|---|
-| Correct v0.5.0 import and preserved game | ZIP SHA and 216-file import manifest; initial 164 tests and campaign simulations; current 207 tests; framework and six-sector code preserved | Proven within recorded regression scope |
+| Correct v0.5.0 import and preserved game | ZIP SHA and 216-file import manifest; initial 164 tests and campaign simulations; current 209 tests; framework and six-sector code preserved | Proven within recorded regression scope |
 | Judge-accessible production HTTPS | Anonymous HTTP 200 and exact generated-byte hash in `validation-current/production-release/result.json` | Proven at the recorded check; future uptime is not guaranteed |
 | Real OpenAI text changes contract and combat | `production-text/result.json`: gpt-4.1-mini, explicit Sign, three real bullets erased, signed right-side amendment with continuity | Proven by automated production play |
 | Real GPT-Live negotiation, interruption, correction and parley | Desktop human footage shows initial left and mid-fight spoken right amendment, Sign revision 2 and combat. iPhone 16 Pro Max footage proves interruption, but corrected Sign uses LOCAL RULES. Final v3 production text correction passes; user subsequently confirms the full corrected OPENAI/Sign sequence in Windows Vivaldi | Proven across separate runs: human footage, explicit post-fix user report, and automated production evidence; no single new continuous recording is claimed |
@@ -18,3 +18,5 @@ The GOAL.md scope remains intact. This is an incomplete release candidate, not a
 Human interruption/correction is now evidenced by iPhone footage, but it triggered LOCAL RULES. The user subsequently confirmed that sequence succeeded after the v3 fix in Windows Vivaldi. This is an explicit user report, with no new recording or timing measurements. The prepared `?demo=1` page is refreshed and ready. Actual human mid-fight amendment is now recorded. The English-captioned local video must be published and its viewing URL verified after authorization of the destination. Source access is a separate pending choice; no response has been inferred as approval.
 
 Production now uses the already approved public budget pools; the selector updates, READY deployment and Gateway public ledger settlement were verified. Reserved judging pools and all Redis counters are preserved. Do not enlarge limits, buy credit, or change other projects to force completion.
+
+The user-requested contract-model switch to GPT-5.6 Luna passed three actual production model calls, both explicit signatures and combat continuity on 2026-09-15 JST. Previous human Live footage/confirmation uses gpt-4.1-mini and is not claimed as new Luna microphone evidence. Voice code is unchanged; the common contract endpoint now selects Luna. Public-video/source access gates remain open.

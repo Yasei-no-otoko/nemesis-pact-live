@@ -1,0 +1,235 @@
+{
+  "checkedAt": "2026-09-14T15:03:14Z",
+  "url": "https://nemesis-pact-live.vercel.app",
+  "browser": "153.0.4234.32",
+  "viewport": [
+    440,
+    956
+  ],
+  "touchEmulation": true,
+  "physicalPhone": false,
+  "humanMicrophone": false,
+  "controlledTime": false,
+  "passed": true,
+  "renderer": "WEBGPU / COMPUTE",
+  "before": {
+    "screen": "covenant-screen",
+    "coordinates": "origin top-left; x right; y down",
+    "renderer": "WEBGPU / COMPUTE",
+    "arena": {
+      "width": 720,
+      "height": 1107
+    },
+    "phase": "parley",
+    "seconds": 8.42,
+    "player": {
+      "x": 360,
+      "y": 841,
+      "hp": 9,
+      "energy": 52
+    },
+    "enemies": [
+      {
+        "type": "boss",
+        "x": 324,
+        "y": 221,
+        "hp": 3100.7999999999884
+      }
+    ],
+    "hostileBullets": 29,
+    "revision": 1,
+    "spec": {
+      "version": 1,
+      "title": "Rightward Mercy",
+      "zone": "right",
+      "speed": "normal",
+      "reflection": "normal",
+      "price": "weaker_gun",
+      "line": "The right side stands cleared—try not to waste the opening.",
+      "rationale": "Validated rule budget: 2 advantage points / 2 payment points. Sanctuary stops bullets, not lasers or enemy bodies. Only the displayed clauses apply after Sign."
+    },
+    "proposal": null,
+    "effects": {
+      "shielded": 2,
+      "reflectedDamage": 0,
+      "gunDamage": 499.2000000000005,
+      "amendments": 0
+    },
+    "voice": "idle",
+    "liveVoice": {
+      "model": "gpt-live-1",
+      "connectionStarted": 0,
+      "sessionClosed": 0,
+      "delegationRequests": 0,
+      "proposalsReturned": 0,
+      "openaiProposals": 0,
+      "signedContracts": 0,
+      "lastState": "idle",
+      "status": "not-used"
+    }
+  },
+  "after": {
+    "screen": "game",
+    "coordinates": "origin top-left; x right; y down",
+    "renderer": "WEBGPU / COMPUTE",
+    "arena": {
+      "width": 720,
+      "height": 1107
+    },
+    "phase": "combat",
+    "seconds": 8.43,
+    "player": {
+      "x": 360,
+      "y": 841,
+      "hp": 9,
+      "energy": 52
+    },
+    "enemies": [
+      {
+        "type": "boss",
+        "x": 323,
+        "y": 221,
+        "hp": 3100.7999999999884
+      }
+    ],
+    "hostileBullets": 29,
+    "revision": 2,
+    "spec": {
+      "version": 1,
+      "title": "Measured Reversal",
+      "zone": "none",
+      "speed": "slow",
+      "reflection": "charged",
+      "price": "weaker_gun",
+      "line": "Let the storm crawl and answer every shot with interest.",
+      "rationale": "Validated rule budget: 2 advantage points / 2 payment points. Dash through magenta lasers. Only the displayed clauses apply after Sign."
+    },
+    "proposal": null,
+    "effects": {
+      "shielded": 2,
+      "reflectedDamage": 0,
+      "gunDamage": 499.2000000000005,
+      "amendments": 1
+    },
+    "voice": "idle",
+    "liveVoice": {
+      "model": "gpt-live-1",
+      "connectionStarted": 0,
+      "sessionClosed": 0,
+      "delegationRequests": 0,
+      "proposalsReturned": 0,
+      "openaiProposals": 0,
+      "signedContracts": 0,
+      "lastState": "idle",
+      "status": "not-used"
+    }
+  },
+  "realModelCalls": 3,
+  "api": [
+    {
+      "path": "/api/session",
+      "status": 200
+    },
+    {
+      "path": "/api/covenant",
+      "status": 200,
+      "provider": "openai",
+      "model": "gpt-5.6-luna",
+      "modelFormat": "living_covenant_rules_v3",
+      "modelIssue": null,
+      "spec": {
+        "version": 1,
+        "title": "Leftward Sanctuary",
+        "zone": "left",
+        "speed": "normal",
+        "reflection": "normal",
+        "price": "weaker_gun",
+        "line": "The left shall be quiet—if your weapon pays the toll.",
+        "rationale": "Validated rule budget: 2 advantage points / 2 payment points. Sanctuary stops bullets, not lasers or enemy bodies. Only the displayed clauses apply after Sign."
+      },
+      "latencyMs": 1797,
+      "accountedMicrodollars": 382
+    },
+    {
+      "path": "/api/covenant",
+      "status": 200,
+      "provider": "openai",
+      "model": "gpt-5.6-luna",
+      "modelFormat": "living_covenant_rules_v3",
+      "modelIssue": null,
+      "spec": {
+        "version": 1,
+        "title": "Rightward Mercy",
+        "zone": "right",
+        "speed": "normal",
+        "reflection": "normal",
+        "price": "weaker_gun",
+        "line": "The right side stands cleared—try not to waste the opening.",
+        "rationale": "Validated rule budget: 2 advantage points / 2 payment points. Sanctuary stops bullets, not lasers or enemy bodies. Only the displayed clauses apply after Sign."
+      },
+      "latencyMs": 2235,
+      "accountedMicrodollars": 281
+    },
+    {
+      "path": "/api/covenant/sign",
+      "status": 200,
+      "provider": "openai",
+      "model": "gpt-5.6-luna",
+      "spec": {
+        "line": "The right side stands cleared—try not to waste the opening.",
+        "price": "weaker_gun",
+        "rationale": "Validated rule budget: 2 advantage points / 2 payment points. Sanctuary stops bullets, not lasers or enemy bodies. Only the displayed clauses apply after Sign.",
+        "reflection": "normal",
+        "speed": "normal",
+        "title": "Rightward Mercy",
+        "version": 1,
+        "zone": "right"
+      },
+      "latencyMs": 2235,
+      "signed": true,
+      "revision": 1
+    },
+    {
+      "path": "/api/covenant",
+      "status": 200,
+      "provider": "openai",
+      "model": "gpt-5.6-luna",
+      "modelFormat": "living_covenant_rules_v3",
+      "modelIssue": null,
+      "spec": {
+        "version": 1,
+        "title": "Measured Reversal",
+        "zone": "none",
+        "speed": "slow",
+        "reflection": "charged",
+        "price": "weaker_gun",
+        "line": "Let the storm crawl and answer every shot with interest.",
+        "rationale": "Validated rule budget: 2 advantage points / 2 payment points. Dash through magenta lasers. Only the displayed clauses apply after Sign."
+      },
+      "latencyMs": 2175,
+      "accountedMicrodollars": 418
+    },
+    {
+      "path": "/api/covenant/sign",
+      "status": 200,
+      "provider": "openai",
+      "model": "gpt-5.6-luna",
+      "spec": {
+        "line": "Let the storm crawl and answer every shot with interest.",
+        "price": "weaker_gun",
+        "rationale": "Validated rule budget: 2 advantage points / 2 payment points. Dash through magenta lasers. Only the displayed clauses apply after Sign.",
+        "reflection": "charged",
+        "speed": "slow",
+        "title": "Measured Reversal",
+        "version": 1,
+        "zone": "none"
+      },
+      "latencyMs": 2175,
+      "signed": true,
+      "revision": 2
+    }
+  ],
+  "pageErrors": [],
+  "sourceCommit": "fad1fc1e338bc7a4c750742859c21889e5b009f1",
+  "deploymentId": "dpl_9GkMZF6NWQMbowgTY5rQ9NYAECiv"
+}

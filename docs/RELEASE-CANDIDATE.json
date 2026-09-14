@@ -1,18 +1,20 @@
 {
-  "recordedAt": "2026-09-14T14:54:42.217158+00:00",
-  "status": "incomplete submission packaging; production game verified, post-fix human success reported in Windows Vivaldi; public video/source access pending",
+  "recordedAt": "2026-09-14T15:06:05.010269+00:00",
+  "status": "incomplete submission packaging; Luna contract model deployed and production signing/combat verified; public video/source access pending",
   "production": "https://nemesis-pact-live.vercel.app",
   "repository": "https://github.com/Yasei-no-otoko/nemesis-pact-live",
   "repositoryVisibility": "private; user approval to publish pending",
   "branch": "ship/living-covenant",
-  "sourceCommit": "a85e4935be70d58dfbaadc359a9062e5d7e672df",
-  "deploymentId": "dpl_7G9GHUJMkeesY33BAeb8oCyYTvAz",
-  "deploymentUrl": "https://nemesis-pact-live-6h5xjzx13-wildmans-projects.vercel.app",
+  "sourceCommit": "fad1fc1e338bc7a4c750742859c21889e5b009f1",
+  "deploymentId": "dpl_9GkMZF6NWQMbowgTY5rQ9NYAECiv",
+  "deploymentUrl": "https://nemesis-pact-live-jj908jwtk-wildmans-projects.vercel.app",
   "models": {
     "voice": "gpt-live-1",
-    "contract": "openai/gpt-4.1-mini",
+    "contract": "openai/gpt-5.6-luna",
     "textBilledBy": "Vercel AI Gateway",
-    "voiceBilledBy": "OpenAI direct"
+    "voiceBilledBy": "OpenAI direct",
+    "contractReasoning": "none",
+    "contractServiceTier": "default"
   },
   "build": {
     "hostedSha256": "bee4b3d9a0482e9430202a776fa2c9a972e53c9f8b8ebb81755bc967d76a7a62",
@@ -33,9 +35,9 @@
     "Android/macOS Safari physical testing"
   ],
   "budgetStatus": {
-    "lastLedgerCheck": "2026-09-14T14:53:26.431Z",
-    "directOpenaiConservativeUsd": 0.8,
-    "gatewayConservativeUsd": 0.015306,
+    "lastLedgerCheck": "2026-09-14T15:03:40.406Z",
+    "directOpenaiConservativeUsd": 0.85,
+    "gatewayConservativeUsd": 0.018286,
     "directOpenaiCapUsd": 10,
     "gatewayCapUsd": 20,
     "vercelGrantReportedUsd": 30,
@@ -51,9 +53,9 @@
     "bytes": 7016686
   },
   "rollback": {
-    "sourceCommit": "e900edf95a03e4e5c60bd99208a8b2a9f6c3521e",
-    "deploymentId": "dpl_3yCSkWCzMXvEWjnEZhNCzr1SSZSb",
-    "reason": "prior caption presentation; retains corrected model generation, public pools, quotas and voice replay recovery; preserve Redis"
+    "sourceCommit": "a85e4935be70d58dfbaadc359a9062e5d7e672df",
+    "deploymentId": "dpl_7G9GHUJMkeesY33BAeb8oCyYTvAz",
+    "reason": "prior gpt-4.1-mini contract model with same scrollable captions, v3 schema, public pools and voice controls. Preserve Redis."
   },
   "compactUiValidation": {
     "passed": true,
@@ -91,9 +93,9 @@
     "scope": "Supplemental phone evidence; original order, speed and audio retained, English annotation band added. Not the required 60-second main video."
   },
   "currentTests": {
-    "passed": 207,
+    "passed": 209,
     "failed": 0,
-    "durationMs": 20581.5562,
+    "durationMs": 20562.3717,
     "syntaxFiles": 34,
     "node": "22.23.2"
   },
@@ -113,5 +115,12 @@
     "unchangedDimensions": true,
     "localLayoutCases": 7,
     "scope": "Edge automation with synthetic captions; mobile emulation, not a new physical phone test"
+  },
+  "lunaValidation": {
+    "evidence": "validation-current/luna/result.json",
+    "passed": true,
+    "productionModelCalls": 3,
+    "localModelCalls": 2,
+    "humanMicrophone": false
   }
 }

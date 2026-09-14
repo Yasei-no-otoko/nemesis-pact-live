@@ -21,3 +21,5 @@ Gateway total/public/judging caps and direct OpenAI voice caps remain unchanged.
 ## Evidence scope
 
 `validation-current/luna/live-handler.json` records two actual Gateway calls, returned upstream model IDs, valid contracts, usage and timing through the local handler with a production-authenticated app identity and shared quotas. It is not a browser, human-microphone or signature test. Production browser results and release metadata are recorded separately after deployment. Earlier human videos use gpt-4.1-mini and must not be relabeled as Luna footage.
+
+Production verified at `fad1fc1e338bc7a4c750742859c21889e5b009f1` / `dpl_9GkMZF6NWQMbowgTY5rQ9NYAECiv`: all three real browser proposals used Luna, followed by Sign revisions 1 and 2 and verified combat/health continuity. Latencies 1797/2235/2175ms, n=3; no p95 or general success-rate claim. See `validation-current/luna/production/result.json`.

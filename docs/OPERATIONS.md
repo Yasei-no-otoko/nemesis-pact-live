@@ -7,7 +7,7 @@ Production: https://nemesis-pact-live.vercel.app. Scope: only project `prj_fB5yG
 | Provider | Total | Verification | Public | Judging | Route |
 |---|---:|---:|---:|---:|---|
 | Direct OpenAI | $10 | $3 | $5 | $2 | GPT-Live-1 voice; one approved recorded-audio verification analysis |
-| Vercel AI Gateway | $20 | $1 | $14 | $5 | gpt-4.1-mini text only |
+| Vercel AI Gateway | $20 | $1 | $14 | $5 | GPT-5.6 Luna text only |
 
 These are separately approved application caps. Production now selects the **public** pool for both providers: `OPENAI_BUDGET_POOL=public` and `GATEWAY_BUDGET_POOL=public`. Both project-scoped selector updates and redeployment were confirmed; one live Gateway request settled exclusively against its public pool. Existing verification totals remain intact. No new direct-voice public session was created for this pool check. Before judging, an operator can select `judging`; the public pool cannot consume the reserved judging allocation. Never increase a cap or buy additional credit as an automatic fallback.
 
@@ -27,15 +27,17 @@ Before clearing an unknown-termination kill, independently confirm every affecte
 
 ## Rollback
 
-Current production source: `a85e4935be70d58dfbaadc359a9062e5d7e672df`, READY deployment `dpl_7G9GHUJMkeesY33BAeb8oCyYTvAz`. Model output format `living_covenant_rules_v3`; the browser public contract format is unchanged.
+Current production source: `fad1fc1e338bc7a4c750742859c21889e5b009f1`, READY deployment `dpl_9GkMZF6NWQMbowgTY5rQ9NYAECiv`. Model output format `living_covenant_rules_v3`; the browser public contract format is unchanged.
 
-To revert the scrollable Notary caption, restore source `e900edf95a03e4e5c60bd99208a8b2a9f6c3521e`, deployment `dpl_3yCSkWCzMXvEWjnEZhNCzr1SSZSb`. It retains the corrected model generation, approved public budget pools, voice replay recovery and durable limits. With the authenticated Vercel CLI and this project selected:
+To restore the prior gpt-4.1-mini contract model, roll back to source `a85e4935be70d58dfbaadc359a9062e5d7e672df`, deployment `dpl_7G9GHUJMkeesY33BAeb8oCyYTvAz`. It retains scrollable Notary captions, the v3 validated contract format, public budget pools and voice replay recovery. With the authenticated Vercel CLI and this project selected:
 
 ```sh
-vercel rollback dpl_3yCSkWCzMXvEWjnEZhNCzr1SSZSb --yes
+vercel rollback dpl_7G9GHUJMkeesY33BAeb8oCyYTvAz --yes
 vercel rollback status nemesis-pact-live
 ```
 
-Then verify the production alias, API gate and ledger. Rollback restores code/environment, not prior Redis contents; do not wipe durable money or signature records. This release changes caption presentation and retention only; budget pools, caps, keys and payment settings are unchanged. Never promote a pre-quota build to restore paid service.
+Then verify the production alias, API gate and ledger. Rollback restores code/environment, not prior Redis contents; do not wipe durable money or signature records. This release sets OPENAI_MODEL=gpt-5.6-luna and accounts for its cache-write premium; budget pools, caps, keys and payment settings are unchanged. A rollback restores the older deployment environment; keep the project OPENAI_MODEL setting aligned before any subsequent redeploy. Never promote a pre-quota build to restore paid service.
 
 Secrets remain only in Git-ignored local environment files and sensitive server environment variables. Current exact-value scan found no configured secret in tracked files; that limited check is not a comprehensive security audit. Do not print keys, Redis tokens, cookies, full transcripts or raw provider payloads in operational logs.
+
+Luna uses standard/default tier, reasoning none, a 700-token output cap and 12-second timeout. Catalog rates and conservative cache-write handling are documented in MODEL-LUNA.md. The $0.01 reservation is unchanged; missing usage retains that amount. Historical gpt-4.1-mini media and validation remain labeled with their actual model.

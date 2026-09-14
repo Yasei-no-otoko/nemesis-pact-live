@@ -1,0 +1,74 @@
+{
+  "checkedAt": "2026-09-14T15:06:05.010269+00:00",
+  "sourceCommit": "fad1fc1e338bc7a4c750742859c21889e5b009f1",
+  "deploymentId": "dpl_9GkMZF6NWQMbowgTY5rQ9NYAECiv",
+  "deploymentUrl": "https://nemesis-pact-live-jj908jwtk-wildmans-projects.vercel.app",
+  "production": "https://nemesis-pact-live.vercel.app",
+  "model": "gpt-5.6-luna",
+  "gatewayId": "openai/gpt-5.6-luna",
+  "voiceModel": "gpt-live-1",
+  "reasoning": "none",
+  "serviceTier": "default",
+  "maxOutputTokens": 700,
+  "upstreamDeadlineMs": 12000,
+  "reservationMicrodollars": 10000,
+  "unitTests": {
+    "passed": 209,
+    "failed": 0,
+    "durationMs": 20562.3717,
+    "syntaxFiles": 34,
+    "node": "22.23.2"
+  },
+  "productionBrowser": {
+    "passed": true,
+    "modelCalls": 3,
+    "latenciesMs": [
+      1797,
+      2235,
+      2175
+    ],
+    "meanLatencyMs": 2069.0,
+    "maxLatencyMs": 2235,
+    "accountedMicrodollars": 1081,
+    "signedRevisions": [
+      1,
+      2
+    ],
+    "bulletsErased": 2,
+    "hpContinuity": [
+      9,
+      9
+    ],
+    "bossHpContinuity": [
+      3100.7999999999884,
+      3100.7999999999884
+    ],
+    "timeContinuitySeconds": [
+      8.42,
+      8.43
+    ],
+    "browser": "153.0.4234.32",
+    "renderer": "WEBGPU / COMPUTE",
+    "viewport": [
+      440,
+      956
+    ],
+    "touchEmulation": true,
+    "humanMicrophone": false,
+    "pageErrors": []
+  },
+  "localHandlerCalls": 2,
+  "localCorrectedAccountedMicrodollars": 739,
+  "realModelCallsThisChange": 5,
+  "accountedMicrodollarsThisChange": 1820,
+  "budgetLedger": {
+    "checkedAt": "2026-09-14T15:03:40.406Z",
+    "directOpenaiConservativeUsd": 0.85,
+    "gatewayConservativeUsd": 0.018286,
+    "openaiCapUsd": 10,
+    "gatewayCapUsd": 20,
+    "pool": "public",
+    "unknownInvoiceAndInfrastructure": true
+  },
+  "limits": "Previous human footage and Vivaldi confirmation used gpt-4.1-mini; not relabeled as Luna. No fresh human GPT-Live-1 test or physical phone test in this model switch. Shared totals include concurrent usage. Model samples do not establish p95 or general reliability."
+}

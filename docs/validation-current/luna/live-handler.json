@@ -1,0 +1,98 @@
+{
+  "checkedAt": "2026-09-14T14:59:03.651Z",
+  "scope": "Actual Gateway calls through local covenant handler with production-authenticated app identity and shared verification quota. No mock, browser voice or automatic Sign.",
+  "reasoning": "none",
+  "serviceTier": "default",
+  "pool": "verification",
+  "cases": [
+    {
+      "prompt": "左を安全にして、やっぱり右にして。弾を遅く、敵の増援は許可。",
+      "status": 200,
+      "provider": {
+        "status": 200,
+        "returnedModel": "openai/gpt-5.6-luna",
+        "responseStatus": "completed",
+        "serviceTier": "default",
+        "usage": {
+          "input_tokens": 843,
+          "output_tokens": 98,
+          "total_tokens": 941,
+          "input_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 0
+          },
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        }
+      },
+      "contractProvider": "openai",
+      "contractModel": "gpt-5.6-luna",
+      "modelFormat": "living_covenant_rules_v3",
+      "modelIssue": null,
+      "spec": {
+        "version": 1,
+        "title": "Rightward Reinforcement Pact",
+        "zone": "right",
+        "speed": "slow",
+        "reflection": "normal",
+        "price": "reinforcements",
+        "line": "The right side answers, and the hostile ranks close in.",
+        "rationale": "Validated rule budget: 3 advantage points / 3 payment points. Sanctuary stops bullets, not lasers or enemy bodies. Only the displayed clauses apply after Sign."
+      },
+      "reservedMicrodollars": 10000,
+      "accountedMicrodollars": 287,
+      "elapsedMs": 3346,
+      "passed": true
+    },
+    {
+      "prompt": "結界なし。弾を遅く、反射を強く。通常射撃を弱くしていい",
+      "status": 200,
+      "provider": {
+        "status": 200,
+        "returnedModel": "openai/gpt-5.6-luna",
+        "responseStatus": "completed",
+        "serviceTier": "default",
+        "usage": {
+          "input_tokens": 1327,
+          "output_tokens": 100,
+          "total_tokens": 1427,
+          "input_tokens_details": {
+            "cached_tokens": 0,
+            "cache_write_tokens": 1324
+          },
+          "output_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        }
+      },
+      "contractProvider": "openai",
+      "contractModel": "gpt-5.6-luna",
+      "modelFormat": "living_covenant_rules_v3",
+      "modelIssue": null,
+      "spec": {
+        "version": 1,
+        "title": "The Muted Rebound",
+        "zone": "none",
+        "speed": "slow",
+        "reflection": "charged",
+        "price": "weaker_gun",
+        "line": "THE NOTARY: Slow the storm, sharpen its echo, and pay with thunder.",
+        "rationale": "Validated rule budget: 2 advantage points / 2 payment points. Dash through magenta lasers. Only the displayed clauses apply after Sign."
+      },
+      "reservedMicrodollars": 10000,
+      "accountedMicrodollars": 386,
+      "elapsedMs": 2820,
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "accountingCorrection": {
+    "checkedAt": "2026-09-14T15:00:42.706Z",
+    "additionalMicrodollars": 66,
+    "pool": "verification",
+    "reason": "First Luna probe exposed 1324 cache-write input tokens at $0.25/M instead of base $0.20/M. Added the 66-microdollar shortfall to durable accounting; server accounting is fixed before production model switch.",
+    "realModelCalls": 0,
+    "settled": true
+  }
+}

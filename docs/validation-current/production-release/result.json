@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-14T14:53:25.223Z",
+  "checkedAt": "2026-09-14T15:03:13.250Z",
   "production": "https://nemesis-pact-live.vercel.app",
   "httpStatus": 200,
   "hostedBytes": 373377,
@@ -21,8 +21,8 @@
     "provider": "local-rules"
   },
   "realModelCalls": 0,
-  "sourceCommit": "a85e4935be70d58dfbaadc359a9062e5d7e672df",
-  "deploymentId": "dpl_7G9GHUJMkeesY33BAeb8oCyYTvAz",
-  "uiEvidence": "../notary-scroll/production/result.json",
-  "backendScope": "unchanged from v3/public-pool verified release; no new paid model call for this caption-only patch"
+  "sourceCommit": "fad1fc1e338bc7a4c750742859c21889e5b009f1",
+  "deploymentId": "dpl_9GkMZF6NWQMbowgTY5rQ9NYAECiv",
+  "backendEvidence": "../luna/production/result.json",
+  "backendScope": "Three actual gpt-5.6-luna proposals and two explicit signatures; no new voice session created by browser regression."
 }
