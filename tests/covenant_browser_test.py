@@ -10,7 +10,7 @@ OUT=evidence_dir('browser/covenant')
 HTML=(R/'dist/NEMESIS-PACT.html').read_text(encoding='utf-8')
 results=[]
 with sync_playwright() as pw:
-    b=pw.chromium.launch(**launch_kwargs(headless=False),args=['--no-sandbox','--disable-dev-shm-usage','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader'])
+    b=pw.chromium.launch(**launch_kwargs(headless=True),args=['--no-sandbox','--disable-dev-shm-usage','--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader'])
     for name,w,h,mobile in [('desktop',1280,800,False),('portrait',390,844,True),('small',320,568,True)]:
         c=b.new_context(viewport={'width':w,'height':h},has_touch=mobile,is_mobile=mobile,device_scale_factor=1,offline=True)
         p=c.new_page();p.set_default_timeout(6000); errors=[]; network=[]; checks=[]
@@ -22,11 +22,13 @@ with sync_playwright() as pw:
         assert p.evaluate('NEMESIS_RENDERER.stats().backend')=='WEBGL2 / PBR'
         p.screenshot(path=str(OUT/f'{name}-01-title.png'))
         p.click('#first-contact')
+        p.click('#cv-open-connection');p.locator('#cv-mode').select_option('local');p.click('#cv-use-local')
         initial=p.evaluate('JSON.stringify(__PACT_TEST__.world)')
         p.click('#cv-propose'); p.wait_for_function('!document.getElementById("cv-sign").disabled')
         assert initial==p.evaluate('JSON.stringify(__PACT_TEST__.world)')
         assert 'LOCAL RULES' in p.inner_text('#cv-provider')
         checks.append('Proposal is visibly local and cannot mutate the world')
+        if mobile:p.click('#cv-tab-negotiate')
         p.fill('#cv-prompt','Put the sanctuary on the right.')
         assert p.locator('#cv-sign').is_disabled()
         p.fill('#cv-prompt','Move the sanctuary to the left. Slow your bullets. I accept reinforcements.')
@@ -35,6 +37,7 @@ with sync_playwright() as pw:
         assert p.evaluate("document.querySelector('#covenant-screen').scrollWidth<=document.querySelector('#covenant-screen').clientWidth+1")
         p.screenshot(path=str(OUT/f'{name}-02-contract.png'))
         checks.append('Editing invalidates signature; responsive contract does not overflow horizontally')
+        if mobile:p.click('#cv-tab-review')
         p.click('#cv-sign')
         assert p.evaluate('__PACT_TEST__.world.spec.zone')=='left'
         assert p.evaluate('__PACT_TEST__.world.mods.speed')==.72
@@ -52,7 +55,9 @@ with sync_playwright() as pw:
         assert frozen==p.evaluate('JSON.stringify(__PACT_TEST__.world)')
         checks.append('Render is simulation-pure; 18-second parley freezes combat')
         p.fill('#cv-prompt','Amplify my reflected bullets and slow your fire. My gun can be weaker.')
+        if mobile:p.click('#cv-tab-negotiate')
         p.click('#cv-propose');p.wait_for_function('!document.getElementById("cv-sign").disabled')
+        if mobile:p.click('#cv-tab-review')
         assert frozen==p.evaluate('JSON.stringify(__PACT_TEST__.world)')
         p.evaluate('__PACT_TEST__.renderCovenantPreview(8)')
         p.screenshot(path=str(OUT/f'{name}-04-amendment.png'))
@@ -67,9 +72,10 @@ with sync_playwright() as pw:
         p.screenshot(path=str(OUT/f'{name}-05-amended-combat.png'))
         report=p.evaluate('__PACT_TEST__.world.report()')
         assert len(report['receipts'])==2
-        assert report['liveVoice']=='not-integrated'
+        assert report['liveVoice']['status']=='not-used' and report['liveVoice']['signedContracts']==0
         assert all(x['provider']=='local-rules' for x in report['receipts'])
         p.evaluate('__PACT_TEST__.startFirstContact("BROWSER-CANCEL-CHECK")')
+        p.click('#cv-open-connection');p.locator('#cv-mode').select_option('local');p.click('#cv-use-local')
         p.click('#cv-propose');p.wait_for_function('!document.getElementById("cv-sign").disabled');p.click('#cv-sign')
         p.evaluate('__PACT_TEST__.advance(980,{shoot:true,autoAim:true});__PACT_TEST__.openParley()')
         t=p.evaluate('__PACT_TEST__.world.time')
@@ -79,6 +85,7 @@ with sync_playwright() as pw:
         assert p.evaluate('__PACT_TEST__.world.time')==t
         checks.append('Cancel resumes signed rules without spending the amendment')
         p.evaluate('__PACT_TEST__.openParley()')
+        if mobile:p.click('#cv-tab-negotiate')
         p.click('#cv-open-connection')
         p.locator('#cv-mode').select_option('server')
         p.click('#cv-connection-done')
@@ -94,5 +101,5 @@ with sync_playwright() as pw:
         results.append({'name':name,'viewport':[w,h],'checks':checks,'report':report,'errors':errors,'externalRequests':network})
         print(name,len(checks),'checks passed',flush=True)
         c.close()
-    (OUT/'covenant-browser-results.json').write_text(json.dumps({'build':'0.5.0','htmlSha256':hashlib.sha256(HTML.encode()).hexdigest(),'browser':b.version,'renderer':'WebGL2 via ANGLE / SwiftShader SOFTWARE','nativeWebGPU':'NOT EXECUTED','realApiCalls':0,'scope':'Controlled browser interactions; no human/device/FPS claim','results':results},indent=2))
+    (OUT/'covenant-browser-results.json').write_text(json.dumps({'build':json.loads((R/'package.json').read_text())['version'],'htmlSha256':hashlib.sha256(HTML.encode()).hexdigest(),'browser':b.version,'renderer':'WebGL2 via ANGLE / SwiftShader SOFTWARE','nativeWebGPU':'NOT EXECUTED','realApiCalls':0,'scope':'Controlled browser interactions; no human/device/FPS claim','results':results},indent=2))
     b.close()

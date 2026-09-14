@@ -1,4 +1,4 @@
-# NEMESIS PACT — Living Covenant
+# NEMESIS PACT v0.9.9 — Living Covenant
 
 Negotiate the rules. Fight your deal.
 
@@ -6,9 +6,11 @@ Negotiate the rules. Fight your deal.
 
 Built from the verified v0.5.0 source ZIP. The framework-free game and six-sector campaign are preserved. First Contact is a short boss encounter: ask for a sanctuary, slower bullets or stronger reflections, accept a cost, review the clauses, and click **Sign**. At 8 seconds press **R** to renegotiate once; at 18 seconds parley opens automatically. Health, boss damage and elapsed combat time survive the amendment.
 
+The v0.9.9 craft pass brings a ceremonial Notary, quieter arena, compact mobile Negotiate/Review steps and clickable desktop abilities. [Concept and improvement loop](docs/V0.9.9-PLAN.md). The existing human59s/60fps movie shows the prior verified build, not the refreshed artwork.
+
 ## Play
 
-1. Choose **Negotiate the rules. Fight your deal.**
+1. Choose **Make first contact**
 2. Use **LOCAL RULES** immediately, or consent to OpenAI processing. Type English/Japanese or click **Start voice** and allow the microphone.
 3. Review the displayed advantages and price. An unsigned proposal changes nothing; only **Sign** applies it.
 4. Move with WASD/arrows, parry with E, dash with Space. Aim/fire are automatic in First Contact. F uses Nova, Q breaks the pact, R opens parley, Esc pauses. Touch controls are available.

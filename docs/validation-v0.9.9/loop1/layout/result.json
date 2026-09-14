@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-09-14T18:30:57Z",
+  "url": "http://127.0.0.1:8099/",
+  "browser": "153.0.4234.32",
+  "realModelCalls": 0,
+  "input": "automated native browser; LOCAL RULES; synthetic long captions only for geometry stress",
+  "physicalPhone": false,
+  "results": [
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "passed": false,
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\wildman\\Downloads\\NEMESIS-PACT-3D-EN-v0.5.0-source\\NEMESIS-PACT\\tests\\covenant_layout_browser.py\", line 56, in <module>\n    maximum=geometry(p);assert all(x['scroll']<=x['height']+1 for x in maximum['panels'].values()),maximum\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: {'scrollHeight': 800, 'clientHeight': 800, 'scrollTop': 0, 'controls': {'cv-open-connection': {'top': 35.775001525878906, 'bottom': 84.375, 'left': 1422.417236328125, 'right': 1646.643798828125}, 'cv-close': {'top': 35.775001525878906, 'bottom': 84.375, 'left': 1660.143798828125, 'right': 1780.800048828125}, 'cv-voice-start': {'top': 473.4703063964844, 'bottom': 522.0703125, 'left': 159.4499969482422, 'right': 271.98516845703125}, 'cv-prompt': {'top': 820.7999877929688, 'bottom': 920.7000122070312, 'left': 139.1999969482422, 'right': 943.7999725341797}, 'cv-propose': {'top': 993.6000366210938, 'bottom': 1058.4000244140625, 'left': 139.1999969482422, 'right': 943.7999725341797}, 'cv-sign': {'top': 993.6000366210938, 'bottom': 1058.4000244140625, 'left': 976.2000122070312, 'right': 1780.800048828125}, 'cv-contract-title': {'top': 360.45001220703125, 'bottom': 481.95001220703125, 'left': 1004.5499877929688, 'right': 1752.4500732421875}, 'cv-clauses': {'top': 498.1499938964844, 'bottom': 647.4515991210938, 'left': 1004.5499877929688, 'right': 1752.4500732421875}, 'cv-rule-note': {'top': 663.6515502929688, 'bottom': 687.9515991210938, 'left': 1004.5499877929688, 'right': 1752.4500732421875}, 'cv-preview': {'top': 704.1515502929688, 'bottom': 855.3515625, 'left': 1004.5499877929688, 'right': 1752.4500732421875}, 'cv-status': {'top': 935.5499877929688, 'bottom': 980.1000366210938, 'left': 976.2000122070312, 'right': 1780.800048828125}}, 'panels': {'.covenant-wrap': {'height': 800, 'scroll': 800}, '.cv-editor': {'height': 686, 'scroll': 686}, '.cv-review': {'height': 686, 'scroll': 686}, '.cv-proposal': {'height': 544, 'scroll': 548}}}\n",
+      "errors": []
+    }
+  ],
+  "passed": false,
+  "error": "{'scrollHeight': 800, 'clientHeight': 800, 'scrollTop': 0, 'controls': {'cv-open-connection': {'top': 35.775001525878906, 'bottom': 84.375, 'left': 1422.417236328125, 'right': 1646.643798828125}, 'cv-close': {'top': 35.775001525878906, 'bottom': 84.375, 'left': 1660.143798828125, 'right': 1780.800048828125}, 'cv-voice-start': {'top': 473.4703063964844, 'bottom': 522.0703125, 'left': 159.4499969482422, 'right': 271.98516845703125}, 'cv-prompt': {'top': 820.7999877929688, 'bottom': 920.7000122070312, 'left': 139.1999969482422, 'right': 943.7999725341797}, 'cv-propose': {'top': 993.6000366210938, 'bottom': 1058.4000244140625, 'left': 139.1999969482422, 'right': 943.7999725341797}, 'cv-sign': {'top': 993.6000366210938, 'bottom': 1058.4000244140625, 'left': 976.2000122070312, 'right': 1780.800048828125}, 'cv-contract-title': {'top': 360.45001220703125, 'bottom': 481.95001220703125, 'left': 1004.5499877929688, 'right': 1752.4500732421875}, 'cv-clauses': {'top': 498.1499938964844, 'bottom': 647.4515991210938, 'left': 1004.5499877929688, 'right': 1752.4500732421875}, 'cv-rule-note': {'top': 663.6515502929688, 'bottom': 687.9515991210938, 'left': 1004.5499877929688, 'right': 1752.4500732421875}, 'cv-preview': {'top': 704.1515502929688, 'bottom': 855.3515625, 'left': 1004.5499877929688, 'right': 1752.4500732421875}, 'cv-status': {'top': 935.5499877929688, 'bottom': 980.1000366210938, 'left': 976.2000122070312, 'right': 1780.800048828125}}, 'panels': {'.covenant-wrap': {'height': 800, 'scroll': 800}, '.cv-editor': {'height': 686, 'scroll': 686}, '.cv-review': {'height': 686, 'scroll': 686}, '.cv-proposal': {'height': 544, 'scroll': 548}}}"
+}

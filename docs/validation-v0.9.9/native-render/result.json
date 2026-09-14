@@ -1,0 +1,381 @@
+{
+  "checkedAt": "2026-09-14T18:53:19Z",
+  "browser": "153.0.4234.32",
+  "physicalHost": "Windows / AMD Radeon RX 6900 XT (CIM driver 32.0.21045.5002)",
+  "method": "automated ordinary LOCAL RULES controls; actual browser rendering; 10-second rAF samples; no real phones, no synthetic time, no model calls; rAF is frame cadence, not GPU timestamp query",
+  "cases": [
+    {
+      "name": "webgl2-desktop",
+      "url": "http://127.0.0.1:8099/?renderer=webgl2",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "mobileEmulation": false,
+      "headless": true,
+      "startupMs": 2094,
+      "rendererInfo": {
+        "stats": {
+          "build": "0.9.9",
+          "backend": "WEBGL2 / PBR",
+          "frames": 67,
+          "computeDispatches": 0,
+          "instances": 239,
+          "draws": 6,
+          "hdr": true,
+          "errors": []
+        },
+        "glAdapter": {
+          "vendor": "Google Inc. (AMD)",
+          "renderer": "ANGLE (AMD, AMD Radeon RX 6900 XT (0x000073BF) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "webgpuAdapter": null,
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 Edg/153.0.0.0",
+        "dpr": 1
+      },
+      "sample": {
+        "elapsedMs": 10012.79999998808,
+        "rendererFrames": 601,
+        "endState": {
+          "build": "0.9.9",
+          "screen": "game",
+          "negotiationStep": "review",
+          "coordinates": "origin top-left; x right; y down",
+          "renderer": "WEBGL2 / PBR",
+          "arena": {
+            "width": 1280,
+            "height": 800
+          },
+          "phase": "combat",
+          "seconds": 10.8,
+          "player": {
+            "x": 449,
+            "y": 498,
+            "hp": 10,
+            "energy": 52
+          },
+          "enemies": [
+            {
+              "type": "boss",
+              "x": 448,
+              "y": 240,
+              "hp": 2592
+            },
+            {
+              "type": "turret",
+              "x": 230,
+              "y": 330,
+              "hp": 58
+            },
+            {
+              "type": "turret",
+              "x": 1050,
+              "y": 330,
+              "hp": 58
+            }
+          ],
+          "hostileBullets": 26,
+          "revision": 1,
+          "spec": {
+            "version": 1,
+            "title": "Left-side Covenant",
+            "zone": "left",
+            "speed": "slow",
+            "reflection": "normal",
+            "price": "reinforcements",
+            "line": "Every promise needs a price. Read the binding clauses below. Sign only what you intend to keep.",
+            "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+          },
+          "proposal": null,
+          "effects": {
+            "shielded": 3,
+            "reflectedDamage": 0,
+            "gunDamage": 1008,
+            "amendments": 0
+          },
+          "voice": "idle",
+          "liveVoice": {
+            "model": "gpt-live-1",
+            "connectionStarted": 0,
+            "sessionClosed": 0,
+            "delegationRequests": 0,
+            "proposalsReturned": 0,
+            "openaiProposals": 0,
+            "signedContracts": 0,
+            "lastState": "idle",
+            "status": "not-used"
+          }
+        },
+        "renderer": {
+          "build": "0.9.9",
+          "backend": "WEBGL2 / PBR",
+          "frames": 669,
+          "computeDispatches": 0,
+          "instances": 257,
+          "draws": 6,
+          "hdr": true,
+          "errors": []
+        },
+        "rafSamples": 601,
+        "rafMeanMs": 16.66023294507168,
+        "rafMaxMs": 17,
+        "rafMedianMs": 16.69999999999891,
+        "renderFps": 60.02317034203375
+      },
+      "errors": [],
+      "apiRequests": []
+    },
+    {
+      "name": "auto-desktop",
+      "url": "http://127.0.0.1:8099/",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "mobileEmulation": false,
+      "headless": true,
+      "startupMs": 1859,
+      "rendererInfo": {
+        "stats": {
+          "build": "0.9.9",
+          "backend": "WEBGPU / COMPUTE",
+          "frames": 58,
+          "computeDispatches": 174,
+          "instances": 239,
+          "draws": 6,
+          "hdr": true,
+          "errors": []
+        },
+        "glAdapter": {
+          "vendor": "Google Inc. (AMD)",
+          "renderer": "ANGLE (AMD, AMD Radeon RX 6900 XT (0x000073BF) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "webgpuAdapter": {
+          "vendor": "amd",
+          "architecture": "rdna-2",
+          "device": "",
+          "description": ""
+        },
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 Edg/153.0.0.0",
+        "dpr": 1
+      },
+      "sample": {
+        "elapsedMs": 10001.600000023842,
+        "rendererFrames": 601,
+        "endState": {
+          "build": "0.9.9",
+          "screen": "game",
+          "negotiationStep": "review",
+          "coordinates": "origin top-left; x right; y down",
+          "renderer": "WEBGPU / COMPUTE",
+          "arena": {
+            "width": 1280,
+            "height": 800
+          },
+          "phase": "combat",
+          "seconds": 10.88,
+          "player": {
+            "x": 424,
+            "y": 483,
+            "hp": 10,
+            "energy": 56
+          },
+          "enemies": [
+            {
+              "type": "boss",
+              "x": 447,
+              "y": 241,
+              "hp": 2592
+            },
+            {
+              "type": "turret",
+              "x": 230,
+              "y": 330,
+              "hp": 58
+            },
+            {
+              "type": "turret",
+              "x": 1050,
+              "y": 330,
+              "hp": 58
+            }
+          ],
+          "hostileBullets": 36,
+          "revision": 1,
+          "spec": {
+            "version": 1,
+            "title": "Left-side Covenant",
+            "zone": "left",
+            "speed": "slow",
+            "reflection": "normal",
+            "price": "reinforcements",
+            "line": "Every promise needs a price. Read the binding clauses below. Sign only what you intend to keep.",
+            "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+          },
+          "proposal": null,
+          "effects": {
+            "shielded": 6,
+            "reflectedDamage": 0,
+            "gunDamage": 1008,
+            "amendments": 0
+          },
+          "voice": "idle",
+          "liveVoice": {
+            "model": "gpt-live-1",
+            "connectionStarted": 0,
+            "sessionClosed": 0,
+            "delegationRequests": 0,
+            "proposalsReturned": 0,
+            "openaiProposals": 0,
+            "signedContracts": 0,
+            "lastState": "idle",
+            "status": "not-used"
+          }
+        },
+        "renderer": {
+          "build": "0.9.9",
+          "backend": "WEBGPU / COMPUTE",
+          "frames": 659,
+          "computeDispatches": 1977,
+          "instances": 257,
+          "draws": 6,
+          "hdr": true,
+          "errors": []
+        },
+        "rafSamples": 601,
+        "rafMeanMs": 16.641597337810055,
+        "rafMaxMs": 16.900000000001455,
+        "rafMedianMs": 16.69999999999891,
+        "renderFps": 60.09038553817062
+      },
+      "errors": [],
+      "apiRequests": []
+    },
+    {
+      "name": "auto-portrait",
+      "url": "http://127.0.0.1:8099/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "mobileEmulation": true,
+      "headless": true,
+      "startupMs": 1891,
+      "rendererInfo": {
+        "stats": {
+          "build": "0.9.9",
+          "backend": "WEBGPU / COMPUTE",
+          "frames": 5,
+          "computeDispatches": 15,
+          "instances": 239,
+          "draws": 6,
+          "hdr": true,
+          "errors": []
+        },
+        "glAdapter": {
+          "vendor": "Google Inc. (AMD)",
+          "renderer": "ANGLE (AMD, AMD Radeon RX 6900 XT (0x000073BF) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+        },
+        "webgpuAdapter": {
+          "vendor": "amd",
+          "architecture": "rdna-2",
+          "device": "",
+          "description": ""
+        },
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 Edg/153.0.0.0",
+        "dpr": 1
+      },
+      "sample": {
+        "elapsedMs": 10013.400000035763,
+        "rendererFrames": 598,
+        "endState": {
+          "build": "0.9.9",
+          "screen": "game",
+          "negotiationStep": "review",
+          "coordinates": "origin top-left; x right; y down",
+          "renderer": "WEBGPU / COMPUTE",
+          "arena": {
+            "width": 720,
+            "height": 936
+          },
+          "phase": "combat",
+          "seconds": 10.06,
+          "player": {
+            "x": 360,
+            "y": 711,
+            "hp": 9,
+            "energy": 52
+          },
+          "enemies": [
+            {
+              "type": "boss",
+              "x": 264,
+              "y": 200,
+              "hp": 2640
+            },
+            {
+              "type": "turret",
+              "x": 130,
+              "y": 301,
+              "hp": 58
+            },
+            {
+              "type": "turret",
+              "x": 590,
+              "y": 301,
+              "hp": 58
+            }
+          ],
+          "hostileBullets": 25,
+          "revision": 1,
+          "spec": {
+            "version": 1,
+            "title": "Left-side Covenant",
+            "zone": "left",
+            "speed": "slow",
+            "reflection": "normal",
+            "price": "reinforcements",
+            "line": "Every promise needs a price. Read the binding clauses below. Sign only what you intend to keep.",
+            "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+          },
+          "proposal": null,
+          "effects": {
+            "shielded": 2,
+            "reflectedDamage": 0,
+            "gunDamage": 960,
+            "amendments": 0
+          },
+          "voice": "idle",
+          "liveVoice": {
+            "model": "gpt-live-1",
+            "connectionStarted": 0,
+            "sessionClosed": 0,
+            "delegationRequests": 0,
+            "proposalsReturned": 0,
+            "openaiProposals": 0,
+            "signedContracts": 0,
+            "lastState": "idle",
+            "status": "not-used"
+          }
+        },
+        "renderer": {
+          "build": "0.9.9",
+          "backend": "WEBGPU / COMPUTE",
+          "frames": 604,
+          "computeDispatches": 1812,
+          "instances": 239,
+          "draws": 6,
+          "hdr": true,
+          "errors": []
+        },
+        "rafSamples": 598,
+        "rafMeanMs": 16.74481605357151,
+        "rafMaxMs": 66.60000000000036,
+        "rafMedianMs": 16.69999999999891,
+        "renderFps": 59.71997523297424
+      },
+      "errors": [],
+      "apiRequests": []
+    }
+  ]
+}

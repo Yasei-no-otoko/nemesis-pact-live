@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#080e18">
 <meta name="description" content="BLAST BUSTER: NEMESIS PACT — Turn their fire against them. An offline pact-driven arena shooter, built for portrait touch play.">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; media-src 'none'; font-src 'none'; base-uri 'none'; form-action 'none'">
-<title>BLAST BUSTER: NEMESIS PACT — Living Covenant v0.5.0</title>
+<title>BLAST BUSTER: NEMESIS PACT — Living Covenant v0.9.9</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23080e18'/%3E%3Cpath d='M32 6 56 54 32 42 8 54Z' fill='%2378e8d0'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="src/style.css">
 <link rel="stylesheet" href="src/mobile.css">
@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="src/expansion.css">
 <link rel="stylesheet" href="src/audio.css">
 <link rel="stylesheet" href="src/covenant.css">
+<link rel="stylesheet" href="src/polish.css">
 </head>
 <body>
 <main id="stage" aria-label="NEMESIS PACT game">
@@ -32,10 +33,10 @@
       <div id="pact-hud"><span class="micro">ACTIVE PACT</span><strong id="pact-name"></strong><small id="pact-state"></small></div>
       <div id="wave-hud"><span id="wave-label"></span><div class="wave-track"><i id="wave-progress"></i></div></div>
       <div class="hud-bottom">
-        <div class="ability" id="dash-ability"><kbd>SPACE</kbd><span>DASH<small id="dash-status">READY</small></span><i id="dash-meter"></i></div>
-        <div class="ability" id="parry-ability"><kbd>E / RMB</kbd><span>PARRY<small id="parry-status">READY</small></span><i id="parry-meter"></i></div>
-        <div class="nova-ability" id="nova-ability"><div><kbd>F</kbd><b>SUPERNOVA</b><span id="energy-num">0%</span></div><div class="energy-track"><i id="energy-meter"></i></div></div>
-        <div class="ability breach-ability" id="breach-ability"><kbd>Q</kbd><span>BREAK PACT<small id="breach-status">Break pact</small></span></div>
+        <button type="button" class="ability" id="dash-ability"><kbd>SPACE</kbd><span>DASH<small id="dash-status">READY</small></span><i id="dash-meter"></i></button>
+        <button type="button" class="ability" id="parry-ability"><kbd>E / RMB</kbd><span>PARRY<small id="parry-status">READY</small></span><i id="parry-meter"></i></button>
+        <button type="button" class="nova-ability" id="nova-ability"><div><kbd>F</kbd><b>SUPERNOVA</b><span id="energy-num">0%</span></div><div class="energy-track"><i id="energy-meter"></i></div></button>
+        <button type="button" class="ability breach-ability" id="breach-ability"><kbd>Q</kbd><span>BREAK PACT<small id="breach-status">Break pact</small></span></button>
       </div>
       <div id="build-hud"></div><div id="covenant-live" hidden><div><span id="cv-live-provider">LOCAL RULES</span><b id="cv-live-title"></b><small id="cv-live-impact"></small></div><button id="cv-parley"><kbd>R</kbd> PARLEY</button></div>
     </header>
@@ -44,17 +45,17 @@
     <div id="tutorial-hud" hidden><small>FLIGHT SCHOOL / TRAINING</small><h3 id="tutorial-title"></h3><p id="tutorial-detail"></p><button id="training-exit" class="text-button">Exit training →</button></div>
     <section id="menu" class="screen title-screen" aria-label="Title screen">
       <div class="title-top"><span><i class="status-dot"></i> WILDMAN / ORIGINAL GAME</span><span>VOICE · TEXT · LOCAL RULES</span></div>
-      <div class="title-content"><div class="eyebrow">B L A S T &nbsp; B U S T E R</div>
+      <div class="title-content"><div class="eyebrow">A LIVING COVENANT</div>
         <h1>NEMESIS<br><span>PACT<span class="title-cross">✳</span></span></h1>
         <p class="tagline">The enemy listens.<br>The battlefield changes.</p>
         <p class="title-desc">Name your terms. Sign a living covenant.<br>Return their fire. Renegotiate. Or break your word.</p>
-        <div class="mobile-only mobile-pitch"><span>01</span> MOVE.<span>02</span> PARRY.<span>03</span> MAKE A PACT.</div><div class="title-actions"><button id="first-contact" class="primary">Negotiate the rules. Fight your deal. <span>↗</span></button><button id="start" class="secondary">Full campaign</button></div><p class="first-contact-note">START HERE / FIRST CONTACT · AUTO AIM & FIRE · ONE BOSS</p>
+        <div class="title-steps" aria-label="How First Contact works"><span><b>01</b> NEGOTIATE</span><i>→</i><span><b>02</b> SIGN</span><i>→</i><span><b>03</b> SURVIVE</span></div><div class="title-actions"><button id="first-contact" class="primary">Make first contact <span>↗</span></button><button id="start" class="secondary">Full campaign</button></div><p class="first-contact-note">ONE BOSS · 2–3 MIN · AUTO AIM & FIRE</p>
         <div class="title-links"><button id="train" class="text-button">Training</button><button id="help" class="text-button">How to play ↗</button><button id="archive-open" class="text-button">Archive</button><button id="settings" class="text-button">Settings ↗</button><button id="daily" class="text-button">Daily seed ↗</button></div>
       </div>
       <div class="hero-caption"><span class="micro">YOUR ENEMY. YOUR RULES.</span><div><span class="tiny-line"></span> 01 / THE NOTARY</div></div>
-      <div class="title-bottom"><span>LIVING COVENANT / v0.5.0 / 6-SECTOR CAMPAIGN</span><span id="best-score">BEST —</span><span class="desktop-only">WASD + MOUSE · HEADPHONES RECOMMENDED</span><span class="mobile-only">TOUCH TO MOVE · AUTO AIM</span></div>
+      <div class="title-bottom"><span>LIVING COVENANT / v0.9.9 / 6-SECTOR CAMPAIGN</span><span id="best-score">BEST —</span><span class="desktop-only">WASD + MOUSE · HEADPHONES RECOMMENDED</span><span class="mobile-only">TOUCH TO MOVE · AUTO AIM</span></div>
     </section>
-    <section id="loadout" class="screen backdrop" hidden aria-label="Run setup"><div class="panel loadout-panel"><span class="eyebrow">BEFORE THE FIRST SHOT</span><h2>Fly your way.</h2><p class="muted">Three sectors. Three bosses. One life.<br>Defeat a boss to restore 2 hull. Fall, and start again.</p>
+    <section id="loadout" class="screen backdrop" hidden aria-label="Run setup"><div class="panel loadout-panel"><span class="eyebrow">BEFORE THE FIRST SHOT</span><h2>Fly your way.</h2><p class="muted" id="loadout-summary">Six sectors. Six bosses. One life.<br>Defeat a boss to restore 2 hull. Fall, and start again.</p>
       <div class="difficulty-options" role="group" aria-label="Difficulty"><button data-difficulty="assist" aria-pressed="false"><b>STORY</b><span>10 hull / Slower bullets</span></button><button class="selected" data-difficulty="standard" aria-pressed="true"><b>STANDARD</b><span>7 hull / Standard rules</span></button><button data-difficulty="veteran" aria-pressed="false"><b>VETERAN</b><span>Faster bullets / Tougher enemies</span></button></div>
       <label class="seed-label">RUN SEED <input id="seed" maxlength="32" value="" placeholder="Leave blank for random" autocomplete="off" spellcheck="false"></label>
       <p class="mobile-only touch-info">Slide to move. Aiming and firing are automatic.<br>Parry and dash to carve a path through the fire.</p><p class="small-muted">Seeds repeat waves. Your hull and build also shape the upgrade offers.</p>
@@ -63,7 +64,7 @@
     <section id="choices" class="screen backdrop" hidden aria-label="Choose a pact or upgrade"><div class="choices-header"><span class="eyebrow" id="choice-kicker"></span><h2 id="choice-title"></h2><p id="choice-description"></p></div><div class="choice-ai-row"><button id="negotiate">Negotiate terms / prototype</button><button id="choice-outfit">Outfitter</button></div><div id="choice-cards"></div><div class="choices-footer"><span id="choice-footer"></span><span class="desktop-only">Click / Press 1, 2 or 3 to choose</span><div class="mobile-only choice-confirmation"><small id="choice-selection">Tap a card to compare</small><button id="choice-confirm" class="primary" disabled>Choose a pact <span>→</span></button></div></div></section>
     <section id="hangar" class="screen command-screen" hidden aria-label="Flight command"><div class="command-wrap">
  <div class="command-top"><span class="eyebrow">FLIGHT COMMAND / COVENANT ASCENT</span><button id="hangar-close">Main menu</button></div>
- <div class="command-heading"><div><h2>Your ship.<br>Your terms.</h2><p>A six-sector expedition. Choose the route, assemble your relics, and turn an enemy's promise into your greatest weapon.</p></div><span class="mode-note">LIVING COVENANT / 0.5.0</span></div>
+ <div class="command-heading"><div><h2>Your ship.<br>Your terms.</h2><p>A six-sector expedition. Choose the route, assemble your relics, and turn an enemy's promise into your greatest weapon.</p></div><span class="mode-note">LIVING COVENANT / 0.9.9</span></div>
  <div><p class="section-cap">01 / Choose your campaign</p><div class="mode-options" id="mode-options"></div></div>
  <div><p class="section-cap">02 / Choose your airframe</p><div class="airframes" id="airframes"></div></div>
  <div class="command-footer"><p>Flight controls are unchanged.<br>Every airframe is available from the first run.</p><button id="hangar-ready" class="primary">Set flight conditions <span>→</span></button></div>
@@ -91,8 +92,9 @@
 <section id="covenant-screen" class="screen command-screen" hidden aria-label="Living Covenant negotiation">
  <div class="covenant-wrap">
   <header class="command-top"><div><span class="eyebrow" id="cv-heading">FIRST CONTACT / LIVING COVENANT</span><h2 id="cv-title">Name your terms.</h2></div><div class="cv-top-actions"><button id="cv-open-connection" aria-haspopup="dialog">OpenAI / Consent</button><button id="cv-close">Main menu</button></div></header>
+  <nav class="cv-tabs" aria-label="Negotiation steps"><button id="cv-tab-negotiate" aria-controls="cv-editor-panel" aria-pressed="true">01 / Negotiate</button><button id="cv-tab-review" aria-controls="cv-review-panel" aria-pressed="false">02 / Review deal <span id="cv-review-ready"></span></button></nav>
   <div class="covenant-grid">
-   <div class="covenant-main cv-editor">
+   <div class="covenant-main cv-editor" id="cv-editor-panel">
     <aside class="notary-card"><div class="notary-avatar" aria-hidden="true"><i></i><b>◈</b><i></i></div><div class="notary-identity"><span class="section-cap">YOUR COUNTERPARTY</span><h2>THE NOTARY<span>.</span></h2><p class="notary-quote" id="cv-enemy">“I do not need to defeat you. I need you to break your word.”</p><p id="cv-memory">No signatures on record.</p></div></aside>
     <p id="cv-intro-copy">Ask for a safe place, slower fire, or stronger reflections. Every advantage has a price.</p>
     <section class="cv-voice" aria-label="Voice negotiation"><div class="cv-voice-heading"><span class="section-cap">01 / NEGOTIATE</span><button id="cv-transcript" class="cv-link" aria-haspopup="dialog">Transcript ↗</button></div><span id="cv-voice-state" role="status">Enable OpenAI above to use voice.</span><p class="cv-voice-disclosure">AI voice · Mic starts only with Start voice. Sign or leave to stop.</p><div class="cv-voice-controls"><button id="cv-voice-start" class="secondary" disabled>Start voice</button><button id="cv-voice-stop" class="secondary" disabled>Stop voice</button><button id="cv-voice-mute" class="secondary" disabled>Mute</button><label>Volume <input id="cv-voice-volume" type="range" min="0" max="100" value="80" disabled></label></div><div class="cv-captions" aria-live="polite"><p><b>YOU</b><span id="cv-caption-player">—</span></p><p><b>THE NOTARY</b><span id="cv-caption-notary" tabindex="0" role="region" aria-label="The Notary transcript">—</span></p></div></section>
@@ -100,7 +102,7 @@
     <div class="cv-examples"><button data-cv-example="Move the sanctuary to the left. Slow your bullets. I accept reinforcements.">Left + slower fire</button><button data-cv-example="Amplify my reflected bullets and slow your fire. My gun can be weaker.">Stronger reflections</button><button data-cv-example="Give me a sanctuary on the right and stronger reflections. Double the damage I take.">Right + high stakes</button></div>
     <div class="cv-propose-actions"><button id="cv-propose" class="secondary">Get counteroffer <span>→</span></button></div>
    </div>
-   <div class="cv-review">
+   <div class="cv-review" id="cv-review-panel">
     <span class="section-cap cv-review-cap">02 / REVIEW THE DEAL</span>
     <div id="cv-proposal" class="cv-proposal" aria-live="polite"><div class="cv-proposal-header"><span id="cv-provider" class="provider-pill">LOCAL RULES / NO AI CALLS</span><span id="cv-revision">UNSIGNED</span></div><p id="cv-line">The pen is yours. Make a proposal.</p><h3 id="cv-contract-title">No binding terms yet.</h3><div id="cv-clauses"><p>Nothing changes until you sign.</p></div><p id="cv-rule-note">Review the benefits and their price before signing.</p><p id="cv-rationale" hidden></p><canvas id="cv-preview" width="900" height="160" aria-label="Illustrative before and after contract preview"></canvas><p id="cv-preview-label" class="cv-caption">ILLUSTRATIVE PREVIEW · NOT ACTUAL COMBAT</p><button id="cv-review-details" class="cv-link" aria-haspopup="dialog">Full terms & changes ↗</button></div>
     <p id="cv-status" class="cv-status" role="status">Choose your terms. Nothing changes until you sign.</p>
@@ -144,7 +146,7 @@
       <label class="setting-row mobile-only"><span>Left-handed layout <small>Movement on the right; actions on the left</small></span><input id="lefthanded" type="checkbox"></label>
       <label class="setting-row mobile-only"><span>Touch sensitivity <small>Reach full speed with less finger travel</small></span><input id="sensitivity" type="range" min="70" max="140" value="100"></label>
       <p class="mobile-only touch-info">Automatic aim and fire are always on for touch controls.</p>
-      <p id="renderer-status" class="renderer-status" role="status">0.5.0 / INITIALIZING 3D</p>
+      <p id="renderer-status" class="renderer-status" role="status">0.9.9 / INITIALIZING 3D</p>
       <button id="fullscreen" class="secondary">Toggle fullscreen</button><button id="settings-close" class="primary">Back <span>→</span></button>
     </div></section>
     <section id="result" class="screen backdrop" hidden aria-label="Run results"><div class="result-left"><span class="eyebrow" id="result-kicker"></span><h2 id="result-title"></h2><p id="result-story"></p><div class="result-score"><span class="micro">FINAL SCORE</span><strong id="result-score"></strong><span id="result-rank"></span></div><div class="button-row"><button id="retry" class="primary">Try again <span>↗</span></button><button data-home class="secondary">Main menu</button></div><button id="debrief" class="secondary debrief-button">Flight debrief / prototype</button><button id="export" class="text-button">Save run report as JSON ↓</button></div><div class="result-right"><span class="eyebrow">FLIGHT RECORDER</span><div id="result-stats"></div><div id="result-pacts"></div><div id="result-build"></div><p id="result-seed" class="micro"></p></div></section>

@@ -11,6 +11,14 @@ const PALETTES=[
 ];
 function facetMesh(){const out=[],v=[[0,0,1],[.45,0,0],[0,.45,0],[-.45,0,0],[0,-.45,0],[0,0,-.5]];function tri(a,b,c){const u=b.map((n,i)=>n-a[i]),w=c.map((n,i)=>n-a[i]),n=[u[1]*w[2]-u[2]*w[1],u[2]*w[0]-u[0]*w[2],u[0]*w[1]-u[1]*w[0]],l=Math.hypot(...n)||1;for(const p of [a,b,c])out.push(...p,...n.map(v=>v/l));}for(let i=1;i<=4;i++){const j=i===4?1:i+1;tri(v[0],v[i],v[j]);tri(v[5],v[j],v[i]);}return new Float32Array(out);}
 M.shapes.crystal=facetMesh();
+// Ring thickness is radial geometry, not instance Z scale. Thin engravings need
+// their own profile; flattening the old torus still left a broad, bright band.
+function fineRing(minor){const out=[],n=72,m=6;
+ const pt=(i,j)=>{const a=i*TAU/n,b=j*TAU/m;return [(1+minor*Math.cos(b))*Math.cos(a),(1+minor*Math.cos(b))*Math.sin(a),Math.sin(b)];};
+ const tri=(a,b,c)=>{const u=b.map((v,i)=>v-a[i]),v=c.map((x,i)=>x-a[i]),q=[u[1]*v[2]-u[2]*v[1],u[2]*v[0]-u[0]*v[2],u[0]*v[1]-u[1]*v[0]],d=Math.hypot(...q)||1;for(const p of [a,b,c])out.push(...p,...q.map(x=>x/d));};
+ for(let i=0;i<n;i++)for(let j=0;j<m;j++){const a=pt(i,j),b=pt(i+1,j),c=pt(i+1,j+1),d=pt(i,j+1);tri(a,b,c);tri(a,c,d);}return new Float32Array(out);
+}
+M.shapes.engraving=fineRing(.005);M.shapes.bezel=fineRing(.035);
 class Scene extends M.Scene{
 
  covenantFloor(w,h,seed){
@@ -29,13 +37,28 @@ class Scene extends M.Scene{
    this.box(x,y,-21,8,30,4,side*.15,brass,.4,.6,.1,LAYER.HIGH);
    this.box(x-side*7,y,-18,1.5,23,3,side*.15,mint,.4,.1,.48,LAYER.TRIM);
   }
-  for(let j=0;j<22;j++){const x=r()*w,y=r()*h;this.box(x,y,-104-r()*10,4+r()*8,1,2,r()*TAU,[.024,.055,.068],.8,.2,0,LAYER.GROUND);}
+  // Keep the court legible under the projectile layer; these are engraved flecks,
+  // not a confetti field competing with the fight.
+  for(let j=0;j<10;j++){const x=r()*w,y=r()*h;this.box(x,y,-104-r()*10,4+r()*8,1,2,r()*TAU,[.024,.055,.068],.8,.2,0,LAYER.GROUND);}
  }
  bossShadow(x,y,s=1,lift=110){const p=PALETTES[this.theme||0];this.add('orb',x+lift*.22,y+lift*.28,-78,69*s,34*s,.06,0,p.ground.map(v=>v*.48),.98,0,0,LAYER.SHADOW);}
  shipShadow(x,y,a,s=1,lift=96){const p=PALETTES[this.theme||0];this.add('orb',x+lift*.2,y+lift*.25,-78,21*s,10*s,.06,a,p.ground.map(v=>v*.38),.98,0,0,LAYER.SHADOW);}
  floor(w,h,stage=0,seed='TITLE'){
   if(this.living){this.covenantFloor(w,h,seed);return;}
   stage=Math.max(0,Math.min(5,stage));this.theme=stage;const p=PALETTES[stage],r=rng(seed+':ascension:'+stage),cx=w/2,cy=h/2;
+  if(seed==='TITLE'){
+   // The title is a vestibule, not a second combat arena: quiet obsidian,
+   // a thin brass orbit, and a few ordered architectural axes.
+   const ink=[.008,.017,.026],brass=[.28,.19,.09],edge=[.40,.28,.13],tx=w*(w<h?.52:.72),ty=h*(w<h?.40:.46);
+   this.box(cx,cy,-119,w+180,h+180,8,0,ink,.95,.08,0,LAYER.GROUND);
+   this.add('engraving',tx,ty,-68,Math.min(w,h)*.31,Math.min(w,h)*.31,1.0,0,brass,.54,.52,0,LAYER.TRIM);
+   this.add('engraving',tx,ty,-63,Math.min(w,h)*.39,Math.min(w,h)*.39,.7,0,edge,.55,.48,0,LAYER.TRIM);
+   for(const x of [w*.18,w*.82]){
+    this.box(x,cy,-78,2.5,h*.76,5,0,[.018,.035,.045],.65,.65,0,LAYER.GROUND);
+    for(let i=0;i<5;i++)this.box(x,h*(.18+i*.16),-70,1.2,8,2,0,brass,.45,.60,.03,LAYER.TRIM);
+   }
+   return;
+  }
   // The game is above a layered landscape, not embedded in a bright tiled floor.
   this.box(cx,cy,-112,w+180,h+180,8,0,p.ground,.82,.16,0,LAYER.GROUND);
   this.box(cx,cy,-130,w+260,h+260,6,0,p.ground,.95,.04,0,.97);
@@ -109,7 +132,12 @@ class Scene extends M.Scene{
   }
  }
  dynamicScenery(w,h,stage=0,seed='TITLE',t=0,bossFx=0,bgAnim=1){
-  if(this.living){const tt=bgAnim===0?0:t,rr=Math.min(w,h)*.38;for(let i=0;i<12;i++){const a=i*TAU/12+tt*.045,x=w/2+Math.cos(a)*rr,y=h*.43+Math.sin(a)*rr;this.box(x,y,-82,14,2,3,a,[.10,.32,.31],.45,.35,.15+bossFx*.12,LAYER.TRIM);}return;}
+  if(this.living){const tt=bgAnim===0?0:t,rr=Math.min(w,h)*.38;for(let i=0;i<12;i++){const a=i*TAU/12+tt*.045,x=w/2+Math.cos(a)*rr,y=h*.43+Math.sin(a)*rr;this.box(x,y,-82,14,2,3,a,[.045,.14,.14],.55,.45,.04+bossFx*.05,LAYER.TRIM);}return;}
+  if(seed==='TITLE'){
+   const tt=bgAnim===0?0:t,rr=Math.min(w,h)*.31,cx=w*(w<h?.52:.72),cy=h*(w<h?.40:.46),brass=[.25,.17,.08];
+   for(let i=0;i<8;i++){const a=i*TAU/8+tt*.025;this.box(cx+Math.cos(a)*rr,cy+Math.sin(a)*rr,-58,10,1.6,2,a,brass,.4,.75,.025,LAYER.TRIM);}
+   return;
+  }
 
   const p=PALETTES[Math.min(stage,5)],cx=w/2,cy=h/2;const tt=bgAnim===0?0:t*(bgAnim===2?1.25:1),b=bgAnim===0?0:bossFx;
   // A broken ring visibly rotates; a perfect torus alone would not show rotation.
@@ -143,6 +171,26 @@ class Scene extends M.Scene{
   }
  }
  boss(e,stage=0,t=0,s=1){
+  if(stage===0){
+   // The Notary is a quiet brass instrument: six tapered obsidian wings,
+   // nested seal rings, and one unmistakable mint diamond core.
+   const x=e.x,y=e.y,a=e.rot||0,cls=LAYER.FLIGHT_HIGH;
+   const brass=[.34,.24,.12],brassHi=[.62,.45,.22],obsidian=[.018,.027,.036],steel=[.16,.22,.25],mint=[.10,.72,.57];
+   this.bossShadow(x,y,s,110);
+   this.add('bezel',x,y,11,58*s,58*s,6*s,a,brass,.30,.78,.04,cls);
+   this.add('bezel',x,y,18,47*s,47*s,4*s,-a*.55,brassHi,.24,.82,.06,cls);
+   this.add('hex',x,y,24,39*s,39*s,28*s,-a*.35,obsidian,.22,.92,0,cls,e.hit>0?.7:0);
+   this.add('hex',x,y,37,25*s,25*s,21*s,a,steel,.24,.88,0,cls);
+   this.add('crystal',x,y,67,32*s,42*s,24*s,0,mint,.10,.22,1.55,cls);
+   for(let i=0;i<6;i++){
+    const ang=a+i*TAU/6,rr=70*s,px=x+Math.cos(ang)*rr,py=y+Math.sin(ang)*rr;
+    this.add('hull',px,py,18,36*s,25*s,25*s,ang,obsidian,.22,.93,0,cls);
+    this.box(px,py,32,27*s,5*s,7*s,ang,brassHi,.23,.84,.04,cls);
+    this.box(x+Math.cos(ang)*96*s,y+Math.sin(ang)*96*s,25,9*s,3*s,5*s,ang,brass,.25,.80,.08,cls);
+    if(e.phase>0)this.add('orb',x+Math.cos(ang)*104*s,y+Math.sin(ang)*104*s,29,3*s,3*s,3*s,0,mint,.18,.12,1.3,cls);
+   }
+   return;
+  }
   if(stage<3)return super.boss(e,stage,t,s);
   const p=PALETTES[Math.min(stage,5)],cls=LAYER.FLIGHT_HIGH,x=e.x,y=e.y,a=e.rot||0;this.bossShadow(x,y,s,110);
   this.add('hex',x,y,18,37*s,37*s,40*s,a,p.alloy,.27,.84,0,cls,e.hit>0?.65:0);

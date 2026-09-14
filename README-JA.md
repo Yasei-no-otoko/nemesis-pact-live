@@ -1,8 +1,10 @@
-# NEMESIS PACT — 起動・確認ガイド
+# NEMESIS PACT v0.9.9 — 起動・確認ガイド
 
 [本番HTTPSで遊ぶ](https://nemesis-pact-live.vercel.app)。正本v0.5.0 ZIPから開発し、既存の6セクターキャンペーンを保持しています。
 
-タイトルの **Negotiate the rules. Fight your deal.** からFirst Contactへ進みます。LOCAL RULESは認証やマイクなしで試遊できます。実モデルを使う場合は、OpenAIへの送信に同意してから、英語・日本語で入力するか **Start voice** を押してマイクを許可してください。
+v0.9.9では、コンセプト画像を基にTHE NOTARY・画面・戦場を磨き、モバイルの交渉／契約確認タブとPCのクリック操作を追加しました。公開済み59秒／60fpsの本人操作映像は改良前ビルドの検証資料です。
+
+タイトルの **Make first contact** からFirst Contactへ進みます。LOCAL RULESは認証やマイクなしで試遊できます。実モデルを使う場合は、OpenAIへの送信に同意してから、英語・日本語で入力するか **Start voice** を押してマイクを許可してください。
 
 音声は **GPT-Live-1**、契約生成はVercel AI Gateway経由の **GPT-5.6 Luna (gpt-5.6-luna)** です。音声とテキストは同じ契約検証・署名経路を使います。表示された利益と代償を読み、**Sign** を押した時だけ戦闘へ適用されます。口頭の承諾だけでは署名しません。
 

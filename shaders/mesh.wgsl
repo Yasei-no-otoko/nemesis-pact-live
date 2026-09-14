@@ -24,6 +24,6 @@ fn fresnel(c:f32,f0:vec3f)->vec3f{return f0+(vec3f(1.)-f0)*pow(1.-c,5.);}
  let heightDistance=clamp((140.-v.pos.z)/240.,0.,1.);let farDistance=clamp(1.-v.pos.y/f.arena.y,0.,1.);
  let density=select(.14,select(.23,.18,stage>1.5),stage>.5);
  let fog=select(min(.38,1.-exp(-density*(.35+heightDistance+farDistance*.55))),0.,flight);
- let haze=mix(sky,tint,.08)*.22;lit=mix(lit,haze,fog);if(f.fx.z>.5&&!flight){lit*=.48;}
+ let haze=mix(sky,tint,.08)*.22;lit=mix(lit,haze,fog);if(f.fx.z>.5&&!flight){lit*=.32;}
  if(!flight&&v.pos.z< -85.){let wave=.5+.5*sin(v.pos.x*.012+sin(v.pos.y*.007+t*.10)*2.);lit+=tint*wave*.016;}
  if(!flight){let delta=v.pos.xy/f.arena.xy-vec2f(.5);let center=smoothstep(.12,.40,length(delta));lit*=.82+.18*center;}return vec4f(max(lit,vec3f(0.)),select(0.,1.,flight));}

@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#080e18">
 <meta name="description" content="BLAST BUSTER: NEMESIS PACT — Turn their fire against them. An offline pact-driven arena shooter, built for portrait touch play.">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; media-src 'none'; font-src 'none'; base-uri 'none'; form-action 'none'">
-<title>BLAST BUSTER: NEMESIS PACT — Living Covenant v0.5.0</title>
+<title>BLAST BUSTER: NEMESIS PACT — Living Covenant v0.9.9</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23080e18'/%3E%3Cpath d='M32 6 56 54 32 42 8 54Z' fill='%2378e8d0'/%3E%3C/svg%3E">
 <style>
 :root{color-scheme:dark;--bg:#080e18;--ink:#f2f3e8;--mint:#78e8d0;--red:#ff746c;--muted:#99a5af;--line:#ffffff20}*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#050910;color:var(--ink);font-family:Arial,"Hiragino Kaku Gothic ProN","Noto Sans CJK JP",Meiryo,sans-serif}body{display:grid;place-items:center}button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:3px solid var(--mint);outline-offset:5px}button{color:inherit}button:disabled{cursor:default;opacity:.45}button:hover{filter:brightness(1.12)}[hidden]{display:none!important}#stage{position:relative;overflow:hidden;isolation:isolate;touch-action:none}#canvas{display:block;width:100%;height:100%;background:var(--bg)}#ui{position:absolute;inset:0;width:1280px;height:800px;transform-origin:0 0;pointer-events:none}#ui button,#ui input{pointer-events:auto}.screen{position:absolute;inset:0;pointer-events:auto}.backdrop{background:#071019dc;backdrop-filter:blur(11px)}.eyebrow{font:600 12px/1.6 monospace;letter-spacing:3px;color:var(--mint);display:block}.micro{font:11px/1.5 monospace;letter-spacing:2px;color:var(--muted)}.muted{color:#aeb9c1;line-height:1.85;font-size:16px}.small-muted{color:var(--muted);font-size:12px;line-height:1.8}h1,h2,h3,p{margin:0}h2{font-size:44px;letter-spacing:-2px;line-height:1.25;margin:14px 0 20px}h3{font-size:17px;letter-spacing:.3px}.primary,.secondary{border:none;border-radius:2px;padding:18px 28px;font-weight:700;font-size:16px;transition:transform .15s,background .15s;min-height:56px}.primary{background:var(--mint);color:#081c1d;display:inline-flex;align-items:center;gap:30px;justify-content:space-between}.primary:hover{background:#a5ffeb;transform:translateY(-2px)}.primary span{font-size:24px;font-weight:400}.secondary{background:#ffffff07;border:1px solid #ffffff35;color:var(--ink)}.secondary:hover{background:#ffffff12}.text-button{background:none;border:0;padding:10px 0;color:#a9b6bd;font-size:13px}.text-button:hover{color:var(--mint)}.danger{color:var(--red)}.button-row{display:flex;gap:14px;margin-top:26px}kbd{display:inline-block;font:600 11px/1.4 monospace;white-space:nowrap;padding:5px 8px;border:1px solid #ffffff30;border-bottom:2px solid #ffffff40;border-radius:3px;background:#12202b;color:#e4e9e7}.title-screen{background:linear-gradient(90deg,#080e18 0%,#080e18e8 29%,#080e1885 49%,#080e1800 72%)}.title-top{position:absolute;top:35px;left:55px;right:55px;display:flex;justify-content:space-between;font:11px monospace;letter-spacing:1.8px;color:#a2adb3}.status-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--mint);margin-right:10px;box-shadow:0 0 12px var(--mint)}.title-content{position:absolute;left:74px;top:130px}.title-content .eyebrow{color:#a5b7bc;font-size:15px;letter-spacing:2px}h1{font-family:Impact,"Arial Black",Arial,sans-serif;font-weight:900;font-size:118px;line-height:.86;letter-spacing:-5px;margin:25px 0 28px}h1>span{color:var(--mint)}.title-cross{font:65px Arial;vertical-align:8px;margin-left:24px;display:inline-block;color:#a1c3bd}.tagline{font-size:24px;line-height:1.5;font-weight:700;letter-spacing:3px}.title-desc{font-size:13px;color:#95a5af;line-height:1.9;margin-top:16px}.title-actions{display:flex;gap:12px;margin-top:28px}.title-actions .primary{width:230px}.title-links{display:flex;gap:29px;margin-top:14px}.title-bottom{position:absolute;bottom:32px;left:55px;right:55px;border-top:1px solid var(--line);padding-top:18px;display:flex;justify-content:space-between;font:10px monospace;letter-spacing:1px;color:#82939f}.hero-caption{position:absolute;right:73px;bottom:114px;font:11px monospace;letter-spacing:2px;color:#a7a6a2}.hero-caption>div{display:flex;align-items:center;gap:14px;margin-top:10px}.tiny-line{height:1px;width:44px;background:var(--red)}.panel{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);padding:42px;background:#0d1621;border:1px solid #ffffff20;box-shadow:0 30px 100px #0005}.loadout-panel{width:860px}.difficulty-options{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:30px 0}.difficulty-options button{background:#ffffff03;border:1px solid #ffffff25;text-align:left;padding:21px 15px}.difficulty-options button.selected{border-color:var(--mint);background:#78e8d00c}.difficulty-options b{font-size:15px;letter-spacing:1px;display:block;color:var(--ink)}.difficulty-options span{font-size:11px;color:var(--muted);display:block;margin-top:10px}.seed-label{display:flex;align-items:center;gap:25px;font:12px monospace;letter-spacing:2px}.seed-label input{background:#060d16;border:1px solid #ffffff30;padding:13px;color:var(--mint);width:330px}.loadout-panel .small-muted{margin-top:10px}.compact{width:410px;text-align:center}.compact h2{font-size:36px}.compact .primary,.compact .secondary{display:flex;width:100%;margin-top:15px;justify-content:center}.compact .muted{margin-bottom:24px}.compact .danger{margin-top:13px}.help-panel{width:1120px;padding:38px 45px}.help-panel h2{font-size:34px}.help-grid{display:grid;grid-template-columns:1fr 1fr;gap:46px}.help-grid h3{color:var(--mint);margin:22px 0 12px}.help-grid p{font-size:13px;line-height:2;color:#b5c2c8}.help-bottom{border-top:1px solid var(--line);margin-top:24px;padding-top:22px;display:flex;align-items:center;gap:25px}.help-bottom p{font-size:10px;line-height:1.8;color:var(--muted);flex:1}.help-bottom .primary{width:150px}.settings-panel{width:590px}.setting-row{display:flex;align-items:center;justify-content:space-between;gap:24px;border-top:1px solid var(--line);padding:15px 0;font-size:15px}.setting-row small{display:block;margin-top:5px;font-size:11px;color:var(--muted)}.setting-control{display:flex;align-items:center;gap:12px;min-width:230px;justify-content:flex-end}.setting-control input[type=range]{width:132px}.setting-value{display:inline-block;min-width:74px;text-align:right;font:11px/1.2 monospace;letter-spacing:1px;color:var(--mint)}input[type=checkbox]{width:23px;height:23px;accent-color:var(--mint)}input[type=range]{width:155px;accent-color:var(--mint)}.settings-panel>.primary{margin-top:22px;width:100%}.settings-panel>.secondary{width:100%;font-size:13px;margin-top:8px}.choices-header{position:absolute;left:75px;right:75px;top:91px}.choices-header h2{margin:12px 0 13px;font-size:42px}.choices-header p{color:#aab8c3;font-size:15px}.choices-header .eyebrow{color:var(--choice-color,var(--mint))}#choice-cards{position:absolute;top:267px;left:75px;right:75px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.choice-card{position:relative;text-align:left;background:#0e1924;border:1px solid #ffffff27;padding:26px 25px 25px;min-height:350px;color:var(--ink);transition:transform .18s,border-color .18s,background .18s}.choice-card:hover{transform:translateY(-8px);border-color:var(--card-color,var(--mint));background:#142430;filter:none}.choice-number{position:absolute;top:20px;right:20px;font:11px monospace;color:#6b7d89;border:1px solid #ffffff20;padding:5px 8px}.choice-icon{font-size:42px;color:var(--card-color,var(--mint));height:63px;display:block}.choice-card .en{font:10px monospace;letter-spacing:2px;color:#8496a5;display:block;margin-bottom:9px}.choice-card h3{font-size:23px;line-height:1.3;margin-bottom:14px}.choice-card .quote{font-size:12px;color:#bdc9cb;line-height:1.85;min-height:47px}.choice-gift{font-size:13px;color:var(--card-color,var(--mint));margin-top:18px;padding-top:18px;border-top:1px solid var(--line);line-height:1.6}.choice-cost{font-size:12px;color:#f0a39e;margin-top:9px;line-height:1.6}.choice-tip{font-size:11px;color:#90a4ad;line-height:1.6;margin-top:13px}.choices-footer{position:absolute;bottom:71px;left:75px;right:75px;display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:18px;color:#92a4b0;font:11px/1.7 monospace}.hud-top{position:absolute;top:28px;left:35px;right:35px;display:flex;align-items:center;gap:27px}.brand-mini{font-weight:800;letter-spacing:2px;font-size:17px;flex:1}.brand-mini>span{color:var(--mint)}.brand-mini small{display:block;font:10px monospace;letter-spacing:1px;color:#91a3ad;margin-top:8px}.life{display:flex;gap:13px;align-items:center}.life .micro{font-size:10px}#hearts{display:flex;gap:4px;max-width:170px;flex-wrap:wrap}.heart{width:12px;height:21px;transform:skew(-12deg);border:1px solid #78e8d055;background:#78e8d010}.heart.on{background:var(--mint);border-color:var(--mint);box-shadow:0 0 10px #78e8d023}.life.critical .heart.on{background:var(--red);border-color:var(--red)}.hud-score{text-align:right;min-width:130px}.hud-score .micro{font-size:9px;display:block}.hud-score strong{font:22px monospace;letter-spacing:2px}.hud-score small{margin-left:10px;color:var(--mint);font:12px monospace}.icon-button{border:1px solid #ffffff35;background:#0a1623aa;width:35px;height:36px;font-weight:700}.boss-hud{position:absolute;left:300px;right:300px;top:89px}.boss-hud>div:first-child{display:flex;justify-content:space-between;font:11px monospace;letter-spacing:2px;margin-bottom:8px}.boss-hud small{color:#9ea7b2;font-size:9px}.boss-track{background:#ffffff15;height:5px}.boss-track i{display:block;height:100%;width:100%;background:var(--red);box-shadow:0 0 15px #ff746c50;transition:width .1s linear}#pact-hud{position:absolute;left:36px;top:111px;display:flex;flex-direction:column;gap:7px;max-width:205px}#pact-hud .micro{font-size:8px}#pact-hud strong{font-size:13px;font-weight:500}#pact-hud small{font:9px monospace;color:var(--mint);line-height:1.6}#wave-hud{position:absolute;right:36px;top:117px;width:155px;text-align:right;font:10px monospace;letter-spacing:1px;color:#aebbc5}.wave-track{height:2px;background:#ffffff18;margin-top:8px}.wave-track i{height:100%;background:var(--mint);display:block;width:0}.hud-bottom{position:absolute;bottom:28px;left:35px;right:35px;display:flex;align-items:center;gap:23px}.ability{position:relative;height:52px;display:flex;align-items:center;gap:12px;min-width:165px;border-top:1px solid #ffffff28}.ability>i{position:absolute;left:0;top:-1px;width:100%;height:2px;background:var(--mint)}.ability>span{font:12px monospace;letter-spacing:1.2px}.ability small{display:block;font:9px monospace;margin-top:5px;color:var(--mint);letter-spacing:1px}.ability.cool small{color:#778d9e}.ability.cool>i{background:#68849a}.nova-ability{margin:0 auto;width:285px}.nova-ability>div:first-child{display:flex;align-items:center;gap:12px;font:11px monospace;letter-spacing:1px}.nova-ability b{font-weight:400;flex:1}.energy-track{height:5px;background:#ffffff14;margin-top:10px}.energy-track i{background:var(--mint);display:block;width:0;height:100%;transition:width .1s}.nova-ability.ready{color:var(--mint);text-shadow:0 0 15px #78e8d050}.nova-ability.ready .energy-track i{box-shadow:0 0 12px #78e8d060}.breach-ability small{color:#f7ae7d}.breach-ability.used{opacity:.35}#build-hud{position:absolute;left:36px;bottom:101px;display:flex;gap:7px}.build-chip{width:26px;height:26px;border:1px solid #ffffff24;background:#0d1c27c0;text-align:center;font-size:17px;color:#a8c9cc;line-height:24px}.build-chip small{font:8px monospace;color:var(--mint)}#announcement{position:absolute;left:250px;right:250px;top:335px;text-align:center;opacity:0;transition:opacity .25s;pointer-events:none;text-shadow:0 3px 30px #000,0 1px 8px #000}#announcement.visible{opacity:1}#announcement small{font:12px monospace;letter-spacing:5px;color:var(--mint)}#announcement strong{display:block;font:700 47px/1.25 Arial,sans-serif;letter-spacing:3px;margin-top:12px}#announcement p{font-size:13px;color:#bdd1d5;margin-top:14px;line-height:1.7}#toast{position:absolute;top:172px;left:330px;right:330px;text-align:center;font:700 15px/1.5 monospace;letter-spacing:2px;color:var(--mint);opacity:0;transition:opacity .15s;text-shadow:0 1px 10px #000}#toast.visible{opacity:1}#tutorial-hud{position:absolute;left:380px;right:290px;bottom:140px;background:#0c1d28ef;border-left:3px solid var(--mint);padding:19px 23px}#tutorial-hud small{font:10px monospace;color:var(--mint);letter-spacing:2px}#tutorial-hud h3{margin-top:10px;font-size:20px}#tutorial-hud p{font-size:13px;line-height:1.7;margin-top:9px;color:#bfd0d9}#tutorial-hud .text-button{margin-top:3px;padding-bottom:0;font-size:11px}.result-left{position:absolute;left:78px;top:113px;width:560px}.result-left h2{font-size:65px;line-height:1.08;margin:23px 0;letter-spacing:-2px}.result-left>p{font-size:15px;line-height:1.9;color:#aabcc6;max-width:490px}.result-score{margin-top:30px}.result-score .micro{display:block}.result-score strong{font:64px monospace;letter-spacing:-3px}.result-score>span:last-child{font:13px monospace;color:var(--mint);margin-left:18px}.result-left>.text-button{margin-top:20px}.result-right{position:absolute;top:115px;right:79px;width:426px;border-left:1px solid var(--line);padding-left:42px}#result-stats{display:grid;grid-template-columns:1fr 1fr;gap:20px 25px;margin-top:28px}#result-stats div span{display:block;color:#8096a4;font:10px monospace;letter-spacing:1px}#result-stats div b{display:block;font:27px monospace;margin-top:8px}#result-pacts{margin-top:30px;border-top:1px solid var(--line)}.result-pact{display:flex;align-items:center;justify-content:space-between;font-size:13px;padding:15px 0;border-bottom:1px solid var(--line)}.result-pact small{color:var(--mint);font:10px monospace}.result-pact.broken small{color:var(--red)}#result-build{font-size:12px;color:#9ab0bb;line-height:2;margin-top:20px}#result-seed{margin-top:23px;font-size:9px;overflow-wrap:anywhere}#small-screen{display:none;position:fixed;bottom:14px;font-size:11px;color:#abb9bc;text-align:center;pointer-events:none}@media(max-width:650px) and (orientation:portrait){#small-screen{display:block}}@media(prefers-reduced-motion:reduce){*{transition:none!important}}body.reduced *{transition:none!important}
@@ -491,6 +491,195 @@ body.mobile-ui #covenant-screen #cv-preview{margin-top:6px}
 @media(max-width:600px){.cv-dialog{padding:18px}.cv-dialog h2{font-size:24px}.cv-dialog .cv-consent{font-size:12px}}
 
 </style>
+<style>
+/* v0.9.9: orbital contract desk. Imagegen concept translated to local UI/geometry. */
+:root{--mint:#9ee8d3;--ink:#f0eee3;--muted:#a5b5ba;--brass:#c6a976;--line:#b0b6aa29}
+button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:2px solid #b4f6dd;outline-offset:3px}
+button:active:not(:disabled){transform:translateY(1px)}
+.primary{background:linear-gradient(115deg,#b8eddb,#87dbc5);box-shadow:inset 0 1px #effff08c,0 4px 20px #83e5c610;border:1px solid #b9f8df85;border-radius:4px;color:#0b2527}
+.primary:hover{background:#c3f7e7;box-shadow:0 4px 24px #8ae6ca24}
+.secondary{border-color:#b3c4c033;border-radius:4px}
+.eyebrow,.section-cap{color:var(--brass)}
+.title-screen{background:linear-gradient(90deg,#070f16fa 0%,#080f17e8 30%,#080f1790 49%,#080f1700 76%)}
+.title-screen:after{content:'';position:absolute;inset:18px;border:1px solid #c7ac7625;pointer-events:none;z-index:-1}
+.title-top{top:36px;left:55px;right:55px;color:#acbdbd}
+.title-top .status-dot{background:#c9af7e;box-shadow:none}
+.title-content{top:113px;left:72px;width:545px}
+.title-content .eyebrow{font:10px/1.5 monospace;letter-spacing:5px;color:#cbb48e}
+.title-content h1{font:400 110px/.88 Georgia,'Times New Roman',serif;letter-spacing:-5px;margin:27px 0 30px;color:#f0ebdc;text-shadow:0 3px 18px #0005}
+.title-content h1>span{color:#c9b58d}
+.title-content .title-cross{font:44px Georgia,serif;vertical-align:12px;color:#9ddcca;margin-left:20px}
+.title-content .tagline{font:400 25px/1.32 Georgia,serif;color:#e0e4dc}
+.title-content .title-desc{font:14px/1.7 Arial,sans-serif;color:#9fb1b8;margin-top:17px}
+.title-steps{display:flex;align-items:center;gap:15px;margin:24px 0;font:9px/1.5 monospace;letter-spacing:1px;color:#b9c8c7}
+.title-steps b{color:#c6a976;margin-right:6px;font-weight:400}.title-steps i{font-style:normal;color:#567878}
+.title-content .title-actions{margin-top:0;gap:12px}
+.title-content .title-actions .primary{min-width:258px;font-size:16px}
+.title-content .title-actions .secondary{font-weight:400;font-size:13px;min-width:150px;background:#0c192480}
+.title-content .first-contact-note{font-size:9px;letter-spacing:1.1px;color:#a3b8b9;margin-top:10px}
+.title-content .title-links{margin-top:20px;gap:22px}
+.title-content .title-links button{font-size:12px;min-height:40px;color:#b7c2c5}
+.hero-caption{border-left:1px solid #c1a67370;padding-left:16px}.hero-caption .micro{color:#d4c4a3}
+.hero-caption .tiny-line{background:#bc9d68}
+.title-bottom{border-color:#c5b08530;color:#9eadb3;font-size:9px}
+/* The desktop desk retains its fixed geometry and full-height scrollable speech. */
+#covenant-screen{background:radial-gradient(ellipse at 100% 0,#72563114,transparent 52%),linear-gradient(120deg,#0d1821,#0a131b 70%)}
+#covenant-screen .command-top{border-color:#c8b08330}
+#cv-title{font:400 30px/1.2 Georgia,serif;letter-spacing:-.4px;color:#f0ebdc}
+#covenant-screen .notary-card{background:linear-gradient(110deg,#18282c,#0c1821);border-color:#aeb09a3b;border-radius:4px}
+#covenant-screen .notary-card:after{inset:6px;border-color:#c6a97616}
+#covenant-screen .notary-card h2{font:400 23px/1.15 Georgia,serif;letter-spacing:1px;color:#ece7d9}
+#covenant-screen .notary-quote{color:#bbc7c6;font-size:12px}
+#covenant-screen .notary-avatar i{background:linear-gradient(140deg,#6c695528,#10181ee0);border-color:#b9a277}
+#covenant-screen .notary-avatar i:last-child{background:#88e1c51a;border-color:#9bdbcb}
+#covenant-screen .notary-avatar b{text-shadow:0 0 13px #88e9d24d;color:#d8fbee}
+#covenant-screen .notary-avatar:after{border-style:solid;border-color:#c7ad744f}
+#covenant-screen .cv-voice{background:linear-gradient(140deg,#122229,#0d1820);border-color:#9aafa735;border-radius:4px}
+#covenant-screen .cv-voice[data-state=speaking]{border-color:#c6a97699}
+#covenant-screen .cv-voice[data-state=listening]{border-color:#98dfc77a}
+#cv-voice-state:before{content:'';display:inline-block;width:6px;height:6px;margin-right:8px;border-radius:50%;background:#697e83;vertical-align:1px}
+.cv-voice[data-state=listening] #cv-voice-state:before{background:#a3e7d0}
+.cv-voice[data-state=speaking] #cv-voice-state:before{background:#e5c183}
+.cv-voice[data-state=error] #cv-voice-state:before{background:#f3a49c}
+#covenant-screen .cv-voice-controls #cv-voice-start:not(:disabled){background:#a3e6d323;border-color:#98ddc68c;color:#c3f7e6}
+#covenant-screen .cv-voice-controls button{border-radius:4px}
+#covenant-screen .cv-captions{color:#d7e2dc;border-color:#c2b48b26;line-height:1.5}
+#covenant-screen .cv-captions b{color:#cbb48b}
+#covenant-screen #cv-caption-notary{scrollbar-color:#99b9ad #12232b}
+#covenant-screen .cv-editor textarea{background:#070f16;border-color:#859f984f;border-left-color:#a1dfc4}
+#covenant-screen .cv-examples button{background:#182a32;border-color:#9eaea43d;border-radius:5px;color:#c1d1ce}
+#covenant-screen .cv-proposal{background:linear-gradient(140deg,#1a272c,#101b23);border-color:#b4a68155;border-radius:4px;box-shadow:inset 0 1px #ffffff06;gap:10px}
+#covenant-screen[data-proposal=ready] .cv-proposal{border-color:#a9c6b378}
+#covenant-screen #cv-contract-title{font:400 25px/1.2 Georgia,serif;letter-spacing:-.3px;color:#ecebdf}
+#covenant-screen #cv-line{color:#b9c7c4}
+#covenant-screen .provider-pill{background:#be9f6020;border-color:#c4a87460;color:#e4c793;letter-spacing:.6px}
+#covenant-screen #cv-clauses>div{border-top:1px solid #b4d8c640;padding:10px 10px 4px;background:#a8e5cd06}
+#covenant-screen #cv-clauses .cv-cost{border-color:#e6ad9140;background:#efbb9005;color:#f0b5a0}
+#covenant-screen #cv-clauses .cv-benefit{color:#b9efd8}
+#covenant-screen #cv-clauses small{color:#a7b6b9;font-size:9px;letter-spacing:1.1px}
+#covenant-screen #cv-rule-note{color:#abbec4}
+#covenant-screen .cv-status{color:#b8c9ba}
+.cv-propose-actions button{background:#18282c;border-color:#a0c6b34a;color:#d7e9de}
+.cv-dialog{background:linear-gradient(140deg,#18252d,#0b1720);border-color:#b4a78165;border-radius:8px}
+.cv-dialog h2{font-family:Georgia,serif;font-weight:400;color:#eeebdf}
+.cv-dialog::backdrop{background:#030810dd}
+.cv-tabs{display:none}
+/* Calmer instrumentation with a visually separate signed receipt. */
+.hud-top{background:#07131de8;border:1px solid #b6b2942e;border-radius:4px}
+.brand-mini{letter-spacing:3px;color:#e7e7db}
+.hud-score strong{font-variant-numeric:tabular-nums}
+.heart{transform:none;border-radius:1px}.heart.on{background:#b0e8d4;box-shadow:none}
+.boss-track{height:4px;background:#dcc39818}.boss-track i{box-shadow:none}
+.boss-hud{color:#d7c9aa}
+.ability{border-top-color:#a8d8c466;background:#0a1720bb;border-radius:3px 3px 0 0}
+.hud-bottom>button{color:inherit;text-align:left;border-left:0;border-right:0;border-bottom:0;font:inherit;pointer-events:auto}
+.hud-bottom>button:disabled{opacity:.65}.hud-bottom>button:hover:not(:disabled){background:#203b40}
+.hud-bottom>.nova-ability{background:#0a1720bb;border-top:1px solid #a8d8c466;border-radius:3px}
+.ability kbd,.nova-ability kbd{border-color:#a9bcb63d;background:#15242d}
+#covenant-live{background:#09151eea;border-color:#b5aa8263;border-radius:4px}
+#cv-live-provider{color:#d7bd87}#cv-live-title{color:#e1e9df}
+#cv-parley{border-color:#a3d1bd60;border-radius:3px;background:#21433f;color:#dcf6e9}
+#cv-parley:not(:disabled){box-shadow:inset 0 1px #c0f7d933}
+body[data-covenant=true] #pact-hud{border-left-color:#c5b486;background:#09151edb}
+#announcement strong{font-family:Georgia,serif;font-weight:400;letter-spacing:.5px}
+#toast{letter-spacing:1px}
+.result-left h2,html[lang=en] .result-left h2{font-family:Georgia,serif;font-weight:400;letter-spacing:-1px}
+.result-right{border-color:#c6ad7440}
+/* One mobile step at a time. Sticky actions never cover a previous step. */
+body.mobile-ui #covenant-screen{padding:0;overflow:hidden}
+body.mobile-ui #covenant-screen .covenant-wrap{height:100%;padding:calc(12px + var(--safe-top)) 14px calc(10px + var(--safe-bottom));gap:9px}
+body.mobile-ui #covenant-screen .command-top{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px;padding-bottom:9px}
+body.mobile-ui #cv-title{font-size:25px}
+body.mobile-ui #covenant-screen .command-top .eyebrow{font-size:8px;letter-spacing:.8px}
+body.mobile-ui #covenant-screen .cv-top-actions{gap:5px;flex-direction:column;align-items:stretch;max-width:132px}
+body.mobile-ui #covenant-screen .cv-top-actions button{min-height:32px;padding:6px 8px;font-size:10px}
+body.mobile-ui .cv-tabs{display:flex;gap:6px;flex-shrink:0}
+.cv-tabs button{flex:1;min-height:42px;border:1px solid #a8bda138;background:#14232c;border-radius:4px;color:#a6b9bc;font:12px Arial,sans-serif}
+.cv-tabs button[aria-pressed=true]{background:#a5dfc71c;color:#d0f2e1;border-color:#a7d4bd88}
+#cv-review-ready{font:9px monospace;color:#d5bd87;margin-left:4px}
+body.mobile-ui #covenant-screen .covenant-grid{flex:1;display:block;min-height:0}
+body.mobile-ui #covenant-screen .cv-editor,body.mobile-ui #covenant-screen .cv-review{height:100%;min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;touch-action:pan-y;gap:9px;padding-bottom:0}
+body.mobile-ui #covenant-screen[data-step=review] .cv-editor,body.mobile-ui #covenant-screen:not([data-step=review]) .cv-review{display:none}
+body.mobile-ui #covenant-screen .notary-card{min-height:78px;padding:8px 10px;gap:12px}
+body.mobile-ui #covenant-screen .notary-card h2{font-size:20px}
+body.mobile-ui #covenant-screen .notary-avatar{width:54px;min-width:54px;transform:scale(.85)}
+body.mobile-ui #covenant-screen .notary-quote{font-size:11px}
+body.mobile-ui #covenant-screen #cv-memory{font-size:9px}
+body.mobile-ui #cv-intro-copy{font-size:12px;min-height:0}
+body.mobile-ui #covenant-screen .cv-voice{padding:10px;flex:1 0 auto;min-height:220px;display:flex;flex-direction:column}
+body.mobile-ui #covenant-screen .cv-voice-disclosure{font-size:11px}
+body.mobile-ui #covenant-screen .cv-voice-controls{display:flex;gap:6px;flex-wrap:wrap}
+body.mobile-ui #covenant-screen .cv-voice-controls button{min-height:40px;padding:7px 10px;font-size:12px}
+body.mobile-ui #covenant-screen .cv-voice-controls label{display:flex;margin:0 0 0 auto;gap:6px}
+body.mobile-ui #covenant-screen .cv-voice-controls input{width:75px;min-height:30px}
+body.mobile-ui #covenant-screen #cv-voice-stop:disabled,body.mobile-ui #covenant-screen #cv-voice-mute:disabled,body.mobile-ui #covenant-screen .cv-voice-controls label:has(input:disabled){display:none}
+body.mobile-ui #covenant-screen .cv-voice[data-available=false]{min-height:0;flex:0 0 auto}
+body.mobile-ui #covenant-screen .cv-voice[data-available=false] .cv-voice-controls,body.mobile-ui #covenant-screen .cv-voice[data-available=false] .cv-voice-disclosure,body.mobile-ui #covenant-screen .cv-voice[data-available=false]:not([data-transcript=true]) .cv-captions{display:none}
+body.mobile-ui #covenant-screen .cv-captions{font-size:13px;flex:1;min-height:50px;display:grid;grid-template-rows:auto minmax(40px,1fr)}
+body.mobile-ui #covenant-screen .cv-captions p{grid-template-columns:68px minmax(0,1fr);min-height:0}
+body.mobile-ui #covenant-screen #cv-caption-notary{height:100%;max-height:132px;min-height:40px;overflow:auto}
+body.mobile-ui #covenant-screen .cv-editor textarea{height:76px;min-height:76px;font-size:16px}
+body.mobile-ui #covenant-screen .cv-examples{gap:5px;flex-wrap:nowrap}
+body.mobile-ui #covenant-screen .cv-examples button{font-size:10px;min-height:42px;padding:6px}
+body.mobile-ui #covenant-screen .cv-propose-actions,body.mobile-ui #covenant-screen .cv-actions{position:sticky;bottom:0;background:#0b1720;padding:8px 0 0;margin-top:auto;z-index:3;flex-shrink:0}
+body.mobile-ui #covenant-screen .cv-propose-actions button,body.mobile-ui #covenant-screen .cv-actions button{min-height:48px;font-size:14px}
+body.mobile-ui #covenant-screen .cv-review-cap{display:none}
+body.mobile-ui #covenant-screen .cv-proposal{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;touch-action:pan-y;padding:15px;gap:12px;scrollbar-width:thin}
+body.mobile-ui #covenant-screen .cv-proposal-header{gap:8px;flex-wrap:wrap}
+body.mobile-ui #covenant-screen .provider-pill{max-width:100%;font-size:9px}
+body.mobile-ui #covenant-screen #cv-revision{font-size:9px}
+body.mobile-ui #covenant-screen #cv-contract-title{font-size:24px;flex-shrink:0}
+body.mobile-ui #covenant-screen #cv-clauses{font-size:14px;gap:10px;flex-shrink:0}
+body.mobile-ui #covenant-screen #cv-preview{height:100px;min-height:100px;flex-shrink:0;margin-top:auto}
+body.mobile-ui #covenant-screen .cv-status{font-size:10px;min-height:0;flex-shrink:0}
+/* Compact phones retain the controls' 44 px hit targets. */
+@media(max-height:740px){
+ body.mobile-ui:not(.touch-landscape) #covenant-screen .notary-card{min-height:60px;padding:4px 10px}
+ body.mobile-ui:not(.touch-landscape) #covenant-screen .notary-quote,body.mobile-ui:not(.touch-landscape) #cv-intro-copy{display:none}
+ body.mobile-ui:not(.touch-landscape) #covenant-screen .notary-avatar{height:46px;transform:scale(.65)}
+ body.mobile-ui:not(.touch-landscape) #covenant-screen .cv-voice{min-height:180px}
+ body.mobile-ui:not(.touch-landscape) #covenant-screen .cv-examples button{min-height:44px}
+}
+/* Portrait title gives the enemy room without losing the start action. */
+body.mobile-ui .title-screen{background:linear-gradient(180deg,#07111cea,#07111c3b 36%,#07111cec 63%,#07111c)}
+body.mobile-ui .title-content{width:auto;min-height:0;padding:0 24px;margin-top:26px}
+body.mobile-ui .title-content .eyebrow{font-size:9px;letter-spacing:3px}
+body.mobile-ui .title-content h1{font:400 clamp(60px,17vw,84px)/.89 Georgia,serif;letter-spacing:-3px;margin:17px 0 0}
+body.mobile-ui .title-content .title-cross{font-size:32px;vertical-align:8px;margin-left:12px}
+body.mobile-ui .title-content .tagline{font:400 23px/1.25 Georgia,serif;margin-top:145px}
+body.mobile-ui .title-content .title-desc{font-size:12px;line-height:1.5;margin-top:12px}
+body.mobile-ui .title-steps{margin:16px 0;gap:10px;font-size:8px;letter-spacing:.3px}
+body.mobile-ui .title-steps b{margin-right:4px}
+body.mobile-ui .title-content .title-actions{gap:8px;margin-top:0}
+body.mobile-ui .title-content .title-actions .primary{min-width:0;font-size:14px;padding:13px;flex:1.5}
+body.mobile-ui .title-content .title-actions .secondary{min-width:0;font-size:12px;padding:12px;flex:1}
+body.mobile-ui .title-content .title-links{gap:15px;flex-wrap:wrap;margin-top:9px}
+body.mobile-ui .title-content .title-links button{min-height:36px;font-size:11px}
+body.mobile-ui .title-content .first-contact-note{font-size:8px;letter-spacing:.6px}
+body.mobile-ui .title-bottom{font-size:8px;margin-top:14px}
+@media(max-height:740px){body.mobile-ui .title-content{margin-top:20px}body.mobile-ui .title-content .tagline{margin-top:70px;font-size:21px}body.mobile-ui .title-content .title-desc{display:none}body.mobile-ui .title-steps{margin:13px 0}body.mobile-ui .title-content .title-links{gap:12px}body.mobile-ui .title-bottom{margin-top:6px}}
+body.mobile-ui.touch-landscape .title-content{max-width:530px}.touch-landscape .title-content .tagline{margin-top:35px}
+/* Keep the signed receipt outside the touch playfield, including before launch. */
+body.mobile-ui[data-covenant=true]:not(.touch-landscape){--field-top:calc(122px + var(--safe-top))}
+body.mobile-ui[data-covenant=true]:not(.touch-landscape) #pact-hud,body.mobile-ui[data-covenant=true] #wave-hud{display:none}
+body.mobile-ui[data-covenant=true]:not(.touch-landscape) .boss-hud{top:calc(82px + var(--safe-top));padding:7px 10px}
+body.mobile-ui[data-covenant=true]:not(.touch-landscape) #playfield{bottom:calc(var(--deck-height) + 58px)}
+body.mobile-ui[data-covenant=true] #covenant-live{min-height:50px}
+@media(max-height:740px){
+ body.mobile-ui:not(.touch-landscape){--deck-height:calc(144px + var(--safe-bottom))}
+ body.mobile-ui:not(.touch-landscape) .touch-deck{height:108px;gap:12px}
+ body.mobile-ui:not(.touch-landscape) #move-pad{height:108px;width:100px}
+ body.mobile-ui:not(.touch-landscape) .touch-actions{grid-template-rows:44px 58px;gap:6px}
+ body.mobile-ui:not(.touch-landscape) .touch-action>span{font-size:18px;margin-bottom:2px}
+ body.mobile-ui:not(.touch-landscape) .touch-action>small{margin-top:3px}
+ body.mobile-ui #cv-title{font-size:22px}
+ body.mobile-ui #covenant-screen .cv-top-actions{max-width:110px}
+ body.mobile-ui #covenant-screen .cv-top-actions button{font-size:9px;padding:5px}
+}
+@media(prefers-reduced-motion:reduce){.notary-avatar:after{animation:none!important}}
+body.mobile-ui:not(.touch-landscape) #covenant-screen .cv-voice[data-available=false]{min-height:0}
+
+</style>
 </head>
 <body>
 <main id="stage" aria-label="NEMESIS PACT game">
@@ -508,10 +697,10 @@ body.mobile-ui #covenant-screen #cv-preview{margin-top:6px}
       <div id="pact-hud"><span class="micro">ACTIVE PACT</span><strong id="pact-name"></strong><small id="pact-state"></small></div>
       <div id="wave-hud"><span id="wave-label"></span><div class="wave-track"><i id="wave-progress"></i></div></div>
       <div class="hud-bottom">
-        <div class="ability" id="dash-ability"><kbd>SPACE</kbd><span>DASH<small id="dash-status">READY</small></span><i id="dash-meter"></i></div>
-        <div class="ability" id="parry-ability"><kbd>E / RMB</kbd><span>PARRY<small id="parry-status">READY</small></span><i id="parry-meter"></i></div>
-        <div class="nova-ability" id="nova-ability"><div><kbd>F</kbd><b>SUPERNOVA</b><span id="energy-num">0%</span></div><div class="energy-track"><i id="energy-meter"></i></div></div>
-        <div class="ability breach-ability" id="breach-ability"><kbd>Q</kbd><span>BREAK PACT<small id="breach-status">Break pact</small></span></div>
+        <button type="button" class="ability" id="dash-ability"><kbd>SPACE</kbd><span>DASH<small id="dash-status">READY</small></span><i id="dash-meter"></i></button>
+        <button type="button" class="ability" id="parry-ability"><kbd>E / RMB</kbd><span>PARRY<small id="parry-status">READY</small></span><i id="parry-meter"></i></button>
+        <button type="button" class="nova-ability" id="nova-ability"><div><kbd>F</kbd><b>SUPERNOVA</b><span id="energy-num">0%</span></div><div class="energy-track"><i id="energy-meter"></i></div></button>
+        <button type="button" class="ability breach-ability" id="breach-ability"><kbd>Q</kbd><span>BREAK PACT<small id="breach-status">Break pact</small></span></button>
       </div>
       <div id="build-hud"></div><div id="covenant-live" hidden><div><span id="cv-live-provider">LOCAL RULES</span><b id="cv-live-title"></b><small id="cv-live-impact"></small></div><button id="cv-parley"><kbd>R</kbd> PARLEY</button></div>
     </header>
@@ -520,17 +709,17 @@ body.mobile-ui #covenant-screen #cv-preview{margin-top:6px}
     <div id="tutorial-hud" hidden><small>FLIGHT SCHOOL / TRAINING</small><h3 id="tutorial-title"></h3><p id="tutorial-detail"></p><button id="training-exit" class="text-button">Exit training →</button></div>
     <section id="menu" class="screen title-screen" aria-label="Title screen">
       <div class="title-top"><span><i class="status-dot"></i> WILDMAN / ORIGINAL GAME</span><span>VOICE · TEXT · LOCAL RULES</span></div>
-      <div class="title-content"><div class="eyebrow">B L A S T &nbsp; B U S T E R</div>
+      <div class="title-content"><div class="eyebrow">A LIVING COVENANT</div>
         <h1>NEMESIS<br><span>PACT<span class="title-cross">✳</span></span></h1>
         <p class="tagline">The enemy listens.<br>The battlefield changes.</p>
         <p class="title-desc">Name your terms. Sign a living covenant.<br>Return their fire. Renegotiate. Or break your word.</p>
-        <div class="mobile-only mobile-pitch"><span>01</span> MOVE.<span>02</span> PARRY.<span>03</span> MAKE A PACT.</div><div class="title-actions"><button id="first-contact" class="primary">Negotiate the rules. Fight your deal. <span>↗</span></button><button id="start" class="secondary">Full campaign</button></div><p class="first-contact-note">START HERE / FIRST CONTACT · AUTO AIM & FIRE · ONE BOSS</p>
+        <div class="title-steps" aria-label="How First Contact works"><span><b>01</b> NEGOTIATE</span><i>→</i><span><b>02</b> SIGN</span><i>→</i><span><b>03</b> SURVIVE</span></div><div class="title-actions"><button id="first-contact" class="primary">Make first contact <span>↗</span></button><button id="start" class="secondary">Full campaign</button></div><p class="first-contact-note">ONE BOSS · 2–3 MIN · AUTO AIM & FIRE</p>
         <div class="title-links"><button id="train" class="text-button">Training</button><button id="help" class="text-button">How to play ↗</button><button id="archive-open" class="text-button">Archive</button><button id="settings" class="text-button">Settings ↗</button><button id="daily" class="text-button">Daily seed ↗</button></div>
       </div>
       <div class="hero-caption"><span class="micro">YOUR ENEMY. YOUR RULES.</span><div><span class="tiny-line"></span> 01 / THE NOTARY</div></div>
-      <div class="title-bottom"><span>LIVING COVENANT / v0.5.0 / 6-SECTOR CAMPAIGN</span><span id="best-score">BEST —</span><span class="desktop-only">WASD + MOUSE · HEADPHONES RECOMMENDED</span><span class="mobile-only">TOUCH TO MOVE · AUTO AIM</span></div>
+      <div class="title-bottom"><span>LIVING COVENANT / v0.9.9 / 6-SECTOR CAMPAIGN</span><span id="best-score">BEST —</span><span class="desktop-only">WASD + MOUSE · HEADPHONES RECOMMENDED</span><span class="mobile-only">TOUCH TO MOVE · AUTO AIM</span></div>
     </section>
-    <section id="loadout" class="screen backdrop" hidden aria-label="Run setup"><div class="panel loadout-panel"><span class="eyebrow">BEFORE THE FIRST SHOT</span><h2>Fly your way.</h2><p class="muted">Three sectors. Three bosses. One life.<br>Defeat a boss to restore 2 hull. Fall, and start again.</p>
+    <section id="loadout" class="screen backdrop" hidden aria-label="Run setup"><div class="panel loadout-panel"><span class="eyebrow">BEFORE THE FIRST SHOT</span><h2>Fly your way.</h2><p class="muted" id="loadout-summary">Six sectors. Six bosses. One life.<br>Defeat a boss to restore 2 hull. Fall, and start again.</p>
       <div class="difficulty-options" role="group" aria-label="Difficulty"><button data-difficulty="assist" aria-pressed="false"><b>STORY</b><span>10 hull / Slower bullets</span></button><button class="selected" data-difficulty="standard" aria-pressed="true"><b>STANDARD</b><span>7 hull / Standard rules</span></button><button data-difficulty="veteran" aria-pressed="false"><b>VETERAN</b><span>Faster bullets / Tougher enemies</span></button></div>
       <label class="seed-label">RUN SEED <input id="seed" maxlength="32" value="" placeholder="Leave blank for random" autocomplete="off" spellcheck="false"></label>
       <p class="mobile-only touch-info">Slide to move. Aiming and firing are automatic.<br>Parry and dash to carve a path through the fire.</p><p class="small-muted">Seeds repeat waves. Your hull and build also shape the upgrade offers.</p>
@@ -539,7 +728,7 @@ body.mobile-ui #covenant-screen #cv-preview{margin-top:6px}
     <section id="choices" class="screen backdrop" hidden aria-label="Choose a pact or upgrade"><div class="choices-header"><span class="eyebrow" id="choice-kicker"></span><h2 id="choice-title"></h2><p id="choice-description"></p></div><div class="choice-ai-row"><button id="negotiate">Negotiate terms / prototype</button><button id="choice-outfit">Outfitter</button></div><div id="choice-cards"></div><div class="choices-footer"><span id="choice-footer"></span><span class="desktop-only">Click / Press 1, 2 or 3 to choose</span><div class="mobile-only choice-confirmation"><small id="choice-selection">Tap a card to compare</small><button id="choice-confirm" class="primary" disabled>Choose a pact <span>→</span></button></div></div></section>
     <section id="hangar" class="screen command-screen" hidden aria-label="Flight command"><div class="command-wrap">
  <div class="command-top"><span class="eyebrow">FLIGHT COMMAND / COVENANT ASCENT</span><button id="hangar-close">Main menu</button></div>
- <div class="command-heading"><div><h2>Your ship.<br>Your terms.</h2><p>A six-sector expedition. Choose the route, assemble your relics, and turn an enemy's promise into your greatest weapon.</p></div><span class="mode-note">LIVING COVENANT / 0.5.0</span></div>
+ <div class="command-heading"><div><h2>Your ship.<br>Your terms.</h2><p>A six-sector expedition. Choose the route, assemble your relics, and turn an enemy's promise into your greatest weapon.</p></div><span class="mode-note">LIVING COVENANT / 0.9.9</span></div>
  <div><p class="section-cap">01 / Choose your campaign</p><div class="mode-options" id="mode-options"></div></div>
  <div><p class="section-cap">02 / Choose your airframe</p><div class="airframes" id="airframes"></div></div>
  <div class="command-footer"><p>Flight controls are unchanged.<br>Every airframe is available from the first run.</p><button id="hangar-ready" class="primary">Set flight conditions <span>→</span></button></div>
@@ -567,8 +756,9 @@ body.mobile-ui #covenant-screen #cv-preview{margin-top:6px}
 <section id="covenant-screen" class="screen command-screen" hidden aria-label="Living Covenant negotiation">
  <div class="covenant-wrap">
   <header class="command-top"><div><span class="eyebrow" id="cv-heading">FIRST CONTACT / LIVING COVENANT</span><h2 id="cv-title">Name your terms.</h2></div><div class="cv-top-actions"><button id="cv-open-connection" aria-haspopup="dialog">OpenAI / Consent</button><button id="cv-close">Main menu</button></div></header>
+  <nav class="cv-tabs" aria-label="Negotiation steps"><button id="cv-tab-negotiate" aria-controls="cv-editor-panel" aria-pressed="true">01 / Negotiate</button><button id="cv-tab-review" aria-controls="cv-review-panel" aria-pressed="false">02 / Review deal <span id="cv-review-ready"></span></button></nav>
   <div class="covenant-grid">
-   <div class="covenant-main cv-editor">
+   <div class="covenant-main cv-editor" id="cv-editor-panel">
     <aside class="notary-card"><div class="notary-avatar" aria-hidden="true"><i></i><b>◈</b><i></i></div><div class="notary-identity"><span class="section-cap">YOUR COUNTERPARTY</span><h2>THE NOTARY<span>.</span></h2><p class="notary-quote" id="cv-enemy">“I do not need to defeat you. I need you to break your word.”</p><p id="cv-memory">No signatures on record.</p></div></aside>
     <p id="cv-intro-copy">Ask for a safe place, slower fire, or stronger reflections. Every advantage has a price.</p>
     <section class="cv-voice" aria-label="Voice negotiation"><div class="cv-voice-heading"><span class="section-cap">01 / NEGOTIATE</span><button id="cv-transcript" class="cv-link" aria-haspopup="dialog">Transcript ↗</button></div><span id="cv-voice-state" role="status">Enable OpenAI above to use voice.</span><p class="cv-voice-disclosure">AI voice · Mic starts only with Start voice. Sign or leave to stop.</p><div class="cv-voice-controls"><button id="cv-voice-start" class="secondary" disabled>Start voice</button><button id="cv-voice-stop" class="secondary" disabled>Stop voice</button><button id="cv-voice-mute" class="secondary" disabled>Mute</button><label>Volume <input id="cv-voice-volume" type="range" min="0" max="100" value="80" disabled></label></div><div class="cv-captions" aria-live="polite"><p><b>YOU</b><span id="cv-caption-player">—</span></p><p><b>THE NOTARY</b><span id="cv-caption-notary" tabindex="0" role="region" aria-label="The Notary transcript">—</span></p></div></section>
@@ -576,7 +766,7 @@ body.mobile-ui #covenant-screen #cv-preview{margin-top:6px}
     <div class="cv-examples"><button data-cv-example="Move the sanctuary to the left. Slow your bullets. I accept reinforcements.">Left + slower fire</button><button data-cv-example="Amplify my reflected bullets and slow your fire. My gun can be weaker.">Stronger reflections</button><button data-cv-example="Give me a sanctuary on the right and stronger reflections. Double the damage I take.">Right + high stakes</button></div>
     <div class="cv-propose-actions"><button id="cv-propose" class="secondary">Get counteroffer <span>→</span></button></div>
    </div>
-   <div class="cv-review">
+   <div class="cv-review" id="cv-review-panel">
     <span class="section-cap cv-review-cap">02 / REVIEW THE DEAL</span>
     <div id="cv-proposal" class="cv-proposal" aria-live="polite"><div class="cv-proposal-header"><span id="cv-provider" class="provider-pill">LOCAL RULES / NO AI CALLS</span><span id="cv-revision">UNSIGNED</span></div><p id="cv-line">The pen is yours. Make a proposal.</p><h3 id="cv-contract-title">No binding terms yet.</h3><div id="cv-clauses"><p>Nothing changes until you sign.</p></div><p id="cv-rule-note">Review the benefits and their price before signing.</p><p id="cv-rationale" hidden></p><canvas id="cv-preview" width="900" height="160" aria-label="Illustrative before and after contract preview"></canvas><p id="cv-preview-label" class="cv-caption">ILLUSTRATIVE PREVIEW · NOT ACTUAL COMBAT</p><button id="cv-review-details" class="cv-link" aria-haspopup="dialog">Full terms & changes ↗</button></div>
     <p id="cv-status" class="cv-status" role="status">Choose your terms. Nothing changes until you sign.</p>
@@ -620,7 +810,7 @@ body.mobile-ui #covenant-screen #cv-preview{margin-top:6px}
       <label class="setting-row mobile-only"><span>Left-handed layout <small>Movement on the right; actions on the left</small></span><input id="lefthanded" type="checkbox"></label>
       <label class="setting-row mobile-only"><span>Touch sensitivity <small>Reach full speed with less finger travel</small></span><input id="sensitivity" type="range" min="70" max="140" value="100"></label>
       <p class="mobile-only touch-info">Automatic aim and fire are always on for touch controls.</p>
-      <p id="renderer-status" class="renderer-status" role="status">0.5.0 / INITIALIZING 3D</p>
+      <p id="renderer-status" class="renderer-status" role="status">0.9.9 / INITIALIZING 3D</p>
       <button id="fullscreen" class="secondary">Toggle fullscreen</button><button id="settings-close" class="primary">Back <span>→</span></button>
     </div></section>
     <section id="result" class="screen backdrop" hidden aria-label="Run results"><div class="result-left"><span class="eyebrow" id="result-kicker"></span><h2 id="result-title"></h2><p id="result-story"></p><div class="result-score"><span class="micro">FINAL SCORE</span><strong id="result-score"></strong><span id="result-rank"></span></div><div class="button-row"><button id="retry" class="primary">Try again <span>↗</span></button><button data-home class="secondary">Main menu</button></div><button id="debrief" class="secondary debrief-button">Flight debrief / prototype</button><button id="export" class="text-button">Save run report as JSON ↓</button></div><div class="result-right"><span class="eyebrow">FLIGHT RECORDER</span><div id="result-stats"></div><div id="result-pacts"></div><div id="result-build"></div><p id="result-seed" class="micro"></p></div></section>
@@ -1213,7 +1403,7 @@ body.mobile-ui #covenant-screen #cv-preview{margin-top:6px}
         }
       }
     }
-    report(){return {version:'0.5.0',layout:this.layout,arena:{width:this.width,height:this.height},seed:this.seed,difficulty:this.difficulty,outcome:this.phase,score:this.score,seconds:+this.time.toFixed(2),kills:this.kills,bosses:this.bossKills,parries:this.parries,grazes:this.grazes,damageTaken:this.damageTaken,breaches:this.breaches,contracts:this.contracts.map(c=>({...c})),upgrades:{...this.upgrades},timeline:this.log.slice(-256)};}
+    report(){return {version:'0.9.9',layout:this.layout,arena:{width:this.width,height:this.height},seed:this.seed,difficulty:this.difficulty,outcome:this.phase,score:this.score,seconds:+this.time.toFixed(2),kills:this.kills,bosses:this.bossKills,parries:this.parries,grazes:this.grazes,damageTaken:this.damageTaken,breaches:this.breaches,contracts:this.contracts.map(c=>({...c})),upgrades:{...this.upgrades},timeline:this.log.slice(-256)};}
   }
   return {World,W,H,TAU,CONTRACTS,UPGRADES,BOSSES,SECTORS,modifiers,clamp,dist,angle,hash,rng,segmentHit};
 });
@@ -1547,7 +1737,7 @@ return {CONTRACTS,DIRECTORS,TASKS,cleanRequest,schema,validateDecision,mock,tele
   step(dt,input={}){super.step(dt,input);if(this.phase==='combat'&&this.bossKills>0){this.completeEncounter();return;}if(this.phase==='combat'&&this.autoParley&&this.time>=18)this.requestParley();}
   completeEncounter(){this.enemies=[];this.bullets=[];this.lasers=[];this.phase='won';this.score+=this.broken?1000:3500;this.finishReason=this.broken?'unbound':'honored';this.emit('victory',{ending:this.finishReason});}
   memoryAfter(){return {honored:Math.min(10000,this.memory.honored+(this.phase==='won'&&!this.broken?1:0)),broken:Math.min(10000,this.memory.broken+(this.broken?1:0))};}
-  report(){const voice={...this.voiceEvidence};return {...super.report(),version:'0.5.0',mode:this.mode,contractLanguage:'living-covenant-v1',assists:'automatic aim/fire in First Contact UI',rules:this.spec?{...this.spec}:null,covenantStats:{...this.covenantStats},receipts:this.receipts.map(r=>({...r,spec:{...r.spec},snapshot:{...r.snapshot}})),memoryBefore:{...this.memory},memoryAfter:this.memoryAfter(),liveVoice:{...voice,status:voice.signedContracts>0?'contract-signed':voice.connectionStarted>0?'connected':'not-used'}};}
+  report(){const voice={...this.voiceEvidence};return {...super.report(),version:'0.9.9',mode:this.mode,contractLanguage:'living-covenant-v1',assists:'automatic aim/fire in First Contact UI',rules:this.spec?{...this.spec}:null,covenantStats:{...this.covenantStats},receipts:this.receipts.map(r=>({...r,spec:{...r.spec},snapshot:{...r.snapshot}})),memoryBefore:{...this.memory},memoryAfter:this.memoryAfter(),liveVoice:{...voice,status:voice.signedContracts>0?'contract-signed':voice.connectionStarted>0?'connected':'not-used'}};}
  }
  return {ZONES,SPEEDS,REFLECTS,PRICES,validateSpec,cleanRequest,schema,compile,describe,budget,localProposal,memory,telemetry,Client,Run};
 });
@@ -2185,6 +2375,14 @@ const PALETTES=[
 ];
 function facetMesh(){const out=[],v=[[0,0,1],[.45,0,0],[0,.45,0],[-.45,0,0],[0,-.45,0],[0,0,-.5]];function tri(a,b,c){const u=b.map((n,i)=>n-a[i]),w=c.map((n,i)=>n-a[i]),n=[u[1]*w[2]-u[2]*w[1],u[2]*w[0]-u[0]*w[2],u[0]*w[1]-u[1]*w[0]],l=Math.hypot(...n)||1;for(const p of [a,b,c])out.push(...p,...n.map(v=>v/l));}for(let i=1;i<=4;i++){const j=i===4?1:i+1;tri(v[0],v[i],v[j]);tri(v[5],v[j],v[i]);}return new Float32Array(out);}
 M.shapes.crystal=facetMesh();
+// Ring thickness is radial geometry, not instance Z scale. Thin engravings need
+// their own profile; flattening the old torus still left a broad, bright band.
+function fineRing(minor){const out=[],n=72,m=6;
+ const pt=(i,j)=>{const a=i*TAU/n,b=j*TAU/m;return [(1+minor*Math.cos(b))*Math.cos(a),(1+minor*Math.cos(b))*Math.sin(a),Math.sin(b)];};
+ const tri=(a,b,c)=>{const u=b.map((v,i)=>v-a[i]),v=c.map((x,i)=>x-a[i]),q=[u[1]*v[2]-u[2]*v[1],u[2]*v[0]-u[0]*v[2],u[0]*v[1]-u[1]*v[0]],d=Math.hypot(...q)||1;for(const p of [a,b,c])out.push(...p,...q.map(x=>x/d));};
+ for(let i=0;i<n;i++)for(let j=0;j<m;j++){const a=pt(i,j),b=pt(i+1,j),c=pt(i+1,j+1),d=pt(i,j+1);tri(a,b,c);tri(a,c,d);}return new Float32Array(out);
+}
+M.shapes.engraving=fineRing(.005);M.shapes.bezel=fineRing(.035);
 class Scene extends M.Scene{
 
  covenantFloor(w,h,seed){
@@ -2203,13 +2401,28 @@ class Scene extends M.Scene{
    this.box(x,y,-21,8,30,4,side*.15,brass,.4,.6,.1,LAYER.HIGH);
    this.box(x-side*7,y,-18,1.5,23,3,side*.15,mint,.4,.1,.48,LAYER.TRIM);
   }
-  for(let j=0;j<22;j++){const x=r()*w,y=r()*h;this.box(x,y,-104-r()*10,4+r()*8,1,2,r()*TAU,[.024,.055,.068],.8,.2,0,LAYER.GROUND);}
+  // Keep the court legible under the projectile layer; these are engraved flecks,
+  // not a confetti field competing with the fight.
+  for(let j=0;j<10;j++){const x=r()*w,y=r()*h;this.box(x,y,-104-r()*10,4+r()*8,1,2,r()*TAU,[.024,.055,.068],.8,.2,0,LAYER.GROUND);}
  }
  bossShadow(x,y,s=1,lift=110){const p=PALETTES[this.theme||0];this.add('orb',x+lift*.22,y+lift*.28,-78,69*s,34*s,.06,0,p.ground.map(v=>v*.48),.98,0,0,LAYER.SHADOW);}
  shipShadow(x,y,a,s=1,lift=96){const p=PALETTES[this.theme||0];this.add('orb',x+lift*.2,y+lift*.25,-78,21*s,10*s,.06,a,p.ground.map(v=>v*.38),.98,0,0,LAYER.SHADOW);}
  floor(w,h,stage=0,seed='TITLE'){
   if(this.living){this.covenantFloor(w,h,seed);return;}
   stage=Math.max(0,Math.min(5,stage));this.theme=stage;const p=PALETTES[stage],r=rng(seed+':ascension:'+stage),cx=w/2,cy=h/2;
+  if(seed==='TITLE'){
+   // The title is a vestibule, not a second combat arena: quiet obsidian,
+   // a thin brass orbit, and a few ordered architectural axes.
+   const ink=[.008,.017,.026],brass=[.28,.19,.09],edge=[.40,.28,.13],tx=w*(w<h?.52:.72),ty=h*(w<h?.40:.46);
+   this.box(cx,cy,-119,w+180,h+180,8,0,ink,.95,.08,0,LAYER.GROUND);
+   this.add('engraving',tx,ty,-68,Math.min(w,h)*.31,Math.min(w,h)*.31,1.0,0,brass,.54,.52,0,LAYER.TRIM);
+   this.add('engraving',tx,ty,-63,Math.min(w,h)*.39,Math.min(w,h)*.39,.7,0,edge,.55,.48,0,LAYER.TRIM);
+   for(const x of [w*.18,w*.82]){
+    this.box(x,cy,-78,2.5,h*.76,5,0,[.018,.035,.045],.65,.65,0,LAYER.GROUND);
+    for(let i=0;i<5;i++)this.box(x,h*(.18+i*.16),-70,1.2,8,2,0,brass,.45,.60,.03,LAYER.TRIM);
+   }
+   return;
+  }
   // The game is above a layered landscape, not embedded in a bright tiled floor.
   this.box(cx,cy,-112,w+180,h+180,8,0,p.ground,.82,.16,0,LAYER.GROUND);
   this.box(cx,cy,-130,w+260,h+260,6,0,p.ground,.95,.04,0,.97);
@@ -2283,7 +2496,12 @@ class Scene extends M.Scene{
   }
  }
  dynamicScenery(w,h,stage=0,seed='TITLE',t=0,bossFx=0,bgAnim=1){
-  if(this.living){const tt=bgAnim===0?0:t,rr=Math.min(w,h)*.38;for(let i=0;i<12;i++){const a=i*TAU/12+tt*.045,x=w/2+Math.cos(a)*rr,y=h*.43+Math.sin(a)*rr;this.box(x,y,-82,14,2,3,a,[.10,.32,.31],.45,.35,.15+bossFx*.12,LAYER.TRIM);}return;}
+  if(this.living){const tt=bgAnim===0?0:t,rr=Math.min(w,h)*.38;for(let i=0;i<12;i++){const a=i*TAU/12+tt*.045,x=w/2+Math.cos(a)*rr,y=h*.43+Math.sin(a)*rr;this.box(x,y,-82,14,2,3,a,[.045,.14,.14],.55,.45,.04+bossFx*.05,LAYER.TRIM);}return;}
+  if(seed==='TITLE'){
+   const tt=bgAnim===0?0:t,rr=Math.min(w,h)*.31,cx=w*(w<h?.52:.72),cy=h*(w<h?.40:.46),brass=[.25,.17,.08];
+   for(let i=0;i<8;i++){const a=i*TAU/8+tt*.025;this.box(cx+Math.cos(a)*rr,cy+Math.sin(a)*rr,-58,10,1.6,2,a,brass,.4,.75,.025,LAYER.TRIM);}
+   return;
+  }
 
   const p=PALETTES[Math.min(stage,5)],cx=w/2,cy=h/2;const tt=bgAnim===0?0:t*(bgAnim===2?1.25:1),b=bgAnim===0?0:bossFx;
   // A broken ring visibly rotates; a perfect torus alone would not show rotation.
@@ -2317,6 +2535,26 @@ class Scene extends M.Scene{
   }
  }
  boss(e,stage=0,t=0,s=1){
+  if(stage===0){
+   // The Notary is a quiet brass instrument: six tapered obsidian wings,
+   // nested seal rings, and one unmistakable mint diamond core.
+   const x=e.x,y=e.y,a=e.rot||0,cls=LAYER.FLIGHT_HIGH;
+   const brass=[.34,.24,.12],brassHi=[.62,.45,.22],obsidian=[.018,.027,.036],steel=[.16,.22,.25],mint=[.10,.72,.57];
+   this.bossShadow(x,y,s,110);
+   this.add('bezel',x,y,11,58*s,58*s,6*s,a,brass,.30,.78,.04,cls);
+   this.add('bezel',x,y,18,47*s,47*s,4*s,-a*.55,brassHi,.24,.82,.06,cls);
+   this.add('hex',x,y,24,39*s,39*s,28*s,-a*.35,obsidian,.22,.92,0,cls,e.hit>0?.7:0);
+   this.add('hex',x,y,37,25*s,25*s,21*s,a,steel,.24,.88,0,cls);
+   this.add('crystal',x,y,67,32*s,42*s,24*s,0,mint,.10,.22,1.55,cls);
+   for(let i=0;i<6;i++){
+    const ang=a+i*TAU/6,rr=70*s,px=x+Math.cos(ang)*rr,py=y+Math.sin(ang)*rr;
+    this.add('hull',px,py,18,36*s,25*s,25*s,ang,obsidian,.22,.93,0,cls);
+    this.box(px,py,32,27*s,5*s,7*s,ang,brassHi,.23,.84,.04,cls);
+    this.box(x+Math.cos(ang)*96*s,y+Math.sin(ang)*96*s,25,9*s,3*s,5*s,ang,brass,.25,.80,.08,cls);
+    if(e.phase>0)this.add('orb',x+Math.cos(ang)*104*s,y+Math.sin(ang)*104*s,29,3*s,3*s,3*s,0,mint,.18,.12,1.3,cls);
+   }
+   return;
+  }
   if(stage<3)return super.boss(e,stage,t,s);
   const p=PALETTES[Math.min(stage,5)],cls=LAYER.FLIGHT_HIGH,x=e.x,y=e.y,a=e.rot||0;this.bossShadow(x,y,s,110);
   this.add('hex',x,y,18,37*s,37*s,40*s,a,p.alloy,.27,.84,0,cls,e.hit>0?.65:0);
@@ -2411,7 +2649,7 @@ void main(){if(vClass<0.){outColor=vec4(vC.rgb,0.);return;} bool flight=vClass>=
  float farDistance=clamp(1.-vPos.y/uF[0].y,0.,1.);
  float density=stage<.5?.14:stage<1.5?.23:.18;
  float fog=flight?0.:min(.38,1.-exp(-density*(.35+heightDistance+farDistance*.55)));
- vec3 haze=mix(sky,tint,.08)*.22;lit=mix(lit,haze,fog);if(uF[4].z>.5&&!flight)lit*=.48;
+ vec3 haze=mix(sky,tint,.08)*.22;lit=mix(lit,haze,fog);if(uF[4].z>.5&&!flight)lit*=.32;
  if(!flight&&vPos.z<-85.){float wave=.5+.5*sin(vPos.x*.012+sin(vPos.y*.007+t*.10)*2.);lit+=tint*wave*.016;}
  if(!flight){vec2 delta=(vPos.xy/uF[0].xy-.5);float center=smoothstep(.12,.40,length(delta));lit*=.82+.18*center;}
  outColor=vec4(max(lit,vec3(0.)),flight?1.:0.);}
@@ -2462,7 +2700,7 @@ fn fresnel(c:f32,f0:vec3f)->vec3f{return f0+(vec3f(1.)-f0)*pow(1.-c,5.);}
  let heightDistance=clamp((140.-v.pos.z)/240.,0.,1.);let farDistance=clamp(1.-v.pos.y/f.arena.y,0.,1.);
  let density=select(.14,select(.23,.18,stage>1.5),stage>.5);
  let fog=select(min(.38,1.-exp(-density*(.35+heightDistance+farDistance*.55))),0.,flight);
- let haze=mix(sky,tint,.08)*.22;lit=mix(lit,haze,fog);if(f.fx.z>.5&&!flight){lit*=.48;}
+ let haze=mix(sky,tint,.08)*.22;lit=mix(lit,haze,fog);if(f.fx.z>.5&&!flight){lit*=.32;}
  if(!flight&&v.pos.z< -85.){let wave=.5+.5*sin(v.pos.x*.012+sin(v.pos.y*.007+t*.10)*2.);lit+=tint*wave*.016;}
  if(!flight){let delta=v.pos.xy/f.arena.xy-vec2f(.5);let center=smoothstep(.12,.40,length(delta));lit*=.82+.18*center;}return vec4f(max(lit,vec3f(0.)),select(0.,1.,flight));}
 `;
@@ -2493,7 +2731,7 @@ const WG_PRESENT=`@group(0) @binding(0) var finalImage:texture_2d<f32>;
 @fragment fn fs(@builtin(position) p:vec4f)->@location(0) vec4f{return textureLoad(finalImage,vec2i(p.xy),0);}`;
 function bossFX(world){if(!world||!world.enemies)return 0;const boss=world.enemies.find(e=>e.type==='boss'&&e.spawn<=0);if(!boss)return 0;const phase=(boss.phase||0)/2;const hp=1-(boss.hp||0)/Math.max(1,boss.maxHp||boss.hp||1);return Math.max(0,Math.min(1,.35+phase*.25+hp*.4));}
 function clearColor(stage,bossFx=0){const s=stage<.5?[.010,.030,.038]:stage<1.5?[.026,.012,.046]:[.055,.030,.010];const boost=bossFx*.018;return {r:Math.min(.12,s[0]+boost*.6),g:Math.min(.12,s[1]+boost*.45),b:Math.min(.14,s[2]+boost),a:0};}
-function frameData(f,width,height){const stage=f.world?Math.min(f.world.stage,5):0,boss=bossFX(f.world),bg=f.bgAnim===2?1.3:f.bgAnim===0?0:1,post=f.postFX===2?1.2:f.postFX===0?0:1,bloom=f.bloom===2?1.55:f.bloom===0?0:1;return new Float32Array([f.w,f.h,f.t,stage,f.shock?.x??.5,f.shock?.y??.5,f.shock?.age||0,f.shock?.strength||0,f.shakeX||0,f.shakeY||0,boss,bg,width,height,1.08+boss*.08+post*.04,f.reduced?1:0,post,bloom,f.world?.mode==='first-contact'?1:0,0]);}
+function frameData(f,width,height){const stage=f.world?Math.min(f.world.stage,5):0,boss=bossFX(f.world),bg=f.bgAnim===2?1.3:f.bgAnim===0?0:1,post=f.postFX===2?1.2:f.postFX===0?0:1,bloom=f.bloom===2?1.55:f.bloom===0?0:1;return new Float32Array([f.w,f.h,f.t,stage,f.shock?.x??.5,f.shock?.y??.5,f.shock?.age||0,f.shock?.strength||0,f.shakeX||0,f.shakeY||0,boss,bg,width,height,1.08+boss*.08+post*.04,f.reduced?1:0,post,bloom,!f.world||f.world.mode==='first-contact'?1:0,0]);}
 class GLBackend{
  constructor(canvas,shapes){this.canvas=canvas;const gl=canvas.getContext('webgl2',{alpha:false,antialias:false,powerPreference:'high-performance',preserveDrawingBuffer:false});if(!gl)throw Error('WebGL2 is unavailable');this.gl=gl;this.shapes=shapes;this.label='WEBGL2 / PBR';this.frames=0;this.computeDispatches=0;this.initialize();}
  initialize(){const g=this.gl;this.targets=[];this.size='';this.meshes={};this.hdr=!!g.getExtension('EXT_color_buffer_float');this.program=this.programOf(GL_VERTEX,GL_FRAGMENT);this.blur=this.programOf(GL_QUAD,GL_BLUR);this.post=this.programOf(GL_QUAD,GL_COMPOSITE);this.empty=g.createVertexArray();
@@ -2557,7 +2795,7 @@ class Renderer{
   if(!this.active)this.backend='CANVAS 2D FALLBACK';this.notify();return this;
  }
  event(e,x,y,w,h){if(e.type==='nova'||e.type==='breach'){this.shock={x:x/w,y:y/h,age:0,strength:1};this.shockStart=this.latestTime;}}
- stats(){return {build:'0.5.0',backend:this.backend,frames:this.active?.frames||0,computeDispatches:this.active?.computeDispatches||0,instances:this.scene.count,draws:this.active?.draws||0,hdr:this.active instanceof GPUBackend||!!this.active?.hdr,errors:[...this.messages]};}
+ stats(){return {build:'0.9.9',backend:this.backend,frames:this.active?.frames||0,computeDispatches:this.active?.computeDispatches||0,instances:this.scene.count,draws:this.active?.draws||0,hdr:this.active instanceof GPUBackend||!!this.active?.hdr,errors:[...this.messages]};}
  draw(frame){if(!this.active)return false;this.latestTime=frame.t;const b=this.active;if(b instanceof GLBackend&&b.gl.isContextLost())return false;
   const {view,mobile,world}=frame;let f={...frame};if(mobile&&!world){f.w=720;f.h=720*view.height/view.width;f.scale=view.width/720;f.x=0;f.y=0;}else{f.scale=view.scale;f.x=view.x;f.y=view.y;}
   const cw=f.w*f.scale,ch=f.h*f.scale;const dpr=Math.min(window.devicePixelRatio||1,2),maxPixels=mobile?1200000:2100000,factor=Math.min(dpr,Math.sqrt(maxPixels/Math.max(1,cw*ch)));const rw=Math.max(1,Math.round(cw*factor)),rh=Math.max(1,Math.round(ch*factor));
@@ -2942,13 +3180,14 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
     $('sector-label').textContent=world.training?'FLIGHT SCHOOL':`${mobile?'':'SECTOR '}0${Math.min(world.stage+1,world.totalStages||3)} / ${SECTORS[Math.min(world.stage,5)]}`;
     $('hearts').innerHTML=Array.from({length:p.maxHp},(_,i)=>`<i class="heart ${i<p.hp?'on':''}"></i>`).join('');$('hearts').parentElement.classList.toggle('critical',p.hp<=2);
     $('score').textContent=String(world.score).padStart(6,'0');$('combo').textContent=world.combo>=5?'×'+(1+Math.floor(world.combo/5)*.25).toFixed(2):'';
-    const wasBossVisible=!$('boss-hud').hidden;$('boss-hud').hidden=!b;if(wasBossVisible!==!!b)refreshView();if(b){$('boss-name').textContent=BOSSES[world.stage].name;$('boss-phase').textContent=`PHASE 0${b.phase+1}`;$('boss-health').style.width=clamp(b.hp/b.maxHp*100,0,100)+'%';$('boss-health').style.background=BOSSES[world.stage].color;}
+    const wasBossVisible=!$('boss-hud').hidden;$('boss-hud').hidden=!b;if(wasBossVisible!==!!b)refreshView();if(b){$('boss-name').textContent=BOSSES[world.stage].name;$('boss-phase').textContent=`PHASE 0${b.phase+1} / ${Math.ceil(clamp(b.hp/b.maxHp,0,1)*100)}%`;$('boss-health').style.width=clamp(b.hp/b.maxHp*100,0,100)+'%';$('boss-health').style.background=BOSSES[world.stage].color;}
     const pact=CONTRACTS.find(c=>c.id===world.pact);$('pact-name').textContent=pact?pact.name:'TRAINING';$('pact-state').textContent=world.broken?'BROKEN / Attack rate +25%':world.ceasefire?'CEASEFIRE / FIRE PAUSED':pact?(mobile?pact.hud:pact.gift):'NO DAMAGE';$('pact-state').style.color=world.broken?'#ff746c':world.ceasefire?'#c8afff':'#78e8d0';
     $('wave-label').textContent=world.training?'PRACTICE':world.wave===2?'NEMESIS ENCOUNTER':`WAVE 0${world.wave+1} / 02`;
     const progress=b?1-b.hp/b.maxHp:world.wavePlan.length?clamp((world.planIndex-world.enemies.length)/world.wavePlan.length,0,1):0;$('wave-progress').style.width=(progress*100)+'%';
     $('dash-meter').style.width=(1-clamp(p.dashCd/world.dashCooldown(),0,1))*100+'%';$('parry-meter').style.width=(1-clamp(p.parryCd/world.parryCooldown(),0,1))*100+'%';
     $('dash-status').textContent=p.dashCd>0?p.dashCd.toFixed(1)+'s':'READY';$('parry-status').textContent=p.parryCd>0?p.parryCd.toFixed(1)+'s':'READY';$('dash-ability').classList.toggle('cool',p.dashCd>0);$('parry-ability').classList.toggle('cool',p.parryCd>0);
     const ready=p.energy>=world.novaCost();$('energy-num').textContent=Math.floor(p.energy)+' / '+world.novaCost();$('energy-meter').style.width=Math.min(100,p.energy/world.novaCost()*100)+'%';$('nova-ability').classList.toggle('ready',ready);
+    for(const [id,disabled] of [['dash-ability',p.dashCd>0],['parry-ability',p.parryCd>0],['nova-ability',!ready],['breach-ability',world.broken||world.training||!world.pact]])$(id).disabled=disabled;
     $('breach-ability').classList.toggle('used',world.broken||world.training);$('breach-status').textContent=world.broken?'BROKEN':world.training?'DISABLED':'BREAK PACT';
     $('build-hud').innerHTML=Object.entries(world.upgrades).filter(([id])=>id!=='repair').map(([id,n])=>{const u=UPGRADES.find(x=>x.id===id);return `<span class="build-chip" title="${u.name} ×${n}">${u.icon}${n>1?`<small>${n}</small>`:''}</span>`;}).join('');
     if(mobile){
@@ -2996,7 +3235,7 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
         case 'kill':{const color=e.kind==='boss'?BOSSES[e.stage].color:e.kind==='spinner'?'#c8aaff':'#ff8676';burst(e.x,e.y,e.kind==='boss'?90:21,color,e.kind==='boss'?330:180);fxRing(e.x,e.y,color,e.kind==='boss'?420:75,e.kind==='boss'?.9:.35);shake=Math.max(shake,e.kind==='boss'?16:3);if(e.kind==='boss'){freeze=opts.reduced?0:.10;flash=.14;}}break;
         case 'hit':if(e.kind!=='shot'){effects.push({type:'text',x:e.x+(Math.random()-.5)*35,y:e.y-25,text:String(Math.round(e.damage)),color:e.kind==='reflect'?'#ffe0a3':'#9bf8e4',life:.65,max:.65});}break;
         case 'dash':trails.push({x:e.x,y:e.y,a:e.a,life:.23,max:.23});burst(e.x,e.y,8,'#78e8d0',70);break;
-        case 'covenant-signed':sound.effect('heal');fxRing(world.p.x,world.p.y,'#c7e9c3',700,.8);announcement(e.amended?'AMENDMENT ENFORCED':'SIGNATURE ACCEPTED',e.title,mobile?'Slide to move · Tap PARRY or DASH · Automatic aim & fire':'WASD move · E parry · SPACE dash · Automatic aim & fire',2.5);break;
+        case 'covenant-signed':sound.effect('signed');fxRing(world.p.x,world.p.y,'#c7e9c3',700,.8);announcement(e.amended?'AMENDMENT ENFORCED':'SIGNATURE ACCEPTED',e.title,mobile?'Slide to move · Tap PARRY or DASH · Automatic aim & fire':'WASD move · E parry · SPACE dash · Automatic aim & fire',2.5);break;
         case 'shield':fxRing(e.x,e.y,'#a5ffe5',26,.25);break;
         case 'parry-start':fxRing(e.x,e.y,'#78e8d0',74,.24);break;
         case 'reflect':burst(e.x,e.y,5,e.perfect?'#ffdf8e':'#78e8d0',140);if(e.perfect){shake=Math.max(shake,2);toast('PERFECT REFLECT','#ffdf8e');}break;
@@ -3072,8 +3311,18 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
     path([[-7,-8],[-19,-18],[-14,-4]],'#316374','#74cfc4',.7);path([[-7,8],[-19,18],[-14,4]],'#316374','#74cfc4',.7);
     circle(0,0,3.4,'#fcfff5');circle(0,0,6,null,'#081019',1.2);ctx.restore();
   }
+  function drawNotary(e,t,scale=1,hero=false){
+    const a=e.rot||0;ctx.save();ctx.translate(e.x,e.y);ctx.scale(scale,scale);
+    if(hero){for(const r of [126,149,173])circle(0,0,r,null,'#c8aa722d',.8);}
+    circle(0,0,55,'#0d171e','#c2a475',3);circle(0,0,49,null,'#7a684c',1);
+    ctx.save();ctx.rotate(a);
+    for(let i=0;i<6;i++){ctx.save();ctx.rotate(i*TAU/6);path([[39,-12],[69,-20],[98,-7],[83,5],[43,14]],'#172c32','#8d967b',1);path([[43,-8],[70,-15],[91,-7],[66,-4]],'#304349');line(49,10,82,1,'#bfa67a',1.6);ctx.restore();}
+    poly(0,0,39,6,Math.PI/6,e.hit>0?'#bbcebc':'#172730','#a9936f',1.5);poly(0,0,31,6,Math.PI/6,'#0a161d','#668c89',1);ctx.restore();
+    glow(0,0,24,'#8be7c52e');path([[0,-18],[11,0],[0,19],[-11,0]],'#8cd8c3','#dbfae7',1);path([[0,-18],[0,19],[-11,0]],'#4d9e93');line(0,-18,0,19,'#c8ffeb',.9);ctx.restore();
+  }
   function drawBoss(e,stage,t,scale=1,hero=false){
     if(gpuActive)return;
+    if(stage===0){drawNotary(e,t,scale,hero);return;}
     const color=BOSSES[stage].color,phase=e.phase||0;
     ctx.save();ctx.translate(e.x,e.y);ctx.scale(scale,scale);
     glow(0,0,135,color+'18');
@@ -3187,7 +3436,7 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
     const edge=i=>!!pad.buttons[i]?.pressed&&!oldPad[i],held=i=>!!pad.buttons[i]?.pressed;
     if(screen==='game'){if(edge(9))togglePause();}
     else if(screen==='pause'&&edge(9))show('game');
-    else{const surface=[$('cv-connection-dialog'),$('cv-detail-dialog')].find(dialog=>dialog.open)||$(screen);const buttons=Array.from(surface?.querySelectorAll('button:not([disabled]):not([hidden])')||[]);let idx=buttons.indexOf(document.activeElement);const nav=held(13)||held(15)?1:held(12)||held(14)?-1:0;const axis=pad.axes[1]>.6?1:pad.axes[1]<-.6?-1:0;const move=nav||axis;
+    else{const surface=[$('cv-connection-dialog'),$('cv-detail-dialog')].find(dialog=>dialog.open)||$(screen);const buttons=Array.from(surface?.querySelectorAll('button:not([disabled]):not([hidden])')||[]).filter(b=>b.getClientRects().length>0);let idx=buttons.indexOf(document.activeElement);const nav=held(13)||held(15)?1:held(12)||held(14)?-1:0;const axis=pad.axes[1]>.6?1:pad.axes[1]<-.6?-1:0;const move=nav||axis;
       if(move&&move!==oldAxes[0]&&buttons.length){idx=(idx+move+buttons.length)%buttons.length;buttons[idx].focus();}oldAxes[0]=move;if(edge(0))(document.activeElement?.tagName==='BUTTON'?document.activeElement:buttons[0])?.click();}
     const ax=Math.abs(pad.axes[0]||0)>.18?pad.axes[0]:0,ay=Math.abs(pad.axes[1]||0)>.18?pad.axes[1]:0,rx=pad.axes[2]||0,ry=pad.axes[3]||0,aim=Math.hypot(rx,ry)>.25;
     const input={mx:ax,my:ay,shoot:aim||held(7),dash:edge(0),parry:edge(4),nova:edge(3),breach:edge(1),autoAim:held(7)&&!aim};
@@ -3221,35 +3470,43 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
   }
 
   // --- Living Covenant. Network proposals never mutate simulation state. ---
+  function setCovenantStep(step,focus=false){
+    const review=step==='review';$('covenant-screen').dataset.step=review?'review':'negotiate';
+    $('cv-tab-negotiate').setAttribute('aria-pressed',String(!review));$('cv-tab-review').setAttribute('aria-pressed',String(review));
+    if(mobile&&focus)$(review?'cv-tab-review':'cv-tab-negotiate').focus({preventScroll:true});
+  }
   function startFirstContact(seed){
-    sound.unlock();$('boss-hud').hidden=true;refreshView();const arena=mobile?{layout:'portrait',height:720*view.field.height/view.field.width}:{};
+    sound.unlock();$('boss-hud').hidden=true;document.body.dataset.covenant='true';refreshView();const arena=mobile?{layout:'portrait',height:720*view.field.height/view.field.width}:{};
     let memory;try{memory=V.memory(storage.read('nemesis.covenant.memory.v1',{honored:0,broken:0}));}catch{memory={honored:0,broken:0};}
     world=new V.Run(typeof seed==='string'?seed:randomSeed(),'standard',arena,memory);cvRunId=crypto.randomUUID?crypto.randomUUID():Array.from(crypto.getRandomValues(new Uint8Array(16)),b=>b.toString(16).padStart(2,'0')).join('');cvSigning=false;W=world.width;H=world.height;refreshView();effects=[];particles=[];trails=[];shake=flash=freeze=0;resultSaved=false;lastWorldPhase='';
     $('cv-prompt').value='Move the sanctuary to the left. Slow your bullets. I accept reinforcements.';$('cv-mode').value=window.NEMESIS_HOSTED?'server':'local';$('cv-token').value='';$('cv-consent').checked=false;openCovenant();updateHUD();
   }
   function invalidateCovenant(message='Terms changed. Get a new counteroffer before signing.',keepDelegation=false,reviseDelegation=false){
     if(cvSigning)return;cvClient.cancel();cvRequestId++;if(!keepDelegation)voice?.supersede(reviseDelegation);cvProposal=null;
+    $('covenant-screen').dataset.proposal='draft';$('cv-review-ready').textContent='';$('cv-proposal').setAttribute('aria-busy','false');
     if(cvSession.csrf&&cvRunId){const ac=new AbortController(),timer=setTimeout(()=>ac.abort(),2000);cvSession.request('/api/covenant/cancel',{runId:cvRunId,intentVersion:cvRequestId},{signal:ac.signal,keepalive:true}).catch(()=>{}).finally(()=>clearTimeout(timer));}
     $('cv-sign').disabled=true;$('cv-propose').disabled=false;$('cv-status').textContent=message;$('cv-revision').textContent='UNSIGNED';$('cv-provider').textContent=$('cv-mode').value==='server'?'OPENAI SELECTED / AWAITING PROPOSAL':'LOCAL RULES / NO AI CALLS';$('cv-contract-title').textContent='No binding counteroffer.';$('cv-clauses').textContent='Propose your terms to see the binding rules.';$('cv-line').textContent='The pen is yours.';$('cv-rationale').textContent='';$('cv-rule-note').textContent='Only a signed contract changes the fight.';renderCovenantPreview(clock);
   }
   function openCovenant(){if(world?.mode!=='first-contact'||!['covenant','parley'].includes(world.phase))return;cvWorld=world;cvRevision=world.revision;show('covenant-screen');invalidateCovenant();
+    setCovenantStep('negotiate');
     const amended=world.phase==='parley';$('cv-heading').textContent=amended?'MID-FIGHT PARLEY / BATTLE PAUSED':'FIRST CONTACT / LIVING COVENANT';$('cv-title').textContent=amended?'Change the deal.':'Name your terms.';$('cv-close').textContent=amended?'Keep pact & resume':'Main menu';$('cv-sign').textContent=amended?'Sign amendment & resume ↗':'Sign & enter combat ↗';$('cv-memory').textContent=`${world.memory.honored} honored · ${world.memory.broken} broken${amended?' · '+world.parries+' reflections · '+world.covenantStats.shielded+' bullets erased':''}`;
     $('cv-intro-copy').textContent=amended?'One amendment is available. Compare the new rules. Health, boss damage and elapsed time are preserved.':'Ask for a safe place, slower fire, or stronger reflections. Every advantage has a price.';
     $('cv-enemy').textContent=amended?`“I counted ${world.parries} returned shots. Is that still the fight you want?”`:world.memory.broken?'“A broken signature is still on my ledger.”':'“I do not need to defeat you. I need you to break your word.”';
     if(amended)$('cv-prompt').value='Amplify my reflected bullets and slow your fire. My gun can be weaker.';
-    voiceText='';voiceCaption='';voiceLastInput=0;voiceBackchannels='';$('cv-caption-player').textContent='—';$('cv-caption-notary').textContent='—';
+    voiceText='';voiceCaption='';voiceLastInput=0;voiceBackchannels='';document.querySelector('.cv-voice').dataset.transcript='false';$('cv-caption-player').textContent='—';$('cv-caption-notary').textContent='—';
     $('cv-status').textContent=amended?'TIME FROZEN / One amendment. Current terms remain active until you sign.':'Choose OpenAI with consent, or LOCAL RULES. Review the counteroffer, then Sign.';refreshConnection();renderCovenantPreview(clock);
   }
   function openParley(){if(world?.mode==='first-contact'&&world.requestParley()){openCovenant();return true;}if(screen==='game')toast('PARLEY / Available after 8 seconds, once per fight.');return false;}
   function closeCovenant(){invalidateCovenant();if(world?.cancelParley()){show('game');updateHUD();}else home();}
   async function proposeCovenant(options={}){if(cvSigning||screen!=='covenant-screen'||world!==cvWorld)return null;const target=world,revision=world.revision;let request;
     try{request=target.request($('cv-prompt').value);}catch{$('cv-status').textContent='Write between 1 and 400 characters. No rules changed.';return;}
-    invalidateCovenant('Preparing a counteroffer. The battle is not running.',options.delegated===true);const id=++cvRequestId;$('cv-propose').disabled=true;
+    invalidateCovenant('Preparing a counteroffer. The battle is not running.',options.delegated===true);const id=++cvRequestId;$('cv-propose').disabled=true;$('covenant-screen').dataset.proposal='pending';$('cv-proposal').setAttribute('aria-busy','true');
     try{const reply=await cvClient.propose(request,{mode:$('cv-mode').value,consent:$('cv-consent').checked,session:cvSession,runId:cvRunId,intentVersion:id});if(id!==cvRequestId||world!==target||world.revision!==revision||screen!=='covenant-screen')return null;
       cvProposal=reply;if(options.delegated){reply.voiceOrigin=true;if(world?.voiceEvidence){world.voiceEvidence.proposalsReturned++;if(reply.provider==='openai')world.voiceEvidence.openaiProposals++;}} cvRevision=revision;const desc=V.describe(reply.spec),old=world.spec?V.describe(world.spec):null;$('cv-provider').textContent=reply.provider==='openai'?'CONTRACT: OPENAI / '+reply.model:'CONTRACT: LOCAL RULES / NO AI INFERENCE';$('cv-revision').textContent='REV '+String(revision+1).padStart(2,'0')+' / UNSIGNED';$('cv-line').textContent='“'+reply.spec.line+'”';$('cv-contract-title').textContent=desc.title;
       $('cv-clauses').innerHTML=`<div class="cv-benefit"><small>YOUR ADVANTAGE</small>${desc.benefits.map(x=>'<p>+ '+escapeHTML(x)+'</p>').join('')}</div><div class="cv-cost"><small>YOUR PRICE</small><p>− ${escapeHTML(desc.price)}</p></div>`;
-      $('cv-rule-note').textContent=desc.note;$('cv-rationale').textContent=desc.note+' '+reply.spec.rationale+(old?' Replaces: '+old.benefits.join('; ')+' / '+old.price+'.':'');$('cv-status').textContent=`${reply.reason} ${reply.latencyMs} ms · ${V.budget(reply.spec).benefit}/${V.budget(reply.spec).payment} rule budget · NOT YET APPLIED.`;$('cv-sign').disabled=false;renderCovenantPreview(clock);return reply;
-    }catch(e){if(id===cvRequestId)$('cv-status').textContent=String(e.message).slice(0,200)+' No rules changed.';}finally{if(id===cvRequestId)$('cv-propose').disabled=false;}
+      $('cv-rule-note').textContent=desc.note;$('cv-rationale').textContent=desc.note+' '+reply.spec.rationale+(old?' Replaces: '+old.benefits.join('; ')+' / '+old.price+'.':'');$('cv-status').textContent=`${reply.reason} ${reply.latencyMs} ms · ${V.budget(reply.spec).benefit}/${V.budget(reply.spec).payment} rule budget · NOT YET APPLIED.`;$('cv-sign').disabled=false;
+      $('covenant-screen').dataset.proposal='ready';$('cv-review-ready').textContent='READY';$('cv-proposal').setAttribute('aria-busy','false');if(!options.delegated)setCovenantStep('review',true);renderCovenantPreview(clock);return reply;
+    }catch(e){if(id===cvRequestId)$('cv-status').textContent=String(e.message).slice(0,200)+' No rules changed.';}finally{if(id===cvRequestId){$('cv-propose').disabled=false;$('cv-proposal').setAttribute('aria-busy','false');if(!cvProposal)$('covenant-screen').dataset.proposal='draft';}}
   }
   async function signCovenant(){
     if(cvSigning||screen!=='covenant-screen'||!cvProposal||world!==cvWorld||world.revision!==cvRevision)return;
@@ -3265,6 +3522,7 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
   function setSigningUI(pending){for(const id of ['cv-prompt','cv-mode','cv-consent','cv-propose','cv-open-connection'])$(id).disabled=pending;for(const button of document.querySelectorAll('[data-cv-example]'))button.disabled=pending;$('cv-sign').disabled=pending||!cvProposal;}
   async function refreshConnection(){
     const online=window.NEMESIS_HOSTED&&$('cv-mode').value==='server'&&$('cv-consent').checked;
+    document.querySelector('.cv-voice').dataset.available=String(online);
     $('cv-voice-start').disabled=true;
     $('cv-open-connection').textContent=online?'OpenAI / Settings':window.NEMESIS_HOSTED?'Enable OpenAI / Consent':'LOCAL RULES / Settings';
     if(!online){voice?.stop('consent-or-mode');$('cv-voice-state').textContent='VOICE: OFF / Enable OpenAI above to use voice.';$('cv-session-status').textContent='LOCAL RULES available without microphone or external requests.';return;}
@@ -3276,10 +3534,11 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
     const output=new Audio();output.volume=.8;
     voice=new window.PactVoice.PactVoice({request:cvSession.request.bind(cvSession),audio:output,onMedia:(stream,kind)=>window.NemesisDemo?.attachVoice(stream,kind,kind==='output'?{element:output}:{}),
       onState:state=>{if(voiceWorld?.voiceEvidence){voiceWorld.voiceEvidence.lastState=state.state;if(state.detail==='session-started')voiceWorld.voiceEvidence.connectionStarted++;}const active=['starting','listening','speaking','stopping'].includes(state.state);if(active!==voiceActive){voiceActive=active;sound.settings(opts.volume,opts.music,muted,opts.musicVolume*(active?.18:1),opts.sfxVolume,opts.adaptiveMusic);}
+        document.querySelector('.cv-voice').dataset.state=state.state;
         $('cv-voice-state').textContent='VOICE: '+(voiceWorld?.voiceEvidence?.connectionStarted?'GPT-LIVE-1 / ':'')+state.state.toUpperCase()+(state.detail?' / '+state.detail:'');$('cv-voice-start').disabled=active||!cvSession.voiceEnabled||!$('cv-consent').checked||$('cv-mode').value!=='server';for(const id of ['cv-voice-stop','cv-voice-mute','cv-voice-volume'])$(id).disabled=!active;
         if(state.state==='error')$('cv-status').textContent=state.detail||'Voice unavailable. Use text, or choose LOCAL RULES.';},
       // Keep this bounded voice session's transcript available in the scrollable caption.
-      onCaption:event=>{if(event.speaker==='assistant'){voiceCaption+=event.delta;$('cv-caption-notary').textContent=voiceCaption;}},
+      onCaption:event=>{if(event.speaker==='assistant'){voiceCaption+=event.delta;document.querySelector('.cv-voice').dataset.transcript='true';$('cv-caption-notary').textContent=voiceCaption;}},
       onInput:event=>{if(!event.delta||cvSigning)return;const delta=event.delta;if(/^\s*(yes|ok(?:ay)?|uh[ -]?huh|mm|\u3046\u3093|\u306f\u3044)[.!?、。\s]*$/i.test(delta)){voiceBackchannels+=delta;return;}
         voiceText=(voiceText+voiceBackchannels+delta).slice(-400);voiceBackchannels='';voiceLastInput=performance.now();$('cv-caption-player').textContent=voiceText;$('cv-prompt').value=voiceText;invalidateCovenant('Heard updated terms. Waiting for the Notary’s counteroffer.',false,true);},
       onSessionClosed:event=>{if(voiceWorld?.voiceEvidence)voiceWorld.voiceEvidence.sessionClosed++;},
@@ -3305,7 +3564,14 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
   }
   function renderCovenantField(t){
     const z=world.zone(),boss=world.enemies.find(e=>e.type==='boss');
-    if(z){const alpha=opts.reduced?.13:.12+Math.sin(t*2)*.025;ctx.save();ctx.fillStyle=`rgba(94,218,191,${alpha})`;ctx.beginPath();ctx.arc(z.x,z.y,z.r,0,TAU);ctx.fill();ctx.setLineDash([11,5]);circle(z.x,z.y,z.r,null,'#b3ffdc',2.5);ctx.setLineDash([]);circle(z.x,z.y,z.r-7,null,'#99efcc55');for(let i=0;i<4;i++){const a=i*TAU/4;line(z.x+Math.cos(a)*(z.r-13),z.y+Math.sin(a)*(z.r-13),z.x+Math.cos(a)*(z.r+9),z.y+Math.sin(a)*(z.r+9),'#e8ffe7',2);}ctx.font=(mobile?'12':'11')+'px monospace';ctx.textAlign='center';ctx.fillStyle='#e2ffec';ctx.fillText(world.spec.zone.toUpperCase()+' SANCTUARY',z.x,z.y+z.r+21);ctx.font='9px monospace';ctx.fillStyle='#a0d7c5';ctx.fillText('BULLETS ONLY',z.x,z.y+z.r+35);ctx.restore();}
+    if(z){
+      ctx.save();const inside=Math.hypot(world.p.x-z.x,world.p.y-z.y)<=z.r;
+      const tint=ctx.createRadialGradient(z.x,z.y,0,z.x,z.y,z.r);tint.addColorStop(0,'#7bdabd08');tint.addColorStop(.84,'#72d9b71a');tint.addColorStop(1,inside?'#94eec642':'#94eec62a');
+      circle(z.x,z.y,z.r,tint,'#a9eed2',inside?2.5:1.8);circle(z.x,z.y,z.r-7,null,'#9be0c648',1);
+      for(let i=0;i<32;i++){const a=i*TAU/32,r0=z.r-(i%4===0?14:6);line(z.x+Math.cos(a)*r0,z.y+Math.sin(a)*r0,z.x+Math.cos(a)*(z.r-2),z.y+Math.sin(a)*(z.r-2),i%4===0?'#c6e6c49a':'#aad9bb38',1);}
+      poly(z.x,z.y,22,4,Math.PI/4,null,'#b4e6cd38',1);circle(z.x,z.y,31,null,'#98dcb523',1);
+      ctx.font=(mobile?'12':'11')+'px monospace';ctx.textAlign='center';ctx.fillStyle='#d5f6e5';ctx.fillText(world.spec.zone.toUpperCase()+' SANCTUARY',z.x,z.y+z.r+18);ctx.font='9px monospace';ctx.fillStyle='#a0c7b7';ctx.fillText('BULLETS ONLY',z.x,z.y+z.r+31);ctx.restore();
+    }
     if(boss){circle(boss.x,boss.y,84,null,'#e8c79440',1);ctx.save();ctx.setLineDash([3,14]);circle(boss.x,boss.y,96,null,'#cae2d83b');ctx.restore();const intent=boss.intent;if(intent){const laser=intent.kind==='laser',color=laser?'#ff8dca':'#efd697',time=intent.remaining;ctx.save();ctx.globalAlpha=.55;ctx.setLineDash([9,12]);if(laser)line(boss.x,boss.y,boss.x+Math.cos(intent.angle)*H*2,boss.y+Math.sin(intent.angle)*H*2,color,3);else if(intent.kind==='fan')for(const a of [intent.angle-.4,intent.angle,intent.angle+.4])line(boss.x,boss.y,boss.x+Math.cos(a)*330,boss.y+Math.sin(a)*330,color,1.5);else circle(boss.x,boss.y,110+(1-time/.75)*40,null,color,2);ctx.restore();ctx.font=(mobile?'13':'11')+'px monospace';ctx.textAlign='center';ctx.fillStyle=color;ctx.fillText(laser?'LASER / DASH THROUGH':intent.kind==='fan'?'AIMED FAN / MOVE OR PARRY':'RING / PARRY THE GOLD',boss.x,boss.y-110);}}
   }
 
@@ -3347,6 +3613,8 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
   // ResizeObserver also catches dynamic browser chrome (100dvh) changes.
   if(typeof ResizeObserver!=='undefined'){new ResizeObserver(()=>{const r=$('stage').getBoundingClientRect();if(Math.abs(r.width-view.width)>.5||Math.abs(r.height-view.height)>.5)resize();}).observe($('stage'));}
   $('first-contact').onclick=()=>startFirstContact();$('cv-close').onclick=closeCovenant;$('cv-propose').onclick=proposeCovenant;$('cv-sign').onclick=signCovenant;$('cv-parley').onclick=openParley;$('pause-parley').onclick=openParley;
+  for(const [id,key] of [['dash-ability','Space'],['parry-ability','KeyE'],['nova-ability','KeyF'],['breach-ability','KeyQ']])$(id).onclick=()=>{if(screen==='game'){sound.unlock();pressed.add(key);}};
+  $('cv-tab-negotiate').onclick=()=>setCovenantStep('negotiate');$('cv-tab-review').onclick=()=>setCovenantStep('review');
   setupVoice();$('cv-prompt').oninput=()=>invalidateCovenant();for(const id of ['cv-mode','cv-consent'])$(id).onchange=()=>{invalidateCovenant();refreshConnection();};
   $('cv-open-connection').onclick=()=>{if(!cvSigning)$('cv-connection-dialog').showModal();};
   for(const id of ['cv-connection-close','cv-connection-done'])$(id).onclick=()=>$('cv-connection-dialog').close();
@@ -3445,7 +3713,7 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
     else if(aiTask==='director'&&world.setDirector(aiDecision.directorId)){const back=aiBack;show(back);if(back==='route')routeScreen();else choiceScreen();}
     aiDecision=null;aiClient.token='';$('pilot-token').value='';
   }
-  $('hangar-close').onclick=home;$('hangar-ready').onclick=()=>show('loadout');
+  $('hangar-close').onclick=home;$('hangar-ready').onclick=()=>{$('loadout-summary').textContent=(campaignMode==='classic'?'Three sectors. Three bosses. ':campaignMode==='gauntlet'?'Six bosses. No warm-up. ':'Six sectors. Six bosses. ')+'One life. Defeat a boss to restore 2 hull. Fall, and start again.';show('loadout');};
   $('archive-open').onclick=archiveScreen;$('archive-close').onclick=home;
   $('route-intelligence').onclick=()=>openAI('director');$('negotiate').onclick=()=>openAI('negotiate');
   $('choice-outfit').onclick=()=>routeScreen(true);$('debrief').onclick=()=>openAI('debrief');
@@ -3454,7 +3722,7 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
   $('ai-mode').onchange=invalidateProposal;$('ai-prompt').oninput=invalidateProposal;
 
   // Readable snapshot contains no credentials, transcripts or writable objects.
-  window.render_game_to_text=()=>JSON.stringify({screen,coordinates:'origin top-left; x right; y down',renderer:gpu.stats().backend,arena:{width:W,height:H},phase:world?.phase,seconds:world?Math.round(world.time*100)/100:0,player:world?{x:Math.round(world.p.x),y:Math.round(world.p.y),hp:world.p.hp,energy:world.p.energy}:null,enemies:world?.enemies.filter(e=>e.hp>0).slice(0,12).map(e=>({type:e.type,x:Math.round(e.x),y:Math.round(e.y),hp:e.hp})),hostileBullets:world?.bullets.filter(b=>b.hostile).length,revision:world?.revision,spec:world?.spec,proposal:cvProposal?{spec:cvProposal.spec,provider:cvProposal.provider,model:cvProposal.model}:null,effects:world?.covenantStats,voice:voice?.state,liveVoice:world?.voiceEvidence?world.report().liveVoice:null});
+  window.render_game_to_text=()=>JSON.stringify({build:'0.9.9',screen,negotiationStep:$('covenant-screen').dataset.step||'negotiate',coordinates:'origin top-left; x right; y down',renderer:gpu.stats().backend,arena:{width:W,height:H},phase:world?.phase,seconds:world?Math.round(world.time*100)/100:0,player:world?{x:Math.round(world.p.x),y:Math.round(world.p.y),hp:world.p.hp,energy:world.p.energy}:null,enemies:world?.enemies.filter(e=>e.hp>0).slice(0,12).map(e=>({type:e.type,x:Math.round(e.x),y:Math.round(e.y),hp:e.hp})),hostileBullets:world?.bullets.filter(b=>b.hostile).length,revision:world?.revision,spec:world?.spec,proposal:cvProposal?{spec:cvProposal.spec,provider:cvProposal.provider,model:cvProposal.model}:null,effects:world?.covenantStats,voice:voice?.state,liveVoice:world?.voiceEvidence?world.report().liveVoice:null});
   window.advanceTime=ms=>{const n=Math.min(1200,Math.max(0,Math.round(Number(ms)*.12)));for(let i=0;i<n&&screen==='game'&&world?.phase==='combat';i++)world.step(1/120,inputState(null));if(world){consumeEvents();updateHUD();if(world.phase==='parley')openCovenant();else if(['won','dead'].includes(world.phase))results();}render();};
   // Test access is opt-in; normal launches do not expose mutable simulation state.
   if(new URLSearchParams(location.search).has('test')||window.__PACT_TEST_MODE__===true)window.__PACT_TEST__={

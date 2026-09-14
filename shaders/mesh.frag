@@ -23,7 +23,7 @@ void main(){if(vClass<0.){outColor=vec4(vC.rgb,0.);return;} bool flight=vClass>=
  float farDistance=clamp(1.-vPos.y/uF[0].y,0.,1.);
  float density=stage<.5?.14:stage<1.5?.23:.18;
  float fog=flight?0.:min(.38,1.-exp(-density*(.35+heightDistance+farDistance*.55)));
- vec3 haze=mix(sky,tint,.08)*.22;lit=mix(lit,haze,fog);if(uF[4].z>.5&&!flight)lit*=.48;
+ vec3 haze=mix(sky,tint,.08)*.22;lit=mix(lit,haze,fog);if(uF[4].z>.5&&!flight)lit*=.32;
  if(!flight&&vPos.z<-85.){float wave=.5+.5*sin(vPos.x*.012+sin(vPos.y*.007+t*.10)*2.);lit+=tint*wave*.016;}
  if(!flight){vec2 delta=(vPos.xy/uF[0].xy-.5);float center=smoothstep(.12,.40,length(delta));lit*=.82+.18*center;}
  outColor=vec4(max(lit,vec3(0.)),flight?1.:0.);}

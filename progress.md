@@ -212,3 +212,10 @@ Original prompt: Follow GOAL.md to ship NEMESIS PACT v0.5.0, real OpenAI contrac
 - Full video file/edit is now local; remaining gates are recorded enemy-audio review, approved public viewing URL and source/judge access. No human media publication or overall GOAL completion is claimed. Rollback app to dpl_xk61akZJbnzGP83dt11iUbnb8MpT, preserving Redis; restore forced60s capture. Milestone-15-human-demo-60fps records this media/evidence update; Git commit and push are the final publication step for the source/evidence, while human video stays local.
 
 Final local video playback: Windows Edge153.0.4234.32 at4x reached ended59.008s, with audio decoded and no page/media errors or external requests. CSP stayed unchanged after correcting a helper-only wait_for_function violation. Browser presentation drops at4x are not source/render FPS evidence. Final six English fields all remain within200words.
+
+
+2026-09-15 JST — v0.9.9 craft pass before submission
+
+User explicitly requested a new goal and imagegen-based quality loops. Started from clean70e0958, preserving the verifiedv0.5.0 ZIP lineage and cd33364 production. One built-in imagegen concept informed procedural Notary geometry, title/contract typography and palette, clearer sanctuary markings, mobile step tabs and desktop ability clicks. Direct-key image CLI was rejected before execution; no direct image API call/reservation was made. Current shared ledger remains OpenAI2.15/10 and Gateway.031421/20; provider infrastructure/grant unknowns remain.
+
+Three screenshot loops corrected broad title rings, core occlusion, tiny-phone controls, portrait receipt placement and a4px Japanese text overflow. Final229/229 Node22 tests (23821.904ms),34 syntax/build,7 desktop/phone-emulation layout cases,12 six-boss campaign simulation cases passed. Historical baseline and initial failures remain separate. The existing59s/60fps human iPhone movie remains pre-craft evidence. No new human footage or physical-device claim. Production release/live verification follows.

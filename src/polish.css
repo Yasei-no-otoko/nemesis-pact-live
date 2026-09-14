@@ -1,0 +1,186 @@
+/* v0.9.9: orbital contract desk. Imagegen concept translated to local UI/geometry. */
+:root{--mint:#9ee8d3;--ink:#f0eee3;--muted:#a5b5ba;--brass:#c6a976;--line:#b0b6aa29}
+button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:2px solid #b4f6dd;outline-offset:3px}
+button:active:not(:disabled){transform:translateY(1px)}
+.primary{background:linear-gradient(115deg,#b8eddb,#87dbc5);box-shadow:inset 0 1px #effff08c,0 4px 20px #83e5c610;border:1px solid #b9f8df85;border-radius:4px;color:#0b2527}
+.primary:hover{background:#c3f7e7;box-shadow:0 4px 24px #8ae6ca24}
+.secondary{border-color:#b3c4c033;border-radius:4px}
+.eyebrow,.section-cap{color:var(--brass)}
+.title-screen{background:linear-gradient(90deg,#070f16fa 0%,#080f17e8 30%,#080f1790 49%,#080f1700 76%)}
+.title-screen:after{content:'';position:absolute;inset:18px;border:1px solid #c7ac7625;pointer-events:none;z-index:-1}
+.title-top{top:36px;left:55px;right:55px;color:#acbdbd}
+.title-top .status-dot{background:#c9af7e;box-shadow:none}
+.title-content{top:113px;left:72px;width:545px}
+.title-content .eyebrow{font:10px/1.5 monospace;letter-spacing:5px;color:#cbb48e}
+.title-content h1{font:400 110px/.88 Georgia,'Times New Roman',serif;letter-spacing:-5px;margin:27px 0 30px;color:#f0ebdc;text-shadow:0 3px 18px #0005}
+.title-content h1>span{color:#c9b58d}
+.title-content .title-cross{font:44px Georgia,serif;vertical-align:12px;color:#9ddcca;margin-left:20px}
+.title-content .tagline{font:400 25px/1.32 Georgia,serif;color:#e0e4dc}
+.title-content .title-desc{font:14px/1.7 Arial,sans-serif;color:#9fb1b8;margin-top:17px}
+.title-steps{display:flex;align-items:center;gap:15px;margin:24px 0;font:9px/1.5 monospace;letter-spacing:1px;color:#b9c8c7}
+.title-steps b{color:#c6a976;margin-right:6px;font-weight:400}.title-steps i{font-style:normal;color:#567878}
+.title-content .title-actions{margin-top:0;gap:12px}
+.title-content .title-actions .primary{min-width:258px;font-size:16px}
+.title-content .title-actions .secondary{font-weight:400;font-size:13px;min-width:150px;background:#0c192480}
+.title-content .first-contact-note{font-size:9px;letter-spacing:1.1px;color:#a3b8b9;margin-top:10px}
+.title-content .title-links{margin-top:20px;gap:22px}
+.title-content .title-links button{font-size:12px;min-height:40px;color:#b7c2c5}
+.hero-caption{border-left:1px solid #c1a67370;padding-left:16px}.hero-caption .micro{color:#d4c4a3}
+.hero-caption .tiny-line{background:#bc9d68}
+.title-bottom{border-color:#c5b08530;color:#9eadb3;font-size:9px}
+/* The desktop desk retains its fixed geometry and full-height scrollable speech. */
+#covenant-screen{background:radial-gradient(ellipse at 100% 0,#72563114,transparent 52%),linear-gradient(120deg,#0d1821,#0a131b 70%)}
+#covenant-screen .command-top{border-color:#c8b08330}
+#cv-title{font:400 30px/1.2 Georgia,serif;letter-spacing:-.4px;color:#f0ebdc}
+#covenant-screen .notary-card{background:linear-gradient(110deg,#18282c,#0c1821);border-color:#aeb09a3b;border-radius:4px}
+#covenant-screen .notary-card:after{inset:6px;border-color:#c6a97616}
+#covenant-screen .notary-card h2{font:400 23px/1.15 Georgia,serif;letter-spacing:1px;color:#ece7d9}
+#covenant-screen .notary-quote{color:#bbc7c6;font-size:12px}
+#covenant-screen .notary-avatar i{background:linear-gradient(140deg,#6c695528,#10181ee0);border-color:#b9a277}
+#covenant-screen .notary-avatar i:last-child{background:#88e1c51a;border-color:#9bdbcb}
+#covenant-screen .notary-avatar b{text-shadow:0 0 13px #88e9d24d;color:#d8fbee}
+#covenant-screen .notary-avatar:after{border-style:solid;border-color:#c7ad744f}
+#covenant-screen .cv-voice{background:linear-gradient(140deg,#122229,#0d1820);border-color:#9aafa735;border-radius:4px}
+#covenant-screen .cv-voice[data-state=speaking]{border-color:#c6a97699}
+#covenant-screen .cv-voice[data-state=listening]{border-color:#98dfc77a}
+#cv-voice-state:before{content:'';display:inline-block;width:6px;height:6px;margin-right:8px;border-radius:50%;background:#697e83;vertical-align:1px}
+.cv-voice[data-state=listening] #cv-voice-state:before{background:#a3e7d0}
+.cv-voice[data-state=speaking] #cv-voice-state:before{background:#e5c183}
+.cv-voice[data-state=error] #cv-voice-state:before{background:#f3a49c}
+#covenant-screen .cv-voice-controls #cv-voice-start:not(:disabled){background:#a3e6d323;border-color:#98ddc68c;color:#c3f7e6}
+#covenant-screen .cv-voice-controls button{border-radius:4px}
+#covenant-screen .cv-captions{color:#d7e2dc;border-color:#c2b48b26;line-height:1.5}
+#covenant-screen .cv-captions b{color:#cbb48b}
+#covenant-screen #cv-caption-notary{scrollbar-color:#99b9ad #12232b}
+#covenant-screen .cv-editor textarea{background:#070f16;border-color:#859f984f;border-left-color:#a1dfc4}
+#covenant-screen .cv-examples button{background:#182a32;border-color:#9eaea43d;border-radius:5px;color:#c1d1ce}
+#covenant-screen .cv-proposal{background:linear-gradient(140deg,#1a272c,#101b23);border-color:#b4a68155;border-radius:4px;box-shadow:inset 0 1px #ffffff06;gap:10px}
+#covenant-screen[data-proposal=ready] .cv-proposal{border-color:#a9c6b378}
+#covenant-screen #cv-contract-title{font:400 25px/1.2 Georgia,serif;letter-spacing:-.3px;color:#ecebdf}
+#covenant-screen #cv-line{color:#b9c7c4}
+#covenant-screen .provider-pill{background:#be9f6020;border-color:#c4a87460;color:#e4c793;letter-spacing:.6px}
+#covenant-screen #cv-clauses>div{border-top:1px solid #b4d8c640;padding:10px 10px 4px;background:#a8e5cd06}
+#covenant-screen #cv-clauses .cv-cost{border-color:#e6ad9140;background:#efbb9005;color:#f0b5a0}
+#covenant-screen #cv-clauses .cv-benefit{color:#b9efd8}
+#covenant-screen #cv-clauses small{color:#a7b6b9;font-size:9px;letter-spacing:1.1px}
+#covenant-screen #cv-rule-note{color:#abbec4}
+#covenant-screen .cv-status{color:#b8c9ba}
+.cv-propose-actions button{background:#18282c;border-color:#a0c6b34a;color:#d7e9de}
+.cv-dialog{background:linear-gradient(140deg,#18252d,#0b1720);border-color:#b4a78165;border-radius:8px}
+.cv-dialog h2{font-family:Georgia,serif;font-weight:400;color:#eeebdf}
+.cv-dialog::backdrop{background:#030810dd}
+.cv-tabs{display:none}
+/* Calmer instrumentation with a visually separate signed receipt. */
+.hud-top{background:#07131de8;border:1px solid #b6b2942e;border-radius:4px}
+.brand-mini{letter-spacing:3px;color:#e7e7db}
+.hud-score strong{font-variant-numeric:tabular-nums}
+.heart{transform:none;border-radius:1px}.heart.on{background:#b0e8d4;box-shadow:none}
+.boss-track{height:4px;background:#dcc39818}.boss-track i{box-shadow:none}
+.boss-hud{color:#d7c9aa}
+.ability{border-top-color:#a8d8c466;background:#0a1720bb;border-radius:3px 3px 0 0}
+.hud-bottom>button{color:inherit;text-align:left;border-left:0;border-right:0;border-bottom:0;font:inherit;pointer-events:auto}
+.hud-bottom>button:disabled{opacity:.65}.hud-bottom>button:hover:not(:disabled){background:#203b40}
+.hud-bottom>.nova-ability{background:#0a1720bb;border-top:1px solid #a8d8c466;border-radius:3px}
+.ability kbd,.nova-ability kbd{border-color:#a9bcb63d;background:#15242d}
+#covenant-live{background:#09151eea;border-color:#b5aa8263;border-radius:4px}
+#cv-live-provider{color:#d7bd87}#cv-live-title{color:#e1e9df}
+#cv-parley{border-color:#a3d1bd60;border-radius:3px;background:#21433f;color:#dcf6e9}
+#cv-parley:not(:disabled){box-shadow:inset 0 1px #c0f7d933}
+body[data-covenant=true] #pact-hud{border-left-color:#c5b486;background:#09151edb}
+#announcement strong{font-family:Georgia,serif;font-weight:400;letter-spacing:.5px}
+#toast{letter-spacing:1px}
+.result-left h2,html[lang=en] .result-left h2{font-family:Georgia,serif;font-weight:400;letter-spacing:-1px}
+.result-right{border-color:#c6ad7440}
+/* One mobile step at a time. Sticky actions never cover a previous step. */
+body.mobile-ui #covenant-screen{padding:0;overflow:hidden}
+body.mobile-ui #covenant-screen .covenant-wrap{height:100%;padding:calc(12px + var(--safe-top)) 14px calc(10px + var(--safe-bottom));gap:9px}
+body.mobile-ui #covenant-screen .command-top{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px;padding-bottom:9px}
+body.mobile-ui #cv-title{font-size:25px}
+body.mobile-ui #covenant-screen .command-top .eyebrow{font-size:8px;letter-spacing:.8px}
+body.mobile-ui #covenant-screen .cv-top-actions{gap:5px;flex-direction:column;align-items:stretch;max-width:132px}
+body.mobile-ui #covenant-screen .cv-top-actions button{min-height:32px;padding:6px 8px;font-size:10px}
+body.mobile-ui .cv-tabs{display:flex;gap:6px;flex-shrink:0}
+.cv-tabs button{flex:1;min-height:42px;border:1px solid #a8bda138;background:#14232c;border-radius:4px;color:#a6b9bc;font:12px Arial,sans-serif}
+.cv-tabs button[aria-pressed=true]{background:#a5dfc71c;color:#d0f2e1;border-color:#a7d4bd88}
+#cv-review-ready{font:9px monospace;color:#d5bd87;margin-left:4px}
+body.mobile-ui #covenant-screen .covenant-grid{flex:1;display:block;min-height:0}
+body.mobile-ui #covenant-screen .cv-editor,body.mobile-ui #covenant-screen .cv-review{height:100%;min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;touch-action:pan-y;gap:9px;padding-bottom:0}
+body.mobile-ui #covenant-screen[data-step=review] .cv-editor,body.mobile-ui #covenant-screen:not([data-step=review]) .cv-review{display:none}
+body.mobile-ui #covenant-screen .notary-card{min-height:78px;padding:8px 10px;gap:12px}
+body.mobile-ui #covenant-screen .notary-card h2{font-size:20px}
+body.mobile-ui #covenant-screen .notary-avatar{width:54px;min-width:54px;transform:scale(.85)}
+body.mobile-ui #covenant-screen .notary-quote{font-size:11px}
+body.mobile-ui #covenant-screen #cv-memory{font-size:9px}
+body.mobile-ui #cv-intro-copy{font-size:12px;min-height:0}
+body.mobile-ui #covenant-screen .cv-voice{padding:10px;flex:1 0 auto;min-height:220px;display:flex;flex-direction:column}
+body.mobile-ui #covenant-screen .cv-voice-disclosure{font-size:11px}
+body.mobile-ui #covenant-screen .cv-voice-controls{display:flex;gap:6px;flex-wrap:wrap}
+body.mobile-ui #covenant-screen .cv-voice-controls button{min-height:40px;padding:7px 10px;font-size:12px}
+body.mobile-ui #covenant-screen .cv-voice-controls label{display:flex;margin:0 0 0 auto;gap:6px}
+body.mobile-ui #covenant-screen .cv-voice-controls input{width:75px;min-height:30px}
+body.mobile-ui #covenant-screen #cv-voice-stop:disabled,body.mobile-ui #covenant-screen #cv-voice-mute:disabled,body.mobile-ui #covenant-screen .cv-voice-controls label:has(input:disabled){display:none}
+body.mobile-ui #covenant-screen .cv-voice[data-available=false]{min-height:0;flex:0 0 auto}
+body.mobile-ui #covenant-screen .cv-voice[data-available=false] .cv-voice-controls,body.mobile-ui #covenant-screen .cv-voice[data-available=false] .cv-voice-disclosure,body.mobile-ui #covenant-screen .cv-voice[data-available=false]:not([data-transcript=true]) .cv-captions{display:none}
+body.mobile-ui #covenant-screen .cv-captions{font-size:13px;flex:1;min-height:50px;display:grid;grid-template-rows:auto minmax(40px,1fr)}
+body.mobile-ui #covenant-screen .cv-captions p{grid-template-columns:68px minmax(0,1fr);min-height:0}
+body.mobile-ui #covenant-screen #cv-caption-notary{height:100%;max-height:132px;min-height:40px;overflow:auto}
+body.mobile-ui #covenant-screen .cv-editor textarea{height:76px;min-height:76px;font-size:16px}
+body.mobile-ui #covenant-screen .cv-examples{gap:5px;flex-wrap:nowrap}
+body.mobile-ui #covenant-screen .cv-examples button{font-size:10px;min-height:42px;padding:6px}
+body.mobile-ui #covenant-screen .cv-propose-actions,body.mobile-ui #covenant-screen .cv-actions{position:sticky;bottom:0;background:#0b1720;padding:8px 0 0;margin-top:auto;z-index:3;flex-shrink:0}
+body.mobile-ui #covenant-screen .cv-propose-actions button,body.mobile-ui #covenant-screen .cv-actions button{min-height:48px;font-size:14px}
+body.mobile-ui #covenant-screen .cv-review-cap{display:none}
+body.mobile-ui #covenant-screen .cv-proposal{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;touch-action:pan-y;padding:15px;gap:12px;scrollbar-width:thin}
+body.mobile-ui #covenant-screen .cv-proposal-header{gap:8px;flex-wrap:wrap}
+body.mobile-ui #covenant-screen .provider-pill{max-width:100%;font-size:9px}
+body.mobile-ui #covenant-screen #cv-revision{font-size:9px}
+body.mobile-ui #covenant-screen #cv-contract-title{font-size:24px;flex-shrink:0}
+body.mobile-ui #covenant-screen #cv-clauses{font-size:14px;gap:10px;flex-shrink:0}
+body.mobile-ui #covenant-screen #cv-preview{height:100px;min-height:100px;flex-shrink:0;margin-top:auto}
+body.mobile-ui #covenant-screen .cv-status{font-size:10px;min-height:0;flex-shrink:0}
+/* Compact phones retain the controls' 44 px hit targets. */
+@media(max-height:740px){
+ body.mobile-ui:not(.touch-landscape) #covenant-screen .notary-card{min-height:60px;padding:4px 10px}
+ body.mobile-ui:not(.touch-landscape) #covenant-screen .notary-quote,body.mobile-ui:not(.touch-landscape) #cv-intro-copy{display:none}
+ body.mobile-ui:not(.touch-landscape) #covenant-screen .notary-avatar{height:46px;transform:scale(.65)}
+ body.mobile-ui:not(.touch-landscape) #covenant-screen .cv-voice{min-height:180px}
+ body.mobile-ui:not(.touch-landscape) #covenant-screen .cv-examples button{min-height:44px}
+}
+/* Portrait title gives the enemy room without losing the start action. */
+body.mobile-ui .title-screen{background:linear-gradient(180deg,#07111cea,#07111c3b 36%,#07111cec 63%,#07111c)}
+body.mobile-ui .title-content{width:auto;min-height:0;padding:0 24px;margin-top:26px}
+body.mobile-ui .title-content .eyebrow{font-size:9px;letter-spacing:3px}
+body.mobile-ui .title-content h1{font:400 clamp(60px,17vw,84px)/.89 Georgia,serif;letter-spacing:-3px;margin:17px 0 0}
+body.mobile-ui .title-content .title-cross{font-size:32px;vertical-align:8px;margin-left:12px}
+body.mobile-ui .title-content .tagline{font:400 23px/1.25 Georgia,serif;margin-top:145px}
+body.mobile-ui .title-content .title-desc{font-size:12px;line-height:1.5;margin-top:12px}
+body.mobile-ui .title-steps{margin:16px 0;gap:10px;font-size:8px;letter-spacing:.3px}
+body.mobile-ui .title-steps b{margin-right:4px}
+body.mobile-ui .title-content .title-actions{gap:8px;margin-top:0}
+body.mobile-ui .title-content .title-actions .primary{min-width:0;font-size:14px;padding:13px;flex:1.5}
+body.mobile-ui .title-content .title-actions .secondary{min-width:0;font-size:12px;padding:12px;flex:1}
+body.mobile-ui .title-content .title-links{gap:15px;flex-wrap:wrap;margin-top:9px}
+body.mobile-ui .title-content .title-links button{min-height:36px;font-size:11px}
+body.mobile-ui .title-content .first-contact-note{font-size:8px;letter-spacing:.6px}
+body.mobile-ui .title-bottom{font-size:8px;margin-top:14px}
+@media(max-height:740px){body.mobile-ui .title-content{margin-top:20px}body.mobile-ui .title-content .tagline{margin-top:70px;font-size:21px}body.mobile-ui .title-content .title-desc{display:none}body.mobile-ui .title-steps{margin:13px 0}body.mobile-ui .title-content .title-links{gap:12px}body.mobile-ui .title-bottom{margin-top:6px}}
+body.mobile-ui.touch-landscape .title-content{max-width:530px}.touch-landscape .title-content .tagline{margin-top:35px}
+/* Keep the signed receipt outside the touch playfield, including before launch. */
+body.mobile-ui[data-covenant=true]:not(.touch-landscape){--field-top:calc(122px + var(--safe-top))}
+body.mobile-ui[data-covenant=true]:not(.touch-landscape) #pact-hud,body.mobile-ui[data-covenant=true] #wave-hud{display:none}
+body.mobile-ui[data-covenant=true]:not(.touch-landscape) .boss-hud{top:calc(82px + var(--safe-top));padding:7px 10px}
+body.mobile-ui[data-covenant=true]:not(.touch-landscape) #playfield{bottom:calc(var(--deck-height) + 58px)}
+body.mobile-ui[data-covenant=true] #covenant-live{min-height:50px}
+@media(max-height:740px){
+ body.mobile-ui:not(.touch-landscape){--deck-height:calc(144px + var(--safe-bottom))}
+ body.mobile-ui:not(.touch-landscape) .touch-deck{height:108px;gap:12px}
+ body.mobile-ui:not(.touch-landscape) #move-pad{height:108px;width:100px}
+ body.mobile-ui:not(.touch-landscape) .touch-actions{grid-template-rows:44px 58px;gap:6px}
+ body.mobile-ui:not(.touch-landscape) .touch-action>span{font-size:18px;margin-bottom:2px}
+ body.mobile-ui:not(.touch-landscape) .touch-action>small{margin-top:3px}
+ body.mobile-ui #cv-title{font-size:22px}
+ body.mobile-ui #covenant-screen .cv-top-actions{max-width:110px}
+ body.mobile-ui #covenant-screen .cv-top-actions button{font-size:9px;padding:5px}
+}
+@media(prefers-reduced-motion:reduce){.notary-avatar:after{animation:none!important}}
+body.mobile-ui:not(.touch-landscape) #covenant-screen .cv-voice[data-available=false]{min-height:0}

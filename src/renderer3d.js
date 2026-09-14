@@ -56,7 +56,7 @@ void main(){if(vClass<0.){outColor=vec4(vC.rgb,0.);return;} bool flight=vClass>=
  float farDistance=clamp(1.-vPos.y/uF[0].y,0.,1.);
  float density=stage<.5?.14:stage<1.5?.23:.18;
  float fog=flight?0.:min(.38,1.-exp(-density*(.35+heightDistance+farDistance*.55)));
- vec3 haze=mix(sky,tint,.08)*.22;lit=mix(lit,haze,fog);if(uF[4].z>.5&&!flight)lit*=.48;
+ vec3 haze=mix(sky,tint,.08)*.22;lit=mix(lit,haze,fog);if(uF[4].z>.5&&!flight)lit*=.32;
  if(!flight&&vPos.z<-85.){float wave=.5+.5*sin(vPos.x*.012+sin(vPos.y*.007+t*.10)*2.);lit+=tint*wave*.016;}
  if(!flight){vec2 delta=(vPos.xy/uF[0].xy-.5);float center=smoothstep(.12,.40,length(delta));lit*=.82+.18*center;}
  outColor=vec4(max(lit,vec3(0.)),flight?1.:0.);}
@@ -107,7 +107,7 @@ fn fresnel(c:f32,f0:vec3f)->vec3f{return f0+(vec3f(1.)-f0)*pow(1.-c,5.);}
  let heightDistance=clamp((140.-v.pos.z)/240.,0.,1.);let farDistance=clamp(1.-v.pos.y/f.arena.y,0.,1.);
  let density=select(.14,select(.23,.18,stage>1.5),stage>.5);
  let fog=select(min(.38,1.-exp(-density*(.35+heightDistance+farDistance*.55))),0.,flight);
- let haze=mix(sky,tint,.08)*.22;lit=mix(lit,haze,fog);if(f.fx.z>.5&&!flight){lit*=.48;}
+ let haze=mix(sky,tint,.08)*.22;lit=mix(lit,haze,fog);if(f.fx.z>.5&&!flight){lit*=.32;}
  if(!flight&&v.pos.z< -85.){let wave=.5+.5*sin(v.pos.x*.012+sin(v.pos.y*.007+t*.10)*2.);lit+=tint*wave*.016;}
  if(!flight){let delta=v.pos.xy/f.arena.xy-vec2f(.5);let center=smoothstep(.12,.40,length(delta));lit*=.82+.18*center;}return vec4f(max(lit,vec3f(0.)),select(0.,1.,flight));}
 `;
@@ -138,7 +138,7 @@ const WG_PRESENT=`@group(0) @binding(0) var finalImage:texture_2d<f32>;
 @fragment fn fs(@builtin(position) p:vec4f)->@location(0) vec4f{return textureLoad(finalImage,vec2i(p.xy),0);}`;
 function bossFX(world){if(!world||!world.enemies)return 0;const boss=world.enemies.find(e=>e.type==='boss'&&e.spawn<=0);if(!boss)return 0;const phase=(boss.phase||0)/2;const hp=1-(boss.hp||0)/Math.max(1,boss.maxHp||boss.hp||1);return Math.max(0,Math.min(1,.35+phase*.25+hp*.4));}
 function clearColor(stage,bossFx=0){const s=stage<.5?[.010,.030,.038]:stage<1.5?[.026,.012,.046]:[.055,.030,.010];const boost=bossFx*.018;return {r:Math.min(.12,s[0]+boost*.6),g:Math.min(.12,s[1]+boost*.45),b:Math.min(.14,s[2]+boost),a:0};}
-function frameData(f,width,height){const stage=f.world?Math.min(f.world.stage,5):0,boss=bossFX(f.world),bg=f.bgAnim===2?1.3:f.bgAnim===0?0:1,post=f.postFX===2?1.2:f.postFX===0?0:1,bloom=f.bloom===2?1.55:f.bloom===0?0:1;return new Float32Array([f.w,f.h,f.t,stage,f.shock?.x??.5,f.shock?.y??.5,f.shock?.age||0,f.shock?.strength||0,f.shakeX||0,f.shakeY||0,boss,bg,width,height,1.08+boss*.08+post*.04,f.reduced?1:0,post,bloom,f.world?.mode==='first-contact'?1:0,0]);}
+function frameData(f,width,height){const stage=f.world?Math.min(f.world.stage,5):0,boss=bossFX(f.world),bg=f.bgAnim===2?1.3:f.bgAnim===0?0:1,post=f.postFX===2?1.2:f.postFX===0?0:1,bloom=f.bloom===2?1.55:f.bloom===0?0:1;return new Float32Array([f.w,f.h,f.t,stage,f.shock?.x??.5,f.shock?.y??.5,f.shock?.age||0,f.shock?.strength||0,f.shakeX||0,f.shakeY||0,boss,bg,width,height,1.08+boss*.08+post*.04,f.reduced?1:0,post,bloom,!f.world||f.world.mode==='first-contact'?1:0,0]);}
 class GLBackend{
  constructor(canvas,shapes){this.canvas=canvas;const gl=canvas.getContext('webgl2',{alpha:false,antialias:false,powerPreference:'high-performance',preserveDrawingBuffer:false});if(!gl)throw Error('WebGL2 is unavailable');this.gl=gl;this.shapes=shapes;this.label='WEBGL2 / PBR';this.frames=0;this.computeDispatches=0;this.initialize();}
  initialize(){const g=this.gl;this.targets=[];this.size='';this.meshes={};this.hdr=!!g.getExtension('EXT_color_buffer_float');this.program=this.programOf(GL_VERTEX,GL_FRAGMENT);this.blur=this.programOf(GL_QUAD,GL_BLUR);this.post=this.programOf(GL_QUAD,GL_COMPOSITE);this.empty=g.createVertexArray();
@@ -202,7 +202,7 @@ class Renderer{
   if(!this.active)this.backend='CANVAS 2D FALLBACK';this.notify();return this;
  }
  event(e,x,y,w,h){if(e.type==='nova'||e.type==='breach'){this.shock={x:x/w,y:y/h,age:0,strength:1};this.shockStart=this.latestTime;}}
- stats(){return {build:'0.5.0',backend:this.backend,frames:this.active?.frames||0,computeDispatches:this.active?.computeDispatches||0,instances:this.scene.count,draws:this.active?.draws||0,hdr:this.active instanceof GPUBackend||!!this.active?.hdr,errors:[...this.messages]};}
+ stats(){return {build:'0.9.9',backend:this.backend,frames:this.active?.frames||0,computeDispatches:this.active?.computeDispatches||0,instances:this.scene.count,draws:this.active?.draws||0,hdr:this.active instanceof GPUBackend||!!this.active?.hdr,errors:[...this.messages]};}
  draw(frame){if(!this.active)return false;this.latestTime=frame.t;const b=this.active;if(b instanceof GLBackend&&b.gl.isContextLost())return false;
   const {view,mobile,world}=frame;let f={...frame};if(mobile&&!world){f.w=720;f.h=720*view.height/view.width;f.scale=view.width/720;f.x=0;f.y=0;}else{f.scale=view.scale;f.x=view.x;f.y=view.y;}
   const cw=f.w*f.scale,ch=f.h*f.scale;const dpr=Math.min(window.devicePixelRatio||1,2),maxPixels=mobile?1200000:2100000,factor=Math.min(dpr,Math.sqrt(maxPixels/Math.max(1,cw*ch)));const rw=Math.max(1,Math.round(cw*factor)),rh=Math.max(1,Math.round(ch*factor));
