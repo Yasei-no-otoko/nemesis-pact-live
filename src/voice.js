@@ -27,7 +27,7 @@
     this._state('listening');this.onCaption({speaker:'user',delta:e.delta,start_ms:e.start_ms,end_ms:e.end_ms,eventId:e.event_id});this.onInput({delta:e.delta,start_ms:e.start_ms,end_ms:e.end_ms,eventId:e.event_id});return;
    }
    if(e.type==='session.output_transcript.delta'&&typeof e.delta==='string'){this.onCaption({speaker:'assistant',delta:e.delta,start_ms:e.start_ms,end_ms:e.end_ms,eventId:e.event_id});this._state('speaking');return;}
-   if(e.type==='session.delegation.created'){const id=e.delegation?.id;if(typeof id!=='string'||this.delegations.has(id)||this.delegations.size>=8)return;this.delegations.add(id);this._delegate(id,e);return;}
+   if(e.type==='session.delegation.created'){const id=e.delegation?.id;if(typeof id!=='string'||this.delegations.has(id)||this.delegations.size>=8)return;this.delegations.add(id);this.latestDelegation={id,event:e};this._queueDelegation();return;}
    if(e.type==='error'){this._state('error','provider-error');this.stop('provider-error');}
   }
   async _delegate(id,event){
@@ -40,9 +40,14 @@
     this._send({type:'session.commentary.append',event_id:'covenant_'+id,delegation_id:id,content});
    }catch{if(!this.closed&&transport===this.transportGeneration)this._state('listening','proposal-unavailable-use-text');}
   }
+  _queueDelegation(){
+   clearTimeout(this.delegationTimer);
+   if(this.closed||!this.latestDelegation||(this.delegationAttempts||0)>=8)return;
+   this.delegationTimer=setTimeout(()=>{this.delegationTimer=null;if(this.closed)return;this.delegationAttempts=(this.delegationAttempts||0)+1;this._delegate(this.latestDelegation.id,this.latestDelegation.event);},this.delegationDelayMs??1500);
+  }
   _install(){this.document?.addEventListener?.('visibilitychange',this._hidden);globalThis.addEventListener?.('pagehide',this._pagehide);}
   _cleanup(){
-   clearTimeout(this.timer);this.timer=null;this.closed=true;this.transportGeneration++;this.delegationGeneration++;
+   clearTimeout(this.timer);clearTimeout(this.delegationTimer);this.timer=null;this.latestDelegation=null;this.closed=true;this.transportGeneration++;this.delegationGeneration++;
    this.stream?.getTracks().forEach(t=>t.stop());try{this.dc?.close();}catch{}try{this.pc?.close();}catch{}
    if(this.audio){this.audio.pause?.();this.audio.srcObject=null;}this.stream=null;this.pc=null;this.dc=null;this.sessionId=null;
    this.document?.removeEventListener?.('visibilitychange',this._hidden);globalThis.removeEventListener?.('pagehide',this._pagehide);
@@ -54,7 +59,7 @@
   async start({runId,revision}={}){
    if(this.stopPromise||['starting','listening','speaking','stopping'].includes(this.state))return false;
    if(!this.request||!this.media?.getUserMedia||!this.PC){this._state('error','voice-not-supported-use-text');return false;}
-   const generation=++this.transportGeneration;this.delegationGeneration++;this.closed=false;this.finalized=false;this.finalUsage=null;this.events.clear();this.delegations.clear();this._install();this._state('starting');let stream,pc,createdId;
+   const generation=++this.transportGeneration;this.delegationGeneration++;this.closed=false;this.finalized=false;this.finalUsage=null;this.latestDelegation=null;this.delegationAttempts=0;this.events.clear();this.delegations.clear();this._install();this._state('starting');let stream,pc,createdId;
    try{
     stream=await this.media.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true},video:false});
     if(generation!==this.transportGeneration||this.closed){stream.getTracks().forEach(t=>t.stop());return false;}
@@ -88,13 +93,13 @@
   }
   stop(reason='user'){
    if(this.stopPromise)return this.stopPromise;if(this.closed&&!this.pc&&!this.stream&&!this.sessionId&&this.state!=='starting')return Promise.resolve();
-   const id=this.sessionId;this.closed=true;this.delegationGeneration++;clearTimeout(this.timer);this.stream?.getTracks().forEach(t=>t.stop());this._send({type:'session.close'});this._state('stopping',reason);
+   const id=this.sessionId;this.closed=true;this.delegationGeneration++;clearTimeout(this.timer);clearTimeout(this.delegationTimer);this.stream?.getTracks().forEach(t=>t.stop());this._send({type:'session.close'});this._state('stopping',reason);
    this.stopPromise=(async()=>{
     if(this.dc?.readyState==='open'&&!this.finalized)await new Promise(resolve=>setTimeout(resolve,600));
     const confirmed=await this._hangup(id);this._cleanup();this._state('stopped',confirmed?reason:'upstream-stop-unconfirmed');this.stopPromise=null;
    })();return this.stopPromise;
   }
-  supersede(){this.delegationGeneration++;}
+  supersede(reviseDelegation=false){this.delegationGeneration++;clearTimeout(this.delegationTimer);if(reviseDelegation)this._queueDelegation();}
   mute(){this.stream?.getAudioTracks().forEach(t=>{t.enabled=false;});}
   unmute(){this.stream?.getAudioTracks().forEach(t=>{t.enabled=true;});}
   setVolume(value){if(this.audio)this.audio.volume=Math.max(0,Math.min(1,Number(value)||0));}

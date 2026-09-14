@@ -1,0 +1,536 @@
+{
+  "url": "https://nemesis-pact-live.vercel.app",
+  "browser": "153.0.4234.32",
+  "input": "Synthetic Windows System.Speech TTS through a Web Audio MediaStream; no human microphone",
+  "realApi": true,
+  "humanLiveVerified": false,
+  "utc": "2026-09-14T07:31:09Z",
+  "connectionMs": 4172,
+  "interruptionAt": 14413.400000035763,
+  "success": false,
+  "failure": "Page.wait_for_function: Timeout 23000ms exceeded.",
+  "status": "Heard updated terms. Waiting for the Notary\u2019s counteroffer.",
+  "voiceState": "LISTENING",
+  "events": [
+    {
+      "type": "session.started",
+      "at": 9998.400000035763,
+      "delta": null,
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 11657.300000011921,
+      "delta": "\u30d5",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 11932.199999988079,
+      "delta": "\u30ea\u30fc\u30ba",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 12135.800000011921,
+      "delta": "\u30d7\u30c3\u30c8",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 12301.600000023842,
+      "delta": "\u30b6",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 12475.300000011921,
+      "delta": "\u30b5",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 12654.900000035763,
+      "delta": "\u30f3\u30af\u30c1",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 12870.900000035763,
+      "delta": "\u30e5\u30a2",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 13570.800000011921,
+      "delta": "\u30ea\u30aa\u30f3",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 13572.199999988079,
+      "delta": "\u30b6",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 13832.300000011921,
+      "delta": "\u30ec",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 13833.5,
+      "delta": "\u30d5\u30c8",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.delegation.created",
+      "at": 14043.800000011921,
+      "delta": null,
+      "delegation": {
+        "id": "item_ENvRsU6K7tnCGY5cmwWCF",
+        "type": "delegation",
+        "target": "client"
+      },
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 14170,
+      "delta": " Considering.",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 16601.80000001192,
+      "delta": " The",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.commentary.appended",
+      "at": 16604.100000023842,
+      "delta": null,
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 16769.80000001192,
+      "delta": " proposed",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 17163.900000035763,
+      "delta": " covenant",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 17590.19999998808,
+      "delta": " is",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 17753.19999998808,
+      "delta": " titled",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 18161.100000023842,
+      "delta": " Change the",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 18197.19999998808,
+      "delta": " \"Return",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 18601.600000023842,
+      "delta": " to",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 18755.400000035763,
+      "delta": " Sender.\"",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 18968.400000035763,
+      "delta": " sanctuary to",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 19174.5,
+      "delta": " the",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 19578.5,
+      "delta": " right",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 19783.5,
+      "delta": " No",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 20172.80000001192,
+      "delta": " sanctuary",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 20767.5,
+      "delta": " Keep the",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 20801.80000001192,
+      "delta": " yet,",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 21158.19999998808,
+      "delta": " slower",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 21554.19999998808,
+      "delta": " bullets",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 21763.30000001192,
+      "delta": " and",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 22751.5,
+      "delta": " reinforcements",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 23999,
+      "delta": " Please",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.usage.updated",
+      "at": 24141.80000001192,
+      "delta": null,
+      "delegation": null,
+      "delegation_id": null,
+      "usage": {
+        "seconds": 15
+      },
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 24165.19999998808,
+      "delta": " make",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 24166.400000035763,
+      "delta": " I'm considering",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 24345.69999998808,
+      "delta": " the",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 24787.30000001192,
+      "delta": " revised",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 24788.400000035763,
+      "delta": " that",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 24957.69999998808,
+      "delta": " revision.",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 25386.19999998808,
+      "delta": " contract",
+      "delegation": null,
+      "delegation_id": null,
+      "usage": null,
+      "reason": null,
+      "error": null
+    },
+    {
+      "type": "session.closed",
+      "at": 39484.5,
+      "delta": null,
+      "delegation": null,
+      "delegation_id": null,
+      "usage": {
+        "seconds": 17
+      },
+      "reason": "close_requested",
+      "error": null
+    }
+  ],
+  "sent": [
+    {
+      "type": "probe.delegate.enter",
+      "at": 14043.800000011921,
+      "id": "item_ENvRsU6K7tnCGY5cmwWCF"
+    },
+    {
+      "type": "session.commentary.append",
+      "at": 15918.100000023842
+    },
+    {
+      "type": "session.close",
+      "at": 38720.80000001192
+    }
+  ],
+  "tracks": [
+    {
+      "kind": "audio",
+      "state": "ended"
+    }
+  ],
+  "peerStates": [
+    "closed"
+  ],
+  "api": [
+    {
+      "path": "/api/session",
+      "status": 200
+    },
+    {
+      "path": "/api/voice/start",
+      "status": 200,
+      "model": "gpt-live-1"
+    },
+    {
+      "path": "/api/covenant",
+      "status": 200,
+      "model": null,
+      "provider": "local-rules",
+      "latencyMs": 1519,
+      "billedBy": "vercel-ai-gateway",
+      "spec": {
+        "version": 1,
+        "title": "Return to Sender",
+        "zone": "none",
+        "speed": "normal",
+        "reflection": "charged",
+        "price": "weaker_gun",
+        "line": "Every promise needs a price. Read the binding clauses below. Sign only what you intend to keep.",
+        "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+      },
+      "accountedMicrodollars": 436
+    },
+    {
+      "path": "/api/voice/stop",
+      "status": 200,
+      "stopped": true,
+      "uncertain": false,
+      "accountedMicrodollars": 50000
+    }
+  ],
+  "pageErrors": []
+}

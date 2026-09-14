@@ -1,0 +1,288 @@
+{
+  "url": "https://nemesis-pact-live.vercel.app",
+  "utc": "2026-09-14T07:34:21Z",
+  "browser": "153.0.4234.32",
+  "viewport": [
+    1280,
+    800
+  ],
+  "automated": true,
+  "physicalPhone": false,
+  "renderer": "software WebGL2 / ANGLE SwiftShader",
+  "controlledTime": false,
+  "homeStatus": 200,
+  "startupMs": 1766,
+  "headers": {
+    "permissions-policy": "camera=(), microphone=(self), geolocation=()",
+    "referrer-policy": "no-referrer",
+    "x-content-type-options": "nosniff"
+  },
+  "checks": [
+    "Real OpenAI model proposes left sanctuary and slower bullets; revision remains zero before Sign",
+    "Explicit signature applied the real model clauses to a running combat world",
+    "Second real model contract signed once; sanctuary moves right; player HP, boss HP and elapsed combat time preserved"
+  ],
+  "combat": {
+    "screen": "game",
+    "coordinates": "origin top-left; x right; y down",
+    "renderer": "WEBGL2 / PBR",
+    "arena": {
+      "width": 1280,
+      "height": 800
+    },
+    "phase": "combat",
+    "seconds": 10,
+    "player": {
+      "x": 391,
+      "y": 560,
+      "hp": 10,
+      "energy": 50
+    },
+    "enemies": [
+      {
+        "type": "boss",
+        "x": 471,
+        "y": 228,
+        "hp": 2688
+      },
+      {
+        "type": "turret",
+        "x": 230,
+        "y": 330,
+        "hp": 58
+      },
+      {
+        "type": "turret",
+        "x": 1050,
+        "y": 330,
+        "hp": 58
+      }
+    ],
+    "hostileBullets": 27,
+    "revision": 1,
+    "spec": {
+      "version": 1,
+      "title": "Left zone and reinforcements with slow speed",
+      "zone": "left",
+      "speed": "slow",
+      "reflection": "normal",
+      "price": "reinforcements",
+      "line": "A cautious advance: sanctuary left, slow speed, and turrets join the fray.",
+      "rationale": "Your request for a left zone costing 2 and reinforcements costing 3 totals 5, exceeding the maximum allowed 3 benefit points. Reducing speed to slow costs 1, which with the 2 zone and 3 reinforcements totals 6. To keep within the 3 benefit points limit, I accept left zone (2), slow speed (1), and reinforcements (3) with reinforcements as the payment (3). The"
+    },
+    "proposal": null,
+    "effects": {
+      "shielded": 3,
+      "reflectedDamage": 0,
+      "gunDamage": 912,
+      "amendments": 0
+    },
+    "voice": "idle"
+  },
+  "amendment": {
+    "before": {
+      "screen": "covenant-screen",
+      "coordinates": "origin top-left; x right; y down",
+      "renderer": "WEBGL2 / PBR",
+      "arena": {
+        "width": 1280,
+        "height": 800
+      },
+      "phase": "parley",
+      "seconds": 10.32,
+      "player": {
+        "x": 391,
+        "y": 560,
+        "hp": 10,
+        "energy": 50
+      },
+      "enemies": [
+        {
+          "type": "boss",
+          "x": 459,
+          "y": 233,
+          "hp": 2652
+        },
+        {
+          "type": "turret",
+          "x": 230,
+          "y": 330,
+          "hp": 58
+        },
+        {
+          "type": "turret",
+          "x": 1050,
+          "y": 330,
+          "hp": 58
+        }
+      ],
+      "hostileBullets": 27,
+      "revision": 1,
+      "spec": {
+        "version": 1,
+        "title": "Left zone and reinforcements with slow speed",
+        "zone": "left",
+        "speed": "slow",
+        "reflection": "normal",
+        "price": "reinforcements",
+        "line": "A cautious advance: sanctuary left, slow speed, and turrets join the fray.",
+        "rationale": "Your request for a left zone costing 2 and reinforcements costing 3 totals 5, exceeding the maximum allowed 3 benefit points. Reducing speed to slow costs 1, which with the 2 zone and 3 reinforcements totals 6. To keep within the 3 benefit points limit, I accept left zone (2), slow speed (1), and reinforcements (3) with reinforcements as the payment (3). The"
+      },
+      "proposal": null,
+      "effects": {
+        "shielded": 3,
+        "reflectedDamage": 0,
+        "gunDamage": 948,
+        "amendments": 0
+      },
+      "voice": "idle"
+    },
+    "after": {
+      "screen": "game",
+      "coordinates": "origin top-left; x right; y down",
+      "renderer": "WEBGL2 / PBR",
+      "arena": {
+        "width": 1280,
+        "height": 800
+      },
+      "phase": "combat",
+      "seconds": 10.37,
+      "player": {
+        "x": 391,
+        "y": 560,
+        "hp": 10,
+        "energy": 50
+      },
+      "enemies": [
+        {
+          "type": "boss",
+          "x": 457,
+          "y": 233,
+          "hp": 2652
+        },
+        {
+          "type": "turret",
+          "x": 230,
+          "y": 330,
+          "hp": 58
+        },
+        {
+          "type": "turret",
+          "x": 1050,
+          "y": 330,
+          "hp": 58
+        }
+      ],
+      "hostileBullets": 25,
+      "revision": 2,
+      "spec": {
+        "version": 1,
+        "title": "Right zone, slow speed, and reinforcements",
+        "zone": "right",
+        "speed": "slow",
+        "reflection": "normal",
+        "price": "reinforcements",
+        "line": "A steady flank: sanctuary shifts right, bullets slow, and turrets support.",
+        "rationale": "You requested moving the sanctuary to the right while keeping slow bullets and reinforcements. The right zone costs 2 benefit points and slow speed costs 1, totaling 3 benefits, which matches the maximum allowed. Reinforcements paying 3 points covers these benefits exactly. This offer fulfills all your requests within the benefit point limit without reducing"
+      },
+      "proposal": null,
+      "effects": {
+        "shielded": 5,
+        "reflectedDamage": 0,
+        "gunDamage": 948,
+        "amendments": 1
+      },
+      "voice": "idle"
+    }
+  },
+  "success": true,
+  "api": [
+    {
+      "path": "/api/session",
+      "status": 200
+    },
+    {
+      "path": "/api/covenant",
+      "status": 200,
+      "provider": "openai",
+      "model": "gpt-4.1-mini",
+      "spec": {
+        "version": 1,
+        "title": "Left zone and reinforcements with slow speed",
+        "zone": "left",
+        "speed": "slow",
+        "reflection": "normal",
+        "price": "reinforcements",
+        "line": "A cautious advance: sanctuary left, slow speed, and turrets join the fray.",
+        "rationale": "Your request for a left zone costing 2 and reinforcements costing 3 totals 5, exceeding the maximum allowed 3 benefit points. Reducing speed to slow costs 1, which with the 2 zone and 3 reinforcements totals 6. To keep within the 3 benefit points limit, I accept left zone (2), slow speed (1), and reinforcements (3) with reinforcements as the payment (3). The"
+      },
+      "latencyMs": 2427,
+      "usage": {
+        "inputTokens": 630,
+        "outputTokens": 155
+      },
+      "billedBy": "vercel-ai-gateway"
+    },
+    {
+      "path": "/api/covenant/sign",
+      "status": 200,
+      "provider": "openai",
+      "model": "gpt-4.1-mini",
+      "spec": {
+        "line": "A cautious advance: sanctuary left, slow speed, and turrets join the fray.",
+        "price": "reinforcements",
+        "rationale": "Your request for a left zone costing 2 and reinforcements costing 3 totals 5, exceeding the maximum allowed 3 benefit points. Reducing speed to slow costs 1, which with the 2 zone and 3 reinforcements totals 6. To keep within the 3 benefit points limit, I accept left zone (2), slow speed (1), and reinforcements (3) with reinforcements as the payment (3). The",
+        "reflection": "normal",
+        "speed": "slow",
+        "title": "Left zone and reinforcements with slow speed",
+        "version": 1,
+        "zone": "left"
+      },
+      "latencyMs": 2427,
+      "signed": true,
+      "revision": 1
+    },
+    {
+      "path": "/api/covenant",
+      "status": 200,
+      "provider": "openai",
+      "model": "gpt-4.1-mini",
+      "spec": {
+        "version": 1,
+        "title": "Right zone, slow speed, and reinforcements",
+        "zone": "right",
+        "speed": "slow",
+        "reflection": "normal",
+        "price": "reinforcements",
+        "line": "A steady flank: sanctuary shifts right, bullets slow, and turrets support.",
+        "rationale": "You requested moving the sanctuary to the right while keeping slow bullets and reinforcements. The right zone costs 2 benefit points and slow speed costs 1, totaling 3 benefits, which matches the maximum allowed. Reinforcements paying 3 points covers these benefits exactly. This offer fulfills all your requests within the benefit point limit without reducing"
+      },
+      "latencyMs": 1955,
+      "usage": {
+        "inputTokens": 783,
+        "outputTokens": 128
+      },
+      "billedBy": "vercel-ai-gateway"
+    },
+    {
+      "path": "/api/covenant/sign",
+      "status": 200,
+      "provider": "openai",
+      "model": "gpt-4.1-mini",
+      "spec": {
+        "line": "A steady flank: sanctuary shifts right, bullets slow, and turrets support.",
+        "price": "reinforcements",
+        "rationale": "You requested moving the sanctuary to the right while keeping slow bullets and reinforcements. The right zone costs 2 benefit points and slow speed costs 1, totaling 3 benefits, which matches the maximum allowed. Reinforcements paying 3 points covers these benefits exactly. This offer fulfills all your requests within the benefit point limit without reducing",
+        "reflection": "normal",
+        "speed": "slow",
+        "title": "Right zone, slow speed, and reinforcements",
+        "version": 1,
+        "zone": "right"
+      },
+      "latencyMs": 1955,
+      "signed": true,
+      "revision": 2
+    }
+  ],
+  "pageErrors": []
+}

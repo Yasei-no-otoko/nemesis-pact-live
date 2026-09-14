@@ -36,7 +36,10 @@ export async function handle(request,{env=process.env,fetcher=fetch,now=Date.now
   const result=await response.json();usage=result.usage;
   if(result.status!=='completed')throw problem('INCOMPLETE_MODEL_RESPONSE',502);
   const output=(result.output||[]).flatMap(x=>x.content||[]).filter(x=>x.type==='output_text').map(x=>x.text).join('');
-  spec=V.validateSpec(JSON.parse(output));provider='openai';model=env.OPENAI_MODEL;reason='Validated OpenAI counteroffer; explicit signature required.';
+  const validated=V.validateSpec(JSON.parse(output)),budget=V.budget(validated);
+  // The model chooses the clauses. Show deterministic arithmetic beside them,
+  // so free-form rationale cannot misstate their cost or introduce a hidden rule.
+  spec={...validated,rationale:`Validated rule budget: ${budget.benefit} advantage points / ${budget.payment} payment points. ${V.describe(validated).note} Only the displayed clauses apply after Sign.`};provider='openai';model=env.OPENAI_MODEL;reason='Validated OpenAI counteroffer; explicit signature required.';
  }catch{}finally{clearTimeout(timer);}
  let cost=TEXT_RESERVATION;
  if(Number.isSafeInteger(usage?.input_tokens)&&Number.isSafeInteger(usage?.output_tokens)&&usage.input_tokens>=0&&usage.output_tokens>=0) {const prices=TEXT_MODELS[env.OPENAI_MODEL];cost=Math.ceil(usage.input_tokens*prices.input+usage.output_tokens*prices.output);}

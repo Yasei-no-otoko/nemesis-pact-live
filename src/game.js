@@ -417,8 +417,8 @@
     world=new V.Run(typeof seed==='string'?seed:randomSeed(),'standard',arena,memory);cvRunId=crypto.randomUUID?crypto.randomUUID():Array.from(crypto.getRandomValues(new Uint8Array(16)),b=>b.toString(16).padStart(2,'0')).join('');cvSigning=false;W=world.width;H=world.height;refreshView();effects=[];particles=[];trails=[];shake=flash=freeze=0;resultSaved=false;lastWorldPhase='';
     $('cv-prompt').value='Move the sanctuary to the left. Slow your bullets. I accept reinforcements.';$('cv-mode').value=window.NEMESIS_HOSTED?'server':'local';$('cv-token').value='';$('cv-consent').checked=false;document.querySelector('.cv-connection').open=!!window.NEMESIS_HOSTED;openCovenant();updateHUD();
   }
-  function invalidateCovenant(message='Terms changed. Get a new counteroffer before signing.',keepDelegation=false){
-    if(cvSigning)return;cvClient.cancel();cvRequestId++;if(!keepDelegation)voice?.supersede();cvProposal=null;
+  function invalidateCovenant(message='Terms changed. Get a new counteroffer before signing.',keepDelegation=false,reviseDelegation=false){
+    if(cvSigning)return;cvClient.cancel();cvRequestId++;if(!keepDelegation)voice?.supersede(reviseDelegation);cvProposal=null;
     if(cvSession.csrf&&cvRunId){const ac=new AbortController(),timer=setTimeout(()=>ac.abort(),2000);cvSession.request('/api/covenant/cancel',{runId:cvRunId,intentVersion:cvRequestId},{signal:ac.signal,keepalive:true}).catch(()=>{}).finally(()=>clearTimeout(timer));}
     $('cv-sign').disabled=true;$('cv-propose').disabled=false;$('cv-status').textContent=message;$('cv-revision').textContent='UNSIGNED';$('cv-provider').textContent=$('cv-mode').value==='server'?'OPENAI SELECTED / AWAITING PROPOSAL':'LOCAL RULES / NO AI CALLS';$('cv-contract-title').textContent='No binding counteroffer.';$('cv-clauses').textContent='Propose your terms to see the binding rules.';$('cv-line').textContent='The pen is yours.';$('cv-rationale').textContent='';renderCovenantPreview(clock);
   }
@@ -469,7 +469,7 @@
         if(state.state==='error')$('cv-status').textContent='Voice unavailable. Use text, or choose LOCAL RULES. '+(state.detail||'');},
       onCaption:event=>{if(event.speaker==='assistant'){voiceCaption=(voiceCaption+event.delta).slice(-300);$('cv-caption-notary').textContent=voiceCaption;}},
       onInput:event=>{if(!event.delta||cvSigning)return;const delta=event.delta;if(/^\s*(yes|ok(?:ay)?|uh[ -]?huh|mm|\u3046\u3093|\u306f\u3044)[.!?、。\s]*$/i.test(delta)){voiceBackchannels+=delta;return;}
-        voiceText=(voiceText+voiceBackchannels+delta).slice(-400);voiceBackchannels='';voiceLastInput=performance.now();$('cv-caption-player').textContent=voiceText;$('cv-prompt').value=voiceText;invalidateCovenant('Heard updated terms. Waiting for the Notary’s counteroffer.');},
+        voiceText=(voiceText+voiceBackchannels+delta).slice(-400);voiceBackchannels='';voiceLastInput=performance.now();$('cv-caption-player').textContent=voiceText;$('cv-prompt').value=voiceText;invalidateCovenant('Heard updated terms. Waiting for the Notary’s counteroffer.',false,true);},
       onDelegation:async()=>{if(cvSigning||screen!=='covenant-screen')return null;const target=world;for(let n=0;n<10&&performance.now()-voiceLastInput<250;n++)await new Promise(resolve=>setTimeout(resolve,100));if(world!==target||!voiceText.trim())return null;
         if(/(?:withdraw|cancel (?:that|the|my)|\u64a4\u56de|\u53d6\u308a\u6d88)/i.test(voiceText.slice(-90))){invalidateCovenant('Proposal withdrawn. State new terms when ready.');return null;}
         return proposeCovenant({delegated:true});}

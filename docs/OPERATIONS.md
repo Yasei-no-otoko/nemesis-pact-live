@@ -1,0 +1,9 @@
+# NEMESIS PACT operations
+
+Use `AI_MODE=mock`, `OPENAI_KILL_SWITCH=true`, and `OPENAI_VOICE_ENABLED=false` for local development. Production requires an exact HTTPS `ALLOWED_ORIGIN`, a random `APP_SESSION_SECRET`, and server-only Redis REST credentials. The legacy intelligence endpoint is local-rules only and cannot bypass session authorization or the durable quota.
+
+Runtime budget pools are selected with `OPENAI_BUDGET_POOL` (or the `GATEWAY_` equivalent when using the Vercel Gateway). Direct OpenAI usage is allocated up to $10 total (`verification` $3, `public` $5, `judging` $2). Gateway planning is $20 total (`verification` $1, `public` $14, `judging` $5). These are control settings, not price guarantees. The GOAL authorizes the full direct allocation, including verification, public, and judging pools.
+
+Every call reserves integer microdollars in the shared ledger before upstream work. The durable kill record uses the configured quota prefix and is checked atomically with reservations. A timeout or uncertain upstream result retains the maximum reservation. For voice, an unconfirmed hangup remains `unknown` and the voice admission stays blocked; investigate provider state before any manual recovery. Do not clear locks or refund ledger entries from the browser. A durable kill record may be cleared only after every provider session is independently confirmed terminated; never issue a blind `DEL`. Confirmed hangup may settle the conservative reservation through the authenticated server path.
+
+Rollback to the last known READY deployment `dpl_DjxZpWigMdZbnSYphujk8fALUfEm`, or the newer `dpl_8ULyxiyF6v1Ep7yHVJKC4grW7MFP` after verifying its environment. The current work has not completed a full real GPT-Live-1 production playthrough, so rollback does not constitute evidence of live success. Never print API keys, Redis tokens, raw provider responses, or session cookies in logs or reports.

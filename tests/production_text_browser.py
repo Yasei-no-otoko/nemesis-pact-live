@@ -45,7 +45,7 @@ with sync_playwright() as pw:
         page.screenshot(path=str(OUT/'02-real-proposal.png'))
         page.click('#cv-sign'); page.wait_for_function('()=>JSON.parse(render_game_to_text()).revision===1')
         page.keyboard.down('Space');page.keyboard.down('ArrowLeft');page.wait_for_timeout(1100);page.keyboard.up('ArrowLeft')
-        page.wait_for_timeout(8500)
+        page.wait_for_function('()=>JSON.parse(render_game_to_text()).seconds>=10',timeout=70000)
         combat=state(page); evidence['combat']=combat
         page.screenshot(path=str(OUT/'03-signed-combat.png'))
         assert combat['spec']['zone']=='left' and combat['spec']['speed']=='slow'

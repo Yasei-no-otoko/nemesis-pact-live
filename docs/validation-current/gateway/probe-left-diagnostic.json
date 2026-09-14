@@ -1,0 +1,59 @@
+{
+  "checkedAt": "2026-09-14T07:29:46.365Z",
+  "model": "openai/gpt-4.1-mini",
+  "endpoint": "https://ai-gateway.vercel.sh/v1/responses",
+  "reservedMicrodollars": 10000,
+  "httpStatus": 200,
+  "providerErrorCode": null,
+  "responseStatus": "completed",
+  "rawShape": {
+    "status": "completed",
+    "keys": [
+      "version",
+      "title",
+      "zone",
+      "speed",
+      "reflection",
+      "price",
+      "line",
+      "rationale"
+    ],
+    "lengths": {
+      "title": 48,
+      "zone": 4,
+      "speed": 4,
+      "reflection": 6,
+      "price": 14,
+      "line": 69,
+      "rationale": 240
+    }
+  },
+  "spec": {
+    "version": 1,
+    "title": "Left sanctuary with slow bullets and reinforcers",
+    "zone": "left",
+    "speed": "slow",
+    "reflection": "normal",
+    "price": "reinforcements",
+    "line": "Let's strengthen our left flank with slow bullets and reinforcements.",
+    "rationale": "The player's requested zone 'left', speed 'slow', and price 'reinforcements' total 6 benefit points against 3 payment points; reflection remains 'normal' to balance cost. This counteroffer adapts to their request while maintaining fairness."
+  },
+  "usage": {
+    "input_tokens": 627,
+    "output_tokens": 105,
+    "total_tokens": 732,
+    "input_tokens_details": {
+      "cached_tokens": 0,
+      "cache_write_tokens": 0
+    },
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  },
+  "latencyMs": 2067,
+  "accountedMicrodollars": 419,
+  "settlement": {
+    "ok": true,
+    "reason": "settled"
+  }
+}

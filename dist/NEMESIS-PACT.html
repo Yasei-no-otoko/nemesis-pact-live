@@ -387,6 +387,7 @@ body.mobile-ui[data-covenant=true] #pact-hud small{max-height:23px;overflow:hidd
 /* Voice controls stay visibly separate from the signed contract. */
 .cv-voice{margin-top:16px;padding:13px 15px;border:1px solid #8bb5b044;background:#0b1b25;border-radius:3px}.cv-voice-heading{display:flex;justify-content:space-between;align-items:center;gap:12px}.cv-voice-heading>span:last-child{font:9px monospace;color:#a9bec2}.cv-voice-disclosure{font:10px/1.7 Arial,sans-serif;color:#a5b7bd;margin:8px 0}.cv-voice-controls{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.cv-voice-controls button{min-height:38px;padding:8px 11px;font-size:10px}.cv-voice-controls button:disabled,.cv-voice-controls input:disabled{opacity:.45}.cv-voice-controls label{display:flex;align-items:center;gap:7px;font:9px monospace;color:#a9bec2;margin-left:auto}.cv-voice-controls input{width:90px}.cv-captions{margin-top:10px;padding-top:8px;border-top:1px solid #8cb2b524;font:10px/1.6 Arial,sans-serif;color:#c4d6d4}.cv-captions p{margin:3px 0}.cv-captions b{display:inline-block;width:90px;color:#d8bd88;font:8px monospace;letter-spacing:.7px}.cv-captions span{color:#aec7ca}
 @media(max-width:600px){body.mobile-ui .cv-voice{margin-top:14px;padding:13px}.mobile-ui .cv-voice-controls{display:grid;grid-template-columns:1fr 1fr}.mobile-ui .cv-voice-controls button{width:100%;min-height:46px}.mobile-ui .cv-voice-controls label{grid-column:1/-1;margin:2px 0 0;width:100%;justify-content:space-between}.mobile-ui .cv-voice-controls input{flex:1;height:38px}.mobile-ui .cv-captions b{width:78px}}
+@media(max-width:600px){body.mobile-ui .cv-actions{position:static;padding:10px 0 0;background:none}body.mobile-ui .covenant-main{padding-bottom:12px}body.mobile-ui .title-actions{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}body.mobile-ui .title-actions .primary{font-size:11px;line-height:1.2;letter-spacing:-.2px;padding-left:9px;padding-right:9px}body.mobile-ui .title-actions .secondary{font-size:12px;padding-left:8px;padding-right:8px}}
 
 </style>
 </head>
@@ -469,13 +470,13 @@ body.mobile-ui[data-covenant=true] #pact-hud small{max-height:23px;overflow:hidd
    <aside class="notary-card"><span class="section-cap">COUNTERPARTY 001</span><div class="notary-avatar" aria-hidden="true"><i></i><b>◈</b><i></i></div><h2>THE<br>NOTARY<span>.</span></h2><p class="notary-quote" id="cv-enemy">“I do not need to defeat you.<br>I need you to break your word.”</p><p id="cv-memory">No signatures on record.</p><div class="notary-process"><span>01 / WRITE YOUR TERMS</span><span>02 / REVIEW THE COUNTEROFFER</span><span>03 / SIGN. THEN PROVE IT.</span></div><p class="cv-fairness">Battle pauses during parley. The enemy may counteroffer. Only the displayed clauses change the game.</p></aside>
    <div class="covenant-main">
     <div class="cv-intro"><h2 id="cv-title">Change the rules.<br>Not just the dialogue.</h2><p id="cv-intro-copy">Ask for a safe place, slower fire, or stronger reflections. Every advantage has a price.</p></div>
+    <section class="cv-voice" aria-label="Voice negotiation"><div class="cv-voice-heading"><span class="section-cap">VOICE NEGOTIATION</span><span id="cv-voice-state" role="status">Voice unavailable until a session is ready.</span></div><p class="cv-voice-disclosure">AI generated voice. Microphone audio is sent to GPT-Live-1 only after Start voice. Stop voice, sign, cancel, or leaving ends it.</p><div class="cv-voice-controls"><button id="cv-voice-start" class="secondary" disabled>Start voice</button><button id="cv-voice-stop" class="secondary" disabled>Stop voice</button><button id="cv-voice-mute" class="secondary" disabled>Mute</button><label>Volume <input id="cv-voice-volume" type="range" min="0" max="100" value="80" disabled></label></div><div class="cv-captions" aria-live="polite"><p><b>YOU</b> <span id="cv-caption-player">—</span></p><p><b>THE NOTARY</b> <span id="cv-caption-notary">—</span></p></div></section>
     <label class="section-cap" for="cv-prompt">YOUR TERMS / ENGLISH OR JAPANESE · 400 CHARACTERS</label><textarea id="cv-prompt" maxlength="400" rows="2" spellcheck="false">Move the sanctuary to the left. Slow your bullets. I accept reinforcements.</textarea>
     <div class="cv-examples"><button data-cv-example="Move the sanctuary to the left. Slow your bullets. I accept reinforcements.">Left sanctuary + slower fire</button><button data-cv-example="Amplify my reflected bullets and slow your fire. My gun can be weaker.">Build around parries</button><button data-cv-example="Give me a sanctuary on the right and stronger reflections. Double the damage I take.">Right sanctuary + high stakes</button></div>
     <div id="cv-proposal" class="cv-proposal" aria-live="polite"><div class="cv-proposal-header"><span id="cv-provider" class="provider-pill">LOCAL RULES / NO AI CALLS</span><span id="cv-revision">UNSIGNED</span></div><p id="cv-line">The pen is yours. Make a proposal.</p><h3 id="cv-contract-title">No binding terms yet.</h3><div id="cv-clauses"><p>Proposing is free. Nothing changes until you sign.</p></div><p id="cv-rationale"></p><canvas id="cv-preview" width="900" height="160" aria-label="Illustrative before and after contract preview"></canvas><p id="cv-preview-label" class="cv-caption">ILLUSTRATIVE RULE PREVIEW / NOT A RECORDING OR AI VIDEO</p></div>
     <p id="cv-status" class="cv-status" role="status">Default provider: authored keyword rules, not a language model.</p>
     <div class="cv-actions"><button id="cv-propose" class="secondary">Get counteroffer <span>→</span></button><button id="cv-sign" class="primary" disabled>Sign & enter combat <span>↗</span></button></div>
-    <details class="cv-connection"><summary>OpenAI connection / privacy</summary><div class="cv-connection-fields"><label>Provider<select id="cv-mode"><option value="local">LOCAL RULES — offline</option><option value="server">OPENAI — consent required</option></select></label><input id="cv-token" type="hidden"></div><label class="cv-consent"><input id="cv-consent" type="checkbox"><span>With consent, send text, contract, seed and aggregate play counters to this site's server and, when configured, OpenAI. Microphone audio is sent only after you press Start voice. AI generated voice is disclosed before connection. No screen recording or personal account is used.</span></label><p id="cv-session-status">Session not started. LOCAL RULES remains available offline.</p></details>
-    <section class="cv-voice" aria-label="Voice negotiation"><div class="cv-voice-heading"><span class="section-cap">VOICE NEGOTIATION</span><span id="cv-voice-state" role="status">Voice unavailable until a session is ready.</span></div><p class="cv-voice-disclosure">AI generated voice. Your microphone is sent to GPT-Live-1 only after Start voice, and is stopped when you stop, sign, cancel, or leave.</p><div class="cv-voice-controls"><button id="cv-voice-start" class="secondary" disabled>Start voice</button><button id="cv-voice-stop" class="secondary" disabled>Stop voice</button><button id="cv-voice-mute" class="secondary" disabled>Mute</button><label>Volume <input id="cv-voice-volume" type="range" min="0" max="100" value="80" disabled></label></div><div class="cv-captions" aria-live="polite"><p><b>YOU</b> <span id="cv-caption-player">—</span></p><p><b>THE NOTARY</b> <span id="cv-caption-notary">—</span></p></div></section>
+    <details class="cv-connection"><summary>OpenAI connection / privacy</summary><div class="cv-connection-fields"><label>Provider<select id="cv-mode"><option value="local">LOCAL RULES — offline</option><option value="server">OPENAI — consent required</option></select></label><input id="cv-token" type="hidden"></div><label class="cv-consent"><input id="cv-consent" type="checkbox"><span>With consent, text, contract, seed, and aggregate counters go to this site and configured OpenAI. Microphone starts only after Start voice. AI voice is disclosed before connection. No screen or account data is sent.</span></label><p id="cv-session-status">Session not started. LOCAL RULES remains available offline.</p></details>
    </div>
   </div>
  </div>
@@ -1243,26 +1244,36 @@ return {Run,SECTORS,BOSSES,AIRFRAMES,RELICS,ROUTES,ENEMIES,DIRECTORS};
   'use strict';
   class PactSession {
     constructor(options = {}) {
-      this.fetcher = options.fetch || globalThis.fetch;
+      this.fetcher = options.fetch || (typeof globalThis.fetch === 'function' ? globalThis.fetch.bind(globalThis) : null);
       this.sessionId = null;
       this.csrf = null;
       this.expiresAt = 0;
       this.contractEnabled = false;
       this.voiceEnabled = false;
       this.pending = null;
+      this.generation = 0;
+      this.timeoutMs = Number.isFinite(Number(options.timeoutMs)) ? Math.max(250, Number(options.timeoutMs)) : 8000;
     }
     async ensure() {
       if (this.sessionId && this.expiresAt > Date.now() + 5000) return this.snapshot();
       if (this.pending) return this.pending;
       if (typeof this.fetcher !== 'function') throw Error('Session service unavailable');
-      this.pending = Promise.resolve(this.fetcher('/api/session', {
+      const generation = this.generation;
+      const controller = new AbortController();
+      let rejectTimeout;
+      const timeoutPromise = new Promise((_, reject) => { rejectTimeout = reject; });
+      const timeout = setTimeout(() => { controller.abort(); const error = Error('Session service timeout'); error.name = 'AbortError'; rejectTimeout(error); }, this.timeoutMs);
+      const fetchPromise = Promise.resolve().then(() => this.fetcher('/api/session', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'same-origin',
-        body: JSON.stringify({ consent: true })
-      })).then(async response => {
+        body: JSON.stringify({ consent: true }),
+        signal: controller.signal
+      }));
+      const promise = Promise.race([fetchPromise, timeoutPromise]).then(async response => {
         if (!response?.ok) throw Error(`Session unavailable (${response?.status || 0})`);
         const value = await response.json();
+        if (generation !== this.generation) throw Error('Session invalidated');
         if (!value || typeof value.sessionId !== 'string' || !value.sessionId ||
             typeof value.csrf !== 'string' || !value.csrf) throw Error('Invalid session response');
         this.sessionId = value.sessionId;
@@ -1271,8 +1282,12 @@ return {Run,SECTORS,BOSSES,AIRFRAMES,RELICS,ROUTES,ENEMIES,DIRECTORS};
         this.contractEnabled = value.contractEnabled === true;
         this.voiceEnabled = value.voiceEnabled === true;
         return this.snapshot();
-      }).finally(() => { this.pending = null; });
-      return this.pending;
+      }).catch(error => {
+        if (error?.name === 'AbortError') throw Error('Session service timeout');
+        throw error;
+      }).finally(() => { clearTimeout(timeout); if (this.pending === promise) this.pending = null; });
+      this.pending = promise;
+      return promise;
     }
     snapshot() { return { sessionId: this.sessionId, csrf: this.csrf, expiresAt: this.expiresAt, contractEnabled: this.contractEnabled, voiceEnabled: this.voiceEnabled }; }
     async request(path, body, options = {}) {
@@ -1281,7 +1296,7 @@ return {Run,SECTORS,BOSSES,AIRFRAMES,RELICS,ROUTES,ENEMIES,DIRECTORS};
       const headers = { ...(options.headers || {}), 'Content-Type': 'application/json', 'X-Nemesis-CSRF': this.csrf };
       return this.fetcher(path, { ...options, method: options.method || 'POST', headers, credentials: 'same-origin', body: body === undefined ? undefined : JSON.stringify(body) });
     }
-    clear() { this.sessionId = null; this.csrf = null; this.expiresAt = 0; this.contractEnabled = false; this.voiceEnabled = false; }
+    clear() { this.generation++; this.pending = null; this.sessionId = null; this.csrf = null; this.expiresAt = 0; this.contractEnabled = false; this.voiceEnabled = false; }
   }
   return PactSession;
 });
@@ -1359,7 +1374,7 @@ return {CONTRACTS,DIRECTORS,TASKS,cleanRequest,schema,validateDecision,mock,tele
  function memory(o={honored:0,broken:0}){exact(o,['honored','broken']);return {honored:integer(o.honored,10000),broken:integer(o.broken,10000)};}
  function cleanRequest(o){exact(o,['version','prompt','seed','revision','amendment','memory','telemetry','previous']);if(o.version!==1||typeof o.amendment!=='boolean')throw Error('Invalid request');exact(o.telemetry,COUNTERS);const telemetry={};for(const k of COUNTERS){const n=o.telemetry[k];if(!Number.isFinite(n)||n<0||n>1e7)throw Error('Invalid telemetry');telemetry[k]=Math.round(n*100)/100;}
   const previous=o.previous===null?null:validateSpec(o.previous);const revision=integer(o.revision,2);if(o.amendment!==(revision>0)||!!previous!==o.amendment)throw Error('Invalid revision context');return {version:1,prompt:text(o.prompt,400),seed:text(o.seed,48),revision,amendment:o.amendment,memory:memory(o.memory),telemetry,previous};}
- function schema(){const str={type:'string'};return {type:'object',additionalProperties:false,required:SPEC_KEYS,properties:{version:{type:'integer',enum:[1]},title:str,zone:{type:'string',enum:ZONES},speed:{type:'string',enum:SPEEDS},reflection:{type:'string',enum:REFLECTS},price:{type:'string',enum:PRICES},line:str,rationale:str}};}
+ function schema(){const str=n=>({type:'string',minLength:1,maxLength:n});return {type:'object',additionalProperties:false,required:SPEC_KEYS,properties:{version:{type:'integer',enum:[1]},title:str(48),zone:{type:'string',enum:ZONES},speed:{type:'string',enum:SPEEDS},reflection:{type:'string',enum:REFLECTS},price:{type:'string',enum:PRICES},line:str(240),rationale:str(360)}};}
  function compile(spec){const s=validateSpec(spec),m=C.modifiers(null);m.speed=s.speed==='slow'?.72:1;m.reflect=s.reflection==='charged'?1.8:1;m.noAdds=s.price!=='reinforcements';if(s.price==='weaker_gun')m.gun=.65;if(s.price==='fragile')m.damage=2;if(s.price==='haste')m.bossRate=1.25;return m;}
  function describe(spec){const s=validateSpec(spec);return {title:s.title,benefits:[...(s.zone==='none'?[]:[`${s.zone.toUpperCase()} sanctuary erases enemy bullets`]),...(s.speed==='slow'?['Enemy bullet speed −28%']:[]),...(s.reflection==='charged'?['Reflected damage ×1.8']:[])],price:{weaker_gun:'Your gun damage −35%',reinforcements:'Two additional turrets every 9 seconds (maximum 4 adds)',fragile:'Incoming damage ×2',haste:'Boss attack countdowns run 25% faster'}[s.price],note:s.zone==='none'?'Dash through magenta lasers.':'Sanctuary stops bullets, not lasers or enemy bodies.'};}
  function localProposal(request){const r=cleanRequest(request),p=r.prompt.toLowerCase();let zone=/left|\u5de6/u.test(p)?'left':/right|\u53f3/u.test(p)?'right':/center|centre|\u4e2d\u592e/u.test(p)?'center':/sanctuary|safe|shield|\u5b89\u5168|\u7d50\u754c/u.test(p)?'center':'none';
@@ -2457,7 +2472,7 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
     this._state('listening');this.onCaption({speaker:'user',delta:e.delta,start_ms:e.start_ms,end_ms:e.end_ms,eventId:e.event_id});this.onInput({delta:e.delta,start_ms:e.start_ms,end_ms:e.end_ms,eventId:e.event_id});return;
    }
    if(e.type==='session.output_transcript.delta'&&typeof e.delta==='string'){this.onCaption({speaker:'assistant',delta:e.delta,start_ms:e.start_ms,end_ms:e.end_ms,eventId:e.event_id});this._state('speaking');return;}
-   if(e.type==='session.delegation.created'){const id=e.delegation?.id;if(typeof id!=='string'||this.delegations.has(id)||this.delegations.size>=8)return;this.delegations.add(id);this._delegate(id,e);return;}
+   if(e.type==='session.delegation.created'){const id=e.delegation?.id;if(typeof id!=='string'||this.delegations.has(id)||this.delegations.size>=8)return;this.delegations.add(id);this.latestDelegation={id,event:e};this._queueDelegation();return;}
    if(e.type==='error'){this._state('error','provider-error');this.stop('provider-error');}
   }
   async _delegate(id,event){
@@ -2470,9 +2485,14 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
     this._send({type:'session.commentary.append',event_id:'covenant_'+id,delegation_id:id,content});
    }catch{if(!this.closed&&transport===this.transportGeneration)this._state('listening','proposal-unavailable-use-text');}
   }
+  _queueDelegation(){
+   clearTimeout(this.delegationTimer);
+   if(this.closed||!this.latestDelegation||(this.delegationAttempts||0)>=8)return;
+   this.delegationTimer=setTimeout(()=>{this.delegationTimer=null;if(this.closed)return;this.delegationAttempts=(this.delegationAttempts||0)+1;this._delegate(this.latestDelegation.id,this.latestDelegation.event);},this.delegationDelayMs??1500);
+  }
   _install(){this.document?.addEventListener?.('visibilitychange',this._hidden);globalThis.addEventListener?.('pagehide',this._pagehide);}
   _cleanup(){
-   clearTimeout(this.timer);this.timer=null;this.closed=true;this.transportGeneration++;this.delegationGeneration++;
+   clearTimeout(this.timer);clearTimeout(this.delegationTimer);this.timer=null;this.latestDelegation=null;this.closed=true;this.transportGeneration++;this.delegationGeneration++;
    this.stream?.getTracks().forEach(t=>t.stop());try{this.dc?.close();}catch{}try{this.pc?.close();}catch{}
    if(this.audio){this.audio.pause?.();this.audio.srcObject=null;}this.stream=null;this.pc=null;this.dc=null;this.sessionId=null;
    this.document?.removeEventListener?.('visibilitychange',this._hidden);globalThis.removeEventListener?.('pagehide',this._pagehide);
@@ -2484,15 +2504,21 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
   async start({runId,revision}={}){
    if(this.stopPromise||['starting','listening','speaking','stopping'].includes(this.state))return false;
    if(!this.request||!this.media?.getUserMedia||!this.PC){this._state('error','voice-not-supported-use-text');return false;}
-   const generation=++this.transportGeneration;this.delegationGeneration++;this.closed=false;this.finalized=false;this.finalUsage=null;this.events.clear();this.delegations.clear();this._install();this._state('starting');let stream,pc,createdId;
+   const generation=++this.transportGeneration;this.delegationGeneration++;this.closed=false;this.finalized=false;this.finalUsage=null;this.latestDelegation=null;this.delegationAttempts=0;this.events.clear();this.delegations.clear();this._install();this._state('starting');let stream,pc,createdId;
    try{
     stream=await this.media.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true},video:false});
     if(generation!==this.transportGeneration||this.closed){stream.getTracks().forEach(t=>t.stop());return false;}
     this.stream=stream;pc=new this.PC();this.pc=pc;for(const track of stream.getTracks())pc.addTrack(track,stream);
-    pc.addEventListener('track',e=>{if(generation!==this.transportGeneration||this.closed||!this.audio||!e.streams?.[0])return;this.audio.srcObject=e.streams[0];this.audio.play?.().catch(()=>this._state(this.state,'audio-output-blocked-use-captions'));});
+    pc.addEventListener('track',e=>{if(generation!==this.transportGeneration||this.closed||!this.audio)return;const remote=e.streams?.[0]||(e.track&&new MediaStream([e.track]));if(!remote)return;this.audio.srcObject=remote;this.audio.play?.().catch(()=>this._state(this.state,'audio-output-blocked-use-captions'));});
     pc.addEventListener('connectionstatechange',()=>{if(generation===this.transportGeneration&&!this.closed&&['failed','closed','disconnected'].includes(pc.connectionState))this.stop('connection-lost');});
     const dc=pc.createDataChannel('oai-events');this.dc=dc;dc.addEventListener('message',e=>this._event(e.data,generation));dc.addEventListener('close',()=>{if(generation===this.transportGeneration&&!this.closed)this.stop('connection-lost');});
-    await pc.setLocalDescription(await pc.createOffer());if(generation!==this.transportGeneration||this.closed)throw Error('cancelled');
+    await pc.setLocalDescription(await pc.createOffer());
+    if(pc.iceGatheringState!=='complete')await new Promise((resolve,reject)=>{
+     const finish=(error)=>{clearTimeout(timer);pc.removeEventListener('icegatheringstatechange',check);error?reject(error):resolve();};
+     const check=()=>{if(generation!==this.transportGeneration||this.closed)finish(Error('cancelled'));else if(pc.iceGatheringState==='complete')finish();};
+     const timer=setTimeout(()=>finish(Error('ice-timeout')),10000);pc.addEventListener('icegatheringstatechange',check);check();
+    });
+    if(generation!==this.transportGeneration||this.closed)throw Error('cancelled');
     const ac=new AbortController(),timer=setTimeout(()=>ac.abort(),15000);let r;
     try{r=await this._http('/api/voice/start',{runId,revision,sdp:pc.localDescription.sdp},ac.signal);}finally{clearTimeout(timer);}
     if(!r?.ok)throw Error('voice-service-'+(r?.status||'unavailable'));
@@ -2512,13 +2538,13 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
   }
   stop(reason='user'){
    if(this.stopPromise)return this.stopPromise;if(this.closed&&!this.pc&&!this.stream&&!this.sessionId&&this.state!=='starting')return Promise.resolve();
-   const id=this.sessionId;this.closed=true;this.delegationGeneration++;clearTimeout(this.timer);this.stream?.getTracks().forEach(t=>t.stop());this._send({type:'session.close'});this._state('stopping',reason);
+   const id=this.sessionId;this.closed=true;this.delegationGeneration++;clearTimeout(this.timer);clearTimeout(this.delegationTimer);this.stream?.getTracks().forEach(t=>t.stop());this._send({type:'session.close'});this._state('stopping',reason);
    this.stopPromise=(async()=>{
     if(this.dc?.readyState==='open'&&!this.finalized)await new Promise(resolve=>setTimeout(resolve,600));
     const confirmed=await this._hangup(id);this._cleanup();this._state('stopped',confirmed?reason:'upstream-stop-unconfirmed');this.stopPromise=null;
    })();return this.stopPromise;
   }
-  supersede(){this.delegationGeneration++;}
+  supersede(reviseDelegation=false){this.delegationGeneration++;clearTimeout(this.delegationTimer);if(reviseDelegation)this._queueDelegation();}
   mute(){this.stream?.getAudioTracks().forEach(t=>{t.enabled=false;});}
   unmute(){this.stream?.getAudioTracks().forEach(t=>{t.enabled=true;});}
   setVolume(value){if(this.audio)this.audio.volume=Math.max(0,Math.min(1,Number(value)||0));}
@@ -2947,8 +2973,8 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
     world=new V.Run(typeof seed==='string'?seed:randomSeed(),'standard',arena,memory);cvRunId=crypto.randomUUID?crypto.randomUUID():Array.from(crypto.getRandomValues(new Uint8Array(16)),b=>b.toString(16).padStart(2,'0')).join('');cvSigning=false;W=world.width;H=world.height;refreshView();effects=[];particles=[];trails=[];shake=flash=freeze=0;resultSaved=false;lastWorldPhase='';
     $('cv-prompt').value='Move the sanctuary to the left. Slow your bullets. I accept reinforcements.';$('cv-mode').value=window.NEMESIS_HOSTED?'server':'local';$('cv-token').value='';$('cv-consent').checked=false;document.querySelector('.cv-connection').open=!!window.NEMESIS_HOSTED;openCovenant();updateHUD();
   }
-  function invalidateCovenant(message='Terms changed. Get a new counteroffer before signing.',keepDelegation=false){
-    if(cvSigning)return;cvClient.cancel();cvRequestId++;if(!keepDelegation)voice?.supersede();cvProposal=null;
+  function invalidateCovenant(message='Terms changed. Get a new counteroffer before signing.',keepDelegation=false,reviseDelegation=false){
+    if(cvSigning)return;cvClient.cancel();cvRequestId++;if(!keepDelegation)voice?.supersede(reviseDelegation);cvProposal=null;
     if(cvSession.csrf&&cvRunId){const ac=new AbortController(),timer=setTimeout(()=>ac.abort(),2000);cvSession.request('/api/covenant/cancel',{runId:cvRunId,intentVersion:cvRequestId},{signal:ac.signal,keepalive:true}).catch(()=>{}).finally(()=>clearTimeout(timer));}
     $('cv-sign').disabled=true;$('cv-propose').disabled=false;$('cv-status').textContent=message;$('cv-revision').textContent='UNSIGNED';$('cv-provider').textContent=$('cv-mode').value==='server'?'OPENAI SELECTED / AWAITING PROPOSAL':'LOCAL RULES / NO AI CALLS';$('cv-contract-title').textContent='No binding counteroffer.';$('cv-clauses').textContent='Propose your terms to see the binding rules.';$('cv-line').textContent='The pen is yours.';$('cv-rationale').textContent='';renderCovenantPreview(clock);
   }
@@ -2999,7 +3025,7 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
         if(state.state==='error')$('cv-status').textContent='Voice unavailable. Use text, or choose LOCAL RULES. '+(state.detail||'');},
       onCaption:event=>{if(event.speaker==='assistant'){voiceCaption=(voiceCaption+event.delta).slice(-300);$('cv-caption-notary').textContent=voiceCaption;}},
       onInput:event=>{if(!event.delta||cvSigning)return;const delta=event.delta;if(/^\s*(yes|ok(?:ay)?|uh[ -]?huh|mm|\u3046\u3093|\u306f\u3044)[.!?、。\s]*$/i.test(delta)){voiceBackchannels+=delta;return;}
-        voiceText=(voiceText+voiceBackchannels+delta).slice(-400);voiceBackchannels='';voiceLastInput=performance.now();$('cv-caption-player').textContent=voiceText;$('cv-prompt').value=voiceText;invalidateCovenant('Heard updated terms. Waiting for the Notary’s counteroffer.');},
+        voiceText=(voiceText+voiceBackchannels+delta).slice(-400);voiceBackchannels='';voiceLastInput=performance.now();$('cv-caption-player').textContent=voiceText;$('cv-prompt').value=voiceText;invalidateCovenant('Heard updated terms. Waiting for the Notary’s counteroffer.',false,true);},
       onDelegation:async()=>{if(cvSigning||screen!=='covenant-screen')return null;const target=world;for(let n=0;n<10&&performance.now()-voiceLastInput<250;n++)await new Promise(resolve=>setTimeout(resolve,100));if(world!==target||!voiceText.trim())return null;
         if(/(?:withdraw|cancel (?:that|the|my)|\u64a4\u56de|\u53d6\u308a\u6d88)/i.test(voiceText.slice(-90))){invalidateCovenant('Proposal withdrawn. State new terms when ready.');return null;}
         return proposeCovenant({delegated:true});}
