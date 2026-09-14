@@ -59,10 +59,16 @@
     stream=await this.media.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true},video:false});
     if(generation!==this.transportGeneration||this.closed){stream.getTracks().forEach(t=>t.stop());return false;}
     this.stream=stream;pc=new this.PC();this.pc=pc;for(const track of stream.getTracks())pc.addTrack(track,stream);
-    pc.addEventListener('track',e=>{if(generation!==this.transportGeneration||this.closed||!this.audio||!e.streams?.[0])return;this.audio.srcObject=e.streams[0];this.audio.play?.().catch(()=>this._state(this.state,'audio-output-blocked-use-captions'));});
+    pc.addEventListener('track',e=>{if(generation!==this.transportGeneration||this.closed||!this.audio)return;const remote=e.streams?.[0]||(e.track&&new MediaStream([e.track]));if(!remote)return;this.audio.srcObject=remote;this.audio.play?.().catch(()=>this._state(this.state,'audio-output-blocked-use-captions'));});
     pc.addEventListener('connectionstatechange',()=>{if(generation===this.transportGeneration&&!this.closed&&['failed','closed','disconnected'].includes(pc.connectionState))this.stop('connection-lost');});
     const dc=pc.createDataChannel('oai-events');this.dc=dc;dc.addEventListener('message',e=>this._event(e.data,generation));dc.addEventListener('close',()=>{if(generation===this.transportGeneration&&!this.closed)this.stop('connection-lost');});
-    await pc.setLocalDescription(await pc.createOffer());if(generation!==this.transportGeneration||this.closed)throw Error('cancelled');
+    await pc.setLocalDescription(await pc.createOffer());
+    if(pc.iceGatheringState!=='complete')await new Promise((resolve,reject)=>{
+     const finish=(error)=>{clearTimeout(timer);pc.removeEventListener('icegatheringstatechange',check);error?reject(error):resolve();};
+     const check=()=>{if(generation!==this.transportGeneration||this.closed)finish(Error('cancelled'));else if(pc.iceGatheringState==='complete')finish();};
+     const timer=setTimeout(()=>finish(Error('ice-timeout')),10000);pc.addEventListener('icegatheringstatechange',check);check();
+    });
+    if(generation!==this.transportGeneration||this.closed)throw Error('cancelled');
     const ac=new AbortController(),timer=setTimeout(()=>ac.abort(),15000);let r;
     try{r=await this._http('/api/voice/start',{runId,revision,sdp:pc.localDescription.sdp},ac.signal);}finally{clearTimeout(timer);}
     if(!r?.ok)throw Error('voice-service-'+(r?.status||'unavailable'));

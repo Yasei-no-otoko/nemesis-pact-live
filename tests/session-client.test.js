@@ -37,3 +37,54 @@ test('malformed or failed session responses fail closed', async () => {
   const failed = new PactSession({ fetch: async () => new Response('{}', { status: 503 }) });
   await assert.rejects(failed.ensure(), /Session unavailable/);
 });
+
+test('ensure times out a non-responsive session service and releases pending', async () => {
+  let calls = 0;
+  const session = new PactSession({ timeoutMs: 20, fetch: async (_path, options) => {
+    calls++;
+    await new Promise(() => {});
+    return new Response('{}');
+  }});
+  await assert.rejects(session.ensure(), /Session service timeout/);
+  assert.equal(session.pending, null);
+  assert.equal(calls, 1);
+});
+
+test('concurrent ensure calls share one request', async () => {
+  let calls = 0, release;
+  const session = new PactSession({ timeoutMs: 100, fetch: async () => {
+    calls++;
+    await new Promise(resolve => { release = resolve; });
+    return new Response(JSON.stringify({ sessionId: 's1', csrf: 'c1', expiresAt: Date.now() + 60000 }));
+  }});
+  const one = session.ensure(), two = session.ensure();
+  await new Promise(resolve => setImmediate(resolve));
+  release();
+  assert.equal((await one).sessionId, 's1');
+  assert.equal(calls, 1);
+});
+
+test('clear invalidates a late response and permits a fresh ensure', async () => {
+  let release;
+  const session = new PactSession({ timeoutMs: 20, fetch: async () => new Promise(resolve => { release = resolve; }) });
+  const old = session.ensure();
+  await new Promise(resolve => setImmediate(resolve));
+  session.clear();
+  release(new Response(JSON.stringify({ sessionId: 'old', csrf: 'old', expiresAt: Date.now() + 60000 })));
+  await assert.rejects(old, /Session invalidated/);
+  assert.equal(session.sessionId, null);
+});
+
+test('default fetch is bound to its global owner', async () => {
+  const original = global.fetch;
+  let owner;
+  global.fetch = function(path, options) {
+    owner = this;
+    return Promise.resolve(new Response(JSON.stringify({ sessionId: 'bound', csrf: 'csrf', expiresAt: Date.now() + 60000 })));
+  };
+  try {
+    const session = new PactSession({ timeoutMs: 100 });
+    assert.equal((await session.ensure()).sessionId, 'bound');
+    assert.equal(owner, globalThis);
+  } finally { global.fetch = original; }
+});

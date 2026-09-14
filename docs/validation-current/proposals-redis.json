@@ -1,0 +1,14 @@
+{
+  "date": "2026-09-14",
+  "service": "approved KV REST Redis",
+  "environment": "node --env-file=.work/vercel.development.env",
+  "tests": 2,
+  "passed": 2,
+  "failed": 0,
+  "elapsedMs": 1863.96,
+  "redisCommandCountEstimate": 14,
+  "scope": "random nemesis:run:<sid>:<runId> keys only",
+  "verified": ["late finish rejected", "stale intent invalidation", "digest mismatch rejected", "concurrent duplicate sign is one-shot"],
+  "openaiCalls": 0,
+  "secretsRecorded": false
+}
