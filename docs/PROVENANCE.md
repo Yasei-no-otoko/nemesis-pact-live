@@ -1,3 +1,5 @@
+> Historical v0.5.0 baseline document, retained verbatim below. For the 2026-09-14 shipping changes, actual Live API use, new runtime dependency and repository/deployment evidence, see [current sources and licenses](SOURCES-AND-LICENSES.md). Statements below about no live inference/deployment apply only to that earlier revision.
+
 # Provenance — v0.5.0
 
 ## Baseline and date boundary

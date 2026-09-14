@@ -1,3 +1,5 @@
+> Historical v0.5.0 baseline document, retained verbatim below. For the 2026-09-14 shipping changes, actual Live API use, new runtime dependency and repository/deployment evidence, see [current sources and licenses](docs/SOURCES-AND-LICENSES.md). Statements below about no live inference/deployment apply only to that earlier revision.
+
 # Third-party notices and development-tool disclosure
 
 This file records identifiable formula provenance and tools actually used. It does not assign a new open-source license to project-specific code or certify ownership/timing of all earlier participant materials. The team representative must finalize that declaration for the contest.

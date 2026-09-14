@@ -1,0 +1,45 @@
+{
+  "recordedAt": "2026-09-14T08:10:00Z",
+  "status": "production deployed; human interruption/demo gates open",
+  "production": "https://nemesis-pact-live.vercel.app",
+  "repository": "https://github.com/Yasei-no-otoko/nemesis-pact-live",
+  "repositoryVisibility": "private; user approval to publish pending",
+  "branch": "ship/living-covenant",
+  "sourceCommit": "3ce691a1e2b168e82556ef4c37edd1c3aec835d6",
+  "deploymentId": "dpl_3RWHtoCVi8K7D8d2c9X7fU8X1LFu",
+  "deploymentUrl": "https://nemesis-pact-live-35v64dlq1-wildmans-projects.vercel.app",
+  "models": {
+    "voice": "gpt-live-1",
+    "contract": "openai/gpt-4.1-mini",
+    "textBilledBy": "Vercel AI Gateway",
+    "voiceBilledBy": "OpenAI direct"
+  },
+  "build": {
+    "hostedSha256": "254f970c13ecb49b01d676bee2b24d57a5cc3e7df8a3cd095f1ca42a5f89126c",
+    "offlineSha256": "10dc4f5b6947df0e920fcb2295c475b6a07253855058d3ae58e8a539dd64db3a",
+    "hostedBytes": 359229,
+    "offlineBytes": 359179
+  },
+  "nodeEngines": "22.x",
+  "projectNodeSetting": "22.x updated after this deployment",
+  "videoUrl": null,
+  "openGates": [
+    "human interruption and left-to-right correction",
+    "human mid-fight voice amendment",
+    "60-second human demo with English subtitles and public URL",
+    "physical phones/Safari/hardware FPS",
+    "exact Gateway grant balance and expiry",
+    "Vercel infrastructure usage endpoint returned 404"
+  ],
+  "budgetStatus": {
+    "lastLedgerCheck": "2026-09-14T07:52:33Z",
+    "directOpenaiConservativeUsd": 0.3,
+    "gatewayConservativeUsd": 0.00621,
+    "directOpenaiCapUsd": 10,
+    "gatewayCapUsd": 20,
+    "vercelGrantReportedUsd": 30,
+    "vercelGrantExactBalanceAndExpiry": "unverified",
+    "infrastructureUsage": "Vercel CLI usage returned Costs not found (404)",
+    "activeBudgetPool": "verification"
+  }
+}
