@@ -435,6 +435,7 @@ body:not(.mobile-ui) #covenant-screen{overflow:hidden}
 #covenant-screen .provider-pill{font-size:10px;max-width:78%}
 #covenant-screen #cv-revision{white-space:nowrap;font-size:10px}
 #covenant-screen #cv-line{font-size:14px;line-height:1.5;margin:0}
+body:not(.mobile-ui) #covenant-screen #cv-line{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;overflow-wrap:anywhere;flex-shrink:0}
 #covenant-screen #cv-contract-title{font-size:23px;line-height:1.2;margin:0;letter-spacing:-.3px;overflow-wrap:anywhere}
 #covenant-screen #cv-clauses{font:14px/1.5 Arial,sans-serif;gap:14px}
 #covenant-screen #cv-clauses small{font-size:10px;line-height:1.4;margin-bottom:8px}
@@ -3244,7 +3245,7 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
   $('cv-open-connection').onclick=()=>{if(!cvSigning)$('cv-connection-dialog').showModal();};
   for(const id of ['cv-connection-close','cv-connection-done'])$(id).onclick=()=>$('cv-connection-dialog').close();
   $('cv-use-local').onclick=()=>{$('cv-mode').value='local';$('cv-consent').checked=false;invalidateCovenant();refreshConnection();$('cv-connection-dialog').close();};
-  function covenantDetails(transcript){$('cv-detail-title').textContent=transcript?'Voice transcript':'Full terms & changes';$('cv-detail-content').textContent=transcript?'YOU\n'+$('cv-caption-player').textContent+'\n\nTHE NOTARY\n'+$('cv-caption-notary').textContent:($('cv-rationale').textContent||'Ask for a counteroffer. Only the displayed clauses can be signed; voice and preview animations never change combat by themselves.');$('cv-detail-dialog').showModal();}
+  function covenantDetails(transcript){$('cv-detail-title').textContent=transcript?'Voice transcript':'Full terms & changes';$('cv-detail-content').textContent=transcript?'YOU\n'+$('cv-caption-player').textContent+'\n\nTHE NOTARY\n'+$('cv-caption-notary').textContent:[$('cv-contract-title').textContent,$('cv-line').textContent,$('cv-clauses').innerText,$('cv-rationale').textContent||'Ask for a counteroffer. Only the displayed clauses can be signed; voice and preview animations never change combat by themselves.'].join('\n\n');$('cv-detail-dialog').showModal();}
   $('cv-review-details').onclick=()=>covenantDetails(false);$('cv-transcript').onclick=()=>covenantDetails(true);
   for(const id of ['cv-detail-close','cv-detail-done'])$(id).onclick=()=>$('cv-detail-dialog').close();
   for(const el of document.querySelectorAll('[data-cv-example]'))el.onclick=()=>{$('cv-prompt').value=el.dataset.cvExample;invalidateCovenant();};

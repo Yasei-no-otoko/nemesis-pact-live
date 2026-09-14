@@ -63,6 +63,7 @@ body:not(.mobile-ui) #covenant-screen{overflow:hidden}
 #covenant-screen .provider-pill{font-size:10px;max-width:78%}
 #covenant-screen #cv-revision{white-space:nowrap;font-size:10px}
 #covenant-screen #cv-line{font-size:14px;line-height:1.5;margin:0}
+body:not(.mobile-ui) #covenant-screen #cv-line{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;overflow-wrap:anywhere;flex-shrink:0}
 #covenant-screen #cv-contract-title{font-size:23px;line-height:1.2;margin:0;letter-spacing:-.3px;overflow-wrap:anywhere}
 #covenant-screen #cv-clauses{font:14px/1.5 Arial,sans-serif;gap:14px}
 #covenant-screen #cv-clauses small{font-size:10px;line-height:1.4;margin-bottom:8px}

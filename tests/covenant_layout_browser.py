@@ -52,6 +52,10 @@ with sync_playwright() as pw:
      assert all(x['scroll']<=x['height']+1 for x in stress['panels'].values()),stress
      p.screenshot(path=str(OUT/f'long-captions-{width}x{height}.png'))
      p.click('#cv-transcript');assert len(p.locator('#cv-detail-content').inner_text())>600;p.keyboard.press('Escape')
+     p.evaluate('''()=>{document.querySelector('#cv-contract-title').textContent='契約'.repeat(24);document.querySelector('#cv-line').textContent='これは契約を変更するときに表示される長い対話の文章です。'.repeat(12).slice(0,240);}''')
+     maximum=geometry(p);assert all(x['scroll']<=x['height']+1 for x in maximum['panels'].values()),maximum
+     full_line=p.locator('#cv-line').inner_text();p.screenshot(path=str(OUT/f'max-japanese-prose-{width}x{height}.png'))
+     p.click('#cv-review-details');assert full_line in p.locator('#cv-detail-content').inner_text();p.keyboard.press('Escape')
      p.fill('#cv-prompt','右を安全に。弾を遅くして増援は許可。');p.click('#cv-propose')
     p.click('#cv-sign');p.wait_for_function('()=>JSON.parse(render_game_to_text()).phase==="combat"')
     assert state(p)['revision']==1;assert state(p)['spec']['zone']=='right'
