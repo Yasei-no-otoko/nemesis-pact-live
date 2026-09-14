@@ -1,0 +1,117 @@
+{
+  "checkedAt": "2026-09-14T14:23:15.628Z",
+  "scope": "three bounded real Gateway requests with legal rule-set schema with the recorded correction text; not a reconstruction of the original hidden upstream reply or a human live session",
+  "results": [
+    {
+      "attempt": 1,
+      "prompt": "左を安全にしてやっぱり右にして",
+      "model": "openai/gpt-4.1-mini",
+      "httpStatus": 200,
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1257,
+        "output_tokens": 96
+      },
+      "fields": {
+        "titleLength": 30,
+        "lineLength": 85,
+        "rationaleLength": 223,
+        "zone": "right",
+        "speed": "normal",
+        "reflection": "normal",
+        "price": "reinforcements"
+      },
+      "spec": {
+        "version": 1,
+        "title": "Right zone with reinforcements",
+        "zone": "right",
+        "speed": "normal",
+        "reflection": "normal",
+        "price": "reinforcements",
+        "line": "I secure the right zone and bolster defenses with reinforcements for balanced safety.",
+        "rationale": "The player initially suggested left zone for safety but changed to right; normal speed and reflection are maintained for no extra cost, and reinforcements provide solid defense balancing benefits and payments within limits."
+      },
+      "valid": true,
+      "elapsedMs": 2144,
+      "conservativeAccountedMicrodollars": 657,
+      "settlement": {
+        "ok": true,
+        "reason": "settled"
+      }
+    },
+    {
+      "attempt": 2,
+      "prompt": "右を安全に。弾を遅くして、増援は許可。",
+      "model": "openai/gpt-4.1-mini",
+      "httpStatus": 200,
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1265,
+        "output_tokens": 93
+      },
+      "fields": {
+        "titleLength": 45,
+        "lineLength": 88,
+        "rationaleLength": 172,
+        "zone": "right",
+        "speed": "slow",
+        "reflection": "normal",
+        "price": "reinforcements"
+      },
+      "spec": {
+        "version": 1,
+        "title": "Safe right zone with slow bullets and reinfor",
+        "zone": "right",
+        "speed": "slow",
+        "reflection": "normal",
+        "price": "reinforcements",
+        "line": "I secure the right zone, slow down bullets, and allow reinforcements for better defense.",
+        "rationale": "Granting a defensive zone on the right with slowed hostile bullets and reinforcements balances survivability and enemy difficulty within allowed benefit and payment limits."
+      },
+      "valid": true,
+      "elapsedMs": 1784,
+      "conservativeAccountedMicrodollars": 655,
+      "settlement": {
+        "ok": true,
+        "reason": "settled"
+      }
+    },
+    {
+      "attempt": 3,
+      "prompt": "結界なし。弾を遅く、反射を強く。通常射撃を弱くしていい",
+      "model": "openai/gpt-4.1-mini",
+      "httpStatus": 200,
+      "status": "completed",
+      "usage": {
+        "input_tokens": 1271,
+        "output_tokens": 92
+      },
+      "fields": {
+        "titleLength": 47,
+        "lineLength": 93,
+        "rationaleLength": 154,
+        "zone": "none",
+        "speed": "slow",
+        "reflection": "charged",
+        "price": "weaker_gun"
+      },
+      "spec": {
+        "version": 1,
+        "title": "Slow bullets and strong reflection with weaker枪",
+        "zone": "none",
+        "speed": "slow",
+        "reflection": "charged",
+        "price": "weaker_gun",
+        "line": "Let's make bullets slower and reflection stronger, but I accept weaker gun damage as payment.",
+        "rationale": "Slowing bullets and increasing reflection both cost benefits, totaling 2 points, matched by accepting weaker gun damage costing 2 points for a fair trade."
+      },
+      "valid": true,
+      "elapsedMs": 2155,
+      "conservativeAccountedMicrodollars": 656,
+      "settlement": {
+        "ok": true,
+        "reason": "settled"
+      }
+    }
+  ]
+}

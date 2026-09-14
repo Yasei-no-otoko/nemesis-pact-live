@@ -1,0 +1,62 @@
+{
+  "checkedAt": "2026-09-14T14:29:16Z",
+  "url": "https://nemesis-pact-live.vercel.app",
+  "browser": "153.0.4234.32",
+  "viewport": [
+    440,
+    956
+  ],
+  "touchEmulation": true,
+  "physicalPhone": false,
+  "humanMicrophone": false,
+  "controlledTime": false,
+  "passed": false,
+  "error": "",
+  "api": [
+    {
+      "path": "/api/session",
+      "status": 200
+    },
+    {
+      "path": "/api/covenant",
+      "status": 200,
+      "provider": "openai",
+      "model": "gpt-4.1-mini",
+      "modelFormat": "living_covenant_rules_v2",
+      "modelIssue": null,
+      "spec": {
+        "version": 1,
+        "title": "Secure Left, Fragile Defense",
+        "zone": "left",
+        "speed": "normal",
+        "reflection": "normal",
+        "price": "fragile",
+        "line": "Keeping the left safe, but defenses thin.",
+        "rationale": "Validated rule budget: 2 advantage points / 3 payment points. Sanctuary stops bullets, not lasers or enemy bodies. Only the displayed clauses apply after Sign."
+      },
+      "latencyMs": 2116,
+      "accountedMicrodollars": 648
+    },
+    {
+      "path": "/api/covenant",
+      "status": 200,
+      "provider": "openai",
+      "model": "gpt-4.1-mini",
+      "modelFormat": "living_covenant_rules_v2",
+      "modelIssue": null,
+      "spec": {
+        "version": 1,
+        "title": "Secure Left Zone with Equal Trade",
+        "zone": "left",
+        "speed": "normal",
+        "reflection": "normal",
+        "price": "reinforcements",
+        "line": "Left side holds firm, right side remains wild!",
+        "rationale": "Validated rule budget: 2 advantage points / 3 payment points. Sanctuary stops bullets, not lasers or enemy bodies. Only the displayed clauses apply after Sign."
+      },
+      "latencyMs": 1465,
+      "accountedMicrodollars": 648
+    }
+  ],
+  "pageErrors": []
+}

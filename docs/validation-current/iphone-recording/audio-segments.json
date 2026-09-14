@@ -1,0 +1,130 @@
+{
+  "model": "gpt-4o-transcribe-diarize",
+  "scope": "analysis of existing recorded audio, not a game voice model",
+  "timing": "ASR estimates; not precise network latency",
+  "speakerMapping": "A: player, B: Notary; interpreted from audio text and matching on-screen captions",
+  "segments": [
+    {
+      "id": "seg_0",
+      "end": 0.8,
+      "speaker": "A",
+      "start": 0.0,
+      "text": " 手を安全にして",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_1",
+      "end": 3.45,
+      "speaker": "A",
+      "start": 2.5,
+      "text": " 安全にして",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_2",
+      "end": 9.15,
+      "speaker": "A",
+      "start": 7.8,
+      "text": " 左を安全にして",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_3",
+      "end": 16.1,
+      "speaker": "B",
+      "start": 12.4,
+      "text": "うんわかった条件をまとめてみる 左",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_4",
+      "end": 19.55,
+      "speaker": "B",
+      "start": 18.3,
+      "text": "側に球を消す",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_5",
+      "end": 19.7,
+      "speaker": "A",
+      "start": 19.55,
+      "text": "や",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_6",
+      "end": 19.8,
+      "speaker": "B",
+      "start": 19.7,
+      "text": "連",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_7",
+      "end": 19.900000000000002,
+      "speaker": "A",
+      "start": 19.8,
+      "text": "っぱ",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_8",
+      "end": 20.150000000000002,
+      "speaker": "B",
+      "start": 19.900000000000002,
+      "text": "を置",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_9",
+      "end": 20.3,
+      "speaker": "A",
+      "start": 20.150000000000002,
+      "text": "り右",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_10",
+      "end": 20.400000000000002,
+      "speaker": "B",
+      "start": 20.3,
+      "text": "く",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_11",
+      "end": 20.700000000000003,
+      "speaker": "A",
+      "start": 20.400000000000002,
+      "text": "にして",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_12",
+      "end": 25.050000000000004,
+      "speaker": "B",
+      "start": 22.000000000000004,
+      "text": "あ了解右で再提示する",
+      "type": "transcript.text.segment"
+    },
+    {
+      "id": "seg_13",
+      "end": 29.542,
+      "speaker": "B",
+      "start": 26.292,
+      "text": " 強い反射はなし、代償は軽く低下",
+      "type": "transcript.text.segment"
+    }
+  ],
+  "usage": {
+    "input_tokens": 490,
+    "output_tokens": 865,
+    "total_tokens": 1355,
+    "type": "tokens",
+    "input_token_details": {
+      "audio_tokens": 463,
+      "text_tokens": 27
+    }
+  }
+}

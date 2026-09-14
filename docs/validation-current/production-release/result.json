@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-09-14T14:08:57.314Z",
+  "checkedAt": "2026-09-14T14:45:34.694Z",
   "production": "https://nemesis-pact-live.vercel.app",
   "httpStatus": 200,
   "hostedBytes": 373023,
@@ -21,6 +21,8 @@
     "provider": "local-rules"
   },
   "realModelCalls": 0,
-  "sourceCommit": "25100e96d6254df41287de75ac929dc7662182e1",
-  "deploymentId": "dpl_5ShtYfKcwLRLrxAKpTPob1dWRzXU"
+  "sourceCommit": "e900edf95a03e4e5c60bd99208a8b2a9f6c3521e",
+  "deploymentId": "dpl_3yCSkWCzMXvEWjnEZhNCzr1SSZSb",
+  "backendProof": "../public-pool.json; actual response living_covenant_rules_v3 and public-pool ledger delta",
+  "sameSourceFullBrowserEvidence": "../iphone-recording/production-fix/result.json"
 }

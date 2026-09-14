@@ -1,0 +1,14 @@
+{
+  "checkedAt": "2026-09-14T14:34:44Z",
+  "browser": "153.0.4234.32",
+  "mode": "automated native Edge; local proposed viewing page, not public URL",
+  "metadata": {
+    "seconds": 50.466667,
+    "width": 1080,
+    "height": 2400,
+    "readyState": 4
+  },
+  "seekAndPlayPassed": true,
+  "pageErrors": [],
+  "publicViewingUrlVerified": false
+}

@@ -1,13 +1,13 @@
 {
-  "recordedAt": "2026-09-14T14:10:29.613726+00:00",
-  "status": "incomplete overall; compact desktop covenant deployed; human interruption and public video/source access pending",
+  "recordedAt": "2026-09-14T14:47:22.104068+00:00",
+  "status": "incomplete submission packaging; production game verified, post-fix human success reported in Windows Vivaldi; public video/source access pending",
   "production": "https://nemesis-pact-live.vercel.app",
   "repository": "https://github.com/Yasei-no-otoko/nemesis-pact-live",
   "repositoryVisibility": "private; user approval to publish pending",
   "branch": "ship/living-covenant",
-  "sourceCommit": "25100e96d6254df41287de75ac929dc7662182e1",
-  "deploymentId": "dpl_5ShtYfKcwLRLrxAKpTPob1dWRzXU",
-  "deploymentUrl": "https://nemesis-pact-live-g868fi2r1-wildmans-projects.vercel.app",
+  "sourceCommit": "e900edf95a03e4e5c60bd99208a8b2a9f6c3521e",
+  "deploymentId": "dpl_3yCSkWCzMXvEWjnEZhNCzr1SSZSb",
+  "deploymentUrl": "https://nemesis-pact-live-22ow9axcq-wildmans-projects.vercel.app",
   "models": {
     "voice": "gpt-live-1",
     "contract": "openai/gpt-4.1-mini",
@@ -24,23 +24,24 @@
   "projectNodeSetting": "22.x",
   "videoUrl": null,
   "openGates": [
-    "human interruption during enemy reply and same-turn correction",
-    "public video URL (actual 60-second English-captioned MP4 prepared locally)",
-    "physical phones/Safari",
+    "browser name/version",
+    "physical phone proof of latest compact UI and measured phone game FPS",
+    "public video URL approval",
+    "source publication or judge-access choice",
     "exact Gateway grant balance and expiry",
     "Vercel infrastructure usage endpoint returned 404",
-    "source visibility or judging access choice"
+    "Android/macOS Safari physical testing"
   ],
   "budgetStatus": {
-    "lastLedgerCheck": "2026-09-14T14:08:58.814Z",
-    "directOpenaiConservativeUsd": 0.65,
-    "gatewayConservativeUsd": 0.008379,
+    "lastLedgerCheck": "2026-09-14T14:45:32.706Z",
+    "directOpenaiConservativeUsd": 0.8,
+    "gatewayConservativeUsd": 0.015306,
     "directOpenaiCapUsd": 10,
     "gatewayCapUsd": 20,
     "vercelGrantReportedUsd": 30,
     "vercelGrantExactBalanceAndExpiry": "unverified",
     "infrastructureUsage": "Vercel CLI usage returned Costs not found (404)",
-    "activeBudgetPool": "verification"
+    "activeBudgetPool": "public"
   },
   "localVideo": {
     "file": "NEMESIS-PACT-human-demo-60s-en.mp4",
@@ -50,9 +51,9 @@
     "bytes": 7016686
   },
   "rollback": {
-    "sourceCommit": "1c80393d5eb5aabbdffe0241fea6eb6929768f70",
-    "deploymentId": "dpl_FxPfwZhZCfVw5GVAsruErx2CjGUx",
-    "reason": "prior UI with voice replay recovery intact; Redis records are preserved"
+    "sourceCommit": "25100e96d6254df41287de75ac929dc7662182e1",
+    "deploymentId": "dpl_5ShtYfKcwLRLrxAKpTPob1dWRzXU",
+    "reason": "prior compact UI and voice replay fix; reintroduces old model output behavior. Preserve Redis records; prefer disabling paid routes during model faults."
   },
   "compactUiValidation": {
     "passed": true,
@@ -61,5 +62,47 @@
     "evidence": "validation-current/compact-covenant/production/result.json",
     "sourceCommit": "25100e96d6254df41287de75ac929dc7662182e1",
     "realModelCalls": 0
+  },
+  "iphoneValidation": {
+    "evidence": "validation-current/iphone-recording/result.json",
+    "device": "iPhone 16 Pro Max",
+    "browserName": null,
+    "humanInterruptionObserved": true,
+    "recordedCorrectedContractProvider": "local-rules",
+    "postFixHumanLiveVerified": true,
+    "postFixProductionModelCalls": 3,
+    "postFixHumanEvidence": "explicit user success report in Windows Vivaldi, separate from iPhone footage",
+    "evidenceType": "video evidence plus separate user confirmation"
+  },
+  "localSupplementalVideo": {
+    "file": "NEMESIS-PACT-iphone-review-en.mp4",
+    "bytes": 10843607,
+    "sha256": "7c20ce0e3a19e3621fc8e982c180db224dbcf1ac84acccb02aec33dd4ee478e8",
+    "seconds": 50.466667,
+    "width": 1080,
+    "height": 2400,
+    "fps": 30,
+    "codecs": [
+      "H.264",
+      "AAC"
+    ],
+    "decodedFrames": 1514,
+    "public": false,
+    "scope": "Supplemental phone evidence; original order, speed and audio retained, English annotation band added. Not the required 60-second main video."
+  },
+  "currentTests": {
+    "passed": 207,
+    "failed": 0,
+    "durationMs": 20581.5562,
+    "syntaxFiles": 34,
+    "node": "22.23.2"
+  },
+  "publicPoolActivation": {
+    "deploymentId": "dpl_3yCSkWCzMXvEWjnEZhNCzr1SSZSb",
+    "evidence": "validation-current/public-pool.json",
+    "bothEnvironmentUpdatesConfirmed": true,
+    "gatewayRuntimePoolVerified": true,
+    "directVoiceNewPublicSessionTested": false,
+    "capsUnchanged": true
   }
 }

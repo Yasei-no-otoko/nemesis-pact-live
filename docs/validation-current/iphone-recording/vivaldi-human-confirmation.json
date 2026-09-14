@@ -1,0 +1,28 @@
+{
+  "recordedAt": "2026-09-14T14:47:22.104068+00:00",
+  "evidenceType": "explicit user report, not a newly supplied recording or automated observation",
+  "userReply": "成功。Windows版Vivaldi",
+  "browser": "Vivaldi",
+  "os": "Windows",
+  "browserVersion": null,
+  "hardware": null,
+  "production": "https://nemesis-pact-live.vercel.app/?demo=1",
+  "sourceCommit": "e900edf95a03e4e5c60bd99208a8b2a9f6c3521e",
+  "testedDeploymentId": "dpl_6P9TzfgxnzkwHiH4JtFF4YkJrbAE",
+  "requestedSequence": [
+    "Start voice and ask for left safety",
+    "Interrupt enemy reply with actually right",
+    "Confirm corrected contract remains OPENAI and changes to right",
+    "Sign"
+  ],
+  "reportedResult": "success",
+  "limitations": [
+    "No new Vivaldi recording, browser version, renderer, FPS or latency supplied",
+    "The user report does not identify the iPhone browser",
+    "Earlier iPhone footage remains LOCAL RULES after correction; do not relabel it"
+  ],
+  "gameModels": {
+    "voice": "gpt-live-1",
+    "contract": "gpt-4.1-mini via Vercel AI Gateway"
+  }
+}

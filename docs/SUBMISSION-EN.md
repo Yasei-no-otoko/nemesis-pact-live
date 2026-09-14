@@ -4,7 +4,7 @@ NEMESIS PACT is a short browser bullet hell where negotiation is the core mechan
 
 # Meaningful use of OpenAI tools
 
-The runtime separates a text contract provider from the GPT-Live-1 voice frontend. Server code treats model prose and speech as untrusted input, validates a strict contract schema, and lets only an explicit Sign action apply rules. The deployed path uses native HTTPS requests to `gpt-4.1-mini` through Vercel AI Gateway for text and `gpt-live-1` for voice. The user reported a first voice-originated contract change and boss defeat; voice captions and a signed contract were independently observed. Actual human production footage now shows an initial left-side contract and a spoken mid-fight request to move right, followed by a signed revision 2 and the right sanctuary in combat. Interruption during an enemy reply remains unverified.
+The runtime separates a text contract provider from the GPT-Live-1 voice frontend. Server code treats model prose and speech as untrusted input, validates a strict contract schema, and lets only an explicit Sign action apply rules. The deployed path uses native HTTPS requests to `gpt-4.1-mini` through Vercel AI Gateway for text and `gpt-live-1` for voice. The user reported a first voice-originated contract change and boss defeat; voice captions and a signed contract were independently observed. Actual human production footage now shows an initial left-side contract and a spoken mid-fight request to move right, followed by a signed revision 2 and the right sanctuary in combat. Additional iPhone 16 Pro Max footage shows human interruption and right-side correction, but that recorded correction fell back to Local Rules. The resulting model-generation faults were fixed and verified with real production text calls; the user subsequently confirmed the full corrected OpenAI/Sign sequence succeeded in Windows Vivaldi.
 
 # Originality
 
@@ -12,11 +12,11 @@ The Living Covenant design makes conversation mechanically legible: benefits and
 
 # Playability and utility
 
-First Contact provides a direct first encounter with automatic aim and fire, readable contract review, explicit signature, and a compact combat loop. Keyboard, touch, local fallback, reduced-motion behavior, and synthesized Web Audio support access across common browser contexts. Production checks covered desktop browser flows and a real voice contract change; physical phone testing, full interruption, and complete public playthrough remain open verification items.
+First Contact provides a direct first encounter with automatic aim and fire, readable contract review, explicit signature, and a compact combat loop. Keyboard, touch, local fallback, reduced-motion behavior, and synthesized Web Audio support access across common browser contexts. Production checks covered desktop browser flows and a real voice contract change; human iPhone 16 Pro Max play now shows interruption, touch combat, and parley. The user reports post-fix OpenAI correction and Sign succeed in Windows Vivaldi. Other physical phone/browser coverage and the final public demo URL remain open.
 
 # Execution and craft
 
-The implementation preserves the existing six-sector game and rendering architecture while adding a bounded proposal ledger, durable access controls, contract effects, voice lifecycle handling, and visual before/after state. The production deployment is `dpl_FxPfwZhZCfVw5GVAsruErx2CjGUx`. Tests cover 202 unit cases and a real API replay regression with confirmed termination. A 60-second human gameplay video with English captions is prepared locally; its public URL and the final interruption sequence remain open.
+The implementation preserves the existing six-sector game and rendering architecture while adding a bounded proposal ledger, durable access controls, contract effects, voice lifecycle handling, and visual before/after state. The production deployment is `dpl_3yCSkWCzMXvEWjnEZhNCzr1SSZSb`. Tests cover 207 unit cases and a real API replay regression with confirmed termination. A 60-second human gameplay video with English captions is prepared locally; its public URL remains pending hosting approval. Post-fix human correction success is reported by the user. A separate phone clip preserves and labels the observed local fallback.
 
 # Sources and licenses
 

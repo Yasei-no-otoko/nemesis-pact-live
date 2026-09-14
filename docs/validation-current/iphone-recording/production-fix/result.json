@@ -1,0 +1,235 @@
+{
+  "checkedAt": "2026-09-14T14:38:44Z",
+  "url": "https://nemesis-pact-live.vercel.app",
+  "browser": "153.0.4234.32",
+  "viewport": [
+    440,
+    956
+  ],
+  "touchEmulation": true,
+  "physicalPhone": false,
+  "humanMicrophone": false,
+  "controlledTime": false,
+  "passed": true,
+  "renderer": "WEBGPU / COMPUTE",
+  "before": {
+    "screen": "covenant-screen",
+    "coordinates": "origin top-left; x right; y down",
+    "renderer": "WEBGPU / COMPUTE",
+    "arena": {
+      "width": 720,
+      "height": 1107
+    },
+    "phase": "parley",
+    "seconds": 8.4,
+    "player": {
+      "x": 360,
+      "y": 841,
+      "hp": 10,
+      "energy": 50
+    },
+    "enemies": [
+      {
+        "type": "boss",
+        "x": 325,
+        "y": 221,
+        "hp": 2832
+      }
+    ],
+    "hostileBullets": 24,
+    "revision": 1,
+    "spec": {
+      "version": 1,
+      "title": "Right Zone With Fragile Challenge",
+      "zone": "right",
+      "speed": "normal",
+      "reflection": "normal",
+      "price": "fragile",
+      "line": "I guard the right, but my form is brittle.",
+      "rationale": "Validated rule budget: 2 advantage points / 3 payment points. Sanctuary stops bullets, not lasers or enemy bodies. Only the displayed clauses apply after Sign."
+    },
+    "proposal": null,
+    "effects": {
+      "shielded": 3,
+      "reflectedDamage": 0,
+      "gunDamage": 768,
+      "amendments": 0
+    },
+    "voice": "idle",
+    "liveVoice": {
+      "model": "gpt-live-1",
+      "connectionStarted": 0,
+      "sessionClosed": 0,
+      "delegationRequests": 0,
+      "proposalsReturned": 0,
+      "openaiProposals": 0,
+      "signedContracts": 0,
+      "lastState": "idle",
+      "status": "not-used"
+    }
+  },
+  "after": {
+    "screen": "game",
+    "coordinates": "origin top-left; x right; y down",
+    "renderer": "WEBGPU / COMPUTE",
+    "arena": {
+      "width": 720,
+      "height": 1107
+    },
+    "phase": "combat",
+    "seconds": 8.42,
+    "player": {
+      "x": 360,
+      "y": 841,
+      "hp": 10,
+      "energy": 50
+    },
+    "enemies": [
+      {
+        "type": "boss",
+        "x": 324,
+        "y": 221,
+        "hp": 2832
+      }
+    ],
+    "hostileBullets": 24,
+    "revision": 2,
+    "spec": {
+      "version": 1,
+      "title": "Slow Bullets and Charged Reflection, Weaker Gun",
+      "zone": "none",
+      "speed": "slow",
+      "reflection": "charged",
+      "price": "weaker_gun",
+      "line": "Slowing their bullets, charging my reflection, even if my shots falter.",
+      "rationale": "Validated rule budget: 2 advantage points / 2 payment points. Dash through magenta lasers. Only the displayed clauses apply after Sign."
+    },
+    "proposal": null,
+    "effects": {
+      "shielded": 3,
+      "reflectedDamage": 0,
+      "gunDamage": 768,
+      "amendments": 1
+    },
+    "voice": "idle",
+    "liveVoice": {
+      "model": "gpt-live-1",
+      "connectionStarted": 0,
+      "sessionClosed": 0,
+      "delegationRequests": 0,
+      "proposalsReturned": 0,
+      "openaiProposals": 0,
+      "signedContracts": 0,
+      "lastState": "idle",
+      "status": "not-used"
+    }
+  },
+  "realModelCalls": 3,
+  "api": [
+    {
+      "path": "/api/session",
+      "status": 200
+    },
+    {
+      "path": "/api/covenant",
+      "status": 200,
+      "provider": "openai",
+      "model": "gpt-4.1-mini",
+      "modelFormat": "living_covenant_rules_v3",
+      "modelIssue": null,
+      "spec": {
+        "version": 1,
+        "title": "Left Zone Protection",
+        "zone": "left",
+        "speed": "normal",
+        "reflection": "normal",
+        "price": "weaker_gun",
+        "line": "A shield to guard our left flank, reducing firepower for safety.",
+        "rationale": "Validated rule budget: 2 advantage points / 2 payment points. Sanctuary stops bullets, not lasers or enemy bodies. Only the displayed clauses apply after Sign."
+      },
+      "latencyMs": 2291,
+      "accountedMicrodollars": 709
+    },
+    {
+      "path": "/api/covenant",
+      "status": 200,
+      "provider": "openai",
+      "model": "gpt-4.1-mini",
+      "modelFormat": "living_covenant_rules_v3",
+      "modelIssue": null,
+      "spec": {
+        "version": 1,
+        "title": "Right Zone With Fragile Challenge",
+        "zone": "right",
+        "speed": "normal",
+        "reflection": "normal",
+        "price": "fragile",
+        "line": "I guard the right, but my form is brittle.",
+        "rationale": "Validated rule budget: 2 advantage points / 3 payment points. Sanctuary stops bullets, not lasers or enemy bodies. Only the displayed clauses apply after Sign."
+      },
+      "latencyMs": 1590,
+      "accountedMicrodollars": 461
+    },
+    {
+      "path": "/api/covenant/sign",
+      "status": 200,
+      "provider": "openai",
+      "model": "gpt-4.1-mini",
+      "spec": {
+        "line": "I guard the right, but my form is brittle.",
+        "price": "fragile",
+        "rationale": "Validated rule budget: 2 advantage points / 3 payment points. Sanctuary stops bullets, not lasers or enemy bodies. Only the displayed clauses apply after Sign.",
+        "reflection": "normal",
+        "speed": "normal",
+        "title": "Right Zone With Fragile Challenge",
+        "version": 1,
+        "zone": "right"
+      },
+      "latencyMs": 1590,
+      "signed": true,
+      "revision": 1
+    },
+    {
+      "path": "/api/covenant",
+      "status": 200,
+      "provider": "openai",
+      "model": "gpt-4.1-mini",
+      "modelFormat": "living_covenant_rules_v3",
+      "modelIssue": null,
+      "spec": {
+        "version": 1,
+        "title": "Slow Bullets and Charged Reflection, Weaker Gun",
+        "zone": "none",
+        "speed": "slow",
+        "reflection": "charged",
+        "price": "weaker_gun",
+        "line": "Slowing their bullets, charging my reflection, even if my shots falter.",
+        "rationale": "Validated rule budget: 2 advantage points / 2 payment points. Dash through magenta lasers. Only the displayed clauses apply after Sign."
+      },
+      "latencyMs": 2084,
+      "accountedMicrodollars": 746
+    },
+    {
+      "path": "/api/covenant/sign",
+      "status": 200,
+      "provider": "openai",
+      "model": "gpt-4.1-mini",
+      "spec": {
+        "line": "Slowing their bullets, charging my reflection, even if my shots falter.",
+        "price": "weaker_gun",
+        "rationale": "Validated rule budget: 2 advantage points / 2 payment points. Dash through magenta lasers. Only the displayed clauses apply after Sign.",
+        "reflection": "charged",
+        "speed": "slow",
+        "title": "Slow Bullets and Charged Reflection, Weaker Gun",
+        "version": 1,
+        "zone": "none"
+      },
+      "latencyMs": 2084,
+      "signed": true,
+      "revision": 2
+    }
+  ],
+  "pageErrors": [],
+  "sourceCommit": "e900edf95a03e4e5c60bd99208a8b2a9f6c3521e",
+  "deploymentId": "dpl_6P9TzfgxnzkwHiH4JtFF4YkJrbAE"
+}

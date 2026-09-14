@@ -1,0 +1,32 @@
+{
+  "checkedAt": "2026-09-14T14:45:05.639Z",
+  "sourceCommit": "e900edf95a03e4e5c60bd99208a8b2a9f6c3521e",
+  "deploymentId": "dpl_3yCSkWCzMXvEWjnEZhNCzr1SSZSb",
+  "scope": "One actual production HTTP model call after approved public-pool activation. Not browser/voice/signature proof.",
+  "sessionStatus": 200,
+  "voiceEnabled": true,
+  "status": 200,
+  "provider": "openai",
+  "model": "gpt-4.1-mini",
+  "modelFormat": "living_covenant_rules_v3",
+  "modelIssue": null,
+  "zone": "right",
+  "latencyMs": 1562,
+  "accountedMicrodollars": 479,
+  "before": {
+    "global": 14827,
+    "kind:text": 14827,
+    "pool:verification": 14827
+  },
+  "after": {
+    "global": 15306,
+    "kind:text": 15306,
+    "pool:verification": 14827,
+    "pool:public": 479
+  },
+  "publicDelta": 479,
+  "verificationDelta": 0,
+  "judgingDelta": 0,
+  "realModelCalls": 1,
+  "passed": true
+}

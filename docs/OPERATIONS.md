@@ -6,10 +6,10 @@ Production: https://nemesis-pact-live.vercel.app. Scope: only project `prj_fB5yG
 
 | Provider | Total | Verification | Public | Judging | Route |
 |---|---:|---:|---:|---:|---|
-| Direct OpenAI | $10 | $3 | $5 | $2 | GPT-Live-1 voice only |
+| Direct OpenAI | $10 | $3 | $5 | $2 | GPT-Live-1 voice; one approved recorded-audio verification analysis |
 | Vercel AI Gateway | $20 | $1 | $14 | $5 | gpt-4.1-mini text only |
 
-These are separately approved application caps. Actual configuration currently selects the **verification** pool for both providers while the human demo is being verified. After verification, set `OPENAI_BUDGET_POOL=public` and `GATEWAY_BUDGET_POOL=public` in this project's production environment, then deploy. Before judging, an operator can select `judging`; the public pool cannot consume the reserved judging allocation. Never increase a cap or buy additional credit as an automatic fallback.
+These are separately approved application caps. Production now selects the **public** pool for both providers: `OPENAI_BUDGET_POOL=public` and `GATEWAY_BUDGET_POOL=public`. Both project-scoped selector updates and redeployment were confirmed; one live Gateway request settled exclusively against its public pool. Existing verification totals remain intact. No new direct-voice public session was created for this pool check. Before judging, an operator can select `judging`; the public pool cannot consume the reserved judging allocation. Never increase a cap or buy additional credit as an automatic fallback.
 
 The Gateway $20 cap suppresses new model use earlier than the requested $25 suppression threshold. The user-reported $30 grant's exact balance, expiry and key-specific billing remain unverified. The provided Codex Gateway setup page does not establish those details. Vercel infrastructure usage is separate: CLI 59.16 `usage --group-by project --format json` returned `Costs not found (404)` on 2026-09-14. Unknown is not zero. No paid plan, payment method, domain purchase, automatic top-up or paid database was added. Upstash is Free.
 
@@ -27,15 +27,15 @@ Before clearing an unknown-termination kill, independently confirm every affecte
 
 ## Rollback
 
-Current production source: `25100e96d6254df41287de75ac929dc7662182e1`, READY deployment `dpl_5ShtYfKcwLRLrxAKpTPob1dWRzXU`.
+Current production source: `e900edf95a03e4e5c60bd99208a8b2a9f6c3521e`, READY deployment `dpl_3yCSkWCzMXvEWjnEZhNCzr1SSZSb`. Model output format `living_covenant_rules_v3`; the browser public contract format is unchanged.
 
-To revert only this compact contract UI release, restore the prior source `1c80393d5eb5aabbdffe0241fea6eb6929768f70`, deployment `dpl_FxPfwZhZCfVw5GVAsruErx2CjGUx`. That deployment retains the voice replay recovery and bounded budget implementation. With the authenticated Vercel CLI and this project selected:
+To revert this model-schema correction, restore the prior compact UI source `25100e96d6254df41287de75ac929dc7662182e1`, deployment `dpl_5ShtYfKcwLRLrxAKpTPob1dWRzXU`. That deployment retains voice replay recovery and bounded budgets but reintroduces the old contract-generation faults. Prefer disabling paid routes when those faults motivate rollback. With the authenticated Vercel CLI and this project selected:
 
 ```sh
-vercel rollback dpl_FxPfwZhZCfVw5GVAsruErx2CjGUx --yes
+vercel rollback dpl_5ShtYfKcwLRLrxAKpTPob1dWRzXU --yes
 vercel rollback status nemesis-pact-live
 ```
 
-Then verify the production alias, API gate and ledger. Rollback restores code/environment, not prior Redis contents; do not wipe durable money or signature records. This release did not change quotas, keys or billing settings. Never promote a pre-quota build to restore paid service.
+Then verify the production alias, API gate and ledger. Rollback restores code/environment, not prior Redis contents; do not wipe durable money or signature records. This release changed only the approved budget-pool selectors from verification to public; total and pool caps, keys and payment settings are unchanged. The older rollback deployment selects verification again, so verify its selectors before offering public paid sessions. Never promote a pre-quota build to restore paid service.
 
 Secrets remain only in Git-ignored local environment files and sensitive server environment variables. Current exact-value scan found no configured secret in tracked files; that limited check is not a comprehensive security audit. Do not print keys, Redis tokens, cookies, full transcripts or raw provider payloads in operational logs.

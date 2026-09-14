@@ -1,0 +1,71 @@
+{
+  "checkedAt": "2026-09-14T14:19:55.458Z",
+  "scope": "two bounded real Gateway requests with the recorded correction text; not a reconstruction of the original hidden upstream reply or a human live session",
+  "results": [
+    {
+      "attempt": 1,
+      "prompt": "左を安全にしてやっぱり右にして",
+      "model": "openai/gpt-4.1-mini",
+      "httpStatus": 200,
+      "status": "completed",
+      "usage": {
+        "input_tokens": 628,
+        "output_tokens": 68
+      },
+      "fields": {
+        "titleLength": 17,
+        "lineLength": 45,
+        "rationaleLength": 109,
+        "zone": "right",
+        "speed": "normal",
+        "reflection": "normal",
+        "price": "weaker_gun"
+      },
+      "spec": {
+        "version": 1,
+        "title": "Right Zone Safety",
+        "zone": "right",
+        "speed": "normal",
+        "reflection": "normal",
+        "price": "weaker_gun",
+        "line": "I'll keep the right side safe, no compromise.",
+        "rationale": "Switched to right zone as requested; leaving other benefits normal with a weaker gun price to balance points."
+      },
+      "valid": true,
+      "elapsedMs": 1958,
+      "conservativeAccountedMicrodollars": 360,
+      "settlement": {
+        "ok": true,
+        "reason": "settled"
+      }
+    },
+    {
+      "attempt": 2,
+      "prompt": "左を安全にしてやっぱり右にして",
+      "model": "openai/gpt-4.1-mini",
+      "httpStatus": 200,
+      "status": "completed",
+      "usage": {
+        "input_tokens": 628,
+        "output_tokens": 106
+      },
+      "fields": {
+        "titleLength": 48,
+        "lineLength": 86,
+        "rationaleLength": 241,
+        "zone": "right",
+        "speed": "normal",
+        "reflection": "charged",
+        "price": "weaker_gun"
+      },
+      "valid": false,
+      "validationError": "Unfunded or overpowered covenant",
+      "elapsedMs": 2341,
+      "conservativeAccountedMicrodollars": 421,
+      "settlement": {
+        "ok": true,
+        "reason": "settled"
+      }
+    }
+  ]
+}

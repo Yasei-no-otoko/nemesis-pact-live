@@ -1,0 +1,165 @@
+{
+  "recordedAt": "2026-09-14T14:42:39.919951+00:00",
+  "device": {
+    "model": "iPhone 16 Pro Max",
+    "physical": true,
+    "basis": "user reported; visible iOS UI supports phone capture",
+    "browserName": null,
+    "browserVersion": null,
+    "containerEncoder": "WebKit"
+  },
+  "source": {
+    "file": "nemesis-pact-demo (1).webm",
+    "bytes": 72449385,
+    "sha256": "8d0d3a5feb083a24ea8e4da58d925fc7fa19755dfc9ac21b92edc7a25c27fee3",
+    "width": 1320,
+    "height": 2868,
+    "codecs": [
+      "VP9",
+      "Opus"
+    ],
+    "decodedFrames": 1748,
+    "decodedSecondsApprox": 50.43,
+    "containerDuration": null,
+    "uiVersion": "earlier tall covenant UI, before compact release",
+    "public": false
+  },
+  "humanOperation": true,
+  "syntheticSpeech": false,
+  "gameModelsObserved": {
+    "voiceLabel": "GPT-LIVE-1",
+    "initialContract": "OPENAI / gpt-4.1-mini",
+    "correctedSignedContract": "LOCAL RULES / NO AI INFERENCE"
+  },
+  "events": [
+    {
+      "seconds": [
+        7.8,
+        9.15
+      ],
+      "observation": "Human asks for left safety."
+    },
+    {
+      "seconds": [
+        12.4,
+        19.55
+      ],
+      "observation": "Notary describes the left sanctuary; initial OPENAI proposal visible at 20s."
+    },
+    {
+      "seconds": [
+        19.55,
+        20.7
+      ],
+      "observation": "Human and Notary speech interleave; human corrects to right."
+    },
+    {
+      "seconds": [
+        22,
+        25.05
+      ],
+      "observation": "Notary acknowledges right. At 24s old proposal is cleared and Sign unavailable."
+    },
+    {
+      "seconds": [
+        28
+      ],
+      "observation": "Right proposal uses LOCAL RULES after upstream unavailable or invalid; displayed 2811ms."
+    },
+    {
+      "seconds": [
+        32
+      ],
+      "observation": "Signature accepted, revision 1 right sanctuary in combat, microphone indicator no longer visible."
+    },
+    {
+      "seconds": [
+        40
+      ],
+      "observation": "Four actual bullets erased; touch controls used."
+    },
+    {
+      "seconds": [
+        50
+      ],
+      "observation": "Mid-fight parley opens with battle paused and microphone off. Clip ends before another voice negotiation/signature."
+    }
+  ],
+  "timingBasis": "Frame positions and ASR estimates, not hardware timestamps or network latency. Initial model UI showed 3334ms; fallback UI showed 2811ms.",
+  "audioAnalysis": {
+    "model": "gpt-4o-transcribe-diarize",
+    "inputSeconds": 40,
+    "requests": 1,
+    "elapsedMs": 21747,
+    "conservativeUsd": 0.05,
+    "gameLiveSession": false,
+    "evidence": "transcription-run.json and audio-segments.json"
+  },
+  "finding": "Human interruption and right correction are evidenced, but the corrected signed contract in this recording is local fallback. Exact historical upstream reply was not retained.",
+  "fix": {
+    "sourceCommit": "e900edf95a03e4e5c60bd99208a8b2a9f6c3521e",
+    "deploymentId": "dpl_6P9TzfgxnzkwHiH4JtFF4YkJrbAE",
+    "format": "living_covenant_rules_v3",
+    "legalRuleSets": 36,
+    "explicitCorrectionConstraint": true,
+    "publicCanonicalSpecUnchanged": true,
+    "extraRetries": 0
+  },
+  "postFixProduction": {
+    "evidence": "production-fix/result.json",
+    "passed": true,
+    "realGatewayCalls": 3,
+    "modelLatenciesMs": [
+      2291,
+      1590,
+      2084
+    ],
+    "meanModelLatencyMs": 1988.3333333333333,
+    "maxModelLatencyMs": 2291,
+    "accountedUsd": 0.001916,
+    "humanMicrophone": false,
+    "physicalPhone": false,
+    "renderer": "WEBGPU / COMPUTE",
+    "browser": "153.0.4234.32",
+    "viewport": [
+      440,
+      956
+    ],
+    "scope": "Automated native Windows Edge, touch emulation; left/right correction, Sign, three actual bullets erased, mid-fight no-sanctuary/slow/charged amendment, health and time continuity."
+  },
+  "unit": {
+    "passed": 207,
+    "failed": 0,
+    "durationMs": 20581.5562,
+    "syntaxFiles": 34,
+    "node": "22.23.2"
+  },
+  "supplementalVideo": {
+    "file": "NEMESIS-PACT-iphone-review-en.mp4",
+    "bytes": 10843607,
+    "sha256": "7c20ce0e3a19e3621fc8e982c180db224dbcf1ac84acccb02aec33dd4ee478e8",
+    "seconds": 50.466667,
+    "width": 1080,
+    "height": 2400,
+    "fps": 30,
+    "codecs": [
+      "H.264",
+      "AAC"
+    ],
+    "decodedFrames": 1514,
+    "public": false,
+    "scope": "Supplemental phone evidence; original order, speed and audio retained, English annotation band added. Not the required 60-second main video."
+  },
+  "remaining": [
+    "browser name/version",
+    "physical phone proof of latest compact UI and measured phone game FPS",
+    "public video URL approval",
+    "source publication or judge-access choice"
+  ],
+  "postFixHumanConfirmation": {
+    "evidence": "vivaldi-human-confirmation.json",
+    "result": "success reported by user",
+    "browser": "Windows Vivaldi",
+    "independentlyRecorded": false
+  }
+}

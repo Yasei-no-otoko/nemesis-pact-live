@@ -1,0 +1,13 @@
+{
+  "checkedAt": "2026-09-14T14:18:45.031Z",
+  "kind": "recorded audio verification; not a live game session",
+  "model": "gpt-4o-transcribe-diarize",
+  "inputSeconds": 40,
+  "outcome": "completed",
+  "elapsedMs": 21747,
+  "conservativeAccountedMicrodollars": 50000,
+  "settlement": {
+    "ok": true,
+    "reason": "settled"
+  }
+}
