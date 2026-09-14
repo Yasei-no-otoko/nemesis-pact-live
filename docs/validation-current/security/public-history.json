@@ -1,0 +1,9 @@
+{
+  "checkedAt": "2026-09-14T17:55:14.545Z",
+  "scope": "reachable local refs, all historical blobs; exact current configured secrets and credential/private-key patterns; no claim of universal detection",
+  "objects": 1336,
+  "blobsScanned": 978,
+  "bytesScanned": 116149117,
+  "configuredValuesChecked": 12,
+  "findings": []
+}

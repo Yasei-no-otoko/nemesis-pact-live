@@ -1,14 +1,15 @@
-# Implementation plan — current handoff
+# Implementation plan — current state
 
-Updated 2026-09-15 JST. Production source `896f0fe9339d0aa45fedba2623378e17bc18a5ad`, branch `ship/living-covenant`, READY `dpl_Hia1kgaAmhWXDe6L13pLRU8QxTjk`. Milestone14 records manual recording. Current hashes and rollback: RELEASE-CANDIDATE.json; chronology: WORKLOG.md.
+Production source `cd333643ba038bfe97b49ac3f641c563520d7f61`, branch `ship/living-covenant`, READY `dpl_D8wY2pL3CSWN7tzg3R9qzKTXf91o`. Source pushed; current metadata and exact hashes are in RELEASE-CANDIDATE.json.
 
-1. Verified v0.5.0 ZIP import, six-sector preservation and baseline regression are recorded.
-2. Production GPT-5.6 Luna contract → validator → explicit Sign → actual combat is verified.
-3. Real GPT-Live-1 interruption/correction/renegotiation and both signatures pass automated synthetic-input production tests. New long human footage also shows correction, Sign1, sanctuary combat, spoken sanctuary withdrawal/slow fire, Sign2 and boss victory. Recorded enemy reply audibility is awaiting human confirmation.
-4. Stale/duplicate applications, Redis quotas, teardown and LOCAL RULES failures have bounded recorded tests. Latest full Node22 suite: 223/223, 34 syntax files and build passed.
-5. Compact desktop, taller scrollable Notary captions and mobile emulations passed. Latest physical phone FPS, Android and macOS Safari remain unverified additions.
-6. Manual recorder deployed/pushed. Native Resolve has rendered the human run to 59 seconds / 1920x1080 / fixed60fps, English captions and original sound. Full decode and inspected frames pass; editable DRP saved. Next: finish recorded enemy-audio review, publish at an approved destination and verify playback URL, resolve source/judge access. No new human capture is required unless audio review or another actual defect establishes a need.
+1. Verified v0.5.0 ZIP import, baseline regression and six-sector preservation are recorded.
+2. Actual GPT-5.6 Luna contracts reach canonical Sign and combat on production.
+3. Real GPT-Live-1 correction, cancellation/amendment and both signatures pass recorded synthetic-input production tests. New physical iPhone16ProMax human footage demonstrates both voices, correction, OPENAI Sign1, sanctuary combat, spoken removal, OPENAI Sign2 and victory in one run.
+4. Stale/duplicate requests, durable quotas, teardown and LOCAL RULES failures have bounded recorded tests. Current suite229/229,34 syntax/build passed.
+5. Compact desktop and taller scrollable transcripts are deployed. Physical phone footage now shows current UI and touch play; sustained phone FPS, Android and macOS Safari remain unmeasured.
+6. Manual recording and direct game/mic/remote audio are deployed. Native Resolve iPhone edit is59s1080p60,8 chronological cuts, English captions and original sound. Full decode, inspected frames and native browser playback pass. DRP/SRT and source review ZIP are ready locally.
+7. Required delivery completed: existing source repository made public per explicit user instruction; final MP4/SRT/sourceZIP released; GitHub Pages viewer verified anonymously at https://www.circle-hydrangea.net/nemesis-pact-live/. Real remote normal-speed playback ended59.008s with audio. Public source download matches the reviewed SHA256. Final documentation/evidence is recorded under milestone-17-public-submission.
 
-Conservative shared ledger 2026-09-14T16:59:49.531Z: OpenAI $2.000000/$10, Gateway $0.030114/$20, active0/killnull. One local postprocess transcription used $0.05 from the existing verification budget; public/aggregate caps unchanged. Grant balance/expiry, infrastructure costs and invoices are unverified. No purchase/top-up/paid-plan change.
+Final conservative shared ledger at 2026-09-14T18:06:28.604Z: direct OpenAI $2.150000/$10; Vercel AI Gateway $0.031421/$20, active0, kill null. This includes$0.10 total postprocess transcription reservations and is not a provider invoice. Vercel grant is user-reported$30; exact key-specific balance/expiry and infrastructure charges remain unverified. No purchase, paid-plan change or auto-charge. GitHub hosts the55MB video; it is not served from Vercel.
 
-Local deliverable/evidence: FINAL-RECORDING.md, validation-current/human-long/. Full source 119.65s averaged58.688fps; final export is60fps CFR (3540frames). Do not claim all raw frames were delivered at60fps. Do not label inaccurate native diagnostic subtitles as final captions. Overall GOAL remains incomplete until delivery gates close.
+GOAL section10 deliverables pass within recorded evidence scopes. Optional device/performance coverage and exact provider invoice/grant data remain explicitly unverified. No further paid calls are needed to establish the requested release. Form/legal attestations were not performed.

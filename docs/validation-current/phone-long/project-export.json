@@ -1,0 +1,10 @@
+{
+  "file": "NEMESIS-PACT-iPhone-59s-60fps-en.drp",
+  "bytes": 159370,
+  "sha256": "3789754f8bdc7ee91611b1d79dcbb48df123770dec8e8ee4b5ddc7ab23a20ba9",
+  "zipIntegrityPass": true,
+  "phoneVideoClipsWithSerializedFusionComps": 8,
+  "mediaIncluded": false,
+  "requiredRelinkFile": "NEMESIS-PACT-phone-full-60fps.mp4",
+  "public": false
+}

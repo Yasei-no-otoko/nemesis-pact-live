@@ -1,0 +1,13 @@
+{
+  "status": 200,
+  "url": "https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/tag/milestone-16-iphone-demo-audio",
+  "browser": "153.0.4234.32",
+  "anonymous": true,
+  "assetLazyLoading": "scroll Assets section into view before checking",
+  "videoLinkVisible": true,
+  "videoUrl": "/Yasei-no-otoko/nemesis-pact-live/releases/download/milestone-16-iphone-demo-audio/NEMESIS-PACT-iPhone-59s-60fps-en-final.mp4",
+  "sourceZipLinkVisible": true,
+  "sourceUrl": "/Yasei-no-otoko/nemesis-pact-live/releases/download/milestone-16-iphone-demo-audio/NEMESIS-PACT-source-review-cd33364.zip",
+  "sourceZipBytes": 437027,
+  "sourceZipSha256": "e5d7234de1feaa80faf1f2642dd17e06b6f3799242e8cc2494e0314145f00835"
+}

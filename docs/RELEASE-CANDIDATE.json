@@ -1,13 +1,13 @@
 {
-  "recordedAt": "2026-09-14T17:11:31.889795+00:00",
-  "status": "manual recording deployed; actual human 59s 1080p60 Resolve edit verified locally; recorded Notary audio review and public delivery pending",
+  "recordedAt": "2026-09-14T18:08:43.059114+00:00",
+  "status": "GOAL section10 deliverables verified and publicly accessible; optional coverage and provider accounting unknowns disclosed",
   "production": "https://nemesis-pact-live.vercel.app",
   "repository": "https://github.com/Yasei-no-otoko/nemesis-pact-live",
-  "repositoryVisibility": "private; user approval to publish pending",
+  "repositoryVisibility": "public; user explicitly authorized existing repository visibility change",
   "branch": "ship/living-covenant",
-  "sourceCommit": "896f0fe9339d0aa45fedba2623378e17bc18a5ad",
-  "deploymentId": "dpl_Hia1kgaAmhWXDe6L13pLRU8QxTjk",
-  "deploymentUrl": "https://nemesis-pact-live-2b8gpe34t-wildmans-projects.vercel.app",
+  "sourceCommit": "cd333643ba038bfe97b49ac3f641c563520d7f61",
+  "deploymentId": "dpl_D8wY2pL3CSWN7tzg3R9qzKTXf91o",
+  "deploymentUrl": "https://nemesis-pact-live-5yw1sbt6j-wildmans-projects.vercel.app",
   "models": {
     "voice": "gpt-live-1",
     "contract": "openai/gpt-5.6-luna",
@@ -17,37 +17,32 @@
     "contractServiceTier": "default"
   },
   "build": {
-    "hostedSha256": "a02d4e09f791f86abe2aa0374f316b1d5aa61c0becc3b728d4bbff2e1ac9f7ff",
-    "offlineSha256": "2a5a4e9fca1afb1e6f8afc312028e17a24d15bcdab46c4e9e1b16b688bfa8195",
-    "hostedBytes": 379075,
-    "offlineBytes": 379025
+    "hostedSha256": "cf28980f3392257d6ceb5658e85b21364135d6a01076d3d18faf7b98487fd17d",
+    "hostedBytes": 382304,
+    "offlineSha256": "e4f3d64ed1bb5a2cf0094b74a297859dd43a76a09200084e739044ee69dd3a3e",
+    "offlineBytes": 382254
   },
   "nodeEngines": "22.x",
   "projectNodeSetting": "22.x",
-  "videoUrl": null,
-  "openGates": [
-    "recorded Notary audio confirmation and final human video review",
-    "approved public video destination and verified viewing URL",
-    "source publication or judge-access choice",
-    "exact Gateway grant balance and expiry",
-    "Vercel infrastructure usage endpoint returned 404",
-    "additional physical-device/browser/FPS coverage remains explicitly limited"
-  ],
+  "videoUrl": "https://www.circle-hydrangea.net/nemesis-pact-live/",
+  "openGates": [],
   "budgetStatus": {
-    "lastLedgerCheck": "2026-09-14T16:59:49.531Z",
-    "directOpenaiConservativeUsd": 2.0,
-    "gatewayConservativeUsd": 0.030114,
+    "lastLedgerCheck": "2026-09-14T18:06:28.604Z",
+    "directOpenaiConservativeUsd": 2.15,
+    "gatewayConservativeUsd": 0.031421,
     "directOpenaiCapUsd": 10,
     "gatewayCapUsd": 20,
     "vercelGrantReportedUsd": 30,
     "vercelGrantExactBalanceAndExpiry": "unverified",
     "infrastructureUsage": "Vercel CLI usage returned Costs not found (404)",
-    "activeBudgetPool": "public"
+    "activeBudgetPool": "public",
+    "activeReservations": 0,
+    "kill": null
   },
   "localVideo": {
-    "file": "NEMESIS-PACT-human-59s-60fps-en_V1-0001.mp4",
-    "bytes": 51896283,
-    "sha256": "4e7700d1897ee871321597b934486b63fefe116ff5cfbe2a6b6898a3423ec8bd",
+    "file": "NEMESIS-PACT-iPhone-59s-60fps-en-final.mp4",
+    "bytes": 55266531,
+    "sha256": "2d0b31d936c35638a7227d33fa7418d602cfe42cd1cb8e8bc3dcb8ba82c988aa",
     "decodedFrames": 3540,
     "decodedSeconds": 59.0,
     "fps": 60,
@@ -56,24 +51,25 @@
       1080
     ],
     "ffmpegExit": 0,
-    "probe": "Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '.artifacts\\submission\\NEMESIS-PACT-human-59s-60fps-en_V1-0001.mp4':\n  Metadata:\n    major_brand     : isom\n    minor_version   : 512\n    compatible_brands: isomiso2avc1mp41\n    creation_time   : 2026-09-14T16:58:34.000000Z\n    encoder         : Blackmagic Design DaVinci Resolve Studio\n  Duration: 00:00:59.01, start: 0.000000, bitrate: 7035 kb/s\n  Stream #0:0[0x1](und): Video: h264 (Main) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 6712 kb/s, 60 fps, 60 tbr, 15360 tbn (default)\n      Metadata:\n        creation_time   : 2026-09-14T16:58:34.000000Z\n        handler_name    : VideoHandler\n        vendor_id       : [0][0][0][0]\n        encoder         : H.264 AMD\n        timecode        : 00:00:00:00\n  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 320 kb/s (default)\n      Metadata:\n        creation_time   : 2026-09-14T16:58:34.000000Z\n        handler_name    : SoundHandler\n        vendor_id       : [0][0][0][0]\n  Stream #0:2[0x3](eng): Data: none (tmcd / 0x64636D74) (default)\n      Metadata:\n        creation_time   : 2026-09-14T16:58:34.000000Z\n        handler_name    : TimeCodeHandler\n        timecode        : 00:00:00:00\n",
+    "probe": "Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '.artifacts\\submission\\NEMESIS-PACT-iPhone-59s-60fps-en-final.mp4':\n  Metadata:\n    major_brand     : isom\n    minor_version   : 512\n    compatible_brands: isomiso2avc1mp41\n    creation_time   : 2026-09-14T17:39:18.000000Z\n    encoder         : Blackmagic Design DaVinci Resolve Studio\n  Duration: 00:00:59.01, start: 0.000000, bitrate: 7492 kb/s\n  Stream #0:0[0x1](und): Video: h264 (Main) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 7169 kb/s, 60 fps, 60 tbr, 15360 tbn (default)\n      Metadata:\n        creation_time   : 2026-09-14T17:39:18.000000Z\n        handler_name    : VideoHandler\n        vendor_id       : [0][0][0][0]\n        encoder         : H.264 AMD\n        timecode        : 00:00:00:00\n  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 320 kb/s (default)\n      Metadata:\n        creation_time   : 2026-09-14T17:39:18.000000Z\n        handler_name    : SoundHandler\n        vendor_id       : [0][0][0][0]\n  Stream #0:2[0x3](eng): Data: none (tmcd / 0x64636D74) (default)\n      Metadata:\n        creation_time   : 2026-09-14T17:39:18.000000Z\n        handler_name    : TimeCodeHandler\n        timecode        : 00:00:00:00\n",
     "audioRmsDb": [
-      "-18.169002"
+      "-28.083526"
     ],
     "actualHumanGameplay": true,
     "editor": "DaVinci Resolve Studio21.1.0.17",
-    "publicUrl": null,
-    "public": false,
+    "publicUrl": "https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/download/milestone-16-iphone-demo-audio/NEMESIS-PACT-iPhone-59s-60fps-en-final.mp4",
+    "public": true,
     "seconds": 59,
-    "containerSeconds": 59.01,
-    "evidence": "validation-current/human-long/export/result.json",
-    "nativeProject": "NEMESIS-PACT-human-59s-60fps-en.drp",
-    "notaryRecordedAudioConfirmed": false
+    "containerSeconds": 59.008,
+    "evidence": "validation-current/phone-long/export/result.json",
+    "nativeProject": "NEMESIS-PACT-iPhone-59s-60fps-en.drp",
+    "notaryRecordedAudioConfirmed": true,
+    "viewerUrl": "https://www.circle-hydrangea.net/nemesis-pact-live/"
   },
   "rollback": {
-    "sourceCommit": "c7f1f6d972c9f64047e3626c9f37f82d8f4ba47d",
-    "deploymentId": "dpl_xk61akZJbnzGP83dt11iUbnb8MpT",
-    "reason": "previous verified Live/Luna release; restores forced60s recorder; retains voice amendment fixes, model and budget controls; preserve Redis"
+    "sourceCommit": "896f0fe9339d0aa45fedba2623378e17bc18a5ad",
+    "deploymentId": "dpl_Hia1kgaAmhWXDe6L13pLRU8QxTjk",
+    "reason": "previous verified manual recorder and Live/Luna release; reverts direct audio mix only; preserve Redis and current budgets"
   },
   "compactUiValidation": {
     "passed": true,
@@ -152,11 +148,7 @@
     "mobileEmulationCases": 1,
     "realModelCalls": 0
   },
-  "requiredDeliveryGates": [
-    "recorded Notary audio confirmation and final human video review",
-    "approved public video destination and verified viewing URL",
-    "source publication or judge-access choice"
-  ],
+  "requiredDeliveryGates": [],
   "liveLunaValidation": {
     "evidence": "validation-current/voice-withdrawal/full-sequence/result.json",
     "passed": true,
@@ -186,17 +178,24 @@
     "sourceCommit": "815d77faf465b3447e8a823f7d61777233f860ec"
   },
   "latestHumanRecording": {
-    "evidence": "validation-current/human-long/README.md",
-    "sourceFile": "nemesis-pact-demo (3).webm",
-    "sourceSha256": "202ba7e6b58fc3eada64b3221851263fc569fc3c54a69c315fd8958bf8f73a59",
-    "sourceSeconds": 119.65,
+    "evidence": "validation-current/phone-long/README.md",
+    "sourceFile": "nemesis-pact-demo-long.webm",
+    "sourceSha256": "49596b24b4e764bee2d48347bf0430f9f2168fdc84a278819fc18df5fbc831fe",
+    "sourceSeconds": 100.611,
     "voice": "gpt-live-1",
     "contract": "gpt-5.6-luna",
+    "device": "iPhone16ProMax",
+    "physicalDevice": true,
+    "deviceEvidence": "explicit user reply",
+    "browser": "Safari observed in screen-broadcast selection",
+    "browserVersion": null,
+    "sourceAverageDeliveredFps": 34.49920982795122,
+    "gameFpsMeasured": false,
     "rightCorrectionAndSignVisible": true,
     "amendmentSignVisible": true,
     "bossDefeatVisible": true,
-    "recordedNotaryAudio": "user confirmation pending",
-    "browserVersion": null
+    "recordedNotaryAudio": "both player and Notary present in source; actual postprocess ASR and visible transcripts",
+    "sourceCommit": "896f0fe9339d0aa45fedba2623378e17bc18a5ad"
   },
   "manualRecorderValidation": {
     "sourceCommit": "896f0fe9339d0aa45fedba2623378e17bc18a5ad",
@@ -239,6 +238,59 @@
     "scope": "pre-fix recording reveals clause-withdrawal bug; not a complete submission demo"
   },
   "humanSubmissionValidation": {
+    "evidence": "validation-current/phone-long/export/result.json",
+    "editor": "DaVinci Resolve Studio21.1.0.17",
+    "outputFps": 60,
+    "outputFrames": 3540,
+    "outputSeconds": 59,
+    "humanMicrophone": true,
+    "recordedEnemyAudioReviewPending": false,
+    "publicUrl": "https://www.circle-hydrangea.net/nemesis-pact-live/",
+    "browserEvidence": "validation-current/phone-long/export/browser.json",
+    "playbackEnded": true,
+    "publicPlaybackEvidence": "validation-current/public-submission/playback.json",
+    "anonymousRemotePlaybackEnded": true
+  },
+  "previousDesktopLocalVideo": {
+    "file": "NEMESIS-PACT-human-59s-60fps-en_V1-0001.mp4",
+    "bytes": 51896283,
+    "sha256": "4e7700d1897ee871321597b934486b63fefe116ff5cfbe2a6b6898a3423ec8bd",
+    "decodedFrames": 3540,
+    "decodedSeconds": 59.0,
+    "fps": 60,
+    "dimensions": [
+      1920,
+      1080
+    ],
+    "ffmpegExit": 0,
+    "probe": "Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '.artifacts\\submission\\NEMESIS-PACT-human-59s-60fps-en_V1-0001.mp4':\n  Metadata:\n    major_brand     : isom\n    minor_version   : 512\n    compatible_brands: isomiso2avc1mp41\n    creation_time   : 2026-09-14T16:58:34.000000Z\n    encoder         : Blackmagic Design DaVinci Resolve Studio\n  Duration: 00:00:59.01, start: 0.000000, bitrate: 7035 kb/s\n  Stream #0:0[0x1](und): Video: h264 (Main) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1920x1080 [SAR 1:1 DAR 16:9], 6712 kb/s, 60 fps, 60 tbr, 15360 tbn (default)\n      Metadata:\n        creation_time   : 2026-09-14T16:58:34.000000Z\n        handler_name    : VideoHandler\n        vendor_id       : [0][0][0][0]\n        encoder         : H.264 AMD\n        timecode        : 00:00:00:00\n  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 320 kb/s (default)\n      Metadata:\n        creation_time   : 2026-09-14T16:58:34.000000Z\n        handler_name    : SoundHandler\n        vendor_id       : [0][0][0][0]\n  Stream #0:2[0x3](eng): Data: none (tmcd / 0x64636D74) (default)\n      Metadata:\n        creation_time   : 2026-09-14T16:58:34.000000Z\n        handler_name    : TimeCodeHandler\n        timecode        : 00:00:00:00\n",
+    "audioRmsDb": [
+      "-18.169002"
+    ],
+    "actualHumanGameplay": true,
+    "editor": "DaVinci Resolve Studio21.1.0.17",
+    "publicUrl": null,
+    "public": false,
+    "seconds": 59,
+    "containerSeconds": 59.01,
+    "evidence": "validation-current/human-long/export/result.json",
+    "nativeProject": "NEMESIS-PACT-human-59s-60fps-en.drp",
+    "notaryRecordedAudioConfirmed": false
+  },
+  "previousDesktopHumanRecording": {
+    "evidence": "validation-current/human-long/README.md",
+    "sourceFile": "nemesis-pact-demo (3).webm",
+    "sourceSha256": "202ba7e6b58fc3eada64b3221851263fc569fc3c54a69c315fd8958bf8f73a59",
+    "sourceSeconds": 119.65,
+    "voice": "gpt-live-1",
+    "contract": "gpt-5.6-luna",
+    "rightCorrectionAndSignVisible": true,
+    "amendmentSignVisible": true,
+    "bossDefeatVisible": true,
+    "recordedNotaryAudio": "user confirmation pending",
+    "browserVersion": null
+  },
+  "previousDesktopHumanSubmissionValidation": {
     "evidence": "validation-current/human-long/export/result.json",
     "editor": "DaVinci Resolve Studio 21.1.0.17",
     "outputFps": 60,
@@ -249,5 +301,58 @@
     "publicUrl": null,
     "browserEvidence": "validation-current/human-long/export/browser.json",
     "playbackEnded": true
+  },
+  "recorderAudioValidation": {
+    "sourceCommit": "cd333643ba038bfe97b49ac3f641c563520d7f61",
+    "unitTests": 229,
+    "unitPassed": 229,
+    "unitFailed": 0,
+    "syntaxFiles": 34,
+    "nativeBrowser": "Edge153.0.4234.32 / Windows",
+    "syntheticInput": true,
+    "realModelCalls": 0,
+    "evidence": "validation-current/recorder-audio/demo-audio-browser.json",
+    "productionEvidence": "validation-current/recorder-audio/production/result.json",
+    "productionCaptureSeconds": 3.006,
+    "threeDirectSources": true,
+    "displayAudioExcluded": true,
+    "remoteVolumeAndRestart": true,
+    "captureReleasedBorrowedTracksRetained": true
+  },
+  "sourceReviewPackage": {
+    "file": "NEMESIS-PACT-source-review-cd33364.zip",
+    "bytes": 437027,
+    "sha256": "e5d7234de1feaa80faf1f2642dd17e06b6f3799242e8cc2494e0314145f00835",
+    "files": 122,
+    "sourceCommit": "cd333643ba038bfe97b49ac3f641c563520d7f61",
+    "public": true,
+    "url": "https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/download/milestone-16-iphone-demo-audio/NEMESIS-PACT-source-review-cd33364.zip"
+  },
+  "videoAssetUrl": "https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/download/milestone-16-iphone-demo-audio/NEMESIS-PACT-iPhone-59s-60fps-en-final.mp4",
+  "releaseUrl": "https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/tag/milestone-16-iphone-demo-audio",
+  "releaseTag": "milestone-16-iphone-demo-audio",
+  "finalEvidenceTag": "milestone-17-public-submission",
+  "unverifiedItems": [
+    "exact Vercel Gateway grant balance and expiry",
+    "Vercel infrastructure invoice/charges; usage endpoint returned404",
+    "additional physical Android/macOS browsers and sustained iPhone game FPS",
+    "actual provider invoices versus conservative application accounting"
+  ],
+  "publicDeliveryValidation": {
+    "evidence": "validation-current/public-submission/result.json",
+    "passed": true,
+    "anonymousSourceZipHashMatched": true,
+    "publicRemoteVideoDuration": 59.008,
+    "normalPlayback": true,
+    "pageErrors": 0,
+    "mediaErrors": 0,
+    "framesPresentedOrDropped": 3540,
+    "droppedDuringNative1xPlayback": 6
+  },
+  "completion": {
+    "goalSection10Passed": true,
+    "recordedAt": "2026-09-14T18:08:43.059114+00:00",
+    "formSubmissionPerformed": false,
+    "scope": "requested implementation, production, validation, public media/source and submission materials; form/legal attestations were not requested or performed"
   }
 }

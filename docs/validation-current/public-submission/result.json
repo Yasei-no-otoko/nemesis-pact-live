@@ -1,0 +1,78 @@
+{
+  "checkedAt": "2026-09-14T18:08:43.059114+00:00",
+  "passed": true,
+  "viewerUrl": "https://www.circle-hydrangea.net/nemesis-pact-live/",
+  "githubPagesEntry": "https://yasei-no-otoko.github.io/nemesis-pact-live/",
+  "pagesBranch": "gh-pages",
+  "pagesCommit": "60de838ad2322d2a801ef67e0dfe991c4dae63ce",
+  "pagesState": {
+    "html_url": "http://www.circle-hydrangea.net/nemesis-pact-live/",
+    "https_enforced": false,
+    "public": true,
+    "source": {
+      "branch": "gh-pages",
+      "path": "/"
+    },
+    "status": "built"
+  },
+  "repository": "https://github.com/Yasei-no-otoko/nemesis-pact-live",
+  "repositoryVisibility": "public",
+  "authorization": "User explicitly requested making the existing repository public after final local video and source review ZIP were prepared.",
+  "release": {
+    "assets": [
+      {
+        "apiUrl": "https://api.github.com/repos/Yasei-no-otoko/nemesis-pact-live/releases/assets/563923406",
+        "contentType": "video/mp4",
+        "createdAt": "2026-09-14T17:56:26Z",
+        "digest": "sha256:2d0b31d936c35638a7227d33fa7418d602cfe42cd1cb8e8bc3dcb8ba82c988aa",
+        "downloadCount": 0,
+        "id": "RA_kwDOUZ81lM4hnMnO",
+        "label": "",
+        "name": "NEMESIS-PACT-iPhone-59s-60fps-en-final.mp4",
+        "size": 55266531,
+        "state": "uploaded",
+        "updatedAt": "2026-09-14T17:56:31Z",
+        "url": "https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/download/milestone-16-iphone-demo-audio/NEMESIS-PACT-iPhone-59s-60fps-en-final.mp4"
+      },
+      {
+        "apiUrl": "https://api.github.com/repos/Yasei-no-otoko/nemesis-pact-live/releases/assets/563923403",
+        "contentType": "application/octet-stream",
+        "createdAt": "2026-09-14T17:56:26Z",
+        "digest": "sha256:c6ab7cef420b6ffa7a22c34bea349c235218cc9b3b948baaeb0c3359e19417eb",
+        "downloadCount": 0,
+        "id": "RA_kwDOUZ81lM4hnMnL",
+        "label": "",
+        "name": "NEMESIS-PACT-iPhone-59s-60fps-en.srt",
+        "size": 1514,
+        "state": "uploaded",
+        "updatedAt": "2026-09-14T17:56:27Z",
+        "url": "https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/download/milestone-16-iphone-demo-audio/NEMESIS-PACT-iPhone-59s-60fps-en.srt"
+      },
+      {
+        "apiUrl": "https://api.github.com/repos/Yasei-no-otoko/nemesis-pact-live/releases/assets/563923405",
+        "contentType": "application/zip",
+        "createdAt": "2026-09-14T17:56:26Z",
+        "digest": "sha256:e5d7234de1feaa80faf1f2642dd17e06b6f3799242e8cc2494e0314145f00835",
+        "downloadCount": 0,
+        "id": "RA_kwDOUZ81lM4hnMnN",
+        "label": "",
+        "name": "NEMESIS-PACT-source-review-cd33364.zip",
+        "size": 437027,
+        "state": "uploaded",
+        "updatedAt": "2026-09-14T17:56:27Z",
+        "url": "https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/download/milestone-16-iphone-demo-audio/NEMESIS-PACT-source-review-cd33364.zip"
+      }
+    ],
+    "isDraft": false,
+    "isPrerelease": false,
+    "url": "https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/tag/milestone-16-iphone-demo-audio"
+  },
+  "anonymousPlaybackEvidence": "playback.json",
+  "anonymousSourceDownloadEvidence": "release.json",
+  "notes": [
+    "Existing account Pages domain is inherited; no other project/domain settings were changed. Native fresh Edge verifies HTTPS final URL.",
+    "Initial Python HEAD requests returned403; native anonymous browser GET, playback and source download succeeded.",
+    "Initial Release link check ran before lazy Assets rendering; scrolling that section into view resolved it. Release body now also includes direct links.",
+    "MP4/SRT/sourceZIP are GitHub Release assets; no large media was uploaded to Vercel."
+  ]
+}

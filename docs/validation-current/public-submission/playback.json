@@ -1,0 +1,22 @@
+{
+  "checkedAt": "2026-09-14T18:01:51.046026+00:00",
+  "automation": "native headless Edge, fresh empty context, anonymous, actual remote MP4 at1x",
+  "browser": "153.0.4234.32",
+  "os": "Windows",
+  "viewport": [1280,900],
+  "entryUrl": "https://yasei-no-otoko.github.io/nemesis-pact-live/",
+  "viewerUrl": "https://www.circle-hydrangea.net/nemesis-pact-live/",
+  "pageStatus": 200,
+  "initial": {"duration":59.008,"width":1920,"height":1080,"readyState":4,"currentTime":1.219059,"playbackRate":1},
+  "final": {"ended":true,"time":59.008,"error":null,"decodedAudioBytes":2360320,"totalVideoFrames":3540,"droppedVideoFrames":6},
+  "errors": [],
+  "mediaResponses": [
+    {"url":"https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/download/milestone-16-iphone-demo-audio/NEMESIS-PACT-iPhone-59s-60fps-en-final.mp4","status":302},
+    {"url":"https://release-assets.githubusercontent.com/github-production-release-asset/1369388436/678909e1-2810-4fb6-82a7-04651560225a","status":206},
+    {"url":"https://release-assets.githubusercontent.com/github-production-release-asset/1369388436/678909e1-2810-4fb6-82a7-04651560225a","status":206}
+  ],
+  "repository":{"status":200,"url":"https://github.com/Yasei-no-otoko/nemesis-pact-live","title":"GitHub - Yasei-no-otoko/nemesis-pact-live · GitHub","readmeVisible":true},
+  "realModelCalls":0,
+  "playbackPassed":true,
+  "initialHelperFailure":"Playback and anonymous repository checks passed. The combined helper failed only because GitHub Release asset links were checked immediately after DOMContentLoaded and both were absent then. Release links are verified separately; full playback was not repeated."
+}
