@@ -48,7 +48,7 @@ export async function start(request,{env=process.env,fetcher=fetch,defer,sleep=d
   const data=await readJson(request,24576);
   if(Object.keys(data).some(k=>!['sdp','runId','revision'].includes(k))||typeof data.sdp!=='string'||!data.sdp.startsWith('v=0')||!Number.isInteger(data.revision)||data.revision<0||data.revision>1)throw problem('INVALID_VOICE_REQUEST');
   id(data.runId);session=authorize(request,env);({store,quota}=services(env,overrides));reservationId=randomUUID();
-  const reserved=await quota.reserve({reservationId,sid:session.sid,ip:session.ip,estimatedMicrodollars:RESERVE_MICRODOLLARS,kind:'voice',seconds:45});
+  const reserved=await quota.reserve({reservationId,sid:session.sid,ip:session.ip,estimatedMicrodollars:RESERVE_MICRODOLLARS,kind:'voice',seconds:45,runId:data.runId});
   if(!reserved.ok){reservationId=null;throw problem('VOICE_QUOTA_'+reserved.reason,429);}
   const marked=await quota.markStarted({reservationId});if(!marked.ok)throw problem('VOICE_RESERVATION_FAILED',503);
   const timeout=deadline(10000);let result;

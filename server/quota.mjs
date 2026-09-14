@@ -13,14 +13,16 @@ if redis.call('ZCARD',KEYS[5])>=a.maxConcurrent then return {0,'concurrent'} end
 if tonumber(redis.call('HGET',KEYS[3],'calls') or '0')>=a.sessionCalls then return {0,'session_limit'} end
 if tonumber(redis.call('GET',KEYS[4]) or '0')>=a.ipCalls then return {0,'ip_limit'} end
 if redis.call('EXISTS',KEYS[7])==1 then return {0,'session_busy'} end
-if a.kind=='voice' and tonumber(redis.call('HGET',KEYS[3],'voiceSeconds') or '0')+a.seconds>90 then return {0,'voice_duration'} end
+local voiceRun=KEYS[8] or KEYS[3]
+if a.kind=='voice' and tonumber(redis.call('HGET',voiceRun,'voiceSeconds') or '0')+a.seconds>90 then return {0,'voice_duration'} end
 for _,cap in ipairs(a.caps) do redis.call('HINCRBY',KEYS[1],cap.field,a.amount) end
 redis.call('HINCRBY',KEYS[3],'calls',1);redis.call('HINCRBY',KEYS[3],'voiceSeconds',a.seconds);redis.call('EXPIRE',KEYS[3],3600)
+if a.kind=='voice' and voiceRun~=KEYS[3] then redis.call('HINCRBY',voiceRun,'voiceSeconds',a.seconds);redis.call('EXPIRE',voiceRun,3600) end
 if redis.call('INCR',KEYS[4])==1 then redis.call('EXPIRE',KEYS[4],60) end
 local expiry=a.kind=='voice' and 9999999999 or now+30
 redis.call('ZADD',KEYS[5],expiry,a.id)
 redis.call('SET',KEYS[7],a.id);if a.kind~='voice' then redis.call('EXPIRE',KEYS[7],30) end
-a.state='reserved';a.createdAt=now;a.lock=KEYS[7];a.session=KEYS[3]
+a.state='reserved';a.createdAt=now;a.lock=KEYS[7];a.session=KEYS[3];a.voiceRun=voiceRun
 redis.call('SET',KEYS[2],cjson.encode(a),'EX',604800)
 return {1,'reserved'}`;
 
@@ -43,7 +45,10 @@ elseif action=='release' or action=='settle' then
  for _,cap in ipairs(r.caps) do redis.call('HINCRBY',KEYS[1],cap.field,actual-r.amount) end
  redis.call('ZREM',KEYS[3],r.id)
  if redis.call('GET',r.lock)==r.id then redis.call('DEL',r.lock) end
- if action=='release' then redis.call('HINCRBY',r.session,'voiceSeconds',-r.seconds) end
+ if action=='release' then
+  redis.call('HINCRBY',r.session,'voiceSeconds',-r.seconds)
+  if r.voiceRun and r.voiceRun~=r.session and r.kind=='voice' then redis.call('HINCRBY',r.voiceRun,'voiceSeconds',-r.seconds) end
+ end
  r.state=action=='release' and 'released' or 'settled';r.actual=actual
 else return {0,'operation'} end
 redis.call('SET',KEYS[2],cjson.encode(r),'EX',604800)
@@ -82,14 +87,15 @@ export function createQuota({store,env,keyPrefix='nemesis:quota:',admissionPrefi
     return result(await store.eval(TRANSITION_LUA,[key('totals'),key(`reservation:${safe(reservationId)}`),shared('active'),shared('kill')],[action,actual,confirmed?'confirmed':'unconfirmed']));
   }
   return {
-    async reserve({reservationId,sid,ip,estimatedMicrodollars,kind='text',pool=env.OPENAI_BUDGET_POOL||'verification',seconds=kind==='voice'?45:0}) {
+    async reserve({reservationId,sid,ip,estimatedMicrodollars,kind='text',pool=env.OPENAI_BUDGET_POOL||'verification',seconds=kind==='voice'?45:0,runId}) {
       safe(reservationId);safe(sid);const hashedIp=createHash('sha256').update(String(ip)).digest('hex');
       const amount=Number(estimatedMicrodollars);
       if(!Object.hasOwn(kinds,kind)||!Object.hasOwn(pools,pool)||!Number.isSafeInteger(amount)||amount<1||!Number.isInteger(seconds)||seconds<0||seconds>45)throw Error('Invalid reservation');
       if(killed())return {ok:false,reason:'kill'};
       const caps=[{field:'global',limit:total},{field:`pool:${pool}`,limit:pools[pool]},{field:`kind:${kind}`,limit:kinds[kind]}];
-      const data={id:reservationId,sid,kind,pool,amount,caps,seconds,maxConcurrent,sessionCalls:12,ipCalls:20};
-      const o=await store.eval(RESERVE_LUA,[key('totals'),key(`reservation:${reservationId}`),shared(`session:${sid}`),shared(`ip:${hashedIp}`),shared('active'),shared('kill'),shared(`lock:${sid}:${kind}`)],[JSON.stringify(data)]);
+      const voiceRun=kind==='voice'&&runId!==undefined?shared(`voice-run:${sid}:${safe(runId)}`):shared(`session:${sid}`);
+      const data={id:reservationId,sid,kind,pool,amount,caps,seconds,runId,maxConcurrent,sessionCalls:12,ipCalls:20};
+      const o=await store.eval(RESERVE_LUA,[key('totals'),key(`reservation:${reservationId}`),shared(`session:${sid}`),shared(`ip:${hashedIp}`),shared('active'),shared('kill'),shared(`lock:${sid}:${kind}`),voiceRun],[JSON.stringify(data)]);
       return result(o,{reservationId,reservedMicrodollars:amount});
     },
     async reserveSession({ip}) {if(killed())return false;const hash=createHash('sha256').update(String(ip)).digest('hex');return Number((await store.eval(SESSION_LUA,[shared('kill'),shared('session-issues'),shared(`ip-issues:${hash}`)],[]))?.[0])===1;},

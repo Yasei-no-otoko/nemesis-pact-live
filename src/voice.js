@@ -1,6 +1,10 @@
 /* Official GPT-Live WebRTC transport. No simulation authority. */
 (function(root,factory){if(typeof module==='object'&&module.exports)module.exports=factory();else root.PactVoice=factory();})(globalThis,function(){'use strict';
  const STATES=['idle','starting','listening','speaking','stopping','stopped','error'];
+ function serviceMessage(code,status){
+  const messages={VOICE_QUOTA_voice_duration:'Both voice negotiations for this fight are used. Continue with text, or start a new First Contact.',VOICE_QUOTA_session_limit:'This browser session has used its request allowance. Continue with LOCAL RULES until the session expires.',VOICE_QUOTA_budget:'The voice budget is currently exhausted. LOCAL RULES remains playable.',VOICE_QUOTA_concurrent:'All voice slots are busy. Try again shortly, or use text.',VOICE_QUOTA_session_busy:'Another voice connection is still active. Stop it before trying again.',VOICE_QUOTA_ip_limit:'Too many requests. Wait one minute, or use LOCAL RULES.',VOICE_QUOTA_kill:'Voice is temporarily paused. Use text or LOCAL RULES.',SESSION_EXPIRED:'Your session expired. Reconnect OpenAI, or use LOCAL RULES.',VOICE_NOT_ENABLED:'Voice is unavailable. Text and LOCAL RULES remain available.'};
+  return messages[code]||(status===429?'Voice is temporarily rate limited. Try again later, or use LOCAL RULES.':status===401||status===403?'OpenAI authorization is no longer valid. Reconnect, or use LOCAL RULES.':'The voice service could not connect. Retry, use text, or choose LOCAL RULES.');
+ }
  function canonical(v){
   if(!v||v.version!==1||typeof v.title!=='string'||v.title.length>48||!['none','left','center','right'].includes(v.zone)||!['normal','slow'].includes(v.speed)||!['normal','charged'].includes(v.reflection)||!['weaker_gun','reinforcements','fragile','haste'].includes(v.price))return null;
   const benefit=(v.zone!=='none'?2:0)+(v.speed==='slow'?1:0)+(v.reflection==='charged'?1:0),payment={weaker_gun:2,reinforcements:3,fragile:3,haste:2}[v.price];
@@ -78,7 +82,7 @@
     // Keep the deadline through the response body, including transports that ignore abort.
     const response=(async()=>{
      const r=await this._http('/api/voice/start',{runId,revision,sdp:pc.localDescription.sdp},ac.signal);
-     if(!r?.ok)throw Error('voice-service-'+(r?.status||'unavailable'));
+     if(!r?.ok){let body;try{body=await r?.json();}catch{}throw Object.assign(Error('voice-service-'+(r?.status||'unavailable')),{voiceDetail:serviceMessage(body?.error,r?.status)});}
      const value=await r.json();
      if(generation!==this.transportGeneration||this.closed){if(typeof value?.sessionId==='string')await this._hangup(value.sessionId);return null;}
      return value;
@@ -94,7 +98,7 @@
     return true;
    }catch(error){
     stream?.getTracks().forEach(t=>t.stop());if(createdId)await this._hangup(createdId);
-    if(generation===this.transportGeneration){this._cleanup();this._state('error',error.name==='NotAllowedError'?'microphone-denied-use-text':error.name==='NotFoundError'?'microphone-unavailable-use-text':'voice-unavailable-use-text');}else{try{pc?.close();}catch{}}
+    if(generation===this.transportGeneration){this._cleanup();this._state('error',error.voiceDetail||(error.name==='NotAllowedError'?'microphone-denied-use-text':error.name==='NotFoundError'?'microphone-unavailable-use-text':'voice-unavailable-use-text'));}else{try{pc?.close();}catch{}}
     return false;
    }
   }

@@ -4,7 +4,7 @@ The GOAL.md scope remains intact. This is an incomplete release candidate, not a
 
 | GOAL completion requirement | Current evidence | Decision |
 |---|---|---|
-| Correct v0.5.0 import and preserved game | ZIP SHA and 216-file import manifest; initial 164 tests and campaign simulations; current 198 tests; framework and six-sector code preserved | Proven within recorded regression scope |
+| Correct v0.5.0 import and preserved game | ZIP SHA and 216-file import manifest; initial 164 tests and campaign simulations; current 200 tests; framework and six-sector code preserved | Proven within recorded regression scope |
 | Judge-accessible production HTTPS | Anonymous HTTP 200 and exact generated-byte hash in `validation-current/production-release/result.json` | Proven at the recorded check; future uptime is not guaranteed |
 | Real OpenAI text changes contract and combat | `production-text/result.json`: gpt-4.1-mini, explicit Sign, three real bullets erased, signed right-side amendment with continuity | Proven by automated production play |
 | Real GPT-Live negotiation, interruption, correction and parley | Actual provider sessions/delegations and initial human contract are recorded. User explicitly tested only the first negotiation. Synthetic correction fixture failed and is retained | **Incomplete: human interruption/correction and voice amendment** |

@@ -14,6 +14,13 @@ test('microphone denial and pagehide fail closed',async()=>{const denied=fixture
 test('remote media track is attached to the output element',async()=>{const e=fixture(),audio={play:()=>Promise.resolve(),pause(){}};const v=voice(e,{audio});active.push(v);await v.start();const remote={id:'remote'};v.pc.emit('track',{streams:[remote]});assert.equal(audio.srcObject,remote);});
 test('canonical accepts only validated host rule values',()=>{assert.equal(canonical({version:1,title:'ok',zone:'right',speed:'normal',reflection:'charged',price:'fragile',extra:'ignored'}).extra,undefined);assert.equal(canonical({version:1,title:'bad',zone:'laser',speed:'normal',reflection:'normal',price:'haste'}),null);assert.equal(canonical({version:1,title:'bad',zone:'none',speed:'normal',reflection:'normal',price:'haste'}),null);});
 
+test('voice quota errors explain the per-fight limit without exposing arbitrary server content',async()=>{
+ for(const [code,expected] of [['VOICE_QUOTA_voice_duration','Both voice negotiations for this fight are used.'],['VOICE_QUOTA_budget','The voice budget is currently exhausted.'],['PRIVATE_UNTRUSTED_SERVER_CONTENT','Voice is temporarily rate limited.']]){
+  const e=fixture({request:async()=>({ok:false,status:429,json:async()=>({error:code})})}),v=voice(e),states=[];v.onState=s=>states.push(s);active.push(v);
+  assert.equal(await v.start(),false);assert.ok(states.at(-1).detail.startsWith(expected));assert.equal(states.at(-1).detail.includes('PRIVATE_UNTRUSTED'),false);assert.equal(e.track.stopped,true);
+ }
+});
+
 test('a correction can update an existing client delegation without a new provider event',async()=>{
  const e=fixture();let count=0;
  const v=voice(e,{onDelegation:async()=>{count++;return{spec:{version:1,title:'Revised pact',zone:count===1?'left':'right',speed:'slow',reflection:'normal',price:'reinforcements'},provider:'openai'};}});active.push(v);

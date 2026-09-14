@@ -458,7 +458,7 @@
     $('cv-voice-start').disabled=true;
     if(!online){voice?.stop('consent-or-mode');$('cv-session-status').textContent='LOCAL RULES available without microphone or external requests.';return;}
     $('cv-session-status').textContent='Checking the bounded OpenAI session…';
-    try{const s=await cvSession.ensure();if(screen!=='covenant-screen'||!$('cv-consent').checked||$('cv-mode').value!=='server')return;$('cv-session-status').textContent=s.contractEnabled?'OpenAI text ready. Review every proposal before Sign.':'LOCAL RULES: OpenAI contract service unavailable.';$('cv-voice-start').disabled=!s.voiceEnabled||voiceActive;}
+    try{const s=await cvSession.ensure();if(screen!=='covenant-screen'||!$('cv-consent').checked||$('cv-mode').value!=='server')return;$('cv-session-status').textContent=s.contractEnabled?'OpenAI text ready. Review every proposal before Sign.':'LOCAL RULES: OpenAI contract service unavailable.';$('cv-voice-start').disabled=!s.voiceEnabled||voiceActive;if(!voiceActive)$('cv-voice-state').textContent=s.voiceEnabled?'VOICE: READY / microphone off':'VOICE: UNAVAILABLE / use text';}
     catch{$('cv-session-status').textContent='LOCAL RULES: OpenAI unavailable or budget closed. Select LOCAL RULES to continue.';}
   }
   function setupVoice(){
@@ -466,7 +466,7 @@
     voice=new window.PactVoice.PactVoice({request:cvSession.request.bind(cvSession),audio:output,onMedia:(stream,kind)=>window.NemesisDemo?.attachVoice(stream,kind),
       onState:state=>{if(voiceWorld?.voiceEvidence){voiceWorld.voiceEvidence.lastState=state.state;if(state.detail==='session-started')voiceWorld.voiceEvidence.connectionStarted++;}const active=['starting','listening','speaking','stopping'].includes(state.state);if(active!==voiceActive){voiceActive=active;sound.settings(opts.volume,opts.music,muted,opts.musicVolume*(active?.18:1),opts.sfxVolume,opts.adaptiveMusic);}
         $('cv-voice-state').textContent='VOICE: '+(voiceWorld?.voiceEvidence?.connectionStarted?'GPT-LIVE-1 / ':'')+state.state.toUpperCase()+(state.detail?' / '+state.detail:'');$('cv-voice-start').disabled=active||!cvSession.voiceEnabled||!$('cv-consent').checked||$('cv-mode').value!=='server';for(const id of ['cv-voice-stop','cv-voice-mute','cv-voice-volume'])$(id).disabled=!active;
-        if(state.state==='error')$('cv-status').textContent='Voice unavailable. Use text, or choose LOCAL RULES. '+(state.detail||'');},
+        if(state.state==='error')$('cv-status').textContent=state.detail||'Voice unavailable. Use text, or choose LOCAL RULES.';},
       onCaption:event=>{if(event.speaker==='assistant'){voiceCaption=(voiceCaption+event.delta).slice(-300);$('cv-caption-notary').textContent=voiceCaption;}},
       onInput:event=>{if(!event.delta||cvSigning)return;const delta=event.delta;if(/^\s*(yes|ok(?:ay)?|uh[ -]?huh|mm|\u3046\u3093|\u306f\u3044)[.!?、。\s]*$/i.test(delta)){voiceBackchannels+=delta;return;}
         voiceText=(voiceText+voiceBackchannels+delta).slice(-400);voiceBackchannels='';voiceLastInput=performance.now();$('cv-caption-player').textContent=voiceText;$('cv-prompt').value=voiceText;invalidateCovenant('Heard updated terms. Waiting for the Notary’s counteroffer.',false,true);},

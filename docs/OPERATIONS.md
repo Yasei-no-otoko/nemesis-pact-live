@@ -15,7 +15,7 @@ The Gateway $20 cap suppresses new model use earlier than the requested $25 supp
 
 Shared Redis reservations use integer microdollars before upstream work. Voice reserves $0.05 per 45-second session; confirmed hangup retains that full amount because it does not establish final invoice usage. Text reserves a maximum before inference and settles trusted server-side token usage. Unknown usage is never refunded to zero. The ledger is conservative accounting, not an invoice guarantee.
 
-Admission limits are 100 new sessions globally/hour and 20/IP/hour, 12 model calls per app session, 20 calls/IP/minute, 3 shared concurrent calls, 45 seconds per voice connection and 90 cumulative voice seconds per app session. Valid app cookies are reused; retries and reconnects do not erase ledger history. Session cookies expire after 900 seconds. No raw IP address is stored in the quota identity.
+Admission limits are 100 new sessions globally/hour and 20/IP/hour, 12 model calls per app session, 20 calls/IP/minute, 3 shared concurrent calls, 45 seconds per voice connection and 90 reserved voice seconds per fight (app session + runId). A new First Contact gets a new fight allowance while retaining the same authentication and its 12-call ceiling. Valid app cookies are reused; retries and reconnects do not erase ledger history. Session cookies expire after 900 seconds. No raw IP address is stored in the quota identity.
 
 ## Stop and recovery
 

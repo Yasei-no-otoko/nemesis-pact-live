@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-09-14T13:05:21.277Z",
+  "passed": true,
+  "store": "actual Upstash Redis; isolated test keys",
+  "realModelCalls": 0,
+  "checks": [
+    "two voice reservations permitted per fight; third rejected",
+    "new fight admitted under the same app identity",
+    "voice lock shared across fights",
+    "global money and session history retained",
+    "unstarted release refunds only its run allocation and reserved money",
+    "12-call app-session cap still blocks further fights"
+  ],
+  "productionCountersModified": false
+}

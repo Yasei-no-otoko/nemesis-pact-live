@@ -1,0 +1,8 @@
+{
+  "checkedAt": "2026-09-14T13:06:39.779Z",
+  "existingVoiceRecords": 8,
+  "runUsageKeysMerged": 7,
+  "reservedSecondsCarriedForward": 360,
+  "method": "atomic MAX merge into per-run usage; original accounting, sessions and active locks untouched",
+  "productionCountersReset": false
+}
