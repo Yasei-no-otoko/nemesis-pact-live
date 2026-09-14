@@ -78,7 +78,7 @@ with sync_playwright() as pw:
                 'latencyMs','accountedMicrodollars','signed','revision','stopped','uncertain','error') if k in body})
             if entry['path']=='/api/voice/start' and body.get('sessionId'):
                 private_ids.append(body['sessionId'])
-                (ROOT/'.work/voice-luna-session-ids.json').write_text(json.dumps(private_ids), encoding='utf8')
+                Path(os.environ.get('NEMESIS_LIVE_LUNA_IDS',ROOT/'.work/voice-luna-session-ids.json')).write_text(json.dumps(private_ids), encoding='utf8')
         except Exception:
             pass
         calls.append(entry)
