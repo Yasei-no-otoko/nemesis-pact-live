@@ -1,0 +1,22 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Combat cues QA — preview only</title>
+<style>body{margin:16px;background:#111c26;color:#eee;font:14px system-ui}nav{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}button,select{font:inherit;padding:8px}iframe{display:block;border:1px solid #567;width:1280px;height:800px}pre{white-space:pre-wrap}</style>
+<nav><strong>Synthetic frozen combat states · NO live AI or human-play evidence</strong><label>Viewport <select id="size"><option value="1280,800">1280 × 800</option><option value="390,844">390 × 844</option><option value="320,568">320 × 568</option></select></label><label>Language <select id="language"><option value="en">English</option><option value="ja">日本語</option></select></label><label>Scene <select id="scene"><option value="laser-ready">Laser / dash ready</option><option value="laser-wait">Laser / dash cooling</option><option value="critical-nova">Critical / nova ready</option><option value="critical-parry">Critical / parry ready</option><option value="critical-wait">Critical / cooling</option><option value="onboarding">Onboarding</option></select></label><button id="apply">Apply synthetic scene</button><button id="inspect">Read visible layout</button></nav>
+<iframe id="game" title="Game under test" src="/?test=1"></iframe><pre id="report" role="status">Wait for title, then apply scene.</pre>
+<script>
+const frame=document.getElementById('game'),report=document.getElementById('report');
+document.getElementById('size').onchange=e=>{const [w,h]=e.target.value.split(',');frame.style.width=w+'px';frame.style.height=h+'px';};
+document.getElementById('language').onchange=e=>frame.contentWindow.PactI18n.setLocale(e.target.value);
+document.getElementById('apply').onclick=async()=>{
+  const app=frame.contentWindow,api=app.__PACT_TEST__;
+  if(!api.world||api.world.mode!=='first-contact'){api.startFirstContact('SYNTHETIC-CUE-QA');app.document.getElementById('cv-mode').value='local';app.document.getElementById('cv-mode').dispatchEvent(new Event('change'));await api.proposeCovenant();await api.signCovenant();api.world.step=()=>{};}
+  const w=api.world,scene=document.getElementById('scene').value;
+  w.time=1;w.p.hp=scene.startsWith('critical')?1:w.p.maxHp;w.p.energy=scene==='critical-nova'?100:0;w.p.parryCd=scene==='critical-wait'?1:0;w.p.dashCd=scene==='laser-wait'?1:0;
+  const boss=w.enemies.find(e=>e.type==='boss');boss.spawn=0;boss.intent=scene.startsWith('laser')?{kind:'laser',remaining:.6,angle:Math.PI/2}:null;
+  api.show('game');api.updateHUD();api.render();app.PactI18n.setLocale(document.getElementById('language').value);report.textContent='Applied '+scene+' (synthetic frozen state).';
+};
+document.getElementById('inspect').onclick=()=>{
+  const app=frame.contentWindow,doc=app.document;
+  report.textContent=JSON.stringify({viewport:[app.innerWidth,app.innerHeight],bodyOverflow:doc.documentElement.scrollWidth>app.innerWidth,elements:['combat-guide','combat-guide-action','combat-guide-detail','touch-context-hint'].map(id=>{const e=doc.getElementById(id),r=e.getBoundingClientRect();return {id,text:e.textContent,cue:e.dataset.cue,visible:!!e.getClientRects().length,width:r.width,height:r.height,overflow:e.scrollWidth>e.clientWidth+1};})},null,2);
+};
+</script></html>

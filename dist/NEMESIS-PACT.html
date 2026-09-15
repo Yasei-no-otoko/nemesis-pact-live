@@ -723,6 +723,8 @@ body.mobile-ui:not(.touch-landscape) #covenant-screen .cv-voice[data-available=f
 #combat-guide p{margin-top:6px;font:11px/1.55 Arial,sans-serif;color:#b3c2c4}
 #combat-guide[data-cue=laser]{border-color:#ef95d4}#combat-guide[data-cue=laser]>span{color:#f4b0e0}
 #combat-guide[data-cue=nova]{border-color:#e4c389}#combat-guide[data-cue=nova]>span{color:#ead4aa}
+#combat-guide[data-cue=critical]{border-color:#ffac98}#combat-guide[data-cue=critical]>span,body[data-covenant=true].mobile-ui #touch-context-hint[data-cue=critical]{color:#ffbcac}
+body[data-covenant=true].mobile-ui #touch-context-hint[data-cue=laser]{color:#f4b0e0}
 #cv-parley[data-state=ready]{border-color:#c9ab6a99;box-shadow:inset 0 0 15px #c9ab6a0c}
 #covenant-live #cv-parley{max-width:190px;font-size:10px;line-height:1.5;letter-spacing:.4px;padding:9px 12px}
 #pause-parley{font-size:13px;line-height:1.5}
@@ -2463,6 +2465,26 @@ return {CONTRACTS,DIRECTORS,TASKS,cleanRequest,schema,validateDecision,mock,tele
 })(typeof globalThis!=='undefined'?globalThis:this,function(V){'use strict';
   const number=n=>Number.isFinite(n)?Math.max(0,n):0;
   const zoneNames={none:'No sanctuary',left:'Left sanctuary',center:'Center sanctuary',right:'Right sanctuary'};
+  function laserCue(player){
+    const ready=player.dashCd<=0;
+    return {kind:'laser',action:ready?'SPACE / DASH THROUGH':'LASER / KEEP MOVING',detail:'Magenta lasers ignore parries and sanctuaries.',touchHint:ready?'LASER → DASH':'LASER → keep moving',canvas:ready?'LASER / DASH THROUGH':'LASER / KEEP MOVING'};
+  }
+  // One priority order for keyboard and touch; never recommend a cooling ability.
+  function combatCue(world){
+    const p=world.p,boss=world.enemies.find(e=>e.type==='boss'&&e.hp>0);
+    if(world.lasers.length||boss?.intent?.kind==='laser')return laserCue(p);
+    const nova=p.energy>=world.novaCost(),critical=p.hp<=2;
+    if(critical){
+      if(nova)return {kind:'critical',action:'LOW HULL / F TO CLEAR FIRE',detail:'Nova clears bullets. Keep moving away from enemies.',touchHint:'LOW HULL → NOVA'};
+      if(p.parryCd<=0)return {kind:'critical',action:'LOW HULL / E TO PARRY',detail:'Reflect bullets. Enemy bodies cannot be parried.',touchHint:'LOW HULL → PARRY'};
+      return {kind:'critical',action:'LOW HULL / KEEP MOVING',detail:'Parry is recharging. Move away from incoming fire.',touchHint:'LOW HULL → keep moving'};
+    }
+    if(world.time<5)return {kind:'guide',action:'WASD / MOVE TO SURVIVE',detail:'Your ship aims and fires automatically.',touchHint:'Slide to move · auto fire'};
+    if(nova)return {kind:'nova',action:'F / NOVA IS READY',detail:'Clear enemy fire and damage every enemy.',touchHint:'NOVA → clear enemy fire'};
+    if(world.spec&&world.spec.zone!=='none'&&!world.broken&&world.time<12)return {kind:'guide',action:world.spec.zone.toUpperCase()+' / SANCTUARY',detail:'The ring erases bullets. Lasers still pass through.',touchHint:'Sanctuary stops bullets'};
+    if(p.parryCd>0)return {kind:'guide',action:'PARRY RECHARGING / MOVE',detail:'Keep moving until parry is ready again.',touchHint:'Parry recharging → move'};
+    return {kind:'guide',action:'E / PARRY THE BULLETS',detail:'Catch incoming fire. Return it to the Notary.',touchHint:'PARRY → return fire'};
+  }
   function compare(previous,proposed){
     const next=V.validateSpec(proposed),old=previous?V.validateSpec(previous):null;
     const values=s=>({zone:s?zoneNames[s.zone]:zoneNames.none,speed:s?.speed==='slow'?'72% bullet speed':'100% bullet speed',reflection:s?.reflection==='charged'?'1.8× reflected damage':'1× reflected damage',price:s?V.describe(s).price:'No price'});
@@ -2493,7 +2515,7 @@ return {CONTRACTS,DIRECTORS,TASKS,cleanRequest,schema,validateDecision,mock,tele
     const observation=s.price==='fragile'&&lost>0?'Double damage is active. You can trade gun power for a sanctuary without that penalty.':returned>0?(s.reflection==='charged'?'Your enhanced reflections are dealing damage. Keep these terms or trade reflection power for shelter.':'Your reflected shots are dealing damage. You can strengthen them by giving up the sanctuary.'):shielded>0?'Your sanctuary is intercepting bullets. Keep its position or ask to move it.':'A sanctuary erases bullets inside its ring. Lasers and enemy bodies still pass through.';
     return {seconds:Math.round(delta('seconds')*10)/10,hull:number(world.p?.hp),maxHull:number(world.p?.maxHp),bossRemaining:boss?Math.ceil(number(boss.hp)/Math.max(1,number(boss.maxHp))*100):0,shielded,returned:Math.round(returned),lost,observation,choices,recommendation};
   }
-  return {compare,promptFor,briefing};
+  return {compare,promptFor,briefing,combatCue,laserCue};
 });
 
 </script>
@@ -4627,6 +4649,18 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
   'use strict';
   const KEY='nemesis.language.v1',strings=Object.assign(Object.create(null),data||{},ui||{},dynamic?.strings||{}),patterns=dynamic?.patterns||[];
   Object.assign(strings,{
+    'LASER / KEEP MOVING':'レーザー / 移動で回避','SPACE / DASH THROUGH':'SPACE / ダッシュで通過',
+    'Magenta lasers ignore parries and sanctuaries.':'紫のレーザーはパリィや安全地帯では防げません。',
+    'LASER → DASH':'レーザー → ダッシュ','LASER → keep moving':'レーザー → 移動で回避',
+    'LOW HULL / F TO CLEAR FIRE':'耐久危険 / Fで弾幕消去','Nova clears bullets. Keep moving away from enemies.':'ノヴァで敵弾を消去。敵本体からは離れましょう。','LOW HULL → NOVA':'耐久危険 → ノヴァ',
+    'LOW HULL / E TO PARRY':'耐久危険 / Eでパリィ','Reflect bullets. Enemy bodies cannot be parried.':'敵弾を反射。敵本体はパリィで防げません。','LOW HULL → PARRY':'耐久危険 → パリィ',
+    'LOW HULL / KEEP MOVING':'耐久危険 / 移動で回避','Parry is recharging. Move away from incoming fire.':'パリィは再使用待ち。敵弾から離れましょう。','LOW HULL → keep moving':'耐久危険 → 移動で回避',
+    'Slide to move · auto fire':'スライドで移動 · 自動射撃',
+    'F / NOVA IS READY':'F / ノヴァ使用可能','Clear enemy fire and damage every enemy.':'敵弾を消去し、すべての敵にダメージ。','NOVA → clear enemy fire':'ノヴァ → 敵弾消去',
+    'LEFT / SANCTUARY':'左 / 安全地帯','CENTER / SANCTUARY':'中央 / 安全地帯','RIGHT / SANCTUARY':'右 / 安全地帯',
+    'The ring erases bullets. Lasers still pass through.':'円の中の敵弾を消去。レーザーは通過します。','Sanctuary stops bullets':'安全地帯で敵弾消去',
+    'PARRY RECHARGING / MOVE':'パリィ再使用待ち / 移動','Keep moving until parry is ready again.':'パリィが再使用可能になるまで移動しましょう。','Parry recharging → move':'パリィ待ち → 移動',
+    'E / PARRY THE BULLETS':'E / 敵弾をパリィ','Catch incoming fire. Return it to the Notary.':'敵弾を受け止め、公証人に撃ち返しましょう。','PARRY → return fire':'パリィ → 反射',
     'YOUR SIGNED TERMS IN ACTION':'署名した条件が変えた戦闘',
     'Change the deal.':'条件を変えよう。',
     'Your signed terms in action':'署名した条件が変えた戦闘',
@@ -5471,13 +5505,8 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
     $('cv-parley').disabled=parleyState!=='ready';$('pause-parley').disabled=parleyState!=='ready';$('cv-parley').dataset.state=parleyState;
     $('cv-parley').textContent=parleyState==='broken'?'PACT BROKEN':parleyState==='used'?'AMENDMENT USED':parleyState==='waiting'?'RENEGOTIATE IN '+wait+'s':(mobile?'':'R / ')+'RENEGOTIATE';
     $('pause-parley').textContent=parleyState==='broken'?'Pact broken · no further amendments':parleyState==='used'?'Amendment already used':parleyState==='waiting'?'Renegotiate after '+wait+' more seconds of combat':'Renegotiate covenant · 1 amendment available';
-    const boss=world.enemies.find(e=>e.type==='boss'),laser=world.lasers.length>0||boss?.intent?.kind==='laser',p=world.p;
-    let action='E / PARRY THE BULLETS',detail='Catch incoming fire. Return it to the Notary.',touchHint='PARRY → return fire';
-    if(world.time<5){action='WASD / MOVE TO SURVIVE';detail='Your ship aims and fires automatically.';touchHint='Slide to move · auto fire';}
-    else if(laser){action=p.dashCd>0?'LASER / KEEP MOVING':'SPACE / DASH THROUGH';detail='Magenta lasers ignore parries and sanctuaries.';touchHint=p.dashCd>0?'LASER → keep moving':'LASER → DASH';}
-    else if(p.energy>=world.novaCost()){action='F / NOVA IS READY';detail='Clear enemy fire and damage every enemy.';touchHint='NOVA → clear enemy fire';}
-    else if(spec?.zone!=='none'&&!world.broken&&world.time<12){action=spec.zone.toUpperCase()+' / SANCTUARY';detail='The ring erases bullets. Lasers still pass through.';touchHint='Sanctuary stops bullets';}
-    $('combat-guide').dataset.cue=laser?'laser':p.energy>=world.novaCost()?'nova':'guide';$('combat-guide-action').textContent=action;$('combat-guide-detail').textContent=detail;$('touch-context-hint').textContent=touchHint;
+    const cue=window.PactCovenantReview.combatCue(world);
+    $('combat-guide').dataset.cue=cue.kind;$('combat-guide-action').textContent=T(cue.action);$('combat-guide-detail').textContent=T(cue.detail);$('touch-context-hint').textContent=T(cue.touchHint);$('touch-context-hint').dataset.cue=cue.kind;
   }
   function renderCovenantPreview(t){const el=$('cv-preview'),g=el.getContext('2d');if(!g)return;g.clearRect(0,0,900,160);g.fillStyle='#07121d';g.fillRect(0,0,900,160);const specs=[world?.spec,cvProposal?.spec];
     for(let k=0;k<2;k++){const x=k*455,s=specs[k],slow=s?.speed==='slow',z=s&&s.zone!=='none'?s.zone:null;g.save();g.beginPath();g.rect(x,0,445,160);g.clip();g.fillStyle='#aac5d1';g.font='12px monospace';g.textAlign='left';g.fillText(T(k?'AFTER / PROPOSED':'BEFORE / CURRENT'),x+15,21);g.strokeStyle='#39585d55';g.strokeRect(x+10,32,423,117);for(let y=50;y<146;y+=24){g.beginPath();g.moveTo(x+11,y);g.lineTo(x+432,y);g.stroke();}
@@ -5495,7 +5524,7 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
       poly(z.x,z.y,22,4,Math.PI/4,null,'#b4e6cd38',1);circle(z.x,z.y,31,null,'#98dcb523',1);
       ctx.font=(mobile?'12':'11')+'px monospace';ctx.textAlign='center';ctx.fillStyle='#d5f6e5';ctx.fillText(T(world.spec.zone.toUpperCase()+' SANCTUARY'),z.x,z.y+z.r+18);ctx.font='9px monospace';ctx.fillStyle='#a0c7b7';ctx.fillText(T('BULLETS ONLY'),z.x,z.y+z.r+31);ctx.restore();
     }
-    if(boss){circle(boss.x,boss.y,84,null,'#e8c79440',1);ctx.save();ctx.setLineDash([3,14]);circle(boss.x,boss.y,96,null,'#cae2d83b');ctx.restore();const intent=boss.intent;if(intent){const laser=intent.kind==='laser',color=laser?'#ff8dca':'#efd697',time=intent.remaining;ctx.save();ctx.globalAlpha=.55;ctx.setLineDash([9,12]);if(laser)line(boss.x,boss.y,boss.x+Math.cos(intent.angle)*H*2,boss.y+Math.sin(intent.angle)*H*2,color,3);else if(intent.kind==='fan')for(const a of [intent.angle-.4,intent.angle,intent.angle+.4])line(boss.x,boss.y,boss.x+Math.cos(a)*330,boss.y+Math.sin(a)*330,color,1.5);else circle(boss.x,boss.y,110+(1-time/.75)*40,null,color,2);ctx.restore();ctx.font=(mobile?'13':'11')+'px monospace';ctx.textAlign='center';ctx.fillStyle=color;ctx.fillText(T(laser?'LASER / DASH THROUGH':intent.kind==='fan'?'AIMED FAN / MOVE OR PARRY':'RING / PARRY THE GOLD'),boss.x,boss.y-110);}}
+    if(boss){circle(boss.x,boss.y,84,null,'#e8c79440',1);ctx.save();ctx.setLineDash([3,14]);circle(boss.x,boss.y,96,null,'#cae2d83b');ctx.restore();const intent=boss.intent;if(intent){const laser=intent.kind==='laser',color=laser?'#ff8dca':'#efd697',time=intent.remaining;ctx.save();ctx.globalAlpha=.55;ctx.setLineDash([9,12]);if(laser)line(boss.x,boss.y,boss.x+Math.cos(intent.angle)*H*2,boss.y+Math.sin(intent.angle)*H*2,color,3);else if(intent.kind==='fan')for(const a of [intent.angle-.4,intent.angle,intent.angle+.4])line(boss.x,boss.y,boss.x+Math.cos(a)*330,boss.y+Math.sin(a)*330,color,1.5);else circle(boss.x,boss.y,110+(1-time/.75)*40,null,color,2);ctx.restore();ctx.font=(mobile?'13':'11')+'px monospace';ctx.textAlign='center';ctx.fillStyle=color;ctx.fillText(T(laser?window.PactCovenantReview.laserCue(world.p).canvas:intent.kind==='fan'?'AIMED FAN / MOVE OR PARRY':'RING / PARRY THE GOLD'),boss.x,boss.y+112);}}
   }
 
   // --- Input & menu wiring ---

@@ -7,6 +7,18 @@
   'use strict';
   const KEY='nemesis.language.v1',strings=Object.assign(Object.create(null),data||{},ui||{},dynamic?.strings||{}),patterns=dynamic?.patterns||[];
   Object.assign(strings,{
+    'LASER / KEEP MOVING':'レーザー / 移動で回避','SPACE / DASH THROUGH':'SPACE / ダッシュで通過',
+    'Magenta lasers ignore parries and sanctuaries.':'紫のレーザーはパリィや安全地帯では防げません。',
+    'LASER → DASH':'レーザー → ダッシュ','LASER → keep moving':'レーザー → 移動で回避',
+    'LOW HULL / F TO CLEAR FIRE':'耐久危険 / Fで弾幕消去','Nova clears bullets. Keep moving away from enemies.':'ノヴァで敵弾を消去。敵本体からは離れましょう。','LOW HULL → NOVA':'耐久危険 → ノヴァ',
+    'LOW HULL / E TO PARRY':'耐久危険 / Eでパリィ','Reflect bullets. Enemy bodies cannot be parried.':'敵弾を反射。敵本体はパリィで防げません。','LOW HULL → PARRY':'耐久危険 → パリィ',
+    'LOW HULL / KEEP MOVING':'耐久危険 / 移動で回避','Parry is recharging. Move away from incoming fire.':'パリィは再使用待ち。敵弾から離れましょう。','LOW HULL → keep moving':'耐久危険 → 移動で回避',
+    'Slide to move · auto fire':'スライドで移動 · 自動射撃',
+    'F / NOVA IS READY':'F / ノヴァ使用可能','Clear enemy fire and damage every enemy.':'敵弾を消去し、すべての敵にダメージ。','NOVA → clear enemy fire':'ノヴァ → 敵弾消去',
+    'LEFT / SANCTUARY':'左 / 安全地帯','CENTER / SANCTUARY':'中央 / 安全地帯','RIGHT / SANCTUARY':'右 / 安全地帯',
+    'The ring erases bullets. Lasers still pass through.':'円の中の敵弾を消去。レーザーは通過します。','Sanctuary stops bullets':'安全地帯で敵弾消去',
+    'PARRY RECHARGING / MOVE':'パリィ再使用待ち / 移動','Keep moving until parry is ready again.':'パリィが再使用可能になるまで移動しましょう。','Parry recharging → move':'パリィ待ち → 移動',
+    'E / PARRY THE BULLETS':'E / 敵弾をパリィ','Catch incoming fire. Return it to the Notary.':'敵弾を受け止め、公証人に撃ち返しましょう。','PARRY → return fire':'パリィ → 反射',
     'YOUR SIGNED TERMS IN ACTION':'署名した条件が変えた戦闘',
     'Change the deal.':'条件を変えよう。',
     'Your signed terms in action':'署名した条件が変えた戦闘',

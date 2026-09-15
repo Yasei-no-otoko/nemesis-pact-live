@@ -4,6 +4,8 @@
 #combat-guide p{margin-top:6px;font:11px/1.55 Arial,sans-serif;color:#b3c2c4}
 #combat-guide[data-cue=laser]{border-color:#ef95d4}#combat-guide[data-cue=laser]>span{color:#f4b0e0}
 #combat-guide[data-cue=nova]{border-color:#e4c389}#combat-guide[data-cue=nova]>span{color:#ead4aa}
+#combat-guide[data-cue=critical]{border-color:#ffac98}#combat-guide[data-cue=critical]>span,body[data-covenant=true].mobile-ui #touch-context-hint[data-cue=critical]{color:#ffbcac}
+body[data-covenant=true].mobile-ui #touch-context-hint[data-cue=laser]{color:#f4b0e0}
 #cv-parley[data-state=ready]{border-color:#c9ab6a99;box-shadow:inset 0 0 15px #c9ab6a0c}
 #covenant-live #cv-parley{max-width:190px;font-size:10px;line-height:1.5;letter-spacing:.4px;padding:9px 12px}
 #pause-parley{font-size:13px;line-height:1.5}
