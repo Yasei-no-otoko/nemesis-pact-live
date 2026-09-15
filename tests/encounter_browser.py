@@ -31,6 +31,10 @@ def verify_result(p,s,outcome,name):
     values={'shielded':s['stats']['shielded'],'reflected':s['stats']['reflectedDamage'],'signed':len(s['report']['receipts']),'seconds':s['time'],'hull':s['hp'],'parries':s['parries']}
     for k,v in values.items():
         el=p.locator(f'#result-stats [data-result-metric="{k}"]');assert abs(float(el.get_attribute('data-value'))-v)<1e-8
+    impacts=p.evaluate('()=>PactCovenant.revisionImpacts(__PACT_TEST__.world)');rows=p.locator('#result-pacts [data-impact-revision]');assert rows.count()==len(impacts)
+    for i,impact in enumerate(impacts):
+        row=rows.nth(i);assert int(row.get_attribute('data-shielded'))==impact['shielded'];assert abs(float(row.get_attribute('data-reflected'))-impact['reflectedDamage'])<1e-8
+    assert 'new unsigned negotiation' in p.locator('#result-next-step').inner_text()
     terms=p.evaluate('()=>PactCovenant.describe(__PACT_TEST__.world.spec)');text=p.locator('#result-rules').inner_text()
     assert all(t in text for t in [terms['title'],terms['price'],*terms['benefits']]) and 'LOCAL RULES' in text
     assert p.evaluate('()=>{const e=document.querySelector("#result");return e.scrollWidth<=e.clientWidth+1}')

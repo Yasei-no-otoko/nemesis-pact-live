@@ -36,6 +36,7 @@ body[data-covenant=true] #announcement p{font-size:11px;margin-top:8px}
 #result[data-encounter=true] .result-score strong{font-size:38px;letter-spacing:-1px}
 #result[data-encounter=true] #result-rank{font-size:9px;letter-spacing:1px;margin-left:0;color:var(--outcome)}
 #result[data-encounter=true] .result-followup{margin-top:auto;padding-top:20px}
+#result[data-encounter=true] #result-next-step{font:10px/1.65 monospace;color:#aebfc2;border-left:2px solid var(--outcome);padding-left:11px;margin:0 0 11px;max-width:420px}
 #result[data-encounter=true] .button-row{display:grid;grid-template-columns:1.12fr 1fr;gap:10px;margin-top:0}
 #result[data-encounter=true] .button-row .primary,#result[data-encounter=true] .button-row .secondary{min-height:56px;font-size:13px;padding:12px 16px;gap:8px}
 #result[data-encounter=true] .button-row button[data-home]{grid-column:1/-1;background:none;border:0;color:#a6b9c1;min-height:36px;padding:5px}
@@ -55,7 +56,8 @@ body[data-covenant=true] #announcement p{font-size:11px;margin-top:8px}
 #result[data-encounter=true] #result-stats div b{font-size:26px;margin-top:6px}
 #result[data-encounter=true] #result-pacts{margin-top:22px}
 #result[data-encounter=true] .result-pact{font-size:11px;gap:12px;padding:10px 0;line-height:1.5}
-#result[data-encounter=true] .result-pact span{overflow-wrap:anywhere}#result[data-encounter=true] .result-pact small{font-size:8px}
+#result[data-encounter=true] .result-pact>div{min-width:0}#result[data-encounter=true] .result-pact span{overflow-wrap:anywhere}#result[data-encounter=true] .result-pact small{font-size:8px;align-self:flex-start;margin-top:2px}
+.result-pact-impact{display:block;margin-top:4px;font:8px/1.55 monospace;letter-spacing:.5px;color:#82999f}.result-pact-impact em{font-style:normal;color:var(--outcome)}
 #result[data-encounter=true] #result-build{font-size:10px;line-height:1.6;margin-top:13px}
 #result[data-encounter=true] #result-seed{font-size:8px;letter-spacing:1px;margin-top:13px}
 body.mobile-ui #covenant-live #cv-parley{font-size:8px;max-width:115px;padding:8px;min-height:38px}
@@ -86,6 +88,7 @@ body.mobile-ui .receipt-clauses{grid-template-columns:1fr;gap:12px}
 body.mobile-ui #result[data-encounter=true] #result-stats{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:5px;gap:20px 13px}
 body.mobile-ui #result[data-encounter=true] #result-stats div b{font-size:25px}
 body.mobile-ui #result[data-encounter=true] .button-row{margin-top:0}
+body.mobile-ui #result[data-encounter=true] #result-next-step{font-size:11px;margin-bottom:12px}
 body.mobile-ui #result[data-encounter=true] .button-row button[data-home]{min-height:44px}
 body.mobile-ui #result[data-encounter=true] #export{min-height:44px}
 @media(max-width:350px){body.mobile-ui #result[data-encounter=true]{padding-left:16px;padding-right:16px}body.mobile-ui #result[data-encounter=true] .result-right{padding:17px}body.mobile-ui #result[data-encounter=true] .result-left h2{font-size:37px}}

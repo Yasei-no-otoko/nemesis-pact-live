@@ -28,6 +28,14 @@
   const intro=r.memory.broken?'I remember a broken signature.':r.amendment?`I counted ${Math.round(r.telemetry.parries)} reflected shots.`:'Every promise needs a price.';
   return validateSpec({version:1,title:zone!=='none'?`${zone[0].toUpperCase()+zone.slice(1)}-side Covenant`:reflection==='charged'?'Return to Sender':'Borrowed Time',zone,speed,reflection,price,line:`${intro} Read the binding clauses below. Sign only what you intend to keep.`,rationale:'LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding.'});}
  function telemetry(w){return {seconds:w.time||0,parries:w.parries||0,grazes:w.grazes||0,damageTaken:w.damageTaken||0,shielded:w.covenantStats?.shielded||0,reflectedDamage:w.covenantStats?.reflectedDamage||0};}
+ function revisionImpacts(w){
+  const receipts=Array.isArray(w?.receipts)?w.receipts:[],final=telemetry(w||{}),breach=w?.broken&&w?.breachSnapshot?w.breachSnapshot:null;
+  return receipts.map((receipt,index)=>{
+   const before=receipt.snapshot||{},after=receipts[index+1]?.snapshot||(index===receipts.length-1&&breach)||final;
+   const delta=key=>Math.max(0,(Number(after[key])||0)-(Number(before[key])||0));
+   return {revision:receipt.revision,shielded:delta('shielded'),reflectedDamage:delta('reflectedDamage')};
+  });
+ }
  class Client{
   constructor(){this.sequence=0;this.abort=null;}
   cancel(){this.sequence++;this.abort?.abort();this.abort=null;}
@@ -41,7 +49,7 @@
   }
  }
  class Run extends X.Run{
-  constructor(seed='FIRST-CONTACT',difficulty='standard',viewport={},history){super(seed,difficulty,false,viewport,{mode:'classic'});this.mode='first-contact';this.totalStages=1;this.phase='covenant';this.wave=2;this.credits=0;this.upgrades={rail:1,parry:1};this.p.hp=this.p.maxHp=difficulty==='veteran'?7:10;this.p.energy=50;this.spec=null;this.revision=0;this.amendments=1;this.autoParley=true;this.receipts=[];this.memory=memory(history);this.covenantStats={shielded:0,reflectedDamage:0,gunDamage:0,amendments:0};this.voiceEvidence={model:'gpt-live-1',connectionStarted:0,sessionClosed:0,delegationRequests:0,proposalsReturned:0,openaiProposals:0,signedContracts:0,lastState:'idle'};this.savedMemory=false;this.finishReason=null;}
+  constructor(seed='FIRST-CONTACT',difficulty='standard',viewport={},history){super(seed,difficulty,false,viewport,{mode:'classic'});this.mode='first-contact';this.totalStages=1;this.phase='covenant';this.wave=2;this.credits=0;this.upgrades={rail:1,parry:1};this.p.hp=this.p.maxHp=difficulty==='veteran'?7:10;this.p.energy=50;this.spec=null;this.revision=0;this.amendments=1;this.autoParley=true;this.receipts=[];this.breachSnapshot=null;this.memory=memory(history);this.covenantStats={shielded:0,reflectedDamage:0,gunDamage:0,amendments:0};this.voiceEvidence={model:'gpt-live-1',connectionStarted:0,sessionClosed:0,delegationRequests:0,proposalsReturned:0,openaiProposals:0,signedContracts:0,lastState:'idle'};this.savedMemory=false;this.finishReason=null;}
   bossInfo(){return {...X.BOSSES[0],hp:3600};}
   sign(){return false;}
   request(prompt){return cleanRequest({version:1,prompt,seed:this.seed,revision:this.revision,amendment:this.revision>0,memory:this.memory,telemetry:telemetry(this),previous:this.spec});}
@@ -57,7 +65,7 @@
   zone(){if(!this.spec||this.spec.zone==='none'||this.broken)return null;return {x:this.width*{left:.25,center:.5,right:.75}[this.spec.zone],y:this.height*.65,r:this.layout==='portrait'?68:86};}
   protectBullet(b){const z=this.zone();if(z&&C.segmentHit(b.px,b.py,b.x,b.y,z.x,z.y,z.r)){this.covenantStats.shielded++;if(this.covenantStats.shielded%8===1)this.emit('shield',{x:b.x,y:b.y});return true;}return false;}
   hitEnemy(e,damage,kind='shot'){const hp=e.hp;super.hitEnemy(e,damage,kind);if(this.covenantStats&&e.hp<hp){const dealt=Math.min(hp,damage);if(kind==='reflect')this.covenantStats.reflectedDamage+=dealt;else if(kind==='shot')this.covenantStats.gunDamage+=dealt;}}
-  breach(){const ok=super.breach();if(ok){this.autoParley=false;this.amendments=0;}return ok;}
+  breach(){const ok=super.breach();if(ok){this.breachSnapshot=telemetry(this);this.autoParley=false;this.amendments=0;}return ok;}
   updateBoss(e,dt){const ratio=e.hp/e.maxHp,phase=ratio<.35?2:ratio<.7?1:0;if(e.phase!==phase){e.phase=phase;e.intent=null;e.fire=1.3;e.stun=.6;this.bullets=this.bullets.filter(b=>!b.hostile);this.emit('boss-phase',{phase});}
    const rate=this.mods.bossRate*this.mods.enemyRate;e.rot+=dt*(.3+phase*.15);const tx=this.width/2+Math.sin(e.age*.45)*this.width*.16;e.x+=(tx-e.x)*(1-Math.exp(-1.4*dt));e.y=this.bossY+Math.sin(e.age*.6)*24;
    if(e.intent){e.intent.remaining-=dt;if(e.intent.remaining<=0){const a=e.intent.angle;if(e.intent.kind==='fan'){for(let i=-3-phase;i<=3+phase;i++)this.enemyShot(e,a+i*.13,195+phase*12);}else if(e.intent.kind==='ring'){this.ring(e,18+phase*4,165+phase*12,e.rot,a);}else{this.lasers.push({x:e.x,y:e.y,a,t:.28,active:false,width:15+phase*2});}e.intent=null;e.fire=phase===2?.7:1.1;}}
@@ -67,7 +75,7 @@
   step(dt,input={}){super.step(dt,input);if(this.phase==='combat'&&this.bossKills>0){this.completeEncounter();return;}if(this.phase==='combat'&&this.autoParley&&this.time>=18)this.requestParley();}
   completeEncounter(){this.enemies=[];this.bullets=[];this.lasers=[];this.phase='won';this.score+=this.broken?1000:3500;this.finishReason=this.broken?'unbound':'honored';this.emit('victory',{ending:this.finishReason});}
   memoryAfter(){return {honored:Math.min(10000,this.memory.honored+(this.phase==='won'&&!this.broken?1:0)),broken:Math.min(10000,this.memory.broken+(this.broken?1:0))};}
-  report(){const voice={...this.voiceEvidence};return {...super.report(),version:'1.3.0',mode:this.mode,contractLanguage:'living-covenant-v1',assists:'automatic aim/fire in First Contact UI',rules:this.spec?{...this.spec}:null,covenantStats:{...this.covenantStats},receipts:this.receipts.map(r=>({...r,spec:{...r.spec},snapshot:{...r.snapshot}})),memoryBefore:{...this.memory},memoryAfter:this.memoryAfter(),liveVoice:{...voice,status:voice.signedContracts>0?'contract-signed':voice.connectionStarted>0?'connected':'not-used'}};}
+  report(){const voice={...this.voiceEvidence};return {...super.report(),version:'1.3.0',mode:this.mode,contractLanguage:'living-covenant-v1',assists:'automatic aim/fire in First Contact UI',rules:this.spec?{...this.spec}:null,covenantStats:{...this.covenantStats},receipts:this.receipts.map(r=>({...r,spec:{...r.spec},snapshot:{...r.snapshot}})),breachSnapshot:this.breachSnapshot?{...this.breachSnapshot}:null,memoryBefore:{...this.memory},memoryAfter:this.memoryAfter(),liveVoice:{...voice,status:voice.signedContracts>0?'contract-signed':voice.connectionStarted>0?'connected':'not-used'}};}
  }
- return {ZONES,SPEEDS,REFLECTS,PRICES,validateSpec,cleanRequest,schema,compile,describe,budget,localProposal,memory,telemetry,Client,Run};
+ return {ZONES,SPEEDS,REFLECTS,PRICES,validateSpec,cleanRequest,schema,compile,describe,budget,localProposal,memory,telemetry,revisionImpacts,Client,Run};
 });

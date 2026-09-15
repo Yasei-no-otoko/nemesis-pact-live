@@ -755,6 +755,7 @@ body[data-covenant=true] #announcement p{font-size:11px;margin-top:8px}
 #result[data-encounter=true] .result-score strong{font-size:38px;letter-spacing:-1px}
 #result[data-encounter=true] #result-rank{font-size:9px;letter-spacing:1px;margin-left:0;color:var(--outcome)}
 #result[data-encounter=true] .result-followup{margin-top:auto;padding-top:20px}
+#result[data-encounter=true] #result-next-step{font:10px/1.65 monospace;color:#aebfc2;border-left:2px solid var(--outcome);padding-left:11px;margin:0 0 11px;max-width:420px}
 #result[data-encounter=true] .button-row{display:grid;grid-template-columns:1.12fr 1fr;gap:10px;margin-top:0}
 #result[data-encounter=true] .button-row .primary,#result[data-encounter=true] .button-row .secondary{min-height:56px;font-size:13px;padding:12px 16px;gap:8px}
 #result[data-encounter=true] .button-row button[data-home]{grid-column:1/-1;background:none;border:0;color:#a6b9c1;min-height:36px;padding:5px}
@@ -774,7 +775,8 @@ body[data-covenant=true] #announcement p{font-size:11px;margin-top:8px}
 #result[data-encounter=true] #result-stats div b{font-size:26px;margin-top:6px}
 #result[data-encounter=true] #result-pacts{margin-top:22px}
 #result[data-encounter=true] .result-pact{font-size:11px;gap:12px;padding:10px 0;line-height:1.5}
-#result[data-encounter=true] .result-pact span{overflow-wrap:anywhere}#result[data-encounter=true] .result-pact small{font-size:8px}
+#result[data-encounter=true] .result-pact>div{min-width:0}#result[data-encounter=true] .result-pact span{overflow-wrap:anywhere}#result[data-encounter=true] .result-pact small{font-size:8px;align-self:flex-start;margin-top:2px}
+.result-pact-impact{display:block;margin-top:4px;font:8px/1.55 monospace;letter-spacing:.5px;color:#82999f}.result-pact-impact em{font-style:normal;color:var(--outcome)}
 #result[data-encounter=true] #result-build{font-size:10px;line-height:1.6;margin-top:13px}
 #result[data-encounter=true] #result-seed{font-size:8px;letter-spacing:1px;margin-top:13px}
 body.mobile-ui #covenant-live #cv-parley{font-size:8px;max-width:115px;padding:8px;min-height:38px}
@@ -805,6 +807,7 @@ body.mobile-ui .receipt-clauses{grid-template-columns:1fr;gap:12px}
 body.mobile-ui #result[data-encounter=true] #result-stats{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:5px;gap:20px 13px}
 body.mobile-ui #result[data-encounter=true] #result-stats div b{font-size:25px}
 body.mobile-ui #result[data-encounter=true] .button-row{margin-top:0}
+body.mobile-ui #result[data-encounter=true] #result-next-step{font-size:11px;margin-bottom:12px}
 body.mobile-ui #result[data-encounter=true] .button-row button[data-home]{min-height:44px}
 body.mobile-ui #result[data-encounter=true] #export{min-height:44px}
 @media(max-width:350px){body.mobile-ui #result[data-encounter=true]{padding-left:16px;padding-right:16px}body.mobile-ui #result[data-encounter=true] .result-right{padding:17px}body.mobile-ui #result[data-encounter=true] .result-left h2{font-size:37px}}
@@ -1112,7 +1115,7 @@ html[lang="ja"] .hud-ledger{letter-spacing:0}
         </div>
       </div>
     </section>
-    <section id="result" class="screen backdrop" hidden aria-label="Run results"><div class="result-left"><div class="result-heading"><div id="result-seal" hidden aria-hidden="true"><i></i><b>◈</b><i></i></div><span class="eyebrow" id="result-kicker"></span><h2 id="result-title"></h2><p id="result-story"></p><div class="result-score"><span class="micro">FINAL SCORE</span><strong id="result-score"></strong><span id="result-rank"></span></div></div><div class="result-followup"><div class="button-row"><button id="retry" class="primary">Try again <span>↗</span></button><button id="result-campaign" class="secondary" hidden>Full campaign ↗</button><button data-home class="secondary">Main menu</button></div><button id="debrief" class="secondary debrief-button">Flight debrief</button><button id="export" class="text-button">Save run report as JSON ↓</button></div></div><div class="result-right"><span class="eyebrow" id="result-record-label">FLIGHT RECORDER</span><div id="result-rules" hidden></div><div id="result-stats"></div><div id="result-pacts"></div><div id="result-build"></div><p id="result-seed" class="micro"></p></div></section>
+    <section id="result" class="screen backdrop" hidden aria-label="Run results"><div class="result-left"><div class="result-heading"><div id="result-seal" hidden aria-hidden="true"><i></i><b>◈</b><i></i></div><span class="eyebrow" id="result-kicker"></span><h2 id="result-title"></h2><p id="result-story"></p><div class="result-score"><span class="micro">FINAL SCORE</span><strong id="result-score"></strong><span id="result-rank"></span></div></div><div class="result-followup"><p id="result-next-step" hidden></p><div class="button-row"><button id="retry" class="primary">Try again <span>↗</span></button><button id="result-campaign" class="secondary" hidden>Full campaign ↗</button><button data-home class="secondary">Main menu</button></div><button id="debrief" class="secondary debrief-button">Flight debrief</button><button id="export" class="text-button">Save run report as JSON ↓</button></div></div><div class="result-right"><span class="eyebrow" id="result-record-label">FLIGHT RECORDER</span><div id="result-rules" hidden></div><div id="result-stats"></div><div id="result-pacts"></div><div id="result-build"></div><p id="result-seed" class="micro"></p></div></section>
     <section id="confirm-screen" class="screen backdrop" hidden aria-label="Confirm action"><div class="panel compact"><span class="eyebrow">A CHOICE THAT MATTERS.</span><h2 id="confirm-title"></h2><p class="muted" id="confirm-description"></p><button id="confirm-cancel" class="primary">Back</button><button id="confirm-yes" class="secondary danger">Confirm</button></div></section>
     <div id="playfield" class="mobile-only" aria-hidden="true"></div>
     <div id="touch-controls" hidden aria-label="Touch controls">
@@ -2399,6 +2402,14 @@ return {CONTRACTS,DIRECTORS,TASKS,cleanRequest,schema,validateDecision,mock,tele
   const intro=r.memory.broken?'I remember a broken signature.':r.amendment?`I counted ${Math.round(r.telemetry.parries)} reflected shots.`:'Every promise needs a price.';
   return validateSpec({version:1,title:zone!=='none'?`${zone[0].toUpperCase()+zone.slice(1)}-side Covenant`:reflection==='charged'?'Return to Sender':'Borrowed Time',zone,speed,reflection,price,line:`${intro} Read the binding clauses below. Sign only what you intend to keep.`,rationale:'LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding.'});}
  function telemetry(w){return {seconds:w.time||0,parries:w.parries||0,grazes:w.grazes||0,damageTaken:w.damageTaken||0,shielded:w.covenantStats?.shielded||0,reflectedDamage:w.covenantStats?.reflectedDamage||0};}
+ function revisionImpacts(w){
+  const receipts=Array.isArray(w?.receipts)?w.receipts:[],final=telemetry(w||{}),breach=w?.broken&&w?.breachSnapshot?w.breachSnapshot:null;
+  return receipts.map((receipt,index)=>{
+   const before=receipt.snapshot||{},after=receipts[index+1]?.snapshot||(index===receipts.length-1&&breach)||final;
+   const delta=key=>Math.max(0,(Number(after[key])||0)-(Number(before[key])||0));
+   return {revision:receipt.revision,shielded:delta('shielded'),reflectedDamage:delta('reflectedDamage')};
+  });
+ }
  class Client{
   constructor(){this.sequence=0;this.abort=null;}
   cancel(){this.sequence++;this.abort?.abort();this.abort=null;}
@@ -2412,7 +2423,7 @@ return {CONTRACTS,DIRECTORS,TASKS,cleanRequest,schema,validateDecision,mock,tele
   }
  }
  class Run extends X.Run{
-  constructor(seed='FIRST-CONTACT',difficulty='standard',viewport={},history){super(seed,difficulty,false,viewport,{mode:'classic'});this.mode='first-contact';this.totalStages=1;this.phase='covenant';this.wave=2;this.credits=0;this.upgrades={rail:1,parry:1};this.p.hp=this.p.maxHp=difficulty==='veteran'?7:10;this.p.energy=50;this.spec=null;this.revision=0;this.amendments=1;this.autoParley=true;this.receipts=[];this.memory=memory(history);this.covenantStats={shielded:0,reflectedDamage:0,gunDamage:0,amendments:0};this.voiceEvidence={model:'gpt-live-1',connectionStarted:0,sessionClosed:0,delegationRequests:0,proposalsReturned:0,openaiProposals:0,signedContracts:0,lastState:'idle'};this.savedMemory=false;this.finishReason=null;}
+  constructor(seed='FIRST-CONTACT',difficulty='standard',viewport={},history){super(seed,difficulty,false,viewport,{mode:'classic'});this.mode='first-contact';this.totalStages=1;this.phase='covenant';this.wave=2;this.credits=0;this.upgrades={rail:1,parry:1};this.p.hp=this.p.maxHp=difficulty==='veteran'?7:10;this.p.energy=50;this.spec=null;this.revision=0;this.amendments=1;this.autoParley=true;this.receipts=[];this.breachSnapshot=null;this.memory=memory(history);this.covenantStats={shielded:0,reflectedDamage:0,gunDamage:0,amendments:0};this.voiceEvidence={model:'gpt-live-1',connectionStarted:0,sessionClosed:0,delegationRequests:0,proposalsReturned:0,openaiProposals:0,signedContracts:0,lastState:'idle'};this.savedMemory=false;this.finishReason=null;}
   bossInfo(){return {...X.BOSSES[0],hp:3600};}
   sign(){return false;}
   request(prompt){return cleanRequest({version:1,prompt,seed:this.seed,revision:this.revision,amendment:this.revision>0,memory:this.memory,telemetry:telemetry(this),previous:this.spec});}
@@ -2428,7 +2439,7 @@ return {CONTRACTS,DIRECTORS,TASKS,cleanRequest,schema,validateDecision,mock,tele
   zone(){if(!this.spec||this.spec.zone==='none'||this.broken)return null;return {x:this.width*{left:.25,center:.5,right:.75}[this.spec.zone],y:this.height*.65,r:this.layout==='portrait'?68:86};}
   protectBullet(b){const z=this.zone();if(z&&C.segmentHit(b.px,b.py,b.x,b.y,z.x,z.y,z.r)){this.covenantStats.shielded++;if(this.covenantStats.shielded%8===1)this.emit('shield',{x:b.x,y:b.y});return true;}return false;}
   hitEnemy(e,damage,kind='shot'){const hp=e.hp;super.hitEnemy(e,damage,kind);if(this.covenantStats&&e.hp<hp){const dealt=Math.min(hp,damage);if(kind==='reflect')this.covenantStats.reflectedDamage+=dealt;else if(kind==='shot')this.covenantStats.gunDamage+=dealt;}}
-  breach(){const ok=super.breach();if(ok){this.autoParley=false;this.amendments=0;}return ok;}
+  breach(){const ok=super.breach();if(ok){this.breachSnapshot=telemetry(this);this.autoParley=false;this.amendments=0;}return ok;}
   updateBoss(e,dt){const ratio=e.hp/e.maxHp,phase=ratio<.35?2:ratio<.7?1:0;if(e.phase!==phase){e.phase=phase;e.intent=null;e.fire=1.3;e.stun=.6;this.bullets=this.bullets.filter(b=>!b.hostile);this.emit('boss-phase',{phase});}
    const rate=this.mods.bossRate*this.mods.enemyRate;e.rot+=dt*(.3+phase*.15);const tx=this.width/2+Math.sin(e.age*.45)*this.width*.16;e.x+=(tx-e.x)*(1-Math.exp(-1.4*dt));e.y=this.bossY+Math.sin(e.age*.6)*24;
    if(e.intent){e.intent.remaining-=dt;if(e.intent.remaining<=0){const a=e.intent.angle;if(e.intent.kind==='fan'){for(let i=-3-phase;i<=3+phase;i++)this.enemyShot(e,a+i*.13,195+phase*12);}else if(e.intent.kind==='ring'){this.ring(e,18+phase*4,165+phase*12,e.rot,a);}else{this.lasers.push({x:e.x,y:e.y,a,t:.28,active:false,width:15+phase*2});}e.intent=null;e.fire=phase===2?.7:1.1;}}
@@ -2438,9 +2449,9 @@ return {CONTRACTS,DIRECTORS,TASKS,cleanRequest,schema,validateDecision,mock,tele
   step(dt,input={}){super.step(dt,input);if(this.phase==='combat'&&this.bossKills>0){this.completeEncounter();return;}if(this.phase==='combat'&&this.autoParley&&this.time>=18)this.requestParley();}
   completeEncounter(){this.enemies=[];this.bullets=[];this.lasers=[];this.phase='won';this.score+=this.broken?1000:3500;this.finishReason=this.broken?'unbound':'honored';this.emit('victory',{ending:this.finishReason});}
   memoryAfter(){return {honored:Math.min(10000,this.memory.honored+(this.phase==='won'&&!this.broken?1:0)),broken:Math.min(10000,this.memory.broken+(this.broken?1:0))};}
-  report(){const voice={...this.voiceEvidence};return {...super.report(),version:'1.3.0',mode:this.mode,contractLanguage:'living-covenant-v1',assists:'automatic aim/fire in First Contact UI',rules:this.spec?{...this.spec}:null,covenantStats:{...this.covenantStats},receipts:this.receipts.map(r=>({...r,spec:{...r.spec},snapshot:{...r.snapshot}})),memoryBefore:{...this.memory},memoryAfter:this.memoryAfter(),liveVoice:{...voice,status:voice.signedContracts>0?'contract-signed':voice.connectionStarted>0?'connected':'not-used'}};}
+  report(){const voice={...this.voiceEvidence};return {...super.report(),version:'1.3.0',mode:this.mode,contractLanguage:'living-covenant-v1',assists:'automatic aim/fire in First Contact UI',rules:this.spec?{...this.spec}:null,covenantStats:{...this.covenantStats},receipts:this.receipts.map(r=>({...r,spec:{...r.spec},snapshot:{...r.snapshot}})),breachSnapshot:this.breachSnapshot?{...this.breachSnapshot}:null,memoryBefore:{...this.memory},memoryAfter:this.memoryAfter(),liveVoice:{...voice,status:voice.signedContracts>0?'contract-signed':voice.connectionStarted>0?'connected':'not-used'}};}
  }
- return {ZONES,SPEEDS,REFLECTS,PRICES,validateSpec,cleanRequest,schema,compile,describe,budget,localProposal,memory,telemetry,Client,Run};
+ return {ZONES,SPEEDS,REFLECTS,PRICES,validateSpec,cleanRequest,schema,compile,describe,budget,localProposal,memory,telemetry,revisionImpacts,Client,Run};
 });
 
 </script>
@@ -4509,8 +4520,10 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
     'NOTARY DEFEATED':'公証人を撃破','ENCOUNTER ENDED':'戦闘終了','Negotiate again':'もう一度交渉','Try new terms':'別の条件で挑戦',
     'SIGNED REVISIONS':'署名回数','BULLETS REFLECTED':'撃ち返した弾','COMBAT TIME':'戦闘時間','VOID':'無効',
     'This deal was broken. Its effects ended at the breach.':'この契約は破棄されました。破棄した時点で、その効果は失われています。',
-    'Sanctuary interceptions and reflected hit damage, across all revisions. Includes validated OpenAI contracts.':'すべての改訂にわたる、安全地帯で消去した敵弾と反射弾の命中ダメージを集計しています。検証済みのOpenAI契約を含みます。',
-    'Sanctuary interceptions and reflected hit damage, across all revisions. Local-rule play; no AI inference.':'すべての改訂にわたる、安全地帯で消去した敵弾と反射弾の命中ダメージを集計しています。ローカルルールでプレイ。AI推論はありません。',
+    'Same battlefield, new unsigned negotiation. Change a term and see how the fight answers.':'同じ戦場で、新たな未署名の交渉が始まります。条件を1つ変え、戦いがどう応えるか確かめよう。',
+    'Same battlefield, new unsigned negotiation. Change the terms before you Sign.':'同じ戦場で、新たな未署名の交渉が始まります。署名前に条件を変えよう。',
+    'Each revision shows recorded effects from its signature until the next signature or breach. Includes validated OpenAI contracts.':'各改訂に、署名から次の署名または契約破棄までに記録された効果を表示します。検証済みのOpenAI契約を含みます。',
+    'Each revision shows recorded effects from its signature until the next signature or breach. Local-rule play; no AI inference.':'各改訂に、署名から次の署名または契約破棄までに記録された効果を表示します。ローカルルールでプレイ。AI推論はありません。',
     'REVISED':'改訂','KEPT':'維持','BROKEN':'破棄','HONORED':'履行','SIGNED':'署名済み','No upgrades collected yet.':'アップグレードはまだありません。',
     'Includes validated OpenAI contracts.':'検証済みのOpenAI契約を含みます。','Local-rule play; no AI inference.':'ローカルルールでプレイ。AI推論はありません。',
     'TIME':'時間','BOSSES':'ボス','ELIMINATIONS':'撃破数','REFLECTIONS':'反射数','GRAZES':'かすり傷','PACTS KEPT':'維持した契約',
@@ -4935,7 +4948,7 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
   function choose(id){if(screen!=='choices')return;const success=world.phase==='pact'?world.sign(id):world.chooseUpgrade(id);if(!success)return;if(world.phase==='route'){routeScreen();return;}show('game');lastWorldPhase='combat';consumeEvents();updateHUD();}
   function togglePause(){if(!world)return;if(screen==='game'){pauseFrom='game';show('pause');}else if(screen==='pause')show(pauseFrom);}
   function results(){
-    show('result');const encounter=world.mode==='first-contact';$('result').dataset.encounter=String(encounter);$('result').removeAttribute('data-outcome');for(const id of ['result-seal','result-rules','result-campaign'])$(id).hidden=!encounter;$('debrief').hidden=encounter;$('result-record-label').textContent='FLIGHT RECORDER';$('retry').innerHTML='Try again <span>↗</span>';const won=world.phase==='won',kept=world.contracts.filter(c=>c.kept).length;
+    show('result');const encounter=world.mode==='first-contact';$('result').dataset.encounter=String(encounter);$('result').removeAttribute('data-outcome');for(const id of ['result-seal','result-rules','result-campaign','result-next-step'])$(id).hidden=!encounter;$('debrief').hidden=encounter;$('result-record-label').textContent='FLIGHT RECORDER';$('retry').innerHTML='Try again <span>↗</span>';const won=world.phase==='won',kept=world.contracts.filter(c=>c.kept).length;
     $('result-kicker').textContent=won?'THE LAST SIGNATURE / '+(world.breaches===0?'PACT KEEPER':world.breaches===(world.totalStages||3)?'OATHBREAKER':'SURVIVOR'):'SIGNAL LOST / NOT THE END';
     $('result-title').innerHTML=won?(world.breaches===0?'A promise.<br>A new dawn.':world.breaches===(world.totalStages||3)?'No chains.<br>No masters.':'Scarred.<br>Still flying.'):'One more run.<br>One step further.';
     $('result-story').textContent=won?(world.breaches===0?'The last guardian lowered its weapon. “Not once? You never broke your word?” You offered no answer. Only a turn toward the dawn.':world.breaches===(world.totalStages||3)?'Every pact is ash. The sky is free, and no words remain to bind your name.':'Some promises were broken. Others survived. As the last bullet faded from the sky, you kept flying.'):'Every defeat leaves a lesson. Try a different pact. Build a different answer. When there is no room to dodge, return fire with a parry.';
@@ -4956,13 +4969,15 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
     $('result-story').textContent=outcome==='honored'?'The Notary falls. Your signature stands. Every erased bullet and returned shot is recorded below.':outcome==='unbound'?'You survived without the covenant. The Notary will remember the broken promise at your next negotiation.':'The signature changed the rules. Now change your approach: parry the bullets, dash through magenta lasers, and spend your Nova.';
     $('result-rank').textContent=won?'NOTARY DEFEATED':'ENCOUNTER ENDED';
     $('retry').innerHTML=won?'Negotiate again <span>↗</span>':'Try new terms <span>↗</span>';
+    $('result-next-step').textContent=won?'Same battlefield, new unsigned negotiation. Change a term and see how the fight answers.':'Same battlefield, new unsigned negotiation. Change the terms before you Sign.';
     $('result-record-label').textContent='THE SIGNED RECORD';
     const origin=receipt?.provider==='openai'?'OPENAI / '+receipt.model:'LOCAL RULES / NO AI INFERENCE';
     $('result-rules').innerHTML=terms?`<div class="receipt-heading"><span class="provider-pill">${escapeHTML(origin)}</span><small>REV ${world.revision} / ${world.broken?'VOID':'SIGNED'}</small></div><h3>${escapeHTML(terms.title)}</h3><div class="receipt-clauses"><div><span class="micro">YOUR ADVANTAGE</span>${terms.benefits.map(x=>`<p>+ ${escapeHTML(x)}</p>`).join('')}</div><div><span class="micro">YOUR PRICE</span><p>− ${escapeHTML(terms.price)}</p></div></div><p class="receipt-note">${world.broken?'This deal was broken. Its effects ended at the breach.':escapeHTML(terms.note)}</p>`:'';
     const metrics=[['shielded','BULLETS ERASED',stats.shielded,stats.shielded],['reflected','DAMAGE RETURNED',stats.reflectedDamage,Math.round(stats.reflectedDamage)],['signed','SIGNED REVISIONS',world.receipts.length,world.receipts.length],['parries','BULLETS REFLECTED',world.parries,world.parries],['seconds','COMBAT TIME',world.time,formatTime(world.time)],['hull','HULL REMAINING',world.p.hp,`${world.p.hp} / ${world.p.maxHp}`]];
     $('result-stats').innerHTML=metrics.map(([id,label,value,display])=>`<div data-result-metric="${id}" data-value="${value}"><span>${label}</span><b>${display}</b></div>`).join('');
-    $('result-pacts').innerHTML=world.receipts.map((r,i)=>`<div class="result-pact ${world.broken&&i===world.receipts.length-1?'broken':''}"><span>REV ${r.revision} / ${escapeHTML(r.spec.title)}</span><small>${i<world.receipts.length-1?'REVISED':world.broken?'BROKEN':won?'HONORED':'SIGNED'}</small></div>`).join('');
-    $('result-build').textContent='Sanctuary interceptions and reflected hit damage, across all revisions. '+(world.receipts.some(r=>r.provider==='openai')?'Includes validated OpenAI contracts.':'Local-rule play; no AI inference.');
+    const impacts=V.revisionImpacts(world);
+    $('result-pacts').innerHTML=world.receipts.map((r,i)=>`<div class="result-pact ${world.broken&&i===world.receipts.length-1?'broken':''}"><div><span>REV ${r.revision} / ${escapeHTML(r.spec.title)}</span><b class="result-pact-impact" data-impact-revision="${r.revision}" data-shielded="${impacts[i].shielded}" data-reflected="${impacts[i].reflectedDamage}"><em>${impacts[i].shielded}</em> <span>BULLETS ERASED</span> · <em>${Math.round(impacts[i].reflectedDamage)}</em> <span>DAMAGE RETURNED</span></b></div><small>${i<world.receipts.length-1?'REVISED':world.broken?'BROKEN':won?'HONORED':'SIGNED'}</small></div>`).join('');
+    $('result-build').textContent='Each revision shows recorded effects from its signature until the next signature or breach. '+(world.receipts.some(r=>r.provider==='openai')?'Includes validated OpenAI contracts.':'Local-rule play; no AI inference.');
   }
   function formatTime(t){return Math.floor(t/60).toString().padStart(2,'0')+':'+Math.floor(t%60).toString().padStart(2,'0');}
   function updateHUD(){if(!world)return;$('hud-ledger').textContent=world.mode!=='classic'&&!world.training?`${world.credits} CR / ${world.relics.length} RELICS`:'';const p=world.p,b=world.enemies.find(e=>e.type==='boss');
