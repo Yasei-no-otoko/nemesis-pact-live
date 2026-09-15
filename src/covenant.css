@@ -17,7 +17,7 @@ body.mobile-ui[data-covenant=true] #pact-hud small{max-height:23px;overflow:hidd
 @media(max-width:600px){body.mobile-ui .cv-voice{margin-top:14px;padding:13px}.mobile-ui .cv-voice-controls{display:grid;grid-template-columns:1fr 1fr}.mobile-ui .cv-voice-controls button{width:100%;min-height:46px}.mobile-ui .cv-voice-controls label{grid-column:1/-1;margin:2px 0 0;width:100%;justify-content:space-between}.mobile-ui .cv-voice-controls input{flex:1;height:38px}.mobile-ui .cv-captions b{width:78px}}
 @media(max-width:600px){body.mobile-ui .cv-actions{position:static;padding:10px 0 0;background:none}body.mobile-ui .covenant-main{padding-bottom:12px}body.mobile-ui .title-actions{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}body.mobile-ui .title-actions .primary{font-size:11px;line-height:1.2;letter-spacing:-.2px;padding-left:9px;padding-right:9px}body.mobile-ui .title-actions .secondary{font-size:12px;padding-left:8px;padding-right:8px}}
 /* The capture controls exist only on the explicit demo page. */
-.demo-record{position:fixed;left:14px;bottom:12px;z-index:1000;background:#142d38;color:#ddfff3;border:1px solid #93dcca;padding:9px 13px;border-radius:6px;font:12px Arial,sans-serif}.demo-record:disabled{opacity:.6}#demo-record-help{position:fixed;left:14px;bottom:54px;max-width:260px;z-index:1000;color:#c1d7da;background:#07121df0;padding:5px 8px;font:10px/1.4 Arial,sans-serif;pointer-events:none}
+body.demo-recording-ui{padding-bottom:128px}.mobile-ui.demo-recording-ui #stage{height:calc(100vh - 128px)!important;height:calc(100dvh - 128px)!important}#demo-controls{position:fixed;left:0;bottom:0;right:0;height:128px;z-index:1000;display:grid;grid-template-columns:minmax(0,1fr) auto;align-content:center;gap:6px;padding:12px 16px;background:#07121d;border-top:1px solid #93dcca55}#demo-controls select,.demo-record{background:#142d38;color:#ddfff3;border:1px solid #93dcca;padding:9px;border-radius:6px;font:12px Arial,sans-serif;max-width:100%;min-width:0;min-height:44px}#demo-controls select{width:100%}.demo-record:disabled{opacity:.6}#demo-record-help{grid-column:1 / -1;color:#c1d7da;font:11px/1.4 Arial,sans-serif;pointer-events:none}
 
 /* Desktop covenant desk: input and binding terms share the fixed game viewport. */
 body:not(.mobile-ui) #covenant-screen{overflow:hidden}
@@ -117,3 +117,5 @@ body.mobile-ui #covenant-screen .cv-proposal{flex:auto;padding:16px}
 body.mobile-ui #covenant-screen #cv-clauses{grid-template-columns:1fr}
 body.mobile-ui #covenant-screen #cv-preview{margin-top:6px}
 @media(max-width:600px){.cv-dialog{padding:18px}.cv-dialog h2{font-size:24px}.cv-dialog .cv-consent{font-size:12px}}
+
+.demo-download{pointer-events:auto;color:#a9efdf;text-decoration:underline;font-weight:bold}

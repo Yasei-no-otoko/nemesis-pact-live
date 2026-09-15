@@ -35,3 +35,27 @@ test('cancel during audio resume ends owned tracks; its late result cannot close
  assert.equal(await f.d.start(),true);f.resume();assert.equal(await first,false);assert.equal(f.d.state,'recording');assert.equal(f.contexts[1].closes,0);
  f.d.stop();f.recorders[0].finish();assert.ok(f.tracks.every(t=>t.stops===1));
 });
+
+test('direct game capture never opens screen sharing and releases its compositor',async()=>{
+ const f=lifecycleFixture();let released=0,drawn=0;const stream=new f.d.MediaStream([]),track={kind:'video',readyState:'live',stop(){this.readyState='ended'},addEventListener(){},removeEventListener(){}};stream.t.push(track);
+ f.d.navigator.mediaDevices.getDisplayMedia=()=>{throw Error('Screen chooser must not open');};
+ f.d.registerGameVideo(()=>({stream,draw(){drawn++},release(){released++}}));
+ assert.equal(await f.d.start(),true);assert.equal(f.d._session.mode,'game');f.d.drawGameFrame();assert.equal(drawn,1);
+ f.d.stop();f.recorders[0].finish();assert.equal(track.readyState,'ended');assert.equal(released,1);f.d.drawGameFrame();assert.equal(drawn,1);
+});
+test('a pending screen chooser remains cancellable from the recorder button',async()=>{
+ const f=lifecycleFixture();f.d.navigator.mediaDevices.getDisplayMedia=()=>new Promise(()=>{});f.d.button={};f.d.mode={value:'display'};f.d.help={};f.d.start();
+ assert.equal(f.d.button.disabled,false);assert.equal(f.d.button.textContent,'Cancel recording start');assert.equal(f.d.mode.disabled,true);
+ assert.equal(f.d.stop(),true);assert.equal(f.d.state,'idle');assert.equal(f.d.mode.disabled,false);
+});
+test('share timeout restores controls and stops late video without touching a new game recording',async()=>{
+ const f=lifecycleFixture();let timer,share,stops=0;f.d.setTimeout=fn=>{timer=fn;return 1};f.d.navigator.mediaDevices.getDisplayMedia=()=>new Promise(r=>share=r);f.d.help={};
+ const pending=f.d.start();timer();assert.equal(f.d.state,'error');assert.match(f.d.help.textContent,/Game recording/);
+ const video={kind:'video',readyState:'live',stop(){stops++;this.readyState='ended'},addEventListener(){},removeEventListener(){}};
+ const capture={stream:new f.d.MediaStream([video]),draw(){},release(){}};f.d.registerGameVideo(()=>capture);assert.equal(await f.d.start(),true);
+ let lateStops=0;share(new f.d.MediaStream([{kind:'video',readyState:'live',stop(){lateStops++;this.readyState='ended'}}]));assert.equal(await pending,false);assert.equal(lateStops,1);assert.equal(f.d.state,'recording');assert.equal(stops,0);
+ f.d.stop();f.recorders[0].finish();assert.equal(stops,1);
+});
+test('failed game capture releases its mixer and reports a recoverable error',async()=>{
+ const f=lifecycleFixture();f.d.help={};f.d.registerGameVideo(()=>{throw Error('Canvas unavailable');});assert.equal(await f.d.start(),false);assert.equal(f.d.state,'error');assert.equal(f.contexts[0].closes,1);assert.ok(f.tracks.every(t=>t.readyState==='ended'));assert.match(f.d.help.textContent,/another recording source/);
+});

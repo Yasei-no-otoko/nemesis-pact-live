@@ -21,6 +21,7 @@
   window.NEMESIS_RENDERER=gpu;
   const sound=new window.PactSound(),keys=new Set(),pressed=new Set();
   window.NemesisDemo?.registerGameAudio?.(()=>{sound.unlock();return sound.createRecordingTap?.();});
+  window.NemesisDemo?.registerGameVideo?.(()=>new window.PactGameCapture($('stage')).start());
   const mouse={x:W/2,y:240,down:false},screens=['menu','loadout','choices','pause','help-screen','settings-screen','result','confirm-screen','hangar','route','ai-screen','archive','covenant-screen','adaptive-screen','debrief-screen'];
   let world=null,screen='menu',previousScreen='menu',difficulty='standard',pauseFrom='game',last=0,accum=0,clock=0,shake=0,flash=0,freeze=0;
   let effects=[],particles=[],trails=[],announceTime=0,toastTime=0,uiTimer=0,trainingStep=0,trainingMoved=0,lastWorldPhase='',muted=false,oldPad=[],oldAxes=[0,0];
@@ -46,7 +47,7 @@
     const landscape=innerWidth>innerHeight,layout=(mobile?'touch':'desktop')+(landscape?'-wide':'-tall');
     const changed=lastLayout!==null&&layout!==lastLayout;lastLayout=layout;
     document.body.classList.toggle('mobile-ui',mobile);document.body.classList.toggle('touch-landscape',mobile&&landscape);
-    if(!mobile){const width=Math.min(innerWidth,innerHeight*C.W/C.H),height=width*C.H/C.W;screenScale=width/C.W;$('stage').style.width=width+'px';$('stage').style.height=height+'px';$('ui').style.transform=`scale(${screenScale})`;}
+    if(!mobile){const width=Math.min(innerWidth,Math.max(160,innerHeight-(document.body.classList.contains('demo-recording-ui')?128:0))*C.W/C.H),height=width*C.H/C.W;screenScale=width/C.W;$('stage').style.width=width+'px';$('stage').style.height=height+'px';$('ui').style.transform=`scale(${screenScale})`;}
     else{$('stage').style.width='';$('stage').style.height='';$('ui').style.transform='';}
     const r=$('stage').getBoundingClientRect(),dpr=Math.min(devicePixelRatio||1,2);
     canvas.width=Math.max(1,Math.round(r.width*dpr));canvas.height=Math.max(1,Math.round(r.height*dpr));
@@ -393,7 +394,7 @@
     gpuActive=gpu.draw({world,w:W,h:H,t:world?world.time:t,backgroundTime:opts.reduced?0:(world?world.time:t),mobile,view,reduced:opts.reduced,shakeX,shakeY,postFX:opts.postfx,bloom:opts.bloom,bgAnim:opts.bganim});
     canvas.style.background=gpuActive?'transparent':'#08121c';
     if(gpuActive)ctx.clearRect(0,0,view.width,view.height);else{ctx.fillStyle='#08121c';ctx.fillRect(0,0,view.width,view.height);}
-    if(mobile&&!world){renderMobileTitle(opts.reduced?0:t);renderFrames++;return;}
+    if(mobile&&!world){renderMobileTitle(opts.reduced?0:t);renderFrames++;window.NemesisDemo?.drawGameFrame?.();return;}
     ctx.save();const f=view.field;ctx.beginPath();ctx.rect(f.x,f.y,f.width,f.height);ctx.clip();
     ctx.translate(view.x,view.y);ctx.scale(view.scale,view.scale);
     ctx.save();if(shake>0&&!opts.reduced)ctx.translate(shakeX,shakeY);
@@ -403,7 +404,7 @@
     ctx.restore();
     if(flash>0&&!opts.reduced){ctx.fillStyle=`rgba(220,244,230,${Math.min(flash,.13)})`;ctx.fillRect(0,0,W,H);}
     if(!mobile){const g=ctx.createLinearGradient(0,0,0,H);g.addColorStop(0,'#050a11b0');g.addColorStop(.14,'#050a1100');g.addColorStop(.80,'#050a1100');g.addColorStop(1,'#050a11aa');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);}
-    ctx.restore();renderFrames++;
+    ctx.restore();renderFrames++;window.NemesisDemo?.drawGameFrame?.();
   }
   function updateEffects(dt){
     shake=Math.max(0,shake-dt*42);flash=Math.max(0,flash-dt);for(const p of particles){p.life-=dt;p.x+=p.vx*dt;p.y+=p.vy*dt;p.vx*=Math.exp(-3*dt);p.vy*=Math.exp(-3*dt);}particles=particles.filter(p=>p.life>0).slice(-650);

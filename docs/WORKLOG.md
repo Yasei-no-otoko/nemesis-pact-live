@@ -1,5 +1,13 @@
 # Work log
 
+## Direct game recording — 2026-09-15
+
+User asked to resolve the cloud browser's indefinitely pending screen-share picker. Implemented an opt-in game-owned canvas compositor and registered it with the existing recorder; default Game recording never calls getDisplayMedia. It captures GPU/2D layers immediately after render and samples visible UI text at up to 10 Hz. Added a separate recording toolbar, recoverable capture errors, display-share timeout/cancel, MP4 MIME fallback and retained re-download link. Existing audio mix and explicit user recording/voice/signature choices are preserved. No model or quota changes.
+
+Preview checks found and fixed two concrete visual issues: an overlay recorder intercepted the LOCAL RULES button, and zero-height HUD containers / CSS-gradient buttons were omitted from the recording. Final toolbar sits outside the game, and extracted frames contain HUD, actual contracts and readable signing buttons. Actual LOCAL RULES negotiation → Sign → combat WebM saved and fully decoded with Opus stereo game audio. The 57.1s early capture contained 551 video frames (9.78 observed fps); the later HUD-corrected capture contained 434 frames through 29.549s (14.65 fps), 1292×808. Requested 60fps is not delivered 60fps; no physical phone or new live voice test is claimed. 320px iframe recording/restart/save/re-download UI also checked. See FINAL-RECORDING for workflow, limits and the download-event tool limitation.
+
+Affected tests passed 24/24 (17 recorder lifecycle + 7 i18n); syntax 58 files and build passed. Final preview `dpl_967mqcRg3DXK7vgpZXnxdoLUGYdQ` READY. Four preview builds were used to resolve observed recording defects; the layout fixture is preview-only. Production publication is pending until the next checkpoint entry. Rollback remains ending-fix production `dpl_AMSCqcVVnM9Ww9AgB9Yyy57awpTF`.
+
 ## Ending localization correction — 2026-09-15
 
 User reported an untranslated Japanese campaign ending on iPhone. Added the missing Pact Keeper story and THE LAST SIGNATURE label, then audited the other ending branches. Completed First Contact honored/unbound/lost stories, ending labels, retry actions, counters and receipt notes. Canonical English and game rules are unchanged. Rebuilt the tracked standalone HTML.

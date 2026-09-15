@@ -80,6 +80,27 @@
     'Shield & advantages removed. Attack rate +25%.':'シールドと強化を解除。攻撃速度 +25%。','RENEGOTIATE':'再交渉','PACT BROKEN':'契約破棄','AMENDMENT USED':'修正使用済み','RENEGOTIATE IN ':'再交渉まで ','R / RENEGOTIATE':'R / 再交渉','Pact broken · no further amendments':'契約破棄 · これ以上の修正不可','Amendment already used':'修正は使用済み','Renegotiate covenant · 1 amendment available':'契約を再交渉 · 修正1回可能','Renegotiate after ':'再交渉まで ',
     'The channel is open.':'通信路は開いています。','Use text, or choose LOCAL RULES.':'テキストを使うか、ローカルルールを選択してください。','VOICE UNAVAILABLE / USE TEXT':'音声利用不可 / テキストを使用','VOICE UNAVAILABLE / USE TEXT OR LOCAL RULES':'音声利用不可 / テキストまたはローカルルールを使用'
   };
+  Object.assign(strings,{
+  "Recording interrupted. A partial video was saved.": "録画が中断されました。中断までの動画を保存しました。",
+  "Download recording": "録画をダウンロード",
+  "Recording source": "録画方式",
+  "Game recording · no screen sharing": "ゲーム録画 · 画面共有なし",
+  "Tab recording · choose a shared tab": "タブ録画 · 共有するタブを選択",
+  "Record demo": "録画開始",
+  "Stop & save": "停止して保存",
+  "Cancel recording start": "録画開始をキャンセル",
+  "Saving…": "保存中…",
+  "Choose the game tab. Game audio and active voice are mixed locally.": "ゲームのタブを選択してください。ゲーム音と接続中の会話音声を端末内で合成します。",
+  "Records game graphics, visible text and active audio. UI decoration is simplified. Nothing is uploaded.": "ゲーム映像・表示中のテキスト・再生中の音声を録画します。UI装飾は簡略化されます。外部へのアップロードはありません。",
+  "Starting game recording…": "ゲーム録画を開始しています…",
+  "Choose this game tab in the share dialog, or cancel here.": "共有ダイアログでゲームのタブを選ぶか、ここでキャンセルしてください。",
+  "Recording game graphics, text and active audio. UI decoration is simplified.": "ゲーム映像・テキスト・再生中の音声を録画中。UI装飾は簡略化されます。",
+  "Recording the shared tab and active game audio.": "共有したタブとゲームの音声を録画中。",
+  "Screen sharing did not start. Select Game recording and try again.": "画面共有が開始されませんでした。「ゲーム録画」を選んで再試行してください。",
+  "Screen sharing was cancelled. Select Game recording to record without sharing.": "画面共有をキャンセルしました。「ゲーム録画」なら共有せずに録画できます。",
+  "Recording unavailable. Try another recording source or your device screen recorder.": "録画を開始できません。別の録画方式か端末の画面録画をお試しください。",
+  "Recording saved. Capture has ended. Nothing was uploaded.": "録画を保存し、収録を終了しました。外部へのアップロードはありません。"
+});
   const patterns=[
     [/^I counted (\d+) returned shots\. Is that still the fight you want\?$/,m=>`お前が撃ち返した弾は${m[1]}発。まだ、その条件で戦い続けるか？`],
     [/^I counted (\d+) reflected shots\. Read the binding clauses below\. Sign only what you intend to keep\.$/,m=>`反射した弾は${m[1]}発だったな。下の条件を読み、守るつもりの約束だけに署名してくれ。`],
