@@ -89,7 +89,7 @@
   );
   let locale='en',host=null,observer=null;
   const texts=new WeakMap(),attributes=new WeakMap();
-  const ignored='script,style,textarea,kbd,[translate="no"],[data-i18n-ignore],#cv-caption-player,#cv-caption-notary,#campaign-caption-player,#campaign-caption-rival';
+  const ignored='script,style,textarea,kbd,[translate="no"],[data-i18n-ignore],#cv-caption-player,#cv-caption-notary,#campaign-caption-player,#campaign-caption-rival,#cv-detail-content';
   function resolveLocale(saved,languages){
     if(saved==='en'||saved==='ja')return saved;
     for(const item of Array.isArray(languages)?languages:[]){const primary=String(item).toLowerCase().split(/[-_]/)[0];if(primary==='ja'||primary==='en')return primary;}

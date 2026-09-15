@@ -52,6 +52,11 @@ with sync_playwright() as pw:
         assert p.locator('html').get_attribute('lang')=='ja'
         if not touch:assert snapshot(p)['assists']=={'autoShot':False,'aimAssist':False}
         p.click('#first-contact');p.click('#cv-open-connection');p.select_option('#cv-mode','local');p.click('#cv-use-local')
+        # Transcript text is verbatim even if speech happens to match a UI dictionary key.
+        p.evaluate('document.getElementById("cv-caption-player").textContent="Settings";document.getElementById("cv-caption-notary").textContent="Full terms & changes"')
+        p.click('#cv-transcript');transcript=p.locator('#cv-detail-content').inner_text()
+        assert 'Settings' in transcript and 'Full terms & changes' in transcript
+        p.click('#cv-detail-done')
         p.fill('#cv-prompt','左を安全にして、弾を遅くしてください。増援は許可します。')
         before=p.evaluate('JSON.stringify(__PACT_TEST__.world)')
         p.click('#cv-propose');p.wait_for_function('()=>!document.getElementById("cv-sign").disabled')
