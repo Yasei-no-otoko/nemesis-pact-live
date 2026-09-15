@@ -92,6 +92,14 @@ with sync_playwright() as pw:
             assert p.locator('#debrief-provider').inner_text().startswith('LOCAL RULES')
             assert p.locator('#debrief-summary').inner_text()
             report['budgetFailureHasLocalRecord']=True
+            c.unroute('**/api/debrief')
+            def invented_number(route):
+                r=route.request.post_data_json['request'];d=p.evaluate('r=>PactDebrief.mock(r)',r);d['strength']='Final hull was 14/16.'
+                route.fulfill(json={'provider':'openai','model':'gpt-5.6-luna','runId':r['runId'],'sequence':r['sequence'],'decision':d,'latencyMs':12})
+            c.route('**/api/debrief',invented_number);p.click('#debrief-analyze');wait(p,'!JSON.parse(render_game_to_text()).debrief.busy')
+            assert p.locator('#debrief-provider').inner_text().startswith('LOCAL RULES')
+            assert '14/16' not in p.locator('#debrief-review').inner_text()
+            report['unrecordedNumberRejected']=True
             # A synthetic hanging upstream proves cancellation and stale-return isolation.
             c.unroute('**/api/debrief');pending=[];c.route('**/api/debrief',lambda route:pending.append(route))
             p.click('#debrief-analyze');wait(p,'JSON.parse(render_game_to_text()).debrief.busy')

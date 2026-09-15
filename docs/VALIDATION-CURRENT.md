@@ -1,3 +1,5 @@
+> Latest September15 update: [Flight debrief production validation](FLIGHT-DEBRIEF.md).299tests,56syntax,actual EN/JA Luna review,final appa53cb20. Earlier release milestones below are historical.
+
 > Current v1.3.0: [Adaptive full-campaign production verification](ADAPTIVE-VALIDATION.md). 279tests;6Live pacts;18Luna analyses;18encounters/6bosses;59s/1080p60 native Resolve film.
 
 > Current v1.2.0: [Campaign GPT-Live-1 and Luna production evidence](CAMPAIGN-VALIDATION.md),260tests and actual spoken correction/sign/combat. Earlier milestone material follows.

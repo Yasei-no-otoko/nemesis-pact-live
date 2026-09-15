@@ -347,3 +347,8 @@ App e91c7e3fb78a2393efe5d51d1b365c108047e127 pushed to public default branch shi
 2026-09-15 JST — Flight debrief implementation
 
 Started from clean92a7a109 on ship/living-covenant. Replaced the result prototype with a dedicated EN/JA review of the finished run, explicit opt-in Luna analysis, canonical aggregate-only protocol, same shared auth/quota/kill controls, per-world/language cache, stale/cancel guards and LOCAL RULES fallback. Read-only: no game mutation. API rewrite shares the intelligence entry point to retain12functions onHobby; legacy operation remains offline. Four Edge softwareWebGL2 UI cases and three real Redis checks passed; mobile emulation and replayed archived finish are clearly labeled. Production real-model checks pending. Ledger before direct3/10,Gateway.046504/20,active0. See docs/FLIGHT-DEBRIEF.md.
+
+
+2026-09-15 JST — Flight debrief production verified
+
+Appa53cb2032e757d87f08254fa53f1d75fb323da96 /READYdpl_DxteZ6M6R4gkuutd5STJTmVmH3BB. Replaced prototype with read-only EN/JA Luna review, consent, cache, local fallback. Actual final responses3285/5588ms; corrected16/16remaining hull verified. Earlier model arithmetic/language mistakes retained; numeric-value guards and regression added.299tests/56syntax/3Redis; final four-size production UI + two live cases pass, no world/score changes. Automated Edge153/softwareWebGL2, archived finished-state replay, phone emulation; no new human microphone/full clear claimed. Ledgerdirect3/10,Gateway.048469/20,added0/.001965over6realcalls,active0. Invoices/grant/infra unknown. Current605536-byte build SHA2973b40e7890238ba05d39439ed5ea39772d46539628a4493e9c6505d170a125. RollbackHinZheFR4AC4ezwYS47Y884pEJm8;checkpointmilestone-30-ai-flight-debrief. Detailsdocs/FLIGHT-DEBRIEF.md.

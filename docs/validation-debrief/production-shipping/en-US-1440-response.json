@@ -1,0 +1,23 @@
+[
+  {
+    "status": 200,
+    "body": {
+      "provider": "openai",
+      "model": "gpt-5.6-luna",
+      "decision": {
+        "headline": "Expedition cleared with strong defense",
+        "summary": "Autopilot demonstration: all 6 stages and 6 contracts were completed on Story difficulty, with 74 reflected bullets and 16/16 hull remaining.",
+        "strength": "The run combined 74 reflected bullets with only 2 hull points lost, while defeating 6 bosses and 242 enemies for a score of 104920.",
+        "improvement": "For future practice, try moving and dashing more deliberately while conserving Nova for dangerous encounters, even with 16/16 hull remaining.",
+        "nextRun": "Consider another 6-stage Expedition run and aim to preserve the strong defense while building consistency beyond 33 grazes."
+      },
+      "runId": "61f97b11-dedc-4f9b-b6d0-5290da348e51",
+      "sequence": 1,
+      "latencyMs": 3285,
+      "reason": "Validated end-of-run debrief.",
+      "billedBy": "vercel-ai-gateway",
+      "reservedMicrodollars": 10000,
+      "accountedMicrodollars": 317
+    }
+  }
+]

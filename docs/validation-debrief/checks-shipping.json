@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-09-15T06:21:31.605115+00:00",
+  "appCommit": "a53cb2032e757d87f08254fa53f1d75fb323da96",
+  "unitTests": {
+    "passed": 299,
+    "failed": 0,
+    "durationMs": 24599.5869
+  },
+  "syntaxFiles": 56,
+  "node": "22.23.2",
+  "edgeBinaryVersion": "153.0.4234.32",
+  "renderer": "software WebGL2 / PBR",
+  "realModelCallsTotal": 6,
+  "accountedIncrementMicrodollars": 1965,
+  "productionContentReviewed": true,
+  "physicalMobile": false
+}

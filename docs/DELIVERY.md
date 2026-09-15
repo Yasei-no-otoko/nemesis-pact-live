@@ -1,6 +1,6 @@
 # Delivery — NEMESIS PACT v1.3.0
 
-> Current live UI: English / 日本語 with browser-language detection, persisted title/Settings selectors and Auto Shot/Aim Assist on for new users. App `e91c7e3`, READY `dpl_HinZheFR4AC4ezwYS47Y884pEJm8`. [Current UI validation and rollback](JAPANESE-UI.md). The release/media references below describe the earlier immutable v1.3.0 campaign checkpoint.
+> Current live app: bilingual Flight debrief with explicit-consent GPT-5.6 Luna analysis, recorded stats, cached feedback and LOCAL RULES fallback. App `a53cb2032e757d87f08254fa53f1d75fb323da96`, READY `dpl_DxteZ6M6R4gkuutd5STJTmVmH3BB`;299tests /56syntax, final real EN/JA reviews3285/5588ms. [Current validation, budgets and rollback](FLIGHT-DEBRIEF.md). Japanese UI and new-user Auto Shot/Aim Assist remain enabled. The release/media references below describe the earlier immutable v1.3.0 campaign checkpoint.
 
 [Play](https://nemesis-pact-live.vercel.app/) · [Repository](https://github.com/Yasei-no-otoko/nemesis-pact-live) · [59-second1080p60 demo](https://www.circle-hydrangea.net/nemesis-pact-live/)
 

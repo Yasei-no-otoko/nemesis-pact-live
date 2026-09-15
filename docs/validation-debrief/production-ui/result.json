@@ -1,0 +1,77 @@
+{
+  "checkedAt": "2026-09-15T06:20:03.614809+00:00",
+  "url": "https://nemesis-pact-live.vercel.app/",
+  "realModelCalls": false,
+  "physicalMobile": false,
+  "stateSource": "Archived actual v1.3.0 automated campaign, replayed into a finished-state UI fixture; no new campaign clear claimed",
+  "cases": [
+    {
+      "locale": "en-US",
+      "viewport": [
+        1440,
+        900
+      ],
+      "touchEmulation": false,
+      "noCallBeforeConsent": true,
+      "worldAndScoresUnchanged": true,
+      "cachePreventsRepeatCalls": true,
+      "cacheRestoredAfterProviderOrConsentChange": true,
+      "requests": 1,
+      "responses": [],
+      "pageErrors": [],
+      "renderer": "WEBGL2 / PBR"
+    },
+    {
+      "locale": "ja-JP",
+      "viewport": [
+        1280,
+        720
+      ],
+      "touchEmulation": false,
+      "noCallBeforeConsent": true,
+      "worldAndScoresUnchanged": true,
+      "cachePreventsRepeatCalls": true,
+      "cacheRestoredAfterProviderOrConsentChange": true,
+      "requests": 1,
+      "responses": [],
+      "pageErrors": [],
+      "renderer": "WEBGL2 / PBR"
+    },
+    {
+      "locale": "ja-JP",
+      "viewport": [
+        430,
+        932
+      ],
+      "touchEmulation": true,
+      "noCallBeforeConsent": true,
+      "worldAndScoresUnchanged": true,
+      "cachePreventsRepeatCalls": true,
+      "cacheRestoredAfterProviderOrConsentChange": true,
+      "requests": 1,
+      "responses": [],
+      "pageErrors": [],
+      "renderer": "WEBGL2 / PBR"
+    },
+    {
+      "locale": "ja-JP",
+      "viewport": [
+        320,
+        568
+      ],
+      "touchEmulation": true,
+      "noCallBeforeConsent": true,
+      "worldAndScoresUnchanged": true,
+      "cachePreventsRepeatCalls": true,
+      "cacheRestoredAfterProviderOrConsentChange": true,
+      "requests": 1,
+      "responses": [],
+      "pageErrors": [],
+      "renderer": "WEBGL2 / PBR"
+    }
+  ],
+  "budgetFailureHasLocalRecord": true,
+  "unrecordedNumberRejected": true,
+  "cancellationRetainsLocalRecord": true,
+  "passed": true
+}

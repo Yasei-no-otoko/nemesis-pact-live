@@ -1,5 +1,7 @@
 # Flight debrief — September 15, 2026
 
+> Final production: app `a53cb2032e757d87f08254fa53f1d75fb323da96`, READY `dpl_DxteZ6M6R4gkuutd5STJTmVmH3BB`, checkpoint `milestone-30-ai-flight-debrief`. All299tests /56syntax checks passed. [Current real English/Japanese reviews](validation-debrief/production-shipping/result.json). Earlier checkpoints below preserve the detected issues and corrections.
+
 The campaign result screen now opens a dedicated flight review instead of the old prototype panel. It shows the actual finished run's counters, equipment and pact record alongside a concise five-part review. Both English and Japanese UI and generated review text are supported. Victory and defeat are valid outcomes; First Contact keeps its existing specialized result screen.
 
 Choose **Flight debrief → GPT-5.6 Luna → consent → Analyze** (日本語: **フライトの振り返り → GPT-5.6 Lunaで振り返る**). The server sends only bounded aggregate counters, outcome, difficulty, demo status and canonical equipment/pact IDs to the model. Voice, transcripts, screenshots, seed, account details and the application's run ID are not model inputs. Autopilot runs are explicitly described as demonstrations rather than human skill. Counters cannot establish precise movement or the cause of a result; the UI explains this limitation.
@@ -41,3 +43,21 @@ After the first two real calls, the ledger is direct$3.000000 /$10 andGateway$0.
 The second production UI/transport checks passed on e5a8d3a / READYdpl_DvmsGb8c5dAbrsnFyx2962rQxKfL, but **content review failed**: Japanese prose inferred14/16remaining hull from16maximum minus2cumulative damage, ignoring restoration. The actual record is16/16. This response is retained in production-live-final as evidence of the detected model error, not correct analysis. English also called a2damage run flawless.
 
 Added matching client/server rejection of numerical literals absent from the recorded counters (except0/1for plain enumerations); an invalid review falls back to local facts while still accounting for inference usage. The model is explicitly told final hull is authoritative, healing exists, never to subtract cumulative damage, and not to call damaged runs flawless. This numeric allowlist is not a guarantee that all prose or associations are correct; authoritative counters remain visible. Two focused regressions reproduce healed-hull arithmetic and verify accounting/local replacement. A third pair of real requests will validate this final change; six total attempts reserve at most$0.06 within unchanged caps.
+
+
+## Final production verification
+
+The [production game](https://nemesis-pact-live.vercel.app/) serves605536bytes, SHA256`2973b40e7890238ba05d39439ed5ea39772d46539628a4493e9c6505d170a125`, identical to the final local hosted build. [Deployment manifest](validation-debrief/deployment-shipping.json). App source is`a53cb2032e757d87f08254fa53f1d75fb323da96` on`ship/living-covenant`; evidence checkpoint is`milestone-30-ai-flight-debrief`.
+
+| Final real response | HTTP/model | Server latency | Accounted cost | Content review |
+|---|---|---|---|---|
+| English1440×900 | 200 /gpt-5.6-luna |3285ms |$0.000317 | Correct16/16remaining hull,2hull lost,74reflected bullets,6bosses,242eliminations,6contracts; explicit autopilot |
+| Japanese430×932 | 200 /gpt-5.6-luna |5588ms |$0.000391 | Correct16/16remaining hull,2hull lost,74reflected bullets,371seconds,6bosses,6contracts; Japanese and explicit autopilot |
+
+Both final live browser cases passed consent, unchanged world/score, cache reopening, provider/consent toggling without additional requests, Back/Escape and no horizontal overflow/page errors. [Actual structured outputs](validation-debrief/production-shipping/result.json). Final four-size production UI regression additionally injects budget failure, unrecorded14/16model output and a late canceled response; each retains accurate LOCAL RULES. [Production UI fixture results](validation-debrief/production-ui/result.json). Model fixtures are not counted as real inference.
+
+Final unit suite299/299,0failures,24599.5869ms onNode22.23.2;56syntax files and standalone/hosted build passed. Windows Edge153.0.4234.32, automated headless softwareWebGL2/PBR. Phones were emulated at430×932 and320×568; desktop1440×900 and1280×720. No new physical iPhone, microphone, continuous full-campaign performance or human-operation claim is made by these debrief checks. Archived completed-run fixture and generated advice remain distinguished from authoritative counters.
+
+Six real inference attempts across the three reviewed deployments cost259+343+279+376+317+391=1965microdollars ($0.001965), including the corrected-quality attempts. [Final ledger](validation-debrief/budget-shipping.json),2026-09-15T06:20:13.962Z: directOpenAI$3.000000/$10 (added$0);Gateway$0.048469/$20 (added$0.001965);active0;killnull. This matches the total measured increment. Vercel hosting charges and provider invoice/grant uncertainties remain as described above. No budget or plan changes were made.
+
+The prototype result route is replaced, both languages have real production proof, the detected healed-hull issue is covered by regression, and GitHub source/evidence are pushed. No required work remains for this debrief update. Rollback remains the previous Japanese UI deployment described above; no credentials, counters or media are reset.

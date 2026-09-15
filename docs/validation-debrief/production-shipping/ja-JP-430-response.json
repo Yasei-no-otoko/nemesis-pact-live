@@ -1,0 +1,23 @@
+[
+  {
+    "status": 200,
+    "body": {
+      "provider": "openai",
+      "model": "gpt-5.6-luna",
+      "decision": {
+        "headline": "オートパイロット実演で全6ステージ制覇",
+        "summary": "オートパイロット実演で、ストーリー難度を371秒で勝利。ボス6体を撃破し、契約6/6を維持、最終耐久は16/16でした。",
+        "strength": "弾74発を反射し、33回のかすりを記録。失った耐久は2にとどまり、スコアは104920でした。",
+        "improvement": "今後の練習では、移動やダッシュで被弾機会を抑え、ノヴァを要所で温存することを試せます。これは助言です。",
+        "nextRun": "次回も契約の維持を意識しつつ、反射の安定と回避を練習してください。"
+      },
+      "runId": "a83cb71e-6204-4354-aacd-0eb229eb75b3",
+      "sequence": 1,
+      "latencyMs": 5588,
+      "reason": "Validated end-of-run debrief.",
+      "billedBy": "vercel-ai-gateway",
+      "reservedMicrodollars": 10000,
+      "accountedMicrodollars": 391
+    }
+  }
+]
