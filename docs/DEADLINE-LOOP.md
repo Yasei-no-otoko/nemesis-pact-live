@@ -20,6 +20,12 @@ After **22:30 JST**, only submission blockers, regressions and essential clarity
 
 The official submission form and rights attestations remain the representative's final action; this request to improve the game is not authorization to submit legal confirmations. Prepare the actual links and final copy first.
 
+## Latest checkpoint — revision impact and retry clarity, 18:24 JST
+
+First Contact now breaks the signed record into revision-specific, recorded effects: bullets erased and reflected hit damage from one signature until the next. A breach snapshot prevents play after contract destruction from being credited to the void terms. The retry message and action make clear that the same battlefield restarts with an unsigned negotiation and still requires Sign. Source `2dbc106f82d230ef067004624277cd1eb32265dd`; production READY `dpl_jjZJRD4fv99WWvDwxGTmYS2b4SHu`; rollback `dpl_HMUQpEts6YvcHm8L9ZhCv6op1tDv`.
+
+Full tests 310/310, syntax 58 and build passed. Browser verification covered an ordinary-control two-signature loss at 1280×800 and a labeled deterministic victory fixture at 390×844 / 320Õ68 with Japanese UI. No live AI, human play, physical phone or microphone claim comes from this iteration. Public bytes match the source build and the fixture is excluded. This outcome/retry slice is complete; do not redo it in the next loop.
+
 ## Latest checkpoint — direct game recording, 17:28 JST
 
 The user-reported screen-share blocker is resolved by the default Game recording path at `/?demo=1`. Current source `dc63f6e3bd8c8d9903e366bbb6c5b03c151cbc83`; production READY `dpl_HMUQpEts6YvcHm8L9ZhCv6op1tDv`; rollback `dpl_AMSCqcVVnM9Ww9AgB9Yyy57awpTF`. Actual cloud WebM video/game-audio capture, decoding, HUD/text frames and a 320px iframe were checked. Keep the qualification: samples were roughly 10–15fps, UI decoration is simplified, and no real microphone/Live voice session was recorded. See latest DELIVERY/WORKLOG/FINAL-RECORDING; earlier ending translations and feedback improvements remain intact. Next improvement candidate is still First Contact outcome/retry clarity. Do not repeat this recording implementation as a new slice or claim these test clips replace the existing submission movie.
@@ -30,7 +36,6 @@ The user-reported untranslated Pact Keeper ending is fixed, together with missin
 
 ## Next candidates, ranked by player impact
 
-- First Contact ending/retry: make the player's changed terms and resulting play style the memorable conclusion. Any comparison must use actual recorded effects, with no invented avoided damage or AI actions.
 - Combat readability: verify laser warnings, parry feedback, low-health guidance, touch controls and critical text at small sizes. Keep guidance short and avoid covering bullets.
 - Initial voice/text flow: reduce confusion when consent is not yet given, audio is unavailable, or a request falls back to local rules. Never label the fallback as live AI.
 - End-to-end campaign regression and final submission wording. The current 59-second movie is a separately identified earlier checkpoint; do not claim it shows newly changed screens.

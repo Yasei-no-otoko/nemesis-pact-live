@@ -1,5 +1,13 @@
 # Delivery — NEMESIS PACT v1.3.0
 
+## Current First Contact outcome — September 15, 18:24 JST
+
+Source **`2dbc106f82d230ef067004624277cd1eb32265dd`**, production READY **`dpl_jjZJRD4fv99WWvDwxGTmYS2b4SHu`**. [Play](https://nemesis-pact-live.vercel.app/).
+
+The signed record now shows the actual bullets erased and reflected hit damage for each covenant revision. Counts are split at the next signature, or at the exact breach snapshot when the player breaks the pact. The retry copy states that a new unsigned negotiation begins on the same battlefield, retaining the explicit Sign requirement. English/Japanese UI is complete for the new copy.
+
+Full Node suite 310/310, targeted suite 33/33, syntax 58 and build passed. Normal automated browser controls completed two signatures and a loss result at 1280×800. A clearly labeled deterministic preview fixture completed a victory and checked 390×844 / 320Õ68 mobile emulation, Japanese text, scrolling, exact revision deltas and retry. Public HTTP 200 matches the hosted build exactly: SHA256 `cd1a6e932a07ea5e7993de0b603e783366ab51b34da6f9d45cee2217f7795fe8`; the preview-only fixture is 404 in production. No live model or microphone call was used for this slice. Rollback **`dpl_HMUQpEts6YvcHm8L9ZhCv6op1tDv`**; preserve quotas and Redis records.
+
 ## Current recording fix — September 15, 17:28 JST
 
 Source **`dc63f6e3bd8c8d9903e366bbb6c5b03c151cbc83`**, production READY **`dpl_HMUQpEts6YvcHm8L9ZhCv6op1tDv`**. [Open recording mode](https://nemesis-pact-live.vercel.app/?demo=1).
