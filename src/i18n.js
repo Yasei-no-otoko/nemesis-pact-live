@@ -7,6 +7,7 @@
   'use strict';
   const KEY='nemesis.language.v1',strings=Object.assign(Object.create(null),data||{},ui||{},dynamic?.strings||{}),patterns=dynamic?.patterns||[];
   Object.assign(strings,{
+    'Review the data-sharing consent, or choose LOCAL RULES. This request has not been sent.':'データ送信への同意内容を確認するか、LOCAL RULESを選んでください。この要求はまだ送信していません。',
     'LASER / KEEP MOVING':'レーザー / 移動で回避','SPACE / DASH THROUGH':'SPACE / ダッシュで通過',
     'Magenta lasers ignore parries and sanctuaries.':'紫のレーザーはパリィや安全地帯では防げません。',
     'LASER → DASH':'レーザー → ダッシュ','LASER → keep moving':'レーザー → 移動で回避',

@@ -589,6 +589,7 @@
   function openParley(){if(world?.mode==='first-contact'&&world.requestParley()){openCovenant();return true;}if(screen==='game')toast('PARLEY / Available after 8 seconds, once per fight.');return false;}
   function closeCovenant(){invalidateCovenant();if(world?.cancelParley()){show('game');updateHUD();}else home();}
   async function proposeCovenant(options={}){if(cvSigning||screen!=='covenant-screen'||world!==cvWorld)return null;const target=world,revision=world.revision;let request;
+    if($('cv-mode').value==='server'&&!$('cv-consent').checked){const message='Review the data-sharing consent, or choose LOCAL RULES. This request has not been sent.';$('cv-status').textContent=T(message);$('cv-session-status').textContent=T(message);if(!$('cv-connection-dialog').open)$('cv-connection-dialog').showModal();return null;}
     try{request=target.request($('cv-prompt').value);}catch{$('cv-status').textContent='Write between 1 and 400 characters. No rules changed.';return;}
     invalidateCovenant('Preparing a counteroffer. The battle is not running.',options.delegated===true);const id=++cvRequestId;$('cv-propose').disabled=true;$('covenant-screen').dataset.proposal='pending';$('cv-proposal').setAttribute('aria-busy','true');
     try{const reply=await cvClient.propose(request,{mode:$('cv-mode').value,consent:$('cv-consent').checked,session:cvSession,runId:cvRunId,intentVersion:id});if(id!==cvRequestId||world!==target||world.revision!==revision||screen!=='covenant-screen')return null;
@@ -612,7 +613,8 @@
   function setSigningUI(pending){for(const id of ['cv-prompt','cv-mode','cv-consent','cv-propose','cv-open-connection'])$(id).disabled=pending;for(const button of document.querySelectorAll('[data-cv-example]'))button.disabled=pending;$('cv-sign').disabled=pending||!cvProposal;}
   async function refreshConnection(){
     const online=window.NEMESIS_HOSTED&&$('cv-mode').value==='server'&&$('cv-consent').checked;
-    $('cv-local-quick').hidden=$('cv-mode').value==='local'||online;
+    // Keep an explicit, no-AI escape route visible even if the online service fails.
+    $('cv-local-quick').hidden=$('cv-mode').value==='local';
     document.querySelector('.cv-voice').dataset.available=String(online);
     $('cv-voice-start').disabled=true;
     $('cv-open-connection').textContent=online?'OpenAI / Settings':window.NEMESIS_HOSTED?'Enable OpenAI / Consent':'LOCAL RULES / Settings';

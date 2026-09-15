@@ -1,0 +1,8 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Consent layout QA — preview only</title>
+<style>body{background:#101d28;color:white;font:14px system-ui}nav{display:flex;gap:12px;margin:12px}select,button{padding:8px}iframe{display:block;width:390px;height:844px;border:1px solid #678}pre{white-space:pre-wrap}</style>
+<nav><strong>Desktop iframe layout check · no physical-device claim</strong><label>Viewport <select id="size"><option value="390,844">390 × 844</option><option value="320,568">320 × 568</option></select></label><button id="inspect">Inspect layout</button></nav>
+<iframe id="game" title="Game under test" src="/"></iframe><pre id="report" role="status">Use normal game controls; do not start paid AI.</pre>
+<script>
+const frame=document.getElementById('game');document.getElementById('size').onchange=e=>{const [w,h]=e.target.value.split(',');frame.style.width=w+'px';frame.style.height=h+'px';};
+document.getElementById('inspect').onclick=()=>{const doc=frame.contentDocument,d=doc.getElementById('cv-connection-dialog');document.getElementById('report').textContent=JSON.stringify({width:frame.contentWindow.innerWidth,overflow:doc.documentElement.scrollWidth>frame.contentWindow.innerWidth,dialogOpen:d.open,dialogOverflow:d.scrollWidth>d.clientWidth+1,consent:doc.getElementById('cv-consent').checked,message:doc.getElementById('cv-session-status').textContent,signDisabled:doc.getElementById('cv-sign').disabled,localShortcutHidden:doc.getElementById('cv-local-quick').hidden},null,2);};
+</script></html>
