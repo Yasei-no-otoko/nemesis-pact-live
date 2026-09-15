@@ -1,0 +1,126 @@
+{
+  "checkedAt": "2026-09-15T00:31:36Z",
+  "url": "https://nemesis-pact-live.vercel.app",
+  "verificationCheckoutCommit": "4ee074d2a76ceaa29ec59d17e3928d142309f07c",
+  "productionSourceCommit": "4ee074d2a76ceaa29ec59d17e3928d142309f07c",
+  "deploymentId": "dpl_BQpYDUTtvPG15BgcahdQAmS4fGsC",
+  "browser": "153.0.4234.32",
+  "viewport": [
+    1280,
+    800
+  ],
+  "os": "Windows 11",
+  "operation": "automated native Edge",
+  "input": "Windows Microsoft Zira Desktop TTS through Web Audio MediaStream",
+  "humanMicrophone": false,
+  "controlledTime": false,
+  "realApi": true,
+  "maximumLiveSessions": 2,
+  "maximumGatewayProposals": 16,
+  "maximumReservationUsd": {
+    "openai": 0.1,
+    "gateway": 0.16
+  },
+  "connectionMs": [],
+  "utterances": {},
+  "fixtureSha256": {
+    "left": "e060df0fd30a5897215c559e91cf0559cec38f5f56afc013e1233f206bec1828",
+    "correction": "f5521bdc18ea0f539ad14714d303bc35761398c29a6713f596d5e23d9a1f1329",
+    "amendment": "11ce09dc55a01319151133e4a49fad83c227606ee0c3311274f2dea1840ba15a"
+  },
+  "passed": false,
+  "error": "Page.wait_for_function: Timeout 20000ms exceeded.",
+  "failureState": {
+    "build": "1.0.0",
+    "screen": "covenant-screen",
+    "negotiationStep": "negotiate",
+    "coordinates": "origin top-left; x right; y down",
+    "renderer": "WEBGPU / COMPUTE",
+    "arena": {
+      "width": 1280,
+      "height": 800
+    },
+    "phase": "covenant",
+    "seconds": 0,
+    "player": {
+      "x": 640,
+      "y": 552,
+      "hp": 10,
+      "energy": 50
+    },
+    "enemies": [],
+    "hostileBullets": 0,
+    "revision": 0,
+    "spec": null,
+    "proposal": null,
+    "effects": {
+      "shielded": 0,
+      "reflectedDamage": 0,
+      "gunDamage": 0,
+      "amendments": 0
+    },
+    "voice": "starting",
+    "liveVoice": {
+      "model": "gpt-live-1",
+      "connectionStarted": 0,
+      "sessionClosed": 0,
+      "delegationRequests": 0,
+      "proposalsReturned": 0,
+      "openaiProposals": 0,
+      "signedContracts": 0,
+      "lastState": "starting",
+      "status": "not-used"
+    }
+  },
+  "events": [
+    {
+      "type": "session.usage.updated",
+      "at": 22197.200000047684,
+      "delta": null,
+      "start_ms": null,
+      "end_ms": null,
+      "usage": {
+        "seconds": 15
+      },
+      "reason": null,
+      "errorCode": null
+    }
+  ],
+  "sent": [],
+  "inputSignObservations": [],
+  "tracks": [
+    "ended"
+  ],
+  "peers": [
+    "closed"
+  ],
+  "api": [
+    {
+      "path": "/api/session",
+      "status": 200
+    },
+    {
+      "path": "/api/voice/start",
+      "status": 200,
+      "model": "gpt-live-1"
+    },
+    {
+      "path": "/api/voice/stop",
+      "status": 200,
+      "accountedMicrodollars": 50000,
+      "stopped": true,
+      "uncertain": false
+    }
+  ],
+  "pageErrors": [],
+  "counts": {
+    "liveStarts": 1,
+    "proposals": 0,
+    "signs": 0,
+    "confirmedStops": 1
+  },
+  "accountedMicrodollars": {
+    "openai": 50000,
+    "gateway": 0
+  }
+}

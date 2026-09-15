@@ -307,3 +307,8 @@ Baseline229/229. Initial final suite detected Windows CRLF conversion in the byt
 
 2026-09-15 JST — v1.0.0 local release candidate
 New concept and actual screenshot loop produced the signed-record UI. Final229/229 tests23837.0142ms;34syntax/build,18offlineassertions,5polishsizes,7contractlayouts,12FirstContact and12six-sector simulations passed. The dedicated encounter matrix passes3sizes withtwoSigncontinuity,exactmetrics,honored/unbound/lost,retrymemoryandcampaignnavigation. LOCAL RULES now recognizes explicit English remove/drop/without sanctuary; screenshot review caught the previous counteroffer. No paid API path or quota changed. Next: commit/push milestone20, production deployment, bounded Live/Luna regression and public release. Rollback predecessor CsUJ386UFWLPKg4UN7r1jvCpcuoB.
+
+
+2026-09-15 JST — v1.0.0 production verified
+
+App 4ee074d2a76ceaa29ec59d17e3928d142309f07c / READY dpl_BQpYDUTtvPG15BgcahdQAmS4fGsC; exact hosted 422405-byte SHA b22cd4ff5de7985ab0d8e49386b3ba7c306673c39715e8886858a5bd6f437e75. Final real Live/Luna test passed with two signatures and atomic HP9/bossHP2844/time8.558333 continuity; all seven attempted sessions confirmed stopped. Prior two startup-event timeouts and a post-resume-hit assertion failure are retained. No voice code changed; synthetic graph and read-only timing instrumentation corrected. Ledger direct2.60/10,Gateway.036070/20,active0. Production7layout and3ending cases passed. Public v1.0.0 release remains pending. See V1.0.0-VALIDATION.md.

@@ -46,6 +46,10 @@ SCRIPT = r"""(()=>{
  navigator.mediaDevices.getUserMedia=async()=>{
    probe.audio=new AudioContext();probe.contexts.push(probe.audio);await probe.audio.resume();
    probe.destination=probe.audio.createMediaStreamDestination();
+   // Keep a real-time silent input graph running before the first utterance,
+   // as a physical microphone does. An unconnected destination has no producer.
+   const silence=probe.audio.createConstantSource();silence.offset.value=0;
+   silence.connect(probe.destination);silence.start();probe.sources.push(silence);
    probe.tracks.push(...probe.destination.stream.getTracks());return probe.destination.stream;
  };
  window.remoteLevel=()=>{const a=probe.analysers.at(-1);if(!a)return 0;
@@ -106,7 +110,13 @@ with sync_playwright() as pw:
             && !document.querySelector('#cv-sign').disabled;}''',arg=zone,timeout=30000)
         return state(page)
     try:
-        page.goto(URL,wait_until='networkidle'); page.click('#first-contact')
+        page.goto(URL,wait_until='networkidle')
+        # Read-only snapshots around the actual synchronous application. Do not
+        # freeze RAF: a projectile can legitimately land before the next browser poll.
+        page.evaluate('''()=>{probe.signatures=[];const proto=PactCovenant.Run.prototype,apply=proto.signCovenant;
+          proto.signCovenant=function(...args){const snapshot=()=>({hp:this.p.hp,bossHp:this.enemies.find(e=>e.type==='boss')?.hp,seconds:this.time,revision:this.revision});
+            const before=snapshot(),accepted=apply.apply(this,args),after=snapshot();probe.signatures.push({before,after,accepted});return accepted;};}''')
+        page.click('#first-contact')
         page.click('#cv-open-connection'); page.check('#cv-consent'); page.click('#cv-connection-done')
         begin_voice(1); speak('left')
         # Finish our first utterance, then interrupt the first actual reply. The
@@ -143,9 +153,13 @@ with sync_playwright() as pw:
         page.screenshot(path=str(OUT/'03-amendment-voice-contract.png'))
         page.click('#cv-sign'); page.wait_for_function('()=>JSON.parse(render_game_to_text()).revision===2')
         after=state(page); report['afterAmendment']=after
-        assert after['spec']==spec and after['player']['hp']==before['player']['hp']
+        report['atomicAmendment']=page.evaluate('probe.signatures.at(-1)')
+        atomic=report['atomicAmendment'];assert atomic['accepted']
+        assert all(atomic['before'][k]==atomic['after'][k] for k in ('hp','bossHp','seconds')), 'Signing reset combat state'
+        assert atomic['before']['revision']==1 and atomic['after']['revision']==2
+        assert after['spec']==spec and after['player']['hp']<=before['player']['hp']
         assert before['seconds']<=after['seconds']<before['seconds']+.5
-        assert [e['hp'] for e in after['enemies'] if e['type']=='boss']==[e['hp'] for e in before['enemies'] if e['type']=='boss']
+        assert all(e['hp']<=next(b['hp'] for b in before['enemies'] if b['type']=='boss') for e in after['enemies'] if e['type']=='boss'), 'Boss health reset after resuming'
         page.screenshot(path=str(OUT/'04-amended-combat.png'))
         report['passed']=True
     except Exception as error:

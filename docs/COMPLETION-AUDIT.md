@@ -1,3 +1,5 @@
+> Current v1.0.0 production and live verification: [detailed evidence](V1.0.0-VALIDATION.md). Versioned source publication is pending; the historical completed delivery audit below describes the earlier release.
+
 # Completion audit — final public delivery
 
 GOAL section10 required deliverables are verified within the evidence scopes below. Production source is `cd333643ba038bfe97b49ac3f641c563520d7f61`, READY `dpl_D8wY2pL3CSWN7tzg3R9qzKTXf91o`. Final evidence tag is `milestone-17-public-submission`.

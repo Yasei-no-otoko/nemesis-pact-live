@@ -1,29 +1,86 @@
 {
-  "checkedAt": "2026-09-15T00:17:04.549Z",
+  "checkedAt": "2026-09-15T00:40:05.903Z",
   "unit": "microdollars; conservative reservation accounting, not invoice",
-  "records": [],
+  "records": [
+    {
+      "test": "v1.0.0 synthetic live regression",
+      "state": "stopped",
+      "reason": "application",
+      "elapsedMs": 20287,
+      "startedAt": 1789432303249,
+      "stoppedAt": 1789432323536
+    },
+    {
+      "test": "v1.0.0 synthetic live regression",
+      "state": "stopped",
+      "reason": "application",
+      "elapsedMs": 19388,
+      "startedAt": 1789432394383,
+      "stoppedAt": 1789432413771
+    },
+    {
+      "test": "v1.0.0 synthetic live regression",
+      "state": "stopped",
+      "reason": "application",
+      "elapsedMs": 20256,
+      "startedAt": 1789432422697,
+      "stoppedAt": 1789432442953
+    },
+    {
+      "test": "v1.0.0 synthetic live regression",
+      "state": "stopped",
+      "reason": "application",
+      "elapsedMs": 18958,
+      "startedAt": 1789432609744,
+      "stoppedAt": 1789432628702
+    },
+    {
+      "test": "v1.0.0 synthetic live regression",
+      "state": "stopped",
+      "reason": "application",
+      "elapsedMs": 13414,
+      "startedAt": 1789432637644,
+      "stoppedAt": 1789432651058
+    },
+    {
+      "test": "v1.0.0 synthetic live regression",
+      "state": "stopped",
+      "reason": "application",
+      "elapsedMs": 19689,
+      "startedAt": 1789432724917,
+      "stoppedAt": 1789432744606
+    },
+    {
+      "test": "v1.0.0 synthetic live regression",
+      "state": "stopped",
+      "reason": "application",
+      "elapsedMs": 13731,
+      "startedAt": 1789432753533,
+      "stoppedAt": 1789432767264
+    }
+  ],
   "totals": {
     "openai": [
       "global",
-      "2250000",
+      "2600000",
       "kind:text",
       "100000",
       "kind:voice",
-      "2150000",
+      "2500000",
       "pool:public",
-      "1350000",
+      "1700000",
       "pool:verification",
       "900000"
     ],
     "gateway": [
-      "global",
-      "32718",
       "kind:text",
-      "32718",
+      "36070",
       "pool:public",
-      "17152",
+      "20504",
       "pool:verification",
-      "15566"
+      "15566",
+      "global",
+      "36070"
     ],
     "kill": null,
     "active": 0

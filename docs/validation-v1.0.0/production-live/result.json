@@ -1,0 +1,1278 @@
+{
+  "checkedAt": "2026-09-15T00:38:38Z",
+  "url": "https://nemesis-pact-live.vercel.app",
+  "verificationCheckoutCommit": "4ee074d2a76ceaa29ec59d17e3928d142309f07c",
+  "productionSourceCommit": "4ee074d2a76ceaa29ec59d17e3928d142309f07c",
+  "deploymentId": "dpl_BQpYDUTtvPG15BgcahdQAmS4fGsC",
+  "browser": "153.0.4234.32",
+  "viewport": [
+    1280,
+    800
+  ],
+  "os": "Windows 11",
+  "operation": "automated native Edge",
+  "input": "Windows Microsoft Zira Desktop TTS through Web Audio MediaStream",
+  "humanMicrophone": false,
+  "controlledTime": false,
+  "realApi": true,
+  "maximumLiveSessions": 2,
+  "maximumGatewayProposals": 16,
+  "maximumReservationUsd": {
+    "openai": 0.1,
+    "gateway": 0.16
+  },
+  "connectionMs": [
+    2578,
+    1360
+  ],
+  "utterances": {
+    "left": {
+      "at": 6694.100000023842,
+      "durationSeconds": 2.8689795918367347
+    },
+    "correction": {
+      "at": 10587.699999988079,
+      "durationSeconds": 9.068163265306122
+    },
+    "amendment": {
+      "at": 35200.69999998808,
+      "durationSeconds": 7.558185941043084
+    }
+  },
+  "fixtureSha256": {
+    "left": "e060df0fd30a5897215c559e91cf0559cec38f5f56afc013e1233f206bec1828",
+    "correction": "f5521bdc18ea0f539ad14714d303bc35761398c29a6713f596d5e23d9a1f1329",
+    "amendment": "11ce09dc55a01319151133e4a49fad83c227606ee0c3311274f2dea1840ba15a"
+  },
+  "beforeCorrection": {
+    "build": "1.0.0",
+    "screen": "covenant-screen",
+    "negotiationStep": "negotiate",
+    "coordinates": "origin top-left; x right; y down",
+    "renderer": "WEBGPU / COMPUTE",
+    "arena": {
+      "width": 1280,
+      "height": 800
+    },
+    "phase": "covenant",
+    "seconds": 0,
+    "player": {
+      "x": 640,
+      "y": 552,
+      "hp": 10,
+      "energy": 50
+    },
+    "enemies": [],
+    "hostileBullets": 0,
+    "revision": 0,
+    "spec": null,
+    "proposal": null,
+    "effects": {
+      "shielded": 0,
+      "reflectedDamage": 0,
+      "gunDamage": 0,
+      "amendments": 0
+    },
+    "voice": "speaking",
+    "liveVoice": {
+      "model": "gpt-live-1",
+      "connectionStarted": 1,
+      "sessionClosed": 0,
+      "delegationRequests": 0,
+      "proposalsReturned": 0,
+      "openaiProposals": 0,
+      "signedContracts": 0,
+      "lastState": "speaking",
+      "status": "connected"
+    }
+  },
+  "interruption": {
+    "at": 10501.100000023842,
+    "remoteRms": 0.01071547759743056,
+    "lastOutput": {
+      "type": "session.output_transcript.delta",
+      "at": 10309.5,
+      "delta": " Sure,",
+      "start_ms": 3200,
+      "end_ms": 3400,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    "firstFixtureEnded": true,
+    "voiceState": "VOICE: GPT-LIVE-1 / SPEAKING"
+  },
+  "rightUnsigned": {
+    "build": "1.0.0",
+    "screen": "covenant-screen",
+    "negotiationStep": "negotiate",
+    "coordinates": "origin top-left; x right; y down",
+    "renderer": "WEBGPU / COMPUTE",
+    "arena": {
+      "width": 1280,
+      "height": 800
+    },
+    "phase": "covenant",
+    "seconds": 0,
+    "player": {
+      "x": 640,
+      "y": 552,
+      "hp": 10,
+      "energy": 50
+    },
+    "enemies": [],
+    "hostileBullets": 0,
+    "revision": 0,
+    "spec": null,
+    "proposal": {
+      "spec": {
+        "version": 1,
+        "title": "Right-Handed Reinforcement Pact",
+        "zone": "right",
+        "speed": "normal",
+        "reflection": "normal",
+        "price": "reinforcements",
+        "line": "Very well—the right side is yours, and my guns will multiply.",
+        "rationale": "Validated rule budget: 2 advantage points / 3 payment points. Sanctuary stops bullets, not lasers or enemy bodies. Only the displayed clauses apply after Sign."
+      },
+      "provider": "openai",
+      "model": "gpt-5.6-luna"
+    },
+    "effects": {
+      "shielded": 0,
+      "reflectedDamage": 0,
+      "gunDamage": 0,
+      "amendments": 0
+    },
+    "voice": "speaking",
+    "liveVoice": {
+      "model": "gpt-live-1",
+      "connectionStarted": 1,
+      "sessionClosed": 0,
+      "delegationRequests": 2,
+      "proposalsReturned": 1,
+      "openaiProposals": 1,
+      "signedContracts": 0,
+      "lastState": "speaking",
+      "status": "connected"
+    }
+  },
+  "rightCombat": {
+    "build": "1.0.0",
+    "screen": "game",
+    "negotiationStep": "negotiate",
+    "coordinates": "origin top-left; x right; y down",
+    "renderer": "WEBGPU / COMPUTE",
+    "arena": {
+      "width": 1280,
+      "height": 800
+    },
+    "phase": "combat",
+    "seconds": 8.2,
+    "player": {
+      "x": 640,
+      "y": 560,
+      "hp": 9,
+      "energy": 52
+    },
+    "enemies": [
+      {
+        "type": "boss",
+        "x": 594,
+        "y": 212,
+        "hp": 2880
+      }
+    ],
+    "hostileBullets": 21,
+    "revision": 1,
+    "spec": {
+      "version": 1,
+      "title": "Right-Handed Reinforcement Pact",
+      "zone": "right",
+      "speed": "normal",
+      "reflection": "normal",
+      "price": "reinforcements",
+      "line": "Very well—the right side is yours, and my guns will multiply.",
+      "rationale": "Validated rule budget: 2 advantage points / 3 payment points. Sanctuary stops bullets, not lasers or enemy bodies. Only the displayed clauses apply after Sign."
+    },
+    "proposal": null,
+    "effects": {
+      "shielded": 2,
+      "reflectedDamage": 0,
+      "gunDamage": 720,
+      "amendments": 0
+    },
+    "voice": "stopped",
+    "liveVoice": {
+      "model": "gpt-live-1",
+      "connectionStarted": 1,
+      "sessionClosed": 0,
+      "delegationRequests": 2,
+      "proposalsReturned": 1,
+      "openaiProposals": 1,
+      "signedContracts": 1,
+      "lastState": "stopped",
+      "status": "contract-signed"
+    }
+  },
+  "beforeAmendment": {
+    "build": "1.0.0",
+    "screen": "covenant-screen",
+    "negotiationStep": "negotiate",
+    "coordinates": "origin top-left; x right; y down",
+    "renderer": "WEBGPU / COMPUTE",
+    "arena": {
+      "width": 1280,
+      "height": 800
+    },
+    "phase": "parley",
+    "seconds": 8.56,
+    "player": {
+      "x": 640,
+      "y": 560,
+      "hp": 9,
+      "energy": 52
+    },
+    "enemies": [
+      {
+        "type": "boss",
+        "x": 564,
+        "y": 213,
+        "hp": 2844
+      }
+    ],
+    "hostileBullets": 23,
+    "revision": 1,
+    "spec": {
+      "version": 1,
+      "title": "Right-Handed Reinforcement Pact",
+      "zone": "right",
+      "speed": "normal",
+      "reflection": "normal",
+      "price": "reinforcements",
+      "line": "Very well—the right side is yours, and my guns will multiply.",
+      "rationale": "Validated rule budget: 2 advantage points / 3 payment points. Sanctuary stops bullets, not lasers or enemy bodies. Only the displayed clauses apply after Sign."
+    },
+    "proposal": null,
+    "effects": {
+      "shielded": 3,
+      "reflectedDamage": 0,
+      "gunDamage": 756,
+      "amendments": 0
+    },
+    "voice": "stopped",
+    "liveVoice": {
+      "model": "gpt-live-1",
+      "connectionStarted": 1,
+      "sessionClosed": 0,
+      "delegationRequests": 2,
+      "proposalsReturned": 1,
+      "openaiProposals": 1,
+      "signedContracts": 1,
+      "lastState": "stopped",
+      "status": "contract-signed"
+    }
+  },
+  "amendmentUnsigned": {
+    "build": "1.0.0",
+    "screen": "covenant-screen",
+    "negotiationStep": "negotiate",
+    "coordinates": "origin top-left; x right; y down",
+    "renderer": "WEBGPU / COMPUTE",
+    "arena": {
+      "width": 1280,
+      "height": 800
+    },
+    "phase": "parley",
+    "seconds": 8.56,
+    "player": {
+      "x": 640,
+      "y": 560,
+      "hp": 9,
+      "energy": 52
+    },
+    "enemies": [
+      {
+        "type": "boss",
+        "x": 564,
+        "y": 213,
+        "hp": 2844
+      }
+    ],
+    "hostileBullets": 23,
+    "revision": 1,
+    "spec": {
+      "version": 1,
+      "title": "Right-Handed Reinforcement Pact",
+      "zone": "right",
+      "speed": "normal",
+      "reflection": "normal",
+      "price": "reinforcements",
+      "line": "Very well—the right side is yours, and my guns will multiply.",
+      "rationale": "Validated rule budget: 2 advantage points / 3 payment points. Sanctuary stops bullets, not lasers or enemy bodies. Only the displayed clauses apply after Sign."
+    },
+    "proposal": {
+      "spec": {
+        "version": 1,
+        "title": "The Weakened Gun Pact",
+        "zone": "none",
+        "speed": "slow",
+        "reflection": "charged",
+        "price": "weaker_gun",
+        "line": "No sanctuary remains; my slower fire will meet your charged reflections.",
+        "rationale": "Validated rule budget: 2 advantage points / 2 payment points. Dash through magenta lasers. Only the displayed clauses apply after Sign."
+      },
+      "provider": "openai",
+      "model": "gpt-5.6-luna"
+    },
+    "effects": {
+      "shielded": 3,
+      "reflectedDamage": 0,
+      "gunDamage": 756,
+      "amendments": 0
+    },
+    "voice": "listening",
+    "liveVoice": {
+      "model": "gpt-live-1",
+      "connectionStarted": 2,
+      "sessionClosed": 0,
+      "delegationRequests": 3,
+      "proposalsReturned": 2,
+      "openaiProposals": 2,
+      "signedContracts": 1,
+      "lastState": "listening",
+      "status": "contract-signed"
+    }
+  },
+  "paymentReview": {
+    "requested": "weaker_gun",
+    "offered": "weaker_gun",
+    "preferredPaymentApplied": true,
+    "operatorAcceptedDisplayedCounteroffer": true
+  },
+  "afterAmendment": {
+    "build": "1.0.0",
+    "screen": "game",
+    "negotiationStep": "negotiate",
+    "coordinates": "origin top-left; x right; y down",
+    "renderer": "WEBGPU / COMPUTE",
+    "arena": {
+      "width": 1280,
+      "height": 800
+    },
+    "phase": "combat",
+    "seconds": 8.58,
+    "player": {
+      "x": 640,
+      "y": 560,
+      "hp": 9,
+      "energy": 52
+    },
+    "enemies": [
+      {
+        "type": "boss",
+        "x": 563,
+        "y": 213,
+        "hp": 2832
+      }
+    ],
+    "hostileBullets": 23,
+    "revision": 2,
+    "spec": {
+      "version": 1,
+      "title": "The Weakened Gun Pact",
+      "zone": "none",
+      "speed": "slow",
+      "reflection": "charged",
+      "price": "weaker_gun",
+      "line": "No sanctuary remains; my slower fire will meet your charged reflections.",
+      "rationale": "Validated rule budget: 2 advantage points / 2 payment points. Dash through magenta lasers. Only the displayed clauses apply after Sign."
+    },
+    "proposal": null,
+    "effects": {
+      "shielded": 3,
+      "reflectedDamage": 0,
+      "gunDamage": 768,
+      "amendments": 1
+    },
+    "voice": "stopping",
+    "liveVoice": {
+      "model": "gpt-live-1",
+      "connectionStarted": 2,
+      "sessionClosed": 0,
+      "delegationRequests": 3,
+      "proposalsReturned": 2,
+      "openaiProposals": 2,
+      "signedContracts": 2,
+      "lastState": "stopping",
+      "status": "contract-signed"
+    }
+  },
+  "atomicAmendment": {
+    "before": {
+      "hp": 9,
+      "bossHp": 2844,
+      "seconds": 8.558333333333488,
+      "revision": 1
+    },
+    "after": {
+      "hp": 9,
+      "bossHp": 2844,
+      "seconds": 8.558333333333488,
+      "revision": 2
+    },
+    "accepted": true
+  },
+  "passed": true,
+  "events": [
+    {
+      "type": "session.started",
+      "at": 6658.5,
+      "delta": null,
+      "start_ms": null,
+      "end_ms": null,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 8040.800000011921,
+      "delta": " Please",
+      "start_ms": 1000,
+      "end_ms": 1200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 8239.300000011921,
+      "delta": " put",
+      "start_ms": 1200,
+      "end_ms": 1400,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 8401.600000023842,
+      "delta": " the",
+      "start_ms": 1400,
+      "end_ms": 1600,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 9051.300000011921,
+      "delta": " sanctuary",
+      "start_ms": 2000,
+      "end_ms": 2200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 9204.699999988079,
+      "delta": " on the",
+      "start_ms": 2200,
+      "end_ms": 2400,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 9830.800000011921,
+      "delta": " left",
+      "start_ms": 2800,
+      "end_ms": 3000,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.delegation.created",
+      "at": 10136.199999988079,
+      "delta": null,
+      "start_ms": null,
+      "end_ms": null,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 10309.5,
+      "delta": " Sure,",
+      "start_ms": 3200,
+      "end_ms": 3400,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 10513.399999976158,
+      "delta": " I'll",
+      "start_ms": 3400,
+      "end_ms": 3600,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 10712.100000023842,
+      "delta": " ask",
+      "start_ms": 3600,
+      "end_ms": 3800,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 11090.100000023842,
+      "delta": " for",
+      "start_ms": 4000,
+      "end_ms": 4200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 12227.300000011921,
+      "delta": " Actually",
+      "start_ms": 5200,
+      "end_ms": 5400,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 13008.399999976158,
+      "delta": ", change",
+      "start_ms": 6000,
+      "end_ms": 6200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 13508.199999988079,
+      "delta": " that",
+      "start_ms": 6400,
+      "end_ms": 6600,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 13713.5,
+      "delta": " Okay,",
+      "start_ms": 6600,
+      "end_ms": 6800,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 14426.899999976158,
+      "delta": " Put the",
+      "start_ms": 7400,
+      "end_ms": 7600,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 15261.100000023842,
+      "delta": " sanctuary",
+      "start_ms": 8200,
+      "end_ms": 8400,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 15413.199999988079,
+      "delta": " on the",
+      "start_ms": 8400,
+      "end_ms": 8600,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 15902.100000023842,
+      "delta": " right",
+      "start_ms": 8800,
+      "end_ms": 9000,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.delegation.created",
+      "at": 15904.399999976158,
+      "delta": null,
+      "start_ms": null,
+      "end_ms": null,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 16109,
+      "delta": " On the",
+      "start_ms": 9000,
+      "end_ms": 9200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 16293.300000011921,
+      "delta": " right.",
+      "start_ms": 9200,
+      "end_ms": 9400,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 17024.100000023842,
+      "delta": " Right",
+      "start_ms": 10000,
+      "end_ms": 10200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 17409.899999976158,
+      "delta": " side",
+      "start_ms": 10400,
+      "end_ms": 10600,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 18706.399999976158,
+      "delta": " I",
+      "start_ms": 11400,
+      "end_ms": 11600,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 18803.600000023842,
+      "delta": " accept",
+      "start_ms": 11800,
+      "end_ms": 12000,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 19905,
+      "delta": " reinforcements",
+      "start_ms": 12800,
+      "end_ms": 13000,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.delegation.created",
+      "at": 19909.899999976158,
+      "delta": null,
+      "start_ms": null,
+      "end_ms": null,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 20105.100000023842,
+      "delta": " Got it",
+      "start_ms": 13000,
+      "end_ms": 13200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 20297.69999998808,
+      "delta": ".",
+      "start_ms": 13200,
+      "end_ms": 13400,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.usage.updated",
+      "at": 20784.899999976158,
+      "delta": null,
+      "start_ms": null,
+      "end_ms": null,
+      "usage": {
+        "seconds": 15
+      },
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 25107.5,
+      "delta": " Alright",
+      "start_ms": 18000,
+      "end_ms": 18200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.started",
+      "at": 35125.30000001192,
+      "delta": null,
+      "start_ms": null,
+      "end_ms": null,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 36515.10000002384,
+      "delta": "Remove",
+      "start_ms": 1000,
+      "end_ms": 1200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 36683.30000001192,
+      "delta": " the",
+      "start_ms": 1200,
+      "end_ms": 1400,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 37479.10000002384,
+      "delta": " sanctuary",
+      "start_ms": 2000,
+      "end_ms": 2200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 38691.10000002384,
+      "delta": ". Slow",
+      "start_ms": 3200,
+      "end_ms": 3400,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 38857.39999997616,
+      "delta": " your",
+      "start_ms": 3400,
+      "end_ms": 3600,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 39300.69999998808,
+      "delta": " bullets",
+      "start_ms": 3800,
+      "end_ms": 4000,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 39473.60000002384,
+      "delta": " and",
+      "start_ms": 4000,
+      "end_ms": 4200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 39903.39999997616,
+      "delta": " strengthen",
+      "start_ms": 4400,
+      "end_ms": 4600,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 40063.39999997616,
+      "delta": " my",
+      "start_ms": 4600,
+      "end_ms": 4800,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 40977.80000001192,
+      "delta": " reflections",
+      "start_ms": 5400,
+      "end_ms": 5600,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.delegation.created",
+      "at": 40980.89999997616,
+      "delta": null,
+      "start_ms": null,
+      "end_ms": null,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 41170.89999997616,
+      "delta": " Wait.",
+      "start_ms": 5600,
+      "end_ms": 5800,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 41909.19999998808,
+      "delta": " My",
+      "start_ms": 6400,
+      "end_ms": 6600,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 42110.39999997616,
+      "delta": " gun",
+      "start_ms": 6600,
+      "end_ms": 6800,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 42300.80000001192,
+      "delta": " can",
+      "start_ms": 6800,
+      "end_ms": 7000,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 42474.30000001192,
+      "delta": " be",
+      "start_ms": 7000,
+      "end_ms": 7200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 42899.80000001192,
+      "delta": " weaker",
+      "start_ms": 7400,
+      "end_ms": 7600,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    }
+  ],
+  "sent": [
+    {
+      "type": "session.commentary.append",
+      "at": 24476.899999976158
+    },
+    {
+      "type": "session.commentary.append",
+      "at": 47288.69999998808
+    }
+  ],
+  "inputSignObservations": [
+    {
+      "at": 8043.100000023842,
+      "delta": " Please",
+      "signDisabled": true,
+      "revision": 0
+    },
+    {
+      "at": 8240.300000011921,
+      "delta": " put",
+      "signDisabled": true,
+      "revision": 0
+    },
+    {
+      "at": 8402.800000011921,
+      "delta": " the",
+      "signDisabled": true,
+      "revision": 0
+    },
+    {
+      "at": 9052.399999976158,
+      "delta": " sanctuary",
+      "signDisabled": true,
+      "revision": 0
+    },
+    {
+      "at": 9205.899999976158,
+      "delta": " on the",
+      "signDisabled": true,
+      "revision": 0
+    },
+    {
+      "at": 9832.100000023842,
+      "delta": " left",
+      "signDisabled": true,
+      "revision": 0
+    },
+    {
+      "at": 12228.800000011921,
+      "delta": " Actually",
+      "signDisabled": true,
+      "revision": 0
+    },
+    {
+      "at": 13009.399999976158,
+      "delta": ", change",
+      "signDisabled": true,
+      "revision": 0
+    },
+    {
+      "at": 13509.300000011921,
+      "delta": " that",
+      "signDisabled": true,
+      "revision": 0
+    },
+    {
+      "at": 14427.899999976158,
+      "delta": " Put the",
+      "signDisabled": true,
+      "revision": 0
+    },
+    {
+      "at": 15262.100000023842,
+      "delta": " sanctuary",
+      "signDisabled": true,
+      "revision": 0
+    },
+    {
+      "at": 15414.199999988079,
+      "delta": " on the",
+      "signDisabled": true,
+      "revision": 0
+    },
+    {
+      "at": 15903.100000023842,
+      "delta": " right",
+      "signDisabled": true,
+      "revision": 0
+    },
+    {
+      "at": 17025.399999976158,
+      "delta": " Right",
+      "signDisabled": true,
+      "revision": 0
+    },
+    {
+      "at": 17411,
+      "delta": " side",
+      "signDisabled": true,
+      "revision": 0
+    },
+    {
+      "at": 18707.399999976158,
+      "delta": " I",
+      "signDisabled": true,
+      "revision": 0
+    },
+    {
+      "at": 18804.600000023842,
+      "delta": " accept",
+      "signDisabled": true,
+      "revision": 0
+    },
+    {
+      "at": 19906,
+      "delta": " reinforcements",
+      "signDisabled": true,
+      "revision": 0
+    },
+    {
+      "at": 36516.19999998808,
+      "delta": "Remove",
+      "signDisabled": true,
+      "revision": 1
+    },
+    {
+      "at": 36684.39999997616,
+      "delta": " the",
+      "signDisabled": true,
+      "revision": 1
+    },
+    {
+      "at": 37480.10000002384,
+      "delta": " sanctuary",
+      "signDisabled": true,
+      "revision": 1
+    },
+    {
+      "at": 38692.10000002384,
+      "delta": ". Slow",
+      "signDisabled": true,
+      "revision": 1
+    },
+    {
+      "at": 38858.39999997616,
+      "delta": " your",
+      "signDisabled": true,
+      "revision": 1
+    },
+    {
+      "at": 39301.69999998808,
+      "delta": " bullets",
+      "signDisabled": true,
+      "revision": 1
+    },
+    {
+      "at": 39474.60000002384,
+      "delta": " and",
+      "signDisabled": true,
+      "revision": 1
+    },
+    {
+      "at": 39904.60000002384,
+      "delta": " strengthen",
+      "signDisabled": true,
+      "revision": 1
+    },
+    {
+      "at": 40064.39999997616,
+      "delta": " my",
+      "signDisabled": true,
+      "revision": 1
+    },
+    {
+      "at": 40978.89999997616,
+      "delta": " reflections",
+      "signDisabled": true,
+      "revision": 1
+    },
+    {
+      "at": 41910.69999998808,
+      "delta": " My",
+      "signDisabled": true,
+      "revision": 1
+    },
+    {
+      "at": 42111.5,
+      "delta": " gun",
+      "signDisabled": true,
+      "revision": 1
+    },
+    {
+      "at": 42301.89999997616,
+      "delta": " can",
+      "signDisabled": true,
+      "revision": 1
+    },
+    {
+      "at": 42475.30000001192,
+      "delta": " be",
+      "signDisabled": true,
+      "revision": 1
+    },
+    {
+      "at": 42901,
+      "delta": " weaker",
+      "signDisabled": true,
+      "revision": 1
+    }
+  ],
+  "tracks": [
+    "ended",
+    "ended"
+  ],
+  "peers": [
+    "closed",
+    "closed"
+  ],
+  "api": [
+    {
+      "path": "/api/session",
+      "status": 200
+    },
+    {
+      "path": "/api/voice/start",
+      "status": 200,
+      "model": "gpt-live-1"
+    },
+    {
+      "path": "/api/covenant",
+      "status": 200,
+      "provider": "openai",
+      "model": "gpt-5.6-luna",
+      "modelFormat": "living_covenant_rules_v3",
+      "modelIssue": null,
+      "spec": {
+        "version": 1,
+        "title": "Right-Handed Reinforcement Pact",
+        "zone": "right",
+        "speed": "normal",
+        "reflection": "normal",
+        "price": "reinforcements",
+        "line": "Very well—the right side is yours, and my guns will multiply.",
+        "rationale": "Validated rule budget: 2 advantage points / 3 payment points. Sanctuary stops bullets, not lasers or enemy bodies. Only the displayed clauses apply after Sign."
+      },
+      "latencyMs": 2867,
+      "accountedMicrodollars": 404
+    },
+    {
+      "path": "/api/covenant/sign",
+      "status": 200,
+      "provider": "openai",
+      "model": "gpt-5.6-luna",
+      "spec": {
+        "line": "Very well—the right side is yours, and my guns will multiply.",
+        "price": "reinforcements",
+        "rationale": "Validated rule budget: 2 advantage points / 3 payment points. Sanctuary stops bullets, not lasers or enemy bodies. Only the displayed clauses apply after Sign.",
+        "reflection": "normal",
+        "speed": "normal",
+        "title": "Right-Handed Reinforcement Pact",
+        "version": 1,
+        "zone": "right"
+      },
+      "latencyMs": 2867,
+      "signed": true,
+      "revision": 1
+    },
+    {
+      "path": "/api/voice/stop",
+      "status": 200,
+      "accountedMicrodollars": 50000,
+      "stopped": true,
+      "uncertain": false
+    },
+    {
+      "path": "/api/voice/start",
+      "status": 200,
+      "model": "gpt-live-1"
+    },
+    {
+      "path": "/api/covenant",
+      "status": 200,
+      "provider": "openai",
+      "model": "gpt-5.6-luna",
+      "modelFormat": "living_covenant_rules_v3",
+      "modelIssue": null,
+      "spec": {
+        "version": 1,
+        "title": "The Weakened Gun Pact",
+        "zone": "none",
+        "speed": "slow",
+        "reflection": "charged",
+        "price": "weaker_gun",
+        "line": "No sanctuary remains; my slower fire will meet your charged reflections.",
+        "rationale": "Validated rule budget: 2 advantage points / 2 payment points. Dash through magenta lasers. Only the displayed clauses apply after Sign."
+      },
+      "latencyMs": 2679,
+      "accountedMicrodollars": 406
+    },
+    {
+      "path": "/api/covenant/sign",
+      "status": 200,
+      "provider": "openai",
+      "model": "gpt-5.6-luna",
+      "spec": {
+        "line": "No sanctuary remains; my slower fire will meet your charged reflections.",
+        "price": "weaker_gun",
+        "rationale": "Validated rule budget: 2 advantage points / 2 payment points. Dash through magenta lasers. Only the displayed clauses apply after Sign.",
+        "reflection": "charged",
+        "speed": "slow",
+        "title": "The Weakened Gun Pact",
+        "version": 1,
+        "zone": "none"
+      },
+      "latencyMs": 2679,
+      "signed": true,
+      "revision": 2
+    },
+    {
+      "path": "/api/voice/stop",
+      "status": 200,
+      "accountedMicrodollars": 50000,
+      "stopped": true,
+      "uncertain": false
+    }
+  ],
+  "pageErrors": [],
+  "counts": {
+    "liveStarts": 2,
+    "proposals": 2,
+    "signs": 2,
+    "confirmedStops": 2
+  },
+  "accountedMicrodollars": {
+    "openai": 100000,
+    "gateway": 810
+  }
+}
