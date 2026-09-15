@@ -327,3 +327,8 @@ App 06275908ab07372c59f5bbcb2033c268322b6771, READY dpl_f3q3Af5zwDQ2WvvhA4zuahkf
 2026-09-15 JST — v1.3.0 delivery complete
 
 PublicReleasev1.3.0 assets and anonymous source/MP4 hashes verified. Viewer played59.008s toended=true;3,540frames,201browser playback drops recorded separately. Native audio matches source within2ms. gh-pages03f778c5b091aa55376cc05780265165f59995a4 pushed. Source release4e39e84;app0627590 unchanged on READYf3q3Af5zwDQ2WvvhA4zuahkfhpCH. Six copy-ready fields updated in public docs and private kit. Ledgerdirect3/10,Gateway.042359/20;active0. Finaltagmilestone-27-adaptive-demo-verified. All requested work for this goal achieved; form submission remains a representative action.
+
+
+2026-09-15 JST — Public demo gallery complete
+
+The demo viewer now includes seven actual PC screenshots (two upgraded normal waves, three bosses, live contract and adaptive review) plus the two existing imagegen concept boards. Concept and gameplay labels are explicit. Five local and five public viewport checks pass (1440x900,1280x720,768x1024,430x932,320x568), all nine published lossless image hashes match, full-size links and JavaScript-free navigation work, and the existing 59.008s video starts with no media error. Mobile checks are emulation. The existing CSP blocks a host-injected analytics beacon; recorded separately. gh-pages6a4cb612d3963215ea9b766edd993508e716f4c7 is pushed/built. Canonical source site/demo; evidence docs/DEMO-GALLERY.md and docs/validation-gallery. No game build or paid API call. Development source/evidence checkpoint milestone-28-demo-gallery; rollback is a normal revert of the Pages commit.

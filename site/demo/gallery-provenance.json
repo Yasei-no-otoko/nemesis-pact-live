@@ -1,0 +1,131 @@
+{
+  "version": "demo-gallery-2026-09-15",
+  "gameVersion": "1.3.0",
+  "gameSourceCommit": "06275908ab07372c59f5bbcb2033c268322b6771",
+  "gameplayCapture": {
+    "origin": "https://nemesis-pact-live.vercel.app/",
+    "platform": "Windows / native Microsoft Edge 153.0.4234.32 / AMD Radeon RX 6900 XT / WebGPU",
+    "operation": "Automated full campaign using ordinary game inputs",
+    "speech": "Original Microsoft Zira synthetic player speech sent to real GPT-Live-1; GPT-5.6 Luna contract and performance responses",
+    "evidence": "docs/validation-adaptive/full-campaign/result.json",
+    "note": "These PC screenshots are from the completed production run, not the earlier human iPhone recording."
+  },
+  "concepts": "Previously generated imagegen visual-development boards for v0.9.9 and v1.0.0. Not game screenshots.",
+  "paidApiCallsForGallery": 0,
+  "totalImageBytes": 5715922,
+  "images": [
+    {
+      "file": "assets/boss-unwritten.webp",
+      "kind": "pc-gameplay",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 533658,
+      "sha256": "dccb1714819e31ed28b73842f53e6be09da82e0ab179668ad6c7bf2b28beed33",
+      "pixelIdentityVerified": true,
+      "processing": "Lossless WebP encoding only; original dimensions, complete frame, no crop, recoloring, retouching or added objects.",
+      "source": "NEMESIS-PACT-v1.3.0-full-campaign-original.webm",
+      "sourceSha256": "2348431895c028265c0f3164baee0bd358ee06835ea827af0edcd4c6cb506e47",
+      "recordingSeconds": 607
+    },
+    {
+      "file": "assets/wave-unwritten-sky.webp",
+      "kind": "pc-gameplay",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 507572,
+      "sha256": "5b0dfb2df3f3cf560b798ffed28208226bb545e5093dcf08a43d6c9ed15d72de",
+      "pixelIdentityVerified": true,
+      "processing": "Lossless WebP encoding only; original dimensions, complete frame, no crop, recoloring, retouching or added objects.",
+      "source": "NEMESIS-PACT-v1.3.0-full-campaign-original.webm",
+      "sourceSha256": "2348431895c028265c0f3164baee0bd358ee06835ea827af0edcd4c6cb506e47",
+      "recordingSeconds": 566
+    },
+    {
+      "file": "assets/wave-prism-orchard.webp",
+      "kind": "pc-gameplay",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 427710,
+      "sha256": "ac48fca0c2df7c3bf57cbe92c45426078ee726ad87bfd242a591fecf303140ca",
+      "pixelIdentityVerified": true,
+      "processing": "Lossless WebP encoding only; original dimensions, complete frame, no crop, recoloring, retouching or added objects.",
+      "source": "NEMESIS-PACT-v1.3.0-full-campaign-original.webm",
+      "sourceSha256": "2348431895c028265c0f3164baee0bd358ee06835ea827af0edcd4c6cb506e47",
+      "recordingSeconds": 475
+    },
+    {
+      "file": "assets/boss-weaver.webp",
+      "kind": "pc-gameplay",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 516206,
+      "sha256": "738c8b4ab13a3e25cc33a583985f68dda2ac85188ab1ac47a620d976f25f3053",
+      "pixelIdentityVerified": true,
+      "processing": "Lossless WebP encoding only; original dimensions, complete frame, no crop, recoloring, retouching or added objects.",
+      "source": "NEMESIS-PACT-v1.3.0-full-campaign-original.webm",
+      "sourceSha256": "2348431895c028265c0f3164baee0bd358ee06835ea827af0edcd4c6cb506e47",
+      "recordingSeconds": 501
+    },
+    {
+      "file": "assets/boss-leviathan.webp",
+      "kind": "pc-gameplay",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 472056,
+      "sha256": "17cc469d7fd920775a1a18acf1769f87ac54863500062af65d122b44eda47560",
+      "pixelIdentityVerified": true,
+      "processing": "Lossless WebP encoding only; original dimensions, complete frame, no crop, recoloring, retouching or added objects.",
+      "source": "NEMESIS-PACT-v1.3.0-full-campaign-original.webm",
+      "sourceSha256": "2348431895c028265c0f3164baee0bd358ee06835ea827af0edcd4c6cb506e47",
+      "recordingSeconds": 398
+    },
+    {
+      "file": "assets/voice-contract.webp",
+      "kind": "pc-interface",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 238596,
+      "sha256": "a66cd00671b2923719475b90794b0841926027e50f96f2ab773ef0f73485c3ae",
+      "pixelIdentityVerified": true,
+      "processing": "Lossless WebP encoding only; original dimensions, complete frame, no crop, recoloring, retouching or added objects.",
+      "source": "docs/validation-adaptive/full-campaign/voice-sector-6.png",
+      "sourceSha256": "965d68580197fb599c8710470a04d67ff8e25c4bada4b3b7d946d15c1ed54ae9"
+    },
+    {
+      "file": "assets/adaptive-review.webp",
+      "kind": "pc-interface",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 161896,
+      "sha256": "35eea0b705cee41063fefb7956a49e7654e8f6219c34d482d0fdc8b0276c1154",
+      "pixelIdentityVerified": true,
+      "processing": "Lossless WebP encoding only; original dimensions, complete frame, no crop, recoloring, retouching or added objects.",
+      "source": "docs/validation-adaptive/full-campaign/analysis-0-1.png",
+      "sourceSha256": "5a5366edb685ce1aaec5b0fca5e524940fcf2b89c31f23f884b8c856fd901c08"
+    },
+    {
+      "file": "assets/concept-v099.webp",
+      "kind": "generated-concept",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 1442588,
+      "sha256": "bcfdc65794b1653d0455a27b102b01e90decd55f2064e629c9973f8f410c0db8",
+      "pixelIdentityVerified": true,
+      "processing": "Lossless WebP encoding only; original dimensions, complete frame, no crop, recoloring, retouching or added objects.",
+      "source": "output/imagegen/nemesis-v099-concept.png",
+      "sourceSha256": "3bc5cc7e324960375e129789925e8530d8f792ffa349d30ef10c17449312ed3d"
+    },
+    {
+      "file": "assets/concept-v100.webp",
+      "kind": "generated-concept",
+      "width": 1536,
+      "height": 1024,
+      "bytes": 1415640,
+      "sha256": "fc21689cc221156f265546b7be094a44de6f90c858603a17b458ec66b8e90cc3",
+      "pixelIdentityVerified": true,
+      "processing": "Lossless WebP encoding only; original dimensions, complete frame, no crop, recoloring, retouching or added objects.",
+      "source": "output/imagegen/nemesis-v100-concept.png",
+      "sourceSha256": "047bc4ffe82fa31e1da82d64bed18e7c98923b230b8cd06dd688678c2af1a453"
+    }
+  ]
+}

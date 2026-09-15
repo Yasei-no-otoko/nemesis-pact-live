@@ -11,6 +11,7 @@ playwright-report/
 test-results/
 .work/
 .artifacts/
+output/playwright/demo-gallery/
 
 .vercel
 .env*

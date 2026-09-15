@@ -1,0 +1,214 @@
+{
+  "checkedAt": "2026-09-15T04:57:14.008733+00:00",
+  "url": "https://www.circle-hydrangea.net/nemesis-pact-live/?gallery=20260915",
+  "phase": "public",
+  "automation": "Native Windows Edge controlled by Python Playwright",
+  "physicalMobile": false,
+  "paidApiCalls": 0,
+  "viewports": [
+    {
+      "width": 1440,
+      "height": 900,
+      "imagesLoaded": 9,
+      "horizontalOverflow": false,
+      "pageErrors": [],
+      "failedResponses": [],
+      "apiRequests": [],
+      "videoLoadedBeforePlay": false,
+      "keyboardSkipLink": true,
+      "hostInjectedAnalyticsBlockedByExistingCsp": [
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495' violates the following Content Security Policy directive: \"default-src 'none'\". Note that 'script-src-elem' was not explicitly set, so 'default-src' is used as a fallback. The action has been blocked."
+      ]
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "imagesLoaded": 9,
+      "horizontalOverflow": false,
+      "pageErrors": [],
+      "failedResponses": [],
+      "apiRequests": [],
+      "videoLoadedBeforePlay": false,
+      "keyboardSkipLink": true,
+      "hostInjectedAnalyticsBlockedByExistingCsp": [
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495' violates the following Content Security Policy directive: \"default-src 'none'\". Note that 'script-src-elem' was not explicitly set, so 'default-src' is used as a fallback. The action has been blocked."
+      ]
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "imagesLoaded": 9,
+      "horizontalOverflow": false,
+      "pageErrors": [],
+      "failedResponses": [],
+      "apiRequests": [],
+      "videoLoadedBeforePlay": false,
+      "keyboardSkipLink": true,
+      "hostInjectedAnalyticsBlockedByExistingCsp": [
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495' violates the following Content Security Policy directive: \"default-src 'none'\". Note that 'script-src-elem' was not explicitly set, so 'default-src' is used as a fallback. The action has been blocked."
+      ]
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "imagesLoaded": 9,
+      "horizontalOverflow": false,
+      "pageErrors": [],
+      "failedResponses": [],
+      "apiRequests": [],
+      "videoLoadedBeforePlay": false,
+      "keyboardSkipLink": true,
+      "hostInjectedAnalyticsBlockedByExistingCsp": [
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495' violates the following Content Security Policy directive: \"default-src 'none'\". Note that 'script-src-elem' was not explicitly set, so 'default-src' is used as a fallback. The action has been blocked."
+      ]
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "imagesLoaded": 9,
+      "horizontalOverflow": false,
+      "pageErrors": [],
+      "failedResponses": [],
+      "apiRequests": [],
+      "videoLoadedBeforePlay": false,
+      "keyboardSkipLink": true,
+      "hostInjectedAnalyticsBlockedByExistingCsp": [
+        "Loading the script 'https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495' violates the following Content Security Policy directive: \"default-src 'none'\". Note that 'script-src-elem' was not explicitly set, so 'default-src' is used as a fallback. The action has been blocked."
+      ]
+    }
+  ],
+  "images": [
+    {
+      "src": "assets/boss-unwritten.webp",
+      "width": 1920,
+      "height": 1080,
+      "alt": "Actual PC gameplay: concentric orange bullet rings surround The Unwritten while the upgraded player ship, orbit satellites and echo ships return fire. The signed Return to Sender pact is visible.",
+      "loading": "auto",
+      "displayWidth": 1278
+    },
+    {
+      "src": "assets/wave-unwritten-sky.webp",
+      "width": 1920,
+      "height": 1080,
+      "alt": "Sector 6 Wave 2: the player, two echo ships and three orbit satellites fire across the arena at regular enemies; seven relics and upgraded weapon icons are visible.",
+      "loading": "lazy",
+      "displayWidth": 626
+    },
+    {
+      "src": "assets/wave-prism-orchard.webp",
+      "width": 1920,
+      "height": 1080,
+      "alt": "Sector 5 Wave 2 in the pink Prism Orchard: an upgraded ship and echoes send streams of mint projectiles across the arena toward wave enemies.",
+      "loading": "lazy",
+      "displayWidth": 626
+    },
+    {
+      "src": "assets/boss-weaver.webp",
+      "width": 1920,
+      "height": 1080,
+      "alt": "The Weaver in its third phase: orange and violet bullet spokes meet the upgraded player's curving mint fire in the pink Prism Orchard.",
+      "loading": "lazy",
+      "displayWidth": 626
+    },
+    {
+      "src": "assets/boss-leviathan.webp",
+      "width": 1920,
+      "height": 1080,
+      "alt": "The Leviathan's third phase in the blue Tidal Archive: curved violet bullet rows and bright projectiles cross the arena while the player fights under the No Witnesses pact.",
+      "loading": "lazy",
+      "displayWidth": 626
+    },
+    {
+      "src": "assets/voice-contract.webp",
+      "width": 1920,
+      "height": 1080,
+      "alt": "Actual campaign negotiation interface with GPT-Live-1 speaking and a GPT-5.6 Luna proposal: reflected damage \u00d72.2 in exchange for 25% weaker normal shots. Sign and enter combat awaits explicit acceptance.",
+      "loading": "lazy",
+      "displayWidth": 626
+    },
+    {
+      "src": "assets/adaptive-review.webp",
+      "width": 1920,
+      "height": 1080,
+      "alt": "Actual GPT-5.6 Luna wave review: 14 eliminations, no hull lost, 17.47 seconds, followed by pressure 0 to +1, 108% enemy bullet speed and 92% wave arrival spacing.",
+      "loading": "lazy",
+      "displayWidth": 626
+    },
+    {
+      "src": "assets/concept-v099.webp",
+      "width": 1536,
+      "height": 1024,
+      "alt": "AI-generated v0.9.9 concept board, not gameplay: an orbital court, a geometric Notary boss, a mint sanctuary and a proposed negotiation interface.",
+      "loading": "lazy",
+      "displayWidth": 626
+    },
+    {
+      "src": "assets/concept-v100.webp",
+      "width": 1536,
+      "height": 1024,
+      "alt": "AI-generated v1.0.0 concept board, not gameplay: a boss encounter, a Covenant Honored result panel, a signed-deal record and portrait mobile HUD studies.",
+      "loading": "lazy",
+      "displayWidth": 626
+    }
+  ],
+  "browser": "153.0.4234.32",
+  "fullSizeImageOpened": "https://www.circle-hydrangea.net/nemesis-pact-live/assets/wave-unwritten-sky.webp",
+  "worksWithoutJavascript": true,
+  "videoPlaybackStarted": {
+    "width": 1920,
+    "height": 1080,
+    "duration": 59.008,
+    "time": 2.021719,
+    "error": null,
+    "source": "https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/download/v1.3.0/NEMESIS-PACT-v1.3.0-59s-60fps-en-final.mp4"
+  },
+  "humanArchiveHttp": 200,
+  "publishedImageHashChecks": [
+    {
+      "file": "assets/boss-unwritten.webp",
+      "http": 200,
+      "sha256": "dccb1714819e31ed28b73842f53e6be09da82e0ab179668ad6c7bf2b28beed33"
+    },
+    {
+      "file": "assets/wave-unwritten-sky.webp",
+      "http": 200,
+      "sha256": "5b0dfb2df3f3cf560b798ffed28208226bb545e5093dcf08a43d6c9ed15d72de"
+    },
+    {
+      "file": "assets/wave-prism-orchard.webp",
+      "http": 200,
+      "sha256": "ac48fca0c2df7c3bf57cbe92c45426078ee726ad87bfd242a591fecf303140ca"
+    },
+    {
+      "file": "assets/boss-weaver.webp",
+      "http": 200,
+      "sha256": "738c8b4ab13a3e25cc33a583985f68dda2ac85188ab1ac47a620d976f25f3053"
+    },
+    {
+      "file": "assets/boss-leviathan.webp",
+      "http": 200,
+      "sha256": "17cc469d7fd920775a1a18acf1769f87ac54863500062af65d122b44eda47560"
+    },
+    {
+      "file": "assets/voice-contract.webp",
+      "http": 200,
+      "sha256": "a66cd00671b2923719475b90794b0841926027e50f96f2ab773ef0f73485c3ae"
+    },
+    {
+      "file": "assets/adaptive-review.webp",
+      "http": 200,
+      "sha256": "35eea0b705cee41063fefb7956a49e7654e8f6219c34d482d0fdc8b0276c1154"
+    },
+    {
+      "file": "assets/concept-v099.webp",
+      "http": 200,
+      "sha256": "bcfdc65794b1653d0455a27b102b01e90decd55f2064e629c9973f8f410c0db8"
+    },
+    {
+      "file": "assets/concept-v100.webp",
+      "http": 200,
+      "sha256": "fc21689cc221156f265546b7be094a44de6f90c858603a17b458ec66b8e90cc3"
+    }
+  ],
+  "passed": true
+}

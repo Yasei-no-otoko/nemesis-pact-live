@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; media-src 'self' https://github.com https://release-assets.githubusercontent.com; style-src 'unsafe-inline'; img-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="description" content="Negotiate with your enemy, sign a pact, and build a storm of firepower. Explore NEMESIS PACT through real PC gameplay, a 59-second film, and concept art.">
+  <meta property="og:title" content="NEMESIS PACT — Your words. Your build. Your battle.">
+  <meta property="og:description" content="A 3D bullet-hell game with live voice negotiation, stacking upgrades and an adaptive six-sector campaign. Real gameplay gallery and 59-second demo.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.circle-hydrangea.net/nemesis-pact-live/">
+  <meta property="og:image" content="https://www.circle-hydrangea.net/nemesis-pact-live/assets/boss-unwritten.webp">
+  <meta property="og:image:alt" content="Actual PC gameplay: the upgraded ship confronts The Unwritten's concentric bullet rings.">
+  <link rel="canonical" href="https://www.circle-hydrangea.net/nemesis-pact-live/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <title>NEMESIS PACT — Gameplay, concept art &amp; 59-second demo</title>
+  <style>
+    :root{color-scheme:dark;--bg:#070e13;--panel:#101b23;--line:#2c424b;--ink:#f1f3e9;--muted:#b0c2cb;--mint:#a4e1cf;--gold:#e6c58b}
+    *{box-sizing:border-box}
+    html{scroll-padding-top:24px}
+    body{margin:0;background:radial-gradient(ellipse at 90% 0,#16323b55,transparent 36%),var(--bg);color:var(--ink);font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    a{color:var(--mint);text-underline-offset:4px}
+    a:hover{color:#fff}
+    a:focus-visible,summary:focus-visible,video:focus-visible{outline:3px solid var(--gold);outline-offset:5px}
+    img,video{display:block;width:100%;height:auto}
+    figure,p,h1,h2,h3{margin:0}
+    p{color:var(--muted)}
+    h1,h2,h3{line-height:1.12;letter-spacing:-.035em}
+    h1{font-size:clamp(40px,5.8vw,76px);font-weight:750}
+    h2{font-size:clamp(28px,3.4vw,44px);font-weight:650}
+    h3{font-size:23px;font-weight:650}
+    .wrap{width:min(1280px,100% - 64px);margin-inline:auto}
+    .skip{position:absolute;top:-100px;left:20px;padding:12px;background:var(--ink);color:var(--bg);z-index:2}
+    .skip:focus{top:10px}
+    .topbar{display:flex;justify-content:space-between;align-items:center;gap:24px;padding-block:22px;border-bottom:1px solid var(--line)}
+    .brand{font-size:15px;letter-spacing:.19em;color:var(--ink);text-decoration:none;font-weight:700;white-space:nowrap}
+    .topbar nav{display:flex;align-items:center;justify-content:flex-end;gap:22px;flex-wrap:wrap}
+    .topbar nav a{font-size:14px;text-decoration:none;padding:8px 0}
+    .kicker{font:12px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--mint)}
+    .gold{color:var(--gold)}
+    .intro{display:grid;grid-template-columns:1.15fr 1fr;gap:48px;align-items:end;padding-block:48px 32px}
+    .intro h1{margin-top:14px}
+    .intro .lead{font-size:18px;max-width:560px}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+    .button{display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:48px;padding:10px 22px;border:1px solid var(--line);border-radius:5px;text-decoration:none;font-weight:650;color:var(--ink);background:var(--panel)}
+    .button.primary{background:var(--mint);color:#092323;border-color:var(--mint)}
+    .button:hover{border-color:var(--gold);color:var(--gold)}
+    .button.primary:hover{background:#c0f6e4;color:#092323}
+    .still{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--panel)}
+    .still>a{display:block;position:relative;color:var(--ink);text-decoration:none}
+    .still>a::after{content:'View full size ↗';position:absolute;right:12px;bottom:12px;background:#061018ed;color:#eafaf5;border:1px solid #89b5ae;padding:5px 10px;border-radius:3px;font-size:12px;line-height:1.5}
+    .still>a:hover{outline:2px solid var(--mint);outline-offset:-2px}
+    .still>a:focus-visible{outline-offset:-5px}
+    figcaption{padding:22px 24px}
+    figcaption h3{margin:8px 0 10px}
+    figcaption p{max-width:70ch}
+    .hero-caption{display:flex;justify-content:space-between;align-items:center;gap:28px}
+    .hero-caption p{max-width:680px;font-size:15px}
+    .hero-caption strong{display:block;font-size:20px;letter-spacing:-.025em;color:var(--ink)}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);list-style:none;margin:0;padding:24px 0;gap:20px;border-bottom:1px solid var(--line)}
+    .stats li{color:var(--muted);font-size:14px}
+    .stats strong{color:var(--ink);display:block;font-size:24px;line-height:1.3;font-weight:650}
+    section{padding-top:68px;scroll-margin-top:12px}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:24px}
+    .section-head h2{margin-top:10px}
+    .section-head>p{max-width:430px;font-size:15px}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:28px;list-style:none;padding:0}
+    .steps li{padding:24px;background:var(--panel);border:1px solid var(--line);border-top:2px solid var(--mint);border-radius:5px}
+    .step-number{font:14px ui-monospace,monospace;color:var(--gold)}
+    .steps h3{margin:16px 0 12px}
+    .steps p{font-size:15px}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+    .grid .still{display:flex;flex-direction:column}
+    .grid figcaption{flex:1}
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;list-style:none;padding:0}
+    .tags li{font:12px/1.5 ui-monospace,monospace;border:1px solid #3c535d;border-radius:3px;padding:5px 8px;color:#c6e1dd}
+    .gallery-note{margin-top:16px;font-size:13px;max-width:95ch}
+    .film{background:#0b151d;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+    video{aspect-ratio:16/9;background:#000}
+    .film-caption{padding:22px 24px}
+    .film-caption nav{display:flex;flex-wrap:wrap;gap:12px 24px;margin-top:16px}
+    .film-caption p{max-width:95ch}
+    details{border-top:1px solid var(--line);padding-top:18px;margin-top:24px;font-size:14px}
+    summary{cursor:pointer;min-height:40px;color:var(--mint)}
+    details p{margin-top:14px;max-width:100ch}
+    .concepts .still{border-color:#5a503d}
+    .concepts .kicker{color:var(--gold)}
+    .closing{margin-block:68px 32px;padding:32px;border:1px solid var(--line);border-radius:8px;display:flex;justify-content:space-between;align-items:center;gap:32px;background:linear-gradient(120deg,#17362f,#101b23)}
+    .closing h2{font-size:32px;margin-bottom:8px}
+    .closing .button{flex-shrink:0}
+    footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-bottom:32px;font-size:13px;color:var(--muted)}
+    footer nav{display:flex;gap:20px;flex-wrap:wrap}
+    @media(max-width:800px){.wrap{width:calc(100% - 40px)}.topbar{align-items:flex-start}.topbar nav{gap:8px 16px}.intro{gap:28px;grid-template-columns:1fr;padding-top:32px}.intro .lead{max-width:65ch}.hero-caption{align-items:flex-start;flex-direction:column;gap:8px}.steps{gap:14px;grid-template-columns:1fr}.steps li{padding:22px}.section-head{align-items:flex-start;flex-direction:column;gap:14px}.section-head>p{max-width:65ch}.grid{gap:18px}.grid h3{font-size:21px}.grid figcaption{padding:18px}.closing{padding:24px;align-items:flex-start;flex-direction:column}}
+    @media(max-width:580px){.wrap{width:calc(100% - 32px)}.topbar{gap:14px;flex-direction:column;padding-block:16px}.topbar nav{justify-content:flex-start;gap:18px}.topbar nav a{font-size:13px}.intro{padding-block:28px 24px;gap:20px}.intro .lead{font-size:16px}.actions{margin-top:18px}.button{padding-inline:16px}.stats{gap:18px 12px;grid-template-columns:repeat(2,1fr)}.stats strong{font-size:21px}.grid{grid-template-columns:1fr}.still>a::after{right:8px;bottom:8px;font-size:11px;padding:4px 8px}figcaption,.film-caption{padding:18px}section{padding-top:48px}.closing{margin-top:48px}.closing h2{font-size:28px}.kicker{font-size:11px}}
+  </style>
+</head>
+<body data-gallery-version="2026-09-15">
+  <a class="skip" href="#overview">Skip to game overview</a>
+  <header class="wrap topbar">
+    <a class="brand" href="#">NEMESIS PACT <span class="gold">/</span></a>
+    <nav aria-label="Page sections">
+      <a href="#combat">PC gameplay</a>
+      <a href="#film">59s film</a>
+      <a href="#concepts">Concept art</a>
+      <a href="https://nemesis-pact-live.vercel.app/">Play ↗</a>
+    </nav>
+  </header>
+  <main class="wrap">
+    <div class="intro" id="overview">
+      <div>
+        <p class="kicker">v1.3.0 / 3D bullet hell / AI-native negotiation</p>
+        <h1>Your words.<br>Your build.<br>Your battle.</h1>
+      </div>
+      <div>
+        <p class="lead">Talk to your enemy. Bargain for a better chance. Then turn your signed pact and an arsenal of upgrades into a storm of firepower across six sectors.</p>
+        <div class="actions">
+          <a class="button primary" href="https://nemesis-pact-live.vercel.app/">Play in your browser <span aria-hidden="true">↗</span></a>
+          <a class="button" href="#film">Watch 59s demo <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+    </div>
+
+    <figure class="still">
+      <a href="assets/boss-unwritten.webp" target="_blank" rel="noopener" aria-label="The Unwritten final boss: open full-size PC screenshot in a new tab">
+        <img src="assets/boss-unwritten.webp" width="1920" height="1080" fetchpriority="high" alt="Actual PC gameplay: concentric orange bullet rings surround The Unwritten while the upgraded player ship, orbit satellites and echo ships return fire. The signed Return to Sender pact is visible.">
+      </a>
+      <figcaption class="hero-caption">
+        <div><span class="kicker">Actual PC gameplay / final boss</span><strong>A full build meets The Unwritten.</strong></div>
+        <p>Homing fire, orbit satellites and echo ships against expanding bullet rings. Captured in the live campaign with adaptive pressure at +2.</p>
+      </figcaption>
+    </figure>
+    <ul class="stats" aria-label="Game features">
+      <li><strong>6 sectors</strong>Each ends with a boss</li>
+      <li><strong>Stacking upgrades</strong>Build your own firepower</li>
+      <li><strong>Live voice pacts</strong>Speak, interrupt, review, sign</li>
+      <li><strong>Adaptive pressure</strong>Optional AI performance review</li>
+    </ul>
+
+    <section aria-labelledby="how-title">
+      <p class="kicker">How it plays</p>
+      <h2 id="how-title">Negotiate the rules. Fight your deal.</h2>
+      <ol class="steps">
+        <li><span class="step-number">01 / SPEAK &amp; SIGN</span><h3>Make your enemy an offer.</h3><p>Ask for stronger reflections, a safe zone or a different trade-off. Interrupt to revise. GPT-Live-1 handles the conversation; GPT-5.6 Luna proposes the terms. Review the benefit and the price, then Sign to apply them.</p></li>
+        <li><span class="step-number">02 / BUILD &amp; FIGHT</span><h3>Become the bullet storm.</h3><p>Clear waves, choose upgrades and collect relics. Stack orbit satellites, rapid fire, homing shots and echo ships. Dash through danger, parry enemy bullets and unleash a Supernova.</p></li>
+        <li><span class="step-number">03 / REVIEW &amp; ADVANCE</span><h3>The enemy learns your pace.</h3><p>Enable AI analysis to let Luna review wave and sector results. Difficulty shifts in small, bounded steps for the next encounter. Keep your hull, build and signed pact as you push toward the next boss.</p></li>
+      </ol>
+      <p class="gallery-note">Start with First Contact for a short negotiation and boss duel, or choose Full Campaign for six sectors of upgrades and battles. English and Japanese requests are supported. Text negotiation and LOCAL RULES are available when voice or online AI cannot be used.</p>
+    </section>
+
+    <section id="combat" aria-labelledby="combat-title">
+      <div class="section-head">
+        <div><p class="kicker">PC gameplay gallery / upgraded normal waves</p><h2 id="combat-title">Build up. Fill the arena.</h2></div>
+        <p>These are late-campaign waves with upgrades already earned. The mint streams, orbiting satellites and companion echoes are your growing arsenal in action.</p>
+      </div>
+      <div class="grid">
+        <figure class="still">
+          <a href="assets/wave-unwritten-sky.webp" target="_blank" rel="noopener" aria-label="Upgraded Sector 6 normal wave: open full-size PC screenshot in a new tab">
+            <img src="assets/wave-unwritten-sky.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="Sector 6 Wave 2: the player, two echo ships and three orbit satellites fire across the arena at regular enemies; seven relics and upgraded weapon icons are visible.">
+          </a>
+          <figcaption><p class="kicker">Normal wave / sector 06</p><h3>One ship. A whole firing line.</h3><p>Orbit satellites and echo ships support sustained, homing fire in The Unwritten Sky. Your accumulated build carries into the final sector.</p><ul class="tags" aria-label="Visible build"><li>Orbit ×3</li><li>Rapid fire ×3</li><li>Echo ×2</li><li>7 relics</li></ul></figcaption>
+        </figure>
+        <figure class="still">
+          <a href="assets/wave-prism-orchard.webp" target="_blank" rel="noopener" aria-label="Upgraded Sector 5 normal wave: open full-size PC screenshot in a new tab">
+            <img src="assets/wave-prism-orchard.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="Sector 5 Wave 2 in the pink Prism Orchard: an upgraded ship and echoes send streams of mint projectiles across the arena toward wave enemies.">
+          </a>
+          <figcaption><p class="kicker">Normal wave / sector 05</p><h3>Paint the Prism Orchard in fire.</h3><p>Curving projectiles pursue wave enemies while the signed Return to Sender pact rewards reflected shots. Each new upgrade adds another way to fight.</p><ul class="tags" aria-label="Visible build"><li>Homing shots</li><li>Echo ships</li><li>Reflection pact</li></ul></figcaption>
+        </figure>
+      </div>
+      <p class="gallery-note">Full 1920 × 1080 frames from the automated Windows Edge / WebGPU production run. Select any image to inspect it at full size in a new tab.</p>
+    </section>
+
+    <section aria-labelledby="boss-title">
+      <div class="section-head">
+        <div><p class="kicker">PC gameplay gallery / boss encounters</p><h2 id="boss-title">Bring your build to the big fight.</h2></div>
+        <p>Six bosses put your movement, timing and chosen pact to the test. Read the pattern, find a gap, then return their fire.</p>
+      </div>
+      <div class="grid">
+        <figure class="still">
+          <a href="assets/boss-weaver.webp" target="_blank" rel="noopener" aria-label="The Weaver boss fight: open full-size PC screenshot in a new tab">
+            <img src="assets/boss-weaver.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="The Weaver in its third phase: orange and violet bullet spokes meet the upgraded player's curving mint fire in the pink Prism Orchard.">
+          </a>
+          <figcaption><p class="kicker">Boss / the weaver / sector 05</p><h3>Thread the needle.</h3><p>Orange and violet patterns spread through the Prism Orchard. Your satellites and echoes keep firing while you maneuver around the boss.</p></figcaption>
+        </figure>
+        <figure class="still">
+          <a href="assets/boss-leviathan.webp" target="_blank" rel="noopener" aria-label="The Leviathan boss fight: open full-size PC screenshot in a new tab">
+            <img src="assets/boss-leviathan.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="The Leviathan's third phase in the blue Tidal Archive: curved violet bullet rows and bright projectiles cross the arena while the player fights under the No Witnesses pact.">
+          </a>
+          <figcaption><p class="kicker">Boss / the leviathan / sector 04</p><h3>Make it a duel.</h3><p>The signed No Witnesses pact keeps boss reinforcements out of this encounter. The Leviathan's own attacks still demand a clear route through the barrage.</p></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="film" aria-labelledby="film-title">
+      <div class="section-head">
+        <div><p class="kicker">Submission film / 59 seconds / 1080p60</p><h2 id="film-title">See the pact become the battle.</h2></div>
+        <p>Voice negotiation, an interruption, signed contracts, upgraded waves, adaptive reviews and the campaign's final victory.</p>
+      </div>
+      <div class="film">
+        <video poster="assets/boss-unwritten.webp" controls playsinline preload="none" aria-label="59-second full-campaign demo with synthetic player speech, real GPT-Live-1 replies and English captions">
+          <source src="https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/download/v1.3.0/NEMESIS-PACT-v1.3.0-59s-60fps-en-final.mp4" type="video/mp4">
+          <p>Your browser cannot play this video. <a href="https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/download/v1.3.0/NEMESIS-PACT-v1.3.0-59s-60fps-en-final.mp4">Download the MP4</a>.</p>
+        </video>
+        <div class="film-caption">
+          <p><strong>One complete production run: 6 voice pacts, 18 Luna reviews, 18 encounters and 6 bosses cleared.</strong> Recorded with demo autoplay and synthetic player speech sent to the real GPT-Live-1 API. The contracts, replies and combat are actual game behavior.</p>
+          <nav aria-label="Film downloads and human recording">
+            <a href="https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/download/v1.3.0/NEMESIS-PACT-v1.3.0-59s-60fps-en-final.mp4" download>Download 1080p60 MP4 ↗</a>
+            <a href="https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/download/v1.3.0/NEMESIS-PACT-v1.3.0-59s-60fps-en.srt" download>English captions ↗</a>
+            <a href="iphone.html">Earlier human iPhone demo ↗</a>
+          </nav>
+          <details>
+            <summary>Recording details &amp; verification</summary>
+            <p>The demo uses a fixed autoplay input policy and original Microsoft Zira synthetic player speech. GPT-Live-1 receives that audio; GPT-5.6 Luna proposes contracts and reviews performance. The captured pressure progresses from 0 to +1 to +2. No invulnerability, changed health, accelerated game clock or forced victory is used.</p>
+            <p>The uncut run lasts about 10 minutes 27 seconds, including 6 minutes 11 seconds of combat. Thirteen chronological, normal-speed cuts in native DaVinci Resolve preserve the original speech, enemy replies and game audio. The export is 1920 × 1080 at fixed 60 fps: 3,540 frames over 59 seconds. The original capture averaged 58.65 delivered fps; conversion duplicates missing frames without inventing motion.</p>
+            <p>The film and PC gallery show automated Windows Edge / WebGPU gameplay. The separate earlier iPhone film records human play. <a href="https://github.com/Yasei-no-otoko/nemesis-pact-live/blob/ship/living-covenant/docs/ADAPTIVE-VALIDATION.md">Read measurements, costs and validation limits</a> or <a href="gallery-provenance.json">inspect gallery image provenance</a>.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="ai-title">
+      <div class="section-head">
+        <div><p class="kicker">Inside the game / actual PC interface</p><h2 id="ai-title">Words change the rules.<br>Results shape the next round.</h2></div>
+        <p>Review every trade-off before you commit. Between encounters, see why the optional AI analysis recommends changing the pressure.</p>
+      </div>
+      <div class="grid">
+        <figure class="still">
+          <a href="assets/voice-contract.webp" target="_blank" rel="noopener" aria-label="Live voice contract: open full-size PC screenshot in a new tab">
+            <img src="assets/voice-contract.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="Actual campaign negotiation interface with GPT-Live-1 speaking and a GPT-5.6 Luna proposal: reflected damage ×2.2 in exchange for 25% weaker normal shots. Sign and enter combat awaits explicit acceptance.">
+          </a>
+          <figcaption><p class="kicker">GPT-Live-1 + GPT-5.6 Luna</p><h3>Your signature changes the fight.</h3><p>Here, the player asks for stronger reflections. The proposal offers ×2.2 reflected damage for 25% weaker normal shots. The displayed terms take effect only after Sign.</p></figcaption>
+        </figure>
+        <figure class="still">
+          <a href="assets/adaptive-review.webp" target="_blank" rel="noopener" aria-label="AI performance review: open full-size PC screenshot in a new tab">
+            <img src="assets/adaptive-review.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="Actual GPT-5.6 Luna wave review: 14 eliminations, no hull lost, 17.47 seconds, followed by pressure 0 to +1, 108% enemy bullet speed and 92% wave arrival spacing.">
+          </a>
+          <figcaption><p class="kicker">GPT-5.6 Luna / optional adaptation</p><h3>A visible reason for the next step.</h3><p>This wave ended with 14 eliminations and no hull lost. Luna recommended one pressure step: slightly faster bullets and closer wave arrivals in the next encounter.</p></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="concepts" id="concepts" aria-labelledby="concept-title">
+      <div class="section-head">
+        <div><p class="kicker">Visual development / AI-generated concepts</p><h2 id="concept-title">From an idea to an arena.</h2></div>
+        <p>These imagegen boards explored the visual direction during development. They are concept illustrations, not gameplay screenshots. The actual game is shown above.</p>
+      </div>
+      <div class="grid">
+        <figure class="still">
+          <a href="assets/concept-v099.webp" target="_blank" rel="noopener" aria-label="Version 0.9.9 concept illustration, not gameplay: open full-size image in a new tab">
+            <img src="assets/concept-v099.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="AI-generated v0.9.9 concept board, not gameplay: an orbital court, a geometric Notary boss, a mint sanctuary and a proposed negotiation interface.">
+          </a>
+          <figcaption><p class="kicker">Concept art / v0.9.9 / not gameplay</p><h3>The orbital court.</h3><p>A study of dark chambers, mint contract accents, gold details and a geometric adversary. Generated with imagegen to guide the game's visual refinement.</p></figcaption>
+        </figure>
+        <figure class="still">
+          <a href="assets/concept-v100.webp" target="_blank" rel="noopener" aria-label="Version 1.0.0 concept illustration, not gameplay: open full-size image in a new tab">
+            <img src="assets/concept-v100.webp" width="1536" height="1024" loading="lazy" decoding="async" alt="AI-generated v1.0.0 concept board, not gameplay: a boss encounter, a Covenant Honored result panel, a signed-deal record and portrait mobile HUD studies.">
+          </a>
+          <figcaption><p class="kicker">Concept art / v1.0.0 / not gameplay</p><h3>A pact worth keeping.</h3><p>An exploration of readable combat, a signed-deal record, an honored-contract ending and the mobile HUD. The board documents design intent.</p></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <aside class="closing" aria-label="Play NEMESIS PACT">
+      <div><h2>Name your terms.</h2><p>Try First Contact, take on the full campaign, or watch the built-in demo autoplay.</p></div>
+      <a class="button primary" href="https://nemesis-pact-live.vercel.app/">Enter NEMESIS PACT <span aria-hidden="true">↗</span></a>
+    </aside>
+  </main>
+  <footer class="wrap">
+    <span>NEMESIS PACT v1.3.0 · AI-Native Game Prototype</span>
+    <nav aria-label="Project resources">
+      <a href="https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/download/v1.3.0/NEMESIS-PACT-v1.3.0-source.zip">Source ZIP</a>
+      <a href="https://github.com/Yasei-no-otoko/nemesis-pact-live">GitHub</a>
+      <a href="https://github.com/Yasei-no-otoko/nemesis-pact-live/blob/ship/living-covenant/docs/ADAPTIVE-VALIDATION.md">Validation</a>
+      <a href="#">Back to top ↑</a>
+    </nav>
+  </footer>
+</body>
+</html>
