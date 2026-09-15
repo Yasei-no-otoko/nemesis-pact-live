@@ -1,0 +1,35 @@
+{
+  "capsSource": "Previously pulled runtime-production.env; current Vercel sensitive env pull returns placeholders",
+  "checkedAt": "2026-09-15T06:14:53.676Z",
+  "unit": "microdollars; conservative reservation accounting, not invoice",
+  "caps": {
+    "openai": 10000000,
+    "gateway": 20000000
+  },
+  "totals": {
+    "openai": [
+      "pool:public",
+      "2100000",
+      "pool:verification",
+      "900000",
+      "global",
+      "3000000",
+      "kind:text",
+      "100000",
+      "kind:voice",
+      "2900000"
+    ],
+    "gateway": [
+      "pool:verification",
+      "15566",
+      "global",
+      "47761",
+      "kind:text",
+      "47761",
+      "pool:public",
+      "32195"
+    ],
+    "kill": null,
+    "active": 0
+  }
+}

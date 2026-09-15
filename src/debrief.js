@@ -25,7 +25,7 @@
  }
  const field=(max)=>({type:'string',minLength:1,maxLength:max});
  function schema(){return {type:'object',additionalProperties:false,required:['headline','summary','strength','improvement','nextRun'],properties:{headline:field(96),summary:field(360),strength:field(240),improvement:field(240),nextRun:field(240)}};}
- function validateDecision(x){if(!x||typeof x!=='object'||Array.isArray(x)||Object.keys(x).length!==5)return bad();for(const k of ['headline','summary','strength','improvement','nextRun'])if(typeof x[k]!=='string'||!x[k].trim()||x[k].length>{headline:96,summary:360,strength:240,improvement:240,nextRun:240}[k]||/[\u0000-\u001f]/.test(x[k]))return bad();return {...x};}
+ function validateDecision(x,request){if(!x||typeof x!=='object'||Array.isArray(x)||Object.keys(x).length!==5)return bad();for(const k of ['headline','summary','strength','improvement','nextRun'])if(typeof x[k]!=='string'||!x[k].trim()||x[k].length>{headline:96,summary:360,strength:240,improvement:240,nextRun:240}[k]||/[\u0000-\u001f]/.test(x[k]))return bad();if(request){const r=cleanRequest(request).run,allowed=new Set([0,1,...ints.map(k=>r[k])]);for(const text of Object.values(x))for(const token of text.match(/-?\d+(?:,\d{3})*(?:\.\d+)?/g)||[])if(!allowed.has(Number(token.replace(/,/g,''))))throw Error('Unrecorded number in debrief');}return {...x};}
  function bad(){throw Error('Invalid debrief decision');}
  function mock(req){
   const clean=cleanRequest(req),r=clean.run,won=r.outcome==='won',comfortable=won&&r.hull/r.maxHull>.5&&r.damageTaken<r.maxHull;

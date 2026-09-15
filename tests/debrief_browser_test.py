@@ -49,7 +49,9 @@ with sync_playwright() as pw:
             c.route('**/api/debrief',answer)
         else:
             def capture_response(r):
-                if r.url.endswith('/api/debrief'):responses.append({'status':r.status,'body':r.json()})
+                if r.url.endswith('/api/debrief'):
+                    responses.append({'status':r.status,'body':r.json()})
+                    (out/(locale+'-'+str(width)+'-response.json')).write_text(json.dumps(responses,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
             p.on('response',capture_response)
         setup(p);name=locale+'-'+str(width)
         assert 'prototype' not in p.locator('#debrief').inner_text().lower()

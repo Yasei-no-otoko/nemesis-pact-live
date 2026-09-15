@@ -1,0 +1,86 @@
+{
+  "checkedAt": "2026-09-15T06:14:03.836133+00:00",
+  "url": "https://nemesis-pact-live.vercel.app/",
+  "realModelCalls": true,
+  "physicalMobile": false,
+  "stateSource": "Archived actual v1.3.0 automated campaign, replayed into a finished-state UI fixture; no new campaign clear claimed",
+  "cases": [
+    {
+      "locale": "en-US",
+      "viewport": [
+        1440,
+        900
+      ],
+      "touchEmulation": false,
+      "noCallBeforeConsent": true,
+      "worldAndScoresUnchanged": true,
+      "cachePreventsRepeatCalls": true,
+      "cacheRestoredAfterProviderOrConsentChange": true,
+      "requests": 1,
+      "responses": [
+        {
+          "status": 200,
+          "body": {
+            "provider": "openai",
+            "model": "gpt-5.6-luna",
+            "decision": {
+              "headline": "Flawless Expedition Finish",
+              "summary": "Autopilot demonstration: all 6 stages and bosses were cleared in 371 seconds, with 2 hull points lost and all 6 contracts kept.",
+              "strength": "Strong defense and consistency: 74 reflected bullets, 33 grazes, and 16 of 16 hull points remaining at the finish.",
+              "improvement": "For future practice, consider moving and dashing more deliberately while conserving Nova for especially dangerous moments, even on Story difficulty.",
+              "nextRun": "Try another full expedition while aiming to reduce hull loss further and maintain all contracts."
+            },
+            "runId": "1c272506-3841-40ef-b942-ddb2b3f7764a",
+            "sequence": 1,
+            "latencyMs": 3091,
+            "reason": "Validated end-of-run debrief.",
+            "billedBy": "vercel-ai-gateway",
+            "reservedMicrodollars": 10000,
+            "accountedMicrodollars": 279
+          }
+        }
+      ],
+      "pageErrors": [],
+      "renderer": "WEBGL2 / PBR"
+    },
+    {
+      "locale": "ja-JP",
+      "viewport": [
+        430,
+        932
+      ],
+      "touchEmulation": true,
+      "noCallBeforeConsent": true,
+      "worldAndScoresUnchanged": true,
+      "cachePreventsRepeatCalls": true,
+      "cacheRestoredAfterProviderOrConsentChange": true,
+      "requests": 1,
+      "responses": [
+        {
+          "status": 200,
+          "body": {
+            "provider": "openai",
+            "model": "gpt-5.6-luna",
+            "decision": {
+              "headline": "遠征を完勝、耐久をほぼ維持",
+              "summary": "オートプレイによるデモンストレーションで、6ステージ中6体のボスを撃破。失った耐久は2、6契約をすべて維持しました。",
+              "strength": "371秒で敵242体とボス6体を撃破し、弾74発を反射。失った耐久は2で、最終耐久は16中14でした。",
+              "improvement": "今後の練習では、近距離の危険を避ける移動やダッシュ、反射の使い分けを意識し、ノヴァを要所まで温存するのも一案です。",
+              "nextRun": "次回は今回の安定感を保ちつつ、被弾をさらに減らせるか試してみましょう。"
+            },
+            "runId": "86bcd540-9ad4-4dcc-b702-2c05d9fa175f",
+            "sequence": 1,
+            "latencyMs": 3304,
+            "reason": "Validated end-of-run debrief.",
+            "billedBy": "vercel-ai-gateway",
+            "reservedMicrodollars": 10000,
+            "accountedMicrodollars": 376
+          }
+        }
+      ],
+      "pageErrors": [],
+      "renderer": "WEBGL2 / PBR"
+    }
+  ],
+  "passed": true
+}
