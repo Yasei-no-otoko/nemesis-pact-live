@@ -28,8 +28,9 @@ test('identical seed, signatures and inputs produce identical gameplay counters'
 test('baseline center-sanctuary hook remains identical to the old collision condition',()=>{const w=new C.World('CORE');w.mods=C.modifiers('sanctuary');for(let i=0;i<1000;i++){const b={px:i%800,py:(i*17)%900,x:(i*31)%1280,y:(i*41)%800};assert.equal(w.protectBullet(b),C.segmentHit(b.px,b.py,b.x,b.y,640,400,76));}});
 
 
-test('local keyword fallback follows latest direction and explicit Japanese no-sanctuary terms',()=>{
+test('local keyword fallback follows latest direction and explicit English/Japanese no-sanctuary terms',()=>{
  const w=new V.Run('LOCAL-CORRECTIONS');
+ for(const phrase of ['Remove the sanctuary','Drop the sanctuary','Without the sanctuary','No sanctuary']){const s=V.localProposal(w.request(phrase+'. Slow fire and amplify reflections. Weaker gun.'));assert.equal(s.zone,'none');assert.equal(s.reflection,'charged');assert.equal(s.price,'weaker_gun');}
  assert.equal(V.localProposal(w.request('Left, no, right sanctuary. Slow fire; reinforcements.')).zone,'right');
  assert.equal(V.localProposal(w.request('右、いや左を安全に。増援は許可。')).zone,'left');
  const none=V.localProposal(w.request('結界はなし。弾を遅く、反射を強く。通常射撃を弱くしていい'));

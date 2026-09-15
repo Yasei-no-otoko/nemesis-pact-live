@@ -20,7 +20,7 @@
   // Local fallback is keyword-based: a later named direction replaces an earlier one.
   for(const m of p.matchAll(/\bleft\b|\bright\b|\bcent(?:er|re)\b|\u5de6|\u53f3|\u4e2d\u592e/gu))zone=/left|\u5de6/u.test(m[0])?'left':/right|\u53f3/u.test(m[0])?'right':'center';
   let speed=/slow|slower|\u9045|\u5f3e\u901f/u.test(p)?'slow':'normal',reflection=/reflect|parry|return fire|\u53cd\u5c04|\u30d1\u30ea\u30a3/u.test(p)?'charged':'normal';
-  if(/no (?:safe|shield|sanctuary)|\u7d50\u754c(?:\u306f|\u3092)?\s*\u306a\u3057/u.test(p))zone='none';if(zone==='none'&&speed==='normal'&&reflection==='normal')reflection='charged';
+  if(/(?:no|without(?: the)?|(?:remove|drop)(?: the)?) (?:safe|shield|sanctuary)|\u7d50\u754c(?:\u306f|\u3092)?\s*\u306a\u3057/u.test(p))zone='none';if(zone==='none'&&speed==='normal'&&reflection==='normal')reflection='charged';
   if(zone!=='none'&&speed==='slow'&&reflection==='charged')reflection='normal';
   let price=/fragil|double|damage me|\u88ab\u30c0\u30e1|\u4e8c\u500d/u.test(p)?'fragile':/reinforcement|turret|more enem|\u5897\u63f4/u.test(p)?'reinforcements':/haste|faster boss|\u653b\u6483\u983b\u5ea6/u.test(p)?'haste':'weaker_gun';
   const value=(zone!=='none'?2:0)+(speed==='slow'?1:0)+(reflection==='charged'?1:0);if(value>2&&!['fragile','reinforcements'].includes(price))price='reinforcements';
@@ -67,7 +67,7 @@
   step(dt,input={}){super.step(dt,input);if(this.phase==='combat'&&this.bossKills>0){this.completeEncounter();return;}if(this.phase==='combat'&&this.autoParley&&this.time>=18)this.requestParley();}
   completeEncounter(){this.enemies=[];this.bullets=[];this.lasers=[];this.phase='won';this.score+=this.broken?1000:3500;this.finishReason=this.broken?'unbound':'honored';this.emit('victory',{ending:this.finishReason});}
   memoryAfter(){return {honored:Math.min(10000,this.memory.honored+(this.phase==='won'&&!this.broken?1:0)),broken:Math.min(10000,this.memory.broken+(this.broken?1:0))};}
-  report(){const voice={...this.voiceEvidence};return {...super.report(),version:'0.9.9',mode:this.mode,contractLanguage:'living-covenant-v1',assists:'automatic aim/fire in First Contact UI',rules:this.spec?{...this.spec}:null,covenantStats:{...this.covenantStats},receipts:this.receipts.map(r=>({...r,spec:{...r.spec},snapshot:{...r.snapshot}})),memoryBefore:{...this.memory},memoryAfter:this.memoryAfter(),liveVoice:{...voice,status:voice.signedContracts>0?'contract-signed':voice.connectionStarted>0?'connected':'not-used'}};}
+  report(){const voice={...this.voiceEvidence};return {...super.report(),version:'1.0.0',mode:this.mode,contractLanguage:'living-covenant-v1',assists:'automatic aim/fire in First Contact UI',rules:this.spec?{...this.spec}:null,covenantStats:{...this.covenantStats},receipts:this.receipts.map(r=>({...r,spec:{...r.spec},snapshot:{...r.snapshot}})),memoryBefore:{...this.memory},memoryAfter:this.memoryAfter(),liveVoice:{...voice,status:voice.signedContracts>0?'contract-signed':voice.connectionStarted>0?'connected':'not-used'}};}
  }
  return {ZONES,SPEEDS,REFLECTS,PRICES,validateSpec,cleanRequest,schema,compile,describe,budget,localProposal,memory,telemetry,Client,Run};
 });

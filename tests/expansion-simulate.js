@@ -1,6 +1,7 @@
 'use strict';
 const {Run,RELICS}=require('../src/expansion.js'),{pilot}=require('./simulate.js'),fs=require('node:fs'),path=require('node:path');
-const result={method:'Fixed 120Hz, full-state heuristic pilot. Only legal combat inputs and offered menu decisions. No hull, timer or progression overrides. Not a human difficulty study.',runs:[]};
+const version=require('../package.json').version,out=process.env.NEMESIS_SIMULATION_OUT||path.join(__dirname,'../docs/validation-v'+version);
+const result={build:version,method:'Fixed 120Hz, full-state heuristic pilot. Only legal combat inputs and offered menu decisions. No hull, timer or progression overrides. Not a human difficulty study.',runs:[]};
 for(const layout of ['desktop','portrait'])for(const mode of ['expedition','gauntlet'])for(const difficulty of ['assist','standard','veteran']){
  const w=new Run('ASCENT-'+layout,difficulty,false,layout==='portrait'?{layout,height:1000}:{},{mode,airframe:'vanguard'});let frames=0,peakBullets=0,peakEnemies=0;
  while(!['won','dead'].includes(w.phase)&&frames<120*1800){
@@ -22,4 +23,4 @@ for(const layout of ['desktop','portrait'])for(const mode of ['expedition','gaun
  if(!['won','dead'].includes(w.phase)){console.log('STALL',JSON.stringify({stage:w.stage,wave:w.wave,p:w.p,upgrades:w.upgrades,enemies:w.enemies,plan:[w.planIndex,w.wavePlan.length],fire:w.ceasefire,pact:w.pact}));process.exitCode=1;}
 }
 result.completed=result.runs.filter(r=>r.outcome==='won').length;result.total=result.runs.length;
-fs.mkdirSync(path.join(__dirname,'../docs/validation-0.5.0'),{recursive:true});fs.writeFileSync(path.join(__dirname,'../docs/validation-0.5.0/campaign-simulations.json'),JSON.stringify(result,null,2));
+fs.mkdirSync(out,{recursive:true});fs.writeFileSync(path.join(out,'campaign-simulations.json'),JSON.stringify(result,null,2));

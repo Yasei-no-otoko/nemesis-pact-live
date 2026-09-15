@@ -1,0 +1,128 @@
+{
+  "url": "http://127.0.0.1:8100/?test=1",
+  "browser": "153.0.4234.32",
+  "renderer": "Edge / WebGL2 ANGLE SwiftShader",
+  "apiCalls": 0,
+  "scope": "automated local rules; RAF frozen before navigation; explicit deterministic ticks; phone sizes are emulation, not hardware",
+  "htmlSha256": "84d778d02c3b362c619380d6ff7645a01c9d38d6e9f58dc08ba123d2d1625674",
+  "results": [
+    {
+      "name": "desktop-1440",
+      "viewport": [
+        1440,
+        900
+      ],
+      "mobileEmulation": false,
+      "checks": [
+        "local proposal rendered without mutating pre-sign world",
+        "desktop action ability controls present",
+        "desktop DASH/PARRY clicks trigger combat cooldowns",
+        "parley cancel resumes original signed rules",
+        "amendment Sign preserves time, HP and boss HP"
+      ],
+      "overlap": [],
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "name": "desktop-1366",
+      "viewport": [
+        1366,
+        768
+      ],
+      "mobileEmulation": false,
+      "checks": [
+        "local proposal rendered without mutating pre-sign world",
+        "desktop action ability controls present",
+        "desktop DASH/PARRY clicks trigger combat cooldowns",
+        "parley cancel resumes original signed rules",
+        "amendment Sign preserves time, HP and boss HP"
+      ],
+      "overlap": [],
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "name": "desktop-960",
+      "viewport": [
+        960,
+        600
+      ],
+      "mobileEmulation": false,
+      "checks": [
+        "local proposal rendered without mutating pre-sign world",
+        "desktop action ability controls present",
+        "desktop DASH/PARRY clicks trigger combat cooldowns",
+        "parley cancel resumes original signed rules",
+        "amendment Sign preserves time, HP and boss HP"
+      ],
+      "overlap": [],
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "name": "phone-390",
+      "viewport": [
+        390,
+        844
+      ],
+      "mobileEmulation": true,
+      "checks": [
+        "local proposal rendered without mutating pre-sign world",
+        "mobile negotiate/review tabs and fixed review Sign visible",
+        "parley cancel resumes original signed rules",
+        "amendment Sign preserves time, HP and boss HP"
+      ],
+      "overlap": [
+        {
+          "a": "#touch-controls",
+          "b": "#playfield",
+          "overlap": false
+        },
+        {
+          "a": "#touch-controls",
+          "b": "#hud",
+          "overlap": false
+        },
+        {
+          "captionScrollHeight": 0,
+          "captionClientHeight": 0
+        }
+      ],
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "name": "phone-320",
+      "viewport": [
+        320,
+        568
+      ],
+      "mobileEmulation": true,
+      "checks": [
+        "local proposal rendered without mutating pre-sign world",
+        "mobile negotiate/review tabs and fixed review Sign visible",
+        "parley cancel resumes original signed rules",
+        "amendment Sign preserves time, HP and boss HP"
+      ],
+      "overlap": [
+        {
+          "a": "#touch-controls",
+          "b": "#playfield",
+          "overlap": false
+        },
+        {
+          "a": "#touch-controls",
+          "b": "#hud",
+          "overlap": false
+        },
+        {
+          "captionScrollHeight": 0,
+          "captionClientHeight": 0
+        }
+      ],
+      "errors": [],
+      "externalRequests": []
+    }
+  ]
+}

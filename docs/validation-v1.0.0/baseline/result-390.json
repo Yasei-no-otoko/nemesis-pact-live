@@ -1,0 +1,123 @@
+{
+  "version": "0.9.9",
+  "layout": "portrait",
+  "arena": {
+    "width": 720,
+    "height": 936
+  },
+  "seed": "NP-KIDJJG",
+  "difficulty": "standard",
+  "outcome": "won",
+  "score": 9376,
+  "seconds": 37.81,
+  "kills": 7,
+  "bosses": 1,
+  "parries": 4,
+  "grazes": 0,
+  "damageTaken": 0,
+  "breaches": 0,
+  "contracts": [
+    {
+      "stage": 0,
+      "id": "covenant",
+      "title": "Left-side Covenant",
+      "kept": true,
+      "revision": 1
+    }
+  ],
+  "upgrades": {
+    "rail": 1,
+    "parry": 1
+  },
+  "timeline": [
+    {
+      "t": 0,
+      "type": "boss",
+      "stage": 0
+    },
+    {
+      "t": 0,
+      "type": "wave",
+      "stage": 0,
+      "wave": 2
+    },
+    {
+      "t": 37.81,
+      "type": "victory",
+      "ending": "honored"
+    }
+  ],
+  "mode": "first-contact",
+  "airframe": "vanguard",
+  "sectorCount": 1,
+  "credits": 42,
+  "relics": [],
+  "routes": [],
+  "director": "balanced",
+  "encounters": 1,
+  "chronicle": [],
+  "contractLanguage": "living-covenant-v1",
+  "assists": "automatic aim/fire in First Contact UI",
+  "rules": {
+    "version": 1,
+    "title": "Left-side Covenant",
+    "zone": "left",
+    "speed": "slow",
+    "reflection": "normal",
+    "price": "reinforcements",
+    "line": "Every promise needs a price. Read the binding clauses below. Sign only what you intend to keep.",
+    "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+  },
+  "covenantStats": {
+    "shielded": 17,
+    "reflectedDamage": 232,
+    "gunDamage": 3506,
+    "amendments": 0
+  },
+  "receipts": [
+    {
+      "revision": 1,
+      "at": 0,
+      "provider": "local-rules",
+      "model": null,
+      "latencyMs": 0,
+      "spec": {
+        "version": 1,
+        "title": "Left-side Covenant",
+        "zone": "left",
+        "speed": "slow",
+        "reflection": "normal",
+        "price": "reinforcements",
+        "line": "Every promise needs a price. Read the binding clauses below. Sign only what you intend to keep.",
+        "rationale": "LOCAL RULES: keyword-matched rehearsal. Missing or over-budget requests are counteroffered; only the displayed clauses are binding."
+      },
+      "snapshot": {
+        "seconds": 0,
+        "parries": 0,
+        "grazes": 0,
+        "damageTaken": 0,
+        "shielded": 0,
+        "reflectedDamage": 0
+      }
+    }
+  ],
+  "memoryBefore": {
+    "honored": 0,
+    "broken": 0
+  },
+  "memoryAfter": {
+    "honored": 1,
+    "broken": 0
+  },
+  "liveVoice": {
+    "model": "gpt-live-1",
+    "connectionStarted": 0,
+    "sessionClosed": 0,
+    "delegationRequests": 0,
+    "proposalsReturned": 0,
+    "openaiProposals": 0,
+    "signedContracts": 0,
+    "lastState": "idle",
+    "status": "not-used"
+  }
+}

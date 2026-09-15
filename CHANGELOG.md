@@ -1,3 +1,11 @@
+## v1.0.0 — The signed record (2026-09-15)
+
+- First Contact now ends with its own honored / unbound / lost presentation, actual final terms and measured sanctuary, reflection, hull and signature counters. Campaign rank thresholds no longer grade the one-boss encounter.
+- Retry keeps the seed and persisted Notary memory; a direct Full campaign action opens flight command.
+- Combat hints respond to actual laser tells and Nova readiness. The signed announcement is smaller and shorter. Pause explains when an amendment is available, spent or blocked by a broken pact.
+- First Contact help explains automatic fire, laser/sanctuary limits and the 8-second / 18-second parley flow. The touch movement pad is keyboard focusable.
+- New imagegen concept translated into local CSS geometry. Framework, models, explicit Sign, shared quotas, combat rules, campaign and recorder remain intact.
+
 # Changelog
 
 ## 0.9.9 — 2026-09-15 — Orbital Covenant

@@ -16,3 +16,6 @@ GOAL section10 deliverables pass within recorded evidence scopes. Optional devic
 
 
 2026-09-15 JST: subsequent user-requestedv0.9.9 craft goal completed. Imagegen concept→three actual game loops→229 tests→real Live/Luna production regression→public release/sourceZIP. Application66e6641,versiontagf8122b9,final milestone-19-v099-verified; current records in V0.9.9-VALIDATION.md / RELEASE-CANDIDATE.json. Prior task history below/above is preserved.
+
+
+2026-09-15: user requested v1.0.0 from verified v0.9.9. See V1.0.0-PLAN.md for the bounded concept → actual UI → browser/controls → production loop. No reset to original ZIP and no changes to model/quota authority.

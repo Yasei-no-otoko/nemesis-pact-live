@@ -1,0 +1,1 @@
+{"build":"1.0.0","screen":"game","negotiationStep":"negotiate","coordinates":"origin top-left; x right; y down","renderer":"WEBGL2 / PBR","arena":{"width":1280,"height":800},"phase":"combat","seconds":2.27,"player":{"x":477,"y":596,"hp":7,"energy":100},"enemies":[{"type":"turret","x":640,"y":210,"hp":999999}],"hostileBullets":0,"proposal":null,"voice":"idle","liveVoice":null}

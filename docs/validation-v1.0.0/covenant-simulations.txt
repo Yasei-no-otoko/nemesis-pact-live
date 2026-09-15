@@ -1,0 +1,72 @@
+desktop standard won 34.46 10 {
+  shielded: 2,
+  reflectedDamage: 641.1999999999999,
+  gunDamage: 2842.800000000021,
+  amendments: 1
+}
+desktop standard won 38.07 10 {
+  shielded: 0,
+  reflectedDamage: 901.7999999999794,
+  gunDamage: 2488.200000000002,
+  amendments: 1
+}
+desktop standard won 34.56 8 {
+  shielded: 10,
+  reflectedDamage: 498.79999999999995,
+  gunDamage: 2891.200000000022,
+  amendments: 1
+}
+desktop veteran won 45.46 7 {
+  shielded: 3,
+  reflectedDamage: 879.1999999999999,
+  gunDamage: 3555.800000000025,
+  amendments: 1
+}
+desktop veteran won 47.51 7 {
+  shielded: 0,
+  reflectedDamage: 1185.5999999999601,
+  gunDamage: 3104.4000000000165,
+  amendments: 1
+}
+desktop veteran won 42.72 7 {
+  shielded: 5,
+  reflectedDamage: 820.1999999999973,
+  gunDamage: 3469.800000000032,
+  amendments: 1
+}
+portrait standard won 39.69 10 {
+  shielded: 2,
+  reflectedDamage: 440.79999999999995,
+  gunDamage: 3065.2000000000276,
+  amendments: 1
+}
+portrait standard won 40.58 10 {
+  shielded: 0,
+  reflectedDamage: 730.8,
+  gunDamage: 2659.1999999999803,
+  amendments: 1
+}
+portrait standard won 35.92 10 {
+  shielded: 2,
+  reflectedDamage: 451.19999999999993,
+  gunDamage: 2974.80000000002,
+  amendments: 1
+}
+portrait veteran won 46.84 7 {
+  shielded: 3,
+  reflectedDamage: 904.7999999999998,
+  gunDamage: 3530.2000000000216,
+  amendments: 1
+}
+portrait veteran won 52.28 7 {
+  shielded: 0,
+  reflectedDamage: 857.999999999957,
+  gunDamage: 3432.000000000024,
+  amendments: 1
+}
+portrait veteran won 46.04 7 {
+  shielded: 1,
+  reflectedDamage: 638,
+  gunDamage: 3652.0000000000296,
+  amendments: 1
+}

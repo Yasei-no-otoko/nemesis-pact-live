@@ -1,3 +1,5 @@
+Current v1.0.0 clarification (2026-09-15): historical version sections below describe their own release only. The hosted game now uses real GPT-Live-1 and GPT-5.6 Luna, as documented in README and current validation. The new `output/imagegen/nemesis-v100-concept.png` was generated with the authenticated built-in imagegen tool and translated to local CSS/geometry; no bitmap is required at runtime. The tool does not expose model/cost. No new third-party runtime library, paid plan or project license was added. v0.9.9 concept provenance also remains in its plan.
+
 > Historical v0.5.0 baseline document, retained verbatim below. For the 2026-09-14 shipping changes, actual Live API use, new runtime dependency and repository/deployment evidence, see [current sources and licenses](docs/SOURCES-AND-LICENSES.md). Statements below about no live inference/deployment apply only to that earlier revision.
 
 # Third-party notices and development-tool disclosure

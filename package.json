@@ -1,6 +1,6 @@
 {
   "name": "blast-buster-nemesis-pact",
-  "version": "0.9.9",
+  "version": "1.0.0",
   "private": true,
   "description": "Living Covenant: negotiate composable combat rules, mid-fight amendments, readable First Contact, preserved six-sector campaign.",
   "scripts": {

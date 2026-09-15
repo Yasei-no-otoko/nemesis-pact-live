@@ -1,14 +1,15 @@
 """v0.9.9 polish pass: local Edge UI/interaction QA, no model or API calls."""
 from pathlib import Path
-import hashlib, json
+from urllib.parse import urlsplit
+import hashlib, json, os
 import sys
 from playwright.sync_api import sync_playwright
 from browser_env import launch_kwargs
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "docs" / "validation-v0.9.9" / "polish-browser"
+OUT = Path(os.environ.get('NEMESIS_POLISH_OUT', ROOT / 'docs' / ('validation-v'+json.loads((ROOT/'package.json').read_text(encoding='utf-8'))['version']) / 'polish-browser'))
 OUT.mkdir(parents=True, exist_ok=True)
-URL = "http://127.0.0.1:8099/?test=1"
+URL = os.environ.get('NEMESIS_TEST_URL', 'http://127.0.0.1:8100/?test=1')
 VIEWPORTS = [("desktop-1440", 1440, 900, False), ("desktop-1366", 1366, 768, False),
              ("desktop-960", 960, 600, False), ("phone-390", 390, 844, True),
              ("phone-320", 320, 568, True)]
@@ -46,7 +47,7 @@ with sync_playwright() as pw:
             context.add_init_script("window.__PACT_TEST_MODE__=true; window.requestAnimationFrame=()=>0;")
             page = context.new_page(); page.set_default_timeout(8000)
             page.on("pageerror", lambda e: errors.append(str(e)))
-            page.on("request", lambda r: requests.append(r.url) if r.url.startswith(("http:", "https:", "ws:", "wss:")) and "127.0.0.1:8099" not in r.url else None)
+            page.on("request", lambda r: requests.append(r.url) if r.url.startswith(("http:", "https:", "ws:", "wss:")) and urlsplit(r.url).netloc != urlsplit(URL).netloc else None)
             page.goto(URL, wait_until="domcontentloaded")
             page.wait_for_timeout(900)
             assert page.evaluate("typeof window.NEMESIS_RENDERER !== 'undefined'")
