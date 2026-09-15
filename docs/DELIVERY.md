@@ -1,5 +1,9 @@
 # Delivery — NEMESIS PACT v1.3.0
 
+## Submission readiness — September 15, 22:42 JST
+
+[Final six copy-ready answers and submission links](SUBMISSION-FINAL-20260915.md) · [Fresh public audit, source/build hashes and rollback](PRE-SUBMISSION-AUDIT-20260915.md). Anonymous LOCAL RULES proposal/sign/combat, public repository viewing and the entire existing 59-second video passed. Application remains **795e39e**, production **dpl_CPSZWuHrirUtLbpt2hwcArHYbtRU READY**; no game changes or redeployment. The separately prepared new media work is preserved, not declared complete. Existing film shows **0627590**, not the later UI fixes. This audit does not claim new live API or human/physical-phone verification. The representative must still verify personal/team details and rights/build-period eligibility, submit the official form before **23:59 JST**, and keep its confirmation. Submission has not been performed by this agent.
+
 ## Current consent recovery release — September 15, 22:11 JST
 
 Source **`795e39efe609fe188646ed354268b560ea432486`**, production READY **`dpl_CPSZWuHrirUtLbpt2hwcArHYbtRU`**. [Play](https://nemesis-pact-live.vercel.app/).

@@ -20,7 +20,11 @@ After **22:30 JST**, only submission blockers, regressions and essential clarity
 
 The official submission form and rights attestations remain the representative's final action; this request to improve the game is not authorization to submit legal confirmations. Prepare the actual links and final copy first.
 
-## Latest checkpoint — consent and local recovery, 22:11 JST
+## Latest checkpoint — pre-submission audit, 22:42 JST
+
+Documentation-only audit preserves d650d37 and its separate, pending media refresh. App **795e39e**, production **dpl_CPSZWuHrirUtLbpt2hwcArHYbtRU READY**, unchanged public build hash. Fresh anonymous normal controls reached LOCAL RULES → explicit Sign → combat/parley; the earlier 59-second movie played completely and repository is public. [Evidence/limits/rollback](PRE-SUBMISSION-AUDIT-20260915.md), [final six submission answers](SUBMISSION-FINAL-20260915.md). No code publication or new model call. Do not redo earlier fixes or interfere with media work. Representative form submission remains unconfirmed. Only actual blockers until23:20; no code publication after23:30; prioritize submission and keep links live through September17.
+
+## Previous checkpoint — consent and local recovery, 22:11 JST
 
 Source `795e39efe609fe188646ed354268b560ea432486`, production READY `dpl_CPSZWuHrirUtLbpt2hwcArHYbtRU`, rollback `dpl_5aV9W1BJvxT8VG3kb5fweKMKpNnH`. Missing-consent Get counteroffer opens an unchecked consent/provider dialog before sending this request. The explicit LOCAL RULES shortcut remains visible for online users too. Tests47 plus final wording test5 passed, syntax58/build passed, normal browser flow and 390/320px iframe layouts checked. Public bytes match the hosted build, QA fixture404. Preserve all prior fixes. [Details](CONSENT-RECOVERY-VALIDATION.md).
 

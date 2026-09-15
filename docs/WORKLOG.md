@@ -1,5 +1,9 @@
 # Work log
 
+## Pre-submission audit — 2026-09-15, 22:42 JST
+
+Documentation-only final check on clean default d650d37, preserving the concurrent media-refresh preparation. Application remains 795e39e / READY dpl_CPSZWuHrirUtLbpt2hwcArHYbtRU; fresh public HTML matches the hosted build hash. Anonymous normal UI reached LOCAL RULES, explicit signature, combat and recorded parley (hull 8/10, boss 52%, four erased bullets). The existing 59.008-second movie played to ended=true at normal speed; public source is readable without login. No new live AI, physical-phone, human-play, full-campaign or audio-quality test is claimed. No app redeploy, quota change or form submission. [Audit, hashes, limits and rollback](PRE-SUBMISSION-AUDIT-20260915.md); [final six answer bodies and links](SUBMISSION-FINAL-20260915.md). The current film still shows earlier app 0627590, and separate media refresh is pending. Representative submission and legal/build-period checks remain required before 23:59 JST.
+
 ## Consent and local recovery — 2026-09-15, 22:11 JST
 
 Source **`795e39efe609fe188646ed354268b560ea432486`** on `improve/consent-recovery-20260915` and default `ship/living-covenant`. Inherited clean `1a5146a`, no open PR/newer deployment/concurrent work; feedback branch already integrated. Tree `83a92994ad7e5799613552fcf8d922096fe628b8` matches local commit `b567c6a`; non-force GitHub writes, old branches and work preserved.
