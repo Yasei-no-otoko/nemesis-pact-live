@@ -1,0 +1,248 @@
+{
+  "checkedAt": "2026-09-15T02:30:41.292207+00:00",
+  "url": "https://docs.google.com/forms/d/e/1FAIpQLSdvUFtWLVKJOaZrvBN6gOHadhnzSf3SM9FjuE77QiTwiZL9Tw/viewform",
+  "status": 200,
+  "browser": "153.0.4234.32",
+  "anonymous": true,
+  "fields": [
+    {
+      "label": "メールアドレス\n*\nメールアドレス",
+      "fields": [
+        {
+          "tag": "INPUT",
+          "type": "email",
+          "role": null,
+          "label": "メールアドレス",
+          "required": null
+        }
+      ]
+    },
+    {
+      "label": "Team or Solo?\n*\nTeam\nSolo",
+      "fields": [
+        {
+          "tag": "INPUT",
+          "type": "hidden",
+          "role": null,
+          "label": null,
+          "required": null
+        },
+        {
+          "tag": "DIV",
+          "type": null,
+          "role": "radio",
+          "label": "Team",
+          "required": null
+        },
+        {
+          "tag": "DIV",
+          "type": null,
+          "role": "radio",
+          "label": "Solo",
+          "required": null
+        }
+      ]
+    },
+    {
+      "label": "Team name\n*\n回答を入力",
+      "fields": [
+        {
+          "tag": "INPUT",
+          "type": "text",
+          "role": null,
+          "label": null,
+          "required": null
+        }
+      ]
+    },
+    {
+      "label": "Names of all team members. Please list all team members, one per line.\n*\n回答を入力",
+      "fields": [
+        {
+          "tag": "TEXTAREA",
+          "type": "textarea",
+          "role": null,
+          "label": "回答を入力",
+          "required": null
+        }
+      ]
+    },
+    {
+      "label": "Challenge track\n*\nTrack 1: AI-Native Game Prototype\nTrack 2: Game Production Tools",
+      "fields": [
+        {
+          "tag": "INPUT",
+          "type": "hidden",
+          "role": null,
+          "label": null,
+          "required": null
+        },
+        {
+          "tag": "DIV",
+          "type": null,
+          "role": "radio",
+          "label": "Track 1: AI-Native Game Prototype",
+          "required": null
+        },
+        {
+          "tag": "DIV",
+          "type": null,
+          "role": "radio",
+          "label": "Track 2: Game Production Tools",
+          "required": null
+        }
+      ]
+    },
+    {
+      "label": "Project title\n*\n回答を入力",
+      "fields": [
+        {
+          "tag": "INPUT",
+          "type": "text",
+          "role": null,
+          "label": null,
+          "required": null
+        }
+      ]
+    },
+    {
+      "label": "[optional] Working demo URL\nPlease ensure the link remains accessible through September 17.\n回答を入力",
+      "fields": [
+        {
+          "tag": "INPUT",
+          "type": "text",
+          "role": null,
+          "label": null,
+          "required": null
+        }
+      ]
+    },
+    {
+      "label": "[optional] Repository URL\nGitHub or another accessible code repository.\n回答を入力",
+      "fields": [
+        {
+          "tag": "INPUT",
+          "type": "text",
+          "role": null,
+          "label": null,
+          "required": null
+        }
+      ]
+    },
+    {
+      "label": "[required] Demo video URL\n*\nMaximum length: 1 minute. Please provide a publicly accessible or viewable-by-link URL. \n回答を入力",
+      "fields": [
+        {
+          "tag": "INPUT",
+          "type": "text",
+          "role": null,
+          "label": null,
+          "required": null
+        }
+      ]
+    },
+    {
+      "label": "Project description\n*\nExplain in maximum 200 words what you built, who it is for, and what it does.\n回答を入力",
+      "fields": [
+        {
+          "tag": "TEXTAREA",
+          "type": "textarea",
+          "role": null,
+          "label": "回答を入力",
+          "required": null
+        }
+      ]
+    },
+    {
+      "label": "Judging criteria 1 (30%) - Meaningful use of OpenAI tools\n*\nExplain in maximum 200 words which OpenAI technologies you used, how they are integrated into the project, and why their use is meaningful.\n回答を入力",
+      "fields": [
+        {
+          "tag": "TEXTAREA",
+          "type": "textarea",
+          "role": null,
+          "label": "回答を入力",
+          "required": null
+        }
+      ]
+    },
+    {
+      "label": "Judging criteria 2 (25%) - Originality\n*\nExplain in maximum 200 words what is novel or distinctive about your project and how it differs from existing games, tools, or workflows.\n回答を入力",
+      "fields": [
+        {
+          "tag": "TEXTAREA",
+          "type": "textarea",
+          "role": null,
+          "label": "回答を入力",
+          "required": null
+        }
+      ]
+    },
+    {
+      "label": "Juding criteria 3 (25%) - Playability / Utility\n*\nExplain in maximum 200 words how usable, playable, or practically valuable the project is in its current form.\n回答を入力",
+      "fields": [
+        {
+          "tag": "TEXTAREA",
+          "type": "textarea",
+          "role": null,
+          "label": "回答を入力",
+          "required": null
+        }
+      ]
+    },
+    {
+      "label": "Judging criteria 4 (20%) - Execution and craft\n*\nExplain in maximum 200 words the quality of the implementation, technical execution, design, polish, and completeness of the project.\n回答を入力",
+      "fields": [
+        {
+          "tag": "TEXTAREA",
+          "type": "textarea",
+          "role": null,
+          "label": "回答を入力",
+          "required": null
+        }
+      ]
+    },
+    {
+      "label": "Pre-existing code, open-source components, datasets, or third-party tools.\n*\nIn maximum 200 words list any material incorporated into your submission, together with the applicable licenses.\n回答を入力",
+      "fields": [
+        {
+          "tag": "TEXTAREA",
+          "type": "textarea",
+          "role": null,
+          "label": "回答を入力",
+          "required": null
+        }
+      ]
+    },
+    {
+      "label": "Submission confirmation\n*\nConfirm that this submission was substantially developed during the official build period and complies with the Official Rules (link).\nWe confirm that this submission was substantially developed during the official build period and complies with the Official Rules",
+      "fields": [
+        {
+          "tag": "INPUT",
+          "type": "hidden",
+          "role": null,
+          "label": null,
+          "required": null
+        },
+        {
+          "tag": "DIV",
+          "type": null,
+          "role": "checkbox",
+          "label": "We confirm that this submission was substantially developed during the official build period and complies with the Official Rules",
+          "required": null
+        }
+      ]
+    },
+    {
+      "label": "We confirm that this submission was substantially developed during the official build period and complies with the Official Rules",
+      "fields": [
+        {
+          "tag": "DIV",
+          "type": null,
+          "role": "checkbox",
+          "label": "We confirm that this submission was substantially developed during the official build period and complies with the Official Rules",
+          "required": null
+        }
+      ]
+    }
+  ]
+}

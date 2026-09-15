@@ -1,3 +1,5 @@
+> Current v1.1.0: [AI Director production evidence](DIRECTOR-VALIDATION.md),239tests and2realLuna calls. [Submission form](SUBMISSION-FORM-GUIDE.md). Older milestones below are historical.
+
 > Current v1.0.0: [production and encounter validation](V1.0.0-VALIDATION.md). Prior milestone material follows; each version has its own evidence.
 
 > Current v0.9.9: [production, live API and craft validation](V0.9.9-VALIDATION.md). The material below records earlier release milestones.

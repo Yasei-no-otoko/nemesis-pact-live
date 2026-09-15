@@ -1,0 +1,80 @@
+OpenAI x Tokyo AI: 100-Hour Game Challenge Submission Form
+One submission per team. Please have the team representative submit this form on behalf of the entire team. 
+
+Deadline: September 15, 11:59 PM JST.
+
+Event page (with judging criteria and URL to the official rules): https://luma.com/3kj24doy
+Google にログインすると作業内容を保存できます。詳細
+* 必須の質問です
+メールアドレス
+*
+メールアドレス
+Team or Solo?
+*
+Team
+Solo
+Team name
+*
+回答を入力
+Names of all team members. Please list all team members, one per line.
+*
+回答を入力
+Challenge track
+*
+Track 1: AI-Native Game Prototype
+Track 2: Game Production Tools
+Project title
+*
+回答を入力
+[optional] Working demo URL
+Please ensure the link remains accessible through September 17.
+回答を入力
+[optional] Repository URL
+GitHub or another accessible code repository.
+回答を入力
+[required] Demo video URL
+*
+Maximum length: 1 minute. Please provide a publicly accessible or viewable-by-link URL. 
+回答を入力
+Project description
+*
+Explain in maximum 200 words what you built, who it is for, and what it does.
+回答を入力
+Judging criteria 1 (30%) - Meaningful use of OpenAI tools
+*
+Explain in maximum 200 words which OpenAI technologies you used, how they are integrated into the project, and why their use is meaningful.
+回答を入力
+Judging criteria 2 (25%) - Originality
+*
+Explain in maximum 200 words what is novel or distinctive about your project and how it differs from existing games, tools, or workflows.
+回答を入力
+Juding criteria 3 (25%) - Playability / Utility
+*
+Explain in maximum 200 words how usable, playable, or practically valuable the project is in its current form.
+回答を入力
+Judging criteria 4 (20%) - Execution and craft
+*
+Explain in maximum 200 words the quality of the implementation, technical execution, design, polish, and completeness of the project.
+回答を入力
+Pre-existing code, open-source components, datasets, or third-party tools.
+*
+In maximum 200 words list any material incorporated into your submission, together with the applicable licenses.
+回答を入力
+Submission confirmation
+*
+Confirm that this submission was substantially developed during the official build period and complies with the Official Rules (link).
+We confirm that this submission was substantially developed during the official build period and complies with the Official Rules
+回答のコピーが指定したアドレスにメールで送信されます。
+送信
+フォームをクリア
+Google フォームでパスワードを送信しないでください。
+reCAPTCHA
+プライバシー
+利用規約
+このフォームは Foundry Labs 内部で作成されました。
+
+このフォームが不審だと思われる場合 報告
+
+ フォーム
+ 
+ヘルプとフィードバック

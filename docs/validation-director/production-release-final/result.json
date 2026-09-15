@@ -1,0 +1,24 @@
+{
+  "checkedAt": "2026-09-15T02:36:47.065Z",
+  "production": "https://nemesis-pact-live.vercel.app",
+  "httpStatus": 200,
+  "hostedBytes": 433935,
+  "productionSha256": "cd96811f5fd1cd61081b3e66d0860cbe79d847261f837c3f3de783f68403a906",
+  "localSha256": "cd96811f5fd1cd61081b3e66d0860cbe79d847261f837c3f3de783f68403a906",
+  "exactBuildMatch": true,
+  "headers": {
+    "permissions-policy": "camera=(), microphone=(self), geolocation=()",
+    "content-security-policy": null,
+    "x-content-type-options": "nosniff",
+    "referrer-policy": "no-referrer"
+  },
+  "hostedMetaCsp": "default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; media-src 'self' blob:; font-src 'none'; base-uri 'none'; form-action 'none'",
+  "offlineMetaCsp": "default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; media-src 'none'; font-src 'none'; base-uri 'none'; form-action 'none'",
+  "recorderTimersBound": true,
+  "voiceStartRefresh": true,
+  "legacyApi": {
+    "status": 200,
+    "provider": "local-rules"
+  },
+  "realModelCalls": 0
+}

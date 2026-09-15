@@ -1,13 +1,15 @@
-# Delivery — v1.0.0
+# Delivery — v1.1.0 AI Director
 
-[Production](https://nemesis-pact-live.vercel.app/) · [Repository](https://github.com/Yasei-no-otoko/nemesis-pact-live) · [Human 59s/1080p60 demo](https://www.circle-hydrangea.net/nemesis-pact-live/)
+[Play](https://nemesis-pact-live.vercel.app/) · [Repository](https://github.com/Yasei-no-otoko/nemesis-pact-live) · [Human59s/1080p60 demo](https://www.circle-hydrangea.net/nemesis-pact-live/)
 
-Branch ship/living-covenant; app 4ee074d2a76ceaa29ec59d17e3928d142309f07c; READY dpl_BQpYDUTtvPG15BgcahdQAmS4fGsC. Hosted 422405 bytes, SHA256 b22cd4ff5de7985ab0d8e49386b3ba7c306673c39715e8886858a5bd6f437e75. See [verification](V1.0.0-VALIDATION.md) and [candidate](RELEASE-CANDIDATE.json).
+Branch ship/living-covenant; app `5de9378be8ed7387157510a9915af67417f06abd`; READY `dpl_Ey6W5h1mdVdm1ExsdNbvLi7ibgRW`. Exact433935-byte hosted hash`cd96811f5fd1cd61081b3e66d0860cbe79d847261f837c3f3de783f68403a906`. [Verification](DIRECTOR-VALIDATION.md).
 
-New engraved result screen displays actual contract impact; contextual combat guidance, amendment explanations and retry/campaign flow complete First Contact. Models remain gpt-live-1 and openai/gpt-5.6-luna. Production interruption/correction/Sign/voice amendment/Sign2 passed with exact synchronous state continuity and confirmed shutdowns. Earlier startup-event timeouts are preserved, not counted as successes.
+Full campaign → Expedition → AI Director → OpenAI consent → request → compare → Use this formation. Real GPT-5.6 Luna selects authored templates; approved formations change actual regular waves. Preview and battle share seeded schedules. Existing GPT-Live-1/Luna covenant path is preserved.
 
-229 tests; 34 syntax checks; 18 offline assertions; 5 polish sizes; 7 production contract layouts; 3 production ending matrices; 24 deterministic simulation runs. Ordinary rendering sampled 56.72–57.17fps on Windows Edge/RX6900XT. Phone layouts are emulation. Previous iPhone/Vivaldi human evidence is unchanged; the movie predates refreshed artwork.
+239/239 unit tests,39 syntax files,3 real Redis tests,4 local Director viewports,18 campaign scene fixtures,2 real Luna/approval/spawn flows (2446/2165ms). Windows Edge153.0.4234.32; phone layouts are emulation. Latest runtime uses native WebGPU/compute; software WebGL2 fixtures are separately labeled.
 
-Conservative direct OpenAI $2.600000/$10; Gateway $0.036070/$20. Exact grant/infrastructure/provider invoices remain unknown. Built-in imagegen cost is not exposed.
+DirectOpenAI$2.600000/$10;Gateway$0.036538/$20,added$0.000468. Exact grant/infrastructure/provider invoices remain unknown. Existing human iPhone movie predates this feature.
 
-[Versioned Release](https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/tag/v1.0.0) and its 12083202-byte source ZIP are public; anonymous download SHA matches `81ae165512989f809052d27573915052e121d0bc730ddc3ec8573f3042dffb63`. The viewer links to v1.0.0 and the unchanged human movie plays. Final evidence tag: milestone-21-v100-verified. Rollback: `vercel rollback dpl_CsUJ386UFWLPKg4UN7r1jvCpcuoB --yes`; preserve Redis, quotas and media.
+[Submission answers](SUBMISSION-EN.md):six paragraphs at200words each. [Form guide](SUBMISSION-FORM-GUIDE.md). Personal fields are in the ignored local kit; the form was not submitted.
+
+Rollback: `vercel rollback dpl_BQpYDUTtvPG15BgcahdQAmS4fGsC --yes --scope wildmans-projects`. Preserve Redis, budgets and media.

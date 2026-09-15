@@ -7,7 +7,7 @@ Production: https://nemesis-pact-live.vercel.app. Scope: only project `prj_fB5yG
 | Provider | Total | Verification | Public | Judging | Route |
 |---|---:|---:|---:|---:|---|
 | Direct OpenAI | $10 | $3 | $5 | $2 | GPT-Live-1 voice; bounded recorded-audio verification analyses |
-| Vercel AI Gateway | $20 | $1 | $14 | $5 | GPT-5.6 Luna text only |
+| Vercel AI Gateway | $20 | $1 | $14 | $5 | GPT-5.6 Luna contracts and Director |
 
 These are separately approved application caps. Production now selects the **public** pool for both providers: `OPENAI_BUDGET_POOL=public` and `GATEWAY_BUDGET_POOL=public`. Both project-scoped selector updates and redeployment were confirmed; one live Gateway request settled exclusively against its public pool. Existing verification totals remain intact. No new direct-voice public session was created for this pool check. Before judging, an operator can select `judging`; the public pool cannot consume the reserved judging allocation. Never increase a cap or buy additional credit as an automatic fallback.
 
@@ -44,3 +44,8 @@ Luna uses standard/default tier, reasoning none, a 700-token output cap and 12-s
 
 
 Recorded-audio verification on2026-09-15 used one $0.05 atomic reservation in the approved $3 verification / $10 total direct OpenAI budget. The public direct-text cap remains0. A local-only $0.05 analysis allocation admitted one gpt-4o-transcribe-diarize call after the standard text cap rejected it; it is now fully retained/exhausted. No production environment, aggregate/pool cap or paid plan changed. Latest shared totals: OpenAI $2.000000, Gateway $0.030114, active0/killnull at2026-09-14T16:59:49.531Z; not invoices.
+
+
+## Current v1.1.0 deployment
+
+Source5de9378;READY dpl_Ey6W5h1mdVdm1ExsdNbvLi7ibgRW. Director uses existing text caps and a separate nemesis:director proposal namespace. Every approval changes only an authored Expedition formation; the legacy endpoint stays non-billable. Current rollback target is dpl_BQpYDUTtvPG15BgcahdQAmS4fGsC (v1.0.0), preserving Redis, credentials and budgets. Older rollback examples above are historical. Keep the public game/viewer accessible through September17 per the submission form; budget exhaustion should retain LOCAL RULES.

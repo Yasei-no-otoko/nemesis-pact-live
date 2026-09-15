@@ -1,0 +1,180 @@
+{
+  "checkedAt": "2026-09-15T02:30:12Z",
+  "browser": "153.0.4234.32",
+  "humanInput": false,
+  "physicalPhone": false,
+  "clock": "ordinary requestAnimationFrame; no time acceleration",
+  "live": true,
+  "url": "https://nemesis-pact-live.vercel.app/",
+  "reports": [
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "mobileEmulation": false,
+      "provider": "OPENAI / gpt-5.6-luna",
+      "beforeApply": {
+        "hp": 7,
+        "time": 0,
+        "credits": 50,
+        "pact": null,
+        "director": "balanced"
+      },
+      "afterApply": {
+        "hp": 7,
+        "time": 0,
+        "credits": 50,
+        "pact": null,
+        "director": "crossfire"
+      },
+      "layout": {
+        "height": 800,
+        "scroll": 812,
+        "button": {
+          "x": 571.587890625,
+          "y": 831.603515625,
+          "width": 168.890625,
+          "height": 50.625,
+          "top": 831.603515625,
+          "right": 740.478515625,
+          "bottom": 882.228515625,
+          "left": 571.587890625
+        }
+      },
+      "scheduledWave": [
+        {
+          "at": 1.25,
+          "type": "turret",
+          "x": 1126.0981156991643,
+          "y": 390.6244869719731
+        },
+        {
+          "at": 2.45,
+          "type": "turret",
+          "x": 192.61533095831288,
+          "y": 442.4744821283651
+        },
+        {
+          "at": 3.65,
+          "type": "spinner",
+          "x": 763.0954100368834,
+          "y": 162
+        },
+        {
+          "at": 4.85,
+          "type": "spinner",
+          "x": 926.7303476005014,
+          "y": 532.4613609053808
+        },
+        {
+          "at": 6.05,
+          "type": "turret",
+          "x": 175.8153949091594,
+          "y": 247.69891695047448
+        },
+        {
+          "at": 7.25,
+          "type": "chaser",
+          "x": 1134.5647936807645,
+          "y": 303.3703058185083
+        },
+        {
+          "at": 8.45,
+          "type": "spinner",
+          "x": 299.4834184867251,
+          "y": 511.49663897847347
+        },
+        {
+          "at": 9.65,
+          "type": "chaser",
+          "x": 511.94425374446223,
+          "y": 162
+        },
+        {
+          "at": 10.85,
+          "type": "turret",
+          "x": 1003.8250235460029,
+          "y": 500.3302652483347
+        },
+        {
+          "at": 12.049999999999999,
+          "type": "turret",
+          "x": 159.83931440879923,
+          "y": 401.649836826871
+        },
+        {
+          "at": 13.25,
+          "type": "turret",
+          "x": 885.0235270153127,
+          "y": 162
+        },
+        {
+          "at": 14.45,
+          "type": "spinner",
+          "x": 766.2888040886487,
+          "y": 568.1930126597663
+        }
+      ],
+      "runtime": {
+        "renderer": "WEBGPU / COMPUTE",
+        "phase": "combat",
+        "seconds": 3.3499999999999908,
+        "planIndex": 2,
+        "enemies": [
+          "turret",
+          "turret"
+        ],
+        "spawns": [
+          {
+            "type": "turret",
+            "waveTime": 1.2583333333333313
+          },
+          {
+            "type": "turret",
+            "waveTime": 2.4583333333333273
+          }
+        ],
+        "bullets": 0,
+        "director": "crossfire"
+      },
+      "errors": [],
+      "api": [
+        {
+          "path": "session",
+          "method": "POST"
+        },
+        {
+          "path": "director",
+          "method": "POST"
+        },
+        {
+          "path": "director/sign",
+          "method": "POST"
+        },
+        {
+          "path": "director/cancel",
+          "method": "POST"
+        }
+      ],
+      "modelResponses": [
+        {
+          "provider": "openai",
+          "model": "gpt-5.6-luna",
+          "decision": {
+            "task": "director",
+            "contractId": "mercy",
+            "directorId": "crossfire",
+            "line": "クロスファイア編隊、展開。余裕ある間隔で交差火線を組む。",
+            "rationale": "ご希望どおり追撃を避け、クロスファイアを選択。通常ウェーブでは1.20秒間隔、4体ごとにセクター1〜2は砲台、3〜6はプリズム。適用には「Use this formation」をクリックしてください。"
+          },
+          "latencyMs": 2446,
+          "reason": "Validated formation. Review the actual wave preview, then apply.",
+          "billedBy": "vercel-ai-gateway",
+          "reservedMicrodollars": 10000,
+          "accountedMicrodollars": 250
+        }
+      ]
+    }
+  ]
+}

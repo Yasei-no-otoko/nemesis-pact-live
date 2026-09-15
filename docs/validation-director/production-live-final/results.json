@@ -1,0 +1,180 @@
+{
+  "checkedAt": "2026-09-15T02:36:13Z",
+  "browser": "153.0.4234.32",
+  "humanInput": false,
+  "physicalPhone": false,
+  "clock": "ordinary requestAnimationFrame; no time acceleration",
+  "live": true,
+  "url": "https://nemesis-pact-live.vercel.app/",
+  "reports": [
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "mobileEmulation": false,
+      "provider": "OPENAI / gpt-5.6-luna",
+      "beforeApply": {
+        "hp": 7,
+        "time": 0,
+        "credits": 50,
+        "pact": null,
+        "director": "balanced"
+      },
+      "afterApply": {
+        "hp": 7,
+        "time": 0,
+        "credits": 50,
+        "pact": null,
+        "director": "crossfire"
+      },
+      "layout": {
+        "height": 800,
+        "scroll": 800,
+        "button": {
+          "x": 580.025390625,
+          "y": 815.853515625,
+          "width": 168.890625,
+          "height": 50.625,
+          "top": 815.853515625,
+          "right": 748.916015625,
+          "bottom": 866.478515625,
+          "left": 580.025390625
+        }
+      },
+      "scheduledWave": [
+        {
+          "at": 1.25,
+          "type": "turret",
+          "x": 1102.495584018853,
+          "y": 426.32638616738416
+        },
+        {
+          "at": 2.45,
+          "type": "spinner",
+          "x": 229.26933342518544,
+          "y": 472.40716833434993
+        },
+        {
+          "at": 3.65,
+          "type": "chaser",
+          "x": 834.5904103218093,
+          "y": 162
+        },
+        {
+          "at": 4.85,
+          "type": "spinner",
+          "x": 869.1756142608465,
+          "y": 549.214068386828
+        },
+        {
+          "at": 6.05,
+          "type": "turret",
+          "x": 194.53805397737096,
+          "y": 227.67820623926184
+        },
+        {
+          "at": 7.25,
+          "type": "turret",
+          "x": 1096.5203194816913,
+          "y": 238.90147006939148
+        },
+        {
+          "at": 8.45,
+          "type": "turret",
+          "x": 324.7649414589282,
+          "y": 522.0940246444492
+        },
+        {
+          "at": 9.65,
+          "type": "chaser",
+          "x": 608.4730296910939,
+          "y": 162
+        },
+        {
+          "at": 10.85,
+          "type": "turret",
+          "x": 1062.4853269911023,
+          "y": 463.8401351191664
+        },
+        {
+          "at": 12.049999999999999,
+          "type": "spinner",
+          "x": 171.77404057649102,
+          "y": 419.2232103825555
+        },
+        {
+          "at": 13.25,
+          "type": "turret",
+          "x": 964.9614153407005,
+          "y": 162
+        },
+        {
+          "at": 14.45,
+          "type": "spinner",
+          "x": 744.1476141990354,
+          "y": 570.7187639005435
+        }
+      ],
+      "runtime": {
+        "renderer": "WEBGPU / COMPUTE",
+        "phase": "combat",
+        "seconds": 3.3499999999999908,
+        "planIndex": 2,
+        "enemies": [
+          "turret",
+          "spinner"
+        ],
+        "spawns": [
+          {
+            "type": "turret",
+            "waveTime": 1.2583333333333313
+          },
+          {
+            "type": "spinner",
+            "waveTime": 2.4583333333333273
+          }
+        ],
+        "bullets": 0,
+        "director": "crossfire"
+      },
+      "errors": [],
+      "api": [
+        {
+          "path": "session",
+          "method": "POST"
+        },
+        {
+          "path": "director",
+          "method": "POST"
+        },
+        {
+          "path": "director/sign",
+          "method": "POST"
+        },
+        {
+          "path": "director/cancel",
+          "method": "POST"
+        }
+      ],
+      "modelResponses": [
+        {
+          "provider": "openai",
+          "model": "gpt-5.6-luna",
+          "decision": {
+            "task": "director",
+            "contractId": "mercy",
+            "directorId": "crossfire",
+            "line": "Crossfire settles in: deliberate spacing, with a sector-appropriate threat marking every fourth arrival.",
+            "rationale": "Selected crossfire to match your request for extra interval room rather than pursuit. Arrivals are 1.20 seconds apart; the fourth is a turret in sectors 1–2 or a prism in sectors 3–6."
+          },
+          "latencyMs": 2165,
+          "reason": "Validated formation. Review the actual wave preview, then apply.",
+          "billedBy": "vercel-ai-gateway",
+          "reservedMicrodollars": 10000,
+          "accountedMicrodollars": 218
+        }
+      ]
+    }
+  ]
+}

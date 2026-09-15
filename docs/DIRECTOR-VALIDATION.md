@@ -21,10 +21,19 @@ Preview uses the same pure formationPlan as actual spawning. Selecting another p
 
 ## Production
 
-Pending deployment and one bounded real Luna proposal/approval/spawn check. Historical GPT-Live-1 and covenant evidence remains in V1.0.0-VALIDATION.md; this feature has not rerun voice or captured new human footage. The existing59s/1080p60 iPhone movie predates this Director.
+App source `5de9378be8ed7387157510a9915af67417f06abd` is pushed. Final READY deployment `dpl_Ey6W5h1mdVdm1ExsdNbvLi7ibgRW` is aliased to https://nemesis-pact-live.vercel.app/. Hosted433935bytes, SHA256`cd96811f5fd1cd61081b3e66d0860cbe79d847261f837c3f3de783f68403a906`, exactly matches the built HTML. Headers and the legacy non-billable endpoint passed.
+
+Two real Japanese Director requests through Luna completed at2446ms and2165ms. Both selected crossfire, received explicit matching approvals, preserved hull7/time0/credits50/pactnull, and launched the identical preview schedule. Actual spawning was observed at1.2583s and2.4583s (1.20s gap) on Windows Edge/WebGPU, ordinary clock, automatic inputs. No human test is claimed. No page errors; session/director/sign/cancel only, no microphone/API voice traffic.
+
+The first real response revealed12px page overflow. Final CSS spacing and second real API test show scrollHeight=clientHeight=800; the action button is within the1440x900 viewport. Final screenshot inspected. The first production harness failed before any API call because a string predicate required unsafe-eval; changed predicates to functions while keeping CSP unchanged. Historical GPT-Live-1 and covenant evidence remains in V1.0.0-VALIDATION.md; this feature has not rerun voice or captured new human footage. The existing59s/1080p60 iPhone movie predates this Director.
 
 ## Budget and rollback
 
 Before this feature: directOpenAI$2.600000/$10 and Gateway$0.036070/$20 at2026-09-15T02:18:20.527Z, active0, sharedkill null. These are conservative application accounting, not invoices. Vercel grant-specific balance/expiry and infrastructure cost remain unverified; no unconditional$30 guarantee.
 
 Rollback this feature with `vercel rollback dpl_BQpYDUTtvPG15BgcahdQAmS4fGsC --yes --scope wildmans-projects`. Preserve Redis, budget totals, secrets and media. Reverting to tagv1.0.0 restores the previous source.
+
+
+After both calls, ledger2026-09-15T02:36:46.368Z:directOpenAI$2.600000/$10 unchanged;Gateway$0.036538/$20, added$0.000468,active0,killnull. Per-call usage accounting250 and218microdollars.
+
+Submission form read anonymously in native Edge on2026-09-15. Six English paragraphs (description, four criteria, existing code/licenses) are exactly200 whitespace-separated words each. Personal details are kept only in the ignored local kit. Form confirmation/submission is reserved to the representative and was not performed. See SUBMISSION-FORM-GUIDE.md.
