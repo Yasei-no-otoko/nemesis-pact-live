@@ -49,3 +49,8 @@ Recorded-audio verification on2026-09-15 used one $0.05 atomic reservation in th
 ## Current v1.1.0 deployment
 
 Source5de9378;READY dpl_Ey6W5h1mdVdm1ExsdNbvLi7ibgRW. Director uses existing text caps and a separate nemesis:director proposal namespace. Every approval changes only an authored Expedition formation; the legacy endpoint stays non-billable. Current rollback target is dpl_BQpYDUTtvPG15BgcahdQAmS4fGsC (v1.0.0), preserving Redis, credentials and budgets. Older rollback examples above are historical. Keep the public game/viewer accessible through September17 per the submission form; budget exhaustion should retain LOCAL RULES.
+
+
+## Current v1.2.0 deployment
+
+Appa53b87437249fddccfe069c2de6d3d47cfd956aa;READYdpl_5HEfvWCWhNzwstCDpK4qk3RuUaB9. `/api/campaign` handles propose/sign/cancel with namespace nemesis:campaign and the existing shared text/voice admission gate. Campaign voice context is server-owned. One text request per browser session remains the concurrency limit; a bounded retry only waits for previous settlement. No budget or plan changes. Current rollback is dpl_Ey6W5h1mdVdm1ExsdNbvLi7ibgRW; preserve all quotas and secrets. Keep public game/viewer accessible through September17.

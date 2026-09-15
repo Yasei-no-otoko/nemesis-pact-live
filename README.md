@@ -1,4 +1,4 @@
-# NEMESIS PACT v1.1.0 — Living Covenant
+# NEMESIS PACT v1.2.0 — Living Covenant
 
 Negotiate the rules. Fight your deal.
 
@@ -7,6 +7,10 @@ Negotiate the rules. Fight your deal.
 Built from the verified v0.5.0 source ZIP. The framework-free game and six-sector campaign are preserved. First Contact is a short boss encounter: ask for a sanctuary, slower bullets or stronger reflections, accept a cost, review the clauses, and click **Sign**. At 8 seconds press **R** to renegotiate once; at 18 seconds parley opens automatically. Health, boss damage and elapsed combat time survive the amendment.
 
 The v1.0.0 finish adds a dedicated First Contact victory/defeat record: your final signed terms, sanctuary interceptions, reflected hit damage and remaining hull. Contextual combat guidance calls out lasers and ready Nova; Pause explains amendment availability and offers First Contact controls. [Concept and improvement loop](docs/V1.0.0-PLAN.md). The existing human59s/60fps movie shows an earlier verified build, not the refreshed artwork.
+
+## Voice contracts throughout the campaign
+
+In any campaign sector, choose **Negotiate by voice / AI**, select OpenAI and give consent. Use **Start voice**, interrupt the rival to revise, or type English/Japanese. GPT-Live-1 delegates to GPT-5.6 Luna to select from that sector's three authored pacts. Review the benefit and price, then **Sign & enter combat**. The same simulation effects apply without resetting your run. Back cancels; LOCAL RULES works offline. [Validation and coverage](docs/CAMPAIGN-VALIDATION.md).
 
 ## AI campaign Director
 

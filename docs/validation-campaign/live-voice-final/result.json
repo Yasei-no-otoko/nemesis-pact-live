@@ -1,0 +1,777 @@
+{
+  "checkedAt": "2026-09-15T03:18:30Z",
+  "url": "https://nemesis-pact-live.vercel.app",
+  "voiceModel": "gpt-live-1",
+  "contractModel": "gpt-5.6-luna",
+  "humanMicrophone": false,
+  "physicalPhone": false,
+  "operation": "Automated native Edge / ordinary requestAnimationFrame",
+  "input": "Microsoft Zira Desktop synthesized fixture through live Web Audio MediaStream",
+  "maxReservationsUsd": {
+    "openai": 0.05,
+    "gateway": 0.08
+  },
+  "fixtureSha256": {
+    "first": "766da129efa92c1182ce7ccbc17ec1d7e31858377a88295936921a6b3ab42504",
+    "correction": "7c015292350c33fd7213f009773843944ec8122529a8732059625086bd3a8252"
+  },
+  "connectionMs": 2813,
+  "firstUtterance": {
+    "at": 8071.199999988079,
+    "durationSeconds": 4.068888888888889
+  },
+  "interruption": {
+    "at": 13248.599999964237,
+    "remoteRms": 0.05535417442448719,
+    "transcript": " Oh, you want to That's Slow"
+  },
+  "correctionUtterance": {
+    "at": 13352.800000011921,
+    "durationSeconds": 10.49297052154195
+  },
+  "unsigned": {
+    "build": "1.2.0",
+    "screen": "ai-screen",
+    "negotiationStep": "negotiate",
+    "coordinates": "origin top-left; x right; y down",
+    "renderer": "WEBGPU / COMPUTE",
+    "arena": {
+      "width": 1280,
+      "height": 800
+    },
+    "phase": "pact",
+    "seconds": 0,
+    "player": {
+      "x": 640,
+      "y": 552,
+      "hp": 7,
+      "energy": 35
+    },
+    "enemies": [],
+    "hostileBullets": 0,
+    "proposal": null,
+    "campaignPact": null,
+    "campaignProposal": {
+      "decision": {
+        "task": "negotiate",
+        "contractId": "mirror",
+        "directorId": "balanced",
+        "line": "I offer Return to Sender: reflected damage ×2.2, while normal shot damage falls by 25%. Sign explicitly to bind it.",
+        "rationale": "Your corrected request prioritizes stronger reflections and accepts weaker normal shots, matching the canonical Mirror pact."
+      },
+      "provider": "openai",
+      "model": "gpt-5.6-luna"
+    },
+    "campaignVoice": "listening",
+    "voice": "idle",
+    "liveVoice": null
+  },
+  "signature": {
+    "before": {
+      "hp": 7,
+      "time": 0,
+      "credits": 80
+    },
+    "after": {
+      "hp": 7,
+      "time": 0,
+      "credits": 80
+    },
+    "mods": {
+      "speed": 1,
+      "hp": 1,
+      "damage": 1,
+      "gun": 0.75,
+      "reflect": 2.2,
+      "dash": 1,
+      "extra": false,
+      "silence": false,
+      "sanctuary": false,
+      "noAdds": false,
+      "bossRate": 1,
+      "enemyRate": 1
+    },
+    "ok": true,
+    "id": "mirror"
+  },
+  "combat": {
+    "build": "1.2.0",
+    "screen": "game",
+    "negotiationStep": "negotiate",
+    "coordinates": "origin top-left; x right; y down",
+    "renderer": "WEBGPU / COMPUTE",
+    "arena": {
+      "width": 1280,
+      "height": 800
+    },
+    "phase": "combat",
+    "seconds": 5.53,
+    "player": {
+      "x": 640,
+      "y": 560,
+      "hp": 7,
+      "energy": 35
+    },
+    "enemies": [
+      {
+        "type": "spinner",
+        "x": 1106,
+        "y": 329,
+        "hp": 78
+      },
+      {
+        "type": "turret",
+        "x": 167,
+        "y": 413,
+        "hp": 58
+      },
+      {
+        "type": "turret",
+        "x": 708,
+        "y": 162,
+        "hp": 58
+      },
+      {
+        "type": "spinner",
+        "x": 934,
+        "y": 523,
+        "hp": 78
+      },
+      {
+        "type": "chaser",
+        "x": 207,
+        "y": 217,
+        "hp": 30
+      }
+    ],
+    "hostileBullets": 11,
+    "proposal": null,
+    "campaignPact": "mirror",
+    "campaignPactSource": "OPENAI / gpt-5.6-luna",
+    "campaignProposal": null,
+    "campaignVoice": "stopped",
+    "voice": "idle",
+    "liveVoice": null
+  },
+  "success": true,
+  "events": [
+    {
+      "type": "session.started",
+      "at": 8025.5,
+      "delta": null,
+      "start_ms": null,
+      "end_ms": null,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 9402.099999964237,
+      "delta": " Slow",
+      "start_ms": 1000,
+      "end_ms": 1200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 9566.099999964237,
+      "delta": " your",
+      "start_ms": 1200,
+      "end_ms": 1400,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 10316.599999964237,
+      "delta": " bullets",
+      "start_ms": 1800,
+      "end_ms": 2000,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 10513.599999964237,
+      "delta": " Oh,",
+      "start_ms": 2000,
+      "end_ms": 2200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 10725.699999988079,
+      "delta": " you want",
+      "start_ms": 2200,
+      "end_ms": 2400,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 10871.899999976158,
+      "delta": " to",
+      "start_ms": 2400,
+      "end_ms": 2600,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 11482.199999988079,
+      "delta": " Send",
+      "start_ms": 3000,
+      "end_ms": 3200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 11697.399999976158,
+      "delta": " more",
+      "start_ms": 3200,
+      "end_ms": 3400,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 11875.5,
+      "delta": " if",
+      "start_ms": 3400,
+      "end_ms": 3600,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 12078.199999988079,
+      "delta": " you",
+      "start_ms": 3600,
+      "end_ms": 3800,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 12525.899999976158,
+      "delta": " want",
+      "start_ms": 4000,
+      "end_ms": 4200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 12684.099999964237,
+      "delta": " That's",
+      "start_ms": 4200,
+      "end_ms": 4400,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 13096.199999988079,
+      "delta": " Slow",
+      "start_ms": 4600,
+      "end_ms": 4800,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 13325.800000011921,
+      "delta": " Violence:",
+      "start_ms": 4800,
+      "end_ms": 5000,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 14967.300000011921,
+      "delta": " Actually",
+      "start_ms": 6600,
+      "end_ms": 6800,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 15757.899999976158,
+      "delta": ", change",
+      "start_ms": 7400,
+      "end_ms": 7600,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 16306.699999988079,
+      "delta": " that",
+      "start_ms": 7800,
+      "end_ms": 8000,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 16457.69999998808,
+      "delta": " Sure.",
+      "start_ms": 8000,
+      "end_ms": 8200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 16996.19999998808,
+      "delta": " I",
+      "start_ms": 8600,
+      "end_ms": 8800,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 17388,
+      "delta": " want",
+      "start_ms": 9000,
+      "end_ms": 9200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 17771.69999998808,
+      "delta": " stronger",
+      "start_ms": 9400,
+      "end_ms": 9600,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 18369.19999998808,
+      "delta": " reflections",
+      "start_ms": 10000,
+      "end_ms": 10200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 19153.599999964237,
+      "delta": " instead",
+      "start_ms": 10600,
+      "end_ms": 10800,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.delegation.created",
+      "at": 19155.80000001192,
+      "delta": null,
+      "start_ms": null,
+      "end_ms": null,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 19273.30000001192,
+      "delta": " Sure,",
+      "start_ms": 10800,
+      "end_ms": 11000,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 19667.19999998808,
+      "delta": " switching.",
+      "start_ms": 11200,
+      "end_ms": 11400,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 20079.899999976158,
+      "delta": " My",
+      "start_ms": 11600,
+      "end_ms": 11800,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 20469.19999998808,
+      "delta": " normal",
+      "start_ms": 12000,
+      "end_ms": 12200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 20875.899999976158,
+      "delta": " shots can",
+      "start_ms": 12400,
+      "end_ms": 12600,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 21101.80000001192,
+      "delta": " be",
+      "start_ms": 12600,
+      "end_ms": 12800,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 21264.599999964237,
+      "delta": " ",
+      "start_ms": 12800,
+      "end_ms": 13000,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 21479.5,
+      "delta": " weaker",
+      "start_ms": 13000,
+      "end_ms": 13200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 21669.30000001192,
+      "delta": "Hmm.",
+      "start_ms": 13200,
+      "end_ms": 13400,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.usage.updated",
+      "at": 22146.099999964237,
+      "delta": null,
+      "start_ms": null,
+      "end_ms": null,
+      "usage": {
+        "seconds": 15
+      },
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 22972.599999964237,
+      "delta": " Reflections",
+      "start_ms": 14600,
+      "end_ms": 14800,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 23958,
+      "delta": ", please",
+      "start_ms": 15600,
+      "end_ms": 15800,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 28881,
+      "delta": " Return to",
+      "start_ms": 20400,
+      "end_ms": 20600,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 29137,
+      "delta": " Sender's",
+      "start_ms": 20600,
+      "end_ms": 20800,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.commentary.appended",
+      "at": 29138,
+      "delta": null,
+      "start_ms": 20600,
+      "end_ms": 20800,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    }
+  ],
+  "sent": [
+    {
+      "type": "session.commentary.append",
+      "at": 28225.099999964237
+    }
+  ],
+  "tracks": [
+    "ended"
+  ],
+  "peers": [
+    "closed"
+  ],
+  "inputSignObservations": [
+    {
+      "at": 9402.800000011921,
+      "delta": " Slow",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 9566.300000011921,
+      "delta": " your",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 10317.199999988079,
+      "delta": " bullets",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 11482.5,
+      "delta": " Send",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 11697.899999976158,
+      "delta": " more",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 11875.800000011921,
+      "delta": " if",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 12078.599999964237,
+      "delta": " you",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 12526.300000011921,
+      "delta": " want",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 14967.599999964237,
+      "delta": " Actually",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 15758.099999964237,
+      "delta": ", change",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 16306.800000011921,
+      "delta": " that",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 16996.30000001192,
+      "delta": " I",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 17388.19999998808,
+      "delta": " want",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 17771.899999976158,
+      "delta": " stronger",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 18369.399999976158,
+      "delta": " reflections",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 19153.80000001192,
+      "delta": " instead",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 20080.099999964237,
+      "delta": " My",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 20469.399999976158,
+      "delta": " normal",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 20876.099999964237,
+      "delta": " shots can",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 21102.19999998808,
+      "delta": " be",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 21479.69999998808,
+      "delta": " weaker",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 22972.80000001192,
+      "delta": " Reflections",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 23958.099999964237,
+      "delta": ", please",
+      "signDisabled": true,
+      "revision": null
+    }
+  ],
+  "api": [
+    {
+      "path": "/api/session",
+      "status": 200
+    },
+    {
+      "path": "/api/voice/start",
+      "status": 200,
+      "model": "gpt-live-1"
+    },
+    {
+      "path": "/api/campaign",
+      "status": 200,
+      "provider": "openai",
+      "model": "gpt-5.6-luna",
+      "decision": {
+        "task": "negotiate",
+        "contractId": "mirror",
+        "directorId": "balanced",
+        "line": "I offer Return to Sender: reflected damage ×2.2, while normal shot damage falls by 25%. Sign explicitly to bind it.",
+        "rationale": "Your corrected request prioritizes stronger reflections and accepts weaker normal shots, matching the canonical Mirror pact."
+      },
+      "campaignPact": {
+        "id": "mirror",
+        "name": "Return to Sender",
+        "gift": "Reflected damage ×2.2",
+        "cost": "Normal shot damage −25%",
+        "tip": "Press E or right-click to return fire."
+      },
+      "latencyMs": 2346,
+      "accountedMicrodollars": 178,
+      "action": "propose"
+    },
+    {
+      "path": "/api/voice/stop",
+      "status": 200,
+      "accountedMicrodollars": 50000,
+      "stopped": true,
+      "uncertain": false
+    },
+    {
+      "path": "/api/campaign",
+      "status": 200,
+      "provider": "openai",
+      "model": "gpt-5.6-luna",
+      "decision": {
+        "contractId": "mirror",
+        "directorId": "balanced",
+        "line": "I offer Return to Sender: reflected damage ×2.2, while normal shot damage falls by 25%. Sign explicitly to bind it.",
+        "rationale": "Your corrected request prioritizes stronger reflections and accepts weaker normal shots, matching the canonical Mirror pact.",
+        "task": "negotiate"
+      },
+      "latencyMs": 2346,
+      "signed": true,
+      "action": "sign"
+    }
+  ],
+  "pageErrors": [],
+  "failedRequests": [],
+  "browser": "153.0.4234.32",
+  "admitted": {
+    "voice": 1,
+    "text": 1
+  }
+}

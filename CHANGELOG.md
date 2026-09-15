@@ -1,3 +1,10 @@
+# v1.2.0 — Campaign voice and contracts
+
+- GPT-Live-1 and GPT-5.6 Luna now negotiate every authored campaign sector pact through one validated proposal/signature path.
+- Added current-sector rival context, scrollable captions, mute/volume, shared budget admission and isolated atomic signatures.
+- Spoken corrections invalidate old proposals and wait briefly when prior inference is settling; LOCAL RULES remains available.
+-260unit tests,4realRedis checks,45simulation catalog/signature combinations and real production spoken correction/sign/combat verified.
+
 # v1.1.0 — AI campaign Director
 
 - Real GPT-5.6 Luna formation proposals through the approved Gateway/session/quota path.

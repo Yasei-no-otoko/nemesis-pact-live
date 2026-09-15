@@ -1,4 +1,4 @@
-# Submission answers — NEMESIS PACT v1.1.0
+# Submission answers — NEMESIS PACT v1.2.0
 
 Copy only each paragraph body, excluding headings and word counts. Every answer is 200 whitespace-separated English words, within the form maximum. Personal fields are saved only in the ignored local submission kit.
 
@@ -20,7 +20,7 @@ GPT-Live-1 makes spoken negotiation a playable control surface. Over the Live AP
 
 Luna proposes funded combinations of authored clauses: bullet sanctuaries, slower hostile fire, stronger reflections, and explicit costs. Validation rejects unsupported mechanics. Only the player's Sign action applies the displayed contract; generated speech cannot grant powers or silently change combat. Revision tracking invalidates superseded proposals, including results arriving after a spoken correction. A subsequent signed amendment preserves health, boss damage, and elapsed time.
 
-The campaign Director also uses Luna to select bounded formations. Players compare actual scheduled enemies and arrival intervals before approving the change.
+Campaign voice and Luna negotiate sector pacts too. Its AI Director proposes authored formations; players compare scheduled enemies and explicitly approve changes.
 
 Codex supported implementation, debugging, tests, deployment, and browser verification. OpenAI image generation produced concept boards that informed procedural visuals and interface refinement. Real production API evidence and human gameplay demonstrate the integration. The meaningful contribution is a continuous loop from natural language intention to understandable, consequential combat rules, while deterministic simulation keeps reflex play responsive and explicit LOCAL RULES preserves access when AI is unavailable.
 
@@ -52,13 +52,13 @@ Word count: 200.
 
 ## Judging criteria 4 (20%) - Execution and craft
 
-The game combines deterministic two dimensional combat with a custom WebGL2 and WebGPU renderer, without Three.js or a game framework. Procedural geometry, shaders, and synthesized Web Audio deliver the client in under 450 KB of self contained HTML before compression, with no imported models, font downloads, or sampled soundtrack assets.
+The game combines deterministic two dimensional combat with a custom WebGL2 and WebGPU renderer, without Three.js or a game framework. Procedural geometry, shaders, and synthesized Web Audio deliver the client in under 460 KB of self contained HTML before compression, with no imported models, font downloads, or sampled soundtrack assets.
 
 OpenAI generated concept boards guided iterative visual refinement: the geometric Notary, color hierarchy, sanctuaries, compact contract review, and engraved encounter records. Actual screenshots drove revisions across desktop and portrait layouts. Enemy bullets, magenta lasers, player attacks, and contract effects remain visually distinct, with adjustable effects and reduced motion support.
 
 The implementation separates AI proposals from deterministic authority. Signed sessions, CSRF checks, durable Redis quotas, atomic budget reservations, concurrency limits, and a kill switch protect paid endpoints. Dedicated proposal ledgers reject stale and duplicate approvals. Voice shutdown and amendment continuity have production evidence.
 
-Current verification includes 239 unit tests, real Redis atomic checks, browser interaction and rendering checks, and actual Luna Director inference followed by approved enemy spawning. GitHub commits, readable tags, deployment hashes, budgets, and rollback instructions preserve reviewability. The human submission video was edited in DaVinci Resolve to 59 seconds at 1080p60, retaining original voices and documenting capture limitations.
+Current verification includes 260 unit tests, real Redis atomic checks, browser interaction and rendering checks, and actual Luna Director inference followed by approved enemy spawning. GitHub commits, readable tags, deployment hashes, budgets, and rollback instructions preserve reviewability. The human submission video was edited in DaVinci Resolve to 59 seconds at 1080p60, retaining original voices and documenting capture limitations.
 
 Word count: 200.
 

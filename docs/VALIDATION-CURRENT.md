@@ -1,3 +1,5 @@
+> Current v1.2.0: [Campaign GPT-Live-1 and Luna production evidence](CAMPAIGN-VALIDATION.md),260tests and actual spoken correction/sign/combat. Earlier milestone material follows.
+
 > Current v1.1.0: [AI Director production evidence](DIRECTOR-VALIDATION.md),239tests and2realLuna calls. [Submission form](SUBMISSION-FORM-GUIDE.md). Older milestones below are historical.
 
 > Current v1.0.0: [production and encounter validation](V1.0.0-VALIDATION.md). Prior milestone material follows; each version has its own evidence.

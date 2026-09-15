@@ -1,22 +1,15 @@
-# Delivery — v1.1.0 AI Director
+# Delivery — v1.2.0 campaign voice and pacts
 
 [Play](https://nemesis-pact-live.vercel.app/) · [Repository](https://github.com/Yasei-no-otoko/nemesis-pact-live) · [Human59s/1080p60 demo](https://www.circle-hydrangea.net/nemesis-pact-live/)
 
-Branch ship/living-covenant; app `5de9378be8ed7387157510a9915af67417f06abd`; READY `dpl_Ey6W5h1mdVdm1ExsdNbvLi7ibgRW`. Exact433935-byte hosted hash`cd96811f5fd1cd61081b3e66d0860cbe79d847261f837c3f3de783f68403a906`. [Verification](DIRECTOR-VALIDATION.md).
+Branch ship/living-covenant; app `a53b87437249fddccfe069c2de6d3d47cfd956aa`; READY `dpl_5HEfvWCWhNzwstCDpK4qk3RuUaB9`. Hosted453972bytes, SHA256`a2d684dd71e141506d5a8e9bd60c782dec6c8325ec1a286e8c896df062f712e0`. [Full verification](CAMPAIGN-VALIDATION.md).
 
-Full campaign → Expedition → AI Director → OpenAI consent → request → compare → Use this formation. Real GPT-5.6 Luna selects authored templates; approved formations change actual regular waves. Preview and battle share seeded schedules. Existing GPT-Live-1/Luna covenant path is preserved.
+Full campaign → sector pact selection → Negotiate by voice / AI → OpenAI consent → Start voice → interrupt/revise → review → Sign & enter combat. Each sector keeps its existing3authored pacts. GPT-Live-1 and Luna use the same path as text. Director formation approvals and First Contact mid-fight amendments remain separate.
 
-239/239 unit tests,39 syntax files,3 real Redis tests,4 local Director viewports,18 campaign scene fixtures,2 real Luna/approval/spawn flows (2446/2165ms). Windows Edge153.0.4234.32; phone layouts are emulation. Latest runtime uses native WebGPU/compute; software WebGL2 fixtures are separately labeled.
+260/260unit tests,43syntax files,4realRedis tests,45simulation offers,4campaign and4Director browser layouts,18controlled scene fixtures. Production text/sign/combat2965ms; actual voice connection2813ms and corrected Luna proposal2346ms, signed mirror reflect2.2/gun0.75. Hull/time/credits preserved. Both Live sessions confirmed stopped. Final voice test used synthetic audio into actual Live/WebRTC on Windows Edge153.0.4234.32 / WebGPU, not a new human microphone or physical iPhone test.
 
-DirectOpenAI$2.600000/$10;Gateway$0.036538/$20,added$0.000468. Exact grant/infrastructure/provider invoices remain unknown. Existing human iPhone movie predates this feature.
+Conservative totals:directOpenAI$2.700000/$10;Gateway$0.037338/$20,added$0.10/$0.000800. Active0. Exact provider invoices, Vercel grant balance/expiry and infrastructure costs remain unverified. Prior human movie is unchanged and predates this feature.
 
-[Submission answers](SUBMISSION-EN.md):six paragraphs at200words each. [Form guide](SUBMISSION-FORM-GUIDE.md). Personal fields are in the ignored local kit; the form was not submitted.
+Rollback: `vercel rollback dpl_Ey6W5h1mdVdm1ExsdNbvLi7ibgRW --yes --scope wildmans-projects`. Preserve Redis, budgets, secrets and media. Source tagv1.1.0.
 
-Rollback: `vercel rollback dpl_BQpYDUTtvPG15BgcahdQAmS4fGsC --yes --scope wildmans-projects`. Preserve Redis, budgets and media.
-
-
-## Public source and final submission materials
-
-Published [v1.1.0 Release](https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/tag/v1.1.0) from tag `fd5c4f4509e560588df89764498146b7d3f8e2ad`. The 157-file source ZIP is 6015203 bytes; SHA256 `b5b127483c423c7de87e5a3fa3c97d86a24f0b9167def183c6961984297d2191` matches a fresh anonymous Edge download. It excludes credentials, private representative details, Git history and raw human media. The viewer links to v1.1.0; unchanged59.008s/1080p60 movie starts successfully, with no page/media errors. Earlier full playback evidence remains separate. gh-pages `e4bea6532410541509b29acc00edc0b9f7a6fcf5` is pushed.
-
-The requested Director implementation and form-answer preparation are complete. The form has not been submitted; the representative must personally make its compliance attestation. Final evidence tag:milestone-23-director-and-submission-ready.
+[Submission answers](SUBMISSION-EN.md) remain six200word paragraphs. Private representative details remain only in the ignored kit. Form submission and attestation were not performed.

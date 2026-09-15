@@ -271,3 +271,8 @@ User requested full-campaign contracts use GPT-Live-1 and GPT-5.6 Luna. Baseline
 2026-09-15 JST — Campaign production correction handling
 
 First production app e46a39c / dpl_875PTFWVSnX2KhzvWohtXxDY2TcB. Real Japanese Luna request/sign/combat passed in2965ms;237microdollars. First native Live test connected in3531ms and received interrupted speech, but final correction fell back after overlapping requests (server409/429). Microphone/peer and server stop were confirmed; failure evidence retained. Added a bounded retry only when prior same-session text work is settling; budgets/auth/kill never retry, and edits abort the wait. LOCAL RULES now honors explicit later correction cues. Focused51tests passed, including busy/retry/newintent and cancel-during-wait. No quota cap increased. Latest measured ledger direct2.650000/10,Gateway.037160/20,active0. Revised production validation follows.
+
+
+2026-09-15 JST — Campaign production verified
+
+Final appa53b87437249fddccfe069c2de6d3d47cfd956aa,READYdpl_5HEfvWCWhNzwstCDpK4qk3RuUaB9; exact453972-byte build. Actual GPT-Live-1 interruption/correction→Luna mirror→Sign→combat passed, connection2813ms/proposal2346ms; tracks and peers closed and server stop confirmed. Current260tests,43syntax and4realRedis pass. Direct2.70/10,Gateway.037338/20,added.10/.000800,active0. All prior failures retained. Publicv1.2.0 source packaging and finalpush follow; no further application change planned.

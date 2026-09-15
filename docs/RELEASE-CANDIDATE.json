@@ -1,133 +1,76 @@
 {
-  "version": "1.1.0",
-  "status": "AI Director shipped and verified; requested submission answers complete",
-  "recordedAt": "2026-09-15T02:38:33.356865+00:00",
+  "version": "1.2.0",
+  "status": "Campaign voice and pact integration verified in production; release packaging in progress",
+  "recordedAt": "2026-09-15T03:23:00.664528+00:00",
   "production": "https://nemesis-pact-live.vercel.app/",
   "repository": "https://github.com/Yasei-no-otoko/nemesis-pact-live",
   "branch": "ship/living-covenant",
-  "sourceCommit": "5de9378be8ed7387157510a9915af67417f06abd",
-  "sourceTag": "milestone-22-ai-campaign-director",
-  "releaseTag": "v1.1.0",
-  "deploymentId": "dpl_Ey6W5h1mdVdm1ExsdNbvLi7ibgRW",
-  "deploymentUrl": "https://nemesis-pact-live-2bvg2vv34-wildmans-projects.vercel.app",
+  "sourceCommit": "a53b87437249fddccfe069c2de6d3d47cfd956aa",
+  "releaseTag": "v1.2.0",
+  "deploymentId": "dpl_5HEfvWCWhNzwstCDpK4qk3RuUaB9",
+  "deploymentUrl": "https://nemesis-pact-live-77807cnlh-wildmans-projects.vercel.app",
   "build": {
-    "hostedBytes": 433935,
-    "hostedSha256": "cd96811f5fd1cd61081b3e66d0860cbe79d847261f837c3f3de783f68403a906",
-    "offlineBytes": 433885,
-    "offlineSha256": "4697d031024c078ec954ca7b5f23f5c542623a426d89e5e90a7ab01a8d5ca52c"
+    "hostedBytes": 453972,
+    "hostedSha256": "a2d684dd71e141506d5a8e9bd60c782dec6c8325ec1a286e8c896df062f712e0",
+    "offlineBytes": 453922,
+    "offlineSha256": "61393d2a8ec174e12cd3ebd0a753ee1bf35291576695fe5d9b0969f6e462af29"
   },
   "models": {
     "voice": "gpt-live-1",
     "contract": "openai/gpt-5.6-luna",
+    "campaign": "openai/gpt-5.6-luna",
     "director": "openai/gpt-5.6-luna"
   },
-  "validation": "DIRECTOR-VALIDATION.md",
+  "validation": "CAMPAIGN-VALIDATION.md",
   "currentTests": {
-    "unit": 239,
-    "passed": 239,
-    "syntax": 39,
-    "realRedis": 3,
-    "localDirectorViewports": 4,
+    "unit": 260,
+    "passed": 260,
+    "syntax": 43,
+    "realRedis": 4,
+    "localCampaignViewports": 4,
+    "localDirectorRegressionViewports": 4,
     "campaignSceneFixtures": 18,
-    "actualDirectorCalls": 2,
-    "actualDirectorApprovals": 2,
-    "actualDirectorSpawnChecks": 2,
-    "errors": 0,
-    "latenciesMs": [
-      2446,
-      2165
-    ]
+    "authoredSimulationOfferChecks": 45,
+    "realCampaignTextSignature": true,
+    "realCampaignVoiceCorrectionSignature": true,
+    "campaignVoiceAttempts": 2,
+    "confirmedVoiceStops": 2,
+    "voiceConnectionMs": 2813,
+    "contractLatenciesMs": [
+      2965,
+      2346
+    ],
+    "pageErrorsFinal": 0
   },
   "budgets": {
-    "directOpenaiConservativeUsd": 2.6,
+    "directOpenaiConservativeUsd": 2.7,
     "directOpenaiCapUsd": 10,
-    "gatewayConservativeUsd": 0.036538,
+    "gatewayConservativeUsd": 0.037338,
     "gatewayCapUsd": 20,
-    "directorAddedGatewayUsd": 0.000468,
+    "addedDirectOpenaiUsd": 0.1,
+    "addedGatewayUsd": 0.0008,
     "active": 0,
-    "checkedAt": "2026-09-15T02:36:46.368Z",
+    "kill": null,
+    "checkedAt": "2026-09-15T03:20:50.660Z",
     "invoice": false
   },
-  "submission": {
-    "formGuide": "SUBMISSION-FORM-GUIDE.md",
-    "publicAnswers": "SUBMISSION-EN.md",
-    "longFields": 6,
-    "wordsEach": 200,
-    "personalDetails": "ignored local .artifacts/submission only",
-    "formSubmitted": false,
-    "representativeAttestation": "human confirmation before submission"
-  },
-  "humanVideo": {
-    "url": "https://www.circle-hydrangea.net/nemesis-pact-live/",
-    "seconds": 59,
-    "resolution": "1920x1080",
-    "exportFps": 60,
-    "physicalDevice": "iPhone 16 Pro Max / Safari version unknown",
-    "scope": "older build; voice/correction/sign/amendment/victory; not new Director evidence"
-  },
   "rollback": {
-    "deploymentId": "dpl_BQpYDUTtvPG15BgcahdQAmS4fGsC",
-    "sourceTag": "v1.0.0",
+    "deploymentId": "dpl_Ey6W5h1mdVdm1ExsdNbvLi7ibgRW",
+    "sourceTag": "v1.1.0",
     "preserve": [
       "Redis",
       "budget totals",
-      "secrets",
-      "media"
+      "credentials",
+      "public media"
     ]
   },
-  "limits": [
-    "Exact Vercel grant-specific balance/expiry and infrastructure charges remain unknown",
-    "Application conservative cost is not a provider invoice",
-    "No new physical-phone Director test; mobile evidence is desktop emulation",
-    "No new human recording for Director or newer artwork",
-    "Voice path not rerun for this feature; verified v1.0.0 evidence retained"
+  "limitations": [
+    "Campaign real model flow tested in sector1; all15 mode/sector contexts and45 offers verified against simulation",
+    "Automated synthetic speech into actual GPT-Live-1; no new human microphone or physical-phone campaign recording",
+    "Existing59s1080p60 iPhone film predates current campaign and visual changes",
+    "Exact Vercel grant balance/expiry, infrastructure charges and provider invoices remain unknown",
+    "Campaign negotiation occurs before sectors; mid-fight amendment remains in First Contact",
+    "First production Live attempt fell back during overlapping requests; failure and conservative spend retained"
   ],
-  "previousReleaseEvidence": "validation-director/v1.0.0-release-candidate.json",
-  "releaseUrl": "https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/tag/v1.1.0",
-  "sourceReviewPackage": {
-    "file": "NEMESIS-PACT-v1.1.0-source.zip",
-    "bytes": 6015203,
-    "sha256": "b5b127483c423c7de87e5a3fa3c97d86a24f0b9167def183c6961984297d2191",
-    "files": 157,
-    "archiveCommit": "fd5c4f4509e560588df89764498146b7d3f8e2ad",
-    "applicationSourceCommit": "5de9378be8ed7387157510a9915af67417f06abd",
-    "url": "https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/download/v1.1.0/NEMESIS-PACT-v1.1.0-source.zip",
-    "scope": "selected source, tests, concepts, public form answers and evidence; excludes private form kit, credentials, Git history and raw media",
-    "public": true,
-    "anonymousDownloadHashMatched": true
-  },
-  "publicReleaseValidation": {
-    "checkedAt": "2026-09-15T02:41:45.133223+00:00",
-    "anonymous": true,
-    "browser": "153.0.4234.32",
-    "scope": "Native fresh Edge; public source download and hash; unchanged human video playback-start only (full prior playback evidence remains separate)",
-    "releaseUrl": "https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/tag/v1.1.0",
-    "releaseHttp": 200,
-    "sourceSha256": "b5b127483c423c7de87e5a3fa3c97d86a24f0b9167def183c6961984297d2191",
-    "sourceBytes": 6015203,
-    "viewerUrl": "https://www.circle-hydrangea.net/nemesis-pact-live/",
-    "viewerHttp": 200,
-    "viewerLinksTo110": true,
-    "video": {
-      "width": 1920,
-      "height": 1080,
-      "duration": 59.008,
-      "currentTime": 2.025188,
-      "error": null,
-      "source": "https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/download/milestone-16-iphone-demo-audio/NEMESIS-PACT-iPhone-59s-60fps-en-final.mp4"
-    },
-    "githubShellPageErrors": [],
-    "viewerPageErrors": [],
-    "passed": true,
-    "apiModelCalls": 0
-  },
-  "finalEvidenceTag": "milestone-23-director-and-submission-ready",
-  "requiredRemainingWork": [],
-  "completion": {
-    "recordedAt": "2026-09-15T02:43:39.036924+00:00",
-    "directorGoal": "achieved",
-    "formPreparation": "achieved",
-    "formSubmission": "not requested or performed",
-    "applicationUnchangedAfterFinalDeployment": true
-  }
+  "previousReleaseEvidence": "validation-campaign/v1.1.0-release-candidate.json"
 }
