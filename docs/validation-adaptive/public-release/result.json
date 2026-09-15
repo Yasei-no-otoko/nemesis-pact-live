@@ -1,0 +1,45 @@
+{
+  "checkedAt": "2026-09-15T04:36:25.302973+00:00",
+  "anonymous": true,
+  "browser": "153.0.4234.32",
+  "scope": "Fresh native Edge, anonymous complete source and MP4 download/hash, entire59-second normal-speed public playback, previous human viewer reachable",
+  "releaseUrl": "https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/tag/v1.3.0",
+  "releaseHttp": 200,
+  "downloads": [
+    {
+      "file": "NEMESIS-PACT-v1.3.0-source.zip",
+      "bytes": 34220352,
+      "sha256": "fefb70632fdd8cf57d625db9ae34a016814e6361849b265912e436020ea30db1",
+      "matched": true
+    },
+    {
+      "file": "NEMESIS-PACT-v1.3.0-59s-60fps-en-final.mp4",
+      "bytes": 108838606,
+      "sha256": "d29667a3d254814a761217ec0319669c88cf1f14075c819f3ddb56f9732dbff1",
+      "matched": true
+    }
+  ],
+  "viewerUrl": "https://www.circle-hydrangea.net/nemesis-pact-live/",
+  "viewerHttp": 200,
+  "viewerLinksTo130": true,
+  "video": {
+    "width": 1920,
+    "height": 1080,
+    "duration": 59.008,
+    "currentTime": 59.008,
+    "ended": true,
+    "playbackRate": 1,
+    "error": null,
+    "source": "https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/download/v1.3.0/NEMESIS-PACT-v1.3.0-59s-60fps-en-final.mp4",
+    "quality": {
+      "totalVideoFrames": 3540,
+      "droppedVideoFrames": 201
+    }
+  },
+  "observedPlaybackWallSecondsAfter2Seconds": 57.39,
+  "humanArchiveHttp": 200,
+  "githubShellPageErrors": [],
+  "viewerPageErrors": [],
+  "passed": true,
+  "apiModelCalls": 0
+}

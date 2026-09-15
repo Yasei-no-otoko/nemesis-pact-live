@@ -1,3 +1,7 @@
+# Current v1.3.0 completion audit
+
+The adaptive difficulty, demo autoplay, real production6Livepacts/18Lunaanalyses/18encounters/6bosses, nativeResolve59s60fpsfilm, public release and anonymous full playback are complete. Application0627590;release4e39e84;final evidencemilestone-27-adaptive-demo-verified. [Measurements and limits](ADAPTIVE-VALIDATION.md). No new human microphone/physical phone test, provider invoice confirmation or form submission is claimed.
+
 > Current v1.3.0: [Adaptive full-campaign production verification](ADAPTIVE-VALIDATION.md). 279tests;6Live pacts;18Luna analyses;18encounters/6bosses;59s/1080p60 native Resolve film.
 
 # Current v1.2.0 campaign negotiation audit

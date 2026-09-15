@@ -224,3 +224,15 @@ https://developers.openai.com/api/reference/typescript/resources/live/subresourc
 https://github.com/Yasei-no-otoko/openai-100-hour-game-builder-challenge/blob/main/NEMESIS-PACT-3D/package.json
 
 補足：上記は方針を裏付ける一次資料であり、GPT-Live-1のブラウザ初期接続仕様をこのファイルで完全に検証済みという意味ではない。SDK・正式な初期化ガイドと対象プロジェクトの実アクセス確認を省略しない。
+
+
+## Completed extension — v1.3.0,2026-09-15 JST
+
+- [x] GPT-5.6 Luna analyzes real wave/sector results and selects bounded pressure steps.
+- [x] Disclosed full-campaign demo autoplay uses normal simulation controls and excludes personal records.
+- [x] Actual production automation sends synthetic player speech to GPT-Live-1, signs6Luna contracts and clears18encounters/6bosses.
+- [x] Native Resolve edits the full capture into59seconds,1920x1080,60fps,with original audio and English captions. Source58.6539fps delivery limitation is recorded.
+- [x] Updated source and public release pushed; anonymous movie/source hashes and full video playback verified.
+- [x] Six submission fields, private kit, budgets, current commit/deployment and rollback evidence updated. See docs/ADAPTIVE-VALIDATION.md and docs/RELEASE-CANDIDATE.json.
+
+Form submission and legal attestation were not performed. Vercel grant-specific balance/expiry, infrastructure charges and provider invoices remain unverified; conservative application caps are not invoice guarantees.

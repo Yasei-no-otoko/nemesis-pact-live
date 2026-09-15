@@ -24,3 +24,8 @@ GOAL section10 deliverables pass within recorded evidence scopes. Optional devic
 2026-09-15 JST — v1.3.0 production full campaign and film verified
 
 App 06275908ab07372c59f5bbcb2033c268322b6771, READY dpl_f3q3Af5zwDQ2WvvhA4zuahkfhpCH. Real6Live pacts/18Luna analyses/18encounters/6bosses. Fixed autoplay, original synthetic input, ordinary game time; pressure0→1→2. All6voice sessions stopped.279tests/49syntax/3Redis. Native Resolve59s60fps13cuts/3540frames; raw58.6539fps. Ledger direct3/10,Gateway.042359/20. Public release/source ZIP/viewer validation remains the final step. See docs/ADAPTIVE-VALIDATION.md.
+
+
+2026-09-15 JST — v1.3.0 delivery complete
+
+PublicReleasev1.3.0 assets and anonymous source/MP4 hashes verified. Viewer played59.008s toended=true;3,540frames,201browser playback drops recorded separately. Native audio matches source within2ms. gh-pages03f778c5b091aa55376cc05780265165f59995a4 pushed. Source release4e39e84;app0627590 unchanged on READYf3q3Af5zwDQ2WvvhA4zuahkfhpCH. Six copy-ready fields updated in public docs and private kit. Ledgerdirect3/10,Gateway.042359/20;active0. Finaltagmilestone-27-adaptive-demo-verified. All requested work for this goal achieved; form submission remains a representative action.

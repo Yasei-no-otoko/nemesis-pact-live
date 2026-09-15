@@ -19,3 +19,8 @@ The default demo preset is Story/Bastion. An optional pause at each pact lets a 
 ## Current validation
 
 279 unit tests passed,49 source syntax checks passed, and3 actual Redis scenarios covered digest binding, stale completion and the48-call boundary. Native Edge desktop and emulated phone layout checks passed at1440x900,1280x720,430x932 and320x568; these are not new physical phone tests. Three controlled Node simulations completed18 encounters/6 bosses with aggressive bounded pressure increases. Production now passes all18 encounters with6 actual Live voice pacts and18 Luna analyses. A native Resolve59s/1080p60 edit is complete; see ADAPTIVE-VALIDATION.md.
+
+
+## Reproducing the automated recording
+
+The owner can create original local speech fixtures with `pwsh -NoProfile -File tools/create-demo-speech.ps1` (Microsoft Zira Desktop). Install the documented test browser dependencies, set `NEMESIS_ALLOW_FULL_CAMPAIGN=1`, and run `python tests/production_full_campaign.py`. This explicitly opted-in test uses the production site and consumes the shared approved allowance: maximum6Livecalls and42Luna requests,$0.30direct and$0.42conservative Gateway reservations. It never supplies model outputs or mutates combat. The actual verified run used6voice/7proposal/18analysis requests. The normal game autoplay alone does not open a microphone or force paid analysis. Raw video and private voice IDs remain in ignored local folders.

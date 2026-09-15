@@ -11,3 +11,12 @@ Edited submission file `NEMESIS-PACT-v1.3.0-59s-60fps-en-final.mp4`:59seconds,3,
 Ledger directOpenAI$3/$10;Gateway$0.042359/$20;increment$0.30/$0.005021. Actual grant balance/expiry, invoices and Vercel infrastructure costs remain unknown. Rollback to `dpl_5HEfvWCWhNzwstCDpK4qk3RuUaB9` /tagv1.2.0 while preserving Redis, credentials, counters and media.
 
 [Six English application fields](SUBMISSION-EN.md) were revised for adaptive difficulty and autoplay. Each is under200words. Personal fields remain in the ignored local kit. The official form has not been submitted.
+
+
+## Final public delivery
+
+[v1.3.0 Release](https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/tag/v1.3.0) is public with the source ZIP,59s MP4 and matching English caption sidecar. Fresh anonymous Edge downloaded all34,220,352source ZIP bytes and108,838,606MP4 bytes; both SHA256 hashes match. The viewer played the complete59.008seconds at rate1,reported ended=true,3,540decoded video frames and zero media/page errors. Its automated browser reported201dropped playback frames; this is distinct from source capture drops and the verified60fps encoded file. No smooth-playback guarantee on every device is implied. The earlier human iPhone viewer returned200 and retains its original film. gh-pages`03f778c5b091aa55376cc05780265165f59995a4` is pushed.
+
+All13native audio cuts correlate with the same source intervals above0.9998,with measured offset no greater than2ms at8kHz analysis. Local full decode and caption layout review passed. Source package258files,SHA256`fefb70632fdd8cf57d625db9ae34a016814e6361849b265912e436020ea30db1`,archivecommit`4e39e84bbe6898806e4ca7038ef99bb970287eb1`. Application source remains`06275908ab07372c59f5bbcb2033c268322b6771`. Final evidence is tagged`milestone-27-adaptive-demo-verified` after publication; the source ZIP represents the immutablev1.3.0release checkpoint.
+
+Final conservative ledger at2026-09-15T04:37:44.012Z:directOpenAI$3/$10;Gateway$0.042359/$20;active0;all6servervoice sessions stopped. Provider invoice, Vercel grant and infrastructure uncertainties remain. Six revised English fields are131/158/149/138/169/148words. Private representative kit is synchronized and excluded from Git/ZIP. No form submission or legal attestation was performed. No required work remains for this adaptive-campaign and film goal.

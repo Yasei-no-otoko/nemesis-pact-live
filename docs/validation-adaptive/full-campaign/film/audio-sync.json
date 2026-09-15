@@ -1,0 +1,84 @@
+{
+  "method": "Native export audio versus same source interval in full-length compatibility media,1.4second centers,8kHz mono,offset search plus/minus40ms. Each cut retains original audio.",
+  "results": [
+    {
+      "cut": 1,
+      "correlation": 0.99999,
+      "lagMs": -0.5,
+      "sourceRms": 0.15977
+    },
+    {
+      "cut": 2,
+      "correlation": 0.99998,
+      "lagMs": 0.5,
+      "sourceRms": 0.15317
+    },
+    {
+      "cut": 3,
+      "correlation": 0.99998,
+      "lagMs": 1.0,
+      "sourceRms": 0.10729
+    },
+    {
+      "cut": 4,
+      "correlation": 0.99998,
+      "lagMs": 1.0,
+      "sourceRms": 0.05419
+    },
+    {
+      "cut": 5,
+      "correlation": 0.99997,
+      "lagMs": -0.5,
+      "sourceRms": 0.0127
+    },
+    {
+      "cut": 6,
+      "correlation": 0.99998,
+      "lagMs": -2.0,
+      "sourceRms": 0.00719
+    },
+    {
+      "cut": 7,
+      "correlation": 0.99996,
+      "lagMs": 0.5,
+      "sourceRms": 0.01817
+    },
+    {
+      "cut": 8,
+      "correlation": 0.99995,
+      "lagMs": -0.5,
+      "sourceRms": 0.02537
+    },
+    {
+      "cut": 9,
+      "correlation": 0.99993,
+      "lagMs": 0.5,
+      "sourceRms": 0.0483
+    },
+    {
+      "cut": 10,
+      "correlation": 0.99989,
+      "lagMs": -0.5,
+      "sourceRms": 0.01953
+    },
+    {
+      "cut": 11,
+      "correlation": 0.99993,
+      "lagMs": -0.5,
+      "sourceRms": 0.02222
+    },
+    {
+      "cut": 12,
+      "correlation": 0.99993,
+      "lagMs": -0.5,
+      "sourceRms": 0.02009
+    },
+    {
+      "cut": 13,
+      "correlation": 0.99998,
+      "lagMs": 0.5,
+      "sourceRms": 0.01019
+    }
+  ],
+  "passed": true
+}
