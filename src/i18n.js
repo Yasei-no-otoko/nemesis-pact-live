@@ -14,6 +14,7 @@
     "Recorded combat · Your hull and the enemy's damage carry forward.":'実際の戦績 · 耐久と敵へのダメージは引き継がれます。',
     'Double damage is active. You can trade gun power for a sanctuary without that penalty.':'被ダメージが二倍の契約です。射撃威力を代償にすれば、そのペナルティなしで安全地帯を作れます。',
     'Your reflected shots are dealing damage. You can strengthen them by giving up the sanctuary.':'反射弾でダメージを与えています。安全地帯を手放して反射を強化することもできます。',
+    'Your enhanced reflections are dealing damage. Keep these terms or trade reflection power for shelter.':'強化した反射弾でダメージを与えています。今の条件を維持するか、反射の強さを安全地帯と交換できます。',
     'Your sanctuary is intercepting bullets. Keep it, move it, or trade it for stronger reflections.':'安全地帯が敵弾を消しています。維持するか、移動するか、強い反射と交換するか選べます。',
     'A sanctuary erases bullets inside its ring. Lasers and enemy bodies still pass through.':'安全地帯は円の中の敵弾を消します。レーザーや敵本体は通過します。',
     'Keep my terms':'今の条件を維持','Trade firepower for shelter':'射撃威力と安全を交換','Trade shelter for reflections':'安全地帯と反射を交換',

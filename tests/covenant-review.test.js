@@ -33,6 +33,13 @@ test('fragile damage suggests a funded sanctuary trade with no double-damage pen
   assert.equal(choice.id,'shelter');const s=V.localProposal(w.request(choice.prompt));
   assert.equal(s.zone,'right');assert.equal(s.price,'weaker_gun');assert.equal(V.compile(s).damage,1);assert.ok(V.budget(s).valid);
 });
+test('already-charged reflections never promise an additional unavailable upgrade',()=>{
+  const w=start(V.localProposal(new V.Run('CHARGED').request('No sanctuary. Slow fire. Amplify reflections. Weaker gun.')));
+  const boss=w.enemies[0];boss.spawn=0;w.hitEnemy(boss,100,'reflect');
+  const b=R.briefing(w);assert.equal(b.recommendation,'keep');assert.match(b.observation,/enhanced reflections/);assert.doesNotMatch(b.observation,/strengthen them/);
+  const terms=V.localProposal(w.request(b.choices.find(c=>c.id===b.recommendation).prompt));
+  assert.equal(V.compile(terms).reflect,1.8);assert.ok(R.compare(w.spec,terms).every(row=>!row.changed));
+});
 test('briefing reports only effects since current signature and zero boss HP after actual victory',()=>{
   const w=start();w.covenantStats.reflectedDamage=100;w.time=9;w.requestParley();w.signCovenant(V.localProposal(w.request('Left sanctuary. Weaker gun.')));
   const b=w.enemies[0];b.spawn=0;w.hitEnemy(b,200,'reflect');assert.equal(R.briefing(w).returned,200);

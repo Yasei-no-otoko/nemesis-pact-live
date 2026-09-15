@@ -31,8 +31,8 @@
       {id:'shelter',label:'Trade firepower for shelter',prompt:`Give me a sanctuary on the ${side}. Normal bullet speed. My gun can be weaker.`},
       {id:'reflect',label:'Trade shelter for reflections',prompt:'No sanctuary. Slow your bullets. Amplify my reflections. My gun can be weaker.'}
     ];
-    const recommendation=s.price==='fragile'&&lost>0?'shelter':returned>0?'reflect':shielded>0?'keep':'shelter';
-    const observation=s.price==='fragile'&&lost>0?'Double damage is active. You can trade gun power for a sanctuary without that penalty.':returned>0?'Your reflected shots are dealing damage. You can strengthen them by giving up the sanctuary.':shielded>0?'Your sanctuary is intercepting bullets. Keep it, move it, or trade it for stronger reflections.':'A sanctuary erases bullets inside its ring. Lasers and enemy bodies still pass through.';
+    const recommendation=s.price==='fragile'&&lost>0?'shelter':returned>0?(s.reflection==='charged'?'keep':'reflect'):shielded>0?'keep':'shelter';
+    const observation=s.price==='fragile'&&lost>0?'Double damage is active. You can trade gun power for a sanctuary without that penalty.':returned>0?(s.reflection==='charged'?'Your enhanced reflections are dealing damage. Keep these terms or trade reflection power for shelter.':'Your reflected shots are dealing damage. You can strengthen them by giving up the sanctuary.'):shielded>0?'Your sanctuary is intercepting bullets. Keep it, move it, or trade it for stronger reflections.':'A sanctuary erases bullets inside its ring. Lasers and enemy bodies still pass through.';
     return {seconds:Math.round(delta('seconds')*10)/10,hull:number(world.p?.hp),maxHull:number(world.p?.maxHp),bossRemaining:boss?Math.ceil(number(boss.hp)/Math.max(1,number(boss.maxHp))*100):0,shielded,returned:Math.round(returned),lost,observation,choices,recommendation};
   }
   return {compare,promptFor,briefing};
