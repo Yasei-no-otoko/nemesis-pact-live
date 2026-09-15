@@ -6,9 +6,10 @@ const read=name=>fs.readFileSync(path.join(root,name),'utf8');
 const sha=text=>crypto.createHash('sha256').update(text).digest('hex');
 const C=require('../src/core.js'),baseline=require('./fixtures/japanese-v0.2.0-mechanics.json');
 const cjk=/[\u3040-\u30ff\u3400-\u9fff]/u;
-test('English locale is declared and all runtime source strings are localized',()=>{
+test('English fallback and canonical source remain intact alongside opt-in Japanese UI',()=>{
   assert.match(read('index.html'),/<html lang="en">/);
-  for(const name of ['index.html',...fs.readdirSync(path.join(root,'src')).map(f=>'src/'+f)]){
+  assert.match(read('index.html'),/id="title-language"/);assert.match(read('index.html'),/id="settings-language"/);
+  for(const name of fs.readdirSync(path.join(root,'src')).filter(f=>!f.startsWith('i18n')).map(f=>'src/'+f)){
     assert.equal(cjk.test(read(name)),false,name);
   }
 });
@@ -49,7 +50,7 @@ test('English run reports retain compatible IDs and the correct build version',(
 });
 test('English standalone build has no external dependencies and preserves offline CSP',()=>{
   const html=read('dist/NEMESIS-PACT.html');
-  assert.match(html,/<html lang="en">/);assert.ok(!cjk.test(html));
+  assert.match(html,/<html lang="en">/);assert.match(html,/PactI18n/);assert.match(html,/PactJapaneseUI/);
   assert.doesNotMatch(html,/<script\s+src=/);assert.doesNotMatch(html,/<link rel="stylesheet"/);
   assert.match(html,/connect-src 'none'/);assert.match(html,/PARRY/);assert.match(html,/NOVA/);
 });

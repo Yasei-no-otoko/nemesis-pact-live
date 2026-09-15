@@ -1,0 +1,38 @@
+/* Local fonts only; language selection never changes game geometry. */
+.language-choice{display:flex;align-items:center;gap:10px;font:12px/1.4 system-ui,sans-serif;letter-spacing:0;white-space:nowrap}
+.language-choice select{min-height:36px;width:auto;min-width:108px;padding:6px 24px 6px 10px;background:#13232d;color:#d7f4e8;border:1px solid #4a696d;border-radius:4px;font:inherit}
+#settings-language{min-width:126px;max-width:45%;padding:10px;background:#13232d;color:#d7f4e8;border:1px solid #4a696d;border-radius:4px}
+.language-choice select:focus-visible,#settings-language:focus-visible{outline:2px solid #a4e1cf;outline-offset:3px}
+html[lang="ja"] body{font-family:"Yu Gothic UI","Meiryo",system-ui,sans-serif}
+html[lang="ja"] .eyebrow,html[lang="ja"] .micro,html[lang="ja"] .section-cap,html[lang="ja"] .title-top{letter-spacing:.08em}
+html[lang="ja"] .tagline{font-size:26px;line-height:1.4;letter-spacing:.03em}
+html[lang="ja"] .title-actions .primary{white-space:nowrap}
+html[lang="ja"] .title-desc{line-height:1.9}
+html[lang="ja"] .title-links{gap:12px}
+html[lang="ja"] .choice-card h3{font-size:26px;line-height:1.4;letter-spacing:0}
+html[lang="ja"] .choice-card p,html[lang="ja"] .choice-gift,html[lang="ja"] .choice-cost{line-height:1.7}
+html[lang="ja"] .help-grid h3{font-size:15px;letter-spacing:0}
+html[lang="ja"] .help-grid p,html[lang="ja"] .touch-help p{line-height:1.85}
+html[lang="ja"] .setting-row>span{min-width:0;flex:1}
+html[lang="ja"] .setting-row input{flex-shrink:0}
+html[lang="ja"] .result-left h2{font-size:46px;line-height:1.3;letter-spacing:0}
+html[lang="ja"] .provider-pill{letter-spacing:0}
+html[lang="ja"] .cv-status,html[lang="ja"] .cv-caption{letter-spacing:0}
+html[lang="ja"] .hud-ledger{letter-spacing:0}
+@media(max-width:759px){
+ .title-top{align-items:center;gap:8px}
+ .title-top>span:first-child{font-size:9px;letter-spacing:0}
+ .language-choice{font-size:10px;gap:5px}
+ .language-choice select{min-width:90px;min-height:32px;padding-left:6px}
+ html[lang="ja"] .mobile-ui .tagline{font-size:clamp(21px,5.9vw,27px);line-height:1.4;letter-spacing:0}
+ html[lang="ja"] .mobile-ui .title-desc{font-size:12px;line-height:1.75}
+ html[lang="ja"] .mobile-ui .title-links{gap:5px 9px}
+ html[lang="ja"] .mobile-ui .title-links .text-button{font-size:12px}
+ html[lang="ja"] .mobile-ui .choice-card h3{font-size:22px}
+ html[lang="ja"] .mobile-ui .result-left h2{font-size:32px}
+ html[lang="ja"] .mobile-ui .touch-action>b{letter-spacing:0;font-size:13px}
+ html[lang="ja"] .mobile-ui .brand-mini small{letter-spacing:0;font-size:9px}
+ html[lang="ja"] .mobile-ui #pact-hud strong{font-size:12px}
+ html[lang="ja"] .mobile-ui #pact-hud small{font-size:10px;letter-spacing:0}
+}
+@media(max-width:359px){.language-choice>span{display:none}.language-choice select{min-width:86px}html[lang="ja"] .mobile-ui .title-links .text-button{font-size:11px}}

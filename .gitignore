@@ -15,3 +15,5 @@ output/playwright/demo-gallery/
 
 .vercel
 .env*
+
+output/playwright/japanese-ui/

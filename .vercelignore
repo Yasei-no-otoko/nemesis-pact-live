@@ -11,3 +11,5 @@ README*
 *.zip
 node_modules
 output
+
+site

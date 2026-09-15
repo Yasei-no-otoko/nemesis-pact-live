@@ -20,6 +20,7 @@
 <link rel="stylesheet" href="src/director.css">
 <link rel="stylesheet" href="src/campaign.css">
 <link rel="stylesheet" href="src/adaptive.css">
+<link rel="stylesheet" href="src/japanese.css">
 </head>
 <body>
 <main id="stage" aria-label="NEMESIS PACT game">
@@ -48,7 +49,7 @@
     <div id="toast" role="status"></div>
     <div id="tutorial-hud" hidden><small>FLIGHT SCHOOL / TRAINING</small><h3 id="tutorial-title"></h3><p id="tutorial-detail"></p><button id="training-exit" class="text-button">Exit training →</button></div>
     <section id="menu" class="screen title-screen" aria-label="Title screen">
-      <div class="title-top"><span><i class="status-dot"></i> WILDMAN / ORIGINAL GAME</span><span>VOICE · TEXT · LOCAL RULES</span></div>
+      <div class="title-top"><span><i class="status-dot"></i> WILDMAN / ORIGINAL GAME</span><label class="language-choice" data-i18n-ignore><span>Language / 言語</span><select id="title-language" aria-label="Language / 言語"><option value="en">English</option><option value="ja">日本語</option></select></label></div>
       <div class="title-content"><div class="eyebrow">A LIVING COVENANT</div>
         <h1>NEMESIS<br><span>PACT<span class="title-cross">✳</span></span></h1>
         <p class="tagline">The enemy listens.<br>The battlefield changes.</p>
@@ -140,6 +141,7 @@
  <div><b>06 / YOUR WORD HAS A PRICE</b><p>A sanctuary erases bullets even when you are outside it. All benefits and prices stay active until replaced or broken. Q, or Pause → Break pact, restores 1 hull and clears fire, but removes the deal and makes enemies attack faster.</p></div>
 </div><div class="help-bottom"><p class="desktop-only">Standard gamepad: Left stick move / Right stick aim and fire / A dash / LB parry / Y Nova / B break pact / START pause</p><button id="help-close" class="primary">Got it <span>→</span></button></div></div></section>
     <section id="settings-screen" class="screen backdrop" hidden aria-label="Settings"><div class="panel settings-panel"><span class="eyebrow">MAKE YOURSELF AT HOME.</span><h2>Settings</h2>
+      <label class="setting-row"><span><span data-i18n-ignore>Language / 言語</span><small>Saved on this device. Browser language is used on your first visit.</small></span><select id="settings-language" aria-label="Language / 言語" data-i18n-ignore><option value="en">English</option><option value="ja">日本語</option></select></label>
       <label class="setting-row"><span>Volume <small>Music and sound effects</small></span><input id="volume" type="range" min="0" max="100" value="55"></label>
       <label class="setting-row"><span>Music <small>17 local soundtrack cues; no streaming</small></span><input id="music" type="checkbox" checked></label>
       <label class="setting-row"><span>Music volume <small>Independent of sound effects</small></span><input id="music-volume" type="range" min="0" max="100" value="72"></label>
@@ -156,8 +158,8 @@
       <label class="setting-row"><span>Post FX <small>Distortion and color grading. Basic tone mapping stays on.</small></span><span class="setting-control"><input id="postfx" type="range" min="0" max="2" step="1" value="1"><b id="postfx-value" class="setting-value">STANDARD</b></span></label>
       <label class="setting-row"><span>Bloom <small>Glow pass strength for emissive surfaces</small></span><span class="setting-control"><input id="bloom" type="range" min="0" max="2" step="1" value="1"><b id="bloom-value" class="setting-value">STANDARD</b></span></label>
       <label class="setting-row"><span>Background animation <small>Ambient motion in rings, light paths and set dressing</small></span><span class="setting-control"><input id="bganim" type="range" min="0" max="2" step="1" value="1"><b id="bganim-value" class="setting-value">STANDARD</b></span></label>
-      <label class="setting-row desktop-only"><span>Auto-fire <small>Just aim with the mouse</small></span><input id="autofire" type="checkbox"></label>
-      <label class="setting-row desktop-only"><span>Aim assist <small>Automatically target nearby enemies</small></span><input id="autoaim" type="checkbox"></label>
+      <label class="setting-row desktop-only"><span>Auto Shot <small>Fire automatically; turn off for manual shooting</small></span><input id="autofire" type="checkbox" checked></label>
+      <label class="setting-row desktop-only"><span>Aim Assist <small>Automatically target nearby enemies</small></span><input id="autoaim" type="checkbox" checked></label>
       <label class="setting-row mobile-only"><span>Left-handed layout <small>Movement on the right; actions on the left</small></span><input id="lefthanded" type="checkbox"></label>
       <label class="setting-row mobile-only"><span>Touch sensitivity <small>Reach full speed with less finger travel</small></span><input id="sensitivity" type="range" min="70" max="140" value="100"></label>
       <p class="mobile-only touch-info">Automatic aim and fire are always on for touch controls.</p>
@@ -218,6 +220,10 @@
 <script src="src/voice.js"></script>
 <script src="src/demo.js"></script>
 <script>window.NemesisDemo.attach();</script>
+<script src="src/i18n-ja-ui.js"></script>
+<script src="src/i18n-ja-data.js"></script>
+<script src="src/i18n-ja-dynamic.js"></script>
+<script src="src/i18n.js"></script>
 <script src="src/game.js"></script>
 </body>
 </html>

@@ -332,3 +332,8 @@ PublicReleasev1.3.0 assets and anonymous source/MP4 hashes verified. Viewer play
 2026-09-15 JST — Public demo gallery complete
 
 The demo viewer now includes seven actual PC screenshots (two upgraded normal waves, three bosses, live contract and adaptive review) plus the two existing imagegen concept boards. Concept and gameplay labels are explicit. Five local and five public viewport checks pass (1440x900,1280x720,768x1024,430x932,320x568), all nine published lossless image hashes match, full-size links and JavaScript-free navigation work, and the existing 59.008s video starts with no media error. Mobile checks are emulation. The existing CSP blocks a host-injected analytics beacon; recorded separately. gh-pages6a4cb612d3963215ea9b766edd993508e716f4c7 is pushed/built. Canonical source site/demo; evidence docs/DEMO-GALLERY.md and docs/validation-gallery. No game build or paid API call. Development source/evidence checkpoint milestone-28-demo-gallery; rollback is a normal revert of the Pages commit.
+
+
+2026-09-15 JST — Japanese UI and beginner defaults
+
+Started from clean d312b891 on ship/living-covenant. Added browser-preferred EN/JA presentation and synchronized persisted selectors on title/Settings. New users have Auto Shot/Aim Assist on; existing explicit false survives. Canonical world/schema/sign path unchanged. Japanese local campaign/Director keywords now match translated sample prompts. 286 unit tests/53 syntax/build pass; four actual Edge software-WebGL2 viewport cases plus campaign pact/Director/result UI, blocked storage and normal auto-fire pass. No paid API call. Production verification follows. See docs/JAPANESE-UI.md for exact scope, failures corrected, dated ledger and rollback.

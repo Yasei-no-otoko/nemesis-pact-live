@@ -2,7 +2,7 @@
 (function(){'use strict';
   const C=window.PactCore,$=id=>document.getElementById(id),canvas=$('canvas'),ctx=canvas.getContext('2d',{alpha:true});
   if(!C||!ctx){$('fatal').hidden=false;$('fatal-message').textContent='Could not initialize the game engine or Canvas.';return;}
-  const {TAU,clamp,CONTRACTS,UPGRADES}=C;
+  const {TAU,clamp,CONTRACTS,UPGRADES}=C,T=text=>window.PactI18n.translate(text);
   const V=window.PactCovenant,cvClient=new V.Client(),cvSession=new window.PactSession();let cvProposal=null,cvWorld=null,cvRevision=0,cvRequestId=0,cvRunId='',cvSigning=false;
   let voice=null,voiceWorld=null,voiceText='',voiceCaption='',voiceLastInput=0,voiceMuted=false,voiceActive=false,voiceBackchannels='';
   const X=window.PactExpansion,I=window.PactIntelligence,BOSSES=X.BOSSES,SECTORS=X.SECTORS.map(s=>s.name),aiClient=new I.Client();
@@ -30,7 +30,7 @@
   const initial=savedSettings&&typeof savedSettings==='object'&&!Array.isArray(savedSettings)?savedSettings:{};
   const level=v=>Number.isFinite(v)?Math.max(0,Math.min(2,Math.round(v))):1;
   const effectLabel=v=>v===0?'OFF':v===2?'HIGH':'STANDARD';
-  const opts={volume:Number.isFinite(initial.volume)?clamp(initial.volume,0,1):.55,music:initial.music!==false,musicVolume:Number.isFinite(initial.musicVolume)?clamp(initial.musicVolume,0,1):.72,sfxVolume:Number.isFinite(initial.sfxVolume)?clamp(initial.sfxVolume,0,1):1,adaptiveMusic:initial.adaptiveMusic!==false,reduced:initial.reduced===true||(!('reduced'in initial)&&matchMedia('(prefers-reduced-motion: reduce)').matches),postfx:level(initial.postfx),bloom:level(initial.bloom),bganim:level(initial.bganim),autofire:initial.autofire===true,autoaim:initial.autoaim===true,lefthanded:initial.lefthanded===true,sensitivity:Number.isFinite(initial.sensitivity)?clamp(initial.sensitivity,.7,1.4):1};
+  const opts={volume:Number.isFinite(initial.volume)?clamp(initial.volume,0,1):.55,music:initial.music!==false,musicVolume:Number.isFinite(initial.musicVolume)?clamp(initial.musicVolume,0,1):.72,sfxVolume:Number.isFinite(initial.sfxVolume)?clamp(initial.sfxVolume,0,1):1,adaptiveMusic:initial.adaptiveMusic!==false,reduced:initial.reduced===true||(!('reduced'in initial)&&matchMedia('(prefers-reduced-motion: reduce)').matches),postfx:level(initial.postfx),bloom:level(initial.bloom),bganim:level(initial.bganim),autofire:initial.autofire!==false,autoaim:initial.autoaim!==false,lefthanded:initial.lefthanded===true,sensitivity:Number.isFinite(initial.sensitivity)?clamp(initial.sensitivity,.7,1.4):1};
   const starRng=C.rng('NEMESIS-STARS-1'),stars=Array.from({length:130},()=>({x:starRng()*W,y:starRng()*H,r:starRng()*1.3+.3,z:starRng(),phase:starRng()*TAU}));
   function escapeHTML(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
   function refreshView(){
@@ -356,7 +356,7 @@
   function renderGame(t){
     const stage=Math.min(world.stage,5),p=world.p;arena(t,stage);if(world.mode==='first-contact')renderCovenantField(t);
     for(const item of world.pickups||[]){poly(item.x,item.y,5,4,t*.6,'#e7cf86','#fff0bd',1);}
-    if(world.mods.sanctuary){circle(W/2,H/2,76,'#83dca813','#9eecac77',1);circle(W/2,H/2,70,null,'#9eecac35');ctx.font='9px monospace';ctx.textAlign='center';ctx.fillStyle='#9eecac77';ctx.fillText('SANCTUARY',W/2,H/2+96);}
+    if(world.mods.sanctuary){circle(W/2,H/2,76,'#83dca813','#9eecac77',1);circle(W/2,H/2,70,null,'#9eecac35');ctx.font='9px monospace';ctx.textAlign='center';ctx.fillStyle='#9eecac77';ctx.fillText(T('SANCTUARY'),W/2,H/2+96);}
     if(world.ceasefire){ctx.fillStyle='#8573c90a';ctx.fillRect(35,100,1210,595);}
     for(const l of world.lasers){
       const endx=l.x+Math.cos(l.a)*1600,endy=l.y+Math.sin(l.a)*1600;
@@ -396,7 +396,7 @@
     ctx.save();if(shake>0&&!opts.reduced)ctx.translate(shakeX,shakeY);
     if(!world||screen==='menu'||screen==='loadout')renderTitle(t);else renderGame(t);
     ctx.save();ctx.globalCompositeOperation='lighter';for(const p of particles){ctx.globalAlpha=clamp(p.life/p.max,0,1)*.8;line(p.x,p.y,p.x-p.vx*.028,p.y-p.vy*.028,p.color,p.r);}ctx.restore();
-    for(const e of effects){const a=clamp(e.life/e.max,0,1);ctx.globalAlpha=a;if(e.type==='ring'){const r=e.r*(1-a*a);circle(e.x,e.y,r,null,e.color,opts.reduced?1:2+a*3);}else if(e.type==='text'){ctx.font='bold 15px monospace';ctx.fillStyle=e.color;ctx.textAlign='center';ctx.fillText(e.text,e.x,e.y-(1-a)*30);}}ctx.globalAlpha=1;
+    for(const e of effects){const a=clamp(e.life/e.max,0,1);ctx.globalAlpha=a;if(e.type==='ring'){const r=e.r*(1-a*a);circle(e.x,e.y,r,null,e.color,opts.reduced?1:2+a*3);}else if(e.type==='text'){ctx.font='bold 15px monospace';ctx.fillStyle=e.color;ctx.textAlign='center';ctx.fillText(T(e.text),e.x,e.y-(1-a)*30);}}ctx.globalAlpha=1;
     ctx.restore();
     if(flash>0&&!opts.reduced){ctx.fillStyle=`rgba(220,244,230,${Math.min(flash,.13)})`;ctx.fillRect(0,0,W,H);}
     if(!mobile){const g=ctx.createLinearGradient(0,0,0,H);g.addColorStop(0,'#050a11b0');g.addColorStop(.14,'#050a1100');g.addColorStop(.80,'#050a1100');g.addColorStop(1,'#050a11aa');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);}
@@ -499,7 +499,7 @@
     sound.unlock();$('boss-hud').hidden=true;document.body.dataset.covenant='true';refreshView();const arena=mobile?{layout:'portrait',height:720*view.field.height/view.field.width}:{};
     let memory;try{memory=V.memory(storage.read('nemesis.covenant.memory.v1',{honored:0,broken:0}));}catch{memory={honored:0,broken:0};}
     world=new V.Run(typeof seed==='string'?seed:randomSeed(),'standard',arena,memory);cvRunId=crypto.randomUUID?crypto.randomUUID():Array.from(crypto.getRandomValues(new Uint8Array(16)),b=>b.toString(16).padStart(2,'0')).join('');cvSigning=false;W=world.width;H=world.height;refreshView();effects=[];particles=[];trails=[];shake=flash=freeze=0;resultSaved=false;lastWorldPhase='';
-    $('cv-prompt').value='Move the sanctuary to the left. Slow your bullets. I accept reinforcements.';$('cv-mode').value=window.NEMESIS_HOSTED?'server':'local';$('cv-token').value='';$('cv-consent').checked=false;openCovenant();updateHUD();
+    $('cv-prompt').value=T('Move the sanctuary to the left. Slow your bullets. I accept reinforcements.');$('cv-mode').value=window.NEMESIS_HOSTED?'server':'local';$('cv-token').value='';$('cv-consent').checked=false;openCovenant();updateHUD();
   }
   function invalidateCovenant(message='Terms changed. Get a new counteroffer before signing.',keepDelegation=false,reviseDelegation=false){
     if(cvSigning)return;cvClient.cancel();cvRequestId++;if(!keepDelegation)voice?.supersede(reviseDelegation);cvProposal=null;
@@ -587,7 +587,7 @@
     $('combat-guide').dataset.cue=laser?'laser':p.energy>=world.novaCost()?'nova':'guide';$('combat-guide-action').textContent=action;$('combat-guide-detail').textContent=detail;$('touch-context-hint').textContent=touchHint;
   }
   function renderCovenantPreview(t){const el=$('cv-preview'),g=el.getContext('2d');if(!g)return;g.clearRect(0,0,900,160);g.fillStyle='#07121d';g.fillRect(0,0,900,160);const specs=[world?.spec,cvProposal?.spec];
-    for(let k=0;k<2;k++){const x=k*455,s=specs[k],slow=s?.speed==='slow',z=s&&s.zone!=='none'?s.zone:null;g.save();g.beginPath();g.rect(x,0,445,160);g.clip();g.fillStyle='#aac5d1';g.font='12px monospace';g.textAlign='left';g.fillText(k?'AFTER / PROPOSED':'BEFORE / CURRENT',x+15,21);g.strokeStyle='#39585d55';g.strokeRect(x+10,32,423,117);for(let y=50;y<146;y+=24){g.beginPath();g.moveTo(x+11,y);g.lineTo(x+432,y);g.stroke();}
+    for(let k=0;k<2;k++){const x=k*455,s=specs[k],slow=s?.speed==='slow',z=s&&s.zone!=='none'?s.zone:null;g.save();g.beginPath();g.rect(x,0,445,160);g.clip();g.fillStyle='#aac5d1';g.font='12px monospace';g.textAlign='left';g.fillText(T(k?'AFTER / PROPOSED':'BEFORE / CURRENT'),x+15,21);g.strokeStyle='#39585d55';g.strokeRect(x+10,32,423,117);for(let y=50;y<146;y+=24){g.beginPath();g.moveTo(x+11,y);g.lineTo(x+432,y);g.stroke();}
       const zx=x+{left:112,center:220,right:330}[z],zy=112;if(z){g.fillStyle='#82e8c51b';g.strokeStyle='#adf4cd';g.lineWidth=2;g.beginPath();g.ellipse(zx,zy,32,25,0,0,TAU);g.fill();g.stroke();}
       const pt=opts.reduced?1.25:t;for(let j=0;j<19;j++){const by=42+((pt*(slow?31:43)+j*8.2)%107),bx=x+35+j*20;if(z&&Math.hypot((bx-zx)/32,(by-zy)/25)<1)continue;g.fillStyle='#eead8c';g.beginPath();g.arc(bx,by,2.8,0,TAU);g.fill();}
       g.fillStyle='#dbeedd';g.beginPath();g.moveTo(x+220,116);g.lineTo(x+211,135);g.lineTo(x+220,131);g.lineTo(x+229,135);g.closePath();g.fill();if(s?.reflection==='charged'){g.strokeStyle='#f3d293';g.beginPath();g.arc(x+220,126,19,Math.PI,TAU);g.stroke();}g.restore();}
@@ -600,9 +600,9 @@
       circle(z.x,z.y,z.r,tint,'#a9eed2',inside?2.5:1.8);circle(z.x,z.y,z.r-7,null,'#9be0c648',1);
       for(let i=0;i<32;i++){const a=i*TAU/32,r0=z.r-(i%4===0?14:6);line(z.x+Math.cos(a)*r0,z.y+Math.sin(a)*r0,z.x+Math.cos(a)*(z.r-2),z.y+Math.sin(a)*(z.r-2),i%4===0?'#c6e6c49a':'#aad9bb38',1);}
       poly(z.x,z.y,22,4,Math.PI/4,null,'#b4e6cd38',1);circle(z.x,z.y,31,null,'#98dcb523',1);
-      ctx.font=(mobile?'12':'11')+'px monospace';ctx.textAlign='center';ctx.fillStyle='#d5f6e5';ctx.fillText(world.spec.zone.toUpperCase()+' SANCTUARY',z.x,z.y+z.r+18);ctx.font='9px monospace';ctx.fillStyle='#a0c7b7';ctx.fillText('BULLETS ONLY',z.x,z.y+z.r+31);ctx.restore();
+      ctx.font=(mobile?'12':'11')+'px monospace';ctx.textAlign='center';ctx.fillStyle='#d5f6e5';ctx.fillText(T(world.spec.zone.toUpperCase()+' SANCTUARY'),z.x,z.y+z.r+18);ctx.font='9px monospace';ctx.fillStyle='#a0c7b7';ctx.fillText(T('BULLETS ONLY'),z.x,z.y+z.r+31);ctx.restore();
     }
-    if(boss){circle(boss.x,boss.y,84,null,'#e8c79440',1);ctx.save();ctx.setLineDash([3,14]);circle(boss.x,boss.y,96,null,'#cae2d83b');ctx.restore();const intent=boss.intent;if(intent){const laser=intent.kind==='laser',color=laser?'#ff8dca':'#efd697',time=intent.remaining;ctx.save();ctx.globalAlpha=.55;ctx.setLineDash([9,12]);if(laser)line(boss.x,boss.y,boss.x+Math.cos(intent.angle)*H*2,boss.y+Math.sin(intent.angle)*H*2,color,3);else if(intent.kind==='fan')for(const a of [intent.angle-.4,intent.angle,intent.angle+.4])line(boss.x,boss.y,boss.x+Math.cos(a)*330,boss.y+Math.sin(a)*330,color,1.5);else circle(boss.x,boss.y,110+(1-time/.75)*40,null,color,2);ctx.restore();ctx.font=(mobile?'13':'11')+'px monospace';ctx.textAlign='center';ctx.fillStyle=color;ctx.fillText(laser?'LASER / DASH THROUGH':intent.kind==='fan'?'AIMED FAN / MOVE OR PARRY':'RING / PARRY THE GOLD',boss.x,boss.y-110);}}
+    if(boss){circle(boss.x,boss.y,84,null,'#e8c79440',1);ctx.save();ctx.setLineDash([3,14]);circle(boss.x,boss.y,96,null,'#cae2d83b');ctx.restore();const intent=boss.intent;if(intent){const laser=intent.kind==='laser',color=laser?'#ff8dca':'#efd697',time=intent.remaining;ctx.save();ctx.globalAlpha=.55;ctx.setLineDash([9,12]);if(laser)line(boss.x,boss.y,boss.x+Math.cos(intent.angle)*H*2,boss.y+Math.sin(intent.angle)*H*2,color,3);else if(intent.kind==='fan')for(const a of [intent.angle-.4,intent.angle,intent.angle+.4])line(boss.x,boss.y,boss.x+Math.cos(a)*330,boss.y+Math.sin(a)*330,color,1.5);else circle(boss.x,boss.y,110+(1-time/.75)*40,null,color,2);ctx.restore();ctx.font=(mobile?'13':'11')+'px monospace';ctx.textAlign='center';ctx.fillStyle=color;ctx.fillText(T(laser?'LASER / DASH THROUGH':intent.kind==='fan'?'AIMED FAN / MOVE OR PARRY':'RING / PARRY THE GOLD'),boss.x,boss.y-110);}}
   }
 
   // --- Input & menu wiring ---
@@ -652,7 +652,7 @@
   function covenantDetails(transcript){$('cv-detail-title').textContent=transcript?'Voice transcript':'Full terms & changes';$('cv-detail-content').textContent=transcript?'YOU\n'+$('cv-caption-player').textContent+'\n\nTHE NOTARY\n'+$('cv-caption-notary').textContent:[$('cv-contract-title').textContent,$('cv-line').textContent,$('cv-clauses').innerText,$('cv-rationale').textContent||'Ask for a counteroffer. Only the displayed clauses can be signed; voice and preview animations never change combat by themselves.'].join('\n\n');$('cv-detail-dialog').showModal();}
   $('cv-review-details').onclick=()=>covenantDetails(false);$('cv-transcript').onclick=()=>covenantDetails(true);
   for(const id of ['cv-detail-close','cv-detail-done'])$(id).onclick=()=>$('cv-detail-dialog').close();
-  for(const el of document.querySelectorAll('[data-cv-example]'))el.onclick=()=>{$('cv-prompt').value=el.dataset.cvExample;invalidateCovenant();};
+  for(const el of document.querySelectorAll('[data-cv-example]'))el.onclick=()=>{$('cv-prompt').value=T(el.dataset.cvExample);invalidateCovenant();};
   $('start').onclick=()=>{sound.unlock();hangarScreen();};$('launch').onclick=()=>start();$('train').onclick=()=>start(true);$('training-exit').onclick=home;
   $('daily').onclick=()=>{const d=new Date(),date=[d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');$('seed').value='DAILY-'+date;show('loadout');};
   for(const el of document.querySelectorAll('[data-difficulty]'))el.onclick=()=>{difficulty=el.dataset.difficulty;for(const b of document.querySelectorAll('[data-difficulty]')){b.classList.toggle('selected',b===el);b.setAttribute('aria-pressed',String(b===el));}};
@@ -697,7 +697,7 @@
     if(!world.shop.length)$('relic-shop').textContent='No uncollected relics in this sector.';
     $('field-repair').disabled=world.p.hp>=world.p.maxHp||world.credits<35;$('field-repair').onclick=()=>{if(world.repair()){routeScreen(outfit);$('shop-status').textContent='Hull restored.';}};
     $('route-intelligence').hidden=outfit||world.phase!=='route'||world.mode!=='expedition';$('route-end').textContent=outfit?'Back to selection':'End run';
-    $('route-end').onclick=()=>{if(outfit)choiceScreen();else if(confirm('End this run and return to the main menu?'))home();};
+    $('route-end').onclick=()=>{if(outfit)choiceScreen();else if(confirm(T('End this run and return to the main menu?')))home();};
     $('shop-status').textContent=`DIRECTOR: ${X.DIRECTORS[world.director].name.toUpperCase()} / ${world.directorSource||'LOCAL RULES'} / ${world.relics.map(id=>X.RELICS.find(r=>r.id===id).name).join(' / ')||'NO RELICS YET'}`;
   }
   function archiveScreen(){
@@ -717,8 +717,8 @@
     $('ai-provider').textContent='LOCAL RULES / NO AI CALLS';$('ai-status').textContent='';$('ai-benefit').textContent='';$('ai-price').textContent='';
     $('ai-line').textContent=director?'What kind of pressure will sharpen your flight?':'The channel is open.';$('ai-rationale').textContent=director?'Choose OpenAI and consent below for a generated formation proposal. Review the wave, then apply. LOCAL RULES is also available.':'Local mode uses authored keyword rules, not an LLM. Try a request, inspect the benefit and cost, then decide.';
     const prompts=task==='negotiate'?world.offersForPact().map(c=>c.line.replace(/[“”]/g,'')):task==='director'?['A balanced formation, please.','Test me with pursuit units.','A crossfire lattice, with fair gaps.']:['What should I change next run?'];
-    $('ai-prompt').value=prompts[0];$('ai-suggestions').replaceChildren();
-    for(const text of prompts){const b=document.createElement('button');b.textContent=text;b.onclick=()=>{$('ai-prompt').value=text;campaignSpeech=text;invalidateProposal();};$('ai-suggestions').append(b);}
+    $('ai-prompt').value=T(prompts[0]);$('ai-suggestions').replaceChildren();
+    for(const text of prompts){const b=document.createElement('button');b.textContent=text;b.onclick=()=>{$('ai-prompt').value=T(text);campaignSpeech=$('ai-prompt').value;invalidateProposal();};$('ai-suggestions').append(b);}
     $('ai-mode').value='mock';aiClient.mode='mock';$('pilot-token').value='';$('ai-consent').checked=false;
     $('ai-mode').querySelector('[value="server"]').disabled=(!director&&!campaign)||!window.NEMESIS_HOSTED;
     $('ai-consent').parentElement.hidden=!director&&!campaign;document.querySelector('.ai-consent span').textContent=campaign?'I agree to send my text, seed, sector and play counters to this site and OpenAI for a pact proposal. Microphone audio goes to GPT-Live-1 only after Start voice. AI voice is generated. Sign, Back, revoking consent or a timeout stops it.':'I agree to send this text, seed, sector and six aggregate play counters to this site and OpenAI through Vercel AI Gateway to generate a formation proposal. No audio or screenshots are sent.';$('ai-director-preview').hidden=!director;
@@ -834,7 +834,7 @@
     $('campaign-voice-volume').oninput=()=>{const level=Number($('campaign-voice-volume').value)/100;campaignVoice.setVolume(level);window.NemesisDemo?.setVoiceOutputLevel?.(level);};
   }
   // Readable snapshot contains no credentials, transcripts or writable objects.
-  window.render_game_to_text=()=>JSON.stringify({build:'1.3.0',screen,negotiationStep:$('covenant-screen').dataset.step||'negotiate',coordinates:'origin top-left; x right; y down',renderer:gpu.stats().backend,arena:{width:W,height:H},phase:world?.phase,seconds:world?Math.round(world.time*100)/100:0,player:world?{x:Math.round(world.p.x),y:Math.round(world.p.y),hp:world.p.hp,energy:world.p.energy}:null,enemies:world?.enemies.filter(e=>e.hp>0).slice(0,12).map(e=>({type:e.type,x:Math.round(e.x),y:Math.round(e.y),hp:e.hp})),hostileBullets:world?.bullets.filter(b=>b.hostile).length,revision:world?.revision,spec:world?.spec,proposal:cvProposal?{spec:cvProposal.spec,provider:cvProposal.provider,model:cvProposal.model}:null,effects:world?.covenantStats,stage:world?.stage,wave:world?.wave,bossKills:world?.bossKills,renderFrames,autoplay:world?.autoplay?{active:autoplayActive,pauseAtPacts:autoplayPausePacts}:null,adaptive:world?.adaptiveEnabled||world?.adaptiveHistory?.length?{enabled:world.adaptiveEnabled,level:world.adaptiveLevel,history:world.adaptiveHistory,pending:world.pendingAnalysis}:null,runReport:world?.phase==='won'||world?.phase==='dead'?world.report():null,campaignPact:world?.pact,campaignPactSource:world?.campaignPactSource,campaignPactEffects:world?.mode!=='first-contact'&&world?{...world.mods}:null,campaignProposal:campaignClient.proposal?{decision:campaignClient.proposal.decision,provider:campaignClient.proposal.provider,model:campaignClient.proposal.model}:null,campaignVoice:campaignVoice?.state,voice:voice?.state,liveVoice:world?.voiceEvidence?world.report().liveVoice:null});
+  window.render_game_to_text=()=>JSON.stringify({build:'1.3.0',screen,language:window.PactI18n.locale,assists:{autoShot:opts.autofire,aimAssist:opts.autoaim},negotiationStep:$('covenant-screen').dataset.step||'negotiate',coordinates:'origin top-left; x right; y down',renderer:gpu.stats().backend,arena:{width:W,height:H},phase:world?.phase,seconds:world?Math.round(world.time*100)/100:0,player:world?{x:Math.round(world.p.x),y:Math.round(world.p.y),hp:world.p.hp,energy:world.p.energy}:null,enemies:world?.enemies.filter(e=>e.hp>0).slice(0,12).map(e=>({type:e.type,x:Math.round(e.x),y:Math.round(e.y),hp:e.hp})),hostileBullets:world?.bullets.filter(b=>b.hostile).length,revision:world?.revision,spec:world?.spec,proposal:cvProposal?{spec:cvProposal.spec,provider:cvProposal.provider,model:cvProposal.model}:null,effects:world?.covenantStats,stage:world?.stage,wave:world?.wave,bossKills:world?.bossKills,renderFrames,autoplay:world?.autoplay?{active:autoplayActive,pauseAtPacts:autoplayPausePacts}:null,adaptive:world?.adaptiveEnabled||world?.adaptiveHistory?.length?{enabled:world.adaptiveEnabled,level:world.adaptiveLevel,history:world.adaptiveHistory,pending:world.pendingAnalysis}:null,runReport:world?.phase==='won'||world?.phase==='dead'?world.report():null,campaignPact:world?.pact,campaignPactSource:world?.campaignPactSource,campaignPactEffects:world?.mode!=='first-contact'&&world?{...world.mods}:null,campaignProposal:campaignClient.proposal?{decision:campaignClient.proposal.decision,provider:campaignClient.proposal.provider,model:campaignClient.proposal.model}:null,campaignVoice:campaignVoice?.state,voice:voice?.state,liveVoice:world?.voiceEvidence?world.report().liveVoice:null});
   window.advanceTime=ms=>{const n=Math.min(1200,Math.max(0,Math.round(Number(ms)*.12)));for(let i=0;i<n&&screen==='game'&&world?.phase==='combat';i++)world.step(1/120,inputState(null));if(world){consumeEvents();updateHUD();if(world.phase==='parley')openCovenant();else if(['won','dead'].includes(world.phase))results();}render();};
   // Test access is opt-in; normal launches do not expose mutable simulation state.
   if(new URLSearchParams(location.search).has('test')||window.__PACT_TEST_MODE__===true)window.__PACT_TEST__={

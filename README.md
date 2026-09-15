@@ -1,3 +1,5 @@
+> EN / 日本語: the title and Settings language selectors switch the entire authored UI. The first visit follows browser language; a manual choice is saved. New players start with Auto Shot and Aim Assist enabled; existing off settings are preserved. [Details and validation](docs/JAPANESE-UI.md).
+
 # NEMESIS PACT v1.3.0 — Living Covenant
 
 Negotiate the rules. Fight your deal.
