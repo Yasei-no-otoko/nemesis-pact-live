@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#080e18">
 <meta name="description" content="BLAST BUSTER: NEMESIS PACT — Turn their fire against them. An offline pact-driven arena shooter, built for portrait touch play.">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; media-src 'none'; font-src 'none'; base-uri 'none'; form-action 'none'">
-<title>BLAST BUSTER: NEMESIS PACT — Living Covenant v1.2.0</title>
+<title>BLAST BUSTER: NEMESIS PACT — Living Covenant v1.3.0</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23080e18'/%3E%3Cpath d='M32 6 56 54 32 42 8 54Z' fill='%2378e8d0'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="src/style.css">
 <link rel="stylesheet" href="src/mobile.css">
@@ -19,6 +19,7 @@
 <link rel="stylesheet" href="src/encounter.css">
 <link rel="stylesheet" href="src/director.css">
 <link rel="stylesheet" href="src/campaign.css">
+<link rel="stylesheet" href="src/adaptive.css">
 </head>
 <body>
 <main id="stage" aria-label="NEMESIS PACT game">
@@ -56,18 +57,21 @@
         <div class="title-links"><button id="train" class="text-button">Training</button><button id="help" class="text-button">How to play ↗</button><button id="archive-open" class="text-button">Archive</button><button id="settings" class="text-button">Settings ↗</button><button id="daily" class="text-button">Daily seed ↗</button></div>
       </div>
       <div class="hero-caption"><span class="micro">YOUR ENEMY. YOUR RULES.</span><div><span class="tiny-line"></span> 01 / THE NOTARY</div></div>
-      <div class="title-bottom"><span>LIVING COVENANT / v1.2.0 / 6-SECTOR CAMPAIGN</span><span id="best-score">BEST —</span><span class="desktop-only">WASD + MOUSE · HEADPHONES RECOMMENDED</span><span class="mobile-only">TOUCH TO MOVE · AUTO AIM</span></div>
+      <div class="title-bottom"><span>LIVING COVENANT / v1.3.0 / 6-SECTOR CAMPAIGN</span><span id="best-score">BEST —</span><span class="desktop-only">WASD + MOUSE · HEADPHONES RECOMMENDED</span><span class="mobile-only">TOUCH TO MOVE · AUTO AIM</span></div>
     </section>
     <section id="loadout" class="screen backdrop" hidden aria-label="Run setup"><div class="panel loadout-panel"><span class="eyebrow">BEFORE THE FIRST SHOT</span><h2>Fly your way.</h2><p class="muted" id="loadout-summary">Six sectors. Six bosses. One life.<br>Defeat a boss to restore 2 hull. Fall, and start again.</p>
       <div class="difficulty-options" role="group" aria-label="Difficulty"><button data-difficulty="assist" aria-pressed="false"><b>STORY</b><span>10 hull / Slower bullets</span></button><button class="selected" data-difficulty="standard" aria-pressed="true"><b>STANDARD</b><span>7 hull / Standard rules</span></button><button data-difficulty="veteran" aria-pressed="false"><b>VETERAN</b><span>Faster bullets / Tougher enemies</span></button></div>
+      <div class="flight-assists" id="flight-assists"><label><input id="adaptive-enabled" type="checkbox"><span><b>AI adaptive difficulty / GPT-5.6 Luna</b><small>I agree to send aggregate wave and sector results to OpenAI via Vercel AI Gateway. It adjusts bullet speed and arrival spacing between encounters, within 16%. Signed pact terms stay binding. Turn off at any review.</small></span></label><label><input id="autoplay-enabled" type="checkbox"><span><b>Demo autoplay</b><small>Automatic steering, abilities, upgrades and pact selection. Uses ordinary combat rules. Demo runs do not update personal scores or discoveries.</small></span></label><label id="autoplay-voice-option" hidden><input id="autoplay-pause-pacts" type="checkbox"><span><b>Pause autoplay at pacts for live negotiation</b><small>Talk to each boss, review the pact, and Sign to resume. No microphone starts automatically.</small></span></label></div>
       <label class="seed-label">RUN SEED <input id="seed" maxlength="32" value="" placeholder="Leave blank for random" autocomplete="off" spellcheck="false"></label>
       <p class="mobile-only touch-info">Slide to move. Aiming and firing are automatic.<br>Parry and dash to carve a path through the fire.</p><p class="small-muted">Seeds repeat waves. Your hull and build also shape the upgrade offers.</p>
       <div class="button-row"><button id="launch" class="primary">Choose your pact <span>→</span></button><button data-home class="secondary">Back</button></div>
     </div></section>
+    <section id="adaptive-screen" class="screen backdrop" hidden aria-label="Adaptive flight review"><div class="panel adaptive-panel"><span class="eyebrow" id="adaptive-kicker">FLIGHT ANALYSIS</span><h2 id="adaptive-title">The enemy learns your pace.</h2><span id="adaptive-provider" class="provider-pill">ANALYSIS PENDING</span><div id="adaptive-stats" class="adaptive-stats"></div><blockquote id="adaptive-line"></blockquote><p id="adaptive-rationale"></p><div id="adaptive-change" class="adaptive-change"></div><p class="small-muted">Pressure changes at the next encounter. Your hull, build and signed pact are preserved.</p><div class="button-row"><button id="adaptive-continue" class="primary" disabled>Continue</button><button id="adaptive-skip" class="secondary">Keep current pressure</button></div><button id="adaptive-off" class="text-button">Disable AI analysis for this run</button></div></section>
+    <aside id="flight-assist-status" hidden aria-label="Flight assistance"><span id="flight-assist-label"></span><button id="autoplay-toggle" hidden>Take control</button></aside>
     <section id="choices" class="screen backdrop" hidden aria-label="Choose a pact or upgrade"><div class="choices-header"><span class="eyebrow" id="choice-kicker"></span><h2 id="choice-title"></h2><p id="choice-description"></p></div><div class="choice-ai-row"><button id="negotiate">Negotiate by voice / AI</button><button id="choice-outfit">Outfitter</button></div><div id="choice-cards"></div><div class="choices-footer"><span id="choice-footer"></span><span class="desktop-only">Click / Press 1, 2 or 3 to choose</span><div class="mobile-only choice-confirmation"><small id="choice-selection">Tap a card to compare</small><button id="choice-confirm" class="primary" disabled>Choose a pact <span>→</span></button></div></div></section>
     <section id="hangar" class="screen command-screen" hidden aria-label="Flight command"><div class="command-wrap">
  <div class="command-top"><span class="eyebrow">FLIGHT COMMAND / COVENANT ASCENT</span><button id="hangar-close">Main menu</button></div>
- <div class="command-heading"><div><h2>Your ship.<br>Your terms.</h2><p>A six-sector expedition. Choose the route, assemble your relics, and turn an enemy's promise into your greatest weapon.</p></div><span class="mode-note">LIVING COVENANT / 1.2.0</span></div>
+ <div class="command-heading"><div><h2>Your ship.<br>Your terms.</h2><p>A six-sector expedition. Choose the route, assemble your relics, and turn an enemy's promise into your greatest weapon.</p></div><span class="mode-note">LIVING COVENANT / 1.3.0</span></div>
  <div><p class="section-cap">01 / Choose your campaign</p><div class="mode-options" id="mode-options"></div></div>
  <div><p class="section-cap">02 / Choose your airframe</p><div class="airframes" id="airframes"></div></div>
  <div class="command-footer"><p>Flight controls are unchanged.<br>Every airframe is available from the first run.</p><button id="hangar-ready" class="primary">Set flight conditions <span>→</span></button></div>
@@ -196,6 +200,10 @@
 <script src="src/core.js"></script>
 <script src="src/expansion.js"></script>
 <script src="src/session.js"></script>
+<script src="src/adaptive.js"></script>
+<script src="src/adaptive-run.js"></script>
+<script src="src/adaptive-client.js"></script>
+<script src="src/autopilot.js"></script>
 <script src="src/intelligence.js"></script>
 <script src="src/director-client.js"></script>
 <script src="src/campaign.js"></script>

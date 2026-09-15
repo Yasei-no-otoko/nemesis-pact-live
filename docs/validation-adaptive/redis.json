@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-09-15T03:50:29.296Z",
+  "store": "actual approved free Redis, isolated test namespace",
+  "noModelCalls": true,
+  "passed": 3,
+  "results": [
+    "same sequence binds immutable request digest",
+    "older result and duplicate completion cannot commit",
+    "shared session48 admits,49 rejects"
+  ]
+}

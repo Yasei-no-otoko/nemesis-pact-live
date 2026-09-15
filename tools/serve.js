@@ -5,14 +5,15 @@ if(!Number.isInteger(port)||port<1||port>65535)throw Error('PORT must be from 1 
 const api=import('../server/intelligence.mjs'),covenantApi=import('../server/covenant.mjs');
 const sessionApi=import('../server/session.mjs'),controlsApi=import('../server/controls.mjs'),voiceApi=import('../server/voice.mjs');
 const directorApi=import('../server/director.mjs');
-const campaignApi=import('../server/campaign.mjs');
+const campaignApi=import('../server/campaign.mjs'),adaptiveApi=import('../server/adaptive.mjs');
 const server=http.createServer(async(req,res)=>{
  try{const u=new URL(req.url,'http://localhost:'+port);
   if(u.pathname.startsWith('/api/')){
    const body=['GET','HEAD'].includes(req.method)?undefined:Readable.toWeb(req);
    const request=new Request(u,{method:req.method,headers:req.headers,body,...(body?{duplex:'half'}:{})});
    let response;
-   if(u.pathname==='/api/intelligence')response=await(await api).handle(request);
+   if(u.pathname==='/api/adaptive')response=await(await adaptiveApi).handle(request);
+   else if(u.pathname==='/api/intelligence')response=await(await api).handle(request);
    else if(u.pathname==='/api/director')response=await(await directorApi).handle(request);
    else if(u.pathname==='/api/director/sign')response=await(await directorApi).control(request,'sign');
    else if(u.pathname==='/api/director/cancel')response=await(await directorApi).control(request,'cancel');

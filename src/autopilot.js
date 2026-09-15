@@ -1,10 +1,16 @@
+(function (root, factory) {
+  const node = typeof module === 'object' && module.exports;
+  const api = factory(node ? require('./core.js') : root.PactCore);
+  if (node) module.exports = api;
+  else root.PactAutopilot = api;
+})(typeof globalThis !== 'undefined' ? globalThis : this, function (Core) {
 'use strict';
 
 /*
  * Full-state campaign autopilot.  It only returns the same input values a
  * player can send to World.step; it never mutates the observed world.
  */
-const { clamp, angle, dist, segmentHit } = require('./core.js');
+const { clamp, angle, dist, segmentHit } = Core;
 
 const finite = n => Number.isFinite(n) ? n : 0;
 const unit = (x, y) => {
@@ -13,7 +19,7 @@ const unit = (x, y) => {
 };
 
 function input(world, dt = 1 / 120) {
-  if (!world || world.phase !== 'combat') return { mx: 0, my: 0, shoot: false, verify: true };
+  if (!world || world.phase !== 'combat') return { mx: 0, my: 0, shoot: false };
   const p = world.p, t = finite(world.time), portrait = world.layout === 'portrait';
   // A broad, slowly changing orbit keeps the ship away from stationary guns
   // while avoiding the arena walls where a dodge has fewer exits.
@@ -78,7 +84,7 @@ function input(world, dt = 1 / 120) {
   return {
     mx, my, shoot: true, autoAim: false,
     aimX, aimY, aimx: aimX, aimy: aimY,
-    parry, dash, nova, verify: true
+    parry, dash, nova
   };
 }
 
@@ -107,12 +113,14 @@ function chooseRelic(world) {
 }
 function chooseContract(world) {
   const offers = world && typeof world.offersForPact === 'function' ? world.offersForPact() : [];
-  // Mercy is the safest authored contract; duel is preferred when available
-  // late in the run because it removes reinforcements from boss arenas.
-  const order = world && world.stage >= 3 ? ['duel', 'mercy', 'sanctuary', 'silence', 'mirror', 'velocity', 'glass']
-    : ['mercy', 'sanctuary', 'duel', 'silence', 'mirror', 'velocity', 'glass'];
+  // Stable Story contract route used by the spoken demo: reflection damage
+  // early and late, sanctuary for sector 1, and duel for sector 3.
+  const sequence = ['mirror', 'sanctuary', 'mirror', 'duel', 'mirror', 'mirror'];
+  const preferred = sequence[Math.max(0, Math.min(5, world && Number.isFinite(world.stage) ? world.stage : 0))];
+  const order = [preferred, 'mercy', 'sanctuary', 'duel', 'silence', 'mirror', 'velocity', 'glass'];
   return order.find(id => offers.some(c => c.id === id)) || (offers[0] && offers[0].id) || null;
 }
 
 const Controller = { input, chooseUpgrade, chooseRoute, chooseRelic, chooseContract };
-module.exports = { Controller, input, chooseUpgrade, chooseRoute, chooseRelic, chooseContract };
+return { Controller, input, chooseUpgrade, chooseRoute, chooseRelic, chooseContract };
+});

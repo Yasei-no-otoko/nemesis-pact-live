@@ -1,0 +1,49 @@
+{
+  "browser": "153.0.4234.32",
+  "results": [
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "mobileEmulation": false,
+      "physicalPhone": false,
+      "errors": [],
+      "review": "local hold",
+      "operation": "automated controlled encounter fixture"
+    },
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "mobileEmulation": false,
+      "physicalPhone": false,
+      "errors": [],
+      "review": "local hold",
+      "operation": "automated controlled encounter fixture"
+    },
+    {
+      "viewport": [
+        430,
+        932
+      ],
+      "mobileEmulation": true,
+      "physicalPhone": false,
+      "errors": [],
+      "review": "local hold",
+      "operation": "automated controlled encounter fixture"
+    },
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "mobileEmulation": true,
+      "physicalPhone": false,
+      "errors": [],
+      "review": "local hold",
+      "operation": "automated controlled encounter fixture"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "errors": [],
+  "state": {
+    "build": "1.2.0",
+    "screen": "adaptive-screen",
+    "negotiationStep": "negotiate",
+    "coordinates": "origin top-left; x right; y down",
+    "renderer": "WEBGPU / COMPUTE",
+    "arena": {
+      "width": 1280,
+      "height": 800
+    },
+    "phase": "upgrade",
+    "seconds": 13.35,
+    "player": {
+      "x": 566,
+      "y": 529,
+      "hp": 12,
+      "energy": 67
+    },
+    "enemies": [],
+    "hostileBullets": 0,
+    "proposal": null,
+    "stage": 0,
+    "wave": 0,
+    "bossKills": 0,
+    "renderFrames": 1063,
+    "autoplay": {
+      "active": true,
+      "pauseAtPacts": false
+    },
+    "adaptive": {
+      "enabled": true,
+      "level": 0,
+      "history": [
+        {
+          "sequence": 1,
+          "stage": 0,
+          "wave": 0,
+          "completion": "wave",
+          "telemetry": {
+            "kills": 10,
+            "parries": 0,
+            "grazes": 0,
+            "damageTaken": 0,
+            "seconds": 13.35,
+            "hpRatio": 1
+          },
+          "before": 0,
+          "after": 0,
+          "skill": "steady",
+          "adjustment": "hold",
+          "line": "The encounter stays at its current pace.",
+          "rationale": "LOCAL RULES hold because adaptive analysis is unavailable; authored difficulty remains unchanged.",
+          "provider": "local",
+          "model": null,
+          "latencyMs": 0,
+          "modifiers": {
+            "bulletSpeed": 1,
+            "spawnSpacing": 1
+          }
+        }
+      ],
+      "pending": null
+    },
+    "runReport": null,
+    "campaignPact": "mercy",
+    "campaignPactSource": "LOCAL RULES / DEMO",
+    "campaignProposal": null,
+    "campaignVoice": "idle",
+    "voice": "idle",
+    "liveVoice": null
+  },
+  "browser": "153.0.4234.32"
+}

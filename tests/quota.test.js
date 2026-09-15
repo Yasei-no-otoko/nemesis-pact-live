@@ -10,3 +10,5 @@ test('voice allowance is scoped to a run while identity, budget and active lock 
  for(const runId of ['first-fight','second-fight',undefined])await q.reserve({reservationId:'reservation'+keys.length,sid:'same-session',ip:'same-ip',kind:'voice',runId,estimatedMicrodollars:10});
  assert.equal(keys[0][0],keys[1][0]);assert.equal(keys[0][2],keys[1][2]);assert.equal(keys[0][4],keys[1][4]);assert.equal(keys[0][6],keys[1][6]);assert.notEqual(keys[0][7],keys[1][7]);assert.equal(keys[2][7],keys[2][2]);
 });
+
+test('campaign admission remains bounded at 48 shared paid calls and 20 per IP minute',async()=>{let data;const q=createQuota({env,store:{eval:async(_s,_k,args)=>{data=JSON.parse(args[0]);return[1,'reserved'];}}});await q.reserve({reservationId:'bounded',sid:'s',ip:'ip',estimatedMicrodollars:1});assert.equal(data.sessionCalls,48);assert.equal(data.ipCalls,20);assert.equal(data.maxConcurrent,2);});

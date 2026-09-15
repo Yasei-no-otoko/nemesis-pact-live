@@ -21,6 +21,9 @@
     },
     "api/voice/stop.mjs": {
       "maxDuration": 15
+    },
+    "api/adaptive.mjs": {
+      "maxDuration": 20
     }
   },
   "headers": [

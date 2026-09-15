@@ -56,6 +56,6 @@ test('each color-aberration sample checks foreground masks, preventing ghost shi
  assert.match(G.WG_COMPOSITE,/rr.a<.5&&bb.a<.5/);
 });
 test('distribution source and standalone both advertise the exact build version',()=>{
- const root=path.resolve(__dirname,'..');const pkg=JSON.parse(fs.readFileSync(path.join(root,'package.json')));assert.equal(pkg.version,'1.2.0');
+ const root=path.resolve(__dirname,'..');const pkg=JSON.parse(fs.readFileSync(path.join(root,'package.json')));assert.equal(pkg.version,'1.3.0');
  const html=fs.readFileSync(path.join(root,'dist/NEMESIS-PACT.html'),'utf8');assert.ok(html.includes("build:'"+pkg.version+"'"));assert.match(html,/vClass<0\./);assert.match(html,/z01,1\.\)/);
 });

@@ -94,7 +94,7 @@ export function createQuota({store,env,keyPrefix='nemesis:quota:',admissionPrefi
       if(killed())return {ok:false,reason:'kill'};
       const caps=[{field:'global',limit:total},{field:`pool:${pool}`,limit:pools[pool]},{field:`kind:${kind}`,limit:kinds[kind]}];
       const voiceRun=kind==='voice'&&runId!==undefined?shared(`voice-run:${sid}:${safe(runId)}`):shared(`session:${sid}`);
-      const data={id:reservationId,sid,kind,pool,amount,caps,seconds,runId,maxConcurrent,sessionCalls:12,ipCalls:20};
+      const data={id:reservationId,sid,kind,pool,amount,caps,seconds,runId,maxConcurrent,sessionCalls:48,ipCalls:20};
       const o=await store.eval(RESERVE_LUA,[key('totals'),key(`reservation:${reservationId}`),shared(`session:${sid}`),shared(`ip:${hashedIp}`),shared('active'),shared('kill'),shared(`lock:${sid}:${kind}`),voiceRun],[JSON.stringify(data)]);
       return result(o,{reservationId,reservedMicrodollars:amount});
     },

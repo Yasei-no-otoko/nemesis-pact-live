@@ -1,0 +1,69 @@
+{
+  "method": "Node accelerated ordinary World.step at 120Hz; bounded validation fixture forces local raise only at completeEncounter boundaries; no combat/progression overrides.",
+  "recommendedSeed": "STORY-AUTO-STANDARD-1",
+  "runs": [
+    {
+      "seed": "STORY-AUTO-ASSIST-1",
+      "difficulty": "assist",
+      "airframe": "bastion",
+      "pactIds": [
+        "mirror",
+        "sanctuary",
+        "mirror",
+        "duel",
+        "mirror",
+        "mirror"
+      ],
+      "outcome": "won",
+      "simSeconds": 388.12,
+      "encounters": 18,
+      "bosses": 6,
+      "damageTaken": 6,
+      "hpRemaining": 16,
+      "adaptiveLevel": 2,
+      "adaptiveHistory": 18
+    },
+    {
+      "seed": "STORY-AUTO-ASSIST-2",
+      "difficulty": "assist",
+      "airframe": "bastion",
+      "pactIds": [
+        "mirror",
+        "sanctuary",
+        "mirror",
+        "duel",
+        "mirror",
+        "mirror"
+      ],
+      "outcome": "won",
+      "simSeconds": 372.72,
+      "encounters": 18,
+      "bosses": 6,
+      "damageTaken": 4,
+      "hpRemaining": 16,
+      "adaptiveLevel": 2,
+      "adaptiveHistory": 18
+    },
+    {
+      "seed": "STORY-AUTO-STANDARD-1",
+      "difficulty": "standard",
+      "airframe": "bastion",
+      "pactIds": [
+        "mirror",
+        "sanctuary",
+        "mirror",
+        "duel",
+        "mirror",
+        "mirror"
+      ],
+      "outcome": "won",
+      "simSeconds": 373.5,
+      "encounters": 18,
+      "bosses": 6,
+      "damageTaken": 8,
+      "hpRemaining": 13,
+      "adaptiveLevel": 2,
+      "adaptiveHistory": 18
+    }
+  ]
+}
