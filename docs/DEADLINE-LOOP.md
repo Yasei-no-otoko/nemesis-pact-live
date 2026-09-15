@@ -20,6 +20,10 @@ After **22:30 JST**, only submission blockers, regressions and essential clarity
 
 The official submission form and rights attestations remain the representative's final action; this request to improve the game is not authorization to submit legal confirmations. Prepare the actual links and final copy first.
 
+## Latest checkpoint — ending localization, 17:03 JST
+
+The user-reported untranslated Pact Keeper ending is fixed, together with missing First Contact result text. Current source `fbb416bded2b3ff14eb9f4235ed8762830e5cb8f`, production READY `dpl_AMSCqcVVnM9Ww9AgB9Yyy57awpTF`. Seven synthetic ending displays passed at 390/320px widths, localization suite 7/7, and public bytes match the source build. Rollback `dpl_Euq2ap6rtxtiDDQ2Km9J9bk48Fah`. Earlier feedback branch is already an ancestor. This slice satisfies the 17:00 improvement run; do not redo it. See latest WORKLOG/DELIVERY for exact scope and hashes. The initial preview approval issue was resolved after public-source and destination checks; no deployment blocker remains.
+
 ## Next candidates, ranked by player impact
 
 - First Contact ending/retry: make the player's changed terms and resulting play style the memorable conclusion. Any comparison must use actual recorded effects, with no invented avoided damage or AI actions.

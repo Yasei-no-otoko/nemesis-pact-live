@@ -1,6 +1,14 @@
 # Delivery — NEMESIS PACT v1.3.0
 
-## Current deadline improvement — September 15, 16:20 JST
+## Current ending localization fix — September 15, 17:03 JST
+
+Production source **`fbb416bded2b3ff14eb9f4235ed8762830e5cb8f`**, READY **`dpl_AMSCqcVVnM9Ww9AgB9Yyy57awpTF`**. [Play](https://nemesis-pact-live.vercel.app/).
+
+Completed the missing Pact Keeper story and last-signature label, plus First Contact ending stories, result labels, retry actions, metrics and receipt notes. Canonical English and mechanics are unchanged. Node 22 localization tests 7/7 and build passed; all 21 ending story/title segments and three campaign victory kickers checked. Actual browser display fixtures covered all seven outcomes at 390×844 and 320×844 without horizontal overflow, plus JA/EN switching. These are synthetic ending states, not new physical-phone or human-play evidence.
+
+Public HTTP 200 exactly matches the submitted-source build; preview fixture returns 404 in production. Hosted SHA256 `6dc6053d1016bd199789e57c23c68a44a3989ddb55f7a438054dec301c7b3fd5`; offline SHA256 `bf730a9d7520bf355d53379e24e09d7c6aead544034ed523aca37c1c93573b77`. Rollback to `dpl_Euq2ap6rtxtiDDQ2Km9J9bk48Fah`. No AI/model/budget changes or new movie claim. Remaining improvement queue is in [DEADLINE-LOOP](DEADLINE-LOOP.md); submission copy remains [SUBMISSION-EN](SUBMISSION-EN.md). The form has not been submitted.
+
+## Previous deadline improvement — September 15, 16:20 JST
 
 Production source **`33111c45cc56765605d4c2f31b8fc0d02d583f9b`**, branch `ship/living-covenant`; READY **`dpl_Euq2ap6rtxtiDDQ2Km9J9bk48Fah`**. [Play](https://nemesis-pact-live.vercel.app/).
 
