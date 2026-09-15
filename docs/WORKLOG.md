@@ -1,5 +1,11 @@
 # Work log
 
+## Ending localization correction — 2026-09-15
+
+User reported an untranslated Japanese campaign ending on iPhone. Added the missing Pact Keeper story and THE LAST SIGNATURE label, then audited the other ending branches. Completed First Contact honored/unbound/lost stories, ending labels, retry actions, counters and receipt notes. Canonical English and game rules are unchanged. Rebuilt the tracked standalone HTML.
+
+Verification: Node 22 localization suite 7/7; build and whitespace check passed. An additional source-derived check confirmed all 21 authored story/title text segments across seven ending states and all three campaign victory kickers translate, while English remains unchanged. Browser display verification is pending. A preview attempt was rejected by automatic approval review over potentially private source disclosure; GitHub API subsequently confirmed this repository is public, and the Vercel project was verified as the existing production destination. Production is still the preceding deployment until a later entry confirms publication.
+
 ## Current continuation — 2026-09-15, 16:20 JST
 
 User requested an AI-native quality improvement loop until 23:59 JST. Cloned the current default branch at `7d9801b`, preserving the v1.3.0 voice/campaign work. Implemented actual parley outcomes, editable tactical prompts, side-by-side amendment changes, same-rule amendment-cost warning and direct LOCAL RULES counteroffer. Japanese authored parley lines were completed. A follow-up corrected a false suggestion to upgrade already-enhanced reflections.
