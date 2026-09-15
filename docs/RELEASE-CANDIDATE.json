@@ -1,6 +1,6 @@
 {
   "version": "1.2.0",
-  "status": "Campaign voice and pact integration verified in production; release packaging in progress",
+  "status": "Campaign voice contracts shipped and verified",
   "recordedAt": "2026-09-15T03:23:00.664528+00:00",
   "production": "https://nemesis-pact-live.vercel.app/",
   "repository": "https://github.com/Yasei-no-otoko/nemesis-pact-live",
@@ -72,5 +72,51 @@
     "Campaign negotiation occurs before sectors; mid-fight amendment remains in First Contact",
     "First production Live attempt fell back during overlapping requests; failure and conservative spend retained"
   ],
-  "previousReleaseEvidence": "validation-campaign/v1.1.0-release-candidate.json"
+  "previousReleaseEvidence": "validation-campaign/v1.1.0-release-candidate.json",
+  "releaseUrl": "https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/tag/v1.2.0",
+  "sourceReviewPackage": {
+    "file": "NEMESIS-PACT-v1.2.0-source.zip",
+    "bytes": 8920066,
+    "sha256": "c2ffd63ef9ab34ce750c916c63cb39d81ec837bd5581735ccc0b9007db2dd16e",
+    "files": 178,
+    "archiveCommit": "ca009dc74ab4c86dd7673d5e53d9116ece9f6828",
+    "applicationSourceCommit": "a53b87437249fddccfe069c2de6d3d47cfd956aa",
+    "url": "https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/download/v1.2.0/NEMESIS-PACT-v1.2.0-source.zip",
+    "scope": "selected source, tests, concepts, public form answers and evidence; excludes private form kit, credentials, Git history and raw media",
+    "public": true,
+    "anonymousDownloadHashMatched": true
+  },
+  "publicReleaseValidation": {
+    "checkedAt": "2026-09-15T03:25:55.525185+00:00",
+    "anonymous": true,
+    "browser": "153.0.4234.32",
+    "scope": "Native fresh Edge; public source download and hash; unchanged human video playback-start only (full prior playback evidence remains separate)",
+    "releaseUrl": "https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/tag/v1.2.0",
+    "releaseHttp": 200,
+    "sourceSha256": "c2ffd63ef9ab34ce750c916c63cb39d81ec837bd5581735ccc0b9007db2dd16e",
+    "sourceBytes": 8920066,
+    "viewerUrl": "https://www.circle-hydrangea.net/nemesis-pact-live/",
+    "viewerHttp": 200,
+    "viewerLinksTo120": true,
+    "video": {
+      "width": 1920,
+      "height": 1080,
+      "duration": 59.008,
+      "currentTime": 2.012714,
+      "error": null,
+      "source": "https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/download/milestone-16-iphone-demo-audio/NEMESIS-PACT-iPhone-59s-60fps-en-final.mp4"
+    },
+    "githubShellPageErrors": [],
+    "viewerPageErrors": [],
+    "passed": true,
+    "apiModelCalls": 0
+  },
+  "finalEvidenceTag": "milestone-25-campaign-live-verified",
+  "requiredRemainingWork": [],
+  "completion": {
+    "recordedAt": "2026-09-15T03:27:29.479944+00:00",
+    "campaignFeature": "achieved",
+    "formSubmission": "not requested or performed",
+    "applicationUnchangedAfterFinalDeployment": true
+  }
 }

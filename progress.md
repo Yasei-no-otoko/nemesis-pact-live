@@ -276,3 +276,8 @@ First production app e46a39c / dpl_875PTFWVSnX2KhzvWohtXxDY2TcB. Real Japanese L
 2026-09-15 JST — Campaign production verified
 
 Final appa53b87437249fddccfe069c2de6d3d47cfd956aa,READYdpl_5HEfvWCWhNzwstCDpK4qk3RuUaB9; exact453972-byte build. Actual GPT-Live-1 interruption/correction→Luna mirror→Sign→combat passed, connection2813ms/proposal2346ms; tracks and peers closed and server stop confirmed. Current260tests,43syntax and4realRedis pass. Direct2.70/10,Gateway.037338/20,added.10/.000800,active0. All prior failures retained. Publicv1.2.0 source packaging and finalpush follow; no further application change planned.
+
+
+2026-09-15 JST — Campaign v1.2.0 delivery complete
+
+Public source178files/8920066bytes SHAc2ffd63ef9ab34ce750c916c63cb39d81ec837bd5581735ccc0b9007db2dd16e; anonymous Edge download and currentviewer/video-start passed. gh-pages7066449 pushed. Appa53b874 remains unchanged on READY5HEfvWCWhNzwstCDpK4qk3RuUaB9. Six submission paragraphs remain200words; private representative kit kept private and updated. No form submission. Final evidence milestone-25-campaign-live-verified follows.

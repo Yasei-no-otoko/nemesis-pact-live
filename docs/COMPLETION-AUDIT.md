@@ -1,3 +1,11 @@
+# Current v1.2.0 campaign negotiation audit
+
+Full campaign contracts now support actual GPT-Live-1 and GPT-5.6 Luna. Native production verification passed audible interruption, corrected proposal, explicit signature and combat.260unit tests,43syntax files,4realRedis tests,45mode/sector/offer checks,4campaign and4Director browser layouts passed. Public source ZIP download/hash and viewer playback-start passed. [Detailed evidence and failures](CAMPAIGN-VALIDATION.md).
+
+Current appa53b874; deployment5HEfvWCWhNzwstCDpK4qk3RuUaB9. Current real-model campaign check is sector1 with automated synthetic speech. Other offered contracts are checked against simulation. No new physical-phone/human-microphone campaign recording is claimed. The prior iPhone59s60fps movie is unchanged. Provider invoices, Vercel grant balance/expiry and infrastructure cost remain unknown. Conservative ledgerdirect2.70/10,Gateway.037338/20,active0. Rollback to v1.1.0 deploymentEy6W5h1mdVdm1ExsdNbvLi7ibgRW while preserving quotas, keys and media.
+
+The requested feature is complete. Form submission and representative attestation were not requested or performed. Historical audits follow.
+
 # Current v1.1.0 Director and submission-preparation audit
 
 The AI Director and requested form answers are complete. App source5de9378, productionEy6W5h1mdVdm1ExsdNbvLi7ibgRW; real Luna proposals/approvals/spawning verified twice,239unit tests and3realRedis checks passed. [Full evidence](DIRECTOR-VALIDATION.md). Public releasev1.1.0, anonymous source download/hash and updated viewer passed. Six form answers are200words each; personal fields remain private. No application changes followed the final deployment.
