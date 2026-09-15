@@ -27,3 +27,12 @@ The fixture uses aggregate counters from the archived actual v1.3.0 automated si
 [Before ledger](validation-debrief/budget-before.json): direct OpenAI $3.000000 / $10; Gateway $0.046504 / $20, active reservations 0. These are conservative application ledgers, not provider invoices. The original reported $30 grant's exact balance/expiry and Vercel infrastructure charges remain unverified. The fresh Vercel environment pull redacted sensitive caps; documented caps come from the prior approved runtime snapshot. Two planned production reviews reserve at most $0.02 without changing caps.
 
 Rollback to READY `dpl_HinZheFR4AC4ezwYS47Y884pEJm8` (Japanese UI app `e91c7e3fb78a2393efe5d51d1b365c108047e127`) via Vercel rollback, or revert the debrief application commit and redeploy. Preserve Redis keys, credentials, budgets, user settings and existing submission media. The existing release film remains the immutable v1.3.0 campaign demonstration.
+
+
+## First production measurement and final polish
+
+Application1469f10 deployed READYdpl_433Wa1hkCDxf6UXNrQA41keBHh8Z. Both public API aliases reject anonymous requests with401; the604081-byte hosted build matched SHA792b3a319916c67752997f26707db85b2d99b1eafcae041cdb7198ef86c483a8. Two actual Luna calls returned HTTP200 in3141ms (English) and4470ms (Japanese), charging259+343microdollars. [Raw structured responses and browser assertions](validation-debrief/production-live/result.json). Scores and the world remained unchanged; opening without consent sent no request and reopening the review reused its result.
+
+Inspection found a language-quality issue: Japanese prose retained Hull/Pact/Nova and described reflected bullets as parry actions; English exposed damageTaken. The server instructions were tightened before the final two-language production validation. Also restored cached results when toggling local/server mode or withdrawing/re-enabling consent, with no new billable request. Four updated local browser cases confirm this behavior; [final local UI results](validation-debrief/local-final/result.json). The earlier real-response evidence is retained rather than overwritten.
+
+After the first two real calls, the ledger is direct$3.000000 /$10 andGateway$0.047106 /$20,active0. Two additional real reviews validate the revised wording; maximum cumulative reservation for four review attempts is$0.04, within existing caps.

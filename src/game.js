@@ -516,7 +516,7 @@
     $('debrief-build').textContent=Object.entries(world.upgrades||{}).map(([id,n])=>T(UPGRADES.find(x=>x.id===id)?.name||id)+(n>1?' ×'+n:'')).concat((world.relics||[]).map(id=>T(X.RELICS.find(x=>x.id===id)?.name||id))).join(' / ')||'No upgrades collected yet.';
     const cached=record.cache.get(window.PactI18n.locale);renderDebrief(cached||localDebrief());$('debrief-status').textContent=cached?'Saved analysis for this run.':'Recorded counters. AI analysis is optional.';syncDebriefControls();
   }
-  function resetDebrief(reason){if(screen!=='debrief-screen'||!debriefWorld)return;debriefEpoch++;debriefClient.cancel();debriefBusy=false;renderDebrief(localDebrief());$('debrief-status').textContent=reason;syncDebriefControls();}
+  function resetDebrief(reason){if(screen!=='debrief-screen'||!debriefWorld)return;debriefEpoch++;debriefClient.cancel();debriefBusy=false;const cached=$('debrief-mode').value==='server'&&$('debrief-consent').checked&&debriefRecord(debriefWorld).cache.get(window.PactI18n.locale);renderDebrief(cached||localDebrief());$('debrief-status').textContent=cached?'Saved analysis for this run.':reason;syncDebriefControls();}
   async function requestDebrief(){
     if(screen!=='debrief-screen'||!debriefWorld||debriefBusy||$('debrief-mode').value!=='server'||!$('debrief-consent').checked||!window.NEMESIS_HOSTED)return;
     const target=debriefWorld,record=debriefRecord(target),language=window.PactI18n.locale;if(record.cache.has(language))return;
@@ -531,7 +531,7 @@
   $('debrief-back').onclick=()=>show('result');$('debrief-analyze').onclick=requestDebrief;
   $('debrief-cancel').onclick=()=>resetDebrief('Analysis cancelled. Recorded results remain available.');
   $('debrief-mode').onchange=()=>resetDebrief('Recorded counters. AI analysis is optional.');
-  $('debrief-consent').onchange=()=>{if(!$('debrief-consent').checked)resetDebrief('Consent withdrawn. No further analysis will be requested.');else syncDebriefControls();};
+  $('debrief-consent').onchange=()=>{if(!$('debrief-consent').checked)resetDebrief('Consent withdrawn. No further analysis will be requested.');else resetDebrief('Recorded counters. AI analysis is optional.');};
   document.addEventListener('nemesis-language-change',()=>{if(screen==='debrief-screen')openDebrief();});
 
   // --- Living Covenant. Network proposals never mutate simulation state. ---

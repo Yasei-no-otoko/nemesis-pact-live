@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-09-15T06:09:58.704806+00:00",
+  "productionUrl": "https://nemesis-pact-live.vercel.app/",
+  "appCommit": "1469f10b4b61b8f58a26dab1e5c20c902a6ffe1a",
+  "deployment": "dpl_433Wa1hkCDxf6UXNrQA41keBHh8Z",
+  "state": "READY",
+  "bytes": 604081,
+  "sha256": "792b3a319916c67752997f26707db85b2d99b1eafcae041cdb7198ef86c483a8",
+  "matchesLocal": true,
+  "admissionChecks": [
+    {
+      "path": "api/debrief",
+      "anonymousStatus": 401
+    },
+    {
+      "path": "api/intelligence?operation=debrief",
+      "anonymousStatus": 401
+    }
+  ]
+}

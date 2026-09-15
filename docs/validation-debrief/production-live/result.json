@@ -1,0 +1,84 @@
+{
+  "checkedAt": "2026-09-15T06:09:59.263807+00:00",
+  "url": "https://nemesis-pact-live.vercel.app/",
+  "realModelCalls": true,
+  "physicalMobile": false,
+  "stateSource": "Archived actual v1.3.0 automated campaign, replayed into a finished-state UI fixture; no new campaign clear claimed",
+  "cases": [
+    {
+      "locale": "en-US",
+      "viewport": [
+        1440,
+        900
+      ],
+      "touchEmulation": false,
+      "noCallBeforeConsent": true,
+      "worldAndScoresUnchanged": true,
+      "cachePreventsRepeatCalls": true,
+      "requests": 1,
+      "responses": [
+        {
+          "status": 200,
+          "body": {
+            "provider": "openai",
+            "model": "gpt-5.6-luna",
+            "decision": {
+              "headline": "Clean six-stage autopilot clear",
+              "summary": "Autopilot demonstration: all 6 of 6 stages were won in 371 seconds, with 242 kills, 6 boss kills, and no pact breaks.",
+              "strength": "Strong durability and defense: 2 hull points were lost, 16 remained, and 74 bullets were parried alongside 33 grazes.",
+              "improvement": "For future practice, try moving or dashing deliberately and conserve Nova when useful; this is advice, not an observed issue.",
+              "nextRun": "Consider raising the challenge beyond assist while aiming to preserve the low damageTaken total."
+            },
+            "runId": "0a8e9708-6617-4449-b09b-3f2b07de8580",
+            "sequence": 1,
+            "latencyMs": 3141,
+            "reason": "Validated end-of-run debrief.",
+            "billedBy": "vercel-ai-gateway",
+            "reservedMicrodollars": 10000,
+            "accountedMicrodollars": 259
+          }
+        }
+      ],
+      "pageErrors": [],
+      "renderer": "WEBGL2 / PBR"
+    },
+    {
+      "locale": "ja-JP",
+      "viewport": [
+        430,
+        932
+      ],
+      "touchEmulation": true,
+      "noCallBeforeConsent": true,
+      "worldAndScoresUnchanged": true,
+      "cachePreventsRepeatCalls": true,
+      "requests": 1,
+      "responses": [
+        {
+          "status": 200,
+          "body": {
+            "provider": "openai",
+            "model": "gpt-5.6-luna",
+            "decision": {
+              "headline": "6ステージ制覇、無傷に近い勝利",
+              "summary": "オートプレイのデモンストレーションで、6ステージ中6体のボスを撃破。ダメージは2、残りHullは16/16でした。",
+              "strength": "被ダメージは2に抑えられ、パリィ74回とグレイズ33回を記録。6つのPactをすべて維持しました。",
+              "improvement": "次回の練習では、移動やダッシュで被弾機会をさらに減らし、Novaの温存も意識するとよいでしょう。これは助言です。",
+              "nextRun": "オートプレイではない条件でも、6ステージ完走とPact維持を目標に、パリィとリソース管理を練習しましょう。"
+            },
+            "runId": "72af85a3-35c3-4a75-b5a3-f65b61bcc1c7",
+            "sequence": 1,
+            "latencyMs": 4470,
+            "reason": "Validated end-of-run debrief.",
+            "billedBy": "vercel-ai-gateway",
+            "reservedMicrodollars": 10000,
+            "accountedMicrodollars": 343
+          }
+        }
+      ],
+      "pageErrors": [],
+      "renderer": "WEBGL2 / PBR"
+    }
+  ],
+  "passed": true
+}

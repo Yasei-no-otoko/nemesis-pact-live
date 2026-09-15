@@ -71,11 +71,17 @@ with sync_playwright() as pw:
         p.click('#debrief-back');p.click('#debrief');assert len(calls)==1
         assert p.locator('#debrief-provider').inner_text().startswith('OPENAI')
         assert p.locator('#debrief-analyze').is_disabled()
+        p.select_option('#debrief-mode','local');assert p.locator('#debrief-provider').inner_text().startswith('LOCAL RULES')
+        p.select_option('#debrief-mode','server');p.check('#debrief-consent')
+        assert p.locator('#debrief-provider').inner_text().startswith('OPENAI')
+        p.uncheck('#debrief-consent');assert p.locator('#debrief-provider').inner_text().startswith('LOCAL RULES')
+        p.check('#debrief-consent');assert p.locator('#debrief-provider').inner_text().startswith('OPENAI')
+        assert len(calls)==1
         assert p.evaluate('JSON.stringify(__PACT_TEST__.world)')==original
         p.press('#debrief-back','Escape');assert p.evaluate('__PACT_TEST__.screen')=='result'
         assert p.evaluate('document.documentElement.scrollWidth<=innerWidth')
         assert not errors,errors
-        report['cases'].append({'locale':locale,'viewport':[width,height],'touchEmulation':width<760,'noCallBeforeConsent':True,'worldAndScoresUnchanged':True,'cachePreventsRepeatCalls':True,'requests':len(calls),'responses':responses,'pageErrors':errors,'renderer':p.evaluate('JSON.parse(render_game_to_text()).renderer')})
+        report['cases'].append({'locale':locale,'viewport':[width,height],'touchEmulation':width<760,'noCallBeforeConsent':True,'worldAndScoresUnchanged':True,'cachePreventsRepeatCalls':True,'cacheRestoredAfterProviderOrConsentChange':True,'requests':len(calls),'responses':responses,'pageErrors':errors,'renderer':p.evaluate('JSON.parse(render_game_to_text()).renderer')})
         print(name,'PASS: consent/analysis/cache/world continuity',flush=True)
         if not live and width==1440:
             # Clear the per-world cache with a new ended-run fixture, then fail the service.
