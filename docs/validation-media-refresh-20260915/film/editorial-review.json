@@ -1,0 +1,24 @@
+{
+  "accepted": true,
+  "file": "NEMESIS-PACT-latest-59s-60fps-en.mp4",
+  "sha256": "3ac49985b4d3215a4cf10604c7527b806a13099282b428fd2e2f85ffa1b5a0b0",
+  "nativeRenderJob": "e0124815-2359-4164-bf5b-2c897c76673d",
+  "nativeRenderStatus": "Complete",
+  "nativeRenderCompletionPercentage": 100,
+  "all13CaptionFramesReviewed": true,
+  "captionLanguage": "English",
+  "sourceView": "Complete frame at 90 percent scale above a caption margin",
+  "cuts": "13 chronological normal-speed linked video and original-audio cuts",
+  "localBrowserPlayback": {
+    "duration": 59.008,
+    "currentTime": 59.008,
+    "ended": true,
+    "playbackRate": 1,
+    "videoWidth": 1920,
+    "videoHeight": 1080,
+    "muted": false,
+    "error": null
+  },
+  "projectBackup": ".artifacts/media-refresh-20260915/resolve/NEMESIS-PACT-latest-English-59s-final.drp",
+  "originalTimelinesPreserved": 6
+}

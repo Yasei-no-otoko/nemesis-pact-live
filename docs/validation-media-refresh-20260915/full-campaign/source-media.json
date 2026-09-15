@@ -1,0 +1,21 @@
+{
+  "sourceFile": "NEMESIS-PACT-latest-full-campaign-original.webm",
+  "sourceBytes": 601315341,
+  "sourceSha256": "87535f9290bd87430f8186ab92741071dad17b9fae1e8d3026467617bc1a735e",
+  "decodedFrames": 35532,
+  "firstTimestamp": 0.0,
+  "lastTimestamp": 639.845,
+  "deliveredAverageFps": 55.5306,
+  "dimensions": [
+    1920,
+    1080
+  ],
+  "timestampGapMedianSeconds": 0.017999999999999794,
+  "timestampGapMaxSeconds": 1.3979999999999997,
+  "gapsOver50ms": 32,
+  "compatibilityFile": "NEMESIS-PACT-latest-full-campaign-60fps.mp4",
+  "compatibilityBytes": 194783697,
+  "compatibilitySha256": "86ff9954315c312b7c68d03232dc63e8130922cbf2236ae9db1c616a39b29e22",
+  "decodeExit": 0,
+  "conversion": "Full-length H264/AAC CFR60 compatibility copy. No cuts or generated motion. Missing source frames are duplicated."
+}

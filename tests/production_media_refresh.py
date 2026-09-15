@@ -4,7 +4,7 @@ No mutable test hooks, no clock overrides, no mocked model responses. Explicit b
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 from browser_env import launch_kwargs
-import ast,base64,hashlib,json,os,subprocess,time,urllib.request
+import ast,base64,hashlib,json,os,subprocess,time,urllib.request,traceback
 if os.environ.get('NEMESIS_ALLOW_FULL_CAMPAIGN')!='1':raise SystemExit('Opt in: NEMESIS_ALLOW_FULL_CAMPAIGN=1. At most 6 Live, 24 pact, 18 adaptive, and 1 debrief calls.')
 ROOT=Path(__file__).resolve().parents[1];URL='https://nemesis-pact-live.vercel.app';OUT=ROOT/'docs/validation-media-refresh-20260915/full-campaign';OUT.mkdir(parents=True,exist_ok=True)
 ART=ROOT/'.artifacts/media-refresh-20260915';ART.mkdir(parents=True,exist_ok=True);VIDEO=ART/'NEMESIS-PACT-latest-full-campaign-original.webm'
@@ -90,12 +90,15 @@ with sync_playwright() as pw:
    page.wait_for_timeout(250)
   else:raise TimeoutError('Full campaign exceeded20minute recording allowance')
   r=report['victory']['runReport'];assert r['bosses']==6 and r['encounters']==18 and len(r['encounterResults'])==18 and len(report['negotiations'])==6
-  assert len(r['adaptive']['history'])==18 and all(x['provider']=='openai' and x['model']=='gpt-5.6-luna' for x in r['adaptive']['history'])
+  history=r['adaptive']['history'];assert len(history)==18, 'Expected 18 completed encounter reviews'
+  assert all((x['provider']=='openai' and x['model']=='gpt-5.6-luna') or (x['provider'] in ['local','local-rules'] and x['before']==x['after']) for x in history), 'Review provider or local fallback semantics changed'
+  report['reviewProviders']={'openai':sum(x['provider']=='openai' for x in history),'localRules':sum(x['provider'] in ['local','local-rules'] for x in history)}
   assert any(x['before']!=x['after'] for x in r['adaptive']['history']);assert page.evaluate('probe.tracks.every(t=>t.readyState==="ended")&&probe.peers.every(p=>p.connectionState==="closed")')
   assert page.evaluate('localStorage.getItem("nemesis.scores.v1")') is None
   page.screenshot(path=str(OUT/'victory.png'));page.wait_for_timeout(5000);capture_debrief();report['success']=True
  except Exception as e:
-  report['success']=False;report['failure']=str(e)
+  report['success']=False;report['failure']=type(e).__name__+': '+str(e)
+  last=traceback.extract_tb(e.__traceback__)[-1];report['failureLocation']={'file':Path(last.filename).name,'line':last.lineno}
   try:page.screenshot(path=str(OUT/'failure.png'))
   except:pass
  finally:

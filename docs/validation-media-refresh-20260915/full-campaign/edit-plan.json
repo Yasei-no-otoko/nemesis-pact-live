@@ -1,0 +1,129 @@
+{
+  "sourceFile": "NEMESIS-PACT-latest-full-campaign-original.webm",
+  "sourceSha256": "87535f9290bd87430f8186ab92741071dad17b9fae1e8d3026467617bc1a735e",
+  "fps": 60,
+  "frames": 3540,
+  "seconds": 59,
+  "clipCount": 13,
+  "editMethod": "Native DaVinci Resolve linked video and original audio, chronological normal-speed cuts, English TextPlus captions.",
+  "sourceFrameConvention": "CFR compatibility source; AppendToTimeline endFrame is exclusive in this Resolve runtime.",
+  "clips": [
+    {
+      "label": "Voice negotiation",
+      "sourceInFrame": 480,
+      "sourceOutFrameExclusive": 810,
+      "recordOffset": 0,
+      "frames": 330,
+      "speed": 1,
+      "caption": "NEMESIS PACT / Negotiate with your enemy\nAutomated demo, synthetic player speech, real GPT-Live-1 + Luna"
+    },
+    {
+      "label": "Interrupt and correct",
+      "sourceInFrame": 810,
+      "sourceOutFrameExclusive": 1470,
+      "recordOffset": 330,
+      "frames": 660,
+      "speed": 1,
+      "caption": "Interrupt the rival and change the terms\nThe spoken correction asks for stronger reflections, with weaker normal shots"
+    },
+    {
+      "label": "Validate and sign",
+      "sourceInFrame": 1470,
+      "sourceOutFrameExclusive": 1920,
+      "recordOffset": 990,
+      "frames": 450,
+      "speed": 1,
+      "caption": "Luna validates Return to Sender; the pilot explicitly signs\nReflected damage x2.2 / normal shot damage -25%"
+    },
+    {
+      "label": "Contract in combat",
+      "sourceInFrame": 2280,
+      "sourceOutFrameExclusive": 2460,
+      "recordOffset": 1440,
+      "frames": 180,
+      "speed": 1,
+      "caption": "The signed contract changes live combat\nOriginal game timing and synchronized game audio"
+    },
+    {
+      "label": "Sector 01 boss",
+      "sourceInFrame": 5400,
+      "sourceOutFrameExclusive": 5520,
+      "recordOffset": 1620,
+      "frames": 120,
+      "speed": 1,
+      "caption": "Sector 01 / Verdigris Bastion\nThe first boss tests the reflection pact"
+    },
+    {
+      "label": "Adaptive review",
+      "sourceInFrame": 5970,
+      "sourceOutFrameExclusive": 6150,
+      "recordOffset": 1740,
+      "frames": 180,
+      "speed": 1,
+      "caption": "Luna reviews the completed sector and raises pressure: 0 to 1\n28 eliminations / 16 reflected bullets / no hull damage"
+    },
+    {
+      "label": "Sector 02 boss",
+      "sourceInFrame": 11220,
+      "sourceOutFrameExclusive": 11400,
+      "recordOffset": 1920,
+      "frames": 180,
+      "speed": 1,
+      "caption": "Sector 02 / Violet Foundry\nSix sectors, six signed voice contracts"
+    },
+    {
+      "label": "Sector 03 boss",
+      "sourceInFrame": 17460,
+      "sourceOutFrameExclusive": 17640,
+      "recordOffset": 2100,
+      "frames": 180,
+      "speed": 1,
+      "caption": "Sector 03 / Crown of Ash\nFight through the same continuous campaign"
+    },
+    {
+      "label": "Sector 04 boss",
+      "sourceInFrame": 23640,
+      "sourceOutFrameExclusive": 23820,
+      "recordOffset": 2280,
+      "frames": 180,
+      "speed": 1,
+      "caption": "Sector 04 / Tidal Archive\nPressure has reached adaptive level 2"
+    },
+    {
+      "label": "Sector 05 boss",
+      "sourceInFrame": 29940,
+      "sourceOutFrameExclusive": 30120,
+      "recordOffset": 2460,
+      "frames": 180,
+      "speed": 1,
+      "caption": "Sector 05 / Prism Orchard\nEarned upgrades carry forward between encounters"
+    },
+    {
+      "label": "Final boss defeated",
+      "sourceInFrame": 36780,
+      "sourceOutFrameExclusive": 37140,
+      "recordOffset": 2640,
+      "frames": 360,
+      "speed": 1,
+      "caption": "Sector 06 / Unwritten Sky\nThe sixth boss falls in the recorded run"
+    },
+    {
+      "label": "Campaign victory",
+      "sourceInFrame": 37560,
+      "sourceOutFrameExclusive": 37800,
+      "recordOffset": 3000,
+      "frames": 240,
+      "speed": 1,
+      "caption": "Campaign complete / 6 bosses / 18 encounter reviews\n242 eliminations / 80 reflected bullets / 2 hull damage"
+    },
+    {
+      "label": "Flight debrief",
+      "sourceInFrame": 38070,
+      "sourceOutFrameExclusive": 38370,
+      "recordOffset": 3240,
+      "frames": 300,
+      "speed": 1,
+      "caption": "Flight debrief / GPT-5.6 Luna reviews the recorded flight\nPlay NEMESIS PACT: nemesis-pact-live.vercel.app"
+    }
+  ]
+}

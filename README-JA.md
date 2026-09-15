@@ -2,7 +2,7 @@
 
 > 日本語UI対応：初回はブラウザの優先言語で切り替え、タイトルとSettings（設定）の「Language / 言語」でいつでも変更できます。選択は端末に保存します。新規ユーザーは自動射撃と照準アシストが初期オン、既存のオフ設定は維持します。[実装・検証](docs/JAPANESE-UI.md)。
 
-> v1.3.0：Expedition設定の「AI adaptive difficulty」でLunaが実際の戦績を解析し、戦闘間に難易度を調整します。「Demo autoplay」で全6セクターを自動プレイできます。[本番全18戦と提出動画の検証](docs/ADAPTIVE-VALIDATION.md)。
+> v1.3.0：Expedition設定の「AI adaptive difficulty」でLunaが実際の戦績を解析し、戦闘間に難易度を調整します。「Demo autoplay」で全6セクターを自動プレイできます。9月15日の最新英語版を通しで再収録し、Resolveで59秒・1080p60・英語字幕付きに編集しました。全3,540フレーム、元音声との同期、通常速度の通し再生を確認済みです。自動プレイと合成したプレイヤー音声を使用しています。[更新記録](docs/MEDIA-REFRESH-20260915.md)。
 
 > v1.2.0：フルキャンペーンの各セクターで「Negotiate by voice / AI」からGPT-Live-1の音声交渉とGPT-5.6 Lunaの契約提案を利用できます。訂正後の条件を確認してSignすると、既存の契約効果を戦闘へ適用します。[本番検証](docs/CAMPAIGN-VALIDATION.md)。
 

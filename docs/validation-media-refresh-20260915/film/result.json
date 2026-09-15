@@ -1,0 +1,256 @@
+{
+  "native": {
+    "file": "NEMESIS-PACT-latest-59s-60fps-en.mp4",
+    "bytes": 92017317,
+    "sha256": "3ac49985b4d3215a4cf10604c7527b806a13099282b428fd2e2f85ffa1b5a0b0",
+    "probeExit": 1,
+    "width": 1920,
+    "height": 1080,
+    "fps": 60.0,
+    "audioSampleRate": 48000,
+    "audioChannels": 2,
+    "containerSeconds": 59.01,
+    "frames": 3540,
+    "videoSeconds": 59.0,
+    "decodeExit": 0,
+    "timestampErrorSeconds": 3.3333333604446125e-07,
+    "audioRms": 0.06306327134370804,
+    "audioFinite": true,
+    "allDecodedFrameDimensions": [
+      [
+        1920,
+        1080
+      ]
+    ]
+  },
+  "compatibility": {
+    "file": "NEMESIS-PACT-latest-full-campaign-60fps.mp4",
+    "bytes": 194783697,
+    "sha256": "86ff9954315c312b7c68d03232dc63e8130922cbf2236ae9db1c616a39b29e22",
+    "probeExit": 1,
+    "width": 1920,
+    "height": 1080,
+    "fps": 60.0,
+    "audioSampleRate": 48000,
+    "audioChannels": 2,
+    "containerSeconds": 639.89,
+    "originalDeliveredAverageFps": 55.5306,
+    "originalGapsOver50ms": 32,
+    "note": "Full-length CFR60 conversion duplicates source frames where necessary; it does not invent missing motion."
+  },
+  "clips": [
+    {
+      "sourceStart": 8.0,
+      "nativeStart": 0.0,
+      "windowSeconds": 1.4,
+      "sourceRms": 0.07446335256099701,
+      "nativeRms": 0.07399053126573563,
+      "nearSilent": false,
+      "normalizedCorrelation": 0.999981164932251,
+      "lagMs": 1.5,
+      "passed": true
+    },
+    {
+      "sourceStart": 13.5,
+      "nativeStart": 5.5,
+      "windowSeconds": 1.4,
+      "sourceRms": 0.11265911161899567,
+      "nativeRms": 0.1127050369977951,
+      "nearSilent": false,
+      "normalizedCorrelation": 0.9999793767929077,
+      "lagMs": -1.0,
+      "passed": true
+    },
+    {
+      "sourceStart": 24.5,
+      "nativeStart": 16.5,
+      "windowSeconds": 1.4,
+      "sourceRms": 0.0014130146009847522,
+      "nativeRms": 0.0014147339388728142,
+      "nearSilent": false,
+      "normalizedCorrelation": 0.999972939491272,
+      "lagMs": 0.5,
+      "passed": true
+    },
+    {
+      "sourceStart": 38.0,
+      "nativeStart": 24.0,
+      "windowSeconds": 1.4,
+      "sourceRms": 0.014689586125314236,
+      "nativeRms": 0.01466346625238657,
+      "nearSilent": false,
+      "normalizedCorrelation": 0.9998877644538879,
+      "lagMs": -1.0,
+      "passed": true
+    },
+    {
+      "sourceStart": 90.0,
+      "nativeStart": 27.0,
+      "windowSeconds": 1.4,
+      "sourceRms": 0.017970010638237,
+      "nativeRms": 0.017961125820875168,
+      "nearSilent": false,
+      "normalizedCorrelation": 0.9999686479568481,
+      "lagMs": -0.5,
+      "passed": true
+    },
+    {
+      "sourceStart": 99.5,
+      "nativeStart": 29.0,
+      "windowSeconds": 1.4,
+      "sourceRms": 0.007447631563991308,
+      "nativeRms": 0.007439926266670227,
+      "nearSilent": false,
+      "normalizedCorrelation": 0.9999821186065674,
+      "lagMs": -0.5,
+      "passed": true
+    },
+    {
+      "sourceStart": 187.0,
+      "nativeStart": 32.0,
+      "windowSeconds": 1.4,
+      "sourceRms": 0.050278425216674805,
+      "nativeRms": 0.05024486407637596,
+      "nearSilent": false,
+      "normalizedCorrelation": 0.999955952167511,
+      "lagMs": 0.5,
+      "passed": true
+    },
+    {
+      "sourceStart": 291.0,
+      "nativeStart": 35.0,
+      "windowSeconds": 1.4,
+      "sourceRms": 0.019551482051610947,
+      "nativeRms": 0.019538424909114838,
+      "nearSilent": false,
+      "normalizedCorrelation": 0.9999651908874512,
+      "lagMs": 0.5,
+      "passed": true
+    },
+    {
+      "sourceStart": 394.0,
+      "nativeStart": 38.0,
+      "windowSeconds": 1.4,
+      "sourceRms": 0.01613543927669525,
+      "nativeRms": 0.016126060858368874,
+      "nearSilent": false,
+      "normalizedCorrelation": 0.9998986124992371,
+      "lagMs": 0.5,
+      "passed": true
+    },
+    {
+      "sourceStart": 499.0,
+      "nativeStart": 41.0,
+      "windowSeconds": 1.4,
+      "sourceRms": 0.016695091500878334,
+      "nativeRms": 0.016677401959896088,
+      "nearSilent": false,
+      "normalizedCorrelation": 0.9999536871910095,
+      "lagMs": -1.0,
+      "passed": true
+    },
+    {
+      "sourceStart": 613.0,
+      "nativeStart": 44.0,
+      "windowSeconds": 1.4,
+      "sourceRms": 0.01690923050045967,
+      "nativeRms": 0.016774142161011696,
+      "nearSilent": false,
+      "normalizedCorrelation": 0.9999520182609558,
+      "lagMs": 0.5,
+      "passed": true
+    },
+    {
+      "sourceStart": 626.0,
+      "nativeStart": 50.0,
+      "windowSeconds": 1.4,
+      "sourceRms": 0.007872036658227444,
+      "nativeRms": 0.007866006344556808,
+      "nearSilent": false,
+      "normalizedCorrelation": 0.9999678134918213,
+      "lagMs": 0.5,
+      "passed": true
+    },
+    {
+      "sourceStart": 634.5,
+      "nativeStart": 54.0,
+      "windowSeconds": 1.4,
+      "sourceRms": 0.006080616265535355,
+      "nativeRms": 0.006071863230317831,
+      "nearSilent": false,
+      "normalizedCorrelation": 0.9999774694442749,
+      "lagMs": 1.5,
+      "passed": true
+    }
+  ],
+  "QAFrames": [
+    {
+      "file": "cut-01.png",
+      "timeSeconds": 2.75,
+      "brightCaptionPixels": 3583
+    },
+    {
+      "file": "cut-02.png",
+      "timeSeconds": 11.0,
+      "brightCaptionPixels": 3666
+    },
+    {
+      "file": "cut-03.png",
+      "timeSeconds": 20.25,
+      "brightCaptionPixels": 3503
+    },
+    {
+      "file": "cut-04.png",
+      "timeSeconds": 25.5,
+      "brightCaptionPixels": 3057
+    },
+    {
+      "file": "cut-05.png",
+      "timeSeconds": 28.0,
+      "brightCaptionPixels": 2126
+    },
+    {
+      "file": "cut-06.png",
+      "timeSeconds": 30.5,
+      "brightCaptionPixels": 3560
+    },
+    {
+      "file": "cut-07.png",
+      "timeSeconds": 33.5,
+      "brightCaptionPixels": 2007
+    },
+    {
+      "file": "cut-08.png",
+      "timeSeconds": 36.5,
+      "brightCaptionPixels": 2296
+    },
+    {
+      "file": "cut-09.png",
+      "timeSeconds": 39.5,
+      "brightCaptionPixels": 2028
+    },
+    {
+      "file": "cut-10.png",
+      "timeSeconds": 42.5,
+      "brightCaptionPixels": 2487
+    },
+    {
+      "file": "cut-11.png",
+      "timeSeconds": 47.0,
+      "brightCaptionPixels": 2084
+    },
+    {
+      "file": "cut-12.png",
+      "timeSeconds": 52.0,
+      "brightCaptionPixels": 3508
+    },
+    {
+      "file": "cut-13.png",
+      "timeSeconds": 56.5,
+      "brightCaptionPixels": 3541
+    }
+  ],
+  "cutCount": 13,
+  "allAudibleCutComparisonsPassed": true,
+  "filmValidationPassed": true
+}

@@ -1,0 +1,9 @@
+{
+  "file": "NEMESIS-PACT-latest-source.zip",
+  "bytes": 686196,
+  "sha256": "fad9d0c18dfc65278ac5809f694327174301d067f348fe7cdc1355091abf6278",
+  "sourceCommit": "795e39efe609fe188646ed354268b560ea432486",
+  "sourceFiles": 179,
+  "zipIntegrity": "passed",
+  "public": false
+}

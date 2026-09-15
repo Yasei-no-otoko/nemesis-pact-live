@@ -10,13 +10,13 @@ Negotiate the rules. Fight your deal.
 
 Built from the verified v0.5.0 source ZIP. The framework-free game and six-sector campaign are preserved. First Contact is a short boss encounter: ask for a sanctuary, slower bullets or stronger reflections, accept a cost, review the clauses, and click **Sign**. At 8 seconds press **R** to renegotiate once; at 18 seconds parley opens automatically. Health, boss damage and elapsed combat time survive the amendment.
 
-The v1.0.0 finish adds a dedicated First Contact victory/defeat record: your final signed terms, sanctuary interceptions, reflected hit damage and remaining hull. Contextual combat guidance calls out lasers and ready Nova; Pause explains amendment availability and offers First Contact controls. [Concept and improvement loop](docs/V1.0.0-PLAN.md). The existing human59s/60fps movie shows an earlier verified build, not the refreshed artwork.
+The v1.0.0 finish adds a dedicated First Contact victory/defeat record: your final signed terms, sanctuary interceptions, reflected hit damage and remaining hull. Contextual combat guidance calls out lasers and ready Nova; Pause explains amendment availability and offers First Contact controls. [Concept and improvement loop](docs/V1.0.0-PLAN.md). The existing human 59s/60fps movie shows an earlier verified build; the successful September 15 English campaign refresh is documented in [MEDIA-REFRESH-20260915](docs/MEDIA-REFRESH-20260915.md).
 
 ## Adaptive difficulty and demo autoplay
 
 In **Full campaign → Expedition**, enable **AI adaptive difficulty** to let GPT-5.6 Luna assess actual wave and sector results. Pressure changes one bounded step between encounters, with visible rationale and a maximum16% speed/spacing adjustment. Hull, upgrades and signed pacts are preserved. LOCAL RULES holds pressure when AI is unavailable.
 
-**Demo autoplay** uses ordinary controls and earned upgrades to play all six sectors. **Take control** pauses the policy; demo scores remain separate. Optional **Pause at pacts for live negotiation** lets you negotiate and sign each sector contract. [Actual full-run proof and59s film](docs/ADAPTIVE-VALIDATION.md).
+**Demo autoplay** uses ordinary controls and earned upgrades to play all six sectors. **Take control** pauses the policy; demo scores remain separate. Optional **Pause at pacts for live negotiation** lets you negotiate and sign each sector contract. [Actual full-run proof and media refresh](docs/MEDIA-REFRESH-20260915.md).
 
 ## Voice contracts throughout the campaign
 

@@ -1,107 +1,132 @@
 {
-  "version": "demo-gallery-2026-09-15",
-  "gameVersion": "1.3.0",
-  "gameSourceCommit": "06275908ab07372c59f5bbcb2033c268322b6771",
+  "version": "demo-gallery-media-refresh-2026-09-15",
+  "gameVersion": "latest deployed campaign",
+  "deployedGameCommit": "795e39efe609fe188646ed354268b560ea432486",
+  "captureHarnessCommit": "d650d3728a4d3c7655bfed7435c5ce5ad617198d",
   "gameplayCapture": {
     "origin": "https://nemesis-pact-live.vercel.app/",
     "platform": "Windows / native Microsoft Edge 153.0.4234.32 / AMD Radeon RX 6900 XT / WebGPU",
-    "operation": "Automated full campaign using ordinary game inputs",
-    "speech": "Original Microsoft Zira synthetic player speech sent to real GPT-Live-1; GPT-5.6 Luna contract and performance responses",
-    "evidence": "docs/validation-adaptive/full-campaign/result.json",
-    "note": "These PC screenshots are from the completed production run, not the earlier human iPhone recording."
+    "operation": "Automated full campaign using ordinary game inputs and tab capture",
+    "speech": "Original Microsoft Zira synthetic English player speech sent to real GPT-Live-1; GPT-5.6 Luna contract, adaptive and flight-debrief responses",
+    "evidence": "docs/validation-media-refresh-20260915/full-campaign/result.json",
+    "note": "These refreshed PC screenshots are from the successful current-deployment rerecord, not human operation."
   },
   "concepts": "Previously generated imagegen visual-development boards for v0.9.9 and v1.0.0. Not game screenshots.",
   "paidApiCallsForGallery": 0,
-  "totalImageBytes": 5715922,
+  "totalImageBytes": 5570418,
   "images": [
     {
       "file": "assets/boss-unwritten.webp",
       "kind": "pc-gameplay",
       "width": 1920,
       "height": 1080,
-      "bytes": 533658,
-      "sha256": "dccb1714819e31ed28b73842f53e6be09da82e0ab179668ad6c7bf2b28beed33",
+      "bytes": 481878,
+      "sha256": "d837d9b4cc2153798a3221cc53371ee7faa51df38743b8a9215b2b11839083d8",
       "pixelIdentityVerified": true,
       "processing": "Lossless WebP encoding only; original dimensions, complete frame, no crop, recoloring, retouching or added objects.",
-      "source": "NEMESIS-PACT-v1.3.0-full-campaign-original.webm",
-      "sourceSha256": "2348431895c028265c0f3164baee0bd358ee06835ea827af0edcd4c6cb506e47",
-      "recordingSeconds": 607
+      "source": "NEMESIS-PACT-latest-full-campaign-original.webm",
+      "sourceSha256": "87535f9290bd87430f8186ab92741071dad17b9fae1e8d3026467617bc1a735e",
+      "recordingSeconds": 613.0
     },
     {
       "file": "assets/wave-unwritten-sky.webp",
       "kind": "pc-gameplay",
       "width": 1920,
       "height": 1080,
-      "bytes": 507572,
-      "sha256": "5b0dfb2df3f3cf560b798ffed28208226bb545e5093dcf08a43d6c9ed15d72de",
+      "bytes": 396314,
+      "sha256": "14b2c5126d0faeacd2da5ce71e5acc3a4415dd6ea2f3c29c3e75fea72f1ad0c7",
       "pixelIdentityVerified": true,
       "processing": "Lossless WebP encoding only; original dimensions, complete frame, no crop, recoloring, retouching or added objects.",
-      "source": "NEMESIS-PACT-v1.3.0-full-campaign-original.webm",
-      "sourceSha256": "2348431895c028265c0f3164baee0bd358ee06835ea827af0edcd4c6cb506e47",
-      "recordingSeconds": 566
+      "source": "NEMESIS-PACT-latest-full-campaign-original.webm",
+      "sourceSha256": "87535f9290bd87430f8186ab92741071dad17b9fae1e8d3026467617bc1a735e",
+      "recordingSeconds": 578.0
     },
     {
       "file": "assets/wave-prism-orchard.webp",
       "kind": "pc-gameplay",
       "width": 1920,
       "height": 1080,
-      "bytes": 427710,
-      "sha256": "ac48fca0c2df7c3bf57cbe92c45426078ee726ad87bfd242a591fecf303140ca",
+      "bytes": 362526,
+      "sha256": "3793c720dc62cb82c5012f910c4a20418482ea8ba0a7efa6f952b8f97e43222b",
       "pixelIdentityVerified": true,
       "processing": "Lossless WebP encoding only; original dimensions, complete frame, no crop, recoloring, retouching or added objects.",
-      "source": "NEMESIS-PACT-v1.3.0-full-campaign-original.webm",
-      "sourceSha256": "2348431895c028265c0f3164baee0bd358ee06835ea827af0edcd4c6cb506e47",
-      "recordingSeconds": 475
+      "source": "NEMESIS-PACT-latest-full-campaign-original.webm",
+      "sourceSha256": "87535f9290bd87430f8186ab92741071dad17b9fae1e8d3026467617bc1a735e",
+      "recordingSeconds": 472.0
     },
     {
       "file": "assets/boss-weaver.webp",
       "kind": "pc-gameplay",
       "width": 1920,
       "height": 1080,
-      "bytes": 516206,
-      "sha256": "738c8b4ab13a3e25cc33a583985f68dda2ac85188ab1ac47a620d976f25f3053",
+      "bytes": 522700,
+      "sha256": "8481a5ffa65ba357597ad708575d9963d46470ceb24a39d5810fc157f3762d50",
       "pixelIdentityVerified": true,
       "processing": "Lossless WebP encoding only; original dimensions, complete frame, no crop, recoloring, retouching or added objects.",
-      "source": "NEMESIS-PACT-v1.3.0-full-campaign-original.webm",
-      "sourceSha256": "2348431895c028265c0f3164baee0bd358ee06835ea827af0edcd4c6cb506e47",
-      "recordingSeconds": 501
+      "source": "NEMESIS-PACT-latest-full-campaign-original.webm",
+      "sourceSha256": "87535f9290bd87430f8186ab92741071dad17b9fae1e8d3026467617bc1a735e",
+      "recordingSeconds": 499.0
     },
     {
       "file": "assets/boss-leviathan.webp",
       "kind": "pc-gameplay",
       "width": 1920,
       "height": 1080,
-      "bytes": 472056,
-      "sha256": "17cc469d7fd920775a1a18acf1769f87ac54863500062af65d122b44eda47560",
+      "bytes": 441872,
+      "sha256": "aeb32065badf5c75323a1df1d03a8f24d88a34c3c9e04d249ea27c61eb161c76",
       "pixelIdentityVerified": true,
       "processing": "Lossless WebP encoding only; original dimensions, complete frame, no crop, recoloring, retouching or added objects.",
-      "source": "NEMESIS-PACT-v1.3.0-full-campaign-original.webm",
-      "sourceSha256": "2348431895c028265c0f3164baee0bd358ee06835ea827af0edcd4c6cb506e47",
-      "recordingSeconds": 398
+      "source": "NEMESIS-PACT-latest-full-campaign-original.webm",
+      "sourceSha256": "87535f9290bd87430f8186ab92741071dad17b9fae1e8d3026467617bc1a735e",
+      "recordingSeconds": 394.0
     },
     {
       "file": "assets/voice-contract.webp",
       "kind": "pc-interface",
       "width": 1920,
       "height": 1080,
-      "bytes": 238596,
-      "sha256": "a66cd00671b2923719475b90794b0841926027e50f96f2ab773ef0f73485c3ae",
+      "bytes": 192830,
+      "sha256": "92813bc8fc61ef799cb825c90b806c2d1c69f080e99425174d1d4ea1d7621382",
       "pixelIdentityVerified": true,
       "processing": "Lossless WebP encoding only; original dimensions, complete frame, no crop, recoloring, retouching or added objects.",
-      "source": "docs/validation-adaptive/full-campaign/voice-sector-6.png",
-      "sourceSha256": "965d68580197fb599c8710470a04d67ff8e25c4bada4b3b7d946d15c1ed54ae9"
+      "source": "docs/validation-media-refresh-20260915/full-campaign/voice-sector-6.png",
+      "sourceSha256": "13ea48e6202658b722d411ad746ce352eb8305850ecd465dd87ed9bfb035cac4",
+      "recordingTimeBracketSeconds": [
+        532.376,
+        534.924
+      ]
     },
     {
       "file": "assets/adaptive-review.webp",
       "kind": "pc-interface",
       "width": 1920,
       "height": 1080,
-      "bytes": 161896,
-      "sha256": "35eea0b705cee41063fefb7956a49e7654e8f6219c34d482d0fdc8b0276c1154",
+      "bytes": 150384,
+      "sha256": "9c3c29c07826765461538c641612a758ce726b9b79afdc95f28f820306b35d32",
       "pixelIdentityVerified": true,
       "processing": "Lossless WebP encoding only; original dimensions, complete frame, no crop, recoloring, retouching or added objects.",
-      "source": "docs/validation-adaptive/full-campaign/analysis-0-1.png",
-      "sourceSha256": "5a5366edb685ce1aaec5b0fca5e524940fcf2b89c31f23f884b8c856fd901c08"
+      "source": "docs/validation-media-refresh-20260915/full-campaign/analysis-5-1.png",
+      "sourceSha256": "2d477e62ef4615b3868eecbfd2ec2d48bb16ebf38c48121bea55d36f8f1e1804",
+      "recordingTimeBracketSeconds": [
+        591.883,
+        597.453
+      ]
+    },
+    {
+      "file": "assets/flight-debrief.webp",
+      "kind": "pc-interface",
+      "width": 1920,
+      "height": 1080,
+      "bytes": 163686,
+      "sha256": "aba8a873fcd9b1f583b261b99767df4ec46d7466566f0859321a245f08147ec1",
+      "pixelIdentityVerified": true,
+      "processing": "Lossless WebP encoding only; original dimensions, complete frame, no crop, recoloring, retouching or added objects.",
+      "source": "docs/validation-media-refresh-20260915/full-campaign/flight-debrief-luna.png",
+      "sourceSha256": "d76d011022297460b001ca4ec8596e781f2a959a4314b207c4fc4bcf9136ae47",
+      "recordingTimeBracketSeconds": [
+        625.248,
+        634.74
+      ]
     },
     {
       "file": "assets/concept-v099.webp",
