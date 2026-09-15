@@ -1,5 +1,5 @@
 OpenAI x Tokyo AI: 100-Hour Game Challenge Submission Form
-One submission per team. Please have the team representative submit this form on behalf of the entire team. 
+One submission per team. Please have the team representative submit this form on behalf of the entire team.
 
 Deadline: September 15, 11:59 PM JST.
 
@@ -34,7 +34,7 @@ GitHub or another accessible code repository.
 回答を入力
 [required] Demo video URL
 *
-Maximum length: 1 minute. Please provide a publicly accessible or viewable-by-link URL. 
+Maximum length: 1 minute. Please provide a publicly accessible or viewable-by-link URL.
 回答を入力
 Project description
 *
@@ -76,5 +76,5 @@ reCAPTCHA
 このフォームが不審だと思われる場合 報告
 
  フォーム
- 
+
 ヘルプとフィードバック

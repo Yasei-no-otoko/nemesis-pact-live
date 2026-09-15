@@ -13,3 +13,10 @@ DirectOpenAI$2.600000/$10;Gateway$0.036538/$20,added$0.000468. Exact grant/infra
 [Submission answers](SUBMISSION-EN.md):six paragraphs at200words each. [Form guide](SUBMISSION-FORM-GUIDE.md). Personal fields are in the ignored local kit; the form was not submitted.
 
 Rollback: `vercel rollback dpl_BQpYDUTtvPG15BgcahdQAmS4fGsC --yes --scope wildmans-projects`. Preserve Redis, budgets and media.
+
+
+## Public source and final submission materials
+
+Published [v1.1.0 Release](https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/tag/v1.1.0) from tag `fd5c4f4509e560588df89764498146b7d3f8e2ad`. The 157-file source ZIP is 6015203 bytes; SHA256 `b5b127483c423c7de87e5a3fa3c97d86a24f0b9167def183c6961984297d2191` matches a fresh anonymous Edge download. It excludes credentials, private representative details, Git history and raw human media. The viewer links to v1.1.0; unchanged59.008s/1080p60 movie starts successfully, with no page/media errors. Earlier full playback evidence remains separate. gh-pages `e4bea6532410541509b29acc00edc0b9f7a6fcf5` is pushed.
+
+The requested Director implementation and form-answer preparation are complete. The form has not been submitted; the representative must personally make its compliance attestation. Final evidence tag:milestone-23-director-and-submission-ready.

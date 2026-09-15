@@ -1,6 +1,6 @@
 # Submission answers — NEMESIS PACT v1.1.0
 
-Copy only each paragraph body, excluding headings and word counts. Every answer is200 whitespace-separated English words, within the form maximum. Personal fields are saved only in the ignored local submission kit.
+Copy only each paragraph body, excluding headings and word counts. Every answer is 200 whitespace-separated English words, within the form maximum. Personal fields are saved only in the ignored local submission kit.
 
 ## Project description
 
@@ -12,7 +12,7 @@ Beyond First Contact, the six sector campaign offers three airframes, branching 
 
 Two dimensional combat is presented through a custom WebGL2 and WebGPU renderer without Three.js, with procedural geometry and synthesized music. Keyboard and touch controls, captions, readable contract previews, and explicit LOCAL RULES fallback make the game playable without a microphone or API access. The production game, source, and an actual human gameplay video are publicly accessible for review.
 
-Word count:200.
+Word count: 200.
 
 ## Judging criteria 1 (30%) - Meaningful use of OpenAI tools
 
@@ -24,7 +24,7 @@ The campaign Director also uses Luna to select bounded formations. Players compa
 
 Codex supported implementation, debugging, tests, deployment, and browser verification. OpenAI image generation produced concept boards that informed procedural visuals and interface refinement. Real production API evidence and human gameplay demonstrate the integration. The meaningful contribution is a continuous loop from natural language intention to understandable, consequential combat rules, while deterministic simulation keeps reflex play responsive and explicit LOCAL RULES preserves access when AI is unavailable.
 
-Word count:200.
+Word count: 200.
 
 ## Judging criteria 2 (25%) - Originality
 
@@ -36,7 +36,7 @@ The system gives natural language flexibility a legible mechanical boundary. Eve
 
 A separate AI Director extends player authorship into the roguelite campaign: request a preferred kind of pressure, compare seeded formations, and approve the next combat pattern. The combination connects conversational AI, negotiated commitments, and a precision two dimensional shooter through one coherent fantasy: write the terms, then prove you can survive them.
 
-Word count:200.
+Word count: 200.
 
 ## Juding criteria 3 (25%) - Playability / Utility
 
@@ -48,7 +48,7 @@ The full campaign adds six sectors, six bosses, three airframes, route choices, 
 
 Human iPhone 16 Pro Max footage demonstrates interruption, corrected OpenAI contracts, touch combat, renegotiation, and victory. Windows Vivaldi voice success is separately reported. Automated Edge checks cover desktop and phone layouts, with emulation clearly distinguished from physical devices. The publicly viewable 59 second demonstration and downloadable source make the submitted experience easy for judges to inspect.
 
-Word count:200.
+Word count: 200.
 
 ## Judging criteria 4 (20%) - Execution and craft
 
@@ -60,7 +60,7 @@ The implementation separates AI proposals from deterministic authority. Signed s
 
 Current verification includes 239 unit tests, real Redis atomic checks, browser interaction and rendering checks, and actual Luna Director inference followed by approved enemy spawning. GitHub commits, readable tags, deployment hashes, budgets, and rollback instructions preserve reviewability. The human submission video was edited in DaVinci Resolve to 59 seconds at 1080p60, retaining original voices and documenting capture limitations.
 
-Word count:200.
+Word count: 200.
 
 ## Pre-existing code, open-source components, datasets, or third-party tools.
 
@@ -72,5 +72,4 @@ Development and verification used Node.js (MIT), Python (PSF-2.0), Playwright (A
 
 Codex, OpenAI image generation, OpenAI APIs, Vercel, Upstash, GitHub, Microsoft Edge, and DaVinci Resolve are services or tools governed by their respective terms. Generated concept boards informed authored geometry and CSS; human gameplay footage retains original audio. Third party notices distinguish incorporated material from development tooling and preserve attribution.
 
-Word count:200.
-
+Word count: 200.

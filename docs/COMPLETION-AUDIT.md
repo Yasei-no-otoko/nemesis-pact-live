@@ -1,3 +1,11 @@
+# Current v1.1.0 Director and submission-preparation audit
+
+The AI Director and requested form answers are complete. App source5de9378, productionEy6W5h1mdVdm1ExsdNbvLi7ibgRW; real Luna proposals/approvals/spawning verified twice,239unit tests and3realRedis checks passed. [Full evidence](DIRECTOR-VALIDATION.md). Public releasev1.1.0, anonymous source download/hash and updated viewer passed. Six form answers are200words each; personal fields remain private. No application changes followed the final deployment.
+
+Form submission/rights attestation was not requested or performed. Current Director mobile evidence is emulation; original human iPhone video predates this feature. Exact provider invoices, Vercel grant balance/expiry and infrastructure charges remain unverified. These limits are preserved in the release record. Rollback to v1.0.0 deploymentBQpYDUTtvPG15BgcahdQAmS4fGsC retains Redis, budgets and media.
+
+Historical audit follows.
+
 # Current v1.0.0 completion audit
 
 All required work for the user-requested v1.0.0 refinement goal is complete within [recorded verification scopes](V1.0.0-VALIDATION.md). App source4ee074d, production BQpYDUTtvPG15BgcahdQAmS4fGsC; public release tag6fc0f3d; final evidence milestone-21-v100-verified. The new concept informed actual implemented UI, tested in production through all endings and real Live/Luna contracts. The source ZIP and version-labeled existing human59s/60fps video are anonymously reachable. No required publication task remains.
