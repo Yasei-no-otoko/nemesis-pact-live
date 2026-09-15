@@ -43,15 +43,13 @@
   },
   "recordedAt": "2026-09-15T00:45:14.497930+00:00",
   "version": "1.0.0",
-  "status": "v1.0.0 production and live verification passed; versioned public source release pending",
+  "status": "v1.0.0 quality goal achieved: actual game, production/live verification, GitHub source release and public links",
   "priorReleaseEvidence": "validation-v1.0.0/baseline/release-candidate.json",
   "releaseTag": "v1.0.0",
   "sourceTag": "milestone-20-signed-record",
   "releaseUrl": "https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/tag/v1.0.0",
   "validation": "V1.0.0-VALIDATION.md",
-  "requiredDeliveryGates": [
-    "v1.0.0 source release and public link verification"
-  ],
+  "requiredDeliveryGates": [],
   "unverifiedItems": [
     "exact Vercel Gateway grant balance and expiry",
     "Vercel infrastructure invoice/charges; usage endpoint returned404",
@@ -180,15 +178,35 @@
     "scope": "previous human media, unchanged; see priorReleaseEvidence"
   },
   "sourceReviewPackage": {
-    "status": "v1.0.0 package pending",
-    "previousVersionEvidence": "validation-v1.0.0/baseline/release-candidate.json"
+    "file": "NEMESIS-PACT-v1.0.0-source.zip",
+    "bytes": 12083202,
+    "sha256": "81ae165512989f809052d27573915052e121d0bc730ddc3ec8573f3042dffb63",
+    "files": 175,
+    "archiveCommit": "6fc0f3df909325e2c76e1d5365366fd6d5fce05c",
+    "applicationSourceCommit": "4ee074d2a76ceaa29ec59d17e3928d142309f07c",
+    "scope": "selected versioned source, tests, concepts, validation and offline HTML; no Git history, private environment, work files or raw media",
+    "public": true,
+    "url": "https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/download/v1.0.0/NEMESIS-PACT-v1.0.0-source.zip",
+    "anonymousDownloadHashMatched": true
   },
   "finalEvidenceTag": "milestone-21-v100-verified",
   "publicReleaseValidation": {
-    "passed": false,
-    "status": "v1.0.0 publication pending"
+    "passed": true,
+    "evidence": "validation-v1.0.0/public-release/result.json",
+    "sourceHashMatched": true,
+    "pagesCommit": "9eaec344221470174d9b9986f76a2d041c651287",
+    "viewerPointsToVersion100": true,
+    "unchangedVideoPlaybackStart": true,
+    "githubShellPageErrors": [
+      "Failed to fetch"
+    ],
+    "viewerPageErrors": []
   },
   "completion": {
-    "status": "publication pending"
+    "status": "achieved",
+    "recordedAt": "2026-09-15T00:50:28.552562+00:00",
+    "evidenceTag": "milestone-21-v100-verified",
+    "applicationUnchangedAfterDeployment": true,
+    "remainingRequiredWork": []
   }
 }

@@ -1,4 +1,10 @@
-> Current v1.0.0 production and live verification: [detailed evidence](V1.0.0-VALIDATION.md). Versioned source publication is pending; the historical completed delivery audit below describes the earlier release.
+# Current v1.0.0 completion audit
+
+All required work for the user-requested v1.0.0 refinement goal is complete within [recorded verification scopes](V1.0.0-VALIDATION.md). App source4ee074d, production BQpYDUTtvPG15BgcahdQAmS4fGsC; public release tag6fc0f3d; final evidence milestone-21-v100-verified. The new concept informed actual implemented UI, tested in production through all endings and real Live/Luna contracts. The source ZIP and version-labeled existing human59s/60fps video are anonymously reachable. No required publication task remains.
+
+Unknowns are disclosed: two synthetic startup-event timeouts before the successful final test, exact provider/grant/infrastructure costs, additional physical-device coverage and sustained phone FPS. New short samples are about57fps, similar to the previous build in the same environment. The human movie predates visual updates. These are not silently promoted to confirmed successes. No model, quota or payment settings were changed.
+
+The historical audit below belongs to the earlier delivery.
 
 # Completion audit — final public delivery
 

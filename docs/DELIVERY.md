@@ -10,4 +10,4 @@ New engraved result screen displays actual contract impact; contextual combat gu
 
 Conservative direct OpenAI $2.600000/$10; Gateway $0.036070/$20. Exact grant/infrastructure/provider invoices remain unknown. Built-in imagegen cost is not exposed.
 
-Final versioned source publication is pending at this checkpoint. Rollback: `vercel rollback dpl_CsUJ386UFWLPKg4UN7r1jvCpcuoB --yes`; preserve Redis, quotas and media.
+[Versioned Release](https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/tag/v1.0.0) and its 12083202-byte source ZIP are public; anonymous download SHA matches `81ae165512989f809052d27573915052e121d0bc730ddc3ec8573f3042dffb63`. The viewer links to v1.0.0 and the unchanged human movie plays. Final evidence tag: milestone-21-v100-verified. Rollback: `vercel rollback dpl_CsUJ386UFWLPKg4UN7r1jvCpcuoB --yes`; preserve Redis, quotas and media.

@@ -1,0 +1,12 @@
+{
+  "file": "NEMESIS-PACT-v1.0.0-source.zip",
+  "bytes": 12083202,
+  "sha256": "81ae165512989f809052d27573915052e121d0bc730ddc3ec8573f3042dffb63",
+  "files": 175,
+  "archiveCommit": "6fc0f3df909325e2c76e1d5365366fd6d5fce05c",
+  "applicationSourceCommit": "4ee074d2a76ceaa29ec59d17e3928d142309f07c",
+  "scope": "selected versioned source, tests, concepts, validation and offline HTML; no Git history, private environment, work files or raw media",
+  "public": true,
+  "url": "https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/download/v1.0.0/NEMESIS-PACT-v1.0.0-source.zip",
+  "anonymousDownloadHashMatched": true
+}

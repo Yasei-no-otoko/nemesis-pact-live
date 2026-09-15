@@ -1,0 +1,27 @@
+{
+  "checkedAt": "2026-09-15T00:48:45.192905+00:00",
+  "anonymous": true,
+  "browser": "153.0.4234.32",
+  "scope": "Native fresh Edge; public source download and hash; unchanged human video playback-start only (full prior playback evidence remains separate)",
+  "releaseUrl": "https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/tag/v1.0.0",
+  "releaseHttp": 200,
+  "sourceSha256": "81ae165512989f809052d27573915052e121d0bc730ddc3ec8573f3042dffb63",
+  "sourceBytes": 12083202,
+  "viewerUrl": "https://www.circle-hydrangea.net/nemesis-pact-live/",
+  "viewerHttp": 200,
+  "viewerLinksTo100": true,
+  "video": {
+    "width": 1920,
+    "height": 1080,
+    "duration": 59.008,
+    "currentTime": 2.029237,
+    "error": null,
+    "source": "https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/download/milestone-16-iphone-demo-audio/NEMESIS-PACT-iPhone-59s-60fps-en-final.mp4"
+  },
+  "githubShellPageErrors": [
+    "Failed to fetch"
+  ],
+  "viewerPageErrors": [],
+  "passed": true,
+  "apiModelCalls": 0
+}

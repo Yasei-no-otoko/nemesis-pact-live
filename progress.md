@@ -239,3 +239,8 @@ New concept and actual screenshot loop produced the signed-record UI. Final229/2
 2026-09-15 JST — v1.0.0 production verified
 
 App 4ee074d2a76ceaa29ec59d17e3928d142309f07c / READY dpl_BQpYDUTtvPG15BgcahdQAmS4fGsC; exact hosted 422405-byte SHA b22cd4ff5de7985ab0d8e49386b3ba7c306673c39715e8886858a5bd6f437e75. Final real Live/Luna test passed with two signatures and atomic HP9/bossHP2844/time8.558333 continuity; all seven attempted sessions confirmed stopped. Prior two startup-event timeouts and a post-resume-hit assertion failure are retained. No voice code changed; synthetic graph and read-only timing instrumentation corrected. Ledger direct2.60/10,Gateway.036070/20,active0. Production7layout and3ending cases passed. Public v1.0.0 release remains pending. See V1.0.0-VALIDATION.md.
+
+
+2026-09-15 JST — v1.0.0 public release complete
+
+Release https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/tag/v1.0.0, tag6fc0f3d, sourceZIP 12083202bytes SHA81ae165512989f809052d27573915052e121d0bc730ddc3ec8573f3042dffb63; fresh anonymous Edge download/hash and version1.0.0 viewer/movie-start passed. gh-pages9eaec34 pushed. GitHub shell Failed to fetch was recorded separately; viewer had no errors. Prior human full59.008s playback remains unchanged. Final evidence milestone-21-v100-verified; no application bytes changed after READY deployment. Rollback CsUJ386UFWLPKg4UN7r1jvCpcuoB, preserveRedis/media. Ledger2.60/10 direct and.036070/20Gateway; remaining unknowns stay explicit.
