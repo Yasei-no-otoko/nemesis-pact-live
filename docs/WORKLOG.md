@@ -1,5 +1,15 @@
 # Work log
 
+## Combat danger cues — 2026-09-15, 21:17 JST
+
+Laser warnings now outrank onboarding and all other tips, and desktop/touch/canvas agree when dash is cooling. At two hull or less, the hint recommends a ready nova, a ready parry, or movement; no unavailable defense is recommended. All combat cue copy is localized. Boss intent text moved below the boss after an actual browser screenshot exposed overlap with the HP bar. First Contact-only warning colors do not leak into the campaign. No mechanics, GPT-Live-1/Luna, explicit signatures, six sectors, recording path or $10/$20 caps changed.
+
+Inherited clean default `b36cb650fd9742e29430c2366a6ab108105d9fb2`, preserved feedback ancestry and all previous releases; no open PR or active competing changes. Source **`aaebc53c3a11b69daf18475a198bb3c0289fdedb`** saved to `improve/combat-cues-20260915` and default `ship/living-covenant` with non-force GitHub writes; remote tree exactly matches local commit `34a9ab0`. The local commit branch was preserved and a clean verification branch tracks the remote. No reset or force push was used in this iteration.
+
+Affected tests 19/19; final full suite 316/316 on Node v24.19.0; syntax 58 files; build passed. Two previews were needed because browser inspection revealed the HP-bar overlap; final preview **`dpl_EXjLs9wNnvDCtJbTVaqGgXb5eTKL`** READY. Synthetic frozen-state browser fixtures covered six scenes at 390×844/320×568, JA/EN low-hull copy, and final 1280×800 laser layout. These are not physical-device, human-play or live-AI evidence. Production normal automated UI completed LOCAL RULES → unsigned proposal → explicit Sign → combat; onboarding and sanctuary guidance are Japanese. No game-origin errors observed (browser-extension metadata errors excluded).
+
+Production **`dpl_5aV9W1BJvxT8VG3kb5fweKMKpNnH`** READY with all 12 functions and `nemesis-pact-live.vercel.app` alias. Public HTTP 200 bytes exactly match hosted SHA256 **`0f97c15e956084c04e6090a0c7d09c814248de3f92173cb50ba95369e48d73bb`** (638415 bytes). Fixture URL is 404. Offline SHA256 `71e0d29e9df56acf3cc46af680724ca172938c4a3eb6e82bd612ba0476682df7`. Rollback **`dpl_jjZJRD4fv99WWvDwxGTmYS2b4SHu`**, preserving environment, quota and Redis data. No model/microphone use, purchase, submission or legal attestation. See [validation](COMBAT-CUES-VALIDATION.md). Next: initial consent/fallback clarity, then submission readiness; existing movie is unchanged.
+
 ## First Contact revision impact — 2026-09-15, 18:24 JST
 
 First Contact results now connect each signed version of the covenant to its recorded combat effects. Every revision row shows bullets erased and reflected hit damage accumulated from that signature until the next signature. A breach snapshot stops the final signed interval at the moment the pact is broken, so later unbound play is not attributed to the discarded terms. The retry area explains that the same battlefield opens a new unsigned negotiation; the existing explicit Sign gate remains authoritative. English and Japanese copy are included. GPT-Live-1, GPT-5.6 Luna, six sectors, budget limits and recorder behavior are unchanged.

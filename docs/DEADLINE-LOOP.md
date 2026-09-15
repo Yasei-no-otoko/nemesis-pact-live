@@ -20,7 +20,11 @@ After **22:30 JST**, only submission blockers, regressions and essential clarity
 
 The official submission form and rights attestations remain the representative's final action; this request to improve the game is not authorization to submit legal confirmations. Prepare the actual links and final copy first.
 
-## Latest checkpoint — revision impact and retry clarity, 18:24 JST
+## Latest checkpoint — combat danger cues, 21:17 JST
+
+Source `aaebc53c3a11b69daf18475a198bb3c0289fdedb`, production READY `dpl_5aV9W1BJvxT8VG3kb5fweKMKpNnH`; rollback `dpl_jjZJRD4fv99WWvDwxGTmYS2b4SHu`. Laser priority, cooldown-aware dash/parry hints, low-hull guidance, Japanese combat copy and HP-bar overlap are fixed. Tests 316/316, syntax58/build passed; synthetic 390/320px browser fixtures plus normal public LOCAL RULES/sign/combat confirmed. Public bytes match build, QA fixture404. See [scope and limitations](COMBAT-CUES-VALIDATION.md). Preserve the recording/ending/revision fixes. Do not redo this slice. No AI or microphone call, quota change or form submission occurred.
+
+## Previous checkpoint — revision impact and retry clarity, 18:24 JST
 
 First Contact now breaks the signed record into revision-specific, recorded effects: bullets erased and reflected hit damage from one signature until the next. A breach snapshot prevents play after contract destruction from being credited to the void terms. The retry message and action make clear that the same battlefield restarts with an unsigned negotiation and still requires Sign. Source `2dbc106f82d230ef067004624277cd1eb32265dd`; production READY `dpl_jjZJRD4fv99WWvDwxGTmYS2b4SHu`; rollback `dpl_HMUQpEts6YvcHm8L9ZhCv6op1tDv`.
 
@@ -36,7 +40,7 @@ The user-reported untranslated Pact Keeper ending is fixed, together with missin
 
 ## Next candidates, ranked by player impact
 
-- Combat readability: verify laser warnings, parry feedback, low-health guidance, touch controls and critical text at small sizes. Keep guidance short and avoid covering bullets.
+- Combat cue priority/cooldowns/low-hull/localization slice completed at 21:17. Remaining physical-phone readability or parry-feedback checks must be labeled separately from the completed synthetic layout checks.
 - Initial voice/text flow: reduce confusion when consent is not yet given, audio is unavailable, or a request falls back to local rules. Never label the fallback as live AI.
 - End-to-end campaign regression and final submission wording. The current 59-second movie is a separately identified earlier checkpoint; do not claim it shows newly changed screens.
 

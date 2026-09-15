@@ -1,5 +1,15 @@
 # Delivery — NEMESIS PACT v1.3.0
 
+## Current combat clarity release — September 15, 21:17 JST
+
+Source **`aaebc53c3a11b69daf18475a198bb3c0289fdedb`**, production READY **`dpl_5aV9W1BJvxT8VG3kb5fweKMKpNnH`**. [Play](https://nemesis-pact-live.vercel.app/).
+
+Laser warnings take priority over introductory tips. Dash/parry guidance respects cooldowns, low hull suggests an available defense, and the boss warning no longer overlaps its HP bar. Keyboard/touch instructions are localized into Japanese. Prior recording, ending and per-revision outcome fixes remain intact.
+
+Final full tests 316/316 (Node24.19), syntax 58 and build passed. Synthetic browser fixtures verified warning states and 390/320px layouts; final desktop laser placement and JA/EN low-hull hints were checked. Production normal automated controls reached an unsigned LOCAL RULES proposal, explicit signature and combat. This is not new human, physical-phone or live-model proof. [Detailed verification](COMBAT-CUES-VALIDATION.md).
+
+Public HTTP200 is byte-identical to the source build, SHA256 `0f97c15e956084c04e6090a0c7d09c814248de3f92173cb50ba95369e48d73bb`. Preview fixture is absent (404). Rollback **`dpl_jjZJRD4fv99WWvDwxGTmYS2b4SHu`**. No AI spending or cap changes. Submission materials: [copy-ready answers](SUBMISSION-EN.md), [form/link guide](SUBMISSION-FORM-GUIDE.md), [recording instructions](FINAL-RECORDING.md). Form and legal attestation remain unsubmitted; existing movie is unchanged. Next queue: consent/fallback clarity and final submission audit.
+
 ## Current First Contact outcome — September 15, 18:24 JST
 
 Source **`2dbc106f82d230ef067004624277cd1eb32265dd`**, production READY **`dpl_jjZJRD4fv99WWvDwxGTmYS2b4SHu`**. [Play](https://nemesis-pact-live.vercel.app/).
