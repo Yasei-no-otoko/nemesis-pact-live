@@ -1,0 +1,119 @@
+{
+  "checkedAt": "2026-09-15T05:40:09.750745+00:00",
+  "url": "https://nemesis-pact-live.vercel.app/",
+  "physicalMobile": false,
+  "paidApiCalls": 0,
+  "cases": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900,
+      "touchEmulation": false,
+      "autoLanguage": "ja",
+      "manualOverridePersists": true,
+      "savedAssistsPreserved": true,
+      "signatureAndLocaleContinuity": true,
+      "pageErrors": [],
+      "apiRequests": [],
+      "renderer": "WEBGL2 / PBR"
+    },
+    {
+      "name": "laptop",
+      "width": 1280,
+      "height": 720,
+      "touchEmulation": false,
+      "autoLanguage": "ja",
+      "manualOverridePersists": true,
+      "savedAssistsPreserved": true,
+      "signatureAndLocaleContinuity": true,
+      "pageErrors": [],
+      "apiRequests": [],
+      "renderer": "WEBGL2 / PBR"
+    },
+    {
+      "name": "phone",
+      "width": 430,
+      "height": 932,
+      "touchEmulation": true,
+      "autoLanguage": "ja",
+      "manualOverridePersists": true,
+      "savedAssistsPreserved": true,
+      "signatureAndLocaleContinuity": true,
+      "pageErrors": [],
+      "apiRequests": [],
+      "renderer": "WEBGL2 / PBR"
+    },
+    {
+      "name": "small-phone",
+      "width": 320,
+      "height": 568,
+      "touchEmulation": true,
+      "autoLanguage": "ja",
+      "manualOverridePersists": true,
+      "savedAssistsPreserved": true,
+      "signatureAndLocaleContinuity": true,
+      "pageErrors": [],
+      "apiRequests": [],
+      "renderer": "WEBGL2 / PBR"
+    }
+  ],
+  "untranslated": {
+    "desktop-title": [
+      "NEMESIS",
+      "PACT"
+    ],
+    "desktop-settings": [
+      "1.3.0 / WEBGL2 / PBR"
+    ],
+    "desktop-contract": [],
+    "desktop-combat": [],
+    "laptop-title": [
+      "NEMESIS",
+      "PACT"
+    ],
+    "laptop-settings": [
+      "1.3.0 / WEBGL2 / PBR"
+    ],
+    "laptop-contract": [],
+    "laptop-combat": [],
+    "phone-title": [
+      "NEMESIS",
+      "PACT"
+    ],
+    "phone-settings": [
+      "1.3.0 / WEBGL2 / PBR"
+    ],
+    "phone-contract": [],
+    "phone-combat": [],
+    "small-phone-title": [
+      "NEMESIS",
+      "PACT"
+    ],
+    "small-phone-settings": [
+      "1.3.0 / WEBGL2 / PBR"
+    ],
+    "small-phone-contract": [],
+    "small-phone-combat": [],
+    "campaign-hangar": [],
+    "campaign-loadout": [],
+    "campaign-choices": [],
+    "campaign-pact": [],
+    "campaign-combat": [],
+    "campaign-result-fixture": [],
+    "campaign-director": []
+  },
+  "browser": "153.0.4234.32",
+  "newUserNormalCampaignAutoShot": true,
+  "explicitFalseSurvivesReload": true,
+  "campaign": {
+    "localSignPreservesCanonicalMirror": true,
+    "directorProposalDoesNotMutateWorld": true,
+    "directorApplied": true,
+    "resultScreenFixture": true,
+    "pageErrors": [],
+    "apiRequests": []
+  },
+  "blockedStorageSessionSwitchWorks": true,
+  "authoredVisibleTranslationAuditPassed": true,
+  "passed": true
+}

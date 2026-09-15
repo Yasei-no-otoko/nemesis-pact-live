@@ -1,5 +1,7 @@
 # Delivery — NEMESIS PACT v1.3.0
 
+> Current live UI: English / 日本語 with browser-language detection, persisted title/Settings selectors and Auto Shot/Aim Assist on for new users. App `e91c7e3`, READY `dpl_HinZheFR4AC4ezwYS47Y884pEJm8`. [Current UI validation and rollback](JAPANESE-UI.md). The release/media references below describe the earlier immutable v1.3.0 campaign checkpoint.
+
 [Play](https://nemesis-pact-live.vercel.app/) · [Repository](https://github.com/Yasei-no-otoko/nemesis-pact-live) · [59-second1080p60 demo](https://www.circle-hydrangea.net/nemesis-pact-live/)
 
 **Full campaign → Expedition → AI adaptive difficulty** enables aggregate analysis by GPT-5.6 Luna. Enable **Demo autoplay** to run the fixed input policy; **Take control** suspends it. Choose **Pause at pacts for live negotiation** to use Start voice and Sign at each sector. The policy never opens a microphone itself. Normal play keeps optional analysis off until enabled. [Implementation](ADAPTIVE-DIFFICULTY.md).

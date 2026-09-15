@@ -1,0 +1,26 @@
+{
+  "url": "https://nemesis-pact-live.vercel.app/",
+  "status": 200,
+  "bytes": 580447,
+  "sha256": "405293ca30464bf34d6c3342b2d35e379a385f487ff3efd28dd04a106b97049b",
+  "contentType": "text/html; charset=utf-8",
+  "checkedAt": "2026-09-15T05:40:56.716277+00:00",
+  "sourceCommit": "e91c7e3fb78a2393efe5d51d1b365c108047e127",
+  "deploymentId": "dpl_HinZheFR4AC4ezwYS47Y884pEJm8",
+  "immutableUrl": "https://nemesis-pact-live-77mfa8shu-wildmans-projects.vercel.app",
+  "readyState": "READY",
+  "exactHostedBuildMatch": true,
+  "initialUiDeployment": {
+    "url": "https://nemesis-pact-live.vercel.app/",
+    "status": 200,
+    "bytes": 580413,
+    "sha256": "cee7aed6e3592d41fac631582677b64416af19a1ea6587bb8e01dddc21842529",
+    "contentType": "text/html; charset=utf-8",
+    "checkedAt": "2026-09-15T05:37:09.753861+00:00",
+    "sourceCommit": "7d9b8706e74f201f2583be38dd77c5c90b234b97",
+    "deploymentId": "dpl_CzKoKknMNwb5nRxr5CXX9ZqK8JgJ",
+    "readyState": "READY",
+    "immutableUrl": "https://nemesis-pact-live-msx0gf2e3-wildmans-projects.vercel.app",
+    "exactHostedBuildMatch": true
+  }
+}

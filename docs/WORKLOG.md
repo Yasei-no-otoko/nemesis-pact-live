@@ -337,3 +337,8 @@ The demo viewer now includes seven actual PC screenshots (two upgraded normal wa
 2026-09-15 JST — Japanese UI and beginner defaults
 
 Started from clean d312b891 on ship/living-covenant. Added browser-preferred EN/JA presentation and synchronized persisted selectors on title/Settings. New users have Auto Shot/Aim Assist on; existing explicit false survives. Canonical world/schema/sign path unchanged. Japanese local campaign/Director keywords now match translated sample prompts. 286 unit tests/53 syntax/build pass; four actual Edge software-WebGL2 viewport cases plus campaign pact/Director/result UI, blocked storage and normal auto-fire pass. No paid API call. Production verification follows. See docs/JAPANESE-UI.md for exact scope, failures corrected, dated ledger and rollback.
+
+
+2026-09-15 JST — Japanese UI production verified
+
+App e91c7e3fb78a2393efe5d51d1b365c108047e127 pushed to public default branch ship/living-covenant. READY HinZheFR4AC4ezwYS47Y884pEJm8; exact580447-byte hosted SHA405293ca30464bf34d6c3342b2d35e379a385f487ff3efd28dd04a106b97049b. Final286/286 tests24577.0553ms,53syntax,4production Edge software-WebGL2 sizes plus campaign/local Sign/Director/defaults/storage pass. Transcript details retain verbatim speech. Mobile sizes are emulation; no new physical microphone/model trial. Zero paid API calls in this validation; dated direct3/10,Gateway.042359/20 ledger unchanged by test calls, current provider invoices/infra unknown. Final checkpoint milestone-29-japanese-ui; rollback f3q3Af5zwDQ2WvvhA4zuahkfhpCH preservingRedis/settings/media. docs/JAPANESE-UI.md contains evidence and exact scope.

@@ -6,5 +6,5 @@
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 24553.2922
+# duration_ms 24577.0553
 Syntax: 53 files, Node v22.23.2

@@ -57,6 +57,7 @@ with sync_playwright() as pw:
         p.click('#cv-transcript');transcript=p.locator('#cv-detail-content').inner_text()
         assert 'Settings' in transcript and 'Full terms & changes' in transcript
         p.click('#cv-detail-done')
+        p.evaluate('document.getElementById("cv-caption-player").textContent="—";document.getElementById("cv-caption-notary").textContent="—"')
         p.fill('#cv-prompt','左を安全にして、弾を遅くしてください。増援は許可します。')
         before=p.evaluate('JSON.stringify(__PACT_TEST__.world)')
         p.click('#cv-propose');p.wait_for_function('()=>!document.getElementById("cv-sign").disabled')
