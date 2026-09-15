@@ -39,6 +39,9 @@ test('already-charged reflections never promise an additional unavailable upgrad
   const b=R.briefing(w);assert.equal(b.recommendation,'keep');assert.match(b.observation,/enhanced reflections/);assert.doesNotMatch(b.observation,/strengthen them/);
   const terms=V.localProposal(w.request(b.choices.find(c=>c.id===b.recommendation).prompt));
   assert.equal(V.compile(terms).reflect,1.8);assert.ok(R.compare(w.spec,terms).every(row=>!row.changed));
+  const sheltered=start(V.localProposal(new V.Run('CHARGED-SHIELD').request('Left sanctuary. Amplify reflections. Reinforcements.'))),z=sheltered.zone();
+  sheltered.protectBullet({px:z.x-100,py:z.y,x:z.x+100,y:z.y});
+  assert.equal(R.briefing(sheltered).recommendation,'keep');assert.doesNotMatch(R.briefing(sheltered).observation,/stronger reflections/);
 });
 test('briefing reports only effects since current signature and zero boss HP after actual victory',()=>{
   const w=start();w.covenantStats.reflectedDamage=100;w.time=9;w.requestParley();w.signCovenant(V.localProposal(w.request('Left sanctuary. Weaker gun.')));
