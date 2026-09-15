@@ -9,5 +9,6 @@
  function describe(contractId,ctx){const c=context(ctx),found=offers(c).find(x=>x.id===contractId);if(!found)throw Error('Offer is not available');return {id:found.id,name:found.name,gift:found.gift,cost:found.cost,tip:found.tip};}
  function commentary(result,ctx){if(!result||typeof result!=='object')return null;const c=context(ctx);if(!['openai','local-rules'].includes(result.provider))return null;const decision=result.decision||result;let pact=result.campaignPact;try{const id=decision?.contractId||pact?.id;if(typeof id!=='string')return null;pact=describe(id,c);if(decision?.contractId!==id&&result.campaignPact?.id!==id)return null;}catch{return null;}return JSON.stringify({status:'unsigned',provider:result.provider,campaignPact:pact,instruction:'Review the canonical offer and click Sign to apply it.'});}
  const rival=ctx=>X.SECTORS[context(ctx).stage].boss.name;
- return {MODES,context,offers,cleanRequest,describe,commentary,rival};
+ function localDecision(request){const r=I.cleanRequest(request),corrections=[...r.prompt.matchAll(/actually|change that|\u3084\u3063\u3071\u308a|\u8a02\u6b63|\u5909\u66f4/giu)];return I.mock({...r,prompt:corrections.length?r.prompt.slice(corrections.at(-1).index):r.prompt});}
+ return {MODES,context,offers,cleanRequest,describe,commentary,rival,localDecision};
 });

@@ -3,6 +3,18 @@ const test=require('node:test'),assert=require('node:assert/strict');
 const Client=require('../src/campaign-client.js'),I=require('../src/intelligence.js'),C=require('../src/campaign.js'),X=require('../src/expansion.js');
 const context={mode:'expedition',stage:0},input=()=>({task:'negotiate',prompt:'Reflect your attacks',stage:0,seed:'CAMPAIGN-TEST',allowed:['mercy','mirror','glass'],telemetry:{}});
 const reply=b=>({provider:'openai',model:'gpt-5.6-luna',decision:I.mock(b.request),requestId:b.requestId,intentVersion:b.intentVersion,proposalId:'proposal-test',digest:'digest-test'});
+test('campaign correction waits for settling work with newer intent; budget exhaustion is never retried',async()=>{
+ const calls=[];const session={csrf:'fixture',ensure:async()=>{},request:async(path,b)=>{if(b.action==='cancel')return Response.json({});calls.push(b);return calls.length===1?Response.json({error:'CAMPAIGN_PREVIOUS_REQUEST_SETTLING'},{status:429}):Response.json(reply(b));}};
+ const c=new Client(session);c.open(context);assert.equal((await c.request(input(),true)).provider,'openai');assert.equal(calls.length,2);assert.ok(calls[1].intentVersion>calls[0].intentVersion);assert.notEqual(calls[1].requestId,calls[0].requestId);
+ let denied=0;session.request=async()=>{denied++;return Response.json({error:'BUDGET_OR_CONCURRENCY_LIMIT'},{status:429});};c.open(context);denied=0;assert.equal((await c.request(input(),true)).provider,'local-rules');assert.equal(denied,1);
+});
+test('editing while waiting for prior settlement prevents a retry and invalidates the old proposal',async()=>{
+ let calls=0;const c=new Client({csrf:'fixture',ensure:async()=>{},request:async(path,b)=>{if(b.action==='cancel')return Response.json({});calls++;return Response.json({error:'CAMPAIGN_PREVIOUS_REQUEST_SETTLING'},{status:429});}});c.open(context);
+ const pending=c.request(input(),true);await new Promise(r=>setTimeout(r,30));c.cancel();await assert.rejects(pending,/Superseded/);assert.equal(calls,1);assert.equal(c.proposal,null);
+});
+test('campaign LOCAL RULES follows an explicit later correction rather than the earlier slow request',()=>{
+ assert.equal(C.localDecision({...input(),prompt:'Slow your bullets. Actually, change that. I want stronger reflections. My gun can be weaker.'}).contractId,'mirror');
+});
 test('campaign client cancels delayed proposals and sends a newer intent for the correction',async()=>{
  let resolve,last;const calls=[];const session={csrf:'fixture',ensure:async()=>{},request:async(path,b)=>{assert.equal(path,'/api/campaign');calls.push(b);if(b.action==='cancel')return Response.json({});last=b;return new Promise(r=>resolve=r);}};
  const c=new Client(session);c.open(context);const first=c.request(input(),true);await new Promise(r=>setImmediate(r));c.cancel();const canceled=c.intentVersion;resolve(Response.json(reply(last)));await assert.rejects(first,/Superseded/);

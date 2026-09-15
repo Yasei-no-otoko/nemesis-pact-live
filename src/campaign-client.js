@@ -10,15 +10,23 @@
   close(){this.cancel();this.runId=null;this.serverOwned=false;}
   async request(input,live){
    const clean=C.cleanRequest(input,this.context);this.cancel();
-   const seq=this.sequence,runId=this.runId,intentVersion=++this.intentVersion,requestId=uid();if(!runId)throw Error('Open negotiation first');
+   const seq=this.sequence,runId=this.runId;let intentVersion=++this.intentVersion,requestId=uid();if(!runId)throw Error('Open negotiation first');
    const current=()=>seq===this.sequence&&runId===this.runId;
-   const local=reason=>({decision:I.mock(clean),provider:'local-rules',model:null,reason,latencyMs:0});let result;
+   const local=reason=>({decision:C.localDecision(clean),provider:'local-rules',model:null,reason,latencyMs:0});let result;
    if(!live)result=local('LOCAL RULES / No AI calls.');
    else {
     const controller=new AbortController();this.active=controller;const timer=setTimeout(()=>controller.abort(),18000);
     try {await this.session.ensure();if(!current())throw Error('Superseded');this.serverOwned=true;
-     const response=await this.send('propose',{request:clean,context:this.context,runId,requestId,intentVersion},{signal:controller.signal});
-     if(!response.ok)throw Error('Service unavailable');result=await response.json();if(!current())throw Error('Superseded');
+     // A cancelled HTTP request can still be settling paid work upstream. Wait
+     // briefly for that same-session lock; never retry budget/kill/auth errors.
+     for(let attempt=0;attempt<4;attempt++){
+      if(!current()||controller.signal.aborted)throw Error('Superseded');
+      const response=await this.send('propose',{request:clean,context:this.context,runId,requestId,intentVersion},{signal:controller.signal});result=await response.json();
+      if(!current())throw Error('Superseded');if(response.ok)break;
+      if(response.status!==429||result.error!=='CAMPAIGN_PREVIOUS_REQUEST_SETTLING'||attempt===3)throw Error('Service unavailable');
+      await new Promise(resolve=>setTimeout(resolve,750*(attempt+1)));if(!current()||controller.signal.aborted)throw Error('Superseded');
+      intentVersion=++this.intentVersion;requestId=uid();
+     }
      if(!['openai','local-rules'].includes(result.provider))throw Error('Invalid provider');result.decision=I.validateDecision(result.decision,clean);
      if(result.provider==='openai'&&(!result.proposalId||!result.digest||result.requestId!==requestId||result.intentVersion!==intentVersion))throw Error('Invalid proposal');
     }catch(error){if(!current())throw error;result=local('OpenAI unavailable, timed out or budget reached. LOCAL RULES remain playable.');}

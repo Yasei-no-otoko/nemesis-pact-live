@@ -1929,7 +1929,8 @@ return {CONTRACTS,DIRECTORS,TASKS,cleanRequest,schema,validateDecision,mock,tele
  function describe(contractId,ctx){const c=context(ctx),found=offers(c).find(x=>x.id===contractId);if(!found)throw Error('Offer is not available');return {id:found.id,name:found.name,gift:found.gift,cost:found.cost,tip:found.tip};}
  function commentary(result,ctx){if(!result||typeof result!=='object')return null;const c=context(ctx);if(!['openai','local-rules'].includes(result.provider))return null;const decision=result.decision||result;let pact=result.campaignPact;try{const id=decision?.contractId||pact?.id;if(typeof id!=='string')return null;pact=describe(id,c);if(decision?.contractId!==id&&result.campaignPact?.id!==id)return null;}catch{return null;}return JSON.stringify({status:'unsigned',provider:result.provider,campaignPact:pact,instruction:'Review the canonical offer and click Sign to apply it.'});}
  const rival=ctx=>X.SECTORS[context(ctx).stage].boss.name;
- return {MODES,context,offers,cleanRequest,describe,commentary,rival};
+ function localDecision(request){const r=I.cleanRequest(request),corrections=[...r.prompt.matchAll(/actually|change that|\u3084\u3063\u3071\u308a|\u8a02\u6b63|\u5909\u66f4/giu)];return I.mock({...r,prompt:corrections.length?r.prompt.slice(corrections.at(-1).index):r.prompt});}
+ return {MODES,context,offers,cleanRequest,describe,commentary,rival,localDecision};
 });
 
 </script>
@@ -1946,15 +1947,23 @@ return {CONTRACTS,DIRECTORS,TASKS,cleanRequest,schema,validateDecision,mock,tele
   close(){this.cancel();this.runId=null;this.serverOwned=false;}
   async request(input,live){
    const clean=C.cleanRequest(input,this.context);this.cancel();
-   const seq=this.sequence,runId=this.runId,intentVersion=++this.intentVersion,requestId=uid();if(!runId)throw Error('Open negotiation first');
+   const seq=this.sequence,runId=this.runId;let intentVersion=++this.intentVersion,requestId=uid();if(!runId)throw Error('Open negotiation first');
    const current=()=>seq===this.sequence&&runId===this.runId;
-   const local=reason=>({decision:I.mock(clean),provider:'local-rules',model:null,reason,latencyMs:0});let result;
+   const local=reason=>({decision:C.localDecision(clean),provider:'local-rules',model:null,reason,latencyMs:0});let result;
    if(!live)result=local('LOCAL RULES / No AI calls.');
    else {
     const controller=new AbortController();this.active=controller;const timer=setTimeout(()=>controller.abort(),18000);
     try {await this.session.ensure();if(!current())throw Error('Superseded');this.serverOwned=true;
-     const response=await this.send('propose',{request:clean,context:this.context,runId,requestId,intentVersion},{signal:controller.signal});
-     if(!response.ok)throw Error('Service unavailable');result=await response.json();if(!current())throw Error('Superseded');
+     // A cancelled HTTP request can still be settling paid work upstream. Wait
+     // briefly for that same-session lock; never retry budget/kill/auth errors.
+     for(let attempt=0;attempt<4;attempt++){
+      if(!current()||controller.signal.aborted)throw Error('Superseded');
+      const response=await this.send('propose',{request:clean,context:this.context,runId,requestId,intentVersion},{signal:controller.signal});result=await response.json();
+      if(!current())throw Error('Superseded');if(response.ok)break;
+      if(response.status!==429||result.error!=='CAMPAIGN_PREVIOUS_REQUEST_SETTLING'||attempt===3)throw Error('Service unavailable');
+      await new Promise(resolve=>setTimeout(resolve,750*(attempt+1)));if(!current()||controller.signal.aborted)throw Error('Superseded');
+      intentVersion=++this.intentVersion;requestId=uid();
+     }
      if(!['openai','local-rules'].includes(result.provider))throw Error('Invalid provider');result.decision=I.validateDecision(result.decision,clean);
      if(result.provider==='openai'&&(!result.proposalId||!result.digest||result.requestId!==requestId||result.intentVersion!==intentVersion))throw Error('Invalid proposal');
     }catch(error){if(!current())throw error;result=local('OpenAI unavailable, timed out or budget reached. LOCAL RULES remain playable.');}

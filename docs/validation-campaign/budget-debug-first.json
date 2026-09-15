@@ -1,0 +1,31 @@
+{
+  "checkedAt": "2026-09-15T03:13:17.447Z",
+  "unit": "microdollars; conservative reservation accounting, not invoice",
+  "records": [],
+  "totals": {
+    "openai": [
+      "global",
+      "2650000",
+      "kind:text",
+      "100000",
+      "kind:voice",
+      "2550000",
+      "pool:public",
+      "1750000",
+      "pool:verification",
+      "900000"
+    ],
+    "gateway": [
+      "pool:verification",
+      "15566",
+      "global",
+      "37160",
+      "kind:text",
+      "37160",
+      "pool:public",
+      "21594"
+    ],
+    "kill": null,
+    "active": 0
+  }
+}

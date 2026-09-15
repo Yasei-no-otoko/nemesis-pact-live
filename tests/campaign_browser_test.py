@@ -13,7 +13,9 @@ with sync_playwright() as pw:
   page.on('pageerror',lambda e:errors.append(str(e)))
   def response(r):
    if r.url.endswith('/api/campaign'):
-    b=r.json();calls.append({'action':r.request.post_data_json['action'],'status':r.status,**{k:b.get(k) for k in ['provider','model','decision','latencyMs','accountedMicrodollars','signed']}})
+    try:b=r.json()
+    except Exception:return
+    calls.append({'action':r.request.post_data_json['action'],'status':r.status,**{k:b.get(k) for k in ['provider','model','decision','latencyMs','accountedMicrodollars','signed']}})
   page.on('response',response)
   page.goto((a.url or (ROOT/'dist/NEMESIS-PACT.html').as_uri())+'?test=1',wait_until='load')
   page.click('#start');page.click('#hangar-ready');page.click('#launch');page.click('#route-options button:nth-child(2)');page.click('#negotiate')

@@ -1,0 +1,133 @@
+{
+  "checkedAt": "2026-09-15T03:10:44Z",
+  "live": true,
+  "browser": "153.0.4234.32",
+  "humanInput": false,
+  "physicalPhone": false,
+  "clock": "ordinary requestAnimationFrame",
+  "reports": [
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "mobileEmulation": false,
+      "before": {
+        "hp": 7,
+        "time": 0,
+        "credits": 80,
+        "pact": null
+      },
+      "signature": {
+        "ok": true,
+        "before": {
+          "hp": 7,
+          "time": 0,
+          "credits": 80
+        },
+        "after": {
+          "hp": 7,
+          "time": 0,
+          "credits": 80
+        },
+        "mods": {
+          "speed": 1,
+          "hp": 1,
+          "damage": 1,
+          "gun": 0.75,
+          "reflect": 2.2,
+          "dash": 1,
+          "extra": false,
+          "silence": false,
+          "sanctuary": false,
+          "noAdds": false,
+          "bossRate": 1,
+          "enemyRate": 1
+        },
+        "id": "mirror"
+      },
+      "layout": {
+        "width": 1280,
+        "scrollWidth": 1280,
+        "height": 800,
+        "scrollHeight": 800
+      },
+      "runtime": {
+        "build": "1.2.0",
+        "screen": "game",
+        "negotiationStep": "negotiate",
+        "coordinates": "origin top-left; x right; y down",
+        "renderer": "WEBGPU / COMPUTE",
+        "arena": {
+          "width": 1280,
+          "height": 800
+        },
+        "phase": "combat",
+        "seconds": 2.53,
+        "player": {
+          "x": 640,
+          "y": 560,
+          "hp": 7,
+          "energy": 35
+        },
+        "enemies": [
+          {
+            "type": "chaser",
+            "x": 1079,
+            "y": 421,
+            "hp": 30
+          },
+          {
+            "type": "chaser",
+            "x": 174,
+            "y": 423,
+            "hp": 30
+          }
+        ],
+        "hostileBullets": 0,
+        "proposal": null,
+        "campaignPact": "mirror",
+        "campaignPactSource": "OPENAI / gpt-5.6-luna",
+        "campaignProposal": null,
+        "campaignVoice": "idle",
+        "voice": "idle",
+        "liveVoice": null
+      },
+      "errors": [],
+      "api": [
+        {
+          "action": "propose",
+          "status": 200,
+          "provider": "openai",
+          "model": "gpt-5.6-luna",
+          "decision": {
+            "task": "negotiate",
+            "contractId": "mirror",
+            "directorId": "balanced",
+            "line": "敵弾を反射して戦うなら、Return to Senderを提示する。反射ダメージ×2.2の代わりに、通常ショットのダメージは25%低下。明示的に署名せよ。",
+            "rationale": "反射を主軸にしたい意図と、通常弾の弱体化を許容する条件が一致する。コストは通常ショットダメージ−25%。"
+          },
+          "latencyMs": 2965,
+          "accountedMicrodollars": 237,
+          "signed": null
+        },
+        {
+          "action": "sign",
+          "status": 200,
+          "provider": "openai",
+          "model": "gpt-5.6-luna",
+          "decision": {
+            "contractId": "mirror",
+            "directorId": "balanced",
+            "line": "敵弾を反射して戦うなら、Return to Senderを提示する。反射ダメージ×2.2の代わりに、通常ショットのダメージは25%低下。明示的に署名せよ。",
+            "rationale": "反射を主軸にしたい意図と、通常弾の弱体化を許容する条件が一致する。コストは通常ショットダメージ−25%。",
+            "task": "negotiate"
+          },
+          "latencyMs": 2965,
+          "accountedMicrodollars": null,
+          "signed": true
+        }
+      ]
+    }
+  ]
+}

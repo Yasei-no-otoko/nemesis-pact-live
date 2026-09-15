@@ -1,0 +1,822 @@
+{
+  "checkedAt": "2026-09-15T03:11:03Z",
+  "url": "https://nemesis-pact-live.vercel.app",
+  "voiceModel": "gpt-live-1",
+  "contractModel": "gpt-5.6-luna",
+  "humanMicrophone": false,
+  "physicalPhone": false,
+  "operation": "Automated native Edge / ordinary requestAnimationFrame",
+  "input": "Microsoft Zira Desktop synthesized fixture through live Web Audio MediaStream",
+  "maxReservationsUsd": {
+    "openai": 0.05,
+    "gateway": 0.08
+  },
+  "fixtureSha256": {
+    "first": "766da129efa92c1182ce7ccbc17ec1d7e31858377a88295936921a6b3ab42504",
+    "correction": "7c015292350c33fd7213f009773843944ec8122529a8732059625086bd3a8252"
+  },
+  "connectionMs": 3531,
+  "firstUtterance": {
+    "at": 8085.900000035763,
+    "durationSeconds": 4.068888888888889
+  },
+  "interruption": {
+    "at": 13233.200000047684,
+    "remoteRms": 0.005802812010170878,
+    "transcript": " Hmm."
+  },
+  "correctionUtterance": {
+    "at": 13324.800000011921,
+    "durationSeconds": 10.49297052154195
+  },
+  "success": false,
+  "failure": "Page.wait_for_function: Timeout 30000ms exceeded.",
+  "events": [
+    {
+      "type": "session.started",
+      "at": 8038.400000035763,
+      "delta": null,
+      "start_ms": null,
+      "end_ms": null,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 9417.100000023842,
+      "delta": " Slow",
+      "start_ms": 1000,
+      "end_ms": 1200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 9608.700000047684,
+      "delta": " your",
+      "start_ms": 1200,
+      "end_ms": 1400,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 10189.800000011921,
+      "delta": " bullets",
+      "start_ms": 1800,
+      "end_ms": 2000,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 11420.100000023842,
+      "delta": ". Send",
+      "start_ms": 3000,
+      "end_ms": 3200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 11627.300000011921,
+      "delta": " more",
+      "start_ms": 3200,
+      "end_ms": 3400,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 11867.700000047684,
+      "delta": " if",
+      "start_ms": 3400,
+      "end_ms": 3600,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 12045.600000023842,
+      "delta": " you",
+      "start_ms": 3600,
+      "end_ms": 3800,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 12379,
+      "delta": " want",
+      "start_ms": 4000,
+      "end_ms": 4200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.delegation.created",
+      "at": 12900.700000047684,
+      "delta": null,
+      "start_ms": null,
+      "end_ms": null,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 13082.5,
+      "delta": " Hmm.",
+      "start_ms": 4600,
+      "end_ms": 4800,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 13803.400000035763,
+      "delta": " Right.",
+      "start_ms": 5400,
+      "end_ms": 5600,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 14788,
+      "delta": " Actually",
+      "start_ms": 6400,
+      "end_ms": 6600,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 15814.900000035763,
+      "delta": "... change",
+      "start_ms": 7400,
+      "end_ms": 7600,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 15981.300000011921,
+      "delta": " that",
+      "start_ms": 7600,
+      "end_ms": 7800,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 17039.700000047684,
+      "delta": ". I",
+      "start_ms": 8600,
+      "end_ms": 8800,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 17198,
+      "delta": " want",
+      "start_ms": 8800,
+      "end_ms": 9000,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 17769.700000047684,
+      "delta": " stronger",
+      "start_ms": 9400,
+      "end_ms": 9600,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 18418.5,
+      "delta": " reflections",
+      "start_ms": 10000,
+      "end_ms": 10200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 19124.700000047684,
+      "delta": " instead",
+      "start_ms": 10600,
+      "end_ms": 10800,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.delegation.created",
+      "at": 19125.400000035763,
+      "delta": null,
+      "start_ms": null,
+      "end_ms": null,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 19265.100000023842,
+      "delta": " Ah,",
+      "start_ms": 10800,
+      "end_ms": 11000,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 20084.100000023842,
+      "delta": " My",
+      "start_ms": 11600,
+      "end_ms": 11800,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 20183.400000035763,
+      "delta": " normal",
+      "start_ms": 11800,
+      "end_ms": 12000,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 20611.400000035763,
+      "delta": " shots",
+      "start_ms": 12200,
+      "end_ms": 12400,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 20851.700000047684,
+      "delta": " can",
+      "start_ms": 12400,
+      "end_ms": 12600,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 20995.900000035763,
+      "delta": " be",
+      "start_ms": 12600,
+      "end_ms": 12800,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 21379.5,
+      "delta": " weaker",
+      "start_ms": 13000,
+      "end_ms": 13200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.usage.updated",
+      "at": 22131.200000047684,
+      "delta": null,
+      "start_ms": null,
+      "end_ms": null,
+      "usage": {
+        "seconds": 15
+      },
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 22980.900000035763,
+      "delta": ". Reflections",
+      "start_ms": 14600,
+      "end_ms": 14800,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.input_transcript.delta",
+      "at": 24087.600000023842,
+      "delta": ", please",
+      "start_ms": 15600,
+      "end_ms": 15800,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.delegation.created",
+      "at": 24088.5,
+      "delta": null,
+      "start_ms": null,
+      "end_ms": null,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 24295.80000001192,
+      "delta": " Alright",
+      "start_ms": 15800,
+      "end_ms": 16000,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 24465.200000047684,
+      "delta": ".",
+      "start_ms": 16000,
+      "end_ms": 16200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.commentary.appended",
+      "at": 26463.5,
+      "delta": null,
+      "start_ms": 18000,
+      "end_ms": 18200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 27093.600000023842,
+      "delta": " Here,",
+      "start_ms": 18600,
+      "end_ms": 18800,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 27696.30000001192,
+      "delta": " Slow",
+      "start_ms": 19200,
+      "end_ms": 19400,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 27880.200000047684,
+      "delta": " Violence.",
+      "start_ms": 19400,
+      "end_ms": 19600,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 28698,
+      "delta": " Enemy",
+      "start_ms": 20200,
+      "end_ms": 20400,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 29081.200000047684,
+      "delta": " bullet",
+      "start_ms": 20600,
+      "end_ms": 20800,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 29463.5,
+      "delta": " speed",
+      "start_ms": 21000,
+      "end_ms": 21200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 29893.100000023842,
+      "delta": " minus",
+      "start_ms": 21400,
+      "end_ms": 21600,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 30092.80000001192,
+      "delta": " 30",
+      "start_ms": 21600,
+      "end_ms": 21800,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 30278.400000035763,
+      "delta": " percent,",
+      "start_ms": 21800,
+      "end_ms": 22000,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 31063.900000035763,
+      "delta": " cost",
+      "start_ms": 22600,
+      "end_ms": 22800,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 31481.700000047684,
+      "delta": " is",
+      "start_ms": 23000,
+      "end_ms": 23200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 31691.30000001192,
+      "delta": " about",
+      "start_ms": 23200,
+      "end_ms": 23400,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 31870.400000035763,
+      "delta": " 40",
+      "start_ms": 23400,
+      "end_ms": 23600,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 32299.200000047684,
+      "delta": " percent",
+      "start_ms": 23800,
+      "end_ms": 24000,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 32728.100000023842,
+      "delta": " more",
+      "start_ms": 24200,
+      "end_ms": 24400,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 32885.40000003576,
+      "delta": " enemy",
+      "start_ms": 24400,
+      "end_ms": 24600,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 33304.200000047684,
+      "delta": " bullets.",
+      "start_ms": 24800,
+      "end_ms": 25000,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 33704.5,
+      "delta": " Tip:",
+      "start_ms": 25200,
+      "end_ms": 25400,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 34481.90000003576,
+      "delta": " Read",
+      "start_ms": 26000,
+      "end_ms": 26200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 34693.700000047684,
+      "delta": " the",
+      "start_ms": 26200,
+      "end_ms": 26400,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 34866.30000001192,
+      "delta": " gaps,",
+      "start_ms": 26400,
+      "end_ms": 26600,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 35328.30000001192,
+      "delta": " not",
+      "start_ms": 26800,
+      "end_ms": 27000,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 35488.10000002384,
+      "delta": " the",
+      "start_ms": 27000,
+      "end_ms": 27200,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.output_transcript.delta",
+      "at": 35751.40000003576,
+      "delta": " density.",
+      "start_ms": 27200,
+      "end_ms": 27400,
+      "usage": null,
+      "reason": null,
+      "errorCode": null
+    },
+    {
+      "type": "session.usage.updated",
+      "at": 37132.200000047684,
+      "delta": null,
+      "start_ms": null,
+      "end_ms": null,
+      "usage": {
+        "seconds": 28
+      },
+      "reason": null,
+      "errorCode": null
+    }
+  ],
+  "sent": [
+    {
+      "type": "session.commentary.append",
+      "at": 25775.100000023842
+    }
+  ],
+  "tracks": [
+    "ended"
+  ],
+  "peers": [
+    "closed"
+  ],
+  "inputSignObservations": [
+    {
+      "at": 9417.900000035763,
+      "delta": " Slow",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 9609,
+      "delta": " your",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 10190,
+      "delta": " bullets",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 11420.400000035763,
+      "delta": ". Send",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 11627.700000047684,
+      "delta": " more",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 11868,
+      "delta": " if",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 12045.900000035763,
+      "delta": " you",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 12379.200000047684,
+      "delta": " want",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 14789.300000011921,
+      "delta": " Actually",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 15815.800000011921,
+      "delta": "... change",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 15982.300000011921,
+      "delta": " that",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 17040.5,
+      "delta": ". I",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 17198.700000047684,
+      "delta": " want",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 17770.5,
+      "delta": " stronger",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 18419.200000047684,
+      "delta": " reflections",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 19125.400000035763,
+      "delta": " instead",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 20084.80000001192,
+      "delta": " My",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 20184.200000047684,
+      "delta": " normal",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 20612.30000001192,
+      "delta": " shots",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 20852.5,
+      "delta": " can",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 20996.700000047684,
+      "delta": " be",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 21380.30000001192,
+      "delta": " weaker",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 22981.700000047684,
+      "delta": ". Reflections",
+      "signDisabled": true,
+      "revision": null
+    },
+    {
+      "at": 24088.400000035763,
+      "delta": ", please",
+      "signDisabled": true,
+      "revision": null
+    }
+  ],
+  "api": [
+    {
+      "path": "/api/session",
+      "status": 200
+    },
+    {
+      "path": "/api/voice/start",
+      "status": 200,
+      "model": "gpt-live-1"
+    },
+    {
+      "path": "/api/voice/stop",
+      "status": 200,
+      "accountedMicrodollars": 50000,
+      "stopped": true,
+      "uncertain": false
+    }
+  ],
+  "pageErrors": [],
+  "browser": "153.0.4234.32",
+  "admitted": {
+    "voice": 1,
+    "text": 3
+  }
+}
