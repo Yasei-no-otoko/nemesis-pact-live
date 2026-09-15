@@ -1,0 +1,77 @@
+{
+  "file": "NEMESIS-PACT-v1.3.0-59s-60fps-en-final.mp4",
+  "bytes": 108838606,
+  "sha256": "d29667a3d254814a761217ec0319669c88cf1f14075c819f3ddb56f9732dbff1",
+  "width": 1920,
+  "height": 1080,
+  "frames": 3540,
+  "fps": 60,
+  "videoSeconds": 59.0,
+  "audioSeconds": 59.008,
+  "audioChannels": 2,
+  "audioSampleRate": 48000,
+  "audioRms": 0.047044649720191956,
+  "audioPeak": 0.6633709073066711,
+  "samplesAtOrAboveFullScale": 0,
+  "decodeExit": 0,
+  "allFrameTimestampsMatch60fps": true,
+  "sourceContainsDroppedFrames": true,
+  "QAFrames": [
+    {
+      "file": "cut-01.png",
+      "time": 2.7
+    },
+    {
+      "file": "cut-02.png",
+      "time": 8.7
+    },
+    {
+      "file": "cut-03.png",
+      "time": 14.5
+    },
+    {
+      "file": "cut-04.png",
+      "time": 19.5
+    },
+    {
+      "file": "cut-05.png",
+      "time": 24.5
+    },
+    {
+      "file": "cut-06.png",
+      "time": 29.0
+    },
+    {
+      "file": "cut-07.png",
+      "time": 33.0
+    },
+    {
+      "file": "cut-08.png",
+      "time": 36.5
+    },
+    {
+      "file": "cut-09.png",
+      "time": 39.5
+    },
+    {
+      "file": "cut-10.png",
+      "time": 42.5
+    },
+    {
+      "file": "cut-11.png",
+      "time": 45.5
+    },
+    {
+      "file": "cut-12.png",
+      "time": 51.0
+    },
+    {
+      "file": "cut-13.png",
+      "time": 57.0
+    }
+  ],
+  "nativeEditor": "DaVinci Resolve Studio21.1",
+  "cutCount": 13,
+  "url": "https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/download/v1.3.0/NEMESIS-PACT-v1.3.0-59s-60fps-en-final.mp4",
+  "allThirteenCaptionLayoutsReviewed": true
+}

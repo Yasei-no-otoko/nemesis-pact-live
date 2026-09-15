@@ -18,4 +18,4 @@ The default demo preset is Story/Bastion. An optional pause at each pact lets a 
 
 ## Current validation
 
-279 unit tests passed,49 source syntax checks passed, and3 actual Redis scenarios covered digest binding, stale completion and the48-call boundary. Native Edge desktop and emulated phone layout checks passed at1440x900,1280x720,430x932 and320x568; these are not new physical phone tests. Three controlled Node simulations completed18 encounters/6 bosses with aggressive bounded pressure increases. Production Live/full-run recording and native Resolve editing are pending at this implementation milestone.
+279 unit tests passed,49 source syntax checks passed, and3 actual Redis scenarios covered digest binding, stale completion and the48-call boundary. Native Edge desktop and emulated phone layout checks passed at1440x900,1280x720,430x932 and320x568; these are not new physical phone tests. Three controlled Node simulations completed18 encounters/6 bosses with aggressive bounded pressure increases. Production now passes all18 encounters with6 actual Live voice pacts and18 Luna analyses. A native Resolve59s/1080p60 edit is complete; see ADAPTIVE-VALIDATION.md.

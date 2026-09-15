@@ -1,0 +1,19 @@
+{
+  "sourceFile": "NEMESIS-PACT-v1.3.0-full-campaign-original.webm",
+  "sourceBytes": 654268084,
+  "sourceSha256": "2348431895c028265c0f3164baee0bd358ee06835ea827af0edcd4c6cb506e47",
+  "decodedFrames": 36785,
+  "firstTimestamp": 0.0,
+  "lastTimestamp": 627.136,
+  "deliveredAverageFps": 58.6539,
+  "dimensions": [
+    1920,
+    1080
+  ],
+  "timestampGapMedianSeconds": 0.016999999999995907,
+  "timestampGapMaxSeconds": 1.3760000000000003,
+  "gapsOver50ms": 10,
+  "compatibilityFile": "NEMESIS-PACT-v1.3.0-full-campaign-60fps.mp4",
+  "compatibilitySha256": "d27a3634cf316f5f89b46be185df4940f4dbaaa1b47d70423027e35d1686f1e8",
+  "conversion": "Full-length H264/AAC CFR60 copy for Resolve import; duplicates source frames where needed; no new motion, edited responses or cuts."
+}

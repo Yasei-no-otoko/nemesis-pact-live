@@ -54,3 +54,8 @@ Source5de9378;READY dpl_Ey6W5h1mdVdm1ExsdNbvLi7ibgRW. Director uses existing tex
 ## Current v1.2.0 deployment
 
 Appa53b87437249fddccfe069c2de6d3d47cfd956aa;READYdpl_5HEfvWCWhNzwstCDpK4qk3RuUaB9. `/api/campaign` handles propose/sign/cancel with namespace nemesis:campaign and the existing shared text/voice admission gate. Campaign voice context is server-owned. One text request per browser session remains the concurrency limit; a bounded retry only waits for previous settlement. No budget or plan changes. Current rollback is dpl_Ey6W5h1mdVdm1ExsdNbvLi7ibgRW; preserve all quotas and secrets. Keep public game/viewer accessible through September17.
+
+
+## Current v1.3.0
+
+App06275908ab07372c59f5bbcb2033c268322b6771;READYdpl_f3q3Af5zwDQ2WvvhA4zuahkfhpCH. `/api/adaptive` shares Redis quotas and kill switch with all paid paths. Hobby function count12. Paid session request cap48;IP20/min;global concurrent3;one voice/one text per session. Direct cap10 andGateway cap20 unchanged. Superseded responses fail run/sequence/digest/epoch checks. Unknown upstream cost keeps reservation. Rollback predecessordpl_5HEfvWCWhNzwstCDpK4qk3RuUaB9; preserve all quotas and secrets.

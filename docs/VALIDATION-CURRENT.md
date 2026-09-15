@@ -1,3 +1,5 @@
+> Current v1.3.0: [Adaptive full-campaign production verification](ADAPTIVE-VALIDATION.md). 279tests;6Live pacts;18Luna analyses;18encounters/6bosses;59s/1080p60 native Resolve film.
+
 > Current v1.2.0: [Campaign GPT-Live-1 and Luna production evidence](CAMPAIGN-VALIDATION.md),260tests and actual spoken correction/sign/combat. Earlier milestone material follows.
 
 > Current v1.1.0: [AI Director production evidence](DIRECTOR-VALIDATION.md),239tests and2realLuna calls. [Submission form](SUBMISSION-FORM-GUIDE.md). Older milestones below are historical.

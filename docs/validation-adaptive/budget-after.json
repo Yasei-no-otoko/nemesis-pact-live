@@ -1,0 +1,68 @@
+{
+  "checkedAt": "2026-09-15T04:11:42.272Z",
+  "unit": "microdollars; conservative reservation accounting, not invoice",
+  "records": [
+    {
+      "number": 1,
+      "state": "stopped",
+      "reason": "application",
+      "confirmed": true
+    },
+    {
+      "number": 2,
+      "state": "stopped",
+      "reason": "application",
+      "confirmed": true
+    },
+    {
+      "number": 3,
+      "state": "stopped",
+      "reason": "application",
+      "confirmed": true
+    },
+    {
+      "number": 4,
+      "state": "stopped",
+      "reason": "application",
+      "confirmed": true
+    },
+    {
+      "number": 5,
+      "state": "stopped",
+      "reason": "application",
+      "confirmed": true
+    },
+    {
+      "number": 6,
+      "state": "stopped",
+      "reason": "application",
+      "confirmed": true
+    }
+  ],
+  "totals": {
+    "openai": [
+      "pool:verification",
+      "900000",
+      "global",
+      "3000000",
+      "kind:text",
+      "100000",
+      "kind:voice",
+      "2900000",
+      "pool:public",
+      "2100000"
+    ],
+    "gateway": [
+      "pool:verification",
+      "15566",
+      "global",
+      "42359",
+      "kind:text",
+      "42359",
+      "pool:public",
+      "26793"
+    ],
+    "kill": null,
+    "active": 0
+  }
+}

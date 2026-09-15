@@ -1,3 +1,5 @@
+> Current v1.3.0: [Adaptive full-campaign production verification](ADAPTIVE-VALIDATION.md). 279tests;6Live pacts;18Luna analyses;18encounters/6bosses;59s/1080p60 native Resolve film.
+
 # Current v1.2.0 campaign negotiation audit
 
 Full campaign contracts now support actual GPT-Live-1 and GPT-5.6 Luna. Native production verification passed audible interruption, corrected proposal, explicit signature and combat.260unit tests,43syntax files,4realRedis tests,45mode/sector/offer checks,4campaign and4Director browser layouts passed. Public source ZIP download/hash and viewer playback-start passed. [Detailed evidence and failures](CAMPAIGN-VALIDATION.md).

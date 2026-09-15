@@ -2,7 +2,7 @@
 
 [Official submission form](https://docs.google.com/forms/d/e/1FAIpQLSdvUFtWLVKJOaZrvBN6gOHadhnzSf3SM9FjuE77QiTwiZL9Tw/viewform). Read anonymously in Windows Edge153.0.4234.32; HTTP200. The web-fetch tool failed; the Browser plugin could not initialize, so installed Playwright inspected the actual rendered form. No form field was changed or submitted.
 
-Deadline:September15,11:59PM JST. One submission per team, by its representative. The working demo should stay accessible through September17. Required video is publicly accessible or viewable by link, at most one minute. The existing human video is59seconds at1080p60.
+Deadline:September15,11:59PM JST. One submission per team, by its representative. The working demo should stay accessible through September17. Required video is publicly accessible or viewable by link, at most one minute. The current v1.3.0 automated full-campaign film is59seconds at1080p60; original synthetic player audio, actual Live replies and gameplay are labeled. The prior human iPhone film is retained separately.
 
 | Field | Prepared value / location |
 |---|---|
@@ -15,12 +15,12 @@ Deadline:September15,11:59PM JST. One submission per team, by its representative
 | Working demo (optional) | https://nemesis-pact-live.vercel.app/ |
 | Repository (optional) | https://github.com/Yasei-no-otoko/nemesis-pact-live |
 | Demo video (required) | https://www.circle-hydrangea.net/nemesis-pact-live/ |
-| Description | SUBMISSION-EN.md,200words |
-| Meaningful OpenAI use,30% | SUBMISSION-EN.md,200words |
-| Originality,25% | SUBMISSION-EN.md,200words |
-| Playability / Utility,25% | SUBMISSION-EN.md,200words |
-| Execution and craft,20% | SUBMISSION-EN.md,200words |
-| Existing code/tools/licenses | SUBMISSION-EN.md,200words |
+| Description | SUBMISSION-EN.md,under200words |
+| Meaningful OpenAI use,30% | SUBMISSION-EN.md,under200words |
+| Originality,25% | SUBMISSION-EN.md,under200words |
+| Playability / Utility,25% | SUBMISSION-EN.md,under200words |
+| Execution and craft,20% | SUBMISSION-EN.md,under200words |
+| Existing code/tools/licenses | SUBMISSION-EN.md,under200words |
 | Compliance confirmation | Representative reviews provenance and official rules before checking |
 
 The supplied representative details are held only under ignored .artifacts/submission. Copy paragraph bodies without Markdown headings or word-count notes. Rights/build-period attestation is not inferred from file timestamps, and public GitHub access is not an open-source license.

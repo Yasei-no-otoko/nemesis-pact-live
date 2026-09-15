@@ -1,3 +1,5 @@
+> v1.3.0：Expedition設定の「AI adaptive difficulty」でLunaが実際の戦績を解析し、戦闘間に難易度を調整します。「Demo autoplay」で全6セクターを自動プレイできます。[本番全18戦と提出動画の検証](docs/ADAPTIVE-VALIDATION.md)。
+
 > v1.2.0：フルキャンペーンの各セクターで「Negotiate by voice / AI」からGPT-Live-1の音声交渉とGPT-5.6 Lunaの契約提案を利用できます。訂正後の条件を確認してSignすると、既存の契約効果を戦闘へ適用します。[本番検証](docs/CAMPAIGN-VALIDATION.md)。
 
 > v1.1.0: 契約専用の決着画面に実測結果と署名済み条件を表示。レーザー・Novaの状況別操作案内、再交渉の残回数と待機理由、専用ヘルプを追加しました。[変更と検証](docs/V1.0.0-VALIDATION.md)。公開の59秒／60fps実機動画は以前の画面です。

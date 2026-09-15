@@ -1,3 +1,11 @@
+# v1.3.0 — Adaptive difficulty and full campaign autoplay
+
+- Optional GPT-5.6 Luna analysis of wave/sector telemetry, bounded pressure steps and transparent review.
+- Fixed demo input policy uses ordinary simulation; scores remain separate and control can be taken back.
+- Actual production run:6Live voice pacts,18Luna analyses,18encounters/6bosses cleared.
+- Native Resolve59s1080p60 film with disclosed synthetic player audio, original Live responses and full-run highlights.
+-279tests,49syntax checks,3realRedis scenarios; existing global budgets preserved.
+
 # v1.2.0 — Campaign voice and contracts
 
 - GPT-Live-1 and GPT-5.6 Luna now negotiate every authored campaign sector pact through one validated proposal/signature path.

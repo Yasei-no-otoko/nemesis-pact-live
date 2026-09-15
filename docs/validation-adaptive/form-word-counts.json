@@ -1,8 +1,29 @@
 {
-  "Project description": 145,
-  "Judging criteria 1 (30%) - Meaningful use of OpenAI tools": 168,
-  "Judging criteria 2 (25%) - Originality": 191,
-  "Judging criteria 3 (25%) - Playability / Utility": 180,
-  "Judging criteria 4 (20%) - Execution and craft": 162,
-  "Pre-existing code, open-source components, datasets, or third-party tools.": 173
+  "version": "1.3.0",
+  "answers": [
+    {
+      "heading": "Project description",
+      "words": 131
+    },
+    {
+      "heading": "Judging criteria 1 (30%) - Meaningful use of OpenAI tools",
+      "words": 158
+    },
+    {
+      "heading": "Judging criteria 2 (25%) - Originality",
+      "words": 149
+    },
+    {
+      "heading": "Judging criteria 3 (25%) - Playability / Utility",
+      "words": 138
+    },
+    {
+      "heading": "Judging criteria 4 (20%) - Execution and craft",
+      "words": 169
+    },
+    {
+      "heading": "Pre-existing code, open-source components, datasets, or third-party tools.",
+      "words": 148
+    }
+  ]
 }

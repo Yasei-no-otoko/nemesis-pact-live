@@ -1,0 +1,159 @@
+{
+  "sourceFile": "NEMESIS-PACT-v1.3.0-full-campaign-original.webm",
+  "compatibilityFile": "NEMESIS-PACT-v1.3.0-full-campaign-60fps.mp4",
+  "timelineName": "SUBMISSION - Adaptive full campaign - 59s 60fps v1.3.0",
+  "fps": 60,
+  "frames": 3540,
+  "seconds": 59.0,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "ranges": "Half-open source frame ranges. This Resolve21.1 runtime returns one frame short when endFrame=out-1; using endFrame=out was verified by all13 clip durations and contiguous record ranges.",
+  "editing": "Native DaVinci Resolve normal-speed cuts; original synchronized audio; Fusion TextPlus editorial captions; no simulated AI response, combat or victory",
+  "clips": [
+    {
+      "sourceInFrame": 558,
+      "sourceOutFrameExclusive": 882,
+      "recordOffset": 0,
+      "frames": 324,
+      "sourceInSeconds": 9.3,
+      "sourceOutSeconds": 14.7,
+      "caption": "NEMESIS PACT - Negotiate the rules. Fight your deal.\nAutomated pilot / synthetic player speech into real GPT-Live-1",
+      "speed": 1,
+      "originalLinkedAudio": true
+    },
+    {
+      "sourceInFrame": 882,
+      "sourceOutFrameExclusive": 1278,
+      "recordOffset": 324,
+      "frames": 396,
+      "sourceInSeconds": 14.7,
+      "sourceOutSeconds": 21.3,
+      "caption": "Interrupt the rival and revise the deal.\nPLAYER: Stronger reflections instead; my normal shots can be weaker.",
+      "speed": 1,
+      "originalLinkedAudio": true
+    },
+    {
+      "sourceInFrame": 1278,
+      "sourceOutFrameExclusive": 1578,
+      "recordOffset": 720,
+      "frames": 300,
+      "sourceInSeconds": 21.3,
+      "sourceOutSeconds": 26.3,
+      "caption": "The spoken correction replaces the earlier request.\nOnly a validated, signed contract can change combat.",
+      "speed": 1,
+      "originalLinkedAudio": true
+    },
+    {
+      "sourceInFrame": 1740,
+      "sourceOutFrameExclusive": 2040,
+      "recordOffset": 1020,
+      "frames": 300,
+      "sourceInSeconds": 29,
+      "sourceOutSeconds": 34,
+      "caption": "Review Luna's corrected offer, then Sign.\nReturn to Sender: reflected damage x2.2 / normal shot damage -25%",
+      "speed": 1,
+      "originalLinkedAudio": true
+    },
+    {
+      "sourceInFrame": 2460,
+      "sourceOutFrameExclusive": 2760,
+      "recordOffset": 1320,
+      "frames": 300,
+      "sourceInSeconds": 41,
+      "sourceOutSeconds": 46,
+      "caption": "Clear normal waves with the rules you signed.\nAutoplay uses ordinary movement, aim, abilities and earned upgrades.",
+      "speed": 1,
+      "originalLinkedAudio": true
+    },
+    {
+      "sourceInFrame": 4512,
+      "sourceOutFrameExclusive": 4752,
+      "recordOffset": 1620,
+      "frames": 240,
+      "sourceInSeconds": 75.2,
+      "sourceOutSeconds": 79.2,
+      "caption": "GPT-5.6 Luna analyzes actual wave results.\nPressure 0 to +1: bullet speed +8% / arrival spacing -8%",
+      "speed": 1,
+      "originalLinkedAudio": true
+    },
+    {
+      "sourceInFrame": 5820,
+      "sourceOutFrameExclusive": 6060,
+      "recordOffset": 1860,
+      "frames": 240,
+      "sourceInSeconds": 97,
+      "sourceOutSeconds": 101,
+      "caption": "SECTOR 1 / THE NOTARY\nSix sectors, six bosses - highlights from one complete run",
+      "speed": 1,
+      "originalLinkedAudio": true
+    },
+    {
+      "sourceInFrame": 11790,
+      "sourceOutFrameExclusive": 11970,
+      "recordOffset": 2100,
+      "frames": 180,
+      "sourceInSeconds": 196.5,
+      "sourceOutSeconds": 199.5,
+      "caption": "SECTOR 2 / THE CHOIR\nA new spoken pact before each sector",
+      "speed": 1,
+      "originalLinkedAudio": true
+    },
+    {
+      "sourceInFrame": 18030,
+      "sourceOutFrameExclusive": 18210,
+      "recordOffset": 2280,
+      "frames": 180,
+      "sourceInSeconds": 300.5,
+      "sourceOutSeconds": 303.5,
+      "caption": "SECTOR 3 / THE SOVEREIGN\nAdaptation preserves your hull, upgrades and signed pact",
+      "speed": 1,
+      "originalLinkedAudio": true
+    },
+    {
+      "sourceInFrame": 23928,
+      "sourceOutFrameExclusive": 24108,
+      "recordOffset": 2460,
+      "frames": 180,
+      "sourceInSeconds": 398.8,
+      "sourceOutSeconds": 401.8,
+      "caption": "SECTOR 4 / THE LEVIATHAN\nKeep your promises. Return their fire.",
+      "speed": 1,
+      "originalLinkedAudio": true
+    },
+    {
+      "sourceInFrame": 30168,
+      "sourceOutFrameExclusive": 30348,
+      "recordOffset": 2640,
+      "frames": 180,
+      "sourceInSeconds": 502.8,
+      "sourceOutSeconds": 505.8,
+      "caption": "SECTOR 5 / THE WEAVER\nThe full run uses 18 real Luna performance reviews",
+      "speed": 1,
+      "originalLinkedAudio": true
+    },
+    {
+      "sourceInFrame": 36480,
+      "sourceOutFrameExclusive": 36960,
+      "recordOffset": 2820,
+      "frames": 480,
+      "sourceInSeconds": 608,
+      "sourceOutSeconds": 616,
+      "caption": "SECTOR 6 / THE LAST GUARDIAN\nFinal boss - live production gameplay, normal speed",
+      "speed": 1,
+      "originalLinkedAudio": true
+    },
+    {
+      "sourceInFrame": 37320,
+      "sourceOutFrameExclusive": 37560,
+      "recordOffset": 3300,
+      "frames": 240,
+      "sourceInSeconds": 622,
+      "sourceOutSeconds": 626,
+      "caption": "CAMPAIGN COMPLETE / 18 encounters / 6 bosses / 6 pacts kept\nPlay NEMESIS PACT: nemesis-pact-live.vercel.app",
+      "speed": 1,
+      "originalLinkedAudio": true
+    }
+  ]
+}

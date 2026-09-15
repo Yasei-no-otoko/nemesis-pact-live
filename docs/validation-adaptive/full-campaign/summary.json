@@ -1,0 +1,79 @@
+{
+  "sourceCommit": "06275908ab07372c59f5bbcb2033c268322b6771",
+  "browser": "153.0.4234.32",
+  "nativeGpu": "AMD Radeon RX 6900 XT / WebGPU compute",
+  "physicalPhone": false,
+  "syntheticPlayerSpeech": true,
+  "humanOperation": false,
+  "paidRequests": {
+    "voice": 6,
+    "pact": 7,
+    "analysis": 18
+  },
+  "successfulSignedPacts": 6,
+  "successfulAnalyses": 18,
+  "voiceConnectMs": [
+    2266,
+    1812,
+    1656,
+    1453,
+    1531,
+    1485
+  ],
+  "analysisLatencyMs": {
+    "min": 1952,
+    "median": 2137.5,
+    "max": 3494
+  },
+  "contractResponseLatencyMs": [
+    2539,
+    1817,
+    1921,
+    2334,
+    1952,
+    2436
+  ],
+  "interruptionRemoteRms": 0.021629663645530747,
+  "levels": [
+    0,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
+  "sixServerVoiceStops": true,
+  "pageErrors": [],
+  "expectedCancelledSupersededRequests": [
+    {
+      "path": "/api/campaign",
+      "failure": "net::ERR_ABORTED"
+    }
+  ],
+  "combatSeconds": 371.31,
+  "encounters": 18,
+  "bosses": 6,
+  "kills": 242,
+  "parries": 74,
+  "damageTaken": 2,
+  "score": 104920,
+  "originalSourceAverageFps": 58.6539,
+  "combatCaptureFrames": 21966,
+  "observedGameIntervalsSeconds": 372.845,
+  "observedGameIntervalCaptureFps": 58.9146,
+  "frameRateMethod": "Decoded source timestamps counted in game-screen intervals observed by ordinary browser polling; source capture delivery, not GPU presentation cadence",
+  "rawDurationSeconds": 627.152,
+  "limits": "One successful Story/Bastion seed. Three accelerated Node seeds also pass. No new physical phone or human microphone trial."
+}

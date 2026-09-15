@@ -21,3 +21,8 @@ Public delivery was explicitly authorized by the user for the existing repositor
 One built-in OpenAI imagegen concept board was generated from the project's existing mechanics and an authored art brief, at the user's request. The board and brief are in output/imagegen. Its underlying model/cost is not reported by that tool. The proposed direct-key CLI was rejected before execution; no direct image API call is claimed.
 
 The generated bitmap is development art direction, excluded from Vercel/runtime by .vercelignore. CSS, thin-ring meshes, geometric Notary and Canvas2D fallback translate its visual language into the game. The concept's fictional clauses are not added to the contract schema. No imported font, 3D asset, sampled music or runtime dependency was added. No new license is assigned to project-specific code or the generated concept. Existing human video remains unchanged and correctly labeled as earlier-build footage.
+
+
+## v1.3.0 automated film
+
+The new campaign recording uses locally synthesized Microsoft Zira player speech as input to actual GPT-Live-1, with six real signed Luna pacts and18analyses. It is explicitly labeled automated, not a new human recording. Native Resolve cut13normal-speed segments and overlaid English editorial captions; actual game/Live audio is retained. FFmpeg made a full-length60fps compatibility copy and verified media. No voice model impersonation or fabricated API response is used. Source footage, native project and evidence hashes are retained locally. The earlier human iPhone movie remains available as historical evidence.

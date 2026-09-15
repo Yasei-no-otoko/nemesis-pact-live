@@ -1,0 +1,13 @@
+{
+  "checkedAt": "2026-09-15T04:00:30.338Z",
+  "status": 200,
+  "sourceCommit": "06275908ab07372c59f5bbcb2033c268322b6771",
+  "deploymentId": "dpl_f3q3Af5zwDQ2WvvhA4zuahkfhpCH",
+  "bytes": 480961,
+  "sha256": "ee796c06abf681d2fb6735ad4f707e8c6d452b0158bd85ac72db7037199e0166",
+  "permissionsPolicy": "camera=(), microphone=(self), geolocation=()",
+  "models": [
+    "gpt-live-1",
+    "gpt-5.6-luna"
+  ]
+}

@@ -19,3 +19,8 @@ GOAL section10 deliverables pass within recorded evidence scopes. Optional devic
 
 
 2026-09-15: user requested v1.0.0 from verified v0.9.9. See V1.0.0-PLAN.md for the bounded concept → actual UI → browser/controls → production loop. No reset to original ZIP and no changes to model/quota authority.
+
+
+2026-09-15 JST — v1.3.0 production full campaign and film verified
+
+App 06275908ab07372c59f5bbcb2033c268322b6771, READY dpl_f3q3Af5zwDQ2WvvhA4zuahkfhpCH. Real6Live pacts/18Luna analyses/18encounters/6bosses. Fixed autoplay, original synthetic input, ordinary game time; pressure0→1→2. All6voice sessions stopped.279tests/49syntax/3Redis. Native Resolve59s60fps13cuts/3540frames; raw58.6539fps. Ledger direct3/10,Gateway.042359/20. Public release/source ZIP/viewer validation remains the final step. See docs/ADAPTIVE-VALIDATION.md.

@@ -1,62 +1,135 @@
 {
-  "version": "1.2.0",
-  "status": "Campaign voice contracts shipped and verified",
-  "recordedAt": "2026-09-15T03:23:00.664528+00:00",
+  "version": "1.3.0",
+  "status": "Implementation and real full campaign verified; public release verification pending",
+  "recordedAt": "2026-09-15T04:30:31.880594+00:00",
   "production": "https://nemesis-pact-live.vercel.app/",
   "repository": "https://github.com/Yasei-no-otoko/nemesis-pact-live",
   "branch": "ship/living-covenant",
-  "sourceCommit": "a53b87437249fddccfe069c2de6d3d47cfd956aa",
-  "releaseTag": "v1.2.0",
-  "deploymentId": "dpl_5HEfvWCWhNzwstCDpK4qk3RuUaB9",
-  "deploymentUrl": "https://nemesis-pact-live-77807cnlh-wildmans-projects.vercel.app",
+  "sourceCommit": "06275908ab07372c59f5bbcb2033c268322b6771",
+  "releaseTag": "v1.3.0",
+  "deploymentId": "dpl_f3q3Af5zwDQ2WvvhA4zuahkfhpCH",
+  "deploymentUrl": "https://nemesis-pact-live-7e0l0jw6f-wildmans-projects.vercel.app",
   "build": {
-    "hostedBytes": 453972,
-    "hostedSha256": "a2d684dd71e141506d5a8e9bd60c782dec6c8325ec1a286e8c896df062f712e0",
-    "offlineBytes": 453922,
-    "offlineSha256": "61393d2a8ec174e12cd3ebd0a753ee1bf35291576695fe5d9b0969f6e462af29"
+    "hostedBytes": 480961,
+    "hostedSha256": "ee796c06abf681d2fb6735ad4f707e8c6d452b0158bd85ac72db7037199e0166",
+    "offlineBytes": 480911,
+    "offlineSha256": "b2d9a4c8a6b1c4b1fd084a2237d7dbd7086e0a8c62a4d438531a7aa9bf1470d3"
   },
   "models": {
     "voice": "gpt-live-1",
     "contract": "openai/gpt-5.6-luna",
     "campaign": "openai/gpt-5.6-luna",
-    "director": "openai/gpt-5.6-luna"
+    "director": "openai/gpt-5.6-luna",
+    "adaptive": "openai/gpt-5.6-luna"
   },
-  "validation": "CAMPAIGN-VALIDATION.md",
+  "validation": "ADAPTIVE-VALIDATION.md",
   "currentTests": {
-    "unit": 260,
-    "passed": 260,
-    "syntax": 43,
-    "realRedis": 4,
-    "localCampaignViewports": 4,
-    "localDirectorRegressionViewports": 4,
-    "campaignSceneFixtures": 18,
-    "authoredSimulationOfferChecks": 45,
-    "realCampaignTextSignature": true,
-    "realCampaignVoiceCorrectionSignature": true,
-    "campaignVoiceAttempts": 2,
-    "confirmedVoiceStops": 2,
-    "voiceConnectionMs": 2813,
-    "contractLatenciesMs": [
-      2965,
-      2346
-    ],
-    "pageErrorsFinal": 0
+    "unit": 279,
+    "passed": 279,
+    "syntax": 49,
+    "realRedis": 3,
+    "localViewports": 4,
+    "realFullCampaign": true,
+    "encounters": 18,
+    "bosses": 6,
+    "signedLivePacts": 6,
+    "actualLunaAnalyses": 18,
+    "confirmedVoiceStops": 6,
+    "pageErrors": 0
   },
   "budgets": {
-    "directOpenaiConservativeUsd": 2.7,
+    "directOpenaiConservativeUsd": 3,
     "directOpenaiCapUsd": 10,
-    "gatewayConservativeUsd": 0.037338,
+    "gatewayConservativeUsd": 0.042359,
     "gatewayCapUsd": 20,
-    "addedDirectOpenaiUsd": 0.1,
-    "addedGatewayUsd": 0.0008,
+    "addedDirectOpenaiUsd": 0.3,
+    "addedGatewayUsd": 0.005021,
     "active": 0,
     "kill": null,
-    "checkedAt": "2026-09-15T03:20:50.660Z",
+    "checkedAt": "2026-09-15T04:11:42.272Z",
     "invoice": false
   },
+  "movie": {
+    "file": "NEMESIS-PACT-v1.3.0-59s-60fps-en-final.mp4",
+    "bytes": 108838606,
+    "sha256": "d29667a3d254814a761217ec0319669c88cf1f14075c819f3ddb56f9732dbff1",
+    "width": 1920,
+    "height": 1080,
+    "frames": 3540,
+    "fps": 60,
+    "videoSeconds": 59.0,
+    "audioSeconds": 59.008,
+    "audioChannels": 2,
+    "audioSampleRate": 48000,
+    "audioRms": 0.047044649720191956,
+    "audioPeak": 0.6633709073066711,
+    "samplesAtOrAboveFullScale": 0,
+    "decodeExit": 0,
+    "allFrameTimestampsMatch60fps": true,
+    "sourceContainsDroppedFrames": true,
+    "QAFrames": [
+      {
+        "file": "cut-01.png",
+        "time": 2.7
+      },
+      {
+        "file": "cut-02.png",
+        "time": 8.7
+      },
+      {
+        "file": "cut-03.png",
+        "time": 14.5
+      },
+      {
+        "file": "cut-04.png",
+        "time": 19.5
+      },
+      {
+        "file": "cut-05.png",
+        "time": 24.5
+      },
+      {
+        "file": "cut-06.png",
+        "time": 29.0
+      },
+      {
+        "file": "cut-07.png",
+        "time": 33.0
+      },
+      {
+        "file": "cut-08.png",
+        "time": 36.5
+      },
+      {
+        "file": "cut-09.png",
+        "time": 39.5
+      },
+      {
+        "file": "cut-10.png",
+        "time": 42.5
+      },
+      {
+        "file": "cut-11.png",
+        "time": 45.5
+      },
+      {
+        "file": "cut-12.png",
+        "time": 51.0
+      },
+      {
+        "file": "cut-13.png",
+        "time": 57.0
+      }
+    ],
+    "nativeEditor": "DaVinci Resolve Studio21.1",
+    "cutCount": 13,
+    "url": "https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/download/v1.3.0/NEMESIS-PACT-v1.3.0-59s-60fps-en-final.mp4",
+    "allThirteenCaptionLayoutsReviewed": true
+  },
+  "viewerUrl": "https://www.circle-hydrangea.net/nemesis-pact-live/",
   "rollback": {
-    "deploymentId": "dpl_Ey6W5h1mdVdm1ExsdNbvLi7ibgRW",
-    "sourceTag": "v1.1.0",
+    "deploymentId": "dpl_5HEfvWCWhNzwstCDpK4qk3RuUaB9",
+    "sourceTag": "v1.2.0",
     "preserve": [
       "Redis",
       "budget totals",
@@ -65,58 +138,15 @@
     ]
   },
   "limitations": [
-    "Campaign real model flow tested in sector1; all15 mode/sector contexts and45 offers verified against simulation",
-    "Automated synthetic speech into actual GPT-Live-1; no new human microphone or physical-phone campaign recording",
-    "Existing59s1080p60 iPhone film predates current campaign and visual changes",
-    "Exact Vercel grant balance/expiry, infrastructure charges and provider invoices remain unknown",
-    "Campaign negotiation occurs before sectors; mid-fight amendment remains in First Contact",
-    "First production Live attempt fell back during overlapping requests; failure and conservative spend retained"
+    "One actual production Story/Bastion seed; three additional accelerated Node simulations",
+    "Synthetic player speech and automated native Windows Edge WebGPU; no new human microphone or physical phone trial",
+    "Original627-second capture averages58.6539 delivered fps; final export60fps duplicates missing frames",
+    "Adaptive performance assessment is bounded heuristic analysis, not a calibrated skill or player-satisfaction study",
+    "Exact Vercel grant balance/expiry, infrastructure charges and provider invoices remain unverified",
+    "Campaign contracts are signed before sectors; mid-fight amendments remain in First Contact"
   ],
-  "previousReleaseEvidence": "validation-campaign/v1.1.0-release-candidate.json",
-  "releaseUrl": "https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/tag/v1.2.0",
-  "sourceReviewPackage": {
-    "file": "NEMESIS-PACT-v1.2.0-source.zip",
-    "bytes": 8920066,
-    "sha256": "c2ffd63ef9ab34ce750c916c63cb39d81ec837bd5581735ccc0b9007db2dd16e",
-    "files": 178,
-    "archiveCommit": "ca009dc74ab4c86dd7673d5e53d9116ece9f6828",
-    "applicationSourceCommit": "a53b87437249fddccfe069c2de6d3d47cfd956aa",
-    "url": "https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/download/v1.2.0/NEMESIS-PACT-v1.2.0-source.zip",
-    "scope": "selected source, tests, concepts, public form answers and evidence; excludes private form kit, credentials, Git history and raw media",
-    "public": true,
-    "anonymousDownloadHashMatched": true
-  },
-  "publicReleaseValidation": {
-    "checkedAt": "2026-09-15T03:25:55.525185+00:00",
-    "anonymous": true,
-    "browser": "153.0.4234.32",
-    "scope": "Native fresh Edge; public source download and hash; unchanged human video playback-start only (full prior playback evidence remains separate)",
-    "releaseUrl": "https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/tag/v1.2.0",
-    "releaseHttp": 200,
-    "sourceSha256": "c2ffd63ef9ab34ce750c916c63cb39d81ec837bd5581735ccc0b9007db2dd16e",
-    "sourceBytes": 8920066,
-    "viewerUrl": "https://www.circle-hydrangea.net/nemesis-pact-live/",
-    "viewerHttp": 200,
-    "viewerLinksTo120": true,
-    "video": {
-      "width": 1920,
-      "height": 1080,
-      "duration": 59.008,
-      "currentTime": 2.012714,
-      "error": null,
-      "source": "https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/download/milestone-16-iphone-demo-audio/NEMESIS-PACT-iPhone-59s-60fps-en-final.mp4"
-    },
-    "githubShellPageErrors": [],
-    "viewerPageErrors": [],
-    "passed": true,
-    "apiModelCalls": 0
-  },
-  "finalEvidenceTag": "milestone-25-campaign-live-verified",
-  "requiredRemainingWork": [],
-  "completion": {
-    "recordedAt": "2026-09-15T03:27:29.479944+00:00",
-    "campaignFeature": "achieved",
-    "formSubmission": "not requested or performed",
-    "applicationUnchangedAfterFinalDeployment": true
-  }
+  "requiredRemainingWork": [
+    "Publish release assets and verify anonymous viewing/downloads"
+  ],
+  "previousReleaseEvidence": "validation-adaptive/v1.2.0-release-candidate.json"
 }

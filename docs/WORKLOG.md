@@ -317,3 +317,8 @@ App 4ee074d2a76ceaa29ec59d17e3928d142309f07c / READY dpl_BQpYDUTtvPG15BgcahdQAmS
 2026-09-15 JST — v1.0.0 public release complete
 
 Release https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/tag/v1.0.0, tag6fc0f3d, sourceZIP 12083202bytes SHA81ae165512989f809052d27573915052e121d0bc730ddc3ec8573f3042dffb63; fresh anonymous Edge download/hash and version1.0.0 viewer/movie-start passed. gh-pages9eaec34 pushed. GitHub shell Failed to fetch was recorded separately; viewer had no errors. Prior human full59.008s playback remains unchanged. Final evidence milestone-21-v100-verified; no application bytes changed after READY deployment. Rollback CsUJ386UFWLPKg4UN7r1jvCpcuoB, preserveRedis/media. Ledger2.60/10 direct and.036070/20Gateway; remaining unknowns stay explicit.
+
+
+2026-09-15 JST — v1.3.0 production full campaign and film verified
+
+App 06275908ab07372c59f5bbcb2033c268322b6771, READY dpl_f3q3Af5zwDQ2WvvhA4zuahkfhpCH. Real6Live pacts/18Luna analyses/18encounters/6bosses. Fixed autoplay, original synthetic input, ordinary game time; pressure0→1→2. All6voice sessions stopped.279tests/49syntax/3Redis. Native Resolve59s60fps13cuts/3540frames; raw58.6539fps. Ledger direct3/10,Gateway.042359/20. Public release/source ZIP/viewer validation remains the final step. See docs/ADAPTIVE-VALIDATION.md.

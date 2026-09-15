@@ -1,0 +1,230 @@
+{
+  "version": "21.1.0.17",
+  "projectName": "NEMESIS PACT - Submission 20260915",
+  "projectId": "61f93e79-f0da-4a95-b3ea-ed44f06745a1",
+  "timelineName": "SUBMISSION - Adaptive full campaign - 59s 60fps v1.3.0",
+  "timelineId": "a3403a2a-2438-4368-9a04-ea9314c6a51e",
+  "fps": 60,
+  "frames": 3540,
+  "video": [
+    {
+      "start": 0,
+      "end": 324,
+      "duration": 324,
+      "sourceStart": 558,
+      "sourceEnd": 882,
+      "caption": "NEMESIS PACT - Negotiate the rules. Fight your deal.\nAutomated pilot / synthetic player speech into real GPT-Live-1"
+    },
+    {
+      "start": 324,
+      "end": 720,
+      "duration": 396,
+      "sourceStart": 882,
+      "sourceEnd": 1278,
+      "caption": "Interrupt the rival and revise the deal.\nPLAYER: Stronger reflections instead; my normal shots can be weaker."
+    },
+    {
+      "start": 720,
+      "end": 1020,
+      "duration": 300,
+      "sourceStart": 1278,
+      "sourceEnd": 1578,
+      "caption": "The spoken correction replaces the earlier request.\nOnly a validated, signed contract can change combat."
+    },
+    {
+      "start": 1020,
+      "end": 1320,
+      "duration": 300,
+      "sourceStart": 1740,
+      "sourceEnd": 2040,
+      "caption": "Review Luna's corrected offer, then Sign.\nReturn to Sender: reflected damage x2.2 / normal shot damage -25%"
+    },
+    {
+      "start": 1320,
+      "end": 1620,
+      "duration": 300,
+      "sourceStart": 2460,
+      "sourceEnd": 2760,
+      "caption": "Clear normal waves with the rules you signed.\nAutoplay uses ordinary movement, aim, abilities and earned upgrades."
+    },
+    {
+      "start": 1620,
+      "end": 1860,
+      "duration": 240,
+      "sourceStart": 4512,
+      "sourceEnd": 4752,
+      "caption": "GPT-5.6 Luna analyzes actual wave results.\nPressure 0 to +1: bullet speed +8% / arrival spacing -8%"
+    },
+    {
+      "start": 1860,
+      "end": 2100,
+      "duration": 240,
+      "sourceStart": 5820,
+      "sourceEnd": 6060,
+      "caption": "SECTOR 1 / THE NOTARY\nSix sectors, six bosses - highlights from one complete run"
+    },
+    {
+      "start": 2100,
+      "end": 2280,
+      "duration": 180,
+      "sourceStart": 11790,
+      "sourceEnd": 11970,
+      "caption": "SECTOR 2 / THE CHOIR\nA new spoken pact before each sector"
+    },
+    {
+      "start": 2280,
+      "end": 2460,
+      "duration": 180,
+      "sourceStart": 18030,
+      "sourceEnd": 18210,
+      "caption": "SECTOR 3 / THE SOVEREIGN\nAdaptation preserves your hull, upgrades and signed pact"
+    },
+    {
+      "start": 2460,
+      "end": 2640,
+      "duration": 180,
+      "sourceStart": 23928,
+      "sourceEnd": 24108,
+      "caption": "SECTOR 4 / THE LEVIATHAN\nKeep your promises. Return their fire."
+    },
+    {
+      "start": 2640,
+      "end": 2820,
+      "duration": 180,
+      "sourceStart": 30168,
+      "sourceEnd": 30348,
+      "caption": "SECTOR 5 / THE WEAVER\nThe full run uses 18 real Luna performance reviews"
+    },
+    {
+      "start": 2820,
+      "end": 3300,
+      "duration": 480,
+      "sourceStart": 36480,
+      "sourceEnd": 36960,
+      "caption": "SECTOR 6 / THE LAST GUARDIAN\nFinal boss - live production gameplay, normal speed"
+    },
+    {
+      "start": 3300,
+      "end": 3540,
+      "duration": 240,
+      "sourceStart": 37320,
+      "sourceEnd": 37560,
+      "caption": "CAMPAIGN COMPLETE / 18 encounters / 6 bosses / 6 pacts kept\nPlay NEMESIS PACT: nemesis-pact-live.vercel.app"
+    }
+  ],
+  "audio": [
+    {
+      "start": 0,
+      "end": 324,
+      "duration": 324,
+      "sourceStart": 558,
+      "sourceEnd": 882,
+      "caption": null
+    },
+    {
+      "start": 324,
+      "end": 720,
+      "duration": 396,
+      "sourceStart": 882,
+      "sourceEnd": 1278,
+      "caption": null
+    },
+    {
+      "start": 720,
+      "end": 1020,
+      "duration": 300,
+      "sourceStart": 1278,
+      "sourceEnd": 1578,
+      "caption": null
+    },
+    {
+      "start": 1020,
+      "end": 1320,
+      "duration": 300,
+      "sourceStart": 1740,
+      "sourceEnd": 2040,
+      "caption": null
+    },
+    {
+      "start": 1320,
+      "end": 1620,
+      "duration": 300,
+      "sourceStart": 2460,
+      "sourceEnd": 2760,
+      "caption": null
+    },
+    {
+      "start": 1620,
+      "end": 1860,
+      "duration": 240,
+      "sourceStart": 4512,
+      "sourceEnd": 4752,
+      "caption": null
+    },
+    {
+      "start": 1860,
+      "end": 2100,
+      "duration": 240,
+      "sourceStart": 5820,
+      "sourceEnd": 6060,
+      "caption": null
+    },
+    {
+      "start": 2100,
+      "end": 2280,
+      "duration": 180,
+      "sourceStart": 11790,
+      "sourceEnd": 11970,
+      "caption": null
+    },
+    {
+      "start": 2280,
+      "end": 2460,
+      "duration": 180,
+      "sourceStart": 18030,
+      "sourceEnd": 18210,
+      "caption": null
+    },
+    {
+      "start": 2460,
+      "end": 2640,
+      "duration": 180,
+      "sourceStart": 23928,
+      "sourceEnd": 24108,
+      "caption": null
+    },
+    {
+      "start": 2640,
+      "end": 2820,
+      "duration": 180,
+      "sourceStart": 30168,
+      "sourceEnd": 30348,
+      "caption": null
+    },
+    {
+      "start": 2820,
+      "end": 3300,
+      "duration": 480,
+      "sourceStart": 36480,
+      "sourceEnd": 36960,
+      "caption": null
+    },
+    {
+      "start": 3300,
+      "end": 3540,
+      "duration": 240,
+      "sourceStart": 37320,
+      "sourceEnd": 37560,
+      "caption": null
+    }
+  ],
+  "audioLinkedRangesMatch": true,
+  "exported": true,
+  "jobId": "1a7c7655-be21-4226-a145-fa598607c3b6",
+  "jobStatus": {
+    "JobStatus": "Complete",
+    "CompletionPercentage": 100
+  },
+  "recovery": "Combined custom-settings and frame-rate update stalled. Project DB copied before restarting only Resolve. Existing five timelines preserved. Separate settings calls succeeded.",
+  "renderSettingLimit": "This runtime rejected VideoQuality and ReplaceExistingFilesInPlace settings. Export used existing native AMD quality settings and a new filename."
+}
