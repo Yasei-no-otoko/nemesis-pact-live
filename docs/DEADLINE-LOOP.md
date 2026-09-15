@@ -20,7 +20,11 @@ After **22:30 JST**, only submission blockers, regressions and essential clarity
 
 The official submission form and rights attestations remain the representative's final action; this request to improve the game is not authorization to submit legal confirmations. Prepare the actual links and final copy first.
 
-## Latest checkpoint — ending localization, 17:03 JST
+## Latest checkpoint — direct game recording, 17:28 JST
+
+The user-reported screen-share blocker is resolved by the default Game recording path at `/?demo=1`. Current source `dc63f6e3bd8c8d9903e366bbb6c5b03c151cbc83`; production READY `dpl_HMUQpEts6YvcHm8L9ZhCv6op1tDv`; rollback `dpl_AMSCqcVVnM9Ww9AgB9Yyy57awpTF`. Actual cloud WebM video/game-audio capture, decoding, HUD/text frames and a 320px iframe were checked. Keep the qualification: samples were roughly 10–15fps, UI decoration is simplified, and no real microphone/Live voice session was recorded. See latest DELIVERY/WORKLOG/FINAL-RECORDING; earlier ending translations and feedback improvements remain intact. Next improvement candidate is still First Contact outcome/retry clarity. Do not repeat this recording implementation as a new slice or claim these test clips replace the existing submission movie.
+
+## Previous checkpoint — ending localization, 17:03 JST
 
 The user-reported untranslated Pact Keeper ending is fixed, together with missing First Contact result text. Current source `fbb416bded2b3ff14eb9f4235ed8762830e5cb8f`, production READY `dpl_AMSCqcVVnM9Ww9AgB9Yyy57awpTF`. Seven synthetic ending displays passed at 390/320px widths, localization suite 7/7, and public bytes match the source build. Rollback `dpl_Euq2ap6rtxtiDDQ2Km9J9bk48Fah`. Earlier feedback branch is already an ancestor. This slice satisfies the 17:00 improvement run; do not redo it. See latest WORKLOG/DELIVERY for exact scope and hashes. The initial preview approval issue was resolved after public-source and destination checks; no deployment blocker remains.
 

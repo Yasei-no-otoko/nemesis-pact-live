@@ -1,6 +1,16 @@
 # Delivery — NEMESIS PACT v1.3.0
 
-## Current ending localization fix — September 15, 17:03 JST
+## Current recording fix — September 15, 17:28 JST
+
+Source **`dc63f6e3bd8c8d9903e366bbb6c5b03c151cbc83`**, production READY **`dpl_HMUQpEts6YvcHm8L9ZhCv6op1tDv`**. [Open recording mode](https://nemesis-pact-live.vercel.app/?demo=1).
+
+Choose **Game recording · no screen sharing**, Record demo, then Stop & save. The default captures the game's own graphics, visible UI and active audio, without a screen-share picker. A retained download link supports retrying the save. Tab capture remains an explicit alternative with a 20-second start timeout. The opt-in recorder occupies its own strip outside the play area. [Workflow and limits](FINAL-RECORDING.md).
+
+Actual cloud recordings saved and decoded with VP9 video and Opus game audio, including LOCAL RULES negotiation, explicit Sign and combat. HUD and button text were checked in decoded frames; 320px iframe recording/save and re-download UI were checked. The samples delivered about 10–15fps, despite requesting 60fps. UI decoration is simplified and text is sampled at up to 10Hz; no new physical iPhone or real voice-session recording is claimed. Tests 24/24, syntax 58, build passed. Public bytes match the submitted build and the fixture is absent (404). No model calls or budget changes.
+
+Hosted SHA256 `b6c16fcf4436ecf1f22aaf7d3a2f962918d9040413a1b2d5983a3a52b89674dc`; offline SHA256 `05a45617b25b0b7ea87f93d8dce81b99c704c26489539ea499da20194bd6b7d8`. Rollback `dpl_AMSCqcVVnM9Ww9AgB9Yyy57awpTF`. The earlier submission movie remains separate from these verification clips; submission form remains unsubmitted.
+
+## Previous ending localization fix — September 15, 17:03 JST
 
 Production source **`fbb416bded2b3ff14eb9f4235ed8762830e5cb8f`**, READY **`dpl_AMSCqcVVnM9Ww9AgB9Yyy57awpTF`**. [Play](https://nemesis-pact-live.vercel.app/).
 
