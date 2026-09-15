@@ -28,3 +28,7 @@ The generated bitmap is development art direction, excluded from Vercel/runtime 
 ## v1.3.0 automated film
 
 The new campaign recording uses locally synthesized Microsoft Zira player speech as input to actual GPT-Live-1, with six real signed Luna pacts and18analyses. It is explicitly labeled automated, not a new human recording. Native Resolve cut13normal-speed segments and overlaid English editorial captions; actual game/Live audio is retained. FFmpeg made a full-length60fps compatibility copy and verified media. No voice model impersonation or fabricated API response is used. Source footage, native project and evidence hashes are retained locally. The earlier human iPhone movie remains available as historical evidence.
+
+## Creator-reported mobile campaign completion — 2026-09-15
+
+The creator additionally confirmed personally clearing the full six-sector campaign in mobile mode on an iPhone 16 Pro Max. This participant-reported completion supplements the recorded First Contact victory described above.
