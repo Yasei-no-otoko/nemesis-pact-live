@@ -6,6 +6,7 @@
   const V=window.PactCovenant,cvClient=new V.Client(),cvSession=new window.PactSession();let cvProposal=null,cvWorld=null,cvRevision=0,cvRequestId=0,cvRunId='',cvSigning=false;
   let voice=null,voiceWorld=null,voiceText='',voiceCaption='',voiceLastInput=0,voiceMuted=false,voiceActive=false,voiceBackchannels='';
   const X=window.PactExpansion,I=window.PactIntelligence,BOSSES=X.BOSSES,SECTORS=X.SECTORS.map(s=>s.name),aiClient=new I.Client();
+  const directorClient=new window.PactDirectorClient(new window.PactSession());let aiEpoch=0,aiApplying=false;
   let campaignMode='expedition',airframe='vanguard',aiTask='negotiate',aiBack='choices',aiDecision=null,aiWorld=null,aiStage=0;
   let W=C.W,H=C.H;
   let gpuActive=false;
@@ -53,7 +54,7 @@
     if(name==='pause'){$('pause-reason').textContent='The battlefield is paused.';$('pause-breach').disabled=!world?.pact||world.broken||world.training;}
     $('hud').hidden=!world||['menu','loadout','hangar','route','archive','ai-screen','covenant-screen'].includes(name)||(mobile&&name!=='game');$('tutorial-hud').hidden=!(world?.training&&name==='game');
     if(name!=='game'){$('announcement').classList.remove('visible');$('toast').classList.remove('visible');announceTime=0;toastTime=0;}
-    if(name!=='ai-screen'){aiClient.cancel();}if(name!=='game'&&!mobile){const button=$(name)?.querySelector('button:not([disabled])');if(button)button.focus({preventScroll:true});}else document.activeElement?.blur();
+    if(name!=='ai-screen'){aiClient.cancel();if(directorClient.runId)directorClient.close();aiEpoch++;}if(name!=='game'&&!mobile){const button=$(name)?.querySelector('button:not([disabled])');if(button)button.focus({preventScroll:true});}else document.activeElement?.blur();
     refreshView();
     accum=0;updateAudio();
   }
@@ -645,9 +646,9 @@
     for(const [i,b]of [...$('relic-shop').children].entries())b.disabled=world.credits<world.shop[i].cost||!world.relicAvailable(world.shop[i].id);
     if(!world.shop.length)$('relic-shop').textContent='No uncollected relics in this sector.';
     $('field-repair').disabled=world.p.hp>=world.p.maxHp||world.credits<35;$('field-repair').onclick=()=>{if(world.repair()){routeScreen(outfit);$('shop-status').textContent='Hull restored.';}};
-    $('route-intelligence').hidden=outfit||world.phase!=='route';$('route-end').textContent=outfit?'Back to selection':'End run';
+    $('route-intelligence').hidden=outfit||world.phase!=='route'||world.mode!=='expedition';$('route-end').textContent=outfit?'Back to selection':'End run';
     $('route-end').onclick=()=>{if(outfit)choiceScreen();else if(confirm('End this run and return to the main menu?'))home();};
-    $('shop-status').textContent=`DIRECTOR: ${X.DIRECTORS[world.director].name.toUpperCase()} / ${world.relics.map(id=>X.RELICS.find(r=>r.id===id).name).join(' / ')||'NO RELICS YET'}`;
+    $('shop-status').textContent=`DIRECTOR: ${X.DIRECTORS[world.director].name.toUpperCase()} / ${world.directorSource||'LOCAL RULES'} / ${world.relics.map(id=>X.RELICS.find(r=>r.id===id).name).join(' / ')||'NO RELICS YET'}`;
   }
   function archiveScreen(){
     show('archive');const raw=storage.read('nemesis.codex.v1',[]),seen=Array.isArray(raw)?raw:[];$('archive-grid').replaceChildren();
@@ -655,22 +656,43 @@
   }
   function closeAI(){aiClient.cancel();aiClient.token='';$('pilot-token').value='';const back=aiBack;show(back);if(back==='route')routeScreen();}
   function openAI(task){
-    if(!world)return;aiTask=task;aiBack=screen;aiWorld=world;aiStage=world.stage;aiDecision=null;show('ai-screen');
+    if(!world||(task==='director'&&(world.mode!=='expedition'||!['route','pact'].includes(world.phase))))return;aiEpoch++;aiTask=task;aiBack=screen;aiWorld=world;aiStage=world.stage;aiDecision=null;show('ai-screen');
+    const director=task==='director';$('ai-screen').dataset.task=task;setAIBusy(false);$('ai-request').disabled=false;if(director)directorClient.open();
     const sector=X.SECTORS[Math.min(world.stage,5)];$('ai-screen').style.setProperty('--sector',sector.color);
-    $('ai-kicker').textContent=`INTELLIGENCE PROTOTYPE / ${task.toUpperCase()}`;
+    $('ai-kicker').textContent=director?'CAMPAIGN / AI DIRECTOR':`LOCAL RULES / ${task.toUpperCase()}`;
     $('ai-title').textContent=task==='negotiate'?'Put it in writing.':task==='director'?'Shape the next encounter.':'Every flight leaves a story.';
     $('ai-rival-name').textContent=task==='debrief'?'FLIGHT RECORDER':sector.boss.name;$('ai-rival-copy').textContent=sector.boss.quote;
     $('ai-request').textContent=task==='negotiate'?'Propose terms':task==='director'?'Propose formation':'Analyze flight';
     $('ai-apply').textContent=task==='negotiate'?'Accept & launch':'Use this formation';$('ai-apply').hidden=task==='debrief';$('ai-apply').disabled=true;
-    $('ai-provider').textContent='LOCAL MOCK / NO AI CALLS';$('ai-status').textContent='';$('ai-benefit').textContent='';$('ai-price').textContent='';
-    $('ai-line').textContent='The channel is open.';$('ai-rationale').textContent='Local mode uses authored keyword rules, not an LLM. Try a request, inspect the benefit and cost, then decide.';
+    $('ai-provider').textContent='LOCAL RULES / NO AI CALLS';$('ai-status').textContent='';$('ai-benefit').textContent='';$('ai-price').textContent='';
+    $('ai-line').textContent=director?'What kind of pressure will sharpen your flight?':'The channel is open.';$('ai-rationale').textContent=director?'Choose OpenAI and consent below for a generated formation proposal. Review the wave, then apply. LOCAL RULES is also available.':'Local mode uses authored keyword rules, not an LLM. Try a request, inspect the benefit and cost, then decide.';
     const prompts=task==='negotiate'?['Slow your bullets. I will face more.','Let me reflect your attacks.','No minions. Fight me alone.']:task==='director'?['A balanced formation, please.','Test me with pursuit units.','A crossfire lattice, with fair gaps.']:['What should I change next run?'];
     $('ai-prompt').value=prompts[0];$('ai-suggestions').replaceChildren();
-    for(const text of prompts){const b=document.createElement('button');b.textContent=text;b.onclick=()=>{$('ai-prompt').value=text;};$('ai-suggestions').append(b);}
+    for(const text of prompts){const b=document.createElement('button');b.textContent=text;b.onclick=()=>{$('ai-prompt').value=text;invalidateProposal();};$('ai-suggestions').append(b);}
     $('ai-mode').value='mock';aiClient.mode='mock';$('pilot-token').value='';$('ai-consent').checked=false;
+    $('ai-mode').querySelector('[value="server"]').disabled=!director||!window.NEMESIS_HOSTED;
+    $('ai-consent').parentElement.hidden=!director;$('ai-director-preview').hidden=!director;
+    if(director){$('ai-preview-route').value=world.route?.id||'salvage';renderDirectorPreview();if(window.NEMESIS_HOSTED){$('ai-mode').value='server';$('ai-provider').textContent='OPENAI / CONSENT REQUIRED';}}
+  }
+  function setAIBusy(value){aiApplying=value;for(const id of ['ai-prompt','ai-mode','ai-consent','ai-request'])$(id).disabled=value;for(const b of $('ai-suggestions').children)b.disabled=value;}
+  function renderDirectorPreview(){
+    if(aiTask!=='director'||!world)return;const route=$('ai-preview-route').value,proposed=aiDecision?.directorId;
+    $('ai-director-preview').dataset.proposed=proposed||'';
+    for(const [id,director]of [['ai-plan-current',world.director],['ai-plan-proposed',proposed]]){
+      const el=$(id);el.replaceChildren();const heading=document.createElement('strong');heading.textContent=id==='ai-plan-current'?'CURRENT':'PROPOSED';el.append(heading);
+      if(!director){const p=document.createElement('p');p.textContent='Request a formation to compare.';el.append(p);continue;}
+      const plan=world.formationPlan(director,route),counts={};for(const x of plan)counts[x.type]=(counts[x.type]||0)+1;
+      const title=document.createElement('h4');title.textContent=X.DIRECTORS[director].name;const metrics=document.createElement('p');metrics.textContent=`${plan.length} enemies / ${director==='crossfire'?'1.20':'1.05'}s arrivals`;
+      const types=document.createElement('p');types.className='ai-plan-types';types.textContent=Object.entries(counts).map(([type,n])=>`${n} ${type}`).join(' · ');
+      const timeline=document.createElement('div');timeline.className='ai-plan-timeline';timeline.setAttribute('aria-label','First eight arrivals');
+      for(const x of plan.slice(0,8)){const marker=document.createElement('span');marker.textContent=x.type.slice(0,2).toUpperCase();marker.title=`${x.at.toFixed(2)}s / ${x.type}`;marker.dataset.type=x.type;timeline.append(marker);}
+      el.append(title,metrics,types,timeline);
+    }
+    $('ai-plan-note').textContent=`SECTOR ${world.stage+1} / WAVE ${world.wave+1}. Actual scheduled enemies for this route; choosing another route changes the count. Formation persists until changed. Boss attacks, hull and pact rules stay fixed.`;
   }
   async function requestAI(){
-    if(!world||world!==aiWorld||world.stage!==aiStage)return;
+    if(!world||world!==aiWorld||world.stage!==aiStage||aiApplying)return;
+    const epoch=++aiEpoch,director=aiTask==='director';
     aiDecision=null;$('ai-apply').disabled=true;
     const server=$('ai-mode').value==='server';
     if(server&&!window.NEMESIS_HOSTED){$('ai-status').textContent='This standalone HTML is offline. Use the hosted build to test the server, or select Local mock.';return;}
@@ -678,19 +700,27 @@
     aiClient.mode=server?'server':'mock';aiClient.token=$('pilot-token').value;
     $('ai-request').disabled=true;$('ai-apply').disabled=true;aiDecision=null;$('ai-status').textContent=server?'Waiting for server; local fallback is available.':'Running the local, rule-based mock...';
     const request={task:aiTask,prompt:$('ai-prompt').value,seed:world.seed,stage:Math.min(world.stage,5),allowed:aiTask==='negotiate'?world.offersForPact().map(c=>c.id):I.CONTRACTS,telemetry:I.telemetry(world)};
-    try{const result=await aiClient.request(request);if(screen!=='ai-screen'||world!==aiWorld||world.stage!==aiStage)return;
-      aiDecision=I.validateDecision(result.decision,request);$('ai-provider').textContent=result.provider==='openai'?'OPENAI / SERVER RESPONSE':result.fallback?'FALLBACK / RULE-BASED MOCK':server?'SERVER MOCK / NO AI CALLS':'LOCAL MOCK / NO AI CALLS';
-      $('ai-line').textContent=aiDecision.line;$('ai-rationale').textContent=aiDecision.rationale;$('ai-status').textContent=result.fallback?result.reason:'VALIDATED / CATALOG IDS ONLY';
+    try{const result=director?await directorClient.request(request,server):await aiClient.request(request);if(epoch!==aiEpoch||screen!=='ai-screen'||world!==aiWorld||world.stage!==aiStage)return;
+      aiDecision=I.validateDecision(result.decision,request);$('ai-provider').textContent=result.provider==='openai'?`OPENAI / ${result.model||'SERVER RESPONSE'}`:'LOCAL RULES / NO AI RESULT';
+      $('ai-line').textContent=aiDecision.line;$('ai-rationale').textContent=aiDecision.rationale;$('ai-status').textContent=director?`${result.reason} ${result.latencyMs?result.latencyMs+' ms / ':''}NOT APPLIED.`:result.fallback?result.reason:'VALIDATED / CATALOG IDS ONLY';
       if(aiTask==='negotiate'){const c=CONTRACTS.find(c=>c.id===aiDecision.contractId);$('ai-benefit').textContent='BENEFIT / '+c.gift;$('ai-price').textContent='PRICE / '+c.cost;}
-      else if(aiTask==='director'){$('ai-benefit').textContent=X.DIRECTORS[aiDecision.directorId].name;$('ai-price').textContent=X.DIRECTORS[aiDecision.directorId].desc;}
+      else if(director){$('ai-benefit').textContent=X.DIRECTORS[aiDecision.directorId].name;$('ai-price').textContent=X.DIRECTORS[aiDecision.directorId].desc;renderDirectorPreview();}
       $('ai-apply').disabled=aiTask==='debrief';
-    }catch(error){if(screen==='ai-screen')$('ai-status').textContent='Request cancelled or invalid. No game rules changed.';}
-    finally{$('ai-request').disabled=false;}
+    }catch(error){if(epoch===aiEpoch&&screen==='ai-screen')$('ai-status').textContent='Request cancelled or invalid. No game rules changed.';}
+    finally{if(epoch===aiEpoch)$('ai-request').disabled=false;}
   }
-  function applyAI(){
-    if(!aiDecision||world!==aiWorld||world.stage!==aiStage)return;
+  async function applyAI(){
+    if(!aiDecision||world!==aiWorld||world.stage!==aiStage||aiApplying)return;
     if(aiTask==='negotiate'&&world.phase==='pact'){const id=aiDecision.contractId;show('choices');choose(id);}
-    else if(aiTask==='director'&&world.setDirector(aiDecision.directorId)){const back=aiBack;show(back);if(back==='route')routeScreen();else choiceScreen();}
+    else if(aiTask==='director'){
+      const epoch=aiEpoch,target=world,stage=world.stage;setAIBusy(true);$('ai-apply').disabled=true;$('ai-status').textContent='Confirming this formation...';
+      try{const approved=await directorClient.apply();if(epoch!==aiEpoch||screen!=='ai-screen'||world!==target||world.stage!==stage)return;
+        if(!world.setDirector(approved.decision.directorId))throw Error('Encounter changed');
+        world.directorSource=approved.provider==='openai'?`OPENAI / ${approved.model}`:'LOCAL RULES';
+        const back=aiBack;show(back);if(back==='route')routeScreen();else choiceScreen();
+      }catch{if(epoch===aiEpoch){aiDecision=null;directorClient.cancel();$('ai-status').textContent='Approval failed or changed. Propose again; your current formation is unchanged.';}}
+      finally{if(epoch===aiEpoch)setAIBusy(false);}
+    }
     aiDecision=null;aiClient.token='';$('pilot-token').value='';
   }
   $('hangar-close').onclick=home;$('hangar-ready').onclick=()=>{$('loadout-summary').textContent=(campaignMode==='classic'?'Three sectors. Three bosses. ':campaignMode==='gauntlet'?'Six bosses. No warm-up. ':'Six sectors. Six bosses. ')+'One life. Defeat a boss to restore 2 hull. Fall, and start again.';show('loadout');};
@@ -698,11 +728,11 @@
   $('route-intelligence').onclick=()=>openAI('director');$('negotiate').onclick=()=>openAI('negotiate');
   $('choice-outfit').onclick=()=>routeScreen(true);$('debrief').onclick=()=>openAI('debrief');
   $('ai-close').onclick=closeAI;$('ai-request').onclick=requestAI;$('ai-apply').onclick=applyAI;
-  const invalidateProposal=()=>{aiClient.cancel();aiDecision=null;$('ai-apply').disabled=true;$('ai-request').disabled=false;$('ai-status').textContent='Request changed. Propose again before accepting.';};
-  $('ai-mode').onchange=invalidateProposal;$('ai-prompt').oninput=invalidateProposal;
+  const invalidateProposal=()=>{if(aiApplying)return;aiEpoch++;aiClient.cancel();directorClient.cancel();aiDecision=null;$('ai-apply').disabled=true;$('ai-request').disabled=false;$('ai-status').textContent='Request changed. Propose again before accepting.';renderDirectorPreview();};
+  $('ai-mode').onchange=invalidateProposal;$('ai-prompt').oninput=invalidateProposal;$('ai-consent').onchange=invalidateProposal;$('ai-preview-route').onchange=renderDirectorPreview;
 
   // Readable snapshot contains no credentials, transcripts or writable objects.
-  window.render_game_to_text=()=>JSON.stringify({build:'1.0.0',screen,negotiationStep:$('covenant-screen').dataset.step||'negotiate',coordinates:'origin top-left; x right; y down',renderer:gpu.stats().backend,arena:{width:W,height:H},phase:world?.phase,seconds:world?Math.round(world.time*100)/100:0,player:world?{x:Math.round(world.p.x),y:Math.round(world.p.y),hp:world.p.hp,energy:world.p.energy}:null,enemies:world?.enemies.filter(e=>e.hp>0).slice(0,12).map(e=>({type:e.type,x:Math.round(e.x),y:Math.round(e.y),hp:e.hp})),hostileBullets:world?.bullets.filter(b=>b.hostile).length,revision:world?.revision,spec:world?.spec,proposal:cvProposal?{spec:cvProposal.spec,provider:cvProposal.provider,model:cvProposal.model}:null,effects:world?.covenantStats,voice:voice?.state,liveVoice:world?.voiceEvidence?world.report().liveVoice:null});
+  window.render_game_to_text=()=>JSON.stringify({build:'1.1.0',screen,negotiationStep:$('covenant-screen').dataset.step||'negotiate',coordinates:'origin top-left; x right; y down',renderer:gpu.stats().backend,arena:{width:W,height:H},phase:world?.phase,seconds:world?Math.round(world.time*100)/100:0,player:world?{x:Math.round(world.p.x),y:Math.round(world.p.y),hp:world.p.hp,energy:world.p.energy}:null,enemies:world?.enemies.filter(e=>e.hp>0).slice(0,12).map(e=>({type:e.type,x:Math.round(e.x),y:Math.round(e.y),hp:e.hp})),hostileBullets:world?.bullets.filter(b=>b.hostile).length,revision:world?.revision,spec:world?.spec,proposal:cvProposal?{spec:cvProposal.spec,provider:cvProposal.provider,model:cvProposal.model}:null,effects:world?.covenantStats,voice:voice?.state,liveVoice:world?.voiceEvidence?world.report().liveVoice:null});
   window.advanceTime=ms=>{const n=Math.min(1200,Math.max(0,Math.round(Number(ms)*.12)));for(let i=0;i<n&&screen==='game'&&world?.phase==='combat';i++)world.step(1/120,inputState(null));if(world){consumeEvents();updateHUD();if(world.phase==='parley')openCovenant();else if(['won','dead'].includes(world.phase))results();}render();};
   // Test access is opt-in; normal launches do not expose mutable simulation state.
   if(new URLSearchParams(location.search).has('test')||window.__PACT_TEST_MODE__===true)window.__PACT_TEST__={

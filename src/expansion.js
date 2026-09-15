@@ -54,7 +54,7 @@ class Run extends C.World{
   if(id==='refuge')this.heal(2);if(id==='salvage')this.credits+=30;
   this.chronicle.push({stage:this.stage,text:SECTORS[this.stage].lore});this.phase='pact';return true;
  }
- setDirector(id){if(!['route','pact'].includes(this.phase)||!DIRECTORS[id])return false;this.director=id;return true;}
+ setDirector(id){if(this.mode!=='expedition'||!['route','pact'].includes(this.phase)||!Object.hasOwn(DIRECTORS,id))return false;this.director=id;return true;}
  purchase(id){if(!['route','pact','upgrade'].includes(this.phase))return false;const r=this.shop.find(x=>x.id===id);if(!r||this.credits<r.cost||!this.relicAvailable(id))return false;
   this.credits-=r.cost;this.relics.push(id);this.shop=this.shop.filter(x=>x.id!==id);
   if(id==='capacitor')this.energy(20);if(id==='razor')this.upgrades.razor=Math.min(2,(this.upgrades.razor||0)+1);
@@ -65,12 +65,16 @@ class Run extends C.World{
  startWave(){if(this.mode==='gauntlet')this.wave=2;super.startWave();this.pickups=[];
   if(this.mode==='classic'||this.training)return;
   this.encounters++;this.routeRewarded=false;
-  if(this.wave<2){const r=rng(this.seed+'/expedition/'+this.stage+'/'+this.wave+'/'+(this.route?.id||'salvage')+'/'+this.director);
+  if(this.wave<2)this.wavePlan=this.formationPlan();
+ }
+ formationPlan(director=this.director,route=this.route?.id||'salvage'){
+   if(this.mode!=='expedition'||this.wave>=2||!Object.hasOwn(DIRECTORS,director))return [];
+   const selectedRoute=ROUTES.find(r=>r.id===route);if(!selectedRoute)return [];
+   const r=rng(this.seed+'/expedition/'+this.stage+'/'+this.wave+'/'+route+'/'+director);
    const pool=this.stage===0?['chaser','turret','spinner']:this.stage===1?['chaser','turret','harrier','lancer']:this.stage===2?['spinner','warden','prism','chaser']:['harrier','prism','carrier','lancer','turret','chaser'];
-   const count=Math.min(36,Math.round((12+this.stage*3+this.wave*4)*(this.route?.factor||1)));
-   this.wavePlan=Array.from({length:count},(_,i)=>{let type=pool[Math.floor(r()*pool.length)];if(i%4===0&&this.director==='pursuit')type='harrier';if(i%4===0&&this.director==='crossfire')type=this.stage>1?'prism':'turret';
-    const theta=i*2.39996+r()*.5;return {at:1.25+i*(this.director==='crossfire'?1.20:1.05),type,x:clamp(this.width*.5+Math.cos(theta)*this.width*.39,75,this.width-75),y:clamp(this.height*.42+Math.sin(theta)*this.height*.3,this.bounds.top+50,this.bounds.bottom-65)};});
-  }
+   const count=Math.min(36,Math.round((12+this.stage*3+this.wave*4)*selectedRoute.factor));
+   return Array.from({length:count},(_,i)=>{let type=pool[Math.floor(r()*pool.length)];if(i%4===0&&director==='pursuit')type='harrier';if(i%4===0&&director==='crossfire')type=this.stage>1?'prism':'turret';
+    const theta=i*2.39996+r()*.5;return {at:1.25+i*(director==='crossfire'?1.20:1.05),type,x:clamp(this.width*.5+Math.cos(theta)*this.width*.39,75,this.width-75),y:clamp(this.height*.42+Math.sin(theta)*this.height*.3,this.bounds.top+50,this.bounds.bottom-65)};});
  }
  spawn(type,x,y){const e=super.spawn(type,x,y);if(!e)return e;if(ENEMIES[type]){e.hp=e.maxHp=ENEMIES[type].hp*this.mods.hp*this.diffHp;e.r=ENEMIES[type].r;e.special=3;}
   if(this.route?.id==='elite'&&type!=='boss'&&e.id%5===0){e.elite=true;e.hp*=1.4;e.maxHp*=1.4;}

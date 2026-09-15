@@ -36,7 +36,7 @@ with sync_playwright() as pw:
         if name!='small':page.screenshot(path=str(OUT/f'{name}-03-route.png'))
         page.click('#route-intelligence');page.fill('#ai-prompt','Test my route with a crossfire lattice.');page.click('#ai-request')
         wait_js(page,"!document.querySelector('#ai-apply').disabled")
-        assert 'MOCK' in page.inner_text('#ai-provider')
+        assert 'LOCAL RULES' in page.inner_text('#ai-provider')
         page.click('#ai-apply');assert page.evaluate('__PACT_TEST__.world.director')=='crossfire'
         page.click('#route-options button:nth-child(2)')
         assert page.evaluate('__PACT_TEST__.world.credits')==80
@@ -96,7 +96,7 @@ with sync_playwright() as pw:
             before=page.evaluate('JSON.stringify(__PACT_TEST__.world)');page.set_viewport_size({'width':height,'height':width});page.evaluate('__PACT_TEST__.render(7)');assert page.evaluate('JSON.stringify(__PACT_TEST__.world)')==before
         # Host transition refused in standalone. No accidental network call.
         page.evaluate("__PACT_TEST__.world.phase='won';__PACT_TEST__.results()")
-        page.click('#debrief');page.select_option('#ai-mode','server');page.check('#ai-consent');page.click('#ai-request');assert 'offline' in page.inner_text('#ai-status').lower()
+        page.click('#debrief');assert page.locator('#ai-mode option[value=server]').is_disabled()
         page.select_option('#ai-mode','mock');page.click('#ai-request');wait_js(page,"document.querySelector('#ai-status').textContent.includes('VALIDATED')")
         assert not errors,errors;assert not network,network
         results.append({'viewport':[width,height],'name':name,'sectors':len(frames),'frames':frames,'pixels':pixels,'errors':errors,'networkRequests':network,'ui':['hangar','airframe','route','director proposal/apply','negotiation preview/sign','settings','debrief','standalone server guard']})

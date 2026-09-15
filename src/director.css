@@ -1,0 +1,41 @@
+/* The campaign director previews the same seeded schedule used in combat. */
+#ai-screen[data-task=director] .command-wrap{width:min(1180px,100%);padding-top:22px;gap:12px}
+#ai-screen[data-task=director] .command-heading h2{font-size:34px}
+#ai-screen[data-task=director] .command-heading p{margin:4px 0}
+#ai-screen[data-task=director] .ai-layout{grid-template-columns:250px minmax(0,1fr);gap:22px}
+#ai-screen[data-task=director] .ai-main{gap:9px;min-width:0}
+#ai-screen[data-task=director] .ai-rival{padding:18px}
+#ai-screen[data-task=director] .rival-seal{height:90px;width:90px;font-size:52px;margin:18px auto}
+#ai-screen[data-task=director] .ai-transport{margin-top:18px;gap:6px}
+#ai-screen[data-task=director] .ai-consent{font-size:11px;line-height:1.6}
+#ai-screen[data-task=director] .ai-output{min-height:108px;max-height:150px;overflow-y:auto;padding:12px 16px;scrollbar-color:#759c98 #111e27}
+#ai-screen[data-task=director] .ai-output blockquote{font-size:17px;line-height:1.4;margin-bottom:6px}
+#ai-screen[data-task=director] .ai-output p{line-height:1.5;margin:4px 0}
+#ai-screen[data-task=director] .ai-main textarea{min-height:66px;height:66px;max-height:110px;padding:10px 12px}
+#ai-screen[data-task=director] .ai-status{margin:0}
+#ai-director-preview{border:1px solid #8cdcc944;padding:12px 14px;background:#0c1822}
+#ai-preview-route{background:#182935;color:#e2ede5;border:1px solid #718c92;padding:6px 10px;margin-left:12px;font-size:12px;border-radius:4px}
+.ai-plan-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px}
+.ai-plan-grid article{min-width:0;border-top:1px solid #87b7b63d;padding-top:9px}
+.ai-plan-grid strong{font:10px monospace;color:#8fa7b2;letter-spacing:1px}
+.ai-plan-grid h4{font-size:15px;font-weight:500;margin:6px 0;color:#cbe5dc}
+.ai-plan-grid p{font:11px/1.6 monospace;margin:4px 0;color:#bfd0d5;overflow-wrap:anywhere}
+.ai-plan-grid .ai-plan-types{min-height:32px;color:#91aeb9;font-size:10px}
+#ai-director-preview[data-proposed]:not([data-proposed=""]) #ai-plan-proposed{border-top-color:#a3d8c4}
+.ai-plan-timeline{display:flex;gap:4px;margin-top:7px}
+.ai-plan-timeline span{flex:1;text-align:center;background:#273b44;border-bottom:2px solid #8aafb8;padding:5px 0;font:9px monospace;color:#d0e2e0}
+.ai-plan-timeline [data-type=turret],.ai-plan-timeline [data-type=prism]{border-color:#dec28d}
+.ai-plan-timeline [data-type=harrier]{border-color:#b69fe0}
+#ai-plan-note{font:10px/1.6 monospace;color:#91a6b1;margin:10px 0 0}
+.ai-consent[hidden],#ai-director-preview[hidden]{display:none}
+.mobile-ui #ai-screen[data-task=director] .command-wrap{padding-top:calc(16px + var(--safe-top))}
+.mobile-ui #ai-screen[data-task=director] .ai-layout{display:flex;flex-direction:column;gap:12px}
+.mobile-ui #ai-screen[data-task=director] .ai-rival{min-height:0;margin:0}
+.mobile-ui #ai-screen[data-task=director] .rival-seal,.mobile-ui #ai-screen[data-task=director] #ai-rival-copy,.mobile-ui #ai-screen[data-task=director] .ai-help{display:none}
+.mobile-ui #ai-screen[data-task=director] .ai-rival h3{font-size:14px;margin:10px 0}
+.mobile-ui #ai-screen[data-task=director] .ai-transport{margin-top:10px;padding:8px 0}
+.mobile-ui #ai-screen[data-task=director] .ai-main textarea{font-size:16px;min-height:80px}
+.mobile-ui #ai-screen[data-task=director] .ai-buttons{position:sticky;bottom:-1px;background:#0b151ef2;padding:10px 0 calc(10px + var(--safe-bottom));z-index:2}
+.mobile-ui #ai-screen[data-task=director] .ai-suggestions button{min-height:44px;font-size:11px}
+.mobile-ui #ai-preview-route{min-height:44px;margin-left:0;width:100%;margin-top:6px;font-size:14px}
+.mobile-ui .ai-plan-grid{gap:10px}.mobile-ui .ai-plan-timeline{gap:2px}.mobile-ui .ai-plan-timeline span{font-size:8px}

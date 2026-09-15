@@ -1,0 +1,1461 @@
+TAP version 13
+# (node:93564) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///<workspace>/tests/access.test.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\Users\\wildman\\Downloads\\NEMESIS-PACT-3D-EN-v0.5.0-source\\NEMESIS-PACT\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: issues random signed HttpOnly Strict cookie and validates CSRF
+ok 1 - issues random signed HttpOnly Strict cookie and validates CSRF
+  ---
+  duration_ms: 35.0035
+  type: 'test'
+  ...
+# Subtest: rejects wrong Origin and missing durable quota
+ok 2 - rejects wrong Origin and missing durable quota
+  ---
+  duration_ms: 1.235
+  type: 'test'
+  ...
+# Subtest: 17 named cues cover six sectors, six bosses and five noncombat contexts
+ok 3 - 17 named cues cover six sectors, six bosses and five noncombat contexts
+  ---
+  duration_ms: 2.5895
+  type: 'test'
+  ...
+# Subtest: all cues have distinct arrangement streams, not only changed labels
+ok 4 - all cues have distinct arrangement streams, not only changed labels
+  ---
+  duration_ms: 59.6964
+  type: 'test'
+  ...
+# Subtest: repeated seeded arrangements match, later phrases can vary independently
+ok 5 - repeated seeded arrangements match, later phrases can vary independently
+  ---
+  duration_ms: 55.5796
+  type: 'test'
+  ...
+# Subtest: music composition never reads Math.random or alters a run
+ok 6 - music composition never reads Math.random or alters a run
+  ---
+  duration_ms: 10.2894
+  type: 'test'
+  ...
+# Subtest: all generated notes are finite, bounded and have valid instrument parameters
+ok 7 - all generated notes are finite, bounded and have valid instrument parameters
+  ---
+  duration_ms: 110.4732
+  type: 'test'
+  ...
+# Subtest: boss cues start on actual boss presence, not a wave number or title fixture
+ok 8 - boss cues start on actual boss presence, not a wave number or title fixture
+  ---
+  duration_ms: 0.312
+  type: 'test'
+  ...
+# Subtest: music state resolver covers selection, results and paused overlays
+ok 9 - music state resolver covers selection, results and paused overlays
+  ---
+  duration_ms: 0.4306
+  type: 'test'
+  ...
+# Subtest: ceasefire removes rhythmic stems; adaptive intensity and fixed setting differ
+ok 10 - ceasefire removes rhythmic stems; adaptive intensity and fixed setting differ
+  ---
+  duration_ms: 16.0815
+  type: 'test'
+  ...
+# Subtest: 32-bar form changes accompaniment and includes an eight-bar breakdown
+ok 11 - 32-bar form changes accompaniment and includes an eight-bar breakdown
+  ---
+  duration_ms: 1.0861
+  type: 'test'
+  ...
+# Subtest: legacy sound-effect pitches and event cues are preserved exactly
+ok 12 - legacy sound-effect pitches and event cues are preserved exactly
+  ---
+  duration_ms: 1.5449
+  type: 'test'
+  ...
+# Subtest: recording tap mirrors limiter output and releases only its tap
+ok 13 - recording tap mirrors limiter output and releases only its tap
+  ---
+  duration_ms: 3.7773
+  type: 'test'
+  ...
+# Subtest: transport changes once per cue and crossfades with bounded retiring decks
+ok 14 - transport changes once per cue and crossfades with bounded retiring decks
+  ---
+  duration_ms: 9.4198
+  type: 'test'
+  ...
+# Subtest: pause, hidden page and mute stop future scheduling; resume skips no burst
+ok 15 - pause, hidden page and mute stop future scheduling; resume skips no burst
+  ---
+  duration_ms: 0.8946
+  type: 'test'
+  ...
+# Subtest: scheduler catches up by dropping missed ticks instead of spraying queued notes
+ok 16 - scheduler catches up by dropping missed ticks instead of spraying queued notes
+  ---
+  duration_ms: 0.6196
+  type: 'test'
+  ...
+# Subtest: music-off still allows sound effects and volume channels remain independent
+ok 17 - music-off still allows sound effects and volume channels remain independent
+  ---
+  duration_ms: 0.7705
+  type: 'test'
+  ...
+# Subtest: preview does not alter game state and stops when requested
+ok 18 - preview does not alter game state and stops when requested
+  ---
+  duration_ms: 0.5716
+  type: 'test'
+  ...
+# Subtest: compiled HTML embeds soundtrack and independent mix controls without remote audio
+ok 19 - compiled HTML embeds soundtrack and independent mix controls without remote audio
+  ---
+  duration_ms: 3.5529
+  type: 'test'
+  ...
+# Subtest: seeded RNG is deterministic, bounded, and seed-sensitive
+ok 20 - seeded RNG is deterministic, bounded, and seed-sensitive
+  ---
+  duration_ms: 3.1706
+  type: 'test'
+  ...
+# Subtest: swept collision detects tunneling and handles stationary segments
+ok 21 - swept collision detects tunneling and handles stationary segments
+  ---
+  duration_ms: 0.2563
+  type: 'test'
+  ...
+# Subtest: all seven contracts have real, distinct modifiers
+ok 22 - all seven contracts have real, distinct modifiers
+  ---
+  duration_ms: 0.4951
+  type: 'test'
+  ...
+# Subtest: invalid difficulty/long seed normalize and invalid contracts do not mutate state
+ok 23 - invalid difficulty/long seed normalize and invalid contracts do not mutate state
+  ---
+  duration_ms: 1.2483
+  type: 'test'
+  ...
+# Subtest: wave plan and upgrade choices are independent of cosmetic/hit RNG consumption
+ok 24 - wave plan and upgrade choices are independent of cosmetic/hit RNG consumption
+  ---
+  duration_ms: 1.029
+  type: 'test'
+  ...
+# Subtest: normal and diagonal movement share a speed limit; player stays in bounds
+ok 25 - normal and diagonal movement share a speed limit; player stays in bounds
+  ---
+  duration_ms: 8.5444
+  type: 'test'
+  ...
+# Subtest: invalid/negative dt does not advance and huge dt is clamped
+ok 26 - invalid/negative dt does not advance and huge dt is clamped
+  ---
+  duration_ms: 0.4017
+  type: 'test'
+  ...
+# Subtest: dash grants invulnerability, cannot retrigger during cooldown
+ok 27 - dash grants invulnerability, cannot retrigger during cooldown
+  ---
+  duration_ms: 0.6305
+  type: 'test'
+  ...
+# Subtest: perfect parry turns enemy bullet into homing friendly damage and charges energy
+ok 28 - perfect parry turns enemy bullet into homing friendly damage and charges energy
+  ---
+  duration_ms: 1.177
+  type: 'test'
+  ...
+# Subtest: late parry uses the non-perfect damage window
+ok 29 - late parry uses the non-perfect damage window
+  ---
+  duration_ms: 0.9191
+  type: 'test'
+  ...
+# Subtest: one projectile can graze only once
+ok 30 - one projectile can graze only once
+  ---
+  duration_ms: 0.5378
+  type: 'test'
+  ...
+# Subtest: enemy hits consume hull, damage invulnerability prevents chained hits
+ok 31 - enemy hits consume hull, damage invulnerability prevents chained hits
+  ---
+  duration_ms: 0.2233
+  type: 'test'
+  ...
+# Subtest: glass doubles damage and breach removes both sides of the contract
+ok 32 - glass doubles damage and breach removes both sides of the contract
+  ---
+  duration_ms: 0.5572
+  type: 'test'
+  ...
+# Subtest: nova requires energy, clears bullets and lasers, damages enemies
+ok 33 - nova requires energy, clears bullets and lasers, damages enemies
+  ---
+  duration_ms: 0.5248
+  type: 'test'
+  ...
+# Subtest: sanctuary clears swept enemy bullets but not enemy bodies
+ok 34 - sanctuary clears swept enemy bullets but not enemy bodies
+  ---
+  duration_ms: 0.4156
+  type: 'test'
+  ...
+# Subtest: ceasefire stops both sides firing and hostile motion, not movement
+ok 35 - ceasefire stops both sides firing and hostile motion, not movement
+  ---
+  duration_ms: 0.5191
+  type: 'test'
+  ...
+# Subtest: duel suppresses boss reinforcements while ordinary pact allows them
+ok 36 - duel suppresses boss reinforcements while ordinary pact allows them
+  ---
+  duration_ms: 0.8324
+  type: 'test'
+  ...
+# Subtest: low-hull upgrade choices always offer a full repair
+ok 37 - low-hull upgrade choices always offer a full repair
+  ---
+  duration_ms: 0.3584
+  type: 'test'
+  ...
+# Subtest: upgrades are unique choices and capped upgrades disappear
+ok 38 - upgrades are unique choices and capped upgrades disappear
+  ---
+  duration_ms: 0.4082
+  type: 'test'
+  ...
+# Subtest: hull upgrade raises capacity and heals without overflow
+ok 39 - hull upgrade raises capacity and heals without overflow
+  ---
+  duration_ms: 0.2498
+  type: 'test'
+  ...
+# Subtest: friendly bullets deal damage once per enemy even with piercing
+ok 40 - friendly bullets deal damage once per enemy even with piercing
+  ---
+  duration_ms: 0.3236
+  type: 'test'
+  ...
+# Subtest: death cannot be overwritten by same-frame empty-wave progression
+ok 41 - death cannot be overwritten by same-frame empty-wave progression
+  ---
+  duration_ms: 0.8386
+  type: 'test'
+  ...
+# Subtest: all three sectors progress through six choices to the correct victory ending (fixture)
+ok 42 - all three sectors progress through six choices to the correct victory ending (fixture)
+  ---
+  duration_ms: 6.0177
+  type: 'test'
+  ...
+# Subtest: training is immortal and does not advance campaign
+ok 43 - training is immortal and does not advance campaign
+  ---
+  duration_ms: 6.6786
+  type: 'test'
+  ...
+# Subtest: simulation entity budgets prevent unbounded projectile growth
+ok 44 - simulation entity budgets prevent unbounded projectile growth
+  ---
+  duration_ms: 2.0661
+  type: 'test'
+  ...
+# Subtest: identical input streams produce identical full simulation states
+ok 45 - identical input streams produce identical full simulation states
+  ---
+  duration_ms: 9.3334
+  type: 'test'
+  ...
+# Subtest: report is detached, bounded and JSON serializable
+ok 46 - report is detached, bounded and JSON serializable
+  ---
+  duration_ms: 0.4442
+  type: 'test'
+  ...
+# Subtest: standalone has no external assets and networking is disabled by CSP and hosted gate
+ok 47 - standalone has no external assets and networking is disabled by CSP and hosted gate
+  ---
+  duration_ms: 3.7598
+  type: 'test'
+  ...
+# Subtest: local provider makes no network call and labels no AI
+ok 48 - local provider makes no network call and labels no AI
+  ---
+  duration_ms: 4.8875
+  type: 'test'
+  ...
+# Subtest: missing consent and standalone server use fail before session or fetch
+ok 49 - missing consent and standalone server use fail before session or fetch
+  ---
+  duration_ms: 1.4367
+  type: 'test'
+  ...
+# Subtest: fixture response uses session CSRF credentials and no Authorization token
+ok 50 - fixture response uses session CSRF credentials and no Authorization token
+  ---
+  duration_ms: 34.9983
+  type: 'test'
+  ...
+# Subtest: unknown provider, HTTP failure and malformed paid advantages become explicit local fallback
+ok 51 - unknown provider, HTTP failure and malformed paid advantages become explicit local fallback
+  ---
+  duration_ms: 3.2622
+  type: 'test'
+  ...
+# Subtest: cancelled late upstream reply is discarded
+ok 52 - cancelled late upstream reply is discarded
+  ---
+  duration_ms: 6.9495
+  type: 'test'
+  ...
+# Subtest: second proposal supersedes first even when first fetch ignores abort
+ok 53 - second proposal supersedes first even when first fetch ignores abort
+  ---
+  duration_ms: 4.8629
+  type: 'test'
+  ...
+# Subtest: aborted connection yields labelled local counteroffer, not OpenAI receipt
+ok 54 - aborted connection yields labelled local counteroffer, not OpenAI receipt
+  ---
+  duration_ms: 1.3622
+  type: 'test'
+  ...
+# Subtest: every affordable rule combination is offered and no unfunded combination can be generated
+ok 55 - every affordable rule combination is offered and no unfunded combination can be generated
+  ---
+  duration_ms: 7.4326
+  type: 'test'
+  ...
+# Subtest: the recorded Japanese correction constrains generation and rejects a late left response
+ok 56 - the recorded Japanese correction constrains generation and rejects a late left response
+  ---
+  duration_ms: 4.983
+  type: 'test'
+  ...
+# Subtest: clear English corrections are constrained while negated or ambiguous location mentions are not
+ok 57 - clear English corrections are constrained while negated or ambiguous location mentions are not
+  ---
+  duration_ms: 2.0901
+  type: 'test'
+  ...
+# Subtest: explicit sanctuary withdrawal constrains the model to none and rejects a retained old zone
+ok 58 - explicit sanctuary withdrawal constrains the model to none and rejects a retained old zone
+  ---
+  duration_ms: 1.4171
+  type: 'test'
+  ...
+# Subtest: sanctuary removal constraints do not override negation, hypotheticals or later restoration
+ok 59 - sanctuary removal constraints do not override negation, hypotheticals or later restoration
+  ---
+  duration_ms: 0.2773
+  type: 'test'
+  ...
+# Subtest: the reproduced right sanctuary plus charged reflection with weaker gun is rejected before canonical proposal creation
+ok 60 - the reproduced right sanctuary plus charged reflection with weaker gun is rejected before canonical proposal creation
+  ---
+  duration_ms: 0.3612
+  type: 'test'
+  ...
+# Subtest: model prose cannot inject extra clauses and canonical validation still bounds all fields
+ok 61 - model prose cannot inject extra clauses and canonical validation still bounds all fields
+  ---
+  duration_ms: 0.6072
+  type: 'test'
+  ...
+# Subtest: mock mode is deterministic, non-billable, and never calls upstream
+ok 62 - mock mode is deterministic, non-billable, and never calls upstream
+  ---
+  duration_ms: 49.1126
+  type: 'test'
+  ...
+# Subtest: live mode requires signed session cookie, CSRF and exact origin before inference
+ok 63 - live mode requires signed session cookie, CSRF and exact origin before inference
+  ---
+  duration_ms: 4.8933
+  type: 'test'
+  ...
+# Subtest: live response uses approved Responses schema and accounts through injected quota
+ok 64 - live response uses approved Responses schema and accounts through injected quota
+  ---
+  duration_ms: 6.702
+  type: 'test'
+  ...
+# Subtest: upstream failure or malformed output becomes explicit local rules without applying it
+ok 65 - upstream failure or malformed output becomes explicit local rules without applying it
+  ---
+  duration_ms: 7.7094
+  type: 'test'
+  ...
+# Subtest: invalid shapes and unapproved model fail before inference
+ok 66 - invalid shapes and unapproved model fail before inference
+  ---
+  duration_ms: 2.5836
+  type: 'test'
+  ...
+# Subtest: Luna uses bounded standard-tier Responses and its own token prices through both provider routes
+ok 67 - Luna uses bounded standard-tier Responses and its own token prices through both provider routes
+  ---
+  duration_ms: 5.016
+  type: 'test'
+  ...
+# Subtest: Luna retains a conservative write premium when cache details are absent or invalid
+ok 68 - Luna retains a conservative write premium when cache details are absent or invalid
+  ---
+  duration_ms: 4.8855
+  type: 'test'
+  ...
+# Subtest: compositional contract catalog has exactly 36 legal combinations, not an unbounded code interpreter
+ok 69 - compositional contract catalog has exactly 36 legal combinations, not an unbounded code interpreter
+  ---
+  duration_ms: 3.5753
+  type: 'test'
+  ...
+# Subtest: local Japanese and English examples match supported rules; provider is explicitly authored
+ok 70 - local Japanese and English examples match supported rules; provider is explicitly authored
+  ---
+  duration_ms: 3.8227
+  type: 'test'
+  ...
+# Subtest: freeform impossible request yields bounded counteroffer, never invulnerability or victory
+ok 71 - freeform impossible request yields bounded counteroffer, never invulnerability or victory
+  ---
+  duration_ms: 0.3352
+  type: 'test'
+  ...
+# Subtest: extra fields, prototype objects and out-of-range enum values are rejected
+ok 72 - extra fields, prototype objects and out-of-range enum values are rejected
+  ---
+  duration_ms: 0.4522
+  type: 'test'
+  ...
+# Subtest: zero benefits, unfunded terms and stacking all three benefits fail closed
+ok 73 - zero benefits, unfunded terms and stacking all three benefits fail closed
+  ---
+  duration_ms: 0.3831
+  type: 'test'
+  ...
+# Subtest: request protocol rejects arbitrary telemetry, stale shapes, NaN, giant counts and too much text
+ok 74 - request protocol rejects arbitrary telemetry, stale shapes, NaN, giant counts and too much text
+  ---
+  duration_ms: 0.4072
+  type: 'test'
+  ...
+# Subtest: proposing is pure and has no authority until explicit signature
+ok 75 - proposing is pure and has no authority until explicit signature
+  ---
+  duration_ms: 1.2031
+  type: 'test'
+  ...
+# Subtest: incoming speed, reflected damage and weak gun are real modifiers
+ok 76 - incoming speed, reflected damage and weak gun are real modifiers
+  ---
+  duration_ms: 0.9688
+  type: 'test'
+  ...
+# Subtest: each sanctuary intercepts the exact swept segment it draws; other locations are not protected
+ok 77 - each sanctuary intercepts the exact swept segment it draws; other locations are not protected
+  ---
+  duration_ms: 1.3175
+  type: 'test'
+  ...
+# Subtest: sanctuary protection is enforced before pilot collision, and cannot block a laser
+ok 78 - sanctuary protection is enforced before pilot collision, and cannot block a laser
+  ---
+  duration_ms: 2.1421
+  type: 'test'
+  ...
+# Subtest: fragile covenant actually doubles incoming hull damage
+ok 79 - fragile covenant actually doubles incoming hull damage
+  ---
+  duration_ms: 0.5337
+  type: 'test'
+  ...
+# Subtest: reinforcements first arrive after 9 seconds, remain capped, and are absent for other prices
+ok 80 - reinforcements first arrive after 9 seconds, remain capped, and are absent for other prices
+  ---
+  duration_ms: 164.3495
+  type: 'test'
+  ...
+# Subtest: no automatic victory or scheduled boss HP reduction without damage
+ok 81 - no automatic victory or scheduled boss HP reduction without damage
+  ---
+  duration_ms: 129.4972
+  type: 'test'
+  ...
+# Subtest: boss intent provides a warning before emission; lasers only occur in later phases
+ok 82 - boss intent provides a warning before emission; lasers only occur in later phases
+  ---
+  duration_ms: 0.4531
+  type: 'test'
+  ...
+# Subtest: automatic parley freezes time and all simulation state at 18 seconds
+ok 83 - automatic parley freezes time and all simulation state at 18 seconds
+  ---
+  duration_ms: 9.1187
+  type: 'test'
+  ...
+# Subtest: manual parley is gated until 8 seconds and cancel preserves all battle rules and health
+ok 84 - manual parley is gated until 8 seconds and cancel preserves all battle rules and health
+  ---
+  duration_ms: 0.3732
+  type: 'test'
+  ...
+# Subtest: amendment swaps rules, rescales bullets and preserves boss and pilot damage
+ok 85 - amendment swaps rules, rescales bullets and preserves boss and pilot damage
+  ---
+  duration_ms: 0.4499
+  type: 'test'
+  ...
+# Subtest: break removes the shield and all bonuses, records breach, and prevents later amendments
+ok 86 - break removes the shield and all bonuses, records breach, and prevents later amendments
+  ---
+  duration_ms: 0.641
+  type: 'test'
+  ...
+# Subtest: perfect reflection uses covenant multiplier and telemetry measures actual damage dealt
+ok 87 - perfect reflection uses covenant multiplier and telemetry measures actual damage dealt
+  ---
+  duration_ms: 0.9134
+  type: 'test'
+  ...
+# Subtest: killing the boss is required and ends the encounter even if summoned adds remain
+ok 88 - killing the boss is required and ends the encounter even if summoned adds remain
+  ---
+  duration_ms: 0.3872
+  type: 'test'
+  ...
+# Subtest: memory is bounded and only completed honored fights increment honor; breach counted once
+ok 89 - memory is bounded and only completed honored fights increment honor; breach counted once
+  ---
+  duration_ms: 1.194
+  type: 'test'
+  ...
+# Subtest: export includes source/revisions/effects, no prompt, access token or invented voice integration
+ok 90 - export includes source/revisions/effects, no prompt, access token or invented voice integration
+  ---
+  duration_ms: 1.7329
+  type: 'test'
+  ...
+# Subtest: identical seed, signatures and inputs produce identical gameplay counters
+ok 91 - identical seed, signatures and inputs produce identical gameplay counters
+  ---
+  duration_ms: 135.392
+  type: 'test'
+  ...
+# Subtest: baseline center-sanctuary hook remains identical to the old collision condition
+ok 92 - baseline center-sanctuary hook remains identical to the old collision condition
+  ---
+  duration_ms: 1.2955
+  type: 'test'
+  ...
+# Subtest: local keyword fallback follows latest direction and explicit English/Japanese no-sanctuary terms
+ok 93 - local keyword fallback follows latest direction and explicit English/Japanese no-sanctuary terms
+  ---
+  duration_ms: 0.4697
+  type: 'test'
+  ...
+# Subtest: demo recorder is disabled without explicit demo query
+ok 94 - demo recorder is disabled without explicit demo query
+  ---
+  duration_ms: 1.6383
+  type: 'test'
+  ...
+# Subtest: manual recording has no forced timer and saves after an arbitrary duration
+ok 95 - manual recording has no forced timer and saves after an arbitrary duration
+  ---
+  duration_ms: 3.6712
+  type: 'test'
+  ...
+# Subtest: duplicate stop is ignored and cleanup runs once
+ok 96 - duplicate stop is ignored and cleanup runs once
+  ---
+  duration_ms: 1.0377
+  type: 'test'
+  ...
+# Subtest: stop while share dialog is pending cancels the eventual stream
+ok 97 - stop while share dialog is pending cancels the eventual stream
+  ---
+  duration_ms: 0.4148
+  type: 'test'
+  ...
+# Subtest: display audio is ignored while mic, remote and game audio are each mixed once
+ok 98 - display audio is ignored while mic, remote and game audio are each mixed once
+  ---
+  duration_ms: 1.6009
+  type: 'test'
+  ...
+# Subtest: game audio tap is released without stopping its owned track
+ok 99 - game audio tap is released without stopping its owned track
+  ---
+  duration_ms: 0.3827
+  type: 'test'
+  ...
+# Subtest: remote playback level controls its recording gain and mic replacement preserves it
+ok 100 - remote playback level controls its recording gain and mic replacement preserves it
+  ---
+  duration_ms: 0.408
+  type: 'test'
+  ...
+# Subtest: invalid game tap is released immediately
+ok 101 - invalid game tap is released immediately
+  ---
+  duration_ms: 0.3526
+  type: 'test'
+  ...
+# Subtest: retained remote element is rebound once after restart and uses latest volume
+ok 102 - retained remote element is rebound once after restart and uses latest volume
+  ---
+  duration_ms: 0.7697
+  type: 'test'
+  ...
+# Subtest: share ended during resume stops capture before resume settles
+ok 103 - share ended during resume stops capture before resume settles
+  ---
+  duration_ms: 1.0614
+  type: 'test'
+  ...
+# Subtest: attachVoice does not stop or clone game-owned tracks
+ok 104 - attachVoice does not stop or clone game-owned tracks
+  ---
+  duration_ms: 0.3316
+  type: 'test'
+  ...
+# Subtest: async save prevents a new capture until stop completes, then permits restart
+ok 105 - async save prevents a new capture until stop completes, then permits restart
+  ---
+  duration_ms: 1.1911
+  type: 'test'
+  ...
+# Subtest: cancel during audio resume ends owned tracks; its late result cannot close a new capture
+ok 106 - cancel during audio resume ends owned tracks; its late result cannot close a new capture
+  ---
+  duration_ms: 0.7286
+  type: 'test'
+  ...
+# Subtest: director requires origin, CSRF and app session; rejects other tasks and arbitrary fields before spending
+ok 107 - director requires origin, CSRF and app session; rejects other tasks and arbitrary fields before spending
+  ---
+  duration_ms: 73.4105
+  type: 'test'
+  ...
+# Subtest: director uses Luna, strict schema, standard tier and the shared conservative reservation
+ok 108 - director uses Luna, strict schema, standard tier and the shared conservative reservation
+  ---
+  duration_ms: 5.516
+  type: 'test'
+  ...
+# Subtest: offline, kill and exhausted budget never call inference
+ok 109 - offline, kill and exhausted budget never call inference
+  ---
+  duration_ms: 3.0146
+  type: 'test'
+  ...
+# Subtest: transport failure and invalid model output produce local proposals and retain unreported spend
+ok 110 - transport failure and invalid model output produce local proposals and retain unreported spend
+  ---
+  duration_ms: 5.628
+  type: 'test'
+  ...
+# Subtest: late result after cancel cannot publish and paid work is still accounted
+ok 111 - late result after cancel cannot publish and paid work is still accounted
+  ---
+  duration_ms: 3.143
+  type: 'test'
+  ...
+# Subtest: approval digest and intent are bound; simultaneous double approval succeeds only once
+ok 112 - approval digest and intent are bound; simultaneous double approval succeeds only once
+  ---
+  duration_ms: 4.6361
+  type: 'test'
+  ...
+# Subtest: client invalidates edits and stale responses, uses newer intent after cancellation and never applies twice
+ok 113 - client invalidates edits and stale responses, uses newer intent after cancellation and never applies twice
+  ---
+  duration_ms: 11.9034
+  type: 'test'
+  ...
+# Subtest: client sign requires matching server receipt and exiting during approval cannot apply
+ok 114 - client sign requires matching server receipt and exiting during approval cannot apply
+  ---
+  duration_ms: 1.6418
+  type: 'test'
+  ...
+# Subtest: formation preview is immutable and byte-identical to launched wave across all sectors/routes/directors
+ok 115 - formation preview is immutable and byte-identical to launched wave across all sectors/routes/directors
+  ---
+  duration_ms: 14.0898
+  type: 'test'
+  ...
+# Subtest: applying director preserves hull, time, credits and pact while invalid catalog IDs reject
+ok 116 - applying director preserves hull, time, credits and pact while invalid catalog IDs reject
+  ---
+  duration_ms: 0.7786
+  type: 'test'
+  ...
+# Subtest: English locale is declared and all runtime source strings are localized
+ok 117 - English locale is declared and all runtime source strings are localized
+  ---
+  duration_ms: 12.4776
+  type: 'test'
+  ...
+# Subtest: all seven pacts have complete English text and concise HUD labels
+ok 118 - all seven pacts have complete English text and concise HUD labels
+  ---
+  duration_ms: 0.6279
+  type: 'test'
+  ...
+# Subtest: all thirteen upgrade options have English names, mechanics and categories
+ok 119 - all thirteen upgrade options have English names, mechanics and categories
+  ---
+  duration_ms: 0.2782
+  type: 'test'
+  ...
+# Subtest: three bosses and sector names are localized without changing boss hull
+ok 120 - three bosses and sector names are localized without changing boss hull
+  ---
+  duration_ms: 1.1317
+  type: 'test'
+  ...
+# Subtest: classic mechanics are byte-identical after undoing the three explicit virtual-hook extractions
+ok 121 - classic mechanics are byte-identical after undoing the three explicit virtual-hook extractions
+  ---
+  duration_ms: 2.1622
+  type: 'test'
+  ...
+# Subtest: touch input stays byte-identical; requested soundtrack changes are tested separately
+ok 122 - touch input stays byte-identical; requested soundtrack changes are tested separately
+  ---
+  duration_ms: 0.7818
+  type: 'test'
+  ...
+# Subtest: English run reports retain compatible IDs and the correct build version
+ok 123 - English run reports retain compatible IDs and the correct build version
+  ---
+  duration_ms: 3.5412
+  type: 'test'
+  ...
+# Subtest: English standalone build has no external dependencies and preserves offline CSP
+ok 124 - English standalone build has no external dependencies and preserves offline CSP
+  ---
+  duration_ms: 3.7791
+  type: 'test'
+  ...
+# Subtest: expedition content catalog has 6 bosses, 3 airframes, 8 relics and 3 new enemies
+ok 125 - expedition content catalog has 6 bosses, 3 airframes, 8 relics and 3 new enemies
+  ---
+  duration_ms: 1.5962
+  type: 'test'
+  ...
+# Subtest: all three airframes change actual initial hull, upgrades and dash cooldown
+ok 126 - all three airframes change actual initial hull, upgrades and dash cooldown
+  ---
+  duration_ms: 1.6127
+  type: 'test'
+  ...
+# Subtest: classic mode has no airframe mechanical advantages
+ok 127 - classic mode has no airframe mechanical advantages
+  ---
+  duration_ms: 1.4308
+  type: 'test'
+  ...
+# Subtest: route selection is single-use, invalid choices cannot mutate the run
+ok 128 - route selection is single-use, invalid choices cannot mutate the run
+  ---
+  duration_ms: 1.2277
+  type: 'test'
+  ...
+# Subtest: recovery routes heal but never exceed maximum hull
+ok 129 - recovery routes heal but never exceed maximum hull
+  ---
+  duration_ms: 0.3995
+  type: 'test'
+  ...
+# Subtest: director templates create different bounded plans, only between encounters
+ok 130 - director templates create different bounded plans, only between encounters
+  ---
+  duration_ms: 2.0198
+  type: 'test'
+  ...
+# Subtest: all seed / sector / route combinations respect spawn positions and entity budget
+ok 131 - all seed / sector / route combinations respect spawn positions and entity budget
+  ---
+  duration_ms: 3.2322
+  type: 'test'
+  ...
+# Subtest: shop rejects unaffordable, duplicate and non-offered relics; price is mechanical
+ok 132 - shop rejects unaffordable, duplicate and non-offered relics; price is mechanical
+  ---
+  duration_ms: 0.3958
+  type: 'test'
+  ...
+# Subtest: field repair only spends credits when there is damage and phase permits it
+ok 133 - field repair only spends credits when there is damage and phase permits it
+  ---
+  duration_ms: 0.5583
+  type: 'test'
+  ...
+# Subtest: relic needle and mercy lens alter projectiles; nova relic changes real cost
+ok 134 - relic needle and mercy lens alter projectiles; nova relic changes real cost
+  ---
+  duration_ms: 0.9454
+  type: 'test'
+  ...
+# Subtest: second heart prevents one death and only once
+ok 135 - second heart prevents one death and only once
+  ---
+  duration_ms: 0.552
+  type: 'test'
+  ...
+# Subtest: three new enemy controllers move or shoot and remain bounded
+ok 136 - three new enemy controllers move or shoot and remain bounded
+  ---
+  duration_ms: 1.3944
+  type: 'test'
+  ...
+# Subtest: new bosses have distinct actual attack signatures, independent of visuals
+ok 137 - new bosses have distinct actual attack signatures, independent of visuals
+  ---
+  duration_ms: 0.7209
+  type: 'test'
+  ...
+# Subtest: fixture progression: expedition completes 18 encounters and 6 signed pacts
+ok 138 - fixture progression: expedition completes 18 encounters and 6 signed pacts
+  ---
+  duration_ms: 2.3562
+  type: 'test'
+  ...
+# Subtest: fixture progression: gauntlet reaches six bosses and five upgrade drafts
+ok 139 - fixture progression: gauntlet reaches six bosses and five upgrade drafts
+  ---
+  duration_ms: 0.6267
+  type: 'test'
+  ...
+# Subtest: same campaign inputs and seeds remain deterministic
+ok 140 - same campaign inputs and seeds remain deterministic
+  ---
+  duration_ms: 56.1528
+  type: 'test'
+  ...
+# Subtest: six scenic silhouettes, animation OFF stability and fixed geometry budgets
+ok 141 - six scenic silhouettes, animation OFF stability and fixed geometry budgets
+  ---
+  duration_ms: 14.1752
+  type: 'test'
+  ...
+# Subtest: crystal geometry finite; expanded scenes preserve foreground depth safety and world state
+ok 142 - crystal geometry finite; expanded scenes preserve foreground depth safety and world state
+  ---
+  duration_ms: 6.2047
+  type: 'test'
+  ...
+# Subtest: harrier pauses between strafing bursts so direct-aim shots can connect
+ok 143 - harrier pauses between strafing bursts so direct-aim shots can connect
+  ---
+  duration_ms: 0.5631
+  type: 'test'
+  ...
+# Subtest: relic purchases cannot charge credits for an already capped upgrade
+ok 144 - relic purchases cannot charge credits for an already capped upgrade
+  ---
+  duration_ms: 0.6036
+  type: 'test'
+  ...
+# Subtest: both mock and server provider options have valid opening tags
+ok 145 - both mock and server provider options have valid opening tags
+  ---
+  duration_ms: 1.1506
+  type: 'test'
+  ...
+# Subtest: procedural meshes are nonempty, finite triangle position/normal streams
+ok 146 - procedural meshes are nonempty, finite triangle position/normal streams
+  ---
+  duration_ms: 2.3777
+  type: 'test'
+  ...
+# Subtest: every nondegenerate vertex normal is unit length
+ok 147 - every nondegenerate vertex normal is unit length
+  ---
+  duration_ms: 1.3101
+  type: 'test'
+  ...
+# Subtest: scene rendering leaves serialized simulation untouched
+ok 148 - scene rendering leaves serialized simulation untouched
+  ---
+  duration_ms: 6.337
+  type: 'test'
+  ...
+# Subtest: portrait, desktop and title instances stay finite and within buffer limits
+ok 149 - portrait, desktop and title instances stay finite and within buffer limits
+  ---
+  duration_ms: 5.7689
+  type: 'test'
+  ...
+# Subtest: cached static meshes do not grow between repeated frames
+ok 150 - cached static meshes do not grow between repeated frames
+  ---
+  duration_ms: 5.9312
+  type: 'test'
+  ...
+# Subtest: flight and scenery use disjoint valid depth bands in both APIs
+ok 151 - flight and scenery use disjoint valid depth bands in both APIs
+  ---
+  duration_ms: 0.7146
+  type: 'test'
+  ...
+# Subtest: stage architecture is visibly differentiated between the three sectors
+ok 152 - stage architecture is visibly differentiated between the three sectors
+  ---
+  duration_ms: 3.2003
+  type: 'test'
+  ...
+# Subtest: dynamic background animation changes geometry over time without changing static cache key
+ok 153 - dynamic background animation changes geometry over time without changing static cache key
+  ---
+  duration_ms: 2.2163
+  type: 'test'
+  ...
+# Subtest: only explicit shadow materials are shaded as shadows, never ground .02
+ok 154 - only explicit shadow materials are shaded as shadows, never ground .02
+  ---
+  duration_ms: 1.306
+  type: 'test'
+  ...
+# Subtest: GL and GPU frame uniforms share the 80-byte layout and retain edge shock origin
+ok 155 - GL and GPU frame uniforms share the 80-byte layout and retain edge shock origin
+  ---
+  duration_ms: 1.2669
+  type: 'test'
+  ...
+# Subtest: frame data carries boss emphasis and stage clear colors vary by sector
+ok 156 - frame data carries boss emphasis and stage clear colors vary by sector
+  ---
+  duration_ms: 1.9658
+  type: 'test'
+  ...
+# Subtest: WebGPU effects use compute storage textures and bounded dispatch kernels
+ok 157 - WebGPU effects use compute storage textures and bounded dispatch kernels
+  ---
+  duration_ms: 0.2584
+  type: 'test'
+  ...
+# Subtest: all included GLSL shaders declare WebGL2 GLSL ES 3.00
+ok 158 - all included GLSL shaders declare WebGL2 GLSL ES 3.00
+  ---
+  duration_ms: 0.1486
+  type: 'test'
+  ...
+# Subtest: 3D build embeds both backends and preserves all source files for rebuilding
+ok 159 - 3D build embeds both backends and preserves all source files for rebuilding
+  ---
+  duration_ms: 3.4523
+  type: 'test'
+  ...
+# Subtest: mock negotiation selects a real offered pact and remains reproducible
+ok 160 - mock negotiation selects a real offered pact and remains reproducible
+  ---
+  duration_ms: 3.4358
+  type: 'test'
+  ...
+# Subtest: director mock and debrief mock produce bounded typed decisions
+ok 161 - director mock and debrief mock produce bounded typed decisions
+  ---
+  duration_ms: 0.4355
+  type: 'test'
+  ...
+# Subtest: invalid fields, overlong prompts, telemetry injection and out of range stages reject
+ok 162 - invalid fields, overlong prompts, telemetry injection and out of range stages reject
+  ---
+  duration_ms: 0.5119
+  type: 'test'
+  ...
+# Subtest: schema is strict at the object boundary; unknown or unoffered result IDs reject
+ok 163 - schema is strict at the object boundary; unknown or unoffered result IDs reject
+  ---
+  duration_ms: 1.8396
+  type: 'test'
+  ...
+# Subtest: prompt injection cannot change mock IDs, grant items, execute code or bypass signing
+ok 164 - prompt injection cannot change mock IDs, grant items, execute code or bypass signing
+  ---
+  duration_ms: 0.4482
+  type: 'test'
+  ...
+# Subtest: legacy server is local-only and never calls upstream
+ok 165 - legacy server is local-only and never calls upstream
+  ---
+  duration_ms: 46.662
+  type: 'test'
+  ...
+# Subtest: live mode without complete config is refused before local legacy response
+ok 166 - live mode without complete config is refused before local legacy response
+  ---
+  duration_ms: 1.2328
+  type: 'test'
+  ...
+# Subtest: configured live mode remains local-rules and never uses the legacy upstream
+ok 167 - configured live mode remains local-rules and never uses the legacy upstream
+  ---
+  duration_ms: 1.187
+  type: 'test'
+  ...
+# Subtest: legacy endpoint validates request shape and body size before local decision
+ok 168 - legacy endpoint validates request shape and body size before local decision
+  ---
+  duration_ms: 3.0402
+  type: 'test'
+  ...
+# Subtest: kill switch configuration still leaves a playable local decision without upstream
+ok 169 - kill switch configuration still leaves a playable local decision without upstream
+  ---
+  duration_ms: 1.5425
+  type: 'test'
+  ...
+# Subtest: portrait has explicit 720-wide geometry, finite clamped height and metadata
+ok 170 - portrait has explicit 720-wide geometry, finite clamped height and metadata
+  ---
+  duration_ms: 4.9561
+  type: 'test'
+  ...
+# Subtest: desktop world and bounds remain backward-compatible
+ok 171 - desktop world and bounds remain backward-compatible
+  ---
+  duration_ms: 0.4055
+  type: 'test'
+  ...
+# Subtest: portrait 520: seeded spawn plans stay inside the visible arena
+ok 172 - portrait 520: seeded spawn plans stay inside the visible arena
+  ---
+  duration_ms: 2.5109
+  type: 'test'
+  ...
+# Subtest: portrait 520: movement and dash are bounded on all edges
+ok 173 - portrait 520: movement and dash are bounded on all edges
+  ---
+  duration_ms: 29.6708
+  type: 'test'
+  ...
+# Subtest: portrait 520: every boss's full silhouette stays on screen
+ok 174 - portrait 520: every boss's full silhouette stays on screen
+  ---
+  duration_ms: 219.9915
+  type: 'test'
+  ...
+# Subtest: portrait 740: seeded spawn plans stay inside the visible arena
+ok 175 - portrait 740: seeded spawn plans stay inside the visible arena
+  ---
+  duration_ms: 0.8319
+  type: 'test'
+  ...
+# Subtest: portrait 740: movement and dash are bounded on all edges
+ok 176 - portrait 740: movement and dash are bounded on all edges
+  ---
+  duration_ms: 4.1368
+  type: 'test'
+  ...
+# Subtest: portrait 740: every boss's full silhouette stays on screen
+ok 177 - portrait 740: every boss's full silhouette stays on screen
+  ---
+  duration_ms: 67.403
+  type: 'test'
+  ...
+# Subtest: portrait 1040: seeded spawn plans stay inside the visible arena
+ok 178 - portrait 1040: seeded spawn plans stay inside the visible arena
+  ---
+  duration_ms: 1.082
+  type: 'test'
+  ...
+# Subtest: portrait 1040: movement and dash are bounded on all edges
+ok 179 - portrait 1040: movement and dash are bounded on all edges
+  ---
+  duration_ms: 4.8262
+  type: 'test'
+  ...
+# Subtest: portrait 1040: every boss's full silhouette stays on screen
+ok 180 - portrait 1040: every boss's full silhouette stays on screen
+  ---
+  duration_ms: 71.72
+  type: 'test'
+  ...
+# Subtest: portrait 1440: seeded spawn plans stay inside the visible arena
+ok 181 - portrait 1440: seeded spawn plans stay inside the visible arena
+  ---
+  duration_ms: 0.7444
+  type: 'test'
+  ...
+# Subtest: portrait 1440: movement and dash are bounded on all edges
+ok 182 - portrait 1440: movement and dash are bounded on all edges
+  ---
+  duration_ms: 4.2773
+  type: 'test'
+  ...
+# Subtest: portrait 1440: every boss's full silhouette stays on screen
+ok 183 - portrait 1440: every boss's full silhouette stays on screen
+  ---
+  duration_ms: 70.6446
+  type: 'test'
+  ...
+# Subtest: portrait laser collision, reflection and nova remain mechanical, not UI-only
+ok 184 - portrait laser collision, reflection and nova remain mechanical, not UI-only
+  ---
+  duration_ms: 1.1836
+  type: 'test'
+  ...
+# Subtest: portrait source dimensions remain independent of physical viewport changes
+ok 185 - portrait source dimensions remain independent of physical viewport changes
+  ---
+  duration_ms: 0.245
+  type: 'test'
+  ...
+# Subtest: portrait identical inputs and dimensions produce identical runs
+ok 186 - portrait identical inputs and dimensions produce identical runs
+  ---
+  duration_ms: 60.0116
+  type: 'test'
+  ...
+# Subtest: portrait breach keeps consequences and cannot be used twice
+ok 187 - portrait breach keeps consequences and cannot be used twice
+  ---
+  duration_ms: 0.5249
+  type: 'test'
+  ...
+# (node:68196) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///<workspace>/tests/quota.test.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\Users\\wildman\\Downloads\\NEMESIS-PACT-3D-EN-v0.5.0-source\\NEMESIS-PACT\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: fails closed without durable store or explicit allocation
+ok 188 - fails closed without durable store or explicit allocation
+  ---
+  duration_ms: 1.8545
+  type: 'test'
+  ...
+# Subtest: reserve validates identity and voice duration
+ok 189 - reserve validates identity and voice duration
+  ---
+  duration_ms: 1.7115
+  type: 'test'
+  ...
+# Subtest: lifecycle and REST errors are exposed
+ok 190 - lifecycle and REST errors are exposed
+  ---
+  duration_ms: 30.7191
+  type: 'test'
+  ...
+# Subtest: Lua exports contain atomic reservation and transitions
+ok 191 - Lua exports contain atomic reservation and transitions
+  ---
+  duration_ms: 0.305
+  type: 'test'
+  ...
+# Subtest: voice allowance is scoped to a run while identity, budget and active lock remain shared
+ok 192 - voice allowance is scoped to a run while identity, budget and active lock remain shared
+  ---
+  duration_ms: 0.7344
+  type: 'test'
+  ...
+# Subtest: ensure creates a short lived session and does not send a token
+ok 193 - ensure creates a short lived session and does not send a token
+  ---
+  duration_ms: 38.3997
+  type: 'test'
+  ...
+# Subtest: request adds same origin credentials and CSRF, while preserving abort signal
+ok 194 - request adds same origin credentials and CSRF, while preserving abort signal
+  ---
+  duration_ms: 1.1183
+  type: 'test'
+  ...
+# Subtest: malformed or failed session responses fail closed
+ok 195 - malformed or failed session responses fail closed
+  ---
+  duration_ms: 1.4354
+  type: 'test'
+  ...
+# Subtest: ensure times out a non-responsive session service and releases pending
+ok 196 - ensure times out a non-responsive session service and releases pending
+  ---
+  duration_ms: 251.5208
+  type: 'test'
+  ...
+# Subtest: concurrent ensure calls share one request
+ok 197 - concurrent ensure calls share one request
+  ---
+  duration_ms: 1.5845
+  type: 'test'
+  ...
+# Subtest: clear invalidates a late response and permits a fresh ensure
+ok 198 - clear invalidates a late response and permits a fresh ensure
+  ---
+  duration_ms: 1.6096
+  type: 'test'
+  ...
+# Subtest: default fetch is bound to its global owner
+ok 199 - default fetch is bound to its global owner
+  ---
+  duration_ms: 0.8204
+  type: 'test'
+  ...
+# Subtest: timeout covers a stalled body and ignores its late completion
+ok 200 - timeout covers a stalled body and ignores its late completion
+  ---
+  duration_ms: 258.4274
+  type: 'test'
+  ...
+# Subtest: voice restart after expiry refreshes authorization while stop preserves the original owner
+ok 201 - voice restart after expiry refreshes authorization while stop preserves the original owner
+  ---
+  duration_ms: 2.1946
+  type: 'test'
+  ...
+# Checked 4438944 transformed vertices; minimum depth gap 0.4974
+# Subtest: ground is ordinary shaded scenery; all flight classes alone receive protection
+ok 202 - ground is ordinary shaded scenery; all flight classes alone receive protection
+  ---
+  duration_ms: 1.3692
+  type: 'test'
+  ...
+# Subtest: fog never washes out ships and nearer surfaces receive less aerial haze
+ok 203 - fog never washes out ships and nearer surfaces receive less aerial haze
+  ---
+  duration_ms: 0.5215
+  type: 'test'
+  ...
+# Subtest: ALL transformed mesh vertices fit WebGPU 0..1 and GL -1..1 across scenery seeds
+ok 204 - ALL transformed mesh vertices fit WebGPU 0..1 and GL -1..1 across scenery seeds
+  ---
+  duration_ms: 833.4337
+  type: 'test'
+  ...
+# Subtest: regression demonstrates why the previous WebGPU vertex clipped a ship
+ok 205 - regression demonstrates why the previous WebGPU vertex clipped a ship
+  ---
+  duration_ms: 0.3315
+  type: 'test'
+  ...
+# Subtest: background OFF remains static across time even during boss phases
+ok 206 - background OFF remains static across time even during boss phases
+  ---
+  duration_ms: 3.2574
+  type: 'test'
+  ...
+# Subtest: all graphics settings keep zero values intact and preserve essential tone mapping
+ok 207 - all graphics settings keep zero values intact and preserve essential tone mapping
+  ---
+  duration_ms: 0.572
+  type: 'test'
+  ...
+# Subtest: each color-aberration sample checks foreground masks, preventing ghost ships
+ok 208 - each color-aberration sample checks foreground masks, preventing ghost ships
+  ---
+  duration_ms: 0.3393
+  type: 'test'
+  ...
+# Subtest: distribution source and standalone both advertise the exact build version
+ok 209 - distribution source and standalone both advertise the exact build version
+  ---
+  duration_ms: 3.2996
+  type: 'test'
+  ...
+# (node:104740) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///<workspace>/tests/voice-admission.test.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\Users\\wildman\\Downloads\\NEMESIS-PACT-3D-EN-v0.5.0-source\\NEMESIS-PACT\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: voice admission rejects unauthenticated or malformed starts before reserve/upstream
+ok 210 - voice admission rejects unauthenticated or malformed starts before reserve/upstream
+  ---
+  duration_ms: 44.2333
+  type: 'test'
+  ...
+# Subtest: voice admission fails closed on quota denial or durable store error
+ok 211 - voice admission fails closed on quota denial or durable store error
+  ---
+  duration_ms: 3.3157
+  type: 'test'
+  ...
+# Subtest: recognizes explicit whole-proposal withdrawal commands
+ok 212 - recognizes explicit whole-proposal withdrawal commands
+  ---
+  duration_ms: 4.4002
+  type: 'test'
+  ...
+# Subtest: recognizes a terminal withdrawal after an earlier transcript prefix
+ok 213 - recognizes a terminal withdrawal after an earlier transcript prefix
+  ---
+  duration_ms: 0.4242
+  type: 'test'
+  ...
+# Subtest: keeps clause changes, negation, questions and discussed cancellation out of withdrawal intent
+ok 214 - keeps clause changes, negation, questions and discussed cancellation out of withdrawal intent
+  ---
+  duration_ms: 0.2919
+  type: 'test'
+  ...
+# (node:33788) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///<workspace>/tests/voice-server.test.js is not specified and it doesn't parse as CommonJS.
+# Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+# To eliminate this warning, add "type": "module" to C:\\Users\\wildman\\Downloads\\NEMESIS-PACT-3D-EN-v0.5.0-source\\NEMESIS-PACT\\package.json.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: watchdog is deferred and only hangs up after the 45 second deadline
+ok 215 - watchdog is deferred and only hangs up after the 45 second deadline
+  ---
+  duration_ms: 38.2765
+  type: 'test'
+  ...
+# Subtest: stop enforces durable session ownership before contacting the provider
+ok 216 - stop enforces durable session ownership before contacting the provider
+  ---
+  duration_ms: 3.4126
+  type: 'test'
+  ...
+# Subtest: provider HTTP rejection returns safe error and never exposes upstream body
+ok 217 - provider HTTP rejection returns safe error and never exposes upstream body
+  ---
+  duration_ms: 2.3675
+  type: 'test'
+  ...
+# Subtest: malformed successful provider response retains reservation as unknown
+ok 218 - malformed successful provider response retains reservation as unknown
+  ---
+  duration_ms: 2.0196
+  type: 'test'
+  ...
+# Subtest: disabled voice exits in LOCAL RULES mode without an upstream call
+ok 219 - disabled voice exits in LOCAL RULES mode without an upstream call
+  ---
+  duration_ms: 0.8715
+  type: 'test'
+  ...
+# Subtest: unknown hangup retains the durable reservation and kill-state stop remains authorized
+ok 220 - unknown hangup retains the durable reservation and kill-state stop remains authorized
+  ---
+  duration_ms: 3.5033
+  type: 'test'
+  ...
+# Subtest: reconnect receives a new reservation even when the run id is reused
+ok 221 - reconnect receives a new reservation even when the run id is reused
+  ---
+  duration_ms: 4.1021
+  type: 'test'
+  ...
+# Subtest: already removed provider session settles only an exact absence error with its creation credential
+ok 222 - already removed provider session settles only an exact absence error with its creation credential
+  ---
+  duration_ms: 7.402
+  type: 'test'
+  ...
+# Subtest: Live lifecycle uses session.started, raw captions, dedupe, canonical commentary and cleanup
+ok 223 - Live lifecycle uses session.started, raw captions, dedupe, canonical commentary and cleanup
+  ---
+  duration_ms: 625.3137
+  type: 'test'
+  ...
+# Subtest: supersede invalidates late delegation only; later transcripts still arrive
+ok 224 - supersede invalidates late delegation only; later transcripts still arrive
+  ---
+  duration_ms: 29.0959
+  type: 'test'
+  ...
+# Subtest: provider session.closed immediately enters stop path and releases microphone
+ok 225 - provider session.closed immediately enters stop path and releases microphone
+  ---
+  duration_ms: 716.0625
+  type: 'test'
+  ...
+# Subtest: cancelled delayed start hangs up returned session and stops tracks
+ok 226 - cancelled delayed start hangs up returned session and stops tracks
+  ---
+  duration_ms: 604.9964
+  type: 'test'
+  ...
+# Subtest: microphone denial and pagehide fail closed
+ok 227 - microphone denial and pagehide fail closed
+  ---
+  duration_ms: 711.11
+  type: 'test'
+  ...
+# Subtest: remote media track is attached to the output element
+ok 228 - remote media track is attached to the output element
+  ---
+  duration_ms: 1.0685
+  type: 'test'
+  ...
+# Subtest: canonical accepts only validated host rule values
+ok 229 - canonical accepts only validated host rule values
+  ---
+  duration_ms: 0.5607
+  type: 'test'
+  ...
+# Subtest: voice quota errors explain the per-fight limit without exposing arbitrary server content
+ok 230 - voice quota errors explain the per-fight limit without exposing arbitrary server content
+  ---
+  duration_ms: 1.5373
+  type: 'test'
+  ...
+# Subtest: normal stop uses server hangup before transport cleanup without racing a client close
+ok 231 - normal stop uses server hangup before transport cleanup without racing a client close
+  ---
+  duration_ms: 603.5281
+  type: 'test'
+  ...
+# Subtest: a correction can update an existing client delegation without a new provider event
+ok 232 - a correction can update an existing client delegation without a new provider event
+  ---
+  duration_ms: 651.3655
+  type: 'test'
+  ...
+# Subtest: supersede creates one session-wide fallback when no provider delegation arrives
+ok 233 - supersede creates one session-wide fallback when no provider delegation arrives
+  ---
+  duration_ms: 15.5689
+  type: 'test'
+  ...
+# Subtest: a late real provider delegation does not duplicate a committed fallback
+ok 234 - a late real provider delegation does not duplicate a committed fallback
+  ---
+  duration_ms: 30.782
+  type: 'test'
+  ...
+# Subtest: a real provider delegation during fallback keeps the one null commentary
+ok 235 - a real provider delegation during fallback keeps the one null commentary
+  ---
+  duration_ms: 46.7371
+  type: 'test'
+  ...
+# Subtest: a correction during a pending fallback invalidates the old generation
+ok 236 - a correction during a pending fallback invalidates the old generation
+  ---
+  duration_ms: 46.4752
+  type: 'test'
+  ...
+# Subtest: stop before fallback prevents the delayed callback and commentary
+ok 237 - stop before fallback prevents the delayed callback and commentary
+  ---
+  duration_ms: 633.7585
+  type: 'test'
+  ...
+# Subtest: provider lifecycle evidence counts actual start and close once, including close during application stop
+ok 238 - provider lifecycle evidence counts actual start and close once, including close during application stop
+  ---
+  duration_ms: 0.737
+  type: 'test'
+  ...
+# Subtest: voice startup deadline covers a stalled body and hangs up its late session without reviving the microphone
+ok 239 - voice startup deadline covers a stalled body and hangs up its late session without reviving the microphone
+  ---
+  duration_ms: 15014.1674
+  type: 'test'
+  ...
+1..239
+# tests 239
+# suites 0
+# pass 239
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 23813.8061

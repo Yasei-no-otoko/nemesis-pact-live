@@ -244,3 +244,10 @@ App 4ee074d2a76ceaa29ec59d17e3928d142309f07c / READY dpl_BQpYDUTtvPG15BgcahdQAmS
 2026-09-15 JST — v1.0.0 public release complete
 
 Release https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/tag/v1.0.0, tag6fc0f3d, sourceZIP 12083202bytes SHA81ae165512989f809052d27573915052e121d0bc730ddc3ec8573f3042dffb63; fresh anonymous Edge download/hash and version1.0.0 viewer/movie-start passed. gh-pages9eaec34 pushed. GitHub shell Failed to fetch was recorded separately; viewer had no errors. Prior human full59.008s playback remains unchanged. Final evidence milestone-21-v100-verified; no application bytes changed after READY deployment. Rollback CsUJ386UFWLPKg4UN7r1jvCpcuoB, preserveRedis/media. Ledger2.60/10 direct and.036070/20Gateway; remaining unknowns stay explicit.
+
+
+2026-09-15 JST — AI Director implementation in progress
+
+New explicit goal from user: enable actual AI in the full campaign Director. Baseline clean04551da / ship/living-covenant, v1.0.0 deployedBQpYDUTtvPG15BgcahdQAmS4fGsC. Added isolated Director proposal ledger, short app session/CSRF, shared Luna text reservation/accounting and explicit one-shot approval. Legacy intelligence endpoint remains non-billable. Extracted pure formationPlan for actual preview and combat identity across108 sector/route/template combinations. Desktop preview and phone sticky actions inspected. Version becomes1.1.0 for this feature.
+
+239/239 unit tests passed before final browser corrections; three real Redis atomic isolation/stale/double-sign tests passed. Initial browser fixture failed because a turret had already been killed by auto-fire; changed evidence to observed spawn callbacks, no gameplay change. Insecure about:blank fixture revealed crypto.randomUUID unavailable; added offline-only non-secret ID fallback. Remaining: rerun browsers/supplied helper, production real Luna request/apply/spawn, publication and ledger. Before spend ledger2026-09-15T02:18:20.527Z:direct2.600000/10,Gateway.036070/20,active0,killnull. No new AI spend yet; provider invoice/infrastructure/grant unknowns remain.

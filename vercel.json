@@ -4,6 +4,9 @@
   "buildCommand": "npm run build",
   "outputDirectory": "public",
   "functions": {
+    "api/director.mjs": {
+      "maxDuration": 20
+    },
     "api/intelligence.mjs": {
       "maxDuration": 15
     },

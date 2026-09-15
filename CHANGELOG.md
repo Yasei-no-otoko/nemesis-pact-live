@@ -1,3 +1,11 @@
+# v1.1.0 — AI campaign Director
+
+- Real GPT-5.6 Luna formation proposals through the approved Gateway/session/quota path.
+- Current/proposed seeded wave preview and explicit atomic one-shot approval.
+- Cancel, edit and exit invalidate stale proposals; legacy API remains non-billable.
+- Desktop comparison fits without page scroll; mobile actions stay accessible.
+- Existing First Contact voice and contracts retain their verified paths.
+
 ## v1.0.0 — The signed record (2026-09-15)
 
 - First Contact now ends with its own honored / unbound / lost presentation, actual final terms and measured sanctuary, reflection, hull and signature counters. Campaign rank thresholds no longer grade the one-boss encounter.
