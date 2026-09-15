@@ -2,6 +2,8 @@
 
 The working baseline is the user-supplied `NEMESIS-PACT-3D-EN-v0.5.0-source.zip`, whose archive root is `NEMESIS-PACT-v0.5.0/`. Existing project code, procedural content, and historical disclosures are preserved. This document does not grant a new license to project-specific or user-supplied code.
 
+The participant clarified on 2026-09-15 that GPT-6 Astra conceived the project from its initial game concept and design, and ChatGPT 6 Pro generated the v0.5.0 source archive during the contest. No project code predates the contest. The supplied archive is an intermediate checkpoint of this entry. Earlier references to existing or baseline project code refer to that development sequence. Third-party components and tools are listed separately below.
+
 The only runtime dependency declared in `package.json` is `@vercel/functions` 3.9.7. Its package-lock entry records Apache-2.0. The lockfile also contains transitive development/tool packages with their upstream declarations, including Apache-2.0, MIT, and ISC components. No OpenAI SDK is bundled; server integrations use native HTTPS requests. Vercel AI Gateway and OpenAI services are external services governed by their own terms.
 
 `THIRD_PARTY_NOTICES.md` records the renderer's ACES fitted curve coefficients from Krzysztof Narkowicz, “ACES Filmic Tone Mapping Curve,” with the documented CC0 option and source link. Native Web Audio synthesizes the soundtrack; no sampled music, fonts, external images, datasets, or imported 3D models are distributed.

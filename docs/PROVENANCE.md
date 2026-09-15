@@ -1,5 +1,7 @@
 > Historical v0.5.0 baseline document, retained verbatim below. For the 2026-09-14 shipping changes, actual Live API use, new runtime dependency and repository/deployment evidence, see [current sources and licenses](SOURCES-AND-LICENSES.md). Statements below about no live inference/deployment apply only to that earlier revision.
 
+> **Participant clarification — 2026-09-15:** GPT-6 Astra conceived NEMESIS PACT from its initial game concept and design. ChatGPT 6 Pro generated the NEMESIS PACT v0.5.0 source archive during the contest. No project code predates the contest. References below to existing or baseline project code describe earlier development checkpoints of this contest entry. This clarification records the participant's account of authorship and timing; the archived source comparisons describe changes between those checkpoints.
+
 # Provenance — v0.5.0
 
 ## Baseline and date boundary
