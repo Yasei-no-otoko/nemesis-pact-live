@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="src/expansion.css">
 <link rel="stylesheet" href="src/audio.css">
 <link rel="stylesheet" href="src/covenant.css">
+<link rel="stylesheet" href="src/covenant-review.css">
 <link rel="stylesheet" href="src/polish.css">
 <link rel="stylesheet" href="src/encounter.css">
 <link rel="stylesheet" href="src/director.css">
@@ -107,10 +108,16 @@
    <div class="covenant-main cv-editor" id="cv-editor-panel">
     <aside class="notary-card"><div class="notary-avatar" aria-hidden="true"><i></i><b>◈</b><i></i></div><div class="notary-identity"><span class="section-cap">YOUR COUNTERPARTY</span><h2>THE NOTARY<span>.</span></h2><p class="notary-quote" id="cv-enemy">“I do not need to defeat you. I need you to break your word.”</p><p id="cv-memory">No signatures on record.</p></div></aside>
     <p id="cv-intro-copy">Ask for a safe place, slower fire, or stronger reflections. Every advantage has a price.</p>
+    <section id="cv-battle-readout" class="cv-battle-readout" hidden aria-label="Your signed terms in action">
+      <span class="section-cap">YOUR SIGNED TERMS IN ACTION</span>
+      <dl id="cv-battle-stats"></dl>
+      <p id="cv-battle-observation"></p>
+      <small>Recorded combat · Your hull and the enemy's damage carry forward.</small>
+    </section>
     <section class="cv-voice" aria-label="Voice negotiation"><div class="cv-voice-heading"><span class="section-cap">01 / NEGOTIATE</span><button id="cv-transcript" class="cv-link" aria-haspopup="dialog">Transcript ↗</button></div><span id="cv-voice-state" role="status">Enable OpenAI above to use voice.</span><p class="cv-voice-disclosure">AI voice · Mic starts only with Start voice. Sign or leave to stop.</p><div class="cv-voice-controls"><button id="cv-voice-start" class="secondary" disabled>Start voice</button><button id="cv-voice-stop" class="secondary" disabled>Stop voice</button><button id="cv-voice-mute" class="secondary" disabled>Mute</button><label>Volume <input id="cv-voice-volume" type="range" min="0" max="100" value="80" disabled></label></div><div class="cv-captions" aria-live="polite"><p><b>YOU</b><span id="cv-caption-player">—</span></p><p><b>THE NOTARY</b><span id="cv-caption-notary" tabindex="0" role="region" aria-label="The Notary transcript">—</span></p></div></section>
     <label class="section-cap" for="cv-prompt">OR TYPE YOUR TERMS / ENGLISH · JAPANESE</label><textarea id="cv-prompt" maxlength="400" rows="3" spellcheck="false">Move the sanctuary to the left. Slow your bullets. I accept reinforcements.</textarea>
     <div class="cv-examples"><button data-cv-example="Move the sanctuary to the left. Slow your bullets. I accept reinforcements.">Left + slower fire</button><button data-cv-example="Amplify my reflected bullets and slow your fire. My gun can be weaker.">Stronger reflections</button><button data-cv-example="Give me a sanctuary on the right and stronger reflections. Double the damage I take.">Right + high stakes</button></div>
-    <div class="cv-propose-actions"><button id="cv-propose" class="secondary">Get counteroffer <span>→</span></button></div>
+    <div class="cv-propose-actions"><button id="cv-propose" class="secondary">Get counteroffer <span>→</span></button><button id="cv-local-quick" class="cv-link">Try LOCAL RULES · no connection needed</button></div>
    </div>
    <div class="cv-review" id="cv-review-panel">
     <span class="section-cap cv-review-cap">02 / REVIEW THE DEAL</span>
@@ -228,6 +235,7 @@
 <script src="src/campaign.js"></script>
 <script src="src/campaign-client.js"></script>
 <script src="src/covenant.js"></script>
+<script src="src/covenant-review.js"></script>
 <script src="src/score.js"></script>
 <script src="src/audio.js"></script>
 <script src="src/touch.js"></script>

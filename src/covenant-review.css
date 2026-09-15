@@ -1,0 +1,31 @@
+/* Keep recorded consequences next to the next decision. */
+#cv-battle-readout[hidden],#cv-local-quick[hidden]{display:none}
+.cv-battle-readout{padding:12px 14px;background:#0a242a;border:1px solid #70bba457;border-left:3px solid #a7e3c5;border-radius:4px;flex-shrink:0}
+.cv-battle-readout>.section-cap{color:#b1e6ce;font-size:11px}
+.cv-battle-readout dl{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:9px 0}
+.cv-battle-readout dl div{min-width:0}
+.cv-battle-readout dt{font:11px/1.35 Arial,sans-serif;color:#aac4c8}
+.cv-battle-readout dd{margin:3px 0 0;font:600 21px/1.2 Arial,sans-serif;color:#e2f5e9;font-variant-numeric:tabular-nums}
+.cv-battle-readout p{margin:7px 0;font:13px/1.45 Arial,sans-serif;color:#d0e1df}
+.cv-battle-readout>small{font:11px/1.4 Arial,sans-serif;color:#a4bcc2}
+#cv-local-quick{font-size:12px;min-height:32px;padding:5px 0;color:#afd7cb;justify-content:center}
+#covenant-screen[data-amendment="true"] .notary-card{min-height:58px;padding-top:6px;padding-bottom:6px}
+#covenant-screen[data-amendment="true"] .notary-avatar{display:none}
+#covenant-screen[data-amendment="true"] .notary-card .section-cap,#covenant-screen[data-amendment="true"] #cv-memory{display:none}
+#covenant-screen[data-amendment="true"] .notary-card h2{font-size:16px}
+.cv-comparison{border-collapse:collapse;table-layout:fixed;width:100%;font:12px/1.4 Arial,sans-serif;color:#c1d4d6}
+.cv-comparison caption{text-align:left;color:#d7eddf;font-size:12px;margin-bottom:8px}
+.cv-comparison th,.cv-comparison td{padding:7px 6px;text-align:left;vertical-align:top;border-bottom:1px solid #71949330;overflow-wrap:anywhere}
+.cv-comparison thead th{font-size:11px;color:#99b3ba;font-weight:400}
+.cv-comparison th:first-child{width:24%}
+.cv-comparison tbody th{font-weight:400}
+.cv-comparison tr[data-changed="true"] td:last-child{color:#d4f5dc;background:#25463d55;font-weight:600;border-left:2px solid #addcb3}
+.cv-comparison tr[data-changed="true"] td:nth-child(2){color:#a5b7bd}
+.cv-change-note{margin:5px 0 0;font:11px/1.4 Arial,sans-serif;color:#c6b391}
+#covenant-screen[data-amendment="true"][data-proposal="ready"] #cv-clauses{display:block}
+#covenant-screen[data-amendment="true"][data-proposal="ready"] #cv-preview{height:80px;min-height:80px}
+body.mobile-ui .cv-battle-readout dl{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 16px}
+body.mobile-ui .cv-battle-readout p{font-size:14px}
+body.mobile-ui .cv-comparison{font-size:13px}
+body.mobile-ui .cv-comparison th,body.mobile-ui .cv-comparison td{padding:8px 5px}
+body.mobile-ui #cv-local-quick{min-height:44px;font-size:13px}

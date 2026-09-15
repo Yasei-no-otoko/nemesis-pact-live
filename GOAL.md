@@ -1,5 +1,7 @@
 # GOAL — NEMESIS PACT: Ship the Living Covenant
 
+> 2026-09-15 continuation: the user requested deadline-bound improvement of the existing v1.3.0 game with Game of the Year-level AI-native ambition. Use [the active deadline loop](docs/DEADLINE-LOOP.md), the latest WORKLOG and DELIVERY as the current checkpoint. The historical v0.5.0 import below is already complete; do not restart or roll back that work.
+
 NEMESIS PACT v0.5.0を正しい基点として、ゲームの完成度を高め、実際のGPT-Live-1による音声交渉を実装し、Vercelの本番HTTPS URLに公開する。調査・設計・モック・ローカル動作だけで終わらず、実装、回帰テスト、実API接続、本番ブラウザ検証、提出用デモ素材まで完遂する。
 
 審査員が「話しかける → 敵の返答に割り込んで条件を変える → 契約を確認して署名する → 実際の弾幕と戦い方が変わる → 再交渉する」を体験できることが中心目標。AI音声の追加だけでなく、プレイヤーの言葉が戦闘のルールを変えるゲームとして仕上げる。受賞は保証できる成果物ではないため、検証可能な体験と実装を完了条件にする。

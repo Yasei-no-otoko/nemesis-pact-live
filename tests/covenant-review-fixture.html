@@ -1,0 +1,22 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Covenant review QA — preview only</title>
+<style>body{margin:16px;background:#111c26;color:#eee;font:14px system-ui}nav{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}button,select{font:inherit;padding:8px}iframe{display:block;border:1px solid #567;width:1280px;height:800px}pre{white-space:pre-wrap;max-width:1100px}</style>
+<nav><strong>Preview QA · deterministic simulation, no live AI</strong><label>Viewport <select id="size"><option value="1280,800">1280 × 800</option><option value="390,844">390 × 844</option><option value="320,568">320 × 568</option></select></label><label>Language <select id="language"><option value="en">English</option><option value="ja">日本語</option></select></label><button id="run">Run ordinary inputs to parley</button><button id="inspect">Read visible layout</button><button id="advance">Advance combat 10 seconds</button></nav>
+<iframe id="game" title="Game under test" src="/?test=1"></iframe><pre id="report" role="status">Ready when the title loads.</pre>
+<script>
+const frame=document.getElementById('game'),report=document.getElementById('report');
+document.getElementById('size').onchange=e=>{const [w,h]=e.target.value.split(',');frame.style.width=w+'px';frame.style.height=h+'px';};
+document.getElementById('language').onchange=e=>frame.contentWindow.PactI18n.setLocale(e.target.value);
+document.getElementById('run').onclick=async()=>{
+  const app=frame.contentWindow,api=app.__PACT_TEST__;api.startFirstContact('DEADLINE-REVIEW-QA');
+  app.document.getElementById('cv-mode').value='local';app.document.getElementById('cv-mode').dispatchEvent(new Event('change'));
+  await api.proposeCovenant();await api.signCovenant();
+  for(let i=0;i<22&&api.world.phase==='combat';i++)api.advance(120,{shoot:true,autoAim:true,parry:true,mx:Math.sin(i)*.25});
+  report.textContent=JSON.stringify({fixture:'ordinary deterministic inputs, local rules only',screen:api.screen,phase:api.world.phase,seconds:api.world.time,hp:api.world.p.hp,revision:api.world.revision,effects:api.world.covenantStats},null,2);
+};
+document.getElementById('inspect').onclick=()=>{
+  const app=frame.contentWindow,doc=app.document,ids=['cv-battle-readout','cv-battle-stats','cv-clauses','cv-propose','cv-sign','cv-prompt'];
+  report.textContent=JSON.stringify({viewport:[app.innerWidth,app.innerHeight],bodyOverflow:doc.documentElement.scrollWidth>app.innerWidth,screen:app.__PACT_TEST__.screen,elements:ids.map(id=>{const e=doc.getElementById(id),r=e.getBoundingClientRect();return {id,text:e.innerText||e.value,width:r.width,height:r.height,bottom:r.bottom,visible:!!e.getClientRects().length,overflow:e.scrollWidth>e.clientWidth+1};})},null,2);
+};
+document.getElementById('advance').onclick=()=>{const api=frame.contentWindow.__PACT_TEST__;api.advance(1200,{shoot:true,autoAim:true,parry:true});report.textContent=JSON.stringify({screen:api.screen,phase:api.world.phase,hp:api.world.p.hp,revision:api.world.revision,effects:api.world.covenantStats},null,2);};
+</script></html>

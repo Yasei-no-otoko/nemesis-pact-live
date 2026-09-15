@@ -492,6 +492,40 @@ body.mobile-ui #covenant-screen #cv-preview{margin-top:6px}
 
 </style>
 <style>
+/* Keep recorded consequences next to the next decision. */
+#cv-battle-readout[hidden],#cv-local-quick[hidden]{display:none}
+.cv-battle-readout{padding:12px 14px;background:#0a242a;border:1px solid #70bba457;border-left:3px solid #a7e3c5;border-radius:4px;flex-shrink:0}
+.cv-battle-readout>.section-cap{color:#b1e6ce;font-size:11px}
+.cv-battle-readout dl{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:9px 0}
+.cv-battle-readout dl div{min-width:0}
+.cv-battle-readout dt{font:11px/1.35 Arial,sans-serif;color:#aac4c8}
+.cv-battle-readout dd{margin:3px 0 0;font:600 21px/1.2 Arial,sans-serif;color:#e2f5e9;font-variant-numeric:tabular-nums}
+.cv-battle-readout p{margin:7px 0;font:13px/1.45 Arial,sans-serif;color:#d0e1df}
+.cv-battle-readout>small{font:11px/1.4 Arial,sans-serif;color:#a4bcc2}
+#cv-local-quick{font-size:12px;min-height:32px;padding:5px 0;color:#afd7cb;justify-content:center}
+#covenant-screen[data-amendment="true"] .notary-card{min-height:58px;padding-top:6px;padding-bottom:6px}
+#covenant-screen[data-amendment="true"] .notary-avatar{display:none}
+#covenant-screen[data-amendment="true"] .notary-card .section-cap,#covenant-screen[data-amendment="true"] #cv-memory{display:none}
+#covenant-screen[data-amendment="true"] .notary-card h2{font-size:16px}
+.cv-comparison{border-collapse:collapse;table-layout:fixed;width:100%;font:12px/1.4 Arial,sans-serif;color:#c1d4d6}
+.cv-comparison caption{text-align:left;color:#d7eddf;font-size:12px;margin-bottom:8px}
+.cv-comparison th,.cv-comparison td{padding:7px 6px;text-align:left;vertical-align:top;border-bottom:1px solid #71949330;overflow-wrap:anywhere}
+.cv-comparison thead th{font-size:11px;color:#99b3ba;font-weight:400}
+.cv-comparison th:first-child{width:24%}
+.cv-comparison tbody th{font-weight:400}
+.cv-comparison tr[data-changed="true"] td:last-child{color:#d4f5dc;background:#25463d55;font-weight:600;border-left:2px solid #addcb3}
+.cv-comparison tr[data-changed="true"] td:nth-child(2){color:#a5b7bd}
+.cv-change-note{margin:5px 0 0;font:11px/1.4 Arial,sans-serif;color:#c6b391}
+#covenant-screen[data-amendment="true"][data-proposal="ready"] #cv-clauses{display:block}
+#covenant-screen[data-amendment="true"][data-proposal="ready"] #cv-preview{height:80px;min-height:80px}
+body.mobile-ui .cv-battle-readout dl{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 16px}
+body.mobile-ui .cv-battle-readout p{font-size:14px}
+body.mobile-ui .cv-comparison{font-size:13px}
+body.mobile-ui .cv-comparison th,body.mobile-ui .cv-comparison td{padding:8px 5px}
+body.mobile-ui #cv-local-quick{min-height:44px;font-size:13px}
+
+</style>
+<style>
 /* v0.9.9: orbital contract desk. Imagegen concept translated to local UI/geometry. */
 :root{--mint:#9ee8d3;--ink:#f0eee3;--muted:#a5b5ba;--brass:#c6a976;--line:#b0b6aa29}
 button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:2px solid #b4f6dd;outline-offset:3px}
@@ -996,10 +1030,16 @@ html[lang="ja"] .hud-ledger{letter-spacing:0}
    <div class="covenant-main cv-editor" id="cv-editor-panel">
     <aside class="notary-card"><div class="notary-avatar" aria-hidden="true"><i></i><b>◈</b><i></i></div><div class="notary-identity"><span class="section-cap">YOUR COUNTERPARTY</span><h2>THE NOTARY<span>.</span></h2><p class="notary-quote" id="cv-enemy">“I do not need to defeat you. I need you to break your word.”</p><p id="cv-memory">No signatures on record.</p></div></aside>
     <p id="cv-intro-copy">Ask for a safe place, slower fire, or stronger reflections. Every advantage has a price.</p>
+    <section id="cv-battle-readout" class="cv-battle-readout" hidden aria-label="Your signed terms in action">
+      <span class="section-cap">YOUR SIGNED TERMS IN ACTION</span>
+      <dl id="cv-battle-stats"></dl>
+      <p id="cv-battle-observation"></p>
+      <small>Recorded combat · Your hull and the enemy's damage carry forward.</small>
+    </section>
     <section class="cv-voice" aria-label="Voice negotiation"><div class="cv-voice-heading"><span class="section-cap">01 / NEGOTIATE</span><button id="cv-transcript" class="cv-link" aria-haspopup="dialog">Transcript ↗</button></div><span id="cv-voice-state" role="status">Enable OpenAI above to use voice.</span><p class="cv-voice-disclosure">AI voice · Mic starts only with Start voice. Sign or leave to stop.</p><div class="cv-voice-controls"><button id="cv-voice-start" class="secondary" disabled>Start voice</button><button id="cv-voice-stop" class="secondary" disabled>Stop voice</button><button id="cv-voice-mute" class="secondary" disabled>Mute</button><label>Volume <input id="cv-voice-volume" type="range" min="0" max="100" value="80" disabled></label></div><div class="cv-captions" aria-live="polite"><p><b>YOU</b><span id="cv-caption-player">—</span></p><p><b>THE NOTARY</b><span id="cv-caption-notary" tabindex="0" role="region" aria-label="The Notary transcript">—</span></p></div></section>
     <label class="section-cap" for="cv-prompt">OR TYPE YOUR TERMS / ENGLISH · JAPANESE</label><textarea id="cv-prompt" maxlength="400" rows="3" spellcheck="false">Move the sanctuary to the left. Slow your bullets. I accept reinforcements.</textarea>
     <div class="cv-examples"><button data-cv-example="Move the sanctuary to the left. Slow your bullets. I accept reinforcements.">Left + slower fire</button><button data-cv-example="Amplify my reflected bullets and slow your fire. My gun can be weaker.">Stronger reflections</button><button data-cv-example="Give me a sanctuary on the right and stronger reflections. Double the damage I take.">Right + high stakes</button></div>
-    <div class="cv-propose-actions"><button id="cv-propose" class="secondary">Get counteroffer <span>→</span></button></div>
+    <div class="cv-propose-actions"><button id="cv-propose" class="secondary">Get counteroffer <span>→</span></button><button id="cv-local-quick" class="cv-link">Try LOCAL RULES · no connection needed</button></div>
    </div>
    <div class="cv-review" id="cv-review-panel">
     <span class="section-cap cv-review-cap">02 / REVIEW THE DEAL</span>
@@ -2399,6 +2439,48 @@ return {CONTRACTS,DIRECTORS,TASKS,cleanRequest,schema,validateDecision,mock,tele
   report(){const voice={...this.voiceEvidence};return {...super.report(),version:'1.3.0',mode:this.mode,contractLanguage:'living-covenant-v1',assists:'automatic aim/fire in First Contact UI',rules:this.spec?{...this.spec}:null,covenantStats:{...this.covenantStats},receipts:this.receipts.map(r=>({...r,spec:{...r.spec},snapshot:{...r.snapshot}})),memoryBefore:{...this.memory},memoryAfter:this.memoryAfter(),liveVoice:{...voice,status:voice.signedContracts>0?'contract-signed':voice.connectionStarted>0?'connected':'not-used'}};}
  }
  return {ZONES,SPEEDS,REFLECTS,PRICES,validateSpec,cleanRequest,schema,compile,describe,budget,localProposal,memory,telemetry,Client,Run};
+});
+
+</script>
+<script>
+/* Recorded combat -> readable decisions. Authored guidance, never an AI response. */
+(function(root,factory){
+  if(typeof module==='object'&&module.exports)module.exports=factory(require('./covenant.js'));
+  else root.PactCovenantReview=factory(root.PactCovenant);
+})(typeof globalThis!=='undefined'?globalThis:this,function(V){'use strict';
+  const number=n=>Number.isFinite(n)?Math.max(0,n):0;
+  const zoneNames={none:'No sanctuary',left:'Left sanctuary',center:'Center sanctuary',right:'Right sanctuary'};
+  function compare(previous,proposed){
+    const next=V.validateSpec(proposed),old=previous?V.validateSpec(previous):null;
+    const values=s=>({zone:s?zoneNames[s.zone]:zoneNames.none,speed:s?.speed==='slow'?'72% bullet speed':'100% bullet speed',reflection:s?.reflection==='charged'?'1.8× reflected damage':'1× reflected damage',price:s?V.describe(s).price:'No price'});
+    const before=values(old),after=values(next);
+    return [['zone','Sanctuary'],['speed','Enemy bullets'],['reflection','Reflections'],['price','Your price']].map(([key,label])=>({key,label,before:before[key],after:after[key],changed:before[key]!==after[key]}));
+  }
+  function promptFor(raw){
+    const s=V.validateSpec(raw),parts=[];
+    parts.push(s.zone==='none'?'No sanctuary.':`Give me a sanctuary on the ${s.zone}.`);
+    parts.push(s.speed==='slow'?'Slow your bullets.':'Normal bullet speed.');
+    parts.push(s.reflection==='charged'?'Amplify my reflections.':'');
+    parts.push({weaker_gun:'My gun can be weaker.',reinforcements:'I accept reinforcements.',fragile:'Double the damage I take.',haste:'I accept a faster boss.'}[s.price]);
+    return parts.filter(Boolean).join(' ');
+  }
+  function briefing(world){
+    if(!world?.spec||world.mode!=='first-contact')return null;
+    const s=V.validateSpec(world.spec),last=world.receipts?.at(-1),at=last?.snapshot||{};
+    const delta=key=>Math.max(0,number(V.telemetry(world)[key])-number(at[key]));
+    const boss=world.enemies?.find(e=>e.type==='boss'&&e.hp>0);
+    const shielded=delta('shielded'),returned=delta('reflectedDamage'),lost=delta('damageTaken');
+    const side=s.zone==='none'?'center':s.zone;
+    const choices=[
+      {id:'keep',label:'Keep my terms',prompt:promptFor(s)},
+      {id:'shelter',label:'Trade firepower for shelter',prompt:`Give me a sanctuary on the ${side}. Normal bullet speed. My gun can be weaker.`},
+      {id:'reflect',label:'Trade shelter for reflections',prompt:'No sanctuary. Slow your bullets. Amplify my reflections. My gun can be weaker.'}
+    ];
+    const recommendation=s.price==='fragile'&&lost>0?'shelter':returned>0?'reflect':shielded>0?'keep':'shelter';
+    const observation=s.price==='fragile'&&lost>0?'Double damage is active. You can trade gun power for a sanctuary without that penalty.':returned>0?'Your reflected shots are dealing damage. You can strengthen them by giving up the sanctuary.':shielded>0?'Your sanctuary is intercepting bullets. Keep it, move it, or trade it for stronger reflections.':'A sanctuary erases bullets inside its ring. Lasers and enemy bodies still pass through.';
+    return {seconds:Math.round(delta('seconds')*10)/10,hull:number(world.p?.hp),maxHull:number(world.p?.maxHp),bossRemaining:boss?Math.ceil(number(boss.hp)/Math.max(1,number(boss.maxHp))*100):0,shielded,returned:Math.round(returned),lost,observation,choices,recommendation};
+  }
+  return {compare,promptFor,briefing};
 });
 
 </script>
@@ -4383,6 +4465,8 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
     'The channel is open.':'通信路は開いています。','Use text, or choose LOCAL RULES.':'テキストを使うか、ローカルルールを選択してください。','VOICE UNAVAILABLE / USE TEXT':'音声利用不可 / テキストを使用','VOICE UNAVAILABLE / USE TEXT OR LOCAL RULES':'音声利用不可 / テキストまたはローカルルールを使用'
   };
   const patterns=[
+    [/^I counted (\d+) returned shots\. Is that still the fight you want\?$/,m=>`お前が撃ち返した弾は${m[1]}発。まだ、その条件で戦い続けるか？`],
+    [/^I counted (\d+) reflected shots\. Read the binding clauses below\. Sign only what you intend to keep\.$/,m=>`反射した弾は${m[1]}発だったな。下の条件を読み、守るつもりの約束だけに署名してくれ。`],
     [/^BEST (.+)$/,(m)=>'最高記録 '+m[1]],
     [/^SECTOR (\d+) \/ VOICE & PACT$/,(m)=>'セクター '+m[1]+' / 音声と契約'],
     [/^SECTOR (\d+) \/ (.+)$/,(m)=>'セクター '+m[1]+' / '+m[2]],
@@ -4423,6 +4507,25 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
   'use strict';
   const KEY='nemesis.language.v1',strings=Object.assign(Object.create(null),data||{},ui||{},dynamic?.strings||{}),patterns=dynamic?.patterns||[];
   Object.assign(strings,{
+    'YOUR SIGNED TERMS IN ACTION':'署名した条件が変えた戦闘',
+    'Change the deal.':'条件を変えよう。',
+    'Your signed terms in action':'署名した条件が変えた戦闘',
+    'HULL REMAINING':'残り耐久','BOSS REMAINING':'ボスの残りHP','BULLETS ERASED':'消去した弾','DAMAGE RETURNED':'反射ダメージ',
+    "Recorded combat · Your hull and the enemy's damage carry forward.":'実際の戦績 · 耐久と敵へのダメージは引き継がれます。',
+    'Double damage is active. You can trade gun power for a sanctuary without that penalty.':'被ダメージが二倍の契約です。射撃威力を代償にすれば、そのペナルティなしで安全地帯を作れます。',
+    'Your reflected shots are dealing damage. You can strengthen them by giving up the sanctuary.':'反射弾でダメージを与えています。安全地帯を手放して反射を強化することもできます。',
+    'Your sanctuary is intercepting bullets. Keep it, move it, or trade it for stronger reflections.':'安全地帯が敵弾を消しています。維持するか、移動するか、強い反射と交換するか選べます。',
+    'A sanctuary erases bullets inside its ring. Lasers and enemy bodies still pass through.':'安全地帯は円の中の敵弾を消します。レーザーや敵本体は通過します。',
+    'Keep my terms':'今の条件を維持','Trade firepower for shelter':'射撃威力と安全を交換','Trade shelter for reflections':'安全地帯と反射を交換',
+    'No sanctuary.':'結界はなし。','Give me a sanctuary on the left.':'左側に安全地帯を作ってください。','Give me a sanctuary on the center.':'中央に安全地帯を作ってください。','Give me a sanctuary on the right.':'右側に安全地帯を作ってください。',
+    'Slow your bullets.':'弾を遅くしてください。','Normal bullet speed.':'弾は通常の速度で構いません。','Amplify my reflections.':'反射を強くしてください。',
+    'My gun can be weaker.':'通常射撃は弱くなっても構いません。','I accept reinforcements.':'増援は許可します。','Double the damage I take.':'被ダメージは二倍で構いません。','I accept a faster boss.':'ボスの攻撃頻度を上げて構いません。',
+    'Try LOCAL RULES · no connection needed':'LOCAL RULESで試す · 接続不要',
+    'WHAT YOUR SIGNATURE WILL CHANGE':'署名によって変わる条件','SAME RULES · Signing still uses your amendment':'同じ条件です · 署名すると再交渉の権利を消費します',
+    'Clause':'条件','Current':'現在','After signing':'署名後','Sanctuary':'安全地帯','Enemy bullets':'敵弾','Reflections':'反射','Your price':'代償',
+    'No sanctuary':'安全地帯なし','Left sanctuary':'左側の安全地帯','Center sanctuary':'中央の安全地帯','Right sanctuary':'右側の安全地帯',
+    '72% bullet speed':'弾の速度72%','100% bullet speed':'弾の速度100%','1.8× reflected damage':'反射ダメージ1.8倍','1× reflected damage':'反射ダメージ1倍','No price':'代償なし',
+    'Existing enemies stay. Keep pact & resume saves your amendment.':'出現済みの敵は残ります。「契約を維持して再開」なら再交渉の権利を残せます。',
     'Move the sanctuary to the left. Slow your bullets. I accept reinforcements.':'左側を安全地帯にして、弾を遅くしてください。増援は許可します。',
     'Amplify my reflected bullets and slow your fire. My gun can be weaker.':'反射を強くして、弾を遅くしてください。通常射撃は弱くなっても構いません。',
     'Give me a sanctuary on the right and stronger reflections. Double the damage I take.':'右側を安全地帯にして、反射を強くしてください。被ダメージは二倍で構いません。',
@@ -5156,9 +5259,30 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
     const amended=world.phase==='parley';$('cv-heading').textContent=amended?'MID-FIGHT PARLEY / BATTLE PAUSED':'FIRST CONTACT / LIVING COVENANT';$('cv-title').textContent=amended?'Change the deal.':'Name your terms.';$('cv-close').textContent=amended?'Keep pact & resume':'Main menu';$('cv-sign').textContent=amended?'Sign amendment & resume ↗':'Sign & enter combat ↗';$('cv-memory').textContent=`${world.memory.honored} honored · ${world.memory.broken} broken${amended?' · '+world.parries+' reflections · '+world.covenantStats.shielded+' bullets erased':''}`;
     $('cv-intro-copy').textContent=amended?'One amendment is available. Compare the new rules. Health, boss damage and elapsed time are preserved.':'Ask for a safe place, slower fire, or stronger reflections. Every advantage has a price.';
     $('cv-enemy').textContent=amended?`“I counted ${world.parries} returned shots. Is that still the fight you want?”`:world.memory.broken?'“A broken signature is still on my ledger.”':'“I do not need to defeat you. I need you to break your word.”';
-    if(amended)$('cv-prompt').value='Amplify my reflected bullets and slow your fire. My gun can be weaker.';
+    $('covenant-screen').dataset.amendment=String(amended);renderCovenantBriefing(amended);
     voiceText='';voiceCaption='';voiceLastInput=0;voiceBackchannels='';document.querySelector('.cv-voice').dataset.transcript='false';$('cv-caption-player').textContent='—';$('cv-caption-notary').textContent='—';
     $('cv-status').textContent=amended?'TIME FROZEN / One amendment. Current terms remain active until you sign.':'Choose OpenAI with consent, or LOCAL RULES. Review the counteroffer, then Sign.';refreshConnection();renderCovenantPreview(clock);
+  }
+  function localizeCovenantPrompt(prompt){return prompt.split(/(?<=\.)\s+/).map(part=>T(part)).join(' ');}
+  function renderCovenantBriefing(amended){
+    const briefing=amended?window.PactCovenantReview.briefing(world):null;
+    $('cv-battle-readout').hidden=!briefing;
+    const defaults=[
+      {label:'Left + slower fire',prompt:'Move the sanctuary to the left. Slow your bullets. I accept reinforcements.'},
+      {label:'Stronger reflections',prompt:'Amplify my reflected bullets and slow your fire. My gun can be weaker.'},
+      {label:'Right + high stakes',prompt:'Give me a sanctuary on the right and stronger reflections. Double the damage I take.'}
+    ];
+    const choices=briefing?.choices||defaults;
+    document.querySelectorAll('[data-cv-example]').forEach((button,i)=>{button.dataset.cvExample=choices[i].prompt;button.textContent=choices[i].label;});
+    if(!briefing)return;
+    const stats=[['HULL REMAINING',briefing.hull+' / '+briefing.maxHull],['BOSS REMAINING',briefing.bossRemaining+'%'],['BULLETS ERASED',briefing.shielded],['DAMAGE RETURNED',briefing.returned]];
+    $('cv-battle-stats').innerHTML=stats.map(([label,value])=>'<div><dt>'+escapeHTML(T(label))+'</dt><dd>'+escapeHTML(value)+'</dd></div>').join('');
+    $('cv-battle-observation').textContent=briefing.observation;
+    $('cv-prompt').value=localizeCovenantPrompt(choices.find(choice=>choice.id===briefing.recommendation).prompt);
+  }
+  function covenantComparison(previous,next){
+    const rows=window.PactCovenantReview.compare(previous,next),changed=rows.some(row=>row.changed);
+    return '<table class="cv-comparison"><caption>'+escapeHTML(T(changed?'WHAT YOUR SIGNATURE WILL CHANGE':'SAME RULES · Signing still uses your amendment'))+'</caption><thead><tr><th scope="col">'+escapeHTML(T('Clause'))+'</th><th scope="col">'+escapeHTML(T('Current'))+'</th><th scope="col">'+escapeHTML(T('After signing'))+'</th></tr></thead><tbody>'+rows.map(row=>'<tr data-changed="'+row.changed+'"><th scope="row">'+escapeHTML(T(row.label))+'</th><td>'+escapeHTML(T(row.before))+'</td><td>'+escapeHTML(T(row.after))+'</td></tr>').join('')+'</tbody></table><p class="cv-change-note">'+escapeHTML(T('Existing enemies stay. Keep pact & resume saves your amendment.'))+'</p>';
   }
   function openParley(){if(world?.mode==='first-contact'&&world.requestParley()){openCovenant();return true;}if(screen==='game')toast('PARLEY / Available after 8 seconds, once per fight.');return false;}
   function closeCovenant(){invalidateCovenant();if(world?.cancelParley()){show('game');updateHUD();}else home();}
@@ -5167,7 +5291,7 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
     invalidateCovenant('Preparing a counteroffer. The battle is not running.',options.delegated===true);const id=++cvRequestId;$('cv-propose').disabled=true;$('covenant-screen').dataset.proposal='pending';$('cv-proposal').setAttribute('aria-busy','true');
     try{const reply=await cvClient.propose(request,{mode:$('cv-mode').value,consent:$('cv-consent').checked,session:cvSession,runId:cvRunId,intentVersion:id});if(id!==cvRequestId||world!==target||world.revision!==revision||screen!=='covenant-screen')return null;
       cvProposal=reply;if(options.delegated){reply.voiceOrigin=true;if(world?.voiceEvidence){world.voiceEvidence.proposalsReturned++;if(reply.provider==='openai')world.voiceEvidence.openaiProposals++;}} cvRevision=revision;const desc=V.describe(reply.spec),old=world.spec?V.describe(world.spec):null;$('cv-provider').textContent=reply.provider==='openai'?'CONTRACT: OPENAI / '+reply.model:'CONTRACT: LOCAL RULES / NO AI INFERENCE';$('cv-revision').textContent='REV '+String(revision+1).padStart(2,'0')+' / UNSIGNED';$('cv-line').textContent='“'+reply.spec.line+'”';$('cv-contract-title').textContent=desc.title;
-      $('cv-clauses').innerHTML=`<div class="cv-benefit"><small>YOUR ADVANTAGE</small>${desc.benefits.map(x=>'<p>+ '+escapeHTML(x)+'</p>').join('')}</div><div class="cv-cost"><small>YOUR PRICE</small><p>− ${escapeHTML(desc.price)}</p></div>`;
+      $('cv-clauses').innerHTML=old?covenantComparison(target.spec,reply.spec):`<div class="cv-benefit"><small>YOUR ADVANTAGE</small>${desc.benefits.map(x=>'<p>+ '+escapeHTML(x)+'</p>').join('')}</div><div class="cv-cost"><small>YOUR PRICE</small><p>− ${escapeHTML(desc.price)}</p></div>`;
       $('cv-rule-note').textContent=desc.note;$('cv-rationale').textContent=desc.note+' '+reply.spec.rationale+(old?' Replaces: '+old.benefits.join('; ')+' / '+old.price+'.':'');$('cv-status').textContent=`${reply.reason} ${reply.latencyMs} ms · ${V.budget(reply.spec).benefit}/${V.budget(reply.spec).payment} rule budget · NOT YET APPLIED.`;$('cv-sign').disabled=false;
       $('covenant-screen').dataset.proposal='ready';$('cv-review-ready').textContent='READY';$('cv-proposal').setAttribute('aria-busy','false');if(!options.delegated)setCovenantStep('review',true);renderCovenantPreview(clock);return reply;
     }catch(e){if(id===cvRequestId)$('cv-status').textContent=String(e.message).slice(0,200)+' No rules changed.';}finally{if(id===cvRequestId){$('cv-propose').disabled=false;$('cv-proposal').setAttribute('aria-busy','false');if(!cvProposal)$('covenant-screen').dataset.proposal='draft';}}
@@ -5186,6 +5310,7 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
   function setSigningUI(pending){for(const id of ['cv-prompt','cv-mode','cv-consent','cv-propose','cv-open-connection'])$(id).disabled=pending;for(const button of document.querySelectorAll('[data-cv-example]'))button.disabled=pending;$('cv-sign').disabled=pending||!cvProposal;}
   async function refreshConnection(){
     const online=window.NEMESIS_HOSTED&&$('cv-mode').value==='server'&&$('cv-consent').checked;
+    $('cv-local-quick').hidden=$('cv-mode').value==='local'||online;
     document.querySelector('.cv-voice').dataset.available=String(online);
     $('cv-voice-start').disabled=true;
     $('cv-open-connection').textContent=online?'OpenAI / Settings':window.NEMESIS_HOSTED?'Enable OpenAI / Consent':'LOCAL RULES / Settings';
@@ -5293,10 +5418,11 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
   $('cv-open-connection').onclick=()=>{if(!cvSigning)$('cv-connection-dialog').showModal();};
   for(const id of ['cv-connection-close','cv-connection-done'])$(id).onclick=()=>$('cv-connection-dialog').close();
   $('cv-use-local').onclick=()=>{$('cv-mode').value='local';$('cv-consent').checked=false;invalidateCovenant();refreshConnection();$('cv-connection-dialog').close();};
+  $('cv-local-quick').onclick=()=>{if(cvSigning)return;$('cv-mode').value='local';$('cv-consent').checked=false;invalidateCovenant();refreshConnection();proposeCovenant();};
   function covenantDetails(transcript){$('cv-detail-title').textContent=transcript?'Voice transcript':'Full terms & changes';$('cv-detail-content').textContent=transcript?T('YOU')+'\n'+$('cv-caption-player').textContent+'\n\n'+T('THE NOTARY')+'\n'+$('cv-caption-notary').textContent:[$('cv-contract-title').textContent,$('cv-line').textContent,$('cv-clauses').innerText,$('cv-rationale').textContent||'Ask for a counteroffer. Only the displayed clauses can be signed; voice and preview animations never change combat by themselves.'].join('\n\n');$('cv-detail-dialog').showModal();}
   $('cv-review-details').onclick=()=>covenantDetails(false);$('cv-transcript').onclick=()=>covenantDetails(true);
   for(const id of ['cv-detail-close','cv-detail-done'])$(id).onclick=()=>$('cv-detail-dialog').close();
-  for(const el of document.querySelectorAll('[data-cv-example]'))el.onclick=()=>{$('cv-prompt').value=T(el.dataset.cvExample);invalidateCovenant();};
+  for(const el of document.querySelectorAll('[data-cv-example]'))el.onclick=()=>{$('cv-prompt').value=world?.phase==='parley'?localizeCovenantPrompt(el.dataset.cvExample):T(el.dataset.cvExample);invalidateCovenant();};
   $('start').onclick=()=>{sound.unlock();hangarScreen();};$('launch').onclick=()=>start();$('train').onclick=()=>start(true);$('training-exit').onclick=home;
   $('daily').onclick=()=>{const d=new Date(),date=[d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');$('seed').value='DAILY-'+date;show('loadout');};
   for(const el of document.querySelectorAll('[data-difficulty]'))el.onclick=()=>{difficulty=el.dataset.difficulty;for(const b of document.querySelectorAll('[data-difficulty]')){b.classList.toggle('selected',b===el);b.setAttribute('aria-pressed',String(b===el));}};

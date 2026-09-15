@@ -71,6 +71,8 @@
     'The channel is open.':'通信路は開いています。','Use text, or choose LOCAL RULES.':'テキストを使うか、ローカルルールを選択してください。','VOICE UNAVAILABLE / USE TEXT':'音声利用不可 / テキストを使用','VOICE UNAVAILABLE / USE TEXT OR LOCAL RULES':'音声利用不可 / テキストまたはローカルルールを使用'
   };
   const patterns=[
+    [/^I counted (\d+) returned shots\. Is that still the fight you want\?$/,m=>`お前が撃ち返した弾は${m[1]}発。まだ、その条件で戦い続けるか？`],
+    [/^I counted (\d+) reflected shots\. Read the binding clauses below\. Sign only what you intend to keep\.$/,m=>`反射した弾は${m[1]}発だったな。下の条件を読み、守るつもりの約束だけに署名してくれ。`],
     [/^BEST (.+)$/,(m)=>'最高記録 '+m[1]],
     [/^SECTOR (\d+) \/ VOICE & PACT$/,(m)=>'セクター '+m[1]+' / 音声と契約'],
     [/^SECTOR (\d+) \/ (.+)$/,(m)=>'セクター '+m[1]+' / '+m[2]],

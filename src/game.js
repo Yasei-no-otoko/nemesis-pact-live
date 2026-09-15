@@ -558,9 +558,30 @@
     const amended=world.phase==='parley';$('cv-heading').textContent=amended?'MID-FIGHT PARLEY / BATTLE PAUSED':'FIRST CONTACT / LIVING COVENANT';$('cv-title').textContent=amended?'Change the deal.':'Name your terms.';$('cv-close').textContent=amended?'Keep pact & resume':'Main menu';$('cv-sign').textContent=amended?'Sign amendment & resume ↗':'Sign & enter combat ↗';$('cv-memory').textContent=`${world.memory.honored} honored · ${world.memory.broken} broken${amended?' · '+world.parries+' reflections · '+world.covenantStats.shielded+' bullets erased':''}`;
     $('cv-intro-copy').textContent=amended?'One amendment is available. Compare the new rules. Health, boss damage and elapsed time are preserved.':'Ask for a safe place, slower fire, or stronger reflections. Every advantage has a price.';
     $('cv-enemy').textContent=amended?`“I counted ${world.parries} returned shots. Is that still the fight you want?”`:world.memory.broken?'“A broken signature is still on my ledger.”':'“I do not need to defeat you. I need you to break your word.”';
-    if(amended)$('cv-prompt').value='Amplify my reflected bullets and slow your fire. My gun can be weaker.';
+    $('covenant-screen').dataset.amendment=String(amended);renderCovenantBriefing(amended);
     voiceText='';voiceCaption='';voiceLastInput=0;voiceBackchannels='';document.querySelector('.cv-voice').dataset.transcript='false';$('cv-caption-player').textContent='—';$('cv-caption-notary').textContent='—';
     $('cv-status').textContent=amended?'TIME FROZEN / One amendment. Current terms remain active until you sign.':'Choose OpenAI with consent, or LOCAL RULES. Review the counteroffer, then Sign.';refreshConnection();renderCovenantPreview(clock);
+  }
+  function localizeCovenantPrompt(prompt){return prompt.split(/(?<=\.)\s+/).map(part=>T(part)).join(' ');}
+  function renderCovenantBriefing(amended){
+    const briefing=amended?window.PactCovenantReview.briefing(world):null;
+    $('cv-battle-readout').hidden=!briefing;
+    const defaults=[
+      {label:'Left + slower fire',prompt:'Move the sanctuary to the left. Slow your bullets. I accept reinforcements.'},
+      {label:'Stronger reflections',prompt:'Amplify my reflected bullets and slow your fire. My gun can be weaker.'},
+      {label:'Right + high stakes',prompt:'Give me a sanctuary on the right and stronger reflections. Double the damage I take.'}
+    ];
+    const choices=briefing?.choices||defaults;
+    document.querySelectorAll('[data-cv-example]').forEach((button,i)=>{button.dataset.cvExample=choices[i].prompt;button.textContent=choices[i].label;});
+    if(!briefing)return;
+    const stats=[['HULL REMAINING',briefing.hull+' / '+briefing.maxHull],['BOSS REMAINING',briefing.bossRemaining+'%'],['BULLETS ERASED',briefing.shielded],['DAMAGE RETURNED',briefing.returned]];
+    $('cv-battle-stats').innerHTML=stats.map(([label,value])=>'<div><dt>'+escapeHTML(T(label))+'</dt><dd>'+escapeHTML(value)+'</dd></div>').join('');
+    $('cv-battle-observation').textContent=briefing.observation;
+    $('cv-prompt').value=localizeCovenantPrompt(choices.find(choice=>choice.id===briefing.recommendation).prompt);
+  }
+  function covenantComparison(previous,next){
+    const rows=window.PactCovenantReview.compare(previous,next),changed=rows.some(row=>row.changed);
+    return '<table class="cv-comparison"><caption>'+escapeHTML(T(changed?'WHAT YOUR SIGNATURE WILL CHANGE':'SAME RULES · Signing still uses your amendment'))+'</caption><thead><tr><th scope="col">'+escapeHTML(T('Clause'))+'</th><th scope="col">'+escapeHTML(T('Current'))+'</th><th scope="col">'+escapeHTML(T('After signing'))+'</th></tr></thead><tbody>'+rows.map(row=>'<tr data-changed="'+row.changed+'"><th scope="row">'+escapeHTML(T(row.label))+'</th><td>'+escapeHTML(T(row.before))+'</td><td>'+escapeHTML(T(row.after))+'</td></tr>').join('')+'</tbody></table><p class="cv-change-note">'+escapeHTML(T('Existing enemies stay. Keep pact & resume saves your amendment.'))+'</p>';
   }
   function openParley(){if(world?.mode==='first-contact'&&world.requestParley()){openCovenant();return true;}if(screen==='game')toast('PARLEY / Available after 8 seconds, once per fight.');return false;}
   function closeCovenant(){invalidateCovenant();if(world?.cancelParley()){show('game');updateHUD();}else home();}
@@ -569,7 +590,7 @@
     invalidateCovenant('Preparing a counteroffer. The battle is not running.',options.delegated===true);const id=++cvRequestId;$('cv-propose').disabled=true;$('covenant-screen').dataset.proposal='pending';$('cv-proposal').setAttribute('aria-busy','true');
     try{const reply=await cvClient.propose(request,{mode:$('cv-mode').value,consent:$('cv-consent').checked,session:cvSession,runId:cvRunId,intentVersion:id});if(id!==cvRequestId||world!==target||world.revision!==revision||screen!=='covenant-screen')return null;
       cvProposal=reply;if(options.delegated){reply.voiceOrigin=true;if(world?.voiceEvidence){world.voiceEvidence.proposalsReturned++;if(reply.provider==='openai')world.voiceEvidence.openaiProposals++;}} cvRevision=revision;const desc=V.describe(reply.spec),old=world.spec?V.describe(world.spec):null;$('cv-provider').textContent=reply.provider==='openai'?'CONTRACT: OPENAI / '+reply.model:'CONTRACT: LOCAL RULES / NO AI INFERENCE';$('cv-revision').textContent='REV '+String(revision+1).padStart(2,'0')+' / UNSIGNED';$('cv-line').textContent='“'+reply.spec.line+'”';$('cv-contract-title').textContent=desc.title;
-      $('cv-clauses').innerHTML=`<div class="cv-benefit"><small>YOUR ADVANTAGE</small>${desc.benefits.map(x=>'<p>+ '+escapeHTML(x)+'</p>').join('')}</div><div class="cv-cost"><small>YOUR PRICE</small><p>− ${escapeHTML(desc.price)}</p></div>`;
+      $('cv-clauses').innerHTML=old?covenantComparison(target.spec,reply.spec):`<div class="cv-benefit"><small>YOUR ADVANTAGE</small>${desc.benefits.map(x=>'<p>+ '+escapeHTML(x)+'</p>').join('')}</div><div class="cv-cost"><small>YOUR PRICE</small><p>− ${escapeHTML(desc.price)}</p></div>`;
       $('cv-rule-note').textContent=desc.note;$('cv-rationale').textContent=desc.note+' '+reply.spec.rationale+(old?' Replaces: '+old.benefits.join('; ')+' / '+old.price+'.':'');$('cv-status').textContent=`${reply.reason} ${reply.latencyMs} ms · ${V.budget(reply.spec).benefit}/${V.budget(reply.spec).payment} rule budget · NOT YET APPLIED.`;$('cv-sign').disabled=false;
       $('covenant-screen').dataset.proposal='ready';$('cv-review-ready').textContent='READY';$('cv-proposal').setAttribute('aria-busy','false');if(!options.delegated)setCovenantStep('review',true);renderCovenantPreview(clock);return reply;
     }catch(e){if(id===cvRequestId)$('cv-status').textContent=String(e.message).slice(0,200)+' No rules changed.';}finally{if(id===cvRequestId){$('cv-propose').disabled=false;$('cv-proposal').setAttribute('aria-busy','false');if(!cvProposal)$('covenant-screen').dataset.proposal='draft';}}
@@ -588,6 +609,7 @@
   function setSigningUI(pending){for(const id of ['cv-prompt','cv-mode','cv-consent','cv-propose','cv-open-connection'])$(id).disabled=pending;for(const button of document.querySelectorAll('[data-cv-example]'))button.disabled=pending;$('cv-sign').disabled=pending||!cvProposal;}
   async function refreshConnection(){
     const online=window.NEMESIS_HOSTED&&$('cv-mode').value==='server'&&$('cv-consent').checked;
+    $('cv-local-quick').hidden=$('cv-mode').value==='local'||online;
     document.querySelector('.cv-voice').dataset.available=String(online);
     $('cv-voice-start').disabled=true;
     $('cv-open-connection').textContent=online?'OpenAI / Settings':window.NEMESIS_HOSTED?'Enable OpenAI / Consent':'LOCAL RULES / Settings';
@@ -695,10 +717,11 @@
   $('cv-open-connection').onclick=()=>{if(!cvSigning)$('cv-connection-dialog').showModal();};
   for(const id of ['cv-connection-close','cv-connection-done'])$(id).onclick=()=>$('cv-connection-dialog').close();
   $('cv-use-local').onclick=()=>{$('cv-mode').value='local';$('cv-consent').checked=false;invalidateCovenant();refreshConnection();$('cv-connection-dialog').close();};
+  $('cv-local-quick').onclick=()=>{if(cvSigning)return;$('cv-mode').value='local';$('cv-consent').checked=false;invalidateCovenant();refreshConnection();proposeCovenant();};
   function covenantDetails(transcript){$('cv-detail-title').textContent=transcript?'Voice transcript':'Full terms & changes';$('cv-detail-content').textContent=transcript?T('YOU')+'\n'+$('cv-caption-player').textContent+'\n\n'+T('THE NOTARY')+'\n'+$('cv-caption-notary').textContent:[$('cv-contract-title').textContent,$('cv-line').textContent,$('cv-clauses').innerText,$('cv-rationale').textContent||'Ask for a counteroffer. Only the displayed clauses can be signed; voice and preview animations never change combat by themselves.'].join('\n\n');$('cv-detail-dialog').showModal();}
   $('cv-review-details').onclick=()=>covenantDetails(false);$('cv-transcript').onclick=()=>covenantDetails(true);
   for(const id of ['cv-detail-close','cv-detail-done'])$(id).onclick=()=>$('cv-detail-dialog').close();
-  for(const el of document.querySelectorAll('[data-cv-example]'))el.onclick=()=>{$('cv-prompt').value=T(el.dataset.cvExample);invalidateCovenant();};
+  for(const el of document.querySelectorAll('[data-cv-example]'))el.onclick=()=>{$('cv-prompt').value=world?.phase==='parley'?localizeCovenantPrompt(el.dataset.cvExample):T(el.dataset.cvExample);invalidateCovenant();};
   $('start').onclick=()=>{sound.unlock();hangarScreen();};$('launch').onclick=()=>start();$('train').onclick=()=>start(true);$('training-exit').onclick=home;
   $('daily').onclick=()=>{const d=new Date(),date=[d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');$('seed').value='DAILY-'+date;show('loadout');};
   for(const el of document.querySelectorAll('[data-difficulty]'))el.onclick=()=>{difficulty=el.dataset.difficulty;for(const b of document.querySelectorAll('[data-difficulty]')){b.classList.toggle('selected',b===el);b.setAttribute('aria-pressed',String(b===el));}};
