@@ -24,6 +24,10 @@ In any campaign sector, choose **Negotiate by voice / AI**, select OpenAI and gi
 
 In **Full campaign → Expedition → AI Director**, choose OpenAI, give consent, and describe your preferred formation in English or Japanese. GPT-5.6 Luna chooses a validated authored template. Compare the actual scheduled enemy counts and arrival spacing for each route, then click **Use this formation**. Only that action changes upcoming regular waves; boss attacks and pact rules remain separate. The selection persists until changed. LOCAL RULES is available offline or when service/budget limits are reached. [Validation and limits](docs/DIRECTOR-VALIDATION.md).
 
+## Flight debrief
+
+After a campaign victory or defeat, open **Flight debrief** to review your actual run. With consent, GPT-5.6 Luna analyzes aggregate results and equipment in English or Japanese, highlighting strengths and one practice goal. The review is read-only, cached for this run and clearly distinguishes autoplay demonstrations. LOCAL RULES remains available when the service is unavailable. [Behavior, validation and budget](docs/FLIGHT-DEBRIEF.md).
+
 ## Play
 
 1. Choose **Make first contact**

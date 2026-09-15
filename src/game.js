@@ -11,6 +11,8 @@
   let campaignVoice,campaignSpeech='',campaignCaption='',campaignLastInput=0,campaignVoiceActive=false,campaignVoiceMuted=false,campaignConnectionEpoch=0;
   const campaignVoiceRuns=new WeakMap();
   const adaptiveClient=new window.PactAdaptiveClient(campaignSession),pilot=window.PactAutopilot.Controller;
+  const D=window.PactDebrief,debriefClient=new window.PactDebriefClient(new window.PactSession()),debriefRecords=new WeakMap();
+  let debriefEpoch=0,debriefWorld=null,debriefBusy=false,debriefResult=null;
   let adaptiveEpoch=0,adaptiveReady=false,autoplayActive=false,autoplayPausePacts=false,autoplayNext=0;
   let campaignMode='expedition',airframe='vanguard',aiTask='negotiate',aiBack='choices',aiDecision=null,aiWorld=null,aiStage=0;
   let W=C.W,H=C.H;
@@ -19,7 +21,7 @@
   window.NEMESIS_RENDERER=gpu;
   const sound=new window.PactSound(),keys=new Set(),pressed=new Set();
   window.NemesisDemo?.registerGameAudio?.(()=>{sound.unlock();return sound.createRecordingTap?.();});
-  const mouse={x:W/2,y:240,down:false},screens=['menu','loadout','choices','pause','help-screen','settings-screen','result','confirm-screen','hangar','route','ai-screen','archive','covenant-screen','adaptive-screen'];
+  const mouse={x:W/2,y:240,down:false},screens=['menu','loadout','choices','pause','help-screen','settings-screen','result','confirm-screen','hangar','route','ai-screen','archive','covenant-screen','adaptive-screen','debrief-screen'];
   let world=null,screen='menu',previousScreen='menu',difficulty='standard',pauseFrom='game',last=0,accum=0,clock=0,shake=0,flash=0,freeze=0;
   let effects=[],particles=[],trails=[],announceTime=0,toastTime=0,uiTimer=0,trainingStep=0,trainingMoved=0,lastWorldPhase='',muted=false,oldPad=[],oldAxes=[0,0];
   let resultSaved=false,renderFrames=0,screenScale=1;
@@ -54,10 +56,11 @@
   function clearInput(){keys.clear();pressed.clear();mouse.down=false;touch?.clear();}
   function show(name){
     if(name!=='settings-screen')sound.stopPreview();
+    if(name!=='debrief-screen'){debriefEpoch++;debriefClient.cancel();debriefBusy=false;debriefWorld=null;}
     screen=name;document.body.dataset.screen=name;document.body.dataset.covenant=String(world?.mode==='first-contact');if(name!=='covenant-screen'){cvClient.cancel();cvRequestId++;voice?.stop('screen-exit');for(const id of ['cv-connection-dialog','cv-detail-dialog'])if($(id).open)$(id).close();}if(name==='pause')$('pause-parley').hidden=world?.mode!=='first-contact';document.body.dataset.training=String(!!world?.training);clearInput();for(const id of screens)$(id).hidden=id!==name;
     $('touch-controls').hidden=!(mobile&&name==='game');if($(name))$(name).scrollTop=0;
     if(name==='pause'){$('pause-reason').textContent='The battlefield is paused.';$('pause-breach').disabled=!world?.pact||world.broken||world.training;}
-    $('hud').hidden=!world||['menu','loadout','hangar','route','archive','ai-screen','covenant-screen','adaptive-screen'].includes(name)||(mobile&&name!=='game');$('tutorial-hud').hidden=!(world?.training&&name==='game');
+    $('hud').hidden=!world||['menu','loadout','hangar','route','archive','ai-screen','covenant-screen','adaptive-screen','debrief-screen'].includes(name)||(mobile&&name!=='game');$('tutorial-hud').hidden=!(world?.training&&name==='game');
     if(name!=='game'){$('announcement').classList.remove('visible');$('toast').classList.remove('visible');announceTime=0;toastTime=0;}
     if(name!=='ai-screen'){campaignConnectionEpoch++;campaignVoice?.stop('screen-exit');if(campaignClient.runId)campaignClient.close();aiClient.cancel();if(directorClient.runId)directorClient.close();aiEpoch++;}if(name!=='game'&&!mobile){const button=$(name)?.querySelector('button:not([disabled])');if(button)button.focus({preventScroll:true});}else document.activeElement?.blur();
     refreshView();autoplayNext=clock+1.8;refreshFlightAssist();
@@ -450,7 +453,7 @@
   // Encounter review is separate from pact signatures and never blocks active combat.
   function advanceEncounterScreen(){if(!world)return;if(world.phase==='parley')openCovenant();else if(world.phase==='route')routeScreen();else if(world.phase==='pact'||world.phase==='upgrade')choiceScreen();else if(world.phase==='won'||world.phase==='dead')results();}
   function refreshFlightAssist(){
-    const showStatus=world&&(world.autoplay||world.adaptiveEnabled)&&!['menu','hangar','loadout'].includes(screen);$('flight-assist-status').hidden=!showStatus;if(!showStatus)return;
+    const showStatus=world&&(world.autoplay||world.adaptiveEnabled)&&!['menu','hangar','loadout','result','debrief-screen'].includes(screen);$('flight-assist-status').hidden=!showStatus;if(!showStatus)return;
     const mode=world.autoplay?(autoplayActive?'DEMO / AUTOPLAY':'DEMO / MANUAL CONTROL'):'PILOT';const pressure=world.adaptiveEnabled?` / ADAPTIVE ${world.adaptiveLevel>0?'+':''}${world.adaptiveLevel}`:'';
     $('flight-assist-label').textContent=mode+pressure;$('autoplay-toggle').hidden=!world.autoplay;$('autoplay-toggle').textContent=autoplayActive?'Take control':'Resume autoplay';
   }
@@ -487,6 +490,49 @@
   $('adaptive-continue').onclick=()=>finishAdaptiveReview();$('adaptive-skip').onclick=()=>finishAdaptiveReview(true);$('adaptive-off').onclick=()=>finishAdaptiveReview(true,true);
   $('autoplay-enabled').onchange=()=>{const on=$('autoplay-enabled').checked;$('autoplay-voice-option').hidden=!on;if(on){airframe='bastion';document.querySelector('[data-difficulty="assist"]').click();$('loadout-summary').textContent='Demo preset: Bastion hull, Story difficulty. Autopilot signs pacts and chooses upgrades. You can take control at any time.';}};
   $('autoplay-toggle').onclick=()=>{autoplayActive=!autoplayActive;autoplayNext=clock+1.8;clearInput();refreshFlightAssist();};
+
+
+  // End-of-run feedback is read-only and uses the same bounded text budget.
+  function debriefRecord(target){let record=debriefRecords.get(target);if(!record){record={runId:crypto.randomUUID(),sequence:0,cache:new Map()};debriefRecords.set(target,record);}return record;}
+  function debriefInput(){const record=debriefRecord(debriefWorld);return {runId:record.runId,sequence:Math.max(1,record.sequence),language:window.PactI18n.locale,run:D.fromWorld(debriefWorld).run};}
+  function localDebrief(){const input=debriefInput();return {provider:'local-rules',model:null,decision:D.mock(input),runId:input.runId,sequence:input.sequence,latencyMs:0};}
+  function renderDebrief(result){
+    debriefResult=result;const d=result.decision;$('debrief-provider').textContent=result.provider==='openai'?'OPENAI / '+result.model:'LOCAL RULES / NO AI INFERENCE';
+    for(const [id,key]of [['debrief-headline','headline'],['debrief-summary','summary'],['debrief-strength','strength'],['debrief-improvement','improvement'],['debrief-next','nextRun']])$(id).textContent=d[key];
+    $('debrief-strength-label').textContent=T('WHAT WORKED');$('debrief-improvement-label').textContent=T('WHAT TO PRACTICE');$('debrief-next-label').textContent=T('YOUR NEXT FLIGHT');
+  }
+  function syncDebriefControls(){
+    const online=$('debrief-mode').value==='server',cached=debriefWorld&&debriefRecord(debriefWorld).cache.has(window.PactI18n.locale);
+    $('debrief-consent').parentElement.hidden=!online;$('debrief-analyze').disabled=debriefBusy||!online||!$('debrief-consent').checked||cached;
+    $('debrief-cancel').hidden=!debriefBusy;$('debrief-review').setAttribute('aria-busy',String(debriefBusy));
+  }
+  function openDebrief(){
+    if(!world||world.mode==='first-contact'||!['won','dead'].includes(world.phase))return;
+    debriefEpoch++;debriefBusy=false;show('debrief-screen');debriefWorld=world;const record=debriefRecord(world);debriefClient.open(record.runId);const r=D.fromWorld(world).run;
+    $('debrief-mode').value=window.NEMESIS_HOSTED?'server':'local';$('debrief-mode').querySelector('[value="server"]').disabled=!window.NEMESIS_HOSTED;$('debrief-consent').checked=false;
+    $('debrief-outcome').textContent=(r.outcome==='won'?'CAMPAIGN CLEARED':'FLIGHT ENDED')+' / '+(r.autoplay?'DEMO AUTOPILOT':'PLAYER RUN');
+    const stats=[['TIME',formatTime(r.seconds)],['BOSSES',r.bossKills+' / '+r.totalStages],['ELIMINATIONS',r.kills],['REFLECTIONS',r.parries],['HULL LOST',r.damageTaken],['PACTS KEPT',r.pactsKept+' / '+r.pactsTotal]];
+    $('debrief-stats').innerHTML=stats.map(([label,value])=>'<div><span>'+escapeHTML(label)+'</span><b>'+escapeHTML(value)+'</b></div>').join('');
+    $('debrief-build').textContent=Object.entries(world.upgrades||{}).map(([id,n])=>T(UPGRADES.find(x=>x.id===id)?.name||id)+(n>1?' ×'+n:'')).concat((world.relics||[]).map(id=>T(X.RELICS.find(x=>x.id===id)?.name||id))).join(' / ')||'No upgrades collected yet.';
+    const cached=record.cache.get(window.PactI18n.locale);renderDebrief(cached||localDebrief());$('debrief-status').textContent=cached?'Saved analysis for this run.':'Recorded counters. AI analysis is optional.';syncDebriefControls();
+  }
+  function resetDebrief(reason){if(screen!=='debrief-screen'||!debriefWorld)return;debriefEpoch++;debriefClient.cancel();debriefBusy=false;renderDebrief(localDebrief());$('debrief-status').textContent=reason;syncDebriefControls();}
+  async function requestDebrief(){
+    if(screen!=='debrief-screen'||!debriefWorld||debriefBusy||$('debrief-mode').value!=='server'||!$('debrief-consent').checked||!window.NEMESIS_HOSTED)return;
+    const target=debriefWorld,record=debriefRecord(target),language=window.PactI18n.locale;if(record.cache.has(language))return;
+    const epoch=++debriefEpoch;record.sequence++;const input=debriefInput();debriefBusy=true;$('debrief-status').textContent='Reading your completed flight...';syncDebriefControls();
+    try{
+      const result=await debriefClient.request(input,true);
+      if(epoch!==debriefEpoch||world!==target||debriefWorld!==target||screen!=='debrief-screen'||language!==window.PactI18n.locale||!$('debrief-consent').checked)return;
+      renderDebrief(result);if(result.provider==='openai'){record.cache.set(language,result);$('debrief-headline').focus({preventScroll:true});if(mobile)$('debrief-headline').scrollIntoView({block:'start',behavior:'instant'});$('debrief-status').textContent='Saved analysis for this run. / '+result.latencyMs+' ms';}else $('debrief-status').textContent='AI unavailable or budget reached. Recorded results remain available.';
+    }catch{if(epoch===debriefEpoch&&screen==='debrief-screen'){renderDebrief(localDebrief());$('debrief-status').textContent='Analysis cancelled. Recorded results remain available.';}}
+    finally{if(epoch===debriefEpoch){debriefBusy=false;syncDebriefControls();}}
+  }
+  $('debrief-back').onclick=()=>show('result');$('debrief-analyze').onclick=requestDebrief;
+  $('debrief-cancel').onclick=()=>resetDebrief('Analysis cancelled. Recorded results remain available.');
+  $('debrief-mode').onchange=()=>resetDebrief('Recorded counters. AI analysis is optional.');
+  $('debrief-consent').onchange=()=>{if(!$('debrief-consent').checked)resetDebrief('Consent withdrawn. No further analysis will be requested.');else syncDebriefControls();};
+  document.addEventListener('nemesis-language-change',()=>{if(screen==='debrief-screen')openDebrief();});
 
   // --- Living Covenant. Network proposals never mutate simulation state. ---
   function setCovenantStep(step,focus=false){
@@ -623,7 +669,7 @@
       return;
     }
     const input=e.target instanceof HTMLInputElement||e.target instanceof HTMLTextAreaElement||e.target instanceof HTMLSelectElement;
-    if(e.code==='Escape'&&!e.repeat){e.preventDefault();if(screen==='game'||screen==='pause')togglePause();else if(screen==='help-screen'||screen==='settings-screen')show(previousScreen);else if(screen==='confirm-screen')show('pause');else if(screen==='loadout')hangarScreen();else if(screen==='hangar'||screen==='archive')home();else if(screen==='ai-screen')closeAI();else if(screen==='covenant-screen')closeCovenant();return;}
+    if(e.code==='Escape'&&!e.repeat){e.preventDefault();if(screen==='game'||screen==='pause')togglePause();else if(screen==='help-screen'||screen==='settings-screen')show(previousScreen);else if(screen==='confirm-screen')show('pause');else if(screen==='loadout')hangarScreen();else if(screen==='hangar'||screen==='archive')home();else if(screen==='ai-screen')closeAI();else if(screen==='debrief-screen')show('result');else if(screen==='covenant-screen')closeCovenant();return;}
     if(input)return;
     if(e.code==='Tab'&&screen!=='game'){
       const focusable=Array.from($(screen)?.querySelectorAll('button,input,textarea,select')||[]);if(focusable.length){const first=focusable[0],lastEl=focusable[focusable.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();lastEl.focus();}else if(!e.shiftKey&&document.activeElement===lastEl){e.preventDefault();first.focus();}}return;}
@@ -638,7 +684,7 @@
   window.addEventListener('keyup',e=>keys.delete(e.code));
   window.addEventListener('blur',()=>{clearInput();if(screen==='game')togglePause();});
   document.addEventListener('visibilitychange',()=>{if(document.hidden){clearInput();if(screen==='game')togglePause();}updateAudio();});
-  window.addEventListener('pagehide',()=>{sound.tick({screen:'pause',world,hidden:true});});
+  window.addEventListener('pagehide',()=>{debriefEpoch++;debriefClient.cancel();sound.tick({screen:'pause',world,hidden:true});});
   window.addEventListener('resize',resize);
   // ResizeObserver also catches dynamic browser chrome (100dvh) changes.
   if(typeof ResizeObserver!=='undefined'){new ResizeObserver(()=>{const r=$('stage').getBoundingClientRect();if(Math.abs(r.width-view.width)>.5||Math.abs(r.height-view.height)>.5)resize();}).observe($('stage'));}
@@ -706,6 +752,7 @@
   }
   function closeAI(){aiClient.cancel();aiClient.token='';$('pilot-token').value='';const back=aiBack;show(back);if(back==='route')routeScreen();}
   function openAI(task){
+    if(task==='debrief'){openDebrief();return;}
     if(!world||(task==='negotiate'&&world.phase!=='pact')||(task==='director'&&(world.mode!=='expedition'||!['route','pact'].includes(world.phase))))return;aiEpoch++;aiTask=task;aiBack=screen;aiWorld=world;aiStage=world.stage;aiDecision=null;show('ai-screen');
     const director=task==='director',campaign=task==='negotiate';$('ai-screen').dataset.task=task;setAIBusy(false);$('ai-request').disabled=false;if(director)directorClient.open();if(campaign)campaignClient.open({mode:world.mode,stage:world.stage});$('campaign-voice').hidden=!campaign;
     const sector=X.SECTORS[Math.min(world.stage,5)];$('ai-screen').style.setProperty('--sector',sector.color);
@@ -787,7 +834,7 @@
   $('hangar-close').onclick=home;$('hangar-ready').onclick=()=>{const expedition=campaignMode==='expedition';$('flight-assists').hidden=!expedition;for(const id of ['adaptive-enabled','autoplay-enabled'])if(!expedition)$(id).checked=false;$('loadout-summary').textContent=(campaignMode==='classic'?'Three sectors. Three bosses. ':campaignMode==='gauntlet'?'Six bosses. No warm-up. ':'Six sectors. Six bosses. ')+'One life. Defeat a boss to restore 2 hull. Fall, and start again.';show('loadout');};
   $('archive-open').onclick=archiveScreen;$('archive-close').onclick=home;
   $('route-intelligence').onclick=()=>openAI('director');$('negotiate').onclick=()=>openAI('negotiate');
-  $('choice-outfit').onclick=()=>routeScreen(true);$('debrief').onclick=()=>openAI('debrief');
+  $('choice-outfit').onclick=()=>routeScreen(true);$('debrief').onclick=openDebrief;
   $('ai-close').onclick=closeAI;$('ai-request').onclick=requestAI;$('ai-apply').onclick=applyAI;
   const invalidateProposal=(voiceInput=false)=>{if(aiApplying)return;aiEpoch++;aiClient.cancel();directorClient.cancel();campaignClient.cancel();campaignVoice?.supersede(voiceInput===true);aiDecision=null;$('ai-apply').disabled=true;$('ai-request').disabled=false;$('ai-status').textContent='Request changed. Propose again before accepting.';renderDirectorPreview();};
   $('ai-mode').onchange=()=>{invalidateProposal();refreshCampaignConnection();};$('ai-prompt').oninput=()=>{campaignSpeech=$('ai-prompt').value;invalidateProposal();};$('ai-consent').onchange=()=>{invalidateProposal();refreshCampaignConnection();};$('ai-preview-route').onchange=renderDirectorPreview;
@@ -834,13 +881,13 @@
     $('campaign-voice-volume').oninput=()=>{const level=Number($('campaign-voice-volume').value)/100;campaignVoice.setVolume(level);window.NemesisDemo?.setVoiceOutputLevel?.(level);};
   }
   // Readable snapshot contains no credentials, transcripts or writable objects.
-  window.render_game_to_text=()=>JSON.stringify({build:'1.3.0',screen,language:window.PactI18n.locale,assists:{autoShot:opts.autofire,aimAssist:opts.autoaim},negotiationStep:$('covenant-screen').dataset.step||'negotiate',coordinates:'origin top-left; x right; y down',renderer:gpu.stats().backend,arena:{width:W,height:H},phase:world?.phase,seconds:world?Math.round(world.time*100)/100:0,player:world?{x:Math.round(world.p.x),y:Math.round(world.p.y),hp:world.p.hp,energy:world.p.energy}:null,enemies:world?.enemies.filter(e=>e.hp>0).slice(0,12).map(e=>({type:e.type,x:Math.round(e.x),y:Math.round(e.y),hp:e.hp})),hostileBullets:world?.bullets.filter(b=>b.hostile).length,revision:world?.revision,spec:world?.spec,proposal:cvProposal?{spec:cvProposal.spec,provider:cvProposal.provider,model:cvProposal.model}:null,effects:world?.covenantStats,stage:world?.stage,wave:world?.wave,bossKills:world?.bossKills,renderFrames,autoplay:world?.autoplay?{active:autoplayActive,pauseAtPacts:autoplayPausePacts}:null,adaptive:world?.adaptiveEnabled||world?.adaptiveHistory?.length?{enabled:world.adaptiveEnabled,level:world.adaptiveLevel,history:world.adaptiveHistory,pending:world.pendingAnalysis}:null,runReport:world?.phase==='won'||world?.phase==='dead'?world.report():null,campaignPact:world?.pact,campaignPactSource:world?.campaignPactSource,campaignPactEffects:world?.mode!=='first-contact'&&world?{...world.mods}:null,campaignProposal:campaignClient.proposal?{decision:campaignClient.proposal.decision,provider:campaignClient.proposal.provider,model:campaignClient.proposal.model}:null,campaignVoice:campaignVoice?.state,voice:voice?.state,liveVoice:world?.voiceEvidence?world.report().liveVoice:null});
+  window.render_game_to_text=()=>JSON.stringify({build:'1.3.0',screen,debrief:screen==='debrief-screen'?{provider:debriefResult?.provider,model:debriefResult?.model,busy:debriefBusy}:null,language:window.PactI18n.locale,assists:{autoShot:opts.autofire,aimAssist:opts.autoaim},negotiationStep:$('covenant-screen').dataset.step||'negotiate',coordinates:'origin top-left; x right; y down',renderer:gpu.stats().backend,arena:{width:W,height:H},phase:world?.phase,seconds:world?Math.round(world.time*100)/100:0,player:world?{x:Math.round(world.p.x),y:Math.round(world.p.y),hp:world.p.hp,energy:world.p.energy}:null,enemies:world?.enemies.filter(e=>e.hp>0).slice(0,12).map(e=>({type:e.type,x:Math.round(e.x),y:Math.round(e.y),hp:e.hp})),hostileBullets:world?.bullets.filter(b=>b.hostile).length,revision:world?.revision,spec:world?.spec,proposal:cvProposal?{spec:cvProposal.spec,provider:cvProposal.provider,model:cvProposal.model}:null,effects:world?.covenantStats,stage:world?.stage,wave:world?.wave,bossKills:world?.bossKills,renderFrames,autoplay:world?.autoplay?{active:autoplayActive,pauseAtPacts:autoplayPausePacts}:null,adaptive:world?.adaptiveEnabled||world?.adaptiveHistory?.length?{enabled:world.adaptiveEnabled,level:world.adaptiveLevel,history:world.adaptiveHistory,pending:world.pendingAnalysis}:null,runReport:world?.phase==='won'||world?.phase==='dead'?world.report():null,campaignPact:world?.pact,campaignPactSource:world?.campaignPactSource,campaignPactEffects:world?.mode!=='first-contact'&&world?{...world.mods}:null,campaignProposal:campaignClient.proposal?{decision:campaignClient.proposal.decision,provider:campaignClient.proposal.provider,model:campaignClient.proposal.model}:null,campaignVoice:campaignVoice?.state,voice:voice?.state,liveVoice:world?.voiceEvidence?world.report().liveVoice:null});
   window.advanceTime=ms=>{const n=Math.min(1200,Math.max(0,Math.round(Number(ms)*.12)));for(let i=0;i<n&&screen==='game'&&world?.phase==='combat';i++)world.step(1/120,inputState(null));if(world){consumeEvents();updateHUD();if(world.phase==='parley')openCovenant();else if(['won','dead'].includes(world.phase))results();}render();};
   // Test access is opt-in; normal launches do not expose mutable simulation state.
   if(new URLSearchParams(location.search).has('test')||window.__PACT_TEST_MODE__===true)window.__PACT_TEST__={
     get world(){return world;},get view(){return {...view};},get touch(){return touch;},get mobile(){return mobile;},get trainingStep(){return trainingStep;},get screen(){return screen;},get sound(){return sound;},get options(){return {...opts};},start,choose,selectChoice,show,render,updateHUD,consumeEvents,results,updateAudio,updateMusicStatus,
     advance(n,input={}){for(let i=0;i<n&&world?.phase==='combat';i++)world.step(1/120,input);consumeEvents();updateHUD();if(world.phase==='parley')openCovenant();else if(world.phase==='route')routeScreen();else if(world.phase==='upgrade'||world.phase==='pact')choiceScreen();else if(world.phase==='won'||world.phase==='dead')results();render();},
-    adaptiveReview,finishAdaptiveReview,hangarScreen,routeScreen,openAI,archiveScreen,startFirstContact,openCovenant,openParley,proposeCovenant,signCovenant,renderCovenantPreview,setCampaign(mode,frame){campaignMode=mode;airframe=frame;},
+    openDebrief,requestDebrief,adaptiveReview,finishAdaptiveReview,hangarScreen,routeScreen,openAI,archiveScreen,startFirstContact,openCovenant,openParley,proposeCovenant,signCovenant,renderCovenantPreview,setCampaign(mode,frame){campaignMode=mode;airframe=frame;},
     snapshot(){return {screen,world:world?.report(),bullets:world?.bullets.length,particles:particles.length,frames:renderFrames};}
   };
   touch=new window.PactTouch.TouchController({pad:$('move-pad'),surface:canvas,knob:$('move-knob'),isPlaying:()=>screen==='game',isMobile:()=>mobile,getWorld:()=>world,unlock:()=>sound.unlock(),sensitivity:()=>opts.sensitivity});

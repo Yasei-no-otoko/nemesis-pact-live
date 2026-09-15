@@ -20,6 +20,7 @@
 <link rel="stylesheet" href="src/director.css">
 <link rel="stylesheet" href="src/campaign.css">
 <link rel="stylesheet" href="src/adaptive.css">
+<link rel="stylesheet" href="src/debrief.css">
 <link rel="stylesheet" href="src/japanese.css">
 </head>
 <body>
@@ -166,7 +167,21 @@
       <p id="renderer-status" class="renderer-status" role="status">0.9.9 / INITIALIZING 3D</p>
       <button id="fullscreen" class="secondary">Toggle fullscreen</button><button id="settings-close" class="primary">Back <span>→</span></button>
     </div></section>
-    <section id="result" class="screen backdrop" hidden aria-label="Run results"><div class="result-left"><div class="result-heading"><div id="result-seal" hidden aria-hidden="true"><i></i><b>◈</b><i></i></div><span class="eyebrow" id="result-kicker"></span><h2 id="result-title"></h2><p id="result-story"></p><div class="result-score"><span class="micro">FINAL SCORE</span><strong id="result-score"></strong><span id="result-rank"></span></div></div><div class="result-followup"><div class="button-row"><button id="retry" class="primary">Try again <span>↗</span></button><button id="result-campaign" class="secondary" hidden>Full campaign ↗</button><button data-home class="secondary">Main menu</button></div><button id="debrief" class="secondary debrief-button">Flight debrief / prototype</button><button id="export" class="text-button">Save run report as JSON ↓</button></div></div><div class="result-right"><span class="eyebrow" id="result-record-label">FLIGHT RECORDER</span><div id="result-rules" hidden></div><div id="result-stats"></div><div id="result-pacts"></div><div id="result-build"></div><p id="result-seed" class="micro"></p></div></section>
+
+    <section id="debrief-screen" class="screen backdrop" hidden aria-labelledby="debrief-title">
+      <div class="debrief-panel">
+        <header class="debrief-header"><div><span class="eyebrow">FLIGHT DEBRIEF</span><h2 id="debrief-title">Make the next flight count.</h2></div><button id="debrief-back" class="secondary">Back to results ↗</button></header>
+        <div class="debrief-layout">
+          <aside class="debrief-record"><span class="section-cap">YOUR FLIGHT RECORD</span><p id="debrief-outcome"></p><div id="debrief-stats" class="debrief-stats"></div><p id="debrief-build"></p><p class="debrief-note">A review of this run. Your score, contracts and difficulty stay unchanged.</p></aside>
+          <div class="debrief-main">
+            <div class="debrief-provider-row"><span id="debrief-provider" class="provider-pill">LOCAL RULES / NO AI INFERENCE</span><span id="debrief-status" role="status"></span></div>
+            <article id="debrief-review" aria-live="polite" aria-busy="false" data-i18n-ignore><h3 id="debrief-headline" tabindex="-1"></h3><p id="debrief-summary"></p><div class="debrief-insight"><h4 id="debrief-strength-label"></h4><p id="debrief-strength"></p></div><div class="debrief-insight"><h4 id="debrief-improvement-label"></h4><p id="debrief-improvement"></p></div><div class="debrief-insight debrief-next"><h4 id="debrief-next-label"></h4><p id="debrief-next"></p></div></article>
+            <div class="debrief-connection"><label class="debrief-mode">Review with<select id="debrief-mode"><option value="server">GPT-5.6 Luna</option><option value="local">LOCAL RULES — offline</option></select></label><label class="debrief-consent"><input id="debrief-consent" type="checkbox"><span>I agree to send this run's aggregate results and equipment IDs to this site and OpenAI through Vercel AI Gateway. No voice, transcripts, screenshots, seed or account details are sent.</span></label><div class="debrief-actions"><button id="debrief-analyze" class="primary">Analyze with GPT-5.6 Luna ↗</button><button id="debrief-cancel" class="secondary" hidden>Cancel analysis</button></div><p class="debrief-note">AI feedback uses recorded counters. It cannot see your exact movements or change the game.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="result" class="screen backdrop" hidden aria-label="Run results"><div class="result-left"><div class="result-heading"><div id="result-seal" hidden aria-hidden="true"><i></i><b>◈</b><i></i></div><span class="eyebrow" id="result-kicker"></span><h2 id="result-title"></h2><p id="result-story"></p><div class="result-score"><span class="micro">FINAL SCORE</span><strong id="result-score"></strong><span id="result-rank"></span></div></div><div class="result-followup"><div class="button-row"><button id="retry" class="primary">Try again <span>↗</span></button><button id="result-campaign" class="secondary" hidden>Full campaign ↗</button><button data-home class="secondary">Main menu</button></div><button id="debrief" class="secondary debrief-button">Flight debrief</button><button id="export" class="text-button">Save run report as JSON ↓</button></div></div><div class="result-right"><span class="eyebrow" id="result-record-label">FLIGHT RECORDER</span><div id="result-rules" hidden></div><div id="result-stats"></div><div id="result-pacts"></div><div id="result-build"></div><p id="result-seed" class="micro"></p></div></section>
     <section id="confirm-screen" class="screen backdrop" hidden aria-label="Confirm action"><div class="panel compact"><span class="eyebrow">A CHOICE THAT MATTERS.</span><h2 id="confirm-title"></h2><p class="muted" id="confirm-description"></p><button id="confirm-cancel" class="primary">Back</button><button id="confirm-yes" class="secondary danger">Confirm</button></div></section>
     <div id="playfield" class="mobile-only" aria-hidden="true"></div>
     <div id="touch-controls" hidden aria-label="Touch controls">
@@ -205,6 +220,8 @@
 <script src="src/adaptive.js"></script>
 <script src="src/adaptive-run.js"></script>
 <script src="src/adaptive-client.js"></script>
+<script src="src/debrief.js"></script>
+<script src="src/debrief-client.js"></script>
 <script src="src/autopilot.js"></script>
 <script src="src/intelligence.js"></script>
 <script src="src/director-client.js"></script>

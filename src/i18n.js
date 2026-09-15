@@ -60,6 +60,32 @@
   "bomber": "爆撃機",
   "GRAZES": "グレイズ"
 });
+  Object.assign(strings,{
+  "Flight debrief": "フライトの振り返り",
+  "FLIGHT DEBRIEF": "フライトの振り返り",
+  "Make the next flight count.": "次の出撃につなげよう。",
+  "Back to results": "結果に戻る",
+  "YOUR FLIGHT RECORD": "今回の戦績",
+  "CAMPAIGN CLEARED": "キャンペーンクリア",
+  "FLIGHT ENDED": "出撃終了",
+  "PLAYER RUN": "プレイヤーの記録",
+  "A review of this run. Your score, contracts and difficulty stay unchanged.": "今回の出撃を振り返ります。スコア・契約・難易度は変わりません。",
+  "Review with": "分析方法",
+  "WHAT WORKED": "良かった点",
+  "HULL LOST": "失った耐久",
+  "WHAT TO PRACTICE": "練習したい点",
+  "YOUR NEXT FLIGHT": "次の出撃で試すこと",
+  "I agree to send this run's aggregate results and equipment IDs to this site and OpenAI through Vercel AI Gateway. No voice, transcripts, screenshots, seed or account details are sent.": "今回の集計済み戦績と装備IDを、Vercel AI Gateway経由でこのサイトとOpenAIへ送信することに同意します。音声・文字起こし・画面・シード・アカウント情報は送りません。",
+  "Analyze with GPT-5.6 Luna": "GPT-5.6 Lunaで振り返る",
+  "Cancel analysis": "分析をキャンセル",
+  "AI feedback uses recorded counters. It cannot see your exact movements or change the game.": "AIは記録された集計値をもとに振り返ります。細かな操作の再現やゲームの変更はできません。",
+  "Recorded counters. AI analysis is optional.": "集計結果を表示中。AI分析は任意です。",
+  "Saved analysis for this run.": "今回の分析を保存しました。",
+  "Reading your completed flight...": "今回の戦績を分析しています…",
+  "AI unavailable or budget reached. Recorded results remain available.": "AIが利用できないか、予算上限に達しました。集計結果は確認できます。",
+  "Analysis cancelled. Recorded results remain available.": "分析をキャンセルしました。集計結果は確認できます。",
+  "Consent withdrawn. No further analysis will be requested.": "同意を取り消しました。新たな分析は送信しません。"
+});
   // Campaign suggestion inputs omit the typographic quotes used on cards.
   for(const [key,value]of Object.entries(strings)){const match=key.match(/^“(.+)”$/u);if(match&&!Object.hasOwn(strings,match[1]))strings[match[1]]=value.replace(/^「(.+)」$/u,'$1');}
   patterns.unshift(

@@ -867,6 +867,10 @@ body.mobile-ui #result[data-encounter=true] #export{min-height:44px}
 
 </style>
 <style>
+.debrief-panel{width:100%;min-height:100%;padding:38px 48px;background:linear-gradient(140deg,#0b1923,#111c22);color:#e7efe4}.debrief-header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-bottom:20px;border-bottom:1px solid #43545b}.debrief-header h2{font-size:34px;line-height:1.25;margin:10px 0 0}.debrief-header button{flex:none}.debrief-layout{display:grid;grid-template-columns:285px minmax(0,1fr);gap:32px;margin-top:25px}.debrief-record{background:#17252c;border:1px solid #3e565d;padding:22px;align-self:start}.debrief-record>p{line-height:1.7}.debrief-stats{display:grid;grid-template-columns:1fr 1fr;gap:20px 12px;margin:24px 0}.debrief-stats span{display:block;font-size:10px;letter-spacing:.06em;color:#a4b9bd}.debrief-stats b{display:block;font-size:24px;margin-top:5px}.debrief-note,#debrief-build{font-size:12px;color:#a4b9bd;line-height:1.7}.debrief-main{min-width:0}.debrief-provider-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px}.debrief-provider-row [role=status]{font-size:11px;color:#bddad0}#debrief-review{margin:18px 0 22px}#debrief-review h3{font-size:27px;line-height:1.35;margin:0 0 12px}#debrief-review p{font-size:14px;line-height:1.65;margin:7px 0;overflow-wrap:anywhere}.debrief-insight{border-top:1px solid #33474c;padding:12px 0 4px}.debrief-insight h4{font-size:11px;letter-spacing:.08em;color:#adcebe;margin:0}.debrief-next{border-left:3px solid #b2ded0;padding-left:14px;background:#172b2e}.debrief-connection{padding-top:16px;border-top:1px solid #42575e}.debrief-mode{display:flex;gap:14px;align-items:center;font-size:13px}.debrief-mode select{padding:9px;background:#182b32;border:1px solid #58777c;color:#d6ece5;max-width:70%;font:inherit}.debrief-consent{display:flex;gap:10px;margin:14px 0;color:#adbec7;font-size:12px;line-height:1.6}.debrief-consent input{width:18px;height:18px;flex:none;margin-top:2px;accent-color:#b2ded0}.debrief-actions{display:flex;gap:12px}.debrief-actions button{min-height:47px;padding:12px 20px;font-size:14px}.debrief-consent[hidden],.debrief-actions [hidden]{display:none!important}#debrief-review[aria-busy=true]{opacity:.6}.mobile-ui .debrief-panel{padding:22px 16px max(28px,env(safe-area-inset-bottom))}.mobile-ui .debrief-header{align-items:flex-start;gap:10px}.mobile-ui .debrief-header h2{font-size:25px}.mobile-ui .debrief-header button{padding:10px 12px;font-size:12px;max-width:38%}.mobile-ui .debrief-layout{grid-template-columns:minmax(0,1fr);gap:22px;margin-top:20px}.mobile-ui .debrief-record{padding:16px}.mobile-ui .debrief-stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px 8px;margin:14px 0}.mobile-ui .debrief-stats b{font-size:21px}.mobile-ui #debrief-build{margin-bottom:4px}.mobile-ui #debrief-review h3{font-size:25px}.mobile-ui .debrief-actions{flex-wrap:wrap}.mobile-ui .debrief-actions .primary{flex:1}.mobile-ui .debrief-insight h4{letter-spacing:0}.mobile-ui .debrief-note{margin-top:9px}@media(max-width:359px){.mobile-ui .debrief-header{display:block}.mobile-ui .debrief-header button{max-width:none;margin-top:14px}.mobile-ui .debrief-stats b{font-size:19px}}
+
+</style>
+<style>
 /* Local fonts only; language selection never changes game geometry. */
 .language-choice{display:flex;align-items:center;gap:10px;font:12px/1.4 system-ui,sans-serif;letter-spacing:0;white-space:nowrap}
 .language-choice select{min-height:36px;width:auto;min-width:108px;padding:6px 24px 6px 10px;background:#13232d;color:#d7f4e8;border:1px solid #4a696d;border-radius:4px;font:inherit}
@@ -1052,7 +1056,21 @@ html[lang="ja"] .hud-ledger{letter-spacing:0}
       <p id="renderer-status" class="renderer-status" role="status">0.9.9 / INITIALIZING 3D</p>
       <button id="fullscreen" class="secondary">Toggle fullscreen</button><button id="settings-close" class="primary">Back <span>→</span></button>
     </div></section>
-    <section id="result" class="screen backdrop" hidden aria-label="Run results"><div class="result-left"><div class="result-heading"><div id="result-seal" hidden aria-hidden="true"><i></i><b>◈</b><i></i></div><span class="eyebrow" id="result-kicker"></span><h2 id="result-title"></h2><p id="result-story"></p><div class="result-score"><span class="micro">FINAL SCORE</span><strong id="result-score"></strong><span id="result-rank"></span></div></div><div class="result-followup"><div class="button-row"><button id="retry" class="primary">Try again <span>↗</span></button><button id="result-campaign" class="secondary" hidden>Full campaign ↗</button><button data-home class="secondary">Main menu</button></div><button id="debrief" class="secondary debrief-button">Flight debrief / prototype</button><button id="export" class="text-button">Save run report as JSON ↓</button></div></div><div class="result-right"><span class="eyebrow" id="result-record-label">FLIGHT RECORDER</span><div id="result-rules" hidden></div><div id="result-stats"></div><div id="result-pacts"></div><div id="result-build"></div><p id="result-seed" class="micro"></p></div></section>
+
+    <section id="debrief-screen" class="screen backdrop" hidden aria-labelledby="debrief-title">
+      <div class="debrief-panel">
+        <header class="debrief-header"><div><span class="eyebrow">FLIGHT DEBRIEF</span><h2 id="debrief-title">Make the next flight count.</h2></div><button id="debrief-back" class="secondary">Back to results ↗</button></header>
+        <div class="debrief-layout">
+          <aside class="debrief-record"><span class="section-cap">YOUR FLIGHT RECORD</span><p id="debrief-outcome"></p><div id="debrief-stats" class="debrief-stats"></div><p id="debrief-build"></p><p class="debrief-note">A review of this run. Your score, contracts and difficulty stay unchanged.</p></aside>
+          <div class="debrief-main">
+            <div class="debrief-provider-row"><span id="debrief-provider" class="provider-pill">LOCAL RULES / NO AI INFERENCE</span><span id="debrief-status" role="status"></span></div>
+            <article id="debrief-review" aria-live="polite" aria-busy="false" data-i18n-ignore><h3 id="debrief-headline" tabindex="-1"></h3><p id="debrief-summary"></p><div class="debrief-insight"><h4 id="debrief-strength-label"></h4><p id="debrief-strength"></p></div><div class="debrief-insight"><h4 id="debrief-improvement-label"></h4><p id="debrief-improvement"></p></div><div class="debrief-insight debrief-next"><h4 id="debrief-next-label"></h4><p id="debrief-next"></p></div></article>
+            <div class="debrief-connection"><label class="debrief-mode">Review with<select id="debrief-mode"><option value="server">GPT-5.6 Luna</option><option value="local">LOCAL RULES — offline</option></select></label><label class="debrief-consent"><input id="debrief-consent" type="checkbox"><span>I agree to send this run's aggregate results and equipment IDs to this site and OpenAI through Vercel AI Gateway. No voice, transcripts, screenshots, seed or account details are sent.</span></label><div class="debrief-actions"><button id="debrief-analyze" class="primary">Analyze with GPT-5.6 Luna ↗</button><button id="debrief-cancel" class="secondary" hidden>Cancel analysis</button></div><p class="debrief-note">AI feedback uses recorded counters. It cannot see your exact movements or change the game.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="result" class="screen backdrop" hidden aria-label="Run results"><div class="result-left"><div class="result-heading"><div id="result-seal" hidden aria-hidden="true"><i></i><b>◈</b><i></i></div><span class="eyebrow" id="result-kicker"></span><h2 id="result-title"></h2><p id="result-story"></p><div class="result-score"><span class="micro">FINAL SCORE</span><strong id="result-score"></strong><span id="result-rank"></span></div></div><div class="result-followup"><div class="button-row"><button id="retry" class="primary">Try again <span>↗</span></button><button id="result-campaign" class="secondary" hidden>Full campaign ↗</button><button data-home class="secondary">Main menu</button></div><button id="debrief" class="secondary debrief-button">Flight debrief</button><button id="export" class="text-button">Save run report as JSON ↓</button></div></div><div class="result-right"><span class="eyebrow" id="result-record-label">FLIGHT RECORDER</span><div id="result-rules" hidden></div><div id="result-stats"></div><div id="result-pacts"></div><div id="result-build"></div><p id="result-seed" class="micro"></p></div></section>
     <section id="confirm-screen" class="screen backdrop" hidden aria-label="Confirm action"><div class="panel compact"><span class="eyebrow">A CHOICE THAT MATTERS.</span><h2 id="confirm-title"></h2><p class="muted" id="confirm-description"></p><button id="confirm-cancel" class="primary">Back</button><button id="confirm-yes" class="secondary danger">Confirm</button></div></section>
     <div id="playfield" class="mobile-only" aria-hidden="true"></div>
     <div id="touch-controls" hidden aria-label="Touch controls">
@@ -1944,6 +1962,57 @@ return {Run,SECTORS,BOSSES,AIRFRAMES,RELICS,ROUTES,ENEMIES,DIRECTORS};
  }
  return AdaptiveClient;
 });
+
+</script>
+<script>
+/* Bounded end-of-run flight debrief. Model output is descriptive only. */
+(function(root,factory){const api=factory();if(typeof module==='object'&&module.exports)module.exports=api;else root.PactDebrief=api;})(globalThis,function(){'use strict';
+ const own=(o,k)=>Object.prototype.hasOwnProperty.call(o,k);
+ const modes=['classic','expedition','gauntlet'], outcomes=['won','dead'], difficulties=['assist','standard','veteran'];
+ const UPGRADES=new Set(['scatter','rapid','rail','echo','parry','razor','orbit','magnet','hull','leech','homing','nova','repair']);
+ const RELICS=new Set(['needle','capacitor','second','razor','echo','lens','nova','satellite']);
+ const PACTS=new Set(['mercy','mirror','glass','silence','duel','sanctuary','velocity']);
+ const ID=/^[A-Za-z0-9_-]{1,48}$/;
+ const finite=(n,min,max)=>typeof n==='number'&&Number.isFinite(n)&&n>=min&&n<=max;
+ const ints=['seconds','kills','bossKills','totalStages','parries','grazes','damageTaken','score','hull','maxHull','pactsKept','pactsTotal','adaptiveLevel'];
+ const ranges={seconds:[0,86400],kills:[0,100000],bossKills:[0,1000],totalStages:[1,6],parries:[0,100000],grazes:[0,100000],damageTaken:[0,100000],score:[0,100000000],hull:[0,1000],maxHull:[1,1000],pactsKept:[0,100],pactsTotal:[0,100],adaptiveLevel:[-2,2]};
+ function arr(v,known){if(!Array.isArray(v)||v.length>64||v.some(x=>typeof x!=='string'||!ID.test(x)||!known.has(x)))throw Error('Invalid run identifiers');return [...new Set(v)];}
+ function cleanRequest(x){
+  if(!x||typeof x!=='object'||Array.isArray(x))throw Error('Expected an object');
+  const keys=['runId','sequence','language','run'];if(Object.keys(x).length!==keys.length||Object.keys(x).some(k=>!keys.includes(k)))throw Error('Invalid debrief request');
+  if(typeof x.runId!=='string'||!/^(?:[0-9a-f]{8}-[0-9a-f-]{9,36}|[A-Za-z0-9:_-]{1,120})$/i.test(x.runId))throw Error('Invalid runId');
+  if(!Number.isSafeInteger(x.sequence)||x.sequence<1||x.sequence>18)throw Error('Invalid sequence');
+  if(x.language!=='en'&&x.language!=='ja')throw Error('Invalid language');
+  const r=x.run;if(!r||typeof r!=='object'||Array.isArray(r))throw Error('Invalid run');
+  const rk=['mode','outcome','difficulty','autoplay',...ints,'upgradeIds','relicIds','pactIds'];if(Object.keys(r).length!==rk.length||Object.keys(r).some(k=>!rk.includes(k)))throw Error('Invalid run shape');
+  if(!modes.includes(r.mode)||!outcomes.includes(r.outcome)||!difficulties.includes(r.difficulty)||typeof r.autoplay!=='boolean')throw Error('Invalid run metadata');
+  const out={mode:r.mode,outcome:r.outcome,difficulty:r.difficulty,autoplay:r.autoplay};for(const k of ints){const [min,max]=ranges[k];if(!Number.isSafeInteger(r[k])||r[k]<min||r[k]>max)throw Error('Invalid run metric');out[k]=r[k];}
+  if(out.hull>out.maxHull||out.pactsKept>out.pactsTotal||out.bossKills>out.totalStages||out.totalStages!==(out.mode==='classic'?3:6))throw Error('Invalid run totals');out.upgradeIds=arr(r.upgradeIds,UPGRADES);out.relicIds=arr(r.relicIds,RELICS);out.pactIds=arr(r.pactIds,PACTS);
+  return {runId:x.runId,sequence:x.sequence,language:x.language,run:out};
+ }
+ const field=(max)=>({type:'string',minLength:1,maxLength:max});
+ function schema(){return {type:'object',additionalProperties:false,required:['headline','summary','strength','improvement','nextRun'],properties:{headline:field(96),summary:field(360),strength:field(240),improvement:field(240),nextRun:field(240)}};}
+ function validateDecision(x){if(!x||typeof x!=='object'||Array.isArray(x)||Object.keys(x).length!==5)return bad();for(const k of ['headline','summary','strength','improvement','nextRun'])if(typeof x[k]!=='string'||!x[k].trim()||x[k].length>{headline:96,summary:360,strength:240,improvement:240,nextRun:240}[k]||/[\u0000-\u001f]/.test(x[k]))return bad();return {...x};}
+ function bad(){throw Error('Invalid debrief decision');}
+ function mock(req){
+  const clean=cleanRequest(req),r=clean.run,won=r.outcome==='won',comfortable=won&&r.hull/r.maxHull>.5&&r.damageTaken<r.maxHull;
+  if(clean.language==='ja'){
+   const mode={classic:'\u30af\u30e9\u30b7\u30c3\u30af',expedition:'\u9060\u5f81',gauntlet:'\u30dc\u30b9\u9023\u6226'}[r.mode];
+   return validateDecision({headline:won?'\u98db\u884c\u5b8c\u4e86':'\u98db\u884c\u8a18\u9332',summary:`${mode}: \u30dc\u30b9\u6483\u7834 ${r.bossKills}/${r.totalStages}\u3001\u6226\u95d8\u6642\u9593${r.seconds}\u79d2\u3002\u6483\u7834${r.kills}\u3001\u88ab\u30c0\u30e1\u30fc\u30b8${r.damageTaken}\u3001\u6b8b\u308a\u8010\u4e45${r.hull}/${r.maxHull}\u3002${r.autoplay?'\u81ea\u52d5\u64cd\u7e26\u30c7\u30e2\u306e\u8a18\u9332\u3067\u3059\u3002':''}`,strength:`\u53cd\u5c04\u3057\u305f\u5f3e${r.parries}\u767a\u3001\u5c65\u884c\u3057\u305f\u5951\u7d04${r.pactsKept}/${r.pactsTotal}\u4ef6\u3092\u8a18\u9332\u3057\u307e\u3057\u305f\u3002`,improvement:r.damageTaken>0?`\u6b21\u306e\u51fa\u6483\u3067\u306f\u88ab\u30c0\u30e1\u30fc\u30b8${r.damageTaken}\u3092\u6e1b\u3089\u3059\u3053\u3068\u3092\u76ee\u6a19\u306b\u3067\u304d\u307e\u3059\u3002`:'\u8a18\u9332\u4e0a\u3001\u88ab\u30c0\u30e1\u30fc\u30b8\u306f\u3042\u308a\u307e\u305b\u3093\u3002\u7d30\u304b\u306a\u64cd\u4f5c\u306f\u96c6\u8a08\u5024\u3060\u3051\u3067\u306f\u8a55\u4fa1\u3067\u304d\u307e\u305b\u3093\u3002',nextRun:r.autoplay?'\u64cd\u4f5c\u3092\u5f15\u304d\u7d99\u3044\u3067\u540c\u3058\u6761\u4ef6\u3092\u8a66\u3057\u3001\u81ea\u5206\u306e\u8a18\u9332\u3068\u6bd4\u3079\u3066\u307f\u307e\u3057\u3087\u3046\u3002':comfortable?'\u96e3\u6613\u5ea6\u3092\u4e00\u6bb5\u968e\u4e0a\u3052\u308b\u304b\u3001\u5225\u306e\u88c5\u5099\u69cb\u6210\u3092\u8a66\u3057\u3066\u307f\u307e\u3057\u3087\u3046\u3002':'\u5b89\u5168\u306a\u4f4d\u7f6e\u53d6\u308a\u3092\u512a\u5148\u3057\u3001\u30c0\u30c3\u30b7\u30e5\u3068\u30d1\u30ea\u30a3\u3092\u7df4\u7fd2\u3057\u3066\u307f\u307e\u3057\u3087\u3046\u3002'});
+  }
+  return validateDecision({headline:won?'Flight complete':'Flight record',summary:`${r.mode}: ${r.bossKills}/${r.totalStages} bosses defeated in ${r.seconds}s of combat; ${r.kills} eliminations, ${r.damageTaken} hull lost, ${r.hull}/${r.maxHull} hull remaining. ${r.autoplay?'Autopilot demonstration.':''}`,strength:`Recorded ${r.parries} reflected bullets and ${r.pactsKept}/${r.pactsTotal} pacts kept.`,improvement:r.damageTaken>0?`Aim to reduce the ${r.damageTaken} hull points lost on your next flight.`:'No hull damage was recorded. Aggregate counters cannot establish exact movement skill.',nextRun:r.autoplay?'Take control under the same conditions and compare your own flight record.':comfortable?'Try one higher difficulty or a different equipment build.':'Prioritize safe positioning and practice dash and parry timing.'});
+ }
+ function fromWorld(w,patch={}){if(!w||!['won','dead'].includes(w.phase))throw Error('Debrief requires a finished run');const contracts=Array.isArray(w.contracts)?w.contracts:[],r={mode:w.mode||'classic',outcome:w.phase,difficulty:w.difficulty||'standard',autoplay:Boolean(w.autoplay),seconds:Math.round(w.time||0),kills:Math.round(w.kills||0),bossKills:Math.round(w.bossKills||w.bosses||0),totalStages:Math.max(1,Math.min(6,Math.round(w.totalStages||w.sectorCount||3))),parries:Math.round(w.parries||0),grazes:Math.round(w.grazes||0),damageTaken:Math.round(w.damageTaken||0),score:Math.round(w.score||0),hull:Math.max(0,Math.round(w.p?.hp||0)),maxHull:Math.max(1,Math.round(w.p?.maxHp||1)),pactsKept:contracts.filter(c=>c&&typeof c==='object'&&c.kept).length,pactsTotal:contracts.length,adaptiveLevel:Math.round(w.adaptiveLevel||0),upgradeIds:Object.keys(w.upgrades||{}),relicIds:Array.isArray(w.relics)?w.relics:[],pactIds:contracts.map(x=>typeof x==='string'?x:x?.id).filter(Boolean)};return cleanRequest({runId:patch.runId||'world-run',sequence:patch.sequence||1,language:patch.language||'en',run:{...r,...patch.run}});}
+ return {modes,outcomes,difficulties,cleanRequest,schema,validateDecision,mock,localDecision:mock,fromWorld};
+});
+
+</script>
+<script>
+(function(root,factory){if(typeof module==='object'&&module.exports)module.exports=factory(require('./debrief.js'));else root.PactDebriefClient=factory(root.PactDebrief);})(globalThis,function(D){'use strict';let ids=0;const uid=()=>globalThis.crypto?.randomUUID?.()||`local-${Date.now().toString(36)}-${++ids}`;
+ class DebriefClient{constructor(session){this.session=session;this.runId=null;this.epoch=0;this.active=null;this.result=null;}open(runId=uid()){this.close();this.runId=runId;this.result=null;return runId;}cancel(){this.epoch++;this.active?.abort();this.active=null;this.result=null;}close(){this.cancel();this.runId=null;}
+ fallback(req){return {provider:'local-rules',model:null,decision:D.mock(req),runId:req.runId,sequence:req.sequence,latencyMs:0,reason:'LOCAL RULES: service unavailable or rejected.'};}
+ async request(input,live=true){if(!this.runId)throw Error('Open flight debrief first');const req=D.cleanRequest({...input,runId:this.runId});this.cancel();const token=this.epoch;if(!live){this.result=this.fallback(req);return this.result;}const c=new AbortController(),timer=setTimeout(()=>c.abort(),18000);this.active=c;try{await this.session.ensure?.();if(token!==this.epoch)throw Error('Superseded');if(c.signal.aborted)throw Error('Timed out');const response=await this.session.request('/api/debrief',{request:req},{signal:c.signal});if(!response.ok)throw Error('Debrief service unavailable');const x=await response.json();if(token!==this.epoch)throw Error('Superseded');if(x.runId!==req.runId||x.sequence!==req.sequence||!['openai','local-rules'].includes(x.provider)||x.provider==='openai'&&x.model!=='gpt-5.6-luna')throw Error('Invalid debrief result');x.decision=D.validateDecision(x.decision);this.result=x;return x;}catch(e){if(token!==this.epoch)throw e;this.result=this.fallback(req);return this.result;}finally{clearTimeout(timer);if(token===this.epoch)this.active=null;}}
+ }return DebriefClient;});
 
 </script>
 <script>
@@ -4407,6 +4476,32 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
   "bomber": "爆撃機",
   "GRAZES": "グレイズ"
 });
+  Object.assign(strings,{
+  "Flight debrief": "フライトの振り返り",
+  "FLIGHT DEBRIEF": "フライトの振り返り",
+  "Make the next flight count.": "次の出撃につなげよう。",
+  "Back to results": "結果に戻る",
+  "YOUR FLIGHT RECORD": "今回の戦績",
+  "CAMPAIGN CLEARED": "キャンペーンクリア",
+  "FLIGHT ENDED": "出撃終了",
+  "PLAYER RUN": "プレイヤーの記録",
+  "A review of this run. Your score, contracts and difficulty stay unchanged.": "今回の出撃を振り返ります。スコア・契約・難易度は変わりません。",
+  "Review with": "分析方法",
+  "WHAT WORKED": "良かった点",
+  "HULL LOST": "失った耐久",
+  "WHAT TO PRACTICE": "練習したい点",
+  "YOUR NEXT FLIGHT": "次の出撃で試すこと",
+  "I agree to send this run's aggregate results and equipment IDs to this site and OpenAI through Vercel AI Gateway. No voice, transcripts, screenshots, seed or account details are sent.": "今回の集計済み戦績と装備IDを、Vercel AI Gateway経由でこのサイトとOpenAIへ送信することに同意します。音声・文字起こし・画面・シード・アカウント情報は送りません。",
+  "Analyze with GPT-5.6 Luna": "GPT-5.6 Lunaで振り返る",
+  "Cancel analysis": "分析をキャンセル",
+  "AI feedback uses recorded counters. It cannot see your exact movements or change the game.": "AIは記録された集計値をもとに振り返ります。細かな操作の再現やゲームの変更はできません。",
+  "Recorded counters. AI analysis is optional.": "集計結果を表示中。AI分析は任意です。",
+  "Saved analysis for this run.": "今回の分析を保存しました。",
+  "Reading your completed flight...": "今回の戦績を分析しています…",
+  "AI unavailable or budget reached. Recorded results remain available.": "AIが利用できないか、予算上限に達しました。集計結果は確認できます。",
+  "Analysis cancelled. Recorded results remain available.": "分析をキャンセルしました。集計結果は確認できます。",
+  "Consent withdrawn. No further analysis will be requested.": "同意を取り消しました。新たな分析は送信しません。"
+});
   // Campaign suggestion inputs omit the typographic quotes used on cards.
   for(const [key,value]of Object.entries(strings)){const match=key.match(/^“(.+)”$/u);if(match&&!Object.hasOwn(strings,match[1]))strings[match[1]]=value.replace(/^「(.+)」$/u,'$1');}
   patterns.unshift(
@@ -4514,6 +4609,8 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
   let campaignVoice,campaignSpeech='',campaignCaption='',campaignLastInput=0,campaignVoiceActive=false,campaignVoiceMuted=false,campaignConnectionEpoch=0;
   const campaignVoiceRuns=new WeakMap();
   const adaptiveClient=new window.PactAdaptiveClient(campaignSession),pilot=window.PactAutopilot.Controller;
+  const D=window.PactDebrief,debriefClient=new window.PactDebriefClient(new window.PactSession()),debriefRecords=new WeakMap();
+  let debriefEpoch=0,debriefWorld=null,debriefBusy=false,debriefResult=null;
   let adaptiveEpoch=0,adaptiveReady=false,autoplayActive=false,autoplayPausePacts=false,autoplayNext=0;
   let campaignMode='expedition',airframe='vanguard',aiTask='negotiate',aiBack='choices',aiDecision=null,aiWorld=null,aiStage=0;
   let W=C.W,H=C.H;
@@ -4522,7 +4619,7 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
   window.NEMESIS_RENDERER=gpu;
   const sound=new window.PactSound(),keys=new Set(),pressed=new Set();
   window.NemesisDemo?.registerGameAudio?.(()=>{sound.unlock();return sound.createRecordingTap?.();});
-  const mouse={x:W/2,y:240,down:false},screens=['menu','loadout','choices','pause','help-screen','settings-screen','result','confirm-screen','hangar','route','ai-screen','archive','covenant-screen','adaptive-screen'];
+  const mouse={x:W/2,y:240,down:false},screens=['menu','loadout','choices','pause','help-screen','settings-screen','result','confirm-screen','hangar','route','ai-screen','archive','covenant-screen','adaptive-screen','debrief-screen'];
   let world=null,screen='menu',previousScreen='menu',difficulty='standard',pauseFrom='game',last=0,accum=0,clock=0,shake=0,flash=0,freeze=0;
   let effects=[],particles=[],trails=[],announceTime=0,toastTime=0,uiTimer=0,trainingStep=0,trainingMoved=0,lastWorldPhase='',muted=false,oldPad=[],oldAxes=[0,0];
   let resultSaved=false,renderFrames=0,screenScale=1;
@@ -4557,10 +4654,11 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
   function clearInput(){keys.clear();pressed.clear();mouse.down=false;touch?.clear();}
   function show(name){
     if(name!=='settings-screen')sound.stopPreview();
+    if(name!=='debrief-screen'){debriefEpoch++;debriefClient.cancel();debriefBusy=false;debriefWorld=null;}
     screen=name;document.body.dataset.screen=name;document.body.dataset.covenant=String(world?.mode==='first-contact');if(name!=='covenant-screen'){cvClient.cancel();cvRequestId++;voice?.stop('screen-exit');for(const id of ['cv-connection-dialog','cv-detail-dialog'])if($(id).open)$(id).close();}if(name==='pause')$('pause-parley').hidden=world?.mode!=='first-contact';document.body.dataset.training=String(!!world?.training);clearInput();for(const id of screens)$(id).hidden=id!==name;
     $('touch-controls').hidden=!(mobile&&name==='game');if($(name))$(name).scrollTop=0;
     if(name==='pause'){$('pause-reason').textContent='The battlefield is paused.';$('pause-breach').disabled=!world?.pact||world.broken||world.training;}
-    $('hud').hidden=!world||['menu','loadout','hangar','route','archive','ai-screen','covenant-screen','adaptive-screen'].includes(name)||(mobile&&name!=='game');$('tutorial-hud').hidden=!(world?.training&&name==='game');
+    $('hud').hidden=!world||['menu','loadout','hangar','route','archive','ai-screen','covenant-screen','adaptive-screen','debrief-screen'].includes(name)||(mobile&&name!=='game');$('tutorial-hud').hidden=!(world?.training&&name==='game');
     if(name!=='game'){$('announcement').classList.remove('visible');$('toast').classList.remove('visible');announceTime=0;toastTime=0;}
     if(name!=='ai-screen'){campaignConnectionEpoch++;campaignVoice?.stop('screen-exit');if(campaignClient.runId)campaignClient.close();aiClient.cancel();if(directorClient.runId)directorClient.close();aiEpoch++;}if(name!=='game'&&!mobile){const button=$(name)?.querySelector('button:not([disabled])');if(button)button.focus({preventScroll:true});}else document.activeElement?.blur();
     refreshView();autoplayNext=clock+1.8;refreshFlightAssist();
@@ -4953,7 +5051,7 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
   // Encounter review is separate from pact signatures and never blocks active combat.
   function advanceEncounterScreen(){if(!world)return;if(world.phase==='parley')openCovenant();else if(world.phase==='route')routeScreen();else if(world.phase==='pact'||world.phase==='upgrade')choiceScreen();else if(world.phase==='won'||world.phase==='dead')results();}
   function refreshFlightAssist(){
-    const showStatus=world&&(world.autoplay||world.adaptiveEnabled)&&!['menu','hangar','loadout'].includes(screen);$('flight-assist-status').hidden=!showStatus;if(!showStatus)return;
+    const showStatus=world&&(world.autoplay||world.adaptiveEnabled)&&!['menu','hangar','loadout','result','debrief-screen'].includes(screen);$('flight-assist-status').hidden=!showStatus;if(!showStatus)return;
     const mode=world.autoplay?(autoplayActive?'DEMO / AUTOPLAY':'DEMO / MANUAL CONTROL'):'PILOT';const pressure=world.adaptiveEnabled?` / ADAPTIVE ${world.adaptiveLevel>0?'+':''}${world.adaptiveLevel}`:'';
     $('flight-assist-label').textContent=mode+pressure;$('autoplay-toggle').hidden=!world.autoplay;$('autoplay-toggle').textContent=autoplayActive?'Take control':'Resume autoplay';
   }
@@ -4990,6 +5088,49 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
   $('adaptive-continue').onclick=()=>finishAdaptiveReview();$('adaptive-skip').onclick=()=>finishAdaptiveReview(true);$('adaptive-off').onclick=()=>finishAdaptiveReview(true,true);
   $('autoplay-enabled').onchange=()=>{const on=$('autoplay-enabled').checked;$('autoplay-voice-option').hidden=!on;if(on){airframe='bastion';document.querySelector('[data-difficulty="assist"]').click();$('loadout-summary').textContent='Demo preset: Bastion hull, Story difficulty. Autopilot signs pacts and chooses upgrades. You can take control at any time.';}};
   $('autoplay-toggle').onclick=()=>{autoplayActive=!autoplayActive;autoplayNext=clock+1.8;clearInput();refreshFlightAssist();};
+
+
+  // End-of-run feedback is read-only and uses the same bounded text budget.
+  function debriefRecord(target){let record=debriefRecords.get(target);if(!record){record={runId:crypto.randomUUID(),sequence:0,cache:new Map()};debriefRecords.set(target,record);}return record;}
+  function debriefInput(){const record=debriefRecord(debriefWorld);return {runId:record.runId,sequence:Math.max(1,record.sequence),language:window.PactI18n.locale,run:D.fromWorld(debriefWorld).run};}
+  function localDebrief(){const input=debriefInput();return {provider:'local-rules',model:null,decision:D.mock(input),runId:input.runId,sequence:input.sequence,latencyMs:0};}
+  function renderDebrief(result){
+    debriefResult=result;const d=result.decision;$('debrief-provider').textContent=result.provider==='openai'?'OPENAI / '+result.model:'LOCAL RULES / NO AI INFERENCE';
+    for(const [id,key]of [['debrief-headline','headline'],['debrief-summary','summary'],['debrief-strength','strength'],['debrief-improvement','improvement'],['debrief-next','nextRun']])$(id).textContent=d[key];
+    $('debrief-strength-label').textContent=T('WHAT WORKED');$('debrief-improvement-label').textContent=T('WHAT TO PRACTICE');$('debrief-next-label').textContent=T('YOUR NEXT FLIGHT');
+  }
+  function syncDebriefControls(){
+    const online=$('debrief-mode').value==='server',cached=debriefWorld&&debriefRecord(debriefWorld).cache.has(window.PactI18n.locale);
+    $('debrief-consent').parentElement.hidden=!online;$('debrief-analyze').disabled=debriefBusy||!online||!$('debrief-consent').checked||cached;
+    $('debrief-cancel').hidden=!debriefBusy;$('debrief-review').setAttribute('aria-busy',String(debriefBusy));
+  }
+  function openDebrief(){
+    if(!world||world.mode==='first-contact'||!['won','dead'].includes(world.phase))return;
+    debriefEpoch++;debriefBusy=false;show('debrief-screen');debriefWorld=world;const record=debriefRecord(world);debriefClient.open(record.runId);const r=D.fromWorld(world).run;
+    $('debrief-mode').value=window.NEMESIS_HOSTED?'server':'local';$('debrief-mode').querySelector('[value="server"]').disabled=!window.NEMESIS_HOSTED;$('debrief-consent').checked=false;
+    $('debrief-outcome').textContent=(r.outcome==='won'?'CAMPAIGN CLEARED':'FLIGHT ENDED')+' / '+(r.autoplay?'DEMO AUTOPILOT':'PLAYER RUN');
+    const stats=[['TIME',formatTime(r.seconds)],['BOSSES',r.bossKills+' / '+r.totalStages],['ELIMINATIONS',r.kills],['REFLECTIONS',r.parries],['HULL LOST',r.damageTaken],['PACTS KEPT',r.pactsKept+' / '+r.pactsTotal]];
+    $('debrief-stats').innerHTML=stats.map(([label,value])=>'<div><span>'+escapeHTML(label)+'</span><b>'+escapeHTML(value)+'</b></div>').join('');
+    $('debrief-build').textContent=Object.entries(world.upgrades||{}).map(([id,n])=>T(UPGRADES.find(x=>x.id===id)?.name||id)+(n>1?' ×'+n:'')).concat((world.relics||[]).map(id=>T(X.RELICS.find(x=>x.id===id)?.name||id))).join(' / ')||'No upgrades collected yet.';
+    const cached=record.cache.get(window.PactI18n.locale);renderDebrief(cached||localDebrief());$('debrief-status').textContent=cached?'Saved analysis for this run.':'Recorded counters. AI analysis is optional.';syncDebriefControls();
+  }
+  function resetDebrief(reason){if(screen!=='debrief-screen'||!debriefWorld)return;debriefEpoch++;debriefClient.cancel();debriefBusy=false;renderDebrief(localDebrief());$('debrief-status').textContent=reason;syncDebriefControls();}
+  async function requestDebrief(){
+    if(screen!=='debrief-screen'||!debriefWorld||debriefBusy||$('debrief-mode').value!=='server'||!$('debrief-consent').checked||!window.NEMESIS_HOSTED)return;
+    const target=debriefWorld,record=debriefRecord(target),language=window.PactI18n.locale;if(record.cache.has(language))return;
+    const epoch=++debriefEpoch;record.sequence++;const input=debriefInput();debriefBusy=true;$('debrief-status').textContent='Reading your completed flight...';syncDebriefControls();
+    try{
+      const result=await debriefClient.request(input,true);
+      if(epoch!==debriefEpoch||world!==target||debriefWorld!==target||screen!=='debrief-screen'||language!==window.PactI18n.locale||!$('debrief-consent').checked)return;
+      renderDebrief(result);if(result.provider==='openai'){record.cache.set(language,result);$('debrief-headline').focus({preventScroll:true});if(mobile)$('debrief-headline').scrollIntoView({block:'start',behavior:'instant'});$('debrief-status').textContent='Saved analysis for this run. / '+result.latencyMs+' ms';}else $('debrief-status').textContent='AI unavailable or budget reached. Recorded results remain available.';
+    }catch{if(epoch===debriefEpoch&&screen==='debrief-screen'){renderDebrief(localDebrief());$('debrief-status').textContent='Analysis cancelled. Recorded results remain available.';}}
+    finally{if(epoch===debriefEpoch){debriefBusy=false;syncDebriefControls();}}
+  }
+  $('debrief-back').onclick=()=>show('result');$('debrief-analyze').onclick=requestDebrief;
+  $('debrief-cancel').onclick=()=>resetDebrief('Analysis cancelled. Recorded results remain available.');
+  $('debrief-mode').onchange=()=>resetDebrief('Recorded counters. AI analysis is optional.');
+  $('debrief-consent').onchange=()=>{if(!$('debrief-consent').checked)resetDebrief('Consent withdrawn. No further analysis will be requested.');else syncDebriefControls();};
+  document.addEventListener('nemesis-language-change',()=>{if(screen==='debrief-screen')openDebrief();});
 
   // --- Living Covenant. Network proposals never mutate simulation state. ---
   function setCovenantStep(step,focus=false){
@@ -5126,7 +5267,7 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
       return;
     }
     const input=e.target instanceof HTMLInputElement||e.target instanceof HTMLTextAreaElement||e.target instanceof HTMLSelectElement;
-    if(e.code==='Escape'&&!e.repeat){e.preventDefault();if(screen==='game'||screen==='pause')togglePause();else if(screen==='help-screen'||screen==='settings-screen')show(previousScreen);else if(screen==='confirm-screen')show('pause');else if(screen==='loadout')hangarScreen();else if(screen==='hangar'||screen==='archive')home();else if(screen==='ai-screen')closeAI();else if(screen==='covenant-screen')closeCovenant();return;}
+    if(e.code==='Escape'&&!e.repeat){e.preventDefault();if(screen==='game'||screen==='pause')togglePause();else if(screen==='help-screen'||screen==='settings-screen')show(previousScreen);else if(screen==='confirm-screen')show('pause');else if(screen==='loadout')hangarScreen();else if(screen==='hangar'||screen==='archive')home();else if(screen==='ai-screen')closeAI();else if(screen==='debrief-screen')show('result');else if(screen==='covenant-screen')closeCovenant();return;}
     if(input)return;
     if(e.code==='Tab'&&screen!=='game'){
       const focusable=Array.from($(screen)?.querySelectorAll('button,input,textarea,select')||[]);if(focusable.length){const first=focusable[0],lastEl=focusable[focusable.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();lastEl.focus();}else if(!e.shiftKey&&document.activeElement===lastEl){e.preventDefault();first.focus();}}return;}
@@ -5141,7 +5282,7 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
   window.addEventListener('keyup',e=>keys.delete(e.code));
   window.addEventListener('blur',()=>{clearInput();if(screen==='game')togglePause();});
   document.addEventListener('visibilitychange',()=>{if(document.hidden){clearInput();if(screen==='game')togglePause();}updateAudio();});
-  window.addEventListener('pagehide',()=>{sound.tick({screen:'pause',world,hidden:true});});
+  window.addEventListener('pagehide',()=>{debriefEpoch++;debriefClient.cancel();sound.tick({screen:'pause',world,hidden:true});});
   window.addEventListener('resize',resize);
   // ResizeObserver also catches dynamic browser chrome (100dvh) changes.
   if(typeof ResizeObserver!=='undefined'){new ResizeObserver(()=>{const r=$('stage').getBoundingClientRect();if(Math.abs(r.width-view.width)>.5||Math.abs(r.height-view.height)>.5)resize();}).observe($('stage'));}
@@ -5209,6 +5350,7 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
   }
   function closeAI(){aiClient.cancel();aiClient.token='';$('pilot-token').value='';const back=aiBack;show(back);if(back==='route')routeScreen();}
   function openAI(task){
+    if(task==='debrief'){openDebrief();return;}
     if(!world||(task==='negotiate'&&world.phase!=='pact')||(task==='director'&&(world.mode!=='expedition'||!['route','pact'].includes(world.phase))))return;aiEpoch++;aiTask=task;aiBack=screen;aiWorld=world;aiStage=world.stage;aiDecision=null;show('ai-screen');
     const director=task==='director',campaign=task==='negotiate';$('ai-screen').dataset.task=task;setAIBusy(false);$('ai-request').disabled=false;if(director)directorClient.open();if(campaign)campaignClient.open({mode:world.mode,stage:world.stage});$('campaign-voice').hidden=!campaign;
     const sector=X.SECTORS[Math.min(world.stage,5)];$('ai-screen').style.setProperty('--sector',sector.color);
@@ -5290,7 +5432,7 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
   $('hangar-close').onclick=home;$('hangar-ready').onclick=()=>{const expedition=campaignMode==='expedition';$('flight-assists').hidden=!expedition;for(const id of ['adaptive-enabled','autoplay-enabled'])if(!expedition)$(id).checked=false;$('loadout-summary').textContent=(campaignMode==='classic'?'Three sectors. Three bosses. ':campaignMode==='gauntlet'?'Six bosses. No warm-up. ':'Six sectors. Six bosses. ')+'One life. Defeat a boss to restore 2 hull. Fall, and start again.';show('loadout');};
   $('archive-open').onclick=archiveScreen;$('archive-close').onclick=home;
   $('route-intelligence').onclick=()=>openAI('director');$('negotiate').onclick=()=>openAI('negotiate');
-  $('choice-outfit').onclick=()=>routeScreen(true);$('debrief').onclick=()=>openAI('debrief');
+  $('choice-outfit').onclick=()=>routeScreen(true);$('debrief').onclick=openDebrief;
   $('ai-close').onclick=closeAI;$('ai-request').onclick=requestAI;$('ai-apply').onclick=applyAI;
   const invalidateProposal=(voiceInput=false)=>{if(aiApplying)return;aiEpoch++;aiClient.cancel();directorClient.cancel();campaignClient.cancel();campaignVoice?.supersede(voiceInput===true);aiDecision=null;$('ai-apply').disabled=true;$('ai-request').disabled=false;$('ai-status').textContent='Request changed. Propose again before accepting.';renderDirectorPreview();};
   $('ai-mode').onchange=()=>{invalidateProposal();refreshCampaignConnection();};$('ai-prompt').oninput=()=>{campaignSpeech=$('ai-prompt').value;invalidateProposal();};$('ai-consent').onchange=()=>{invalidateProposal();refreshCampaignConnection();};$('ai-preview-route').onchange=renderDirectorPreview;
@@ -5337,13 +5479,13 @@ return {DEPTH,isFlight,depth01,materialMask,fogAmount,Renderer,GLBackend,GPUBack
     $('campaign-voice-volume').oninput=()=>{const level=Number($('campaign-voice-volume').value)/100;campaignVoice.setVolume(level);window.NemesisDemo?.setVoiceOutputLevel?.(level);};
   }
   // Readable snapshot contains no credentials, transcripts or writable objects.
-  window.render_game_to_text=()=>JSON.stringify({build:'1.3.0',screen,language:window.PactI18n.locale,assists:{autoShot:opts.autofire,aimAssist:opts.autoaim},negotiationStep:$('covenant-screen').dataset.step||'negotiate',coordinates:'origin top-left; x right; y down',renderer:gpu.stats().backend,arena:{width:W,height:H},phase:world?.phase,seconds:world?Math.round(world.time*100)/100:0,player:world?{x:Math.round(world.p.x),y:Math.round(world.p.y),hp:world.p.hp,energy:world.p.energy}:null,enemies:world?.enemies.filter(e=>e.hp>0).slice(0,12).map(e=>({type:e.type,x:Math.round(e.x),y:Math.round(e.y),hp:e.hp})),hostileBullets:world?.bullets.filter(b=>b.hostile).length,revision:world?.revision,spec:world?.spec,proposal:cvProposal?{spec:cvProposal.spec,provider:cvProposal.provider,model:cvProposal.model}:null,effects:world?.covenantStats,stage:world?.stage,wave:world?.wave,bossKills:world?.bossKills,renderFrames,autoplay:world?.autoplay?{active:autoplayActive,pauseAtPacts:autoplayPausePacts}:null,adaptive:world?.adaptiveEnabled||world?.adaptiveHistory?.length?{enabled:world.adaptiveEnabled,level:world.adaptiveLevel,history:world.adaptiveHistory,pending:world.pendingAnalysis}:null,runReport:world?.phase==='won'||world?.phase==='dead'?world.report():null,campaignPact:world?.pact,campaignPactSource:world?.campaignPactSource,campaignPactEffects:world?.mode!=='first-contact'&&world?{...world.mods}:null,campaignProposal:campaignClient.proposal?{decision:campaignClient.proposal.decision,provider:campaignClient.proposal.provider,model:campaignClient.proposal.model}:null,campaignVoice:campaignVoice?.state,voice:voice?.state,liveVoice:world?.voiceEvidence?world.report().liveVoice:null});
+  window.render_game_to_text=()=>JSON.stringify({build:'1.3.0',screen,debrief:screen==='debrief-screen'?{provider:debriefResult?.provider,model:debriefResult?.model,busy:debriefBusy}:null,language:window.PactI18n.locale,assists:{autoShot:opts.autofire,aimAssist:opts.autoaim},negotiationStep:$('covenant-screen').dataset.step||'negotiate',coordinates:'origin top-left; x right; y down',renderer:gpu.stats().backend,arena:{width:W,height:H},phase:world?.phase,seconds:world?Math.round(world.time*100)/100:0,player:world?{x:Math.round(world.p.x),y:Math.round(world.p.y),hp:world.p.hp,energy:world.p.energy}:null,enemies:world?.enemies.filter(e=>e.hp>0).slice(0,12).map(e=>({type:e.type,x:Math.round(e.x),y:Math.round(e.y),hp:e.hp})),hostileBullets:world?.bullets.filter(b=>b.hostile).length,revision:world?.revision,spec:world?.spec,proposal:cvProposal?{spec:cvProposal.spec,provider:cvProposal.provider,model:cvProposal.model}:null,effects:world?.covenantStats,stage:world?.stage,wave:world?.wave,bossKills:world?.bossKills,renderFrames,autoplay:world?.autoplay?{active:autoplayActive,pauseAtPacts:autoplayPausePacts}:null,adaptive:world?.adaptiveEnabled||world?.adaptiveHistory?.length?{enabled:world.adaptiveEnabled,level:world.adaptiveLevel,history:world.adaptiveHistory,pending:world.pendingAnalysis}:null,runReport:world?.phase==='won'||world?.phase==='dead'?world.report():null,campaignPact:world?.pact,campaignPactSource:world?.campaignPactSource,campaignPactEffects:world?.mode!=='first-contact'&&world?{...world.mods}:null,campaignProposal:campaignClient.proposal?{decision:campaignClient.proposal.decision,provider:campaignClient.proposal.provider,model:campaignClient.proposal.model}:null,campaignVoice:campaignVoice?.state,voice:voice?.state,liveVoice:world?.voiceEvidence?world.report().liveVoice:null});
   window.advanceTime=ms=>{const n=Math.min(1200,Math.max(0,Math.round(Number(ms)*.12)));for(let i=0;i<n&&screen==='game'&&world?.phase==='combat';i++)world.step(1/120,inputState(null));if(world){consumeEvents();updateHUD();if(world.phase==='parley')openCovenant();else if(['won','dead'].includes(world.phase))results();}render();};
   // Test access is opt-in; normal launches do not expose mutable simulation state.
   if(new URLSearchParams(location.search).has('test')||window.__PACT_TEST_MODE__===true)window.__PACT_TEST__={
     get world(){return world;},get view(){return {...view};},get touch(){return touch;},get mobile(){return mobile;},get trainingStep(){return trainingStep;},get screen(){return screen;},get sound(){return sound;},get options(){return {...opts};},start,choose,selectChoice,show,render,updateHUD,consumeEvents,results,updateAudio,updateMusicStatus,
     advance(n,input={}){for(let i=0;i<n&&world?.phase==='combat';i++)world.step(1/120,input);consumeEvents();updateHUD();if(world.phase==='parley')openCovenant();else if(world.phase==='route')routeScreen();else if(world.phase==='upgrade'||world.phase==='pact')choiceScreen();else if(world.phase==='won'||world.phase==='dead')results();render();},
-    adaptiveReview,finishAdaptiveReview,hangarScreen,routeScreen,openAI,archiveScreen,startFirstContact,openCovenant,openParley,proposeCovenant,signCovenant,renderCovenantPreview,setCampaign(mode,frame){campaignMode=mode;airframe=frame;},
+    openDebrief,requestDebrief,adaptiveReview,finishAdaptiveReview,hangarScreen,routeScreen,openAI,archiveScreen,startFirstContact,openCovenant,openParley,proposeCovenant,signCovenant,renderCovenantPreview,setCampaign(mode,frame){campaignMode=mode;airframe=frame;},
     snapshot(){return {screen,world:world?.report(),bullets:world?.bullets.length,particles:particles.length,frames:renderFrames};}
   };
   touch=new window.PactTouch.TouchController({pad:$('move-pad'),surface:canvas,knob:$('move-knob'),isPlaying:()=>screen==='game',isMobile:()=>mobile,getWorld:()=>world,unlock:()=>sound.unlock(),sensitivity:()=>opts.sensitivity});

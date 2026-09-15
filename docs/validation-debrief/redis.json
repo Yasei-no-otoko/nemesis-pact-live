@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-09-15T06:00:24.524Z",
+  "realRedis": true,
+  "paidApiCalls": 0,
+  "isolatedKeysRemoved": true,
+  "checks": [
+    "atomic duplicate admission",
+    "cached result and stale owner rejection",
+    "matching pre-start failure can retry"
+  ]
+}

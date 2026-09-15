@@ -311,3 +311,8 @@ Started from clean d312b891 on ship/living-covenant. Added browser-preferred EN/
 2026-09-15 JST — Japanese UI production verified
 
 App e91c7e3fb78a2393efe5d51d1b365c108047e127 pushed to public default branch ship/living-covenant. READY HinZheFR4AC4ezwYS47Y884pEJm8; exact580447-byte hosted SHA405293ca30464bf34d6c3342b2d35e379a385f487ff3efd28dd04a106b97049b. Final286/286 tests24577.0553ms,53syntax,4production Edge software-WebGL2 sizes plus campaign/local Sign/Director/defaults/storage pass. Transcript details retain verbatim speech. Mobile sizes are emulation; no new physical microphone/model trial. Zero paid API calls in this validation; dated direct3/10,Gateway.042359/20 ledger unchanged by test calls, current provider invoices/infra unknown. Final checkpoint milestone-29-japanese-ui; rollback f3q3Af5zwDQ2WvvhA4zuahkfhpCH preservingRedis/settings/media. docs/JAPANESE-UI.md contains evidence and exact scope.
+
+
+2026-09-15 JST — Flight debrief implementation
+
+Started from clean92a7a109 on ship/living-covenant. Replaced the result prototype with a dedicated EN/JA review of the finished run, explicit opt-in Luna analysis, canonical aggregate-only protocol, same shared auth/quota/kill controls, per-world/language cache, stale/cancel guards and LOCAL RULES fallback. Read-only: no game mutation. API rewrite shares the intelligence entry point to retain12functions onHobby; legacy operation remains offline. Four Edge softwareWebGL2 UI cases and three real Redis checks passed; mobile emulation and replayed archived finish are clearly labeled. Production real-model checks pending. Ledger before direct3/10,Gateway.046504/20,active0. See docs/FLIGHT-DEBRIEF.md.

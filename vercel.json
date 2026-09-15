@@ -11,7 +11,7 @@
       "maxDuration": 20
     },
     "api/intelligence.mjs": {
-      "maxDuration": 15
+      "maxDuration": 20
     },
     "api/covenant.mjs": {
       "maxDuration": 15
@@ -26,6 +26,12 @@
       "maxDuration": 20
     }
   },
+  "rewrites": [
+    {
+      "source": "/api/debrief",
+      "destination": "/api/intelligence?operation=debrief"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",

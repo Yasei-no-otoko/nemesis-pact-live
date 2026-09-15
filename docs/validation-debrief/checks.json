@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-09-15T06:08:24.460807+00:00",
+  "unitTests": {
+    "passed": 297,
+    "failed": 0,
+    "durationMs": 24564.9022
+  },
+  "syntaxFiles": 56,
+  "node": "22.23.2",
+  "browserHelper": "Native Edge adapter of supplied develop-web-game helper; training screenshot and state inspected",
+  "hostedBuild": {
+    "bytes": 604081,
+    "sha256": "792b3a319916c67752997f26707db85b2d99b1eafcae041cdb7198ef86c483a8"
+  },
+  "productionVerified": false
+}
