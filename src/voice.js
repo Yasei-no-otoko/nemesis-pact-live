@@ -36,7 +36,7 @@
  class PactVoice{
   constructor(o={}){
    this.request=o.request;this.media=o.mediaDevices||globalThis.navigator?.mediaDevices;this.PC=o.RTCPeerConnection||globalThis.RTCPeerConnection;this.document=o.document||globalThis.document;this.audio=o.audio||null;
-   this.onState=o.onState||(()=>{});this.onCaption=o.onCaption||(()=>{});this.onInput=o.onInput||(()=>{});this.onDelegation=o.onDelegation;this.onSessionClosed=o.onSessionClosed||(()=>{});this.onMedia=o.onMedia||(()=>{});
+   this.onState=o.onState||(()=>{});this.onCaption=o.onCaption||(()=>{});this.onInput=o.onInput||(()=>{});this.onDelegation=o.onDelegation;this.onSessionClosed=o.onSessionClosed||(()=>{});this.onMedia=o.onMedia||(()=>{});this.proposalCommentary=o.proposalCommentary;
    this.state='idle';this.transportGeneration=0;this.delegationGeneration=0;this.events=new Set();this.delegations=new Set();this.closed=true;this.finalized=false;this.stopPromise=null;this.delegationWork=null;this.fallbackDelegationDelayMs=o.fallbackDelegationDelayMs??2750;
    this._hidden=()=>{if(this.document?.visibilityState==='hidden')this.stop('background');};this._pagehide=()=>this.stop('pagehide');
   }
@@ -62,7 +62,7 @@
     const result=await this.onDelegation({delegationId:id,event,generation});
     if(this.closed||transport!==this.transportGeneration||generation!==this.delegationGeneration)return;
     const spec=canonical(result?.spec||result?.proposal||result);
-    const content=spec?JSON.stringify({status:'unsigned',provider:result.provider||'local-rules',covenant:spec,instruction:'Only these displayed clauses are available. Ask the player to review and click Sign.'}):'No new covenant is available. Ask for new terms. Do not claim acceptance.';
+    const content=(this.proposalCommentary?this.proposalCommentary(result):spec?JSON.stringify({status:'unsigned',provider:result.provider||'local-rules',covenant:spec,instruction:'Only these displayed clauses are available. Ask the player to review and click Sign.'}):null)||'No new pact is available. Ask for new terms. Do not claim acceptance.';
     this._send({type:'session.commentary.append',event_id:`covenant_${transport}_${generation}`,delegation_id:id??null,content});
     if(work?.generation===generation){work.pending=false;work.committed=true;work.source=source;}
    }catch{if(!this.closed&&transport===this.transportGeneration&&generation===this.delegationGeneration)this._state('listening','proposal-unavailable-use-text');}
@@ -87,7 +87,7 @@
    if(!id)return true;const ac=new AbortController(),timer=setTimeout(()=>ac.abort(),12000);
    try{const r=await this._http('/api/voice/stop',{sessionId:id},ac.signal);return !!r?.ok&&(await r.json()).stopped===true;}catch{return false;}finally{clearTimeout(timer);}
   }
-  async start({runId,revision}={}){
+  async start({runId,revision,campaign}={}){
    if(this.stopPromise||['starting','listening','speaking','stopping'].includes(this.state))return false;
    if(!this.request||!this.media?.getUserMedia||!this.PC){this._state('error','voice-not-supported-use-text');return false;}
    const generation=++this.transportGeneration;this.delegationGeneration++;this.closed=false;this.started=false;this.finalized=false;this.finalUsage=null;this.latestDelegation=null;this.delegationWork=null;this.delegationAttempts=0;this.events.clear();this.delegations.clear();this._install();this._state('starting');let stream,pc,createdId;
@@ -108,7 +108,7 @@
     const ac=new AbortController();let timer,data;
     // Keep the deadline through the response body, including transports that ignore abort.
     const response=(async()=>{
-     const r=await this._http('/api/voice/start',{runId,revision,sdp:pc.localDescription.sdp},ac.signal);
+     const r=await this._http('/api/voice/start',{runId,revision,sdp:pc.localDescription.sdp,...(campaign?{campaign}:{})},ac.signal);
      if(!r?.ok){let body;try{body=await r?.json();}catch{}throw Object.assign(Error('voice-service-'+(r?.status||'unavailable')),{voiceDetail:serviceMessage(body?.error,r?.status)});}
      const value=await r.json();
      if(generation!==this.transportGeneration||this.closed){if(typeof value?.sessionId==='string')await this._hangup(value.sessionId);return null;}

@@ -1,0 +1,549 @@
+{
+  "checkedAt": "2026-09-15T03:02:38Z",
+  "browser": "153.0.4234.32",
+  "humanInput": false,
+  "physicalPhone": false,
+  "clock": "ordinary requestAnimationFrame; no time acceleration",
+  "live": false,
+  "url": "offline standalone HTML",
+  "reports": [
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "mobileEmulation": false,
+      "provider": "LOCAL RULES / NO AI RESULT",
+      "beforeApply": {
+        "hp": 7,
+        "time": 0,
+        "credits": 50,
+        "pact": null,
+        "director": "balanced"
+      },
+      "afterApply": {
+        "hp": 7,
+        "time": 0,
+        "credits": 50,
+        "pact": null,
+        "director": "crossfire"
+      },
+      "layout": {
+        "height": 800,
+        "scroll": 800,
+        "button": {
+          "x": 580.025390625,
+          "y": 795.603515625,
+          "width": 168.890625,
+          "height": 50.625,
+          "top": 795.603515625,
+          "right": 748.916015625,
+          "bottom": 846.228515625,
+          "left": 580.025390625
+        }
+      },
+      "scheduledWave": [
+        {
+          "at": 1.25,
+          "type": "turret",
+          "x": 1107.2232849377904,
+          "y": 420.51567826931296
+        },
+        {
+          "at": 2.45,
+          "type": "chaser",
+          "x": 210.82313258761644,
+          "y": 458.57999184388484
+        },
+        {
+          "at": 3.65,
+          "type": "chaser",
+          "x": 733.8907225689851,
+          "y": 162
+        },
+        {
+          "at": 4.85,
+          "type": "turret",
+          "x": 912.2690857571054,
+          "y": 537.1605249554191
+        },
+        {
+          "at": 6.05,
+          "type": "turret",
+          "x": 165.60961129983883,
+          "y": 261.2803577232647
+        },
+        {
+          "at": 7.25,
+          "type": "chaser",
+          "x": 1121.110362340704,
+          "y": 271.9773869511672
+        },
+        {
+          "at": 8.45,
+          "type": "turret",
+          "x": 471.0208143700992,
+          "y": 561.8319364539165
+        },
+        {
+          "at": 9.65,
+          "type": "spinner",
+          "x": 412.49237056284323,
+          "y": 162
+        },
+        {
+          "at": 10.85,
+          "type": "turret",
+          "x": 1051.236040379584,
+          "y": 472.05476951614065
+        },
+        {
+          "at": 12.049999999999999,
+          "type": "turret",
+          "x": 143.14191537083406,
+          "y": 359.22012727980774
+        },
+        {
+          "at": 13.25,
+          "type": "turret",
+          "x": 966.006208583739,
+          "y": 162
+        },
+        {
+          "at": 14.45,
+          "type": "turret",
+          "x": 616.9745044819832,
+          "y": 575.7445645100797
+        }
+      ],
+      "runtime": {
+        "renderer": "WEBGPU / COMPUTE",
+        "phase": "combat",
+        "seconds": 3.333333333333324,
+        "planIndex": 2,
+        "enemies": [
+          "turret",
+          "chaser"
+        ],
+        "spawns": [
+          {
+            "type": "turret",
+            "waveTime": 1.2583333333333313
+          },
+          {
+            "type": "chaser",
+            "waveTime": 2.4583333333333273
+          }
+        ],
+        "bullets": 0,
+        "director": "crossfire"
+      },
+      "errors": [],
+      "api": [],
+      "modelResponses": []
+    },
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "mobileEmulation": false,
+      "provider": "LOCAL RULES / NO AI RESULT",
+      "beforeApply": {
+        "hp": 7,
+        "time": 0,
+        "credits": 50,
+        "pact": null,
+        "director": "balanced"
+      },
+      "afterApply": {
+        "hp": 7,
+        "time": 0,
+        "credits": 50,
+        "pact": null,
+        "director": "crossfire"
+      },
+      "layout": {
+        "height": 800,
+        "scroll": 800,
+        "button": {
+          "x": 528.020263671875,
+          "y": 636.4827880859375,
+          "width": 135.112548828125,
+          "height": 40.5,
+          "top": 636.4827880859375,
+          "right": 663.1328125,
+          "bottom": 676.9827880859375,
+          "left": 528.020263671875
+        }
+      },
+      "scheduledWave": [
+        {
+          "at": 1.25,
+          "type": "turret",
+          "x": 1139.199817144424,
+          "y": 336.20542013744716
+        },
+        {
+          "at": 2.45,
+          "type": "spinner",
+          "x": 254.37434331716662,
+          "y": 488.4072531376749
+        },
+        {
+          "at": 3.65,
+          "type": "spinner",
+          "x": 875.5473303920114,
+          "y": 162
+        },
+        {
+          "at": 4.85,
+          "type": "chaser",
+          "x": 887.032642456401,
+          "y": 544.5538540764927
+        },
+        {
+          "at": 6.05,
+          "type": "turret",
+          "x": 162.53770914546408,
+          "y": 265.9487705755015
+        },
+        {
+          "at": 7.25,
+          "type": "spinner",
+          "x": 1129.7139889720465,
+          "y": 289.43520044326954
+        },
+        {
+          "at": 8.45,
+          "type": "turret",
+          "x": 432.91447243136247,
+          "y": 554.3752200895796
+        },
+        {
+          "at": 9.65,
+          "type": "turret",
+          "x": 583.1079078604564,
+          "y": 162
+        },
+        {
+          "at": 10.85,
+          "type": "turret",
+          "x": 1061.9918291823194,
+          "y": 464.21632812960485
+        },
+        {
+          "at": 12.049999999999999,
+          "type": "chaser",
+          "x": 141.422095057825,
+          "y": 324.0220641751841
+        },
+        {
+          "at": 13.25,
+          "type": "spinner",
+          "x": 863.8493375415393,
+          "y": 162
+        },
+        {
+          "at": 14.45,
+          "type": "chaser",
+          "x": 644.8633483532876,
+          "y": 575.9886102771882
+        }
+      ],
+      "runtime": {
+        "renderer": "WEBGPU / COMPUTE",
+        "phase": "combat",
+        "seconds": 3.3166666666666575,
+        "planIndex": 2,
+        "enemies": [
+          "turret",
+          "spinner"
+        ],
+        "spawns": [
+          {
+            "type": "turret",
+            "waveTime": 1.2583333333333313
+          },
+          {
+            "type": "spinner",
+            "waveTime": 2.4583333333333273
+          }
+        ],
+        "bullets": 4,
+        "director": "crossfire"
+      },
+      "errors": [],
+      "api": [],
+      "modelResponses": []
+    },
+    {
+      "viewport": [
+        430,
+        932
+      ],
+      "mobileEmulation": true,
+      "provider": "LOCAL RULES / NO AI RESULT",
+      "beforeApply": {
+        "hp": 7,
+        "time": 0,
+        "credits": 50,
+        "pact": null,
+        "director": "balanced"
+      },
+      "afterApply": {
+        "hp": 7,
+        "time": 0,
+        "credits": 50,
+        "pact": null,
+        "director": "crossfire"
+      },
+      "layout": {
+        "height": 932,
+        "scroll": 1234,
+        "button": {
+          "x": 220,
+          "y": 874,
+          "width": 191,
+          "height": 49,
+          "top": 874,
+          "right": 411,
+          "bottom": 923,
+          "left": 220
+        }
+      },
+      "scheduledWave": [
+        {
+          "at": 1.25,
+          "type": "turret",
+          "x": 640.7859335649861,
+          "y": 461.9190415686566
+        },
+        {
+          "at": 2.45,
+          "type": "spinner",
+          "x": 117.89691104131816,
+          "y": 624.5969875262667
+        },
+        {
+          "at": 3.65,
+          "type": "turret",
+          "x": 405.1042789917843,
+          "y": 135.29386808771466
+        },
+        {
+          "at": 4.85,
+          "type": "chaser",
+          "x": 413.2527727638443,
+          "y": 780.2948498457779
+        },
+        {
+          "at": 6.05,
+          "type": "turret",
+          "x": 86.8665901485628,
+          "y": 382.61145259775856
+        },
+        {
+          "at": 7.25,
+          "type": "chaser",
+          "x": 617.9806923372181,
+          "y": 329.2788006094658
+        },
+        {
+          "at": 8.45,
+          "type": "turret",
+          "x": 204.46999162268142,
+          "y": 731.3982246551681
+        },
+        {
+          "at": 9.65,
+          "type": "spinner",
+          "x": 333.265876708272,
+          "y": 132.52812391981735
+        },
+        {
+          "at": 10.85,
+          "type": "turret",
+          "x": 558.593091382218,
+          "y": 690.2444148199593
+        },
+        {
+          "at": 12.049999999999999,
+          "type": "turret",
+          "x": 79.98192162368821,
+          "y": 483.0708965016342
+        },
+        {
+          "at": 13.25,
+          "type": "turret",
+          "x": 490.12422449613894,
+          "y": 168.33843343685191
+        },
+        {
+          "at": 14.45,
+          "type": "spinner",
+          "x": 432.9002270568996,
+          "y": 775.0072113865281
+        }
+      ],
+      "runtime": {
+        "renderer": "WEBGPU / COMPUTE",
+        "phase": "combat",
+        "seconds": 3.383333333333324,
+        "planIndex": 2,
+        "enemies": [
+          "spinner"
+        ],
+        "spawns": [
+          {
+            "type": "turret",
+            "waveTime": 1.2583333333333313
+          },
+          {
+            "type": "spinner",
+            "waveTime": 2.4583333333333273
+          }
+        ],
+        "bullets": 8,
+        "director": "crossfire"
+      },
+      "errors": [],
+      "api": [],
+      "modelResponses": []
+    },
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "mobileEmulation": true,
+      "provider": "LOCAL RULES / NO AI RESULT",
+      "beforeApply": {
+        "hp": 7,
+        "time": 0,
+        "credits": 50,
+        "pact": null,
+        "director": "balanced"
+      },
+      "afterApply": {
+        "hp": 7,
+        "time": 0,
+        "credits": 50,
+        "pact": null,
+        "director": "crossfire"
+      },
+      "layout": {
+        "height": 568,
+        "scroll": 1397,
+        "button": {
+          "x": 165,
+          "y": 503,
+          "width": 136,
+          "height": 56,
+          "top": 503,
+          "right": 301,
+          "bottom": 559,
+          "left": 165
+        }
+      },
+      "scheduledWave": [
+        {
+          "at": 1.25,
+          "type": "turret",
+          "x": 616.5116660505797,
+          "y": 392.9859169327401
+        },
+        {
+          "at": 2.45,
+          "type": "chaser",
+          "x": 90.48534396432007,
+          "y": 365.54148600358104
+        },
+        {
+          "at": 3.65,
+          "type": "spinner",
+          "x": 502.30694487833995,
+          "y": 117.0000170024571
+        },
+        {
+          "at": 4.85,
+          "type": "spinner",
+          "x": 488.1521703762378,
+          "y": 498.027966569501
+        },
+        {
+          "at": 6.05,
+          "type": "turret",
+          "x": 116.91811654464814,
+          "y": 195.61856224609357
+        },
+        {
+          "at": 7.25,
+          "type": "spinner",
+          "x": 633.4510473653227,
+          "y": 255.06572795871796
+        },
+        {
+          "at": 8.45,
+          "type": "spinner",
+          "x": 203.67761699024308,
+          "y": 485.1796802196614
+        },
+        {
+          "at": 9.65,
+          "type": "spinner",
+          "x": 244.60324142480738,
+          "y": 106.21510804652647
+        },
+        {
+          "at": 10.85,
+          "type": "turret",
+          "x": 616.7573805921143,
+          "y": 392.5573198958823
+        },
+        {
+          "at": 12.049999999999999,
+          "type": "turret",
+          "x": 91.61668048404852,
+          "y": 368.46222747426725
+        },
+        {
+          "at": 13.25,
+          "type": "turret",
+          "x": 573.6810666605068,
+          "y": 163.3894402656904
+        },
+        {
+          "at": 14.45,
+          "type": "chaser",
+          "x": 411.17978509448983,
+          "y": 518.356786721349
+        }
+      ],
+      "runtime": {
+        "renderer": "WEBGPU / COMPUTE",
+        "phase": "combat",
+        "seconds": 3.383333333333324,
+        "planIndex": 2,
+        "enemies": [
+          "chaser"
+        ],
+        "spawns": [
+          {
+            "type": "turret",
+            "waveTime": 1.2583333333333313
+          },
+          {
+            "type": "chaser",
+            "waveTime": 2.4583333333333273
+          }
+        ],
+        "bullets": 5,
+        "director": "crossfire"
+      },
+      "errors": [],
+      "api": [],
+      "modelResponses": []
+    }
+  ]
+}

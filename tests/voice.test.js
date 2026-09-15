@@ -13,6 +13,14 @@ test('cancelled delayed start hangs up returned session and stops tracks',async(
 test('microphone denial and pagehide fail closed',async()=>{const denied=fixture();denied.media.getUserMedia=async()=>{const x=new Error('denied');x.name='NotAllowedError';throw x;};const a=voice(denied);assert.equal(await a.start(),false);assert.equal(a.state,'error');const e=fixture(),v=voice(e);active.push(v);await v.start();e.document.visibilityState='hidden';e.document.listeners.visibilitychange();await wait(700);assert.equal(v.state,'stopped');});
 test('remote media track is attached to the output element',async()=>{const e=fixture(),audio={play:()=>Promise.resolve(),pause(){}};const v=voice(e,{audio});active.push(v);await v.start();const remote={id:'remote'};v.pc.emit('track',{streams:[remote]});assert.equal(audio.srcObject,remote);});
 test('canonical accepts only validated host rule values',()=>{assert.equal(canonical({version:1,title:'ok',zone:'right',speed:'normal',reflection:'charged',price:'fragile',extra:'ignored'}).extra,undefined);assert.equal(canonical({version:1,title:'bad',zone:'laser',speed:'normal',reflection:'normal',price:'haste'}),null);assert.equal(canonical({version:1,title:'bad',zone:'none',speed:'normal',reflection:'normal',price:'haste'}),null);});
+test('campaign voice sends sector context and authored pact feedback through the existing Live transport',async()=>{
+ const C=require('../src/campaign.js'),I=require('../src/intelligence.js'),ctx={mode:'expedition',stage:2};
+ const decision=I.mock({task:'negotiate',prompt:'Reflect',seed:'voice-campaign',stage:2,allowed:C.offers(ctx).map(x=>x.id),telemetry:{}});
+ const e=fixture(),v=voice(e,{proposalCommentary:r=>C.commentary(r,ctx),onDelegation:async()=>({decision,provider:'openai'})});active.push(v);
+ await v.start({runId:'campaign-run',revision:0,campaign:ctx});assert.deepEqual(e.calls.find(x=>x.url.endsWith('/start')).body.campaign,ctx);
+ v.dc.emit({type:'session.started'});v.dc.emit({type:'session.delegation.created',delegation:{id:'campaign-delegation'}});await wait(10);
+ const content=JSON.parse(v.dc.sent.at(-1).content);assert.equal(content.campaignPact.id,'mirror');assert.equal(content.covenant,undefined);assert.equal(content.status,'unsigned');await v.stop('signed');assert.equal(e.track.stopped,true);
+});
 
 test('voice quota errors explain the per-fight limit without exposing arbitrary server content',async()=>{
  for(const [code,expected] of [['VOICE_QUOTA_voice_duration','Both voice negotiations for this fight are used.'],['VOICE_QUOTA_budget','The voice budget is currently exhausted.'],['PRIVATE_UNTRUSTED_SERVER_CONTENT','Voice is temporarily rate limited.']]){

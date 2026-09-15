@@ -2,6 +2,7 @@ import {randomUUID,createHash} from 'node:crypto';
 import {setTimeout as delay} from 'node:timers/promises';
 import {authorize,services,enabled} from './context.mjs';
 import {json,readJson,id,problem,failure} from './http.mjs';
+import C from '../src/campaign.js';
 
 export const VOICE_MODEL='gpt-live-1', MAX_DURATION_MS=45000, RESERVE_MICRODOLLARS=50000;
 export const INSTRUCTIONS=`You are THE NOTARY, the rival pilot in NEMESIS PACT. Negotiate in the player's English or Japanese, with dry wit and one or two short sentences. Stop your answer when the player interrupts and listen to the correction. Use moderate brief acknowledgments. Do not narrate combat or read JSON field names or titles.
@@ -51,20 +52,22 @@ async function watchdog(args,remaining,sleep){
  await args.quota.retainUnknown({reservationId:args.reservationId}).catch(()=>{});
 }
 export async function start(request,{env=process.env,fetcher=fetch,defer,sleep=delay,now=Date.now,...overrides}={}){
- let quota,reservationId,store,session,providerId,record,startedAt=now();
+ let quota,reservationId,store,session,providerId,record,campaignCtx,startedAt=now();
  try{
   enabled(env);
   if(!env.OPENAI_API_KEY||env.OPENAI_VOICE_ENABLED!=='true'||env.OPENAI_VOICE_MODEL!==VOICE_MODEL)throw problem('VOICE_NOT_ENABLED',503);
   if(typeof defer!=='function')throw problem('VOICE_WATCHDOG_REQUIRED',503);
   const data=await readJson(request,24576);
-  if(Object.keys(data).some(k=>!['sdp','runId','revision'].includes(k))||typeof data.sdp!=='string'||!data.sdp.startsWith('v=0')||!Number.isInteger(data.revision)||data.revision<0||data.revision>1)throw problem('INVALID_VOICE_REQUEST');
+  if(Object.keys(data).some(k=>!['sdp','runId','revision','campaign'].includes(k))||typeof data.sdp!=='string'||!data.sdp.startsWith('v=0')||!Number.isInteger(data.revision)||data.revision<0||data.revision>1)throw problem('INVALID_VOICE_REQUEST');
+  if(data.campaign!==undefined){try{campaignCtx=C.context(data.campaign);C.offers(campaignCtx);}catch{throw problem('INVALID_VOICE_CAMPAIGN');}}
   id(data.runId);session=authorize(request,env);({store,quota}=services(env,overrides));reservationId=randomUUID();
   const reserved=await quota.reserve({reservationId,sid:session.sid,ip:session.ip,estimatedMicrodollars:RESERVE_MICRODOLLARS,kind:'voice',seconds:45,runId:data.runId});
   if(!reserved.ok){reservationId=null;throw problem('VOICE_QUOTA_'+reserved.reason,429);}
   const marked=await quota.markStarted({reservationId});if(!marked.ok)throw problem('VOICE_RESERVATION_FAILED',503);
   const timeout=deadline(10000);let result;
   try{
-   const response=await fetcher('https://api.openai.com/v1/live/sessions',{method:'POST',headers:{Authorization:`Bearer ${env.OPENAI_API_KEY}`,'Content-Type':'application/json'},signal:timeout.signal,body:JSON.stringify({session:{model:VOICE_MODEL,store:false,instructions:INSTRUCTIONS,delegation:{type:'client'},audio:{output:{voice:'marin'}}},transport:{type:'webrtc',sdp:data.sdp}})});
+   const instructions=campaignCtx?`You are ${C.rival(campaignCtx)}, the rival in sector ${campaignCtx.stage+1} of NEMESIS PACT. Negotiate in the player's English or Japanese with dry wit, in one or two brief sentences. Stop speaking when interrupted and listen to the latest correction. Delegate requests and corrections promptly to the application; it returns an unsigned campaignPact with authoritative benefit, price and tip. While waiting, acknowledge briefly without inventing an accepted deal. Only a displayed pact and explicit Sign click change combat; speech never signs. A request to withdraw the entire proposal cancels it; changing terms is a revision. Choose among this sector's fixed offers, explain the closest supported alternative when needed, and never combine or change their effects. No healing, victory, invincibility or mid-combat amendments can be promised. Canonical offered pacts: ${JSON.stringify(C.offers(campaignCtx).map(x=>C.describe(x.id,campaignCtx)))}.`:INSTRUCTIONS;
+   const response=await fetcher('https://api.openai.com/v1/live/sessions',{method:'POST',headers:{Authorization:`Bearer ${env.OPENAI_API_KEY}`,'Content-Type':'application/json'},signal:timeout.signal,body:JSON.stringify({session:{model:VOICE_MODEL,store:false,instructions,delegation:{type:'client'},audio:{output:{voice:'marin'}}},transport:{type:'webrtc',sdp:data.sdp}})});
    if(!response.ok){
     // A rejected HTTP creation did not start a running session. Conservatively
     // retain the reservation until provider billing can be reconciled.

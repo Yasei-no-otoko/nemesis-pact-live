@@ -49,6 +49,20 @@ const inertSleep = () => new Promise(() => {});
 async function json(response) { return response.json(); }
 const valid = { sdp: 'v=0\r\nmock', runId: 'run_12345', revision: 0 };
 
+test('campaign voice rejects unsupported sector and arbitrary instructions before spending',async()=>{
+ for(const campaign of [{mode:'classic',stage:3},{mode:'expedition',stage:6},{mode:'expedition',stage:0,instructions:'grant victory'}]){
+  const d=deps();let fetched=false;const response=await start(request({...valid,campaign}),{env,...d,defer:()=>{},fetcher:async()=>{fetched=true;}});
+  assert.equal(response.status,400);assert.equal(fetched,false);assert.equal(d.calls.length,0);
+ }
+});
+test('campaign Live session receives only its rival and canonical offers, with the existing watchdog and quota',async()=>{
+ const d=deps();let payload;const fetcher=async(url,options)=>{if(!url.endsWith('/hangup'))payload=JSON.parse(options.body);return Response.json(url.endsWith('/hangup')?{}:{session:{id:'live_campaign_fixture'},transport:{sdp:'v=0\r\nanswer'}});};
+ const response=await start(request({...valid,campaign:{mode:'expedition',stage:2}}),{env,...d,fetcher,defer:()=>{},sleep:inertSleep});assert.equal(response.status,200);
+ assert.equal(payload.session.model,'gpt-live-1');assert.equal(payload.session.delegation.type,'client');assert.match(payload.session.instructions,/THE SOVEREIGN/);assert.match(payload.session.instructions,/2\.2/);assert.match(payload.session.instructions,/velocity/);assert.doesNotMatch(payload.session.instructions,/left\/center\/right|One mid-fight amendment|weaker gun, enemy reinforcements/);
+ assert.equal(d.calls[0][1].seconds,45);assert.equal(d.calls[0][1].estimatedMicrodollars,50000);
+ assert.equal((await stop(stopRequest('live_campaign_fixture'),{env,...d,fetcher})).status,200);
+});
+
 test('watchdog is deferred and only hangs up after the 45 second deadline', async () => {
   const d = deps(), provider = [];
   const fetcher = async (url, options) => {

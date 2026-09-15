@@ -7,6 +7,9 @@
     "api/director.mjs": {
       "maxDuration": 20
     },
+    "api/campaign.mjs": {
+      "maxDuration": 20
+    },
     "api/intelligence.mjs": {
       "maxDuration": 15
     },

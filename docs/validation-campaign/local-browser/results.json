@@ -1,0 +1,370 @@
+{
+  "checkedAt": "2026-09-15T02:59:04Z",
+  "live": false,
+  "browser": "153.0.4234.32",
+  "humanInput": false,
+  "physicalPhone": false,
+  "clock": "ordinary requestAnimationFrame",
+  "reports": [
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "mobileEmulation": false,
+      "before": {
+        "hp": 7,
+        "time": 0,
+        "credits": 80,
+        "pact": null
+      },
+      "signature": {
+        "ok": true,
+        "before": {
+          "hp": 7,
+          "time": 0,
+          "credits": 80
+        },
+        "after": {
+          "hp": 7,
+          "time": 0,
+          "credits": 80
+        },
+        "mods": {
+          "speed": 1,
+          "hp": 1,
+          "damage": 1,
+          "gun": 0.75,
+          "reflect": 2.2,
+          "dash": 1,
+          "extra": false,
+          "silence": false,
+          "sanctuary": false,
+          "noAdds": false,
+          "bossRate": 1,
+          "enemyRate": 1
+        },
+        "id": "mirror"
+      },
+      "layout": {
+        "width": 1280,
+        "scrollWidth": 1280,
+        "height": 800,
+        "scrollHeight": 800
+      },
+      "runtime": {
+        "build": "1.2.0",
+        "screen": "game",
+        "negotiationStep": "negotiate",
+        "coordinates": "origin top-left; x right; y down",
+        "renderer": "WEBGPU / COMPUTE",
+        "arena": {
+          "width": 1280,
+          "height": 800
+        },
+        "phase": "combat",
+        "seconds": 2.53,
+        "player": {
+          "x": 640,
+          "y": 560,
+          "hp": 7,
+          "energy": 35
+        },
+        "enemies": [
+          {
+            "type": "chaser",
+            "x": 1097,
+            "y": 386,
+            "hp": 30
+          },
+          {
+            "type": "chaser",
+            "x": 228,
+            "y": 471,
+            "hp": 30
+          }
+        ],
+        "hostileBullets": 0,
+        "proposal": null,
+        "campaignPact": "mirror",
+        "campaignPactSource": "LOCAL RULES",
+        "campaignProposal": null,
+        "campaignVoice": "idle",
+        "voice": "idle",
+        "liveVoice": null
+      },
+      "errors": [],
+      "api": []
+    },
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "mobileEmulation": false,
+      "before": {
+        "hp": 7,
+        "time": 0,
+        "credits": 80,
+        "pact": null
+      },
+      "signature": {
+        "ok": true,
+        "before": {
+          "hp": 7,
+          "time": 0,
+          "credits": 80
+        },
+        "after": {
+          "hp": 7,
+          "time": 0,
+          "credits": 80
+        },
+        "mods": {
+          "speed": 1,
+          "hp": 1,
+          "damage": 1,
+          "gun": 0.75,
+          "reflect": 2.2,
+          "dash": 1,
+          "extra": false,
+          "silence": false,
+          "sanctuary": false,
+          "noAdds": false,
+          "bossRate": 1,
+          "enemyRate": 1
+        },
+        "id": "mirror"
+      },
+      "layout": {
+        "width": 1280,
+        "scrollWidth": 1280,
+        "height": 800,
+        "scrollHeight": 800
+      },
+      "runtime": {
+        "build": "1.2.0",
+        "screen": "game",
+        "negotiationStep": "negotiate",
+        "coordinates": "origin top-left; x right; y down",
+        "renderer": "WEBGPU / COMPUTE",
+        "arena": {
+          "width": 1280,
+          "height": 800
+        },
+        "phase": "combat",
+        "seconds": 2.53,
+        "player": {
+          "x": 640,
+          "y": 560,
+          "hp": 7,
+          "energy": 35
+        },
+        "enemies": [
+          {
+            "type": "chaser",
+            "x": 1054,
+            "y": 448,
+            "hp": 30
+          },
+          {
+            "type": "turret",
+            "x": 260,
+            "y": 492,
+            "hp": 58
+          }
+        ],
+        "hostileBullets": 0,
+        "proposal": null,
+        "campaignPact": "mirror",
+        "campaignPactSource": "LOCAL RULES",
+        "campaignProposal": null,
+        "campaignVoice": "idle",
+        "voice": "idle",
+        "liveVoice": null
+      },
+      "errors": [],
+      "api": []
+    },
+    {
+      "viewport": [
+        430,
+        932
+      ],
+      "mobileEmulation": true,
+      "before": {
+        "hp": 7,
+        "time": 0,
+        "credits": 80,
+        "pact": null
+      },
+      "signature": {
+        "ok": true,
+        "before": {
+          "hp": 7,
+          "time": 0,
+          "credits": 80
+        },
+        "after": {
+          "hp": 7,
+          "time": 0,
+          "credits": 80
+        },
+        "mods": {
+          "speed": 1,
+          "hp": 1,
+          "damage": 1,
+          "gun": 0.75,
+          "reflect": 2.2,
+          "dash": 1,
+          "extra": false,
+          "silence": false,
+          "sanctuary": false,
+          "noAdds": false,
+          "bossRate": 1,
+          "enemyRate": 1
+        },
+        "id": "mirror"
+      },
+      "layout": {
+        "width": 430,
+        "scrollWidth": 430,
+        "height": 932,
+        "scrollHeight": 1187
+      },
+      "runtime": {
+        "build": "1.2.0",
+        "screen": "game",
+        "negotiationStep": "negotiate",
+        "coordinates": "origin top-left; x right; y down",
+        "renderer": "WEBGPU / COMPUTE",
+        "arena": {
+          "width": 720,
+          "height": 1092
+        },
+        "phase": "combat",
+        "seconds": 2.59,
+        "player": {
+          "x": 360,
+          "y": 830,
+          "hp": 7,
+          "energy": 35
+        },
+        "enemies": [
+          {
+            "type": "turret",
+            "x": 637,
+            "y": 510,
+            "hp": 58
+          },
+          {
+            "type": "chaser",
+            "x": 128,
+            "y": 643,
+            "hp": 30
+          }
+        ],
+        "hostileBullets": 0,
+        "proposal": null,
+        "campaignPact": "mirror",
+        "campaignPactSource": "LOCAL RULES",
+        "campaignProposal": null,
+        "campaignVoice": "idle",
+        "voice": "idle",
+        "liveVoice": null
+      },
+      "errors": [],
+      "api": []
+    },
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "mobileEmulation": true,
+      "before": {
+        "hp": 7,
+        "time": 0,
+        "credits": 80,
+        "pact": null
+      },
+      "signature": {
+        "ok": true,
+        "before": {
+          "hp": 7,
+          "time": 0,
+          "credits": 80
+        },
+        "after": {
+          "hp": 7,
+          "time": 0,
+          "credits": 80
+        },
+        "mods": {
+          "speed": 1,
+          "hp": 1,
+          "damage": 1,
+          "gun": 0.75,
+          "reflect": 2.2,
+          "dash": 1,
+          "extra": false,
+          "silence": false,
+          "sanctuary": false,
+          "noAdds": false,
+          "bossRate": 1,
+          "enemyRate": 1
+        },
+        "id": "mirror"
+      },
+      "layout": {
+        "width": 320,
+        "scrollWidth": 320,
+        "height": 568,
+        "scrollHeight": 1362
+      },
+      "runtime": {
+        "build": "1.2.0",
+        "screen": "game",
+        "negotiationStep": "negotiate",
+        "coordinates": "origin top-left; x right; y down",
+        "renderer": "WEBGPU / COMPUTE",
+        "arena": {
+          "width": 720,
+          "height": 725
+        },
+        "phase": "combat",
+        "seconds": 2.57,
+        "player": {
+          "x": 360,
+          "y": 551,
+          "hp": 7,
+          "energy": 35
+        },
+        "enemies": [
+          {
+            "type": "spinner",
+            "x": 645,
+            "y": 333,
+            "hp": 69
+          },
+          {
+            "type": "chaser",
+            "x": 91,
+            "y": 366,
+            "hp": 30
+          }
+        ],
+        "hostileBullets": 0,
+        "proposal": null,
+        "campaignPact": "mirror",
+        "campaignPactSource": "LOCAL RULES",
+        "campaignProposal": null,
+        "campaignVoice": "idle",
+        "voice": "idle",
+        "liveVoice": null
+      },
+      "errors": [],
+      "api": []
+    }
+  ]
+}

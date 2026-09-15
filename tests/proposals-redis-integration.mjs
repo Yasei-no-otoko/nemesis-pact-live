@@ -9,6 +9,20 @@ const spec={contractId:'mirror',directorId:'crossfire',terms:{}};
 function setup(){const sid=randomUUID(),runId=randomUUID(),store=createRedisRestStore({url,token});return {sid,runId,store,p:proposalStore(store,sid),key:`nemesis:run:${sid}:${runId}`}}
 async function cleanup(x){await x.store.command(['DEL',x.key])}
 
+test('real Redis campaign signatures are isolated, cancelled results expire and double signs reject',{skip},async()=>{
+ const x=setup(),c=proposalStore(x.store,x.sid,'campaign'),d=proposalStore(x.store,x.sid,'director'),requestId=randomUUID(),data={runId:x.runId,intentVersion:2,requestId,revision:0};
+ try {
+  await c.begin(data);await d.begin(data);await x.p.begin(data);
+  const p=await c.finish({...data,spec:{contractId:'mirror'},provider:'fixture',model:null,latencyMs:0});
+  await assert.rejects(d.sign({...data,proposalId:p.proposalId,digest:p.digest}));await assert.rejects(x.p.sign({...data,proposalId:p.proposalId,digest:p.digest}));
+  await c.invalidate({...data,intentVersion:3});await assert.rejects(c.sign({...data,proposalId:p.proposalId,digest:p.digest}));
+  const next={...data,intentVersion:4,requestId:randomUUID()};await c.begin(next);
+  await assert.rejects(c.finish({...data,spec:{contractId:'mercy'},provider:'fixture',model:null,latencyMs:0}));
+  const q=await c.finish({...next,spec:{contractId:'mirror'},provider:'fixture',model:null,latencyMs:0});
+  const results=await Promise.allSettled([c.sign({...next,proposalId:q.proposalId,digest:q.digest}),c.sign({...next,proposalId:q.proposalId,digest:q.digest})]);assert.equal(results.filter(r=>r.status==='fulfilled').length,1);
+ }finally{await cleanup(x);await x.store.command(['DEL',`nemesis:campaign:${x.sid}:${x.runId}`,`nemesis:director:${x.sid}:${x.runId}`]);}
+});
+
 test('real Redis isolates Director approvals from Living Covenant with identical IDs',{skip},async()=>{
  const x=setup(),d=proposalStore(x.store,x.sid,'director'),requestId=randomUUID();
  const data={runId:x.runId,intentVersion:2,requestId,revision:0};

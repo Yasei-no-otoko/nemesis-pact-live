@@ -7,6 +7,9 @@
   let voice=null,voiceWorld=null,voiceText='',voiceCaption='',voiceLastInput=0,voiceMuted=false,voiceActive=false,voiceBackchannels='';
   const X=window.PactExpansion,I=window.PactIntelligence,BOSSES=X.BOSSES,SECTORS=X.SECTORS.map(s=>s.name),aiClient=new I.Client();
   const directorClient=new window.PactDirectorClient(new window.PactSession());let aiEpoch=0,aiApplying=false;
+  const campaignSession=new window.PactSession(),campaignClient=new window.PactCampaignClient(campaignSession);
+  let campaignVoice,campaignSpeech='',campaignCaption='',campaignLastInput=0,campaignVoiceActive=false,campaignVoiceMuted=false,campaignConnectionEpoch=0;
+  const campaignVoiceRuns=new WeakMap();
   let campaignMode='expedition',airframe='vanguard',aiTask='negotiate',aiBack='choices',aiDecision=null,aiWorld=null,aiStage=0;
   let W=C.W,H=C.H;
   let gpuActive=false;
@@ -54,7 +57,7 @@
     if(name==='pause'){$('pause-reason').textContent='The battlefield is paused.';$('pause-breach').disabled=!world?.pact||world.broken||world.training;}
     $('hud').hidden=!world||['menu','loadout','hangar','route','archive','ai-screen','covenant-screen'].includes(name)||(mobile&&name!=='game');$('tutorial-hud').hidden=!(world?.training&&name==='game');
     if(name!=='game'){$('announcement').classList.remove('visible');$('toast').classList.remove('visible');announceTime=0;toastTime=0;}
-    if(name!=='ai-screen'){aiClient.cancel();if(directorClient.runId)directorClient.close();aiEpoch++;}if(name!=='game'&&!mobile){const button=$(name)?.querySelector('button:not([disabled])');if(button)button.focus({preventScroll:true});}else document.activeElement?.blur();
+    if(name!=='ai-screen'){campaignConnectionEpoch++;campaignVoice?.stop('screen-exit');if(campaignClient.runId)campaignClient.close();aiClient.cancel();if(directorClient.runId)directorClient.close();aiEpoch++;}if(name!=='game'&&!mobile){const button=$(name)?.querySelector('button:not([disabled])');if(button)button.focus({preventScroll:true});}else document.activeElement?.blur();
     refreshView();
     accum=0;updateAudio();
   }
@@ -656,23 +659,25 @@
   }
   function closeAI(){aiClient.cancel();aiClient.token='';$('pilot-token').value='';const back=aiBack;show(back);if(back==='route')routeScreen();}
   function openAI(task){
-    if(!world||(task==='director'&&(world.mode!=='expedition'||!['route','pact'].includes(world.phase))))return;aiEpoch++;aiTask=task;aiBack=screen;aiWorld=world;aiStage=world.stage;aiDecision=null;show('ai-screen');
-    const director=task==='director';$('ai-screen').dataset.task=task;setAIBusy(false);$('ai-request').disabled=false;if(director)directorClient.open();
+    if(!world||(task==='negotiate'&&world.phase!=='pact')||(task==='director'&&(world.mode!=='expedition'||!['route','pact'].includes(world.phase))))return;aiEpoch++;aiTask=task;aiBack=screen;aiWorld=world;aiStage=world.stage;aiDecision=null;show('ai-screen');
+    const director=task==='director',campaign=task==='negotiate';$('ai-screen').dataset.task=task;setAIBusy(false);$('ai-request').disabled=false;if(director)directorClient.open();if(campaign)campaignClient.open({mode:world.mode,stage:world.stage});$('campaign-voice').hidden=!campaign;
     const sector=X.SECTORS[Math.min(world.stage,5)];$('ai-screen').style.setProperty('--sector',sector.color);
-    $('ai-kicker').textContent=director?'CAMPAIGN / AI DIRECTOR':`LOCAL RULES / ${task.toUpperCase()}`;
+    $('ai-kicker').textContent=director?'CAMPAIGN / AI DIRECTOR':campaign?`SECTOR ${world.stage+1} / VOICE & PACT`:`LOCAL RULES / ${task.toUpperCase()}`;
     $('ai-title').textContent=task==='negotiate'?'Put it in writing.':task==='director'?'Shape the next encounter.':'Every flight leaves a story.';
     $('ai-rival-name').textContent=task==='debrief'?'FLIGHT RECORDER':sector.boss.name;$('ai-rival-copy').textContent=sector.boss.quote;
     $('ai-request').textContent=task==='negotiate'?'Propose terms':task==='director'?'Propose formation':'Analyze flight';
-    $('ai-apply').textContent=task==='negotiate'?'Accept & launch':'Use this formation';$('ai-apply').hidden=task==='debrief';$('ai-apply').disabled=true;
+    $('ai-apply').textContent=task==='negotiate'?'Sign & enter combat':'Use this formation';$('ai-apply').hidden=task==='debrief';$('ai-apply').disabled=true;
     $('ai-provider').textContent='LOCAL RULES / NO AI CALLS';$('ai-status').textContent='';$('ai-benefit').textContent='';$('ai-price').textContent='';
     $('ai-line').textContent=director?'What kind of pressure will sharpen your flight?':'The channel is open.';$('ai-rationale').textContent=director?'Choose OpenAI and consent below for a generated formation proposal. Review the wave, then apply. LOCAL RULES is also available.':'Local mode uses authored keyword rules, not an LLM. Try a request, inspect the benefit and cost, then decide.';
-    const prompts=task==='negotiate'?['Slow your bullets. I will face more.','Let me reflect your attacks.','No minions. Fight me alone.']:task==='director'?['A balanced formation, please.','Test me with pursuit units.','A crossfire lattice, with fair gaps.']:['What should I change next run?'];
+    const prompts=task==='negotiate'?world.offersForPact().map(c=>c.line.replace(/[“”]/g,'')):task==='director'?['A balanced formation, please.','Test me with pursuit units.','A crossfire lattice, with fair gaps.']:['What should I change next run?'];
     $('ai-prompt').value=prompts[0];$('ai-suggestions').replaceChildren();
-    for(const text of prompts){const b=document.createElement('button');b.textContent=text;b.onclick=()=>{$('ai-prompt').value=text;invalidateProposal();};$('ai-suggestions').append(b);}
+    for(const text of prompts){const b=document.createElement('button');b.textContent=text;b.onclick=()=>{$('ai-prompt').value=text;campaignSpeech=text;invalidateProposal();};$('ai-suggestions').append(b);}
     $('ai-mode').value='mock';aiClient.mode='mock';$('pilot-token').value='';$('ai-consent').checked=false;
-    $('ai-mode').querySelector('[value="server"]').disabled=!director||!window.NEMESIS_HOSTED;
-    $('ai-consent').parentElement.hidden=!director;$('ai-director-preview').hidden=!director;
-    if(director){$('ai-preview-route').value=world.route?.id||'salvage';renderDirectorPreview();if(window.NEMESIS_HOSTED){$('ai-mode').value='server';$('ai-provider').textContent='OPENAI / CONSENT REQUIRED';}}
+    $('ai-mode').querySelector('[value="server"]').disabled=(!director&&!campaign)||!window.NEMESIS_HOSTED;
+    $('ai-consent').parentElement.hidden=!director&&!campaign;document.querySelector('.ai-consent span').textContent=campaign?'I agree to send my text, seed, sector and play counters to this site and OpenAI for a pact proposal. Microphone audio goes to GPT-Live-1 only after Start voice. AI voice is generated. Sign, Back, revoking consent or a timeout stops it.':'I agree to send this text, seed, sector and six aggregate play counters to this site and OpenAI through Vercel AI Gateway to generate a formation proposal. No audio or screenshots are sent.';$('ai-director-preview').hidden=!director;
+    if(director){$('ai-preview-route').value=world.route?.id||'salvage';renderDirectorPreview();}
+    if((director||campaign)&&window.NEMESIS_HOSTED){$('ai-mode').value='server';$('ai-provider').textContent='OPENAI / CONSENT REQUIRED';}
+    if(campaign){$('ai-rationale').textContent='Negotiate this sector’s offered pacts by voice or text. Review the fixed benefit and price, then Sign.';campaignSpeech='';campaignCaption='';$('campaign-caption-player').textContent='—';$('campaign-caption-rival').textContent='—';$('campaign-voice-state').textContent='VOICE / CONSENT REQUIRED';refreshCampaignConnection();}
   }
   function setAIBusy(value){aiApplying=value;for(const id of ['ai-prompt','ai-mode','ai-consent','ai-request'])$(id).disabled=value;for(const b of $('ai-suggestions').children)b.disabled=value;}
   function renderDirectorPreview(){
@@ -690,9 +695,9 @@
     }
     $('ai-plan-note').textContent=`SECTOR ${world.stage+1} / WAVE ${world.wave+1}. Actual scheduled enemies for this route; choosing another route changes the count. Formation persists until changed. Boss attacks, hull and pact rules stay fixed.`;
   }
-  async function requestAI(){
+  async function requestAI(options={}){
     if(!world||world!==aiWorld||world.stage!==aiStage||aiApplying)return;
-    const epoch=++aiEpoch,director=aiTask==='director';
+    if(aiTask==='negotiate'&&!options.delegated)campaignVoice?.supersede();const epoch=++aiEpoch,director=aiTask==='director',campaign=aiTask==='negotiate';
     aiDecision=null;$('ai-apply').disabled=true;
     const server=$('ai-mode').value==='server';
     if(server&&!window.NEMESIS_HOSTED){$('ai-status').textContent='This standalone HTML is offline. Use the hosted build to test the server, or select Local mock.';return;}
@@ -700,18 +705,27 @@
     aiClient.mode=server?'server':'mock';aiClient.token=$('pilot-token').value;
     $('ai-request').disabled=true;$('ai-apply').disabled=true;aiDecision=null;$('ai-status').textContent=server?'Waiting for server; local fallback is available.':'Running the local, rule-based mock...';
     const request={task:aiTask,prompt:$('ai-prompt').value,seed:world.seed,stage:Math.min(world.stage,5),allowed:aiTask==='negotiate'?world.offersForPact().map(c=>c.id):I.CONTRACTS,telemetry:I.telemetry(world)};
-    try{const result=director?await directorClient.request(request,server):await aiClient.request(request);if(epoch!==aiEpoch||screen!=='ai-screen'||world!==aiWorld||world.stage!==aiStage)return;
+    try{const result=director?await directorClient.request(request,server):campaign?await campaignClient.request(request,server):await aiClient.request(request);if(epoch!==aiEpoch||screen!=='ai-screen'||world!==aiWorld||world.stage!==aiStage)return;
       aiDecision=I.validateDecision(result.decision,request);$('ai-provider').textContent=result.provider==='openai'?`OPENAI / ${result.model||'SERVER RESPONSE'}`:'LOCAL RULES / NO AI RESULT';
-      $('ai-line').textContent=aiDecision.line;$('ai-rationale').textContent=aiDecision.rationale;$('ai-status').textContent=director?`${result.reason} ${result.latencyMs?result.latencyMs+' ms / ':''}NOT APPLIED.`:result.fallback?result.reason:'VALIDATED / CATALOG IDS ONLY';
+      $('ai-line').textContent=aiDecision.line;$('ai-rationale').textContent=aiDecision.rationale;$('ai-status').textContent=(director||campaign)?`${result.reason} ${result.latencyMs?result.latencyMs+' ms / ':''}NOT APPLIED.`:result.fallback?result.reason:'VALIDATED / CATALOG IDS ONLY';
       if(aiTask==='negotiate'){const c=CONTRACTS.find(c=>c.id===aiDecision.contractId);$('ai-benefit').textContent='BENEFIT / '+c.gift;$('ai-price').textContent='PRICE / '+c.cost;}
       else if(director){$('ai-benefit').textContent=X.DIRECTORS[aiDecision.directorId].name;$('ai-price').textContent=X.DIRECTORS[aiDecision.directorId].desc;renderDirectorPreview();}
-      $('ai-apply').disabled=aiTask==='debrief';
+      $('ai-apply').disabled=aiTask==='debrief';return result;
     }catch(error){if(epoch===aiEpoch&&screen==='ai-screen')$('ai-status').textContent='Request cancelled or invalid. No game rules changed.';}
     finally{if(epoch===aiEpoch)$('ai-request').disabled=false;}
   }
   async function applyAI(){
     if(!aiDecision||world!==aiWorld||world.stage!==aiStage||aiApplying)return;
-    if(aiTask==='negotiate'&&world.phase==='pact'){const id=aiDecision.contractId;show('choices');choose(id);}
+    if(aiTask==='negotiate'&&world.phase==='pact'){
+      const epoch=aiEpoch,target=world,stage=world.stage;setAIBusy(true);$('ai-apply').disabled=true;$('ai-status').textContent='Stopping voice and confirming your signature...';
+      try {await campaignVoice.stop('signed');if(epoch!==aiEpoch||screen!=='ai-screen'||world!==target||world.stage!==stage)return;
+        const approved=await campaignClient.apply();if(epoch!==aiEpoch||screen!=='ai-screen'||world!==target||world.stage!==stage||world.phase!=='pact')return;
+        if(!world.sign(approved.decision.contractId))throw Error('Sector changed');
+        world.campaignPactSource=approved.provider==='openai'?`OPENAI / ${approved.model}`:'LOCAL RULES';
+        show('game');updateHUD();
+      }catch{if(epoch===aiEpoch){aiDecision=null;campaignClient.cancel();$('ai-status').textContent='Signature failed or changed. Propose again; no pact was applied.';}}
+      finally{if(epoch===aiEpoch)setAIBusy(false);}
+    }
     else if(aiTask==='director'){
       const epoch=aiEpoch,target=world,stage=world.stage;setAIBusy(true);$('ai-apply').disabled=true;$('ai-status').textContent='Confirming this formation...';
       try{const approved=await directorClient.apply();if(epoch!==aiEpoch||screen!=='ai-screen'||world!==target||world.stage!==stage)return;
@@ -728,11 +742,52 @@
   $('route-intelligence').onclick=()=>openAI('director');$('negotiate').onclick=()=>openAI('negotiate');
   $('choice-outfit').onclick=()=>routeScreen(true);$('debrief').onclick=()=>openAI('debrief');
   $('ai-close').onclick=closeAI;$('ai-request').onclick=requestAI;$('ai-apply').onclick=applyAI;
-  const invalidateProposal=()=>{if(aiApplying)return;aiEpoch++;aiClient.cancel();directorClient.cancel();aiDecision=null;$('ai-apply').disabled=true;$('ai-request').disabled=false;$('ai-status').textContent='Request changed. Propose again before accepting.';renderDirectorPreview();};
-  $('ai-mode').onchange=invalidateProposal;$('ai-prompt').oninput=invalidateProposal;$('ai-consent').onchange=invalidateProposal;$('ai-preview-route').onchange=renderDirectorPreview;
+  const invalidateProposal=(voiceInput=false)=>{if(aiApplying)return;aiEpoch++;aiClient.cancel();directorClient.cancel();campaignClient.cancel();campaignVoice?.supersede(voiceInput===true);aiDecision=null;$('ai-apply').disabled=true;$('ai-request').disabled=false;$('ai-status').textContent='Request changed. Propose again before accepting.';renderDirectorPreview();};
+  $('ai-mode').onchange=()=>{invalidateProposal();refreshCampaignConnection();};$('ai-prompt').oninput=()=>{campaignSpeech=$('ai-prompt').value;invalidateProposal();};$('ai-consent').onchange=()=>{invalidateProposal();refreshCampaignConnection();};$('ai-preview-route').onchange=renderDirectorPreview;
 
+  setupCampaignVoice();
+  async function refreshCampaignConnection(){
+    const epoch=++campaignConnectionEpoch;
+    $('campaign-voice-start').disabled=true;
+    if(screen!=='ai-screen'||aiTask!=='negotiate'||!$('ai-consent').checked||$('ai-mode').value!=='server'||!window.NEMESIS_HOSTED){campaignVoice?.stop('consent-or-provider');return;}
+    try {await campaignSession.ensure();if(epoch!==campaignConnectionEpoch||screen!=='ai-screen')return;
+      $('campaign-voice-start').disabled=!campaignSession.voiceEnabled||campaignVoiceActive||aiApplying;
+      if(!campaignVoiceActive)$('campaign-voice-state').textContent=campaignSession.voiceEnabled?'GPT-LIVE-1 / READY':'VOICE UNAVAILABLE / USE TEXT';
+    }catch{if(epoch===campaignConnectionEpoch)$('campaign-voice-state').textContent='VOICE UNAVAILABLE / USE TEXT OR LOCAL RULES';}
+  }
+  function setupCampaignVoice(){
+    const output=new Audio();output.volume=.8;
+    campaignVoice=new window.PactVoice.PactVoice({request:campaignSession.request.bind(campaignSession),audio:output,
+      proposalCommentary:result=>window.PactCampaign.commentary(result,campaignClient.context),
+      onMedia:(stream,kind)=>window.NemesisDemo?.attachVoice(stream,kind,kind==='output'?{element:output}:{}),
+      onState:state=>{campaignVoiceActive=['starting','listening','speaking','stopping'].includes(state.state);sound.settings(opts.volume,opts.music,muted,opts.musicVolume*(campaignVoiceActive?.18:1),opts.sfxVolume,opts.adaptiveMusic);
+        $('campaign-voice-state').textContent='VOICE / '+state.state.toUpperCase()+(state.detail?' / '+state.detail:'');$('campaign-voice').dataset.state=state.state;
+        $('campaign-voice-start').disabled=campaignVoiceActive||aiApplying||!campaignSession.voiceEnabled||!$('ai-consent').checked||$('ai-mode').value!=='server';
+        for(const id of ['campaign-voice-stop','campaign-voice-mute','campaign-voice-volume'])$(id).disabled=!campaignVoiceActive;
+        if(state.state==='error')$('ai-status').textContent=state.detail||'Voice unavailable. Use text or LOCAL RULES.';
+      },
+      onCaption:event=>{if(event.speaker==='assistant'){campaignCaption+=event.delta;$('campaign-caption-rival').textContent=campaignCaption;}},
+      onInput:event=>{if(aiApplying||screen!=='ai-screen'||aiTask!=='negotiate'||!event.delta)return;
+        if(/^\s*(yes|ok(?:ay)?|uh[ -]?huh|mm|\u3046\u3093|\u306f\u3044)[.!?\u3001\u3002\s]*$/i.test(event.delta))return;
+        campaignSpeech=(campaignSpeech+event.delta).slice(-280);campaignLastInput=performance.now();$('campaign-caption-player').textContent=campaignSpeech;$('ai-prompt').value=campaignSpeech;invalidateProposal(true);$('ai-status').textContent='Heard updated terms. Waiting for the counteroffer.';
+      },
+      onDelegation:async()=>{if(aiApplying||screen!=='ai-screen'||aiTask!=='negotiate')return null;const target=world,stage=world.stage;
+        for(let n=0;n<10&&performance.now()-campaignLastInput<250;n++)await new Promise(resolve=>setTimeout(resolve,100));
+        if(world!==target||world.stage!==stage||screen!=='ai-screen'||!campaignSpeech.trim()||aiApplying)return null;
+        if(window.PactVoice.isProposalWithdrawal(campaignSpeech)){invalidateProposal();$('ai-prompt').value='';$('ai-status').textContent='Proposal withdrawn. State new terms to continue.';return null;}
+        return requestAI({delegated:true});
+      }
+    });
+    $('campaign-voice-start').onclick=async()=>{if(aiApplying||screen!=='ai-screen'||aiTask!=='negotiate'||!$('ai-consent').checked||$('ai-mode').value!=='server')return;
+      sound.unlock();campaignSpeech='';campaignCaption='';campaignVoiceMuted=false;$('campaign-voice-mute').textContent='Mute';invalidateProposal();
+      let runs=campaignVoiceRuns.get(world);if(!runs){runs=new Map();campaignVoiceRuns.set(world,runs);}if(!runs.has(world.stage))runs.set(world.stage,crypto.randomUUID());
+      await campaignVoice.start({runId:runs.get(world.stage),revision:0,campaign:campaignClient.context});
+    };
+    $('campaign-voice-stop').onclick=()=>campaignVoice.stop('user');$('campaign-voice-mute').onclick=()=>{campaignVoiceMuted=!campaignVoiceMuted;campaignVoice[campaignVoiceMuted?'mute':'unmute']();$('campaign-voice-mute').textContent=campaignVoiceMuted?'Unmute':'Mute';};
+    $('campaign-voice-volume').oninput=()=>{const level=Number($('campaign-voice-volume').value)/100;campaignVoice.setVolume(level);window.NemesisDemo?.setVoiceOutputLevel?.(level);};
+  }
   // Readable snapshot contains no credentials, transcripts or writable objects.
-  window.render_game_to_text=()=>JSON.stringify({build:'1.1.0',screen,negotiationStep:$('covenant-screen').dataset.step||'negotiate',coordinates:'origin top-left; x right; y down',renderer:gpu.stats().backend,arena:{width:W,height:H},phase:world?.phase,seconds:world?Math.round(world.time*100)/100:0,player:world?{x:Math.round(world.p.x),y:Math.round(world.p.y),hp:world.p.hp,energy:world.p.energy}:null,enemies:world?.enemies.filter(e=>e.hp>0).slice(0,12).map(e=>({type:e.type,x:Math.round(e.x),y:Math.round(e.y),hp:e.hp})),hostileBullets:world?.bullets.filter(b=>b.hostile).length,revision:world?.revision,spec:world?.spec,proposal:cvProposal?{spec:cvProposal.spec,provider:cvProposal.provider,model:cvProposal.model}:null,effects:world?.covenantStats,voice:voice?.state,liveVoice:world?.voiceEvidence?world.report().liveVoice:null});
+  window.render_game_to_text=()=>JSON.stringify({build:'1.2.0',screen,negotiationStep:$('covenant-screen').dataset.step||'negotiate',coordinates:'origin top-left; x right; y down',renderer:gpu.stats().backend,arena:{width:W,height:H},phase:world?.phase,seconds:world?Math.round(world.time*100)/100:0,player:world?{x:Math.round(world.p.x),y:Math.round(world.p.y),hp:world.p.hp,energy:world.p.energy}:null,enemies:world?.enemies.filter(e=>e.hp>0).slice(0,12).map(e=>({type:e.type,x:Math.round(e.x),y:Math.round(e.y),hp:e.hp})),hostileBullets:world?.bullets.filter(b=>b.hostile).length,revision:world?.revision,spec:world?.spec,proposal:cvProposal?{spec:cvProposal.spec,provider:cvProposal.provider,model:cvProposal.model}:null,effects:world?.covenantStats,campaignPact:world?.pact,campaignPactSource:world?.campaignPactSource,campaignProposal:campaignClient.proposal?{decision:campaignClient.proposal.decision,provider:campaignClient.proposal.provider,model:campaignClient.proposal.model}:null,campaignVoice:campaignVoice?.state,voice:voice?.state,liveVoice:world?.voiceEvidence?world.report().liveVoice:null});
   window.advanceTime=ms=>{const n=Math.min(1200,Math.max(0,Math.round(Number(ms)*.12)));for(let i=0;i<n&&screen==='game'&&world?.phase==='combat';i++)world.step(1/120,inputState(null));if(world){consumeEvents();updateHUD();if(world.phase==='parley')openCovenant();else if(['won','dead'].includes(world.phase))results();}render();};
   // Test access is opt-in; normal launches do not expose mutable simulation state.
   if(new URLSearchParams(location.search).has('test')||window.__PACT_TEST_MODE__===true)window.__PACT_TEST__={

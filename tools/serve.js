@@ -5,6 +5,7 @@ if(!Number.isInteger(port)||port<1||port>65535)throw Error('PORT must be from 1 
 const api=import('../server/intelligence.mjs'),covenantApi=import('../server/covenant.mjs');
 const sessionApi=import('../server/session.mjs'),controlsApi=import('../server/controls.mjs'),voiceApi=import('../server/voice.mjs');
 const directorApi=import('../server/director.mjs');
+const campaignApi=import('../server/campaign.mjs');
 const server=http.createServer(async(req,res)=>{
  try{const u=new URL(req.url,'http://localhost:'+port);
   if(u.pathname.startsWith('/api/')){
@@ -15,6 +16,7 @@ const server=http.createServer(async(req,res)=>{
    else if(u.pathname==='/api/director')response=await(await directorApi).handle(request);
    else if(u.pathname==='/api/director/sign')response=await(await directorApi).control(request,'sign');
    else if(u.pathname==='/api/director/cancel')response=await(await directorApi).control(request,'cancel');
+   else if(u.pathname==='/api/campaign')response=await(await campaignApi).handle(request);
    else if(u.pathname==='/api/covenant')response=await(await covenantApi).handle(request);
    else if(u.pathname==='/api/session')response=await(await sessionApi).handle(request);
    else if(u.pathname==='/api/covenant/sign')response=await(await controlsApi).handle(request,'sign');

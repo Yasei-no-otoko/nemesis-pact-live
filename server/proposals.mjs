@@ -25,7 +25,7 @@ redis.call('SET',key,cjson.encode(s),'EX',tonumber(ARGV[2]))
 return {1,cjson.encode(s)}`;
 
 export function proposalStore(store,sid,namespace='run') {
-  if(!['run','director'].includes(namespace))throw problem('INVALID_NAMESPACE');
+  if(!['run','director','campaign'].includes(namespace))throw problem('INVALID_NAMESPACE');
   const key=runId=>`nemesis:${namespace}:${id(sid)}:${id(runId)}`;
   async function transition(runId,action) {
     const result=await store.eval(TRANSITION_LUA,[key(runId)],[JSON.stringify(action),'3600']);
