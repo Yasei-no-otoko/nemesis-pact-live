@@ -413,3 +413,12 @@ Appa53cb2032e757d87f08254fa53f1d75fb323da96 /READYdpl_DxteZ6M6R4gkuutd5STJTmVmH3
 2026-09-15 JST — English media refresh capture
 
 The second bounded production campaign capture completed successfully: six real GPT-Live-1 voice sessions, six signed pacts, 18 GPT-5.6 Luna adaptive reviews, 18 encounters, six bosses, 242 kills, 80 parries, two damage taken, and 375.07 seconds of combat. Attempt 1 remains preserved with its strict assertion failure and 17 AI / 1 local fallback result. Measured budget deltas were direct $0.60 and gateway $0.010435; no invoice or grant balance is claimed. Native Resolve export, compatibility conversion, frame/audio proof, and public replacement remain pending.
+
+
+2026-09-15 JST — Latest English film and gallery published
+
+Rerecorded the deployed 795e39e game as one complete English six-sector campaign, including six real Live voice sessions, six signed pacts, 18 Luna adaptive reviews and a real final Luna debrief. Native DaVinci Resolve produced a 59-second, 13-cut, 1080p60 film with English captions and original linked audio. All 3,540 frames decode; the minimum cut audio correlation is 0.9998877 and the maximum measured lag is 1.5 ms. The earlier uncaptioned export was rejected and preserved separately. Source recordings, six original timelines and the final editable DRP remain local.
+
+Published Release media-refresh-20260915-english-demo and Pages commit ddd1d26aaa2a58548cc8d7acd9da547ae83d0adf. The viewer now uses the new film and eight updated gameplay/interface screenshots, preserving two concept boards and the earlier human film. Fifteen anonymous URLs passed verification: fourteen exact source-byte matches and HTML matching after one documented host-added analytics tag. Actual public Chrome playback reached ended=true at 59.008 seconds, unmuted at rate 1 with no media error; all ten gallery images loaded. Browser playback frame-drop counters were unavailable. Vercel still serves the captured game HTML hash. See MEDIA-REFRESH-20260915.md and validation-media-refresh-20260915/publication-*.json.
+
+Media/source checkpoint d31939b and immutable release tag are pushed. Concurrent submission documentation commit 027929b was preserved through merge 8dea96c. Final publication evidence is checkpointed under media-refresh-20260915-published. Submission copy now describes the refreshed film; no form was submitted.

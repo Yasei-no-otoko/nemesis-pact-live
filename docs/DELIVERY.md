@@ -91,3 +91,9 @@ Final conservative ledger at2026-09-15T04:37:44.012Z:directOpenAI$3/$10;Gateway$
 ## Visual demo page update
 
 The [demo page](https://www.circle-hydrangea.net/nemesis-pact-live/) now introduces the game through upgraded PC normal waves, boss fights, voice contracts, adaptive reviews and the two existing concept boards, alongside the unchanged 59-second film. Seven actual PC images and two generated concepts are distinctly labeled, with full-size links and responsive layouts. Pages commit `6a4cb612d3963215ea9b766edd993508e716f4c7` is public; five viewport checks and all nine published image hashes passed. The development checkpoint is `milestone-28-demo-gallery`. [Source, evidence and viewer rollback](DEMO-GALLERY.md). This viewer-only update requires no Vercel game deployment and made no paid model calls.
+
+## Latest English media refresh — September 15, 2026
+
+The [public viewer](https://www.circle-hydrangea.net/nemesis-pact-live/) now shows the latest deployed 795e39e game in a new 59-second English film, edited natively in DaVinci Resolve from one complete six-sector campaign. Eight gameplay/interface screenshots were refreshed, including the real Luna flight debrief. The [new immutable release](https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/tag/media-refresh-20260915-english-demo) includes the MP4, SRT and a source ZIP from the captured deployment. Previous films and concept boards retain their provenance.
+
+All 3,540 encoded frames, thirteen caption samples and original-audio alignment pass; anonymous public asset verification and unmuted, normal-speed playback through 59.008 seconds pass. All ten gallery images load. Fourteen public files match source bytes exactly; HTML differs only by one documented host-added analytics tag. The Vercel game remains unchanged. [Current evidence, provenance and rollback](MEDIA-REFRESH-20260915.md).

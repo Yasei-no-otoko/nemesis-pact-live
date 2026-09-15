@@ -1,0 +1,104 @@
+{
+  "checkedAt": "2026-09-15T14:28:15.583Z",
+  "url": "https://www.circle-hydrangea.net/nemesis-pact-live/",
+  "browser": "Chrome extension-controlled desktop browser",
+  "playbackAction": "Clicked the visible native HTML video Play control; no seek or playback rate change.",
+  "playback": {
+    "currentSrc": "https://github.com/Yasei-no-otoko/nemesis-pact-live/releases/download/media-refresh-20260915-english-demo/NEMESIS-PACT-latest-59s-60fps-en.mp4",
+    "currentTime": 59.008,
+    "duration": 59.008,
+    "ended": true,
+    "mediaErrorCode": null,
+    "muted": false,
+    "paused": true,
+    "playbackRate": 1,
+    "readyState": 4,
+    "rect": {
+      "height": 718.875,
+      "width": 1278,
+      "x": 1147,
+      "y": 667.421875
+    },
+    "videoHeight": 1080,
+    "videoWidth": 1920,
+    "viewport": {
+      "height": 2030,
+      "width": 3572
+    }
+  },
+  "gallery": {
+    "clientWidth": 3572,
+    "images": [
+      {
+        "complete": true,
+        "height": 1080,
+        "src": "https://www.circle-hydrangea.net/nemesis-pact-live/assets/boss-unwritten.webp",
+        "width": 1920
+      },
+      {
+        "complete": true,
+        "height": 1080,
+        "src": "https://www.circle-hydrangea.net/nemesis-pact-live/assets/wave-unwritten-sky.webp",
+        "width": 1920
+      },
+      {
+        "complete": true,
+        "height": 1080,
+        "src": "https://www.circle-hydrangea.net/nemesis-pact-live/assets/wave-prism-orchard.webp",
+        "width": 1920
+      },
+      {
+        "complete": true,
+        "height": 1080,
+        "src": "https://www.circle-hydrangea.net/nemesis-pact-live/assets/boss-weaver.webp",
+        "width": 1920
+      },
+      {
+        "complete": true,
+        "height": 1080,
+        "src": "https://www.circle-hydrangea.net/nemesis-pact-live/assets/boss-leviathan.webp",
+        "width": 1920
+      },
+      {
+        "complete": true,
+        "height": 1080,
+        "src": "https://www.circle-hydrangea.net/nemesis-pact-live/assets/voice-contract.webp",
+        "width": 1920
+      },
+      {
+        "complete": true,
+        "height": 1080,
+        "src": "https://www.circle-hydrangea.net/nemesis-pact-live/assets/flight-debrief.webp",
+        "width": 1920
+      },
+      {
+        "complete": true,
+        "height": 1080,
+        "src": "https://www.circle-hydrangea.net/nemesis-pact-live/assets/adaptive-review.webp",
+        "width": 1920
+      },
+      {
+        "complete": true,
+        "height": 1024,
+        "src": "https://www.circle-hydrangea.net/nemesis-pact-live/assets/concept-v099.webp",
+        "width": 1536
+      },
+      {
+        "complete": true,
+        "height": 1024,
+        "src": "https://www.circle-hydrangea.net/nemesis-pact-live/assets/concept-v100.webp",
+        "width": 1536
+      }
+    ],
+    "scrollWidth": 3572
+  },
+  "capturedWarningsAndErrors": [],
+  "playbackFrameDropCount": null,
+  "playbackFrameDropNote": "This browser control API did not expose playback quality counters. Encoded-file frame verification is recorded separately.",
+  "screenshots": [
+    "publication-desktop.jpg",
+    "publication-gallery-detail.jpg"
+  ],
+  "physicalPhoneTest": false,
+  "humanPlaytest": false
+}
