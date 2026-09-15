@@ -4,6 +4,8 @@
 
 Negotiate the rules. Fight your deal.
 
+**Deadline improvement, September 15:** First Contact now brings recorded combat into the parley: remaining hull, boss health, actual sanctuary interceptions and reflected damage. Edit a tactical proposal, compare each current clause with the proposed replacement, then Sign. A same-rule proposal explicitly warns that signing still spends the amendment. LOCAL RULES can generate the first counteroffer directly without opening connection settings. [Current improvement and verification](docs/DEADLINE-REVIEW-VALIDATION.md).
+
 [Play on production HTTPS](https://nemesis-pact-live.vercel.app) · [Watch the59-second1080p60 demo](https://www.circle-hydrangea.net/nemesis-pact-live/) · [Current validation](docs/VALIDATION-CURRENT.md) · [Japanese guide](README-JA.md)
 
 Built from the verified v0.5.0 source ZIP. The framework-free game and six-sector campaign are preserved. First Contact is a short boss encounter: ask for a sanctuary, slower bullets or stronger reflections, accept a cost, review the clauses, and click **Sign**. At 8 seconds press **R** to renegotiate once; at 18 seconds parley opens automatically. Health, boss damage and elapsed combat time survive the amendment.

@@ -37,6 +37,10 @@ The official submission form and rights attestations remain the representative's
 
 See [iteration validation](DEADLINE-REVIEW-VALIDATION.md) and the latest WORKLOG entry for source/deployment details.
 
+**Checkpoint at 16:20 JST:** source `33111c45cc56765605d4c2f31b8fc0d02d583f9b` is saved to the default branch and production `dpl_Euq2ap6rtxtiDDQ2Km9J9bk48Fah` is READY. The public response exactly matches the submitted source build. Iteration 1 is complete; the next loop should choose the next concrete improvement rather than redoing this slice. Six hourly resumes (17:00 through 22:00 JST) and a separate 23:00 final audit were successfully scheduled in the originating conversation.
+
+Direct shell git push lacked credentials in this environment. The connected GitHub create-tree/create-commit/non-force update-ref path succeeded. Each created Git tree was checked against the local staged tree hash before moving the branch. Use the connected app for writes if direct push is unavailable; no credential extraction or authentication bypass is needed.
+
 ## Deployment and verification notes for resumption
 
 Vercel team `team_RTugcUd6bYZFpvi4A18M9SGY`; existing project `prj_fB5yGJiIy6kdLg29FpHreHmCwMkc`, name `nemesis-pact-live`, Node 22. No Git integration was reported by the project list; a git push alone is not proof of deployment.

@@ -1,5 +1,19 @@
 # Delivery — NEMESIS PACT v1.3.0
 
+## Current deadline improvement — September 15, 16:20 JST
+
+Production source **`33111c45cc56765605d4c2f31b8fc0d02d583f9b`**, branch `ship/living-covenant`; READY **`dpl_Euq2ap6rtxtiDDQ2Km9J9bk48Fah`**. [Play](https://nemesis-pact-live.vercel.app/).
+
+First Contact now shows real combat outcomes during parley, editable tactical prompts, and current/proposed clause comparisons. Same-rule signing warns that it still uses the amendment. One-click LOCAL RULES reaches an unsigned counteroffer. Already-enhanced reflections are not falsely offered as an additional upgrade. English/Japanese are supported.
+
+Verification: 304-test full Node 22 suite passed before the final narrow correction; the final affected review/localization suite passed 13/13. 57-file syntax check and build passed; 12 deterministic encounter simulations won. Browser inspection covered 1280×800, 390×844 and 320×568 via an explicitly labeled preview fixture. Final public HTTP 200 body exactly matches the hosted build reconstructed from submitted sources, including the last correction. Normal public UI counteroffer → Sign → combat passed. The preview-only fixture returns 404 in production. [Full scope and limits](DEADLINE-REVIEW-VALIDATION.md).
+
+Hosted HTML SHA256: `ca3c7a17bac61a9fd8fb458bb369b24ac852c39e2b34ef19863b418252b6b11f`. Offline HTML SHA256: `62f56923d5fe848c3b6a09d737173d500a0d15f788557b82ec01882337ab3dbe`. No new live AI or voice calls; caps and provider settings unchanged. Grant/invoice/infrastructure spend remains unverified. Roll back to the pre-iteration production `dpl_DxteZ6M6R4gkuutd5STJTmVmH3BB` if needed, preserving quotas and credentials.
+
+Six improvement resumes are scheduled for 17:00–22:00 JST, plus the 23:00 final submission check. The active goal and cutoff rules are in [DEADLINE-LOOP](DEADLINE-LOOP.md). The existing movie remains the earlier recorded checkpoint. The application form has not been submitted by this agent.
+
+## Earlier flight-debrief and media delivery record
+
 > Current live app: bilingual Flight debrief with explicit-consent GPT-5.6 Luna analysis, recorded stats, cached feedback and LOCAL RULES fallback. App `a53cb2032e757d87f08254fa53f1d75fb323da96`, READY `dpl_DxteZ6M6R4gkuutd5STJTmVmH3BB`;299tests /56syntax, final real EN/JA reviews3285/5588ms. [Current validation, budgets and rollback](FLIGHT-DEBRIEF.md). Japanese UI and new-user Auto Shot/Aim Assist remain enabled. The release/media references below describe the earlier immutable v1.3.0 campaign checkpoint.
 
 [Play](https://nemesis-pact-live.vercel.app/) · [Repository](https://github.com/Yasei-no-otoko/nemesis-pact-live) · [59-second1080p60 demo](https://www.circle-hydrangea.net/nemesis-pact-live/)

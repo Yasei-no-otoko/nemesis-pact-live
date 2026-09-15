@@ -1,5 +1,15 @@
 # Work log
 
+## Current continuation — 2026-09-15, 16:20 JST
+
+User requested an AI-native quality improvement loop until 23:59 JST. Cloned the current default branch at `7d9801b`, preserving the v1.3.0 voice/campaign work. Implemented actual parley outcomes, editable tactical prompts, side-by-side amendment changes, same-rule amendment-cost warning and direct LOCAL RULES counteroffer. Japanese authored parley lines were completed. A follow-up corrected a false suggestion to upgrade already-enhanced reflections.
+
+Current source `33111c45cc56765605d4c2f31b8fc0d02d583f9b`, tree `eca3dfe2a5cb86cf78399d22af4a4b376aabec19`; production READY `dpl_Euq2ap6rtxtiDDQ2Km9J9bk48Fah`. Public response is byte-for-byte equivalent to the reconstructed submitted build; ordinary public counteroffer/Sign/combat works and the preview fixture is absent (404). Full suite 304/304 at the main slice; final affected suite 13/13; 57 syntax checks, build, 12 deterministic encounter simulations and three browser viewport sizes checked. No new physical phone/FPS/live voice test claimed. No inference calls or budget changes. Two previews/three production builds; infrastructure invoice cost unknown.
+
+Shell push lacked credentials. Connected GitHub tree/commit/non-force-ref writes saved identical local trees to `ship/living-covenant`; no user commit was overwritten. Rollback to `dpl_DxteZ6M6R4gkuutd5STJTmVmH3BB` with existing quotas and credentials. Six resumes at 17:00–22:00 JST and a 23:00 final audit were scheduled successfully. No submission form or legal attestation was submitted. Read [the active goal](DEADLINE-LOOP.md) and [validation](DEADLINE-REVIEW-VALIDATION.md) before the next slice.
+
+The entries below are the prior chronological development record.
+
 ## 2026-09-14 — source and service audit
 
 - No ancestor AGENTS.md/CLAUDE.md or initial Git repository found. User-supplied AGENTS instructions apply.
@@ -16,7 +26,7 @@
 
 All GOAL.md completion boxes remain open at this audit. Next: baseline results; source comparison; durable quota implementation; authenticated deployment; real text contract / combat proof. Voice protocol, project access, microphone test and demo remain required.
 
-## 2026-09-14 16:15 JST — bounded pipeline and first real inference
+## 2026-09-14 16:20 JST — bounded pipeline and first real inference
 
 - Origin private repository: `Yasei-no-otoko/nemesis-pact-live`, branch `ship/living-covenant`; ADMIN/write access, SSH fetch/push verified. Upstream candidate preserved as `upstream`; `docs/UPSTREAM-COMPARISON.json` records the source differences.
 - Current baseline: 164/164 unit tests on Node 22.23.2, 17 syntax checks, build 323999 bytes. See `validation-current/baseline/README.md`; baseline and current evidence are distinct.
