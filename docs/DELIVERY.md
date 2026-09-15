@@ -1,5 +1,15 @@
 # Delivery — NEMESIS PACT v1.3.0
 
+## Current consent recovery release — September 15, 22:11 JST
+
+Source **`795e39efe609fe188646ed354268b560ea432486`**, production READY **`dpl_CPSZWuHrirUtLbpt2hwcArHYbtRU`**. [Play](https://nemesis-pact-live.vercel.app/).
+
+Before consent, Get counteroffer now opens the existing privacy/provider choice instead of ending at an error. It does not check consent or send this request. The explicit LOCAL RULES shortcut remains available even with OpenAI enabled. Previous fixes and all budget/signature constraints are preserved.
+
+47 affected/client/access tests passed; final copy adjustment five tests passed, syntax58/build passed. Actual browser normal controls confirmed dialog→no consent→local proposal→explicit Sign→combat; 390/320px iframe layout checks had no horizontal overflow. Outage cases are mocked tests, not live-AI or physical-device evidence. [Validation and limits](CONSENT-RECOVERY-VALIDATION.md).
+
+Public HTTP200 matches SHA256 `01c3ead4762f0c97ae8b5602e06fe66cb6f6530bb69f7a91acbcb3982c611340`; QA fixture404. Rollback **`dpl_5aV9W1BJvxT8VG3kb5fweKMKpNnH`** without changing credentials/quotas/Redis. No AI or microphone spending. Remaining: final submission audit and representative's submission/legal confirmation. [Copy-ready answers](SUBMISSION-EN.md), [official form guide](SUBMISSION-FORM-GUIDE.md), [recording workflow](FINAL-RECORDING.md). Existing movie unchanged.
+
 ## Current combat clarity release — September 15, 21:17 JST
 
 Source **`aaebc53c3a11b69daf18475a198bb3c0289fdedb`**, production READY **`dpl_5aV9W1BJvxT8VG3kb5fweKMKpNnH`**. [Play](https://nemesis-pact-live.vercel.app/).

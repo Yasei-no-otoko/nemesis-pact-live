@@ -20,7 +20,13 @@ After **22:30 JST**, only submission blockers, regressions and essential clarity
 
 The official submission form and rights attestations remain the representative's final action; this request to improve the game is not authorization to submit legal confirmations. Prepare the actual links and final copy first.
 
-## Latest checkpoint — combat danger cues, 21:17 JST
+## Latest checkpoint — consent and local recovery, 22:11 JST
+
+Source `795e39efe609fe188646ed354268b560ea432486`, production READY `dpl_CPSZWuHrirUtLbpt2hwcArHYbtRU`, rollback `dpl_5aV9W1BJvxT8VG3kb5fweKMKpNnH`. Missing-consent Get counteroffer opens an unchecked consent/provider dialog before sending this request. The explicit LOCAL RULES shortcut remains visible for online users too. Tests47 plus final wording test5 passed, syntax58/build passed, normal browser flow and 390/320px iframe layouts checked. Public bytes match the hosted build, QA fixture404. Preserve all prior fixes. [Details](CONSENT-RECOVERY-VALIDATION.md).
+
+Next run: final submission and readiness audit. After22:30 restrict work to submission blockers/regressions; finish needed code by23:20, no code publication after23:30. The representative still owns form submission and legal confirmations. No new movie, live-model or physical-phone proof from this slice.
+
+## Previous checkpoint — combat danger cues, 21:17 JST
 
 Source `aaebc53c3a11b69daf18475a198bb3c0289fdedb`, production READY `dpl_5aV9W1BJvxT8VG3kb5fweKMKpNnH`; rollback `dpl_jjZJRD4fv99WWvDwxGTmYS2b4SHu`. Laser priority, cooldown-aware dash/parry hints, low-hull guidance, Japanese combat copy and HP-bar overlap are fixed. Tests 316/316, syntax58/build passed; synthetic 390/320px browser fixtures plus normal public LOCAL RULES/sign/combat confirmed. Public bytes match build, QA fixture404. See [scope and limitations](COMBAT-CUES-VALIDATION.md). Preserve the recording/ending/revision fixes. Do not redo this slice. No AI or microphone call, quota change or form submission occurred.
 
@@ -41,7 +47,7 @@ The user-reported untranslated Pact Keeper ending is fixed, together with missin
 ## Next candidates, ranked by player impact
 
 - Combat cue priority/cooldowns/low-hull/localization slice completed at 21:17. Remaining physical-phone readability or parry-feedback checks must be labeled separately from the completed synthetic layout checks.
-- Initial voice/text flow: reduce confusion when consent is not yet given, audio is unavailable, or a request falls back to local rules. Never label the fallback as live AI.
+- Initial missing-consent/local recovery slice completed22:11. Keep truthful fallback labels; only address a concrete remaining submission blocker or regression after22:30.
 - End-to-end campaign regression and final submission wording. The current 59-second movie is a separately identified earlier checkpoint; do not claim it shows newly changed screens.
 
 ## Iteration 1 — implemented

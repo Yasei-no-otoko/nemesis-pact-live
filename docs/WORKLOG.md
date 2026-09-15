@@ -1,5 +1,15 @@
 # Work log
 
+## Consent and local recovery — 2026-09-15, 22:11 JST
+
+Source **`795e39efe609fe188646ed354268b560ea432486`** on `improve/consent-recovery-20260915` and default `ship/living-covenant`. Inherited clean `1a5146a`, no open PR/newer deployment/concurrent work; feedback branch already integrated. Tree `83a92994ad7e5799613552fcf8d922096fe628b8` matches local commit `b567c6a`; non-force GitHub writes, old branches and work preserved.
+
+Get counteroffer without consent now opens the existing choice dialog before constructing/sending this request, leaving consent unchecked and Sign disabled. New EN/JA copy explains the next step. LOCAL RULES shortcut stays visible when OpenAI is selected, including after consent, so connection trouble has an explicit no-AI exit. Existing cancellation, privacy and signature gates remain unchanged; no provider, six-sector, recorder or $10/$20 cap change.
+
+Verification: 38 affected tests plus 9 client/access tests passed on Node24.19; final copy refinement reran only the five new tests. Syntax58/build passed. Preview `dpl_59CztVwtjAhF8wweZNGcBvwgNXn6` checked normal UI in 390×844/320×568 desktop iframes: no horizontal dialog/page overflow, consent false, Sign disabled, typed terms retained through local selection. Refined position-neutral guidance in final preview `dpl_ADGDPsBRiuG1Um4UzmL6D6XNrauR` READY; English desktop screenshot and close→local→explicit-sign→combat confirmed. Mock session tests, not browser/live-AI tests, cover online outage/disabled service shortcut visibility. No physical-device, human-play or new live-AI proof claimed.
+
+Production **`dpl_CPSZWuHrirUtLbpt2hwcArHYbtRU`** READY, 12 functions, public alias `nemesis-pact-live.vercel.app`. Public normal Japanese UI confirmed unchecked consent, localized dialog, LOCAL RULES proposal, explicit Sign and combat, with no game-origin errors. HTTP200 body matches hosted SHA256 **`01c3ead4762f0c97ae8b5602e06fe66cb6f6530bb69f7a91acbcb3982c611340`** (639070 bytes); QA fixture404. Offline SHA256 `52c05dae35edaa0a9dc51e8b5e7717e6900ee93d8122b2256336b39c95402cbb` (639020 bytes). Rollback **`dpl_5aV9W1BJvxT8VG3kb5fweKMKpNnH`**, preserve credentials, quotas and Redis. No model/microphone call, purchase, submission or legal attestation. [Verification details](CONSENT-RECOVERY-VALIDATION.md). Next run should prioritize final submission/readiness, not repeat this fix or add features after22:30.
+
 ## Combat danger cues — 2026-09-15, 21:17 JST
 
 Laser warnings now outrank onboarding and all other tips, and desktop/touch/canvas agree when dash is cooling. At two hull or less, the hint recommends a ready nova, a ready parry, or movement; no unavailable defense is recommended. All combat cue copy is localized. Boss intent text moved below the boss after an actual browser screenshot exposed overlap with the HP bar. First Contact-only warning colors do not leak into the campaign. No mechanics, GPT-Live-1/Luna, explicit signatures, six sectors, recording path or $10/$20 caps changed.
